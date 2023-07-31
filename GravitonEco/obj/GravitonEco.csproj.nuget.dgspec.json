@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Кирилл\\Desktop\\GravitonEco\\GravitonEco\\GravitonEco.csproj": {}
+    "C:\\Users\\Кирилл\\Desktop\\Проекты\\GravitonEco\\GravitonEco\\GravitonEco.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Кирилл\\Desktop\\GravitonEco\\GravitonEco\\GravitonEco.csproj": {
+    "C:\\Users\\Кирилл\\Desktop\\Проекты\\GravitonEco\\GravitonEco\\GravitonEco.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Кирилл\\Desktop\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
+        "projectUniqueName": "C:\\Users\\Кирилл\\Desktop\\Проекты\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
         "projectName": "GravitonEco",
-        "projectPath": "C:\\Users\\Кирилл\\Desktop\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
+        "projectPath": "C:\\Users\\Кирилл\\Desktop\\Проекты\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
         "packagesPath": "C:\\Users\\Кирилл\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Кирилл\\Desktop\\GravitonEco\\GravitonEco\\obj\\",
+        "outputPath": "C:\\Users\\Кирилл\\Desktop\\Проекты\\GravitonEco\\GravitonEco\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "NModbus": {
+              "target": "Package",
+              "version": "[3.0.78, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
