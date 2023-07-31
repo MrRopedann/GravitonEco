@@ -311,32 +311,6 @@ namespace GravitonEco
                 minAirTemperature.Text = listAirTemperature.Min().ToString("F1");
             }
             catch (Exception ex) { }
-            if (_client.ReadCoilParametr(2, 15) == "True")
-            {
-                porog_1_AirTemperature.ForeColor = Color.Red;
-            }
-            else
-            {
-                porog_1_AirTemperature.ForeColor = Color.White;
-            }
-            if (_client.ReadCoilParametr(2, 16) == "True")
-            {
-                porog_2_AirTemperature.ForeColor = Color.Red;
-            }
-            else
-            {
-                porog_2_AirTemperature.ForeColor = Color.White;
-            }
-            if (_client.ReadCoilParametr(2, 17) == "True")
-            {
-                dx_AirTemperature.ForeColor = Color.Red;
-                dt_AirTemperature.ForeColor = Color.Red;
-            }
-            else
-            {
-                dx_AirTemperature.ForeColor = Color.White;
-                dt_AirTemperature.ForeColor = Color.White;
-            }
         }
 
         List<double> listRelativeHumidity = new List<double>();
@@ -359,32 +333,6 @@ namespace GravitonEco
                 minRelativeHumidity.Text = listRelativeHumidity.Min().ToString();
             }
             catch (Exception ex) { }
-            if (_client.ReadCoilParametr(2, 18) == "True")
-            {
-                porog_1_RelativeHumidity.ForeColor = Color.Red;
-            }
-            else
-            {
-                porog_1_RelativeHumidity.ForeColor = Color.White;
-            }
-            if (_client.ReadCoilParametr(2, 19) == "True")
-            {
-                porog_2_RelativeHumidity.ForeColor = Color.Red;
-            }
-            else
-            {
-                porog_2_RelativeHumidity.ForeColor = Color.White;
-            }
-            if (_client.ReadCoilParametr(2, 20) == "True")
-            {
-                dx_RelativeHumidity.ForeColor = Color.Red;
-                dt_RelativeHumidity.ForeColor = Color.Red;
-            }
-            else
-            {
-                dx_RelativeHumidity.ForeColor = Color.White;
-                dt_RelativeHumidity.ForeColor = Color.White;
-            }
         }
 
         List<double> listAtmosphericPressure = new List<double>();
