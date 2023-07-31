@@ -19,3 +19,4 @@ C:\Users\Кирилл\Desktop\Проекты\GravitonEco\GravitonEco\obj\Debug\n
 C:\Users\Кирилл\Desktop\Проекты\GravitonEco\GravitonEco\obj\Debug\net6.0-windows\GravitonEco.genruntimeconfig.cache
 C:\Users\Кирилл\Desktop\Проекты\GravitonEco\GravitonEco\obj\Debug\net6.0-windows\ref\GravitonEco.dll
 C:\Users\Кирилл\Desktop\Проекты\GravitonEco\GravitonEco\obj\Debug\net6.0-windows\GravitonEco.View.Setting.resources
+C:\Users\Кирилл\Desktop\Проекты\GravitonEco\GravitonEco\obj\Debug\net6.0-windows\GravitonEco.View.SplashForm.resources

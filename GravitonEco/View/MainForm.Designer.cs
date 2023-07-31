@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            dateSensor = new Label();
             comboBox2 = new ComboBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
-            label1 = new Label();
+            dateSensor = new Label();
             comboBox1 = new ComboBox();
             serialNumber = new Label();
             softVersion = new Label();
@@ -326,7 +325,6 @@
             panel1 = new Panel();
             label46 = new Label();
             label47 = new Label();
-            tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -344,20 +342,6 @@
             tableLayoutPanel10.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // dateSensor
-            // 
-            dateSensor.AutoSize = true;
-            dateSensor.BackColor = Color.FromArgb(50, 50, 50);
-            dateSensor.Dock = DockStyle.Fill;
-            dateSensor.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dateSensor.ForeColor = Color.FromArgb(190, 190, 190);
-            dateSensor.Location = new Point(155, 0);
-            dateSensor.Name = "dateSensor";
-            dateSensor.Size = new Size(42, 240);
-            dateSensor.TabIndex = 7;
-            dateSensor.Text = "18.07.2023 20:00";
-            dateSensor.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboBox2
             // 
@@ -383,7 +367,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.716814F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.4778757F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.1238937F));
-            tableLayoutPanel1.Controls.Add(dateSensor, 7, 0);
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
@@ -401,7 +384,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.716814F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.4778757F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.1238937F));
-            tableLayoutPanel2.Controls.Add(label1, 7, 0);
+            tableLayoutPanel2.Controls.Add(dateSensor, 7, 0);
             tableLayoutPanel2.Controls.Add(comboBox1, 6, 0);
             tableLayoutPanel2.Controls.Add(serialNumber, 4, 0);
             tableLayoutPanel2.Controls.Add(softVersion, 3, 0);
@@ -417,19 +400,19 @@
             tableLayoutPanel2.Size = new Size(1269, 39);
             tableLayoutPanel2.TabIndex = 2;
             // 
-            // label1
+            // dateSensor
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(50, 50, 50);
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(190, 190, 190);
-            label1.Location = new Point(988, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(278, 39);
-            label1.TabIndex = 7;
-            label1.Text = "18.07.2023 20:00";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            dateSensor.AutoSize = true;
+            dateSensor.BackColor = Color.FromArgb(50, 50, 50);
+            dateSensor.Dock = DockStyle.Fill;
+            dateSensor.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dateSensor.ForeColor = Color.FromArgb(190, 190, 190);
+            dateSensor.Location = new Point(988, 0);
+            dateSensor.Name = "dateSensor";
+            dateSensor.Size = new Size(278, 39);
+            dateSensor.TabIndex = 7;
+            dateSensor.Text = "18.07.2023 20:00";
+            dateSensor.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // comboBox1
             // 
@@ -1830,6 +1813,7 @@
             porog_1_AirTemperature.TabIndex = 35;
             porog_1_AirTemperature.Text = "20";
             porog_1_AirTemperature.TextAlign = HorizontalAlignment.Center;
+            porog_1_AirTemperature.KeyDown += porog_1_AirTemperature_KeyDown;
             // 
             // porog_1_RelativeHumidity
             // 
@@ -1843,6 +1827,7 @@
             porog_1_RelativeHumidity.TabIndex = 36;
             porog_1_RelativeHumidity.Text = "20";
             porog_1_RelativeHumidity.TextAlign = HorizontalAlignment.Center;
+            porog_1_RelativeHumidity.KeyDown += porog_1_RelativeHumidity_KeyDown;
             // 
             // porog_1_AtmosphericPressure
             // 
@@ -1869,6 +1854,7 @@
             porog_2_AirTemperature.TabIndex = 38;
             porog_2_AirTemperature.Text = "20";
             porog_2_AirTemperature.TextAlign = HorizontalAlignment.Center;
+            porog_2_AirTemperature.KeyDown += porog_2_AirTemperature_KeyDown;
             // 
             // porog_2_RelativeHumidity
             // 
@@ -1882,6 +1868,7 @@
             porog_2_RelativeHumidity.TabIndex = 39;
             porog_2_RelativeHumidity.Text = "20";
             porog_2_RelativeHumidity.TextAlign = HorizontalAlignment.Center;
+            porog_2_RelativeHumidity.KeyDown += porog_2_RelativeHumidity_KeyDown;
             // 
             // porog_2_AtmosphericPressure
             // 
@@ -1908,6 +1895,7 @@
             dx_AirTemperature.TabIndex = 41;
             dx_AirTemperature.Text = "20";
             dx_AirTemperature.TextAlign = HorizontalAlignment.Center;
+            dx_AirTemperature.KeyDown += dx_AirTemperature_KeyDown;
             // 
             // dx_RelativeHumidity
             // 
@@ -1999,6 +1987,7 @@
             dt_AirTemperature.TabIndex = 48;
             dt_AirTemperature.Text = "20";
             dt_AirTemperature.TextAlign = HorizontalAlignment.Center;
+            dt_AirTemperature.KeyDown += dt_AirTemperature_KeyDown;
             // 
             // dt_RelativeHumidity
             // 
@@ -4755,8 +4744,7 @@
             Name = "MainForm";
             Text = "СТАНЦИЯ ОНЛАЙН МОНИТОРИНГА GRAVITON ECO";
             WindowState = FormWindowState.Maximized;
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
+            Load += MainForm_Load;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -4784,16 +4772,14 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
-            Load += MainForm_Load;
         }
 
         #endregion
 
-        private Label dateSensor;
         private ComboBox comboBox2;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
-        private Label label1;
+        private Label dateSensor;
         private ComboBox comboBox1;
         private Label serialNumber;
         private Label softVersion;
