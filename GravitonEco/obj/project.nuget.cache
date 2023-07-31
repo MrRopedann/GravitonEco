@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MBfGQ/V7FC10+DZkNAsIt0UNlhy/n40Va7D5MQpnm/MoFZC+jigpFY/Ss7Q075tpZZWOEODuFHP1na6qZnWCYw==",
+  "dgSpecHash": "gFavHwa/xZ9HHgcrAooKECjArA2jPcGnCTNocjbOcKCT9UHEk8/7DX6cbM8bVLyM3sqNuV+DuT9vTJ2KGI5AIw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Кирилл\\Desktop\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Пользователь\\Desktop\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Пользователь\\.nuget\\packages\\nmodbus\\3.0.78\\nmodbus.3.0.78.nupkg.sha512"
+  ],
   "logs": []
 }

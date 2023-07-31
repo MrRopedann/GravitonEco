@@ -6,6 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
+      "GravitonEco/1.0.0": {
+        "dependencies": {
+          "NModbus": "3.0.78"
+        },
+        "runtime": {
+          "GravitonEco.dll": {}
+        }
+      },
       "NModbus/3.0.78": {
         "runtime": {
           "lib/net6.0/NModbus.dll": {
@@ -17,6 +25,11 @@
     }
   },
   "libraries": {
+    "GravitonEco/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "NModbus/3.0.78": {
       "type": "package",
       "serviceable": true,
