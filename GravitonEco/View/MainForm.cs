@@ -6,27 +6,117 @@ namespace GravitonEco
 {
     public partial class MainForm : Form
     {
-        private DateTimeUpdater dataTimeUpdater;
-        private DataUpdater dataUpdater;
         private string _host;
         private string _port;
         private ModbusTCPClient _client;
 
+
         public MainForm()
         {
             InitializeComponent();
+
             INIManager manager = new INIManager(@"./Config/setting_device_connection.ini");
             _host = manager.GetPrivateString("DeviceConnectSetting", "Host");
             _port = manager.GetPrivateString("DeviceConnectSetting", "Port");
             _client = new ModbusTCPClient(_host, Int32.Parse(_port));
-            apparatVersion.Text = _client.ReadInputParametr(251, 65284);
-            softVersion.Text = _client.ReadInputParametr(251, 65285);
-            serialNumber.Text = _client.ReadInputParametr(251, 65280) + "-" + _client.ReadInputParametr(251, 65281);
-            dataTimeUpdater = new DateTimeUpdater();
+            // Запуск задачи для асинхронного обновления данных
+            Dictionary<string, (byte slaveId, ushort address)> parameters = new Dictionary<string, (byte, ushort)>
+        {
+            { "input_Температура_воздуха", (2, 5) },
+            { "input_Относительная_влажность", (2, 6) },
+            { "input_Атмосферное_давление", (1, 1) },
+            { "input_Скорость_ветра", (1, 7) },
+            { "input_Направление_ветра", (2, 2) },
+            { "input_Оксид_углерода", (1, 10) },
+            { "input_Оксид_азота", (1, 12) },
+            { "input_Диоксид_азота", (1, 13) },
+            { "input_Диоксид_серы", (1, 19) },
+            { "input_Двуокись_углерода", (1, 11) },
+            { "input_Летучая_органика", (1, 8) },
+            { "input_Твёрдые_частицы_PM1", (1, 16) },
+            { "input_Твёрдые_частицы_PM2_5", (1, 17) },
+            { "input_Твёрдые_частицы_PM10", (1, 18) },
+            { "input_Уровень_вибрации", (1, 21) },
+            { "input_Уровень_наклона", (1, 20) },
+            { "input_Датчик_вскрытия", (3, 2) },
+            { "input_Температура_в_измерителе", (1, 5) },
+            { "input_Влажность_в_измерителе", (1, 6) },
+            { "input_Давление_в_измерителе", (2, 1) },
+            { "input_Скорость_пробоотбора", (3, 25) },
+            { "input_Напряжение_питания", (1, 5) },
 
-            dataTimeUpdater.OnCurrentDateTimeInSensorUpdate += UpdateCurrentDateTimeInSensorLabel;
+            {"coil_Температура_Порог_1", (2, 15)},
+            {"coil_ТемпиратураПорог2",(2,16)},
+            {"coil_Темпиратураdx",(2,17)},
+            {"coil_влажностьпорог1",(2,18)},
+            {"coil_влажностьпорог2",(2,19)},
+            {"coil_влажностьдх",(2,20)},
+            {"coil_Давлениепорог1",(2,3)},
+            {"coil_Давлениепорог2",(2,4)},
+            {"coil_Давлениедх",(2,5)},
+            {"coil_Скоростьветрапорог1",(2,21)},
+            {"coil_Скоростьветрапорог2",(2,22)},
+            {"coil_Скоростьветрадх",(2,23)},
+            {"coil_Направлениеветрапорог1",(2,6)},
+            {"coil_Направлениеветрапорог2",(2,7)},
+            {"coil_Направлениеветрадт",(2,8)},
+            {"coil_СОпорог1",(1,30)},
+            {"coil_СОпорог2",(1,31)},
+            {"coil_СОдт",(1,32)},
+            {"coil_NOпорог1",(1,36)},
+            {"coil_NOпорог2",(1,37)},
+            {"coil_NOдт",(1,38)},
+            {"coil_NO2порог1",(1,39)},
+            {"coil_NO2порог2",(1,40)},
+            {"coil_NO2дт",(1,41)},
+            {"coil_SO2порог1",(1,57)},
+            {"coil_SO2порог2",(1,58)},
+            {"coil_SO2дт",(1,59)},
+            {"coil_СО2порог1",(1,33)},
+            {"coil_СО2порог2",(1,34)},
+            {"coil_СО2дт",(1,35)},
+            {"coil_ЛОСпорог1",(1,24)},
+            {"coil_ЛОСпорог2",(1,25)},
+            {"coil_ЛОСдт",(1,26)},
+            {"coil_ПМ1порог1",(1,48)},
+            {"coil_ПМ1порог2",(1,49)},
+            {"coil_ПМ1дт",(1,50)},
+            {"coil_ПМ2_5порог1",(1,51)},
+            {"coil_ПМ2_5порог2",(1,52)},
+            {"coil_ПМ2_5дт",(1,53)},
+            {"coil_ПМ10порог1",(1,54)},
+            {"coil_ПМ10порог2",(1,55)},
+            {"coil_ПМ10дт",(1,56)},
+            {"coil_Вибрацияпорог1",(1,63)},
+            {"coil_Вибрацияпорог2",(1,64)},
+            {"coil_Вибрациядт",(1,64)},
+            {"coil_Наклонпорог1",(1,60)},
+            {"coil_Наклонпорог2",(1,61)},
+            {"coil_Наклондт",(1,62)},
+            {"coil_вскрытиепорог1",(3,6)},
+            {"coil_вскрытиепорог2",(3,7)},
+            {"coil_вскрытиедт",(3,8)},
+            {"coil_Темпиратураизмерителяпорог1",(1,15)},
+            {"coil_Темпиратураизмерителяпорог2",(1,16)},
+            {"coil_Темпиратураизмерителядт",(1,17)},
+            {"coil_Влажностьизмерителяпорог1",(1,18)},
+            {"coil_Влажностьизмерителяпорог2",(1,19)},
+            {"coil_Влажностьизмерителядт",(1,20)},
+            {"coil_Давлениеизмерителяпорог1",(1,3)},
+            {"coil_Давлениеизмерителяпорог2",(1,4)},
+            {"coil_Давлениеизмерителядт",(1,5)},
+            {"coil_Напряжениепорог1",(1,6)},
+            {"coil_Напряжениепорог2",(1,7)},
+            {"coil_Напряжениедт",(1,8)},
+            {"holdingdate_year",(251,262)},
+            {"holdingdate_moths",(251,261)},
+            {"holdingdate_day",(251,260)},
+            {"holdingdate_hour",(251,258)},
+            {"holdingdate_minute",(251,257)},
+            {"holdingdate_second",(251,256)},
+        };
+            // Добавьте другие параметры, которые вам нужны
 
-            dataUpdater = new DataUpdater();
 
             porog_1_AirTemperature.Text = _client.ReadHoldingParametr(2, 20);
             porog_2_AirTemperature.Text = _client.ReadHoldingParametr(2, 21);
@@ -133,72 +223,20 @@ namespace GravitonEco
             dx_PressureInSensor.Text = _client.ReadHoldingParametr(1, 6);
             dt_PressureInSensor.Text = _client.ReadHoldingParametr(1, 7);
 
+            setupZeroCarbonMonoxide.Text = _client.ReadHoldingParametr(1, 520);
+            pgc_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 521);
+            acp_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 522);
+            sumZeroCarbonMonoxide.Text = _client.ReadHoldingParametr(1, 523);
 
-            // Температура в измерителе
-            dataUpdater.OnCurrentTemperatureInSensorUpdate += UpdateCurrentTemperatureInSensorLabel;
+            setupZeroNitrogenOxide.Text = _client.ReadHoldingParametr(1, 512);
+            pgc_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 513);
+            acp_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 514);
+            sumZeroNitrogenOxide.Text = _client.ReadHoldingParametr(1, 515);
 
-            // Влажность в измерителе
-            dataUpdater.OnCurrentHumidityInSensorUpdate += UpdateCurrentHumidityInSensorLabel;
-
-            // Давление в измерителе
-            dataUpdater.OnCurrentPressureInSensorUpdate += UpdateCurrentPressureInSensorLabel;
-
-            // Скорость пробоотбора
-            dataUpdater.OnCurrentSamplingSpeedUpdate += UpdateCurrentSamplingSpeedLabel;
-
-            // Напряжение питания
-            dataUpdater.OnCurrentSupplyVoltageUpdate += UpdateCurrentSupplyVoltageLabel;
-
-            // Температура воздуха
-            dataUpdater.OnCurrentAirTemperatureUpdate += UpdateCurrentAirTemperatureLabel;
-
-            // Относительная влажность
-            dataUpdater.OnCurrentRelativeHumidityUpdate += UpdateCurrentRelativeHumidityLabel;
-
-            // Атмосферное давление
-            dataUpdater.OnCurrentAtmosphericPressureUpdate += UpdateCurrentAtmosphericPressureLabel;
-
-            // Скорость ветра
-            dataUpdater.OnCurrentWindSpeedUpdate += UpdateCurrentWindSpeedLabel;
-
-            // Направление ветра
-            dataUpdater.OnCurrentWindDirectionUpdate += UpdateCurrentWindDirectionLabel;
-
-            // Оксид углерода (СО)
-            dataUpdater.OnCurrentCarbonMonoxideUpdate += UpdateCurrentCarbonMonoxideLabel;
-
-            // Оксид азота (NO)
-            dataUpdater.OnCurrentNitrogenOxideUpdate += UpdateCurrentNitrogenOxideLabel;
-
-            // Диоксид азота (NO2)
-            dataUpdater.OnCurrentNitrogenDioxideUpdate += UpdateCurrentNitrogenDioxideLabel;
-
-            // Диоксид серы (SO2)
-            dataUpdater.OnCurrentSulfurDioxideUpdate += UpdateCurrentSulfurDioxideLabel;
-
-            // Двуокись углерода (СО2)
-            dataUpdater.OnCurrentCarbonDioxideUpdate += UpdateCurrentCarbonDioxideLabel;
-
-            // Летучая органика
-            dataUpdater.OnCurrentVolatileOrganicCompoundsUpdate += UpdateCurrentVolatileOrganicCompoundsLabel;
-
-            // Твёрдые частицы PM1
-            dataUpdater.OnCurrentParticulateMatterPM1Update += UpdateCurrentParticulateMatterPM1Label;
-
-            // Твёрдые частицы PM2.5
-            dataUpdater.OnCurrentParticulateMatterPM2_5Update += UpdateCurrentParticulateMatterPM2_5Label;
-
-            // Твёрдые частицы PM10
-            dataUpdater.OnCurrentParticulateMatterPM10Update += UpdateCurrentParticulateMatterPM10Label;
-
-            // Уровень вибрации
-            dataUpdater.OnCurrentVibrationLevelUpdate += UpdateCurrentVibrationLevelLabel;
-
-            // Уровень наклона
-            dataUpdater.OnCurrentTiltLevelUpdate += UpdateCurrentTiltLevelLabel;
-
-            // Датчик вскрытия
-            dataUpdater.OnCurrentTamperSensorUpdate += UpdateCurrentTamperSensorLabel;
+            setupZeroNitrogenDioxide.Text = _client.ReadHoldingParametr(1, 516);
+            pgc_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 517);
+            acp_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 518);
+            sumZeroNitrogenDioxide.Text = _client.ReadHoldingParametr(1, 519);
 
             porog_1_AirTemperature.KeyDown += porog_1_AirTemperature_KeyDown;
             porog_1_RelativeHumidity.KeyDown += porog_1_RelativeHumidity_KeyDown;
@@ -267,517 +305,464 @@ namespace GravitonEco
             dx_VibrationLevel.KeyDown += dx_VibrationLevel_KeyDown;
             porog_2_VibrationLevel.KeyDown += porog_2_VibrationLevel_KeyDown;
             porog_1_VibrationLevel.KeyDown += porog_1_VibrationLevel_KeyDown;
+            //setupZeroCarbonMonoxide.KeyDown = _client.ReadHoldingParametr(1, 520);
+            pgc_CarbonMonoxide.KeyDown += pgc_CarbonMonoxide_KeyDown;
+            acp_CarbonMonoxide.KeyDown += acp_CarbonMonoxide_KeyDown;
+            sumZeroCarbonMonoxide.KeyDown += sumZeroCarbonMonoxide_KeyDown;
 
+            setupZeroNitrogenOxide.KeyDown += setupZeroNitrogenOxide_KeyDown;
+            pgc_NitrogenOxide.KeyDown += pgc_NitrogenOxide_KeyDown;
+            acp_NitrogenOxide.KeyDown += acp_NitrogenOxide_KeyDown;
+            sumZeroNitrogenOxide.KeyDown += sumZeroNitrogenOxide_KeyDown;
+
+            setupZeroNitrogenDioxide.KeyDown += setupZeroNitrogenDioxide_KeyDown;
+            pgc_NitrogenDioxide.KeyDown += pgc_NitrogenDioxide_KeyDown;
+            acp_NitrogenDioxide.KeyDown += acp_NitrogenDioxide_KeyDown;
+            sumZeroNitrogenDioxide.KeyDown += sumZeroNitrogenDioxide_KeyDown;
+
+
+            Task.Run(async () =>
+            {
+                while (true)
+                {
+                    Dictionary<string, string> data = await _client.ReadMultipleValuesAsync(parameters);
+
+                    // Вызов метода для обновления данных в основном потоке UI
+                    Invoke(new Action(() => UpdateDataOnForm(data)));
+
+                    await Task.Delay(1000); // Приостанавливаем выполнение на 1 секунду перед следующим обновлением данных
+                }
+            });
+        }
+
+        private void UpdateDataOnForm(Dictionary<string, string> data)
+        {
+            foreach (var kvp in data)
+            {
+                string paramName = kvp.Key;
+                string paramValue = kvp.Value;
+
+                if (paramName == "input_Температура_воздуха")
+                {
+                    currentAirTemperature.Text = paramValue;
+                }
+                else if (paramName == "input_Атмосферное_давление")
+                {
+                    currentAtmosphericPressure.Text = paramValue;
+                }
+                else if (paramName == "input_Относительная_влажность")
+                {
+                    currentRelativeHumidity.Text = paramValue;
+                }
+                else if (paramName == "input_Скорость_ветра")
+                {
+                    currentWindSpeed.Text = paramValue;
+                }
+                else if (paramName == "input_Направление_ветра")
+                {
+                    currentWindDirection.Text = paramValue;
+                }
+                else if (paramName == "input_Оксид_углерода")
+                {
+                    currentCarbonMonoxide.Text = paramValue;
+                }
+                else if (paramName == "input_Оксид_азота")
+                {
+                    currentNitrogenOxide.Text = paramValue;
+                }
+                else if (paramName == "input_Диоксид_азота")
+                {
+                    currentNitrogenDioxide.Text = paramValue;
+                }
+                else if (paramName == "input_Диоксид_серы")
+                {
+                    currentSulfurDioxide.Text = paramValue;
+                }
+                else if (paramName == "input_Двуокись_углерода")
+                {
+                    currentCarbonDioxide.Text = paramValue;
+                }
+                else if (paramName == "input_Летучая_органика")
+                {
+                    currentVolatileOrganicCompounds.Text = paramValue;
+                }
+                else if (paramName == "input_Твёрдые_частицы_PM1")
+                {
+                    currentParticulateMatterPM1.Text = paramValue;
+                }
+                else if (paramName == "input_Твёрдые_частицы_PM2_5")
+                {
+                    currentParticulateMatterPM2_5.Text = paramValue;
+                }
+                else if (paramName == "input_Твёрдые_частицы_PM10")
+                {
+                    currentParticulateMatterPM10.Text = paramValue;
+                }
+                else if (paramName == "input_Уровень_вибрации")
+                {
+                    currentVibrationLevel.Text = paramValue;
+                }
+                else if (paramName == "input_Уровень_наклона")
+                {
+                    currentTiltLevel.Text = paramValue;
+                }
+                else if (paramName == "input_Датчик_вскрытия")
+                {
+                    currentTamperSensor.Text = paramValue;
+                }
+                else if (paramName == "input_Температура_в_измерителе")
+                {
+                    currentTemperatureInSensor.Text = paramValue;
+                }
+                else if (paramName == "input_Влажность_в_измерителе")
+                {
+                    currentHumidityInSensor.Text = paramValue;
+                }
+                else if (paramName == "input_Давление_в_измерителе")
+                {
+                    currentPressureInSensor.Text = paramValue;
+                }
+                else if (paramName == "input_Скорость_пробоотбора")
+                {
+                    currentSamplingSpeed.Text = paramValue;
+                }
+                else if (paramName == "input_Напряжение_питания")
+                {
+                    currentSupplyVoltage.Text = paramValue;
+                }
+                if (paramName == "input_Температура_воздуха")
+                {
+                    currentAirTemperature2.Text = paramValue;
+                }
+                else if (paramName == "input_Атмосферное_давление")
+                {
+                    currentAtmosphericPressure2.Text = paramValue;
+                }
+                else if (paramName == "input_Относительная_влажность")
+                {
+                    currentRelativeHumidity2.Text = paramValue;
+                }
+                else if (paramName == "input_Скорость_ветра")
+                {
+                    currentWindSpeed2.Text = paramValue;
+                }
+                else if (paramName == "input_Оксид_углерода")
+                {
+                    currentCarbonMonoxide2.Text = paramValue;
+                }
+                else if (paramName == "input_Оксид_азота")
+                {
+                    currentNitrogenOxide2.Text = paramValue;
+                }
+                else if (paramName == "input_Диоксид_азота")
+                {
+                    currentNitrogenDioxide2.Text = paramValue;
+                }
+                else if (paramName == "input_Диоксид_серы")
+                {
+                    currentSulfurDioxide2.Text = paramValue;
+                }
+                else if (paramName == "input_Двуокись_углерода")
+                {
+                    currentCarbonDioxide2.Text = paramValue;
+                }
+                else if (paramName == "input_Летучая_органика")
+                {
+                    currentVolatileOrganicCompounds2.Text = paramValue;
+                }
+                else if (paramName == "coil_Температура_Порог_1")
+                {
+                    porog_1_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ТемпиратураПорог2")
+                {
+                    porog_2_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Темпиратураdx")
+                {
+                    dx_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_влажностьпорог1")
+                {
+                    porog_1_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_влажностьпорог2")
+                {
+                    porog_2_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_влажностьдх")
+                {
+                    dx_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Давлениепорог1")
+                {
+                    porog_1_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Давлениепорог2")
+                {
+                    porog_2_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Давлениедх")
+                {
+                    dx_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Скоростьветрапорог1")
+                {
+                    porog_1_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Скоростьветрапорог2")
+                {
+                    porog_2_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Скоростьветрадх")
+                {
+                    dx_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Направлениеветрапорог1")
+                {
+                    porog_1_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Направлениеветрапорог2")
+                {
+                    porog_2_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Направлениеветрадт")
+                {
+                    dx_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_СОпорог1")
+                {
+                    porog_1_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_СОпорог2")
+                {
+                    porog_2_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_СОдт")
+                {
+                    dt_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dx_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_NOпорог1")
+                {
+                    porog_1_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_NOпорог2")
+                {
+                    porog_2_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_NOдт")
+                {
+                    dx_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_NO2порог1")
+                {
+                    porog_1_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_NO2порог2")
+                {
+                    porog_2_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_NO2дт")
+                {
+                    dx_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_SO2порог1")
+                {
+                    porog_1_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_SO2порог2")
+                {
+                    porog_2_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_SO2дт")
+                {
+                    dx_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_СО2порог1")
+                {
+                    porog_1_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_СО2порог2")
+                {
+                    porog_2_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_СО2дт")
+                {
+                    dx_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ЛОСпорог1")
+                {
+                    porog_1_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ЛОСпорог2")
+                {
+                    porog_2_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ЛОСдт")
+                {
+                    dx_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ПМ1порог1")
+                {
+                    porog_1_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ПМ1порог2")
+                {
+                    porog_2_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ПМ1дт")
+                {
+                    dx_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ПМ2_5порог1")
+                {
+                    porog_1_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ПМ2_5порог2")
+                {
+                    porog_2_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ПМ2_5дт")
+                {
+                    dx_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ПМ10порог1")
+                {
+                    porog_1_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ПМ10порог2")
+                {
+                    porog_2_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_ПМ10дт")
+                {
+                    dx_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Вибрацияпорог1")
+                {
+                    porog_1_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Вибрацияпорог2")
+                {
+                    porog_2_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Вибрациядт")
+                {
+                    dx_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Наклонпорог1")
+                {
+                    porog_1_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Наклонпорог2")
+                {
+                    porog_2_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Наклондт")
+                {
+                    dx_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_вскрытиепорог1")
+                {
+                    porog_1_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_вскрытиепорог2")
+                {
+                    porog_2_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_вскрытиедт")
+                {
+                    dx_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Темпиратураизмерителяпорог1")
+                {
+                    porog_1_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Темпиратураизмерителяпорог2")
+                {
+                    porog_2_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Темпиратураизмерителядт")
+                {
+                    dx_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Влажностьизмерителяпорог1")
+                {
+                    porog_1_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Влажностьизмерителяпорог2")
+                {
+                    porog_2_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Влажностьизмерителядт")
+                {
+                    dx_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Давлениеизмерителяпорог1")
+                {
+                    porog_1_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Давлениеизмерителяпорог2")
+                {
+                    porog_2_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Давлениеизмерителядт")
+                {
+                    dx_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Напряжениепорог1")
+                {
+                    porog_1_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Напряжениепорог2")
+                {
+                    porog_2_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+                else if (paramName == "coil_Напряжениедт")
+                {
+                    dx_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    dt_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                }
+
+                // Задайте список параметров, которые вы хотите объединить
+                List<string> date = new List<string> { "holdingdate_day", "holdingdate_moths", "holdingdate_year" };
+                List<string> time = new List<string> { "holdingdate_hour", "holdingdate_minute", "holdingdate_second" };
+
+                // Используйте LINQ для фильтрации значений и объедините только нужные параметры
+                string combinedDate = string.Join(".", data.Where(kvp => date.Contains(kvp.Key)).Select(kvp => kvp.Value.Split('-')[0]));
+                string combinedTime = string.Join(":", data.Where(kvp => time.Contains(kvp.Key)).Select(kvp => kvp.Value.Split('-')[0]));
+                dateSensor.Text = combinedDate + " " + combinedTime;
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            dataTimeUpdater.StartUpdatingData(1);
-            dataUpdater.StartUpdatingData(1);
         }
 
-        private void UpdateCurrentDateTimeInSensorLabel(string obj)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-            if (InvokeRequired)
-            {
-                try
-                {
-                    Invoke(new Action<string>(UpdateCurrentDateTimeInSensorLabel), obj);
-                }
-                catch (Exception ex) { }
-                return;
-            }
-            dateSensor.Text = obj;
-        }
-
-        List<double> listAirTemperature = new List<double>();
-
-        private void UpdateCurrentAirTemperatureLabel(int obj)
-        {
-
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentAirTemperatureLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0;
-            currentAirTemperature.Text = temperature.ToString();
-            listAirTemperature.Add(temperature);
-            try
-            {
-                avgAirTemperature.Text = listAirTemperature.Average().ToString("F1");
-                maxAirTemperature.Text = listAirTemperature.Max().ToString("F1");
-                minAirTemperature.Text = listAirTemperature.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listRelativeHumidity = new List<double>();
-
-        private void UpdateCurrentRelativeHumidityLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentRelativeHumidityLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentRelativeHumidity.Text = temperature.ToString();
-            listRelativeHumidity.Add(temperature);
-            try
-            {
-                avgRelativeHumidity.Text = listRelativeHumidity.Average().ToString("F1");
-                maxRelativeHumidity.Text = listRelativeHumidity.Max().ToString();
-                minRelativeHumidity.Text = listRelativeHumidity.Min().ToString();
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listAtmosphericPressure = new List<double>();
-
-        private void UpdateCurrentAtmosphericPressureLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentAtmosphericPressureLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentAtmosphericPressure.Text = temperature.ToString();
-            listAtmosphericPressure.Add(temperature);
-            try
-            {
-                avgAtmosphericPressure.Text = listAtmosphericPressure.Average().ToString("F1");
-                maxAtmosphericPressure.Text = listAtmosphericPressure.Max().ToString();
-                minAtmosphericPressure.Text = listAtmosphericPressure.Min().ToString();
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listCurrentWindSpeed = new List<double>();
-
-        private void UpdateCurrentWindSpeedLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentWindSpeedLabel), obj);
-                return;
-            }
-            double temperature = obj / 1000.0; // Преобразование к типу double и деление на 10
-            currentWindSpeed.Text = temperature.ToString("F1");
-            listCurrentWindSpeed.Add(temperature);
-            try
-            {
-                avgWindSpeed.Text = listCurrentWindSpeed.Average().ToString("F1");
-                maxWindSpeed.Text = listCurrentWindSpeed.Max().ToString("F1");
-                minWindSpeed.Text = listCurrentWindSpeed.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<int> listCurrentWindDirection = new List<int>();
-
-        private void UpdateCurrentWindDirectionLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentWindDirectionLabel), obj);
-                return;
-            }
-            int temperature = obj; // Преобразование к типу double и деление на 10
-            currentWindDirection.Text = temperature.ToString();
-            listCurrentWindDirection.Add(temperature);
-            try
-            {
-                avgWindDirection.Text = listCurrentWindDirection.Average().ToString("F1");
-                maxWindDirection.Text = listCurrentWindDirection.Max().ToString();
-                minWindDirection.Text = listCurrentWindDirection.Min().ToString();
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listCarbonMonoxide = new List<double>();
-
-        private void UpdateCurrentCarbonMonoxideLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentCarbonMonoxideLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentCarbonMonoxide.Text = temperature.ToString("F1");
-            listCarbonMonoxide.Add(temperature);
-            try
-            {
-                avgCarbonMonoxide.Text = listCarbonMonoxide.Average().ToString("F1");
-                maxCarbonMonoxide.Text = listCarbonMonoxide.Max().ToString("F1");
-                minCarbonMonoxide.Text = listCarbonMonoxide.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listNitrogenOxide = new List<double>();
-
-        private void UpdateCurrentNitrogenOxideLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentNitrogenOxideLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentNitrogenOxide.Text = temperature.ToString("F1");
-            listNitrogenOxide.Add(temperature);
-            try
-            {
-                avgNitrogenOxide.Text = listNitrogenOxide.Average().ToString("F1");
-                maxNitrogenOxide.Text = listNitrogenOxide.Max().ToString("F1");
-                minNitrogenOxide.Text = listNitrogenOxide.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listNitrogenDioxide = new List<double>();
-
-        private void UpdateCurrentNitrogenDioxideLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentNitrogenDioxideLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentNitrogenDioxide.Text = temperature.ToString("F1");
-            listNitrogenDioxide.Add(temperature);
-            try
-            {
-                avgNitrogenDioxide.Text = listNitrogenDioxide.Average().ToString("F1");
-                maxNitrogenDioxide.Text = listNitrogenDioxide.Max().ToString("F1");
-                minNitrogenDioxide.Text = listNitrogenDioxide.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listSulfurDioxide = new List<double>();
-
-        private void UpdateCurrentSulfurDioxideLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentSulfurDioxideLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentSulfurDioxide.Text = temperature.ToString("F1");
-            listSulfurDioxide.Add(temperature);
-            try
-            {
-                avgSulfurDioxide.Text = listSulfurDioxide.Average().ToString("F1");
-                maxSulfurDioxide.Text = listSulfurDioxide.Max().ToString("F1");
-                minSulfurDioxide.Text = listSulfurDioxide.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listCarbonDioxide = new List<double>();
-
-        private void UpdateCurrentCarbonDioxideLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentCarbonDioxideLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentCarbonDioxide.Text = temperature.ToString("F1");
-            listCarbonDioxide.Add(temperature);
-            try
-            {
-                avgCarbonDioxide.Text = listCarbonDioxide.Average().ToString("F1");
-                maxCarbonDioxide.Text = listCarbonDioxide.Max().ToString("F1");
-                minCarbonDioxide.Text = listCarbonDioxide.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listVolatileOrganicCompounds = new List<double>();
-
-        private void UpdateCurrentVolatileOrganicCompoundsLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentVolatileOrganicCompoundsLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentVolatileOrganicCompounds.Text = temperature.ToString("F1");
-            listVolatileOrganicCompounds.Add(temperature);
-            try
-            {
-                avgVolatileOrganicCompounds.Text = listVolatileOrganicCompounds.Average().ToString("F1");
-                maxVolatileOrganicCompounds.Text = listVolatileOrganicCompounds.Max().ToString("F1");
-                minVolatileOrganicCompounds.Text = listVolatileOrganicCompounds.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<int> listParticulateMatterPM1 = new List<int>();
-
-        private void UpdateCurrentParticulateMatterPM1Label(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentParticulateMatterPM1Label), obj);
-                return;
-            }
-            int temperature = obj; // Преобразование к типу double и деление на 10
-            currentParticulateMatterPM1.Text = temperature.ToString();
-            listParticulateMatterPM1.Add(temperature);
-            try
-            {
-                avgParticulateMatterPM1.Text = listParticulateMatterPM1.Average().ToString("F1");
-                maxParticulateMatterPM1.Text = listParticulateMatterPM1.Max().ToString();
-                minParticulateMatterPM1.Text = listParticulateMatterPM1.Min().ToString();
-            }
-            catch (Exception ex) { }
-        }
-
-        List<int> listParticulateMatterPM2_5 = new List<int>();
-
-        private void UpdateCurrentParticulateMatterPM2_5Label(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentParticulateMatterPM2_5Label), obj);
-                return;
-            }
-            int temperature = obj; // Преобразование к типу double и деление на 10
-            currentParticulateMatterPM2_5.Text = temperature.ToString();
-            listParticulateMatterPM2_5.Add(temperature);
-            try
-            {
-                avgParticulateMatterPM2_5.Text = listParticulateMatterPM2_5.Average().ToString("F1");
-                maxParticulateMatterPM2_5.Text = listParticulateMatterPM2_5.Max().ToString();
-                minParticulateMatterPM2_5.Text = listParticulateMatterPM2_5.Min().ToString();
-            }
-            catch (Exception ex) { }
-        }
-
-        List<int> listParticulateMatterPM10 = new List<int>();
-
-        private void UpdateCurrentParticulateMatterPM10Label(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentParticulateMatterPM10Label), obj);
-                return;
-            }
-            int temperature = obj; // Преобразование к типу double и деление на 10
-            currentParticulateMatterPM10.Text = temperature.ToString();
-            listParticulateMatterPM10.Add(temperature);
-            try
-            {
-                avgParticulateMatterPM10.Text = listParticulateMatterPM10.Average().ToString("F1");
-                maxParticulateMatterPM10.Text = listParticulateMatterPM10.Max().ToString();
-                minParticulateMatterPM10.Text = listParticulateMatterPM10.Min().ToString();
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listVibrationLevel = new List<double>();
-
-        private void UpdateCurrentVibrationLevelLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentVibrationLevelLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentVibrationLevel.Text = temperature.ToString("F1");
-            listVibrationLevel.Add(temperature);
-            try
-            {
-                avgVibrationLevel.Text = listVibrationLevel.Average().ToString("F1");
-                maxVibrationLevel.Text = listVibrationLevel.Max().ToString("F1");
-                minVibrationLevel.Text = listVibrationLevel.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listTiltLevel = new List<double>();
-
-        private void UpdateCurrentTiltLevelLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentTiltLevelLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentTiltLevel.Text = temperature.ToString("F1");
-            listTiltLevel.Add(temperature);
-            try
-            {
-                avgTiltLevel.Text = listTiltLevel.Average().ToString("F1");
-                maxTiltLevel.Text = listTiltLevel.Max().ToString("F1");
-                minTiltLevel.Text = listTiltLevel.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listTamperSensor = new List<double>();
-
-        private void UpdateCurrentTamperSensorLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentTamperSensorLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentTamperSensor.Text = temperature.ToString("F1");
-            listTamperSensor.Add(temperature);
-            try
-            {
-                avgTamperSensor.Text = listTamperSensor.Average().ToString("F1");
-                maxTamperSensor.Text = listTamperSensor.Max().ToString("F1");
-                minTamperSensor.Text = listTamperSensor.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listTemperatureInSensor = new List<double>();
-
-        private void UpdateCurrentTemperatureInSensorLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                try
-                {
-                    Invoke(new Action<int>(UpdateCurrentTemperatureInSensorLabel), obj);
-                    return;
-                }
-                catch (Exception ex) { }
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentTemperatureInSensor.Text = temperature.ToString("F1");
-            listTemperatureInSensor.Add(temperature);
-            try
-            {
-                avgTemperatureInSensor.Text = listTemperatureInSensor.Average().ToString("F1");
-                maxTemperatureInSensor.Text = listTemperatureInSensor.Max().ToString("F1");
-                minTemperatureInSensor.Text = listTemperatureInSensor.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listHumidityInSensor = new List<double>();
-
-        private void UpdateCurrentHumidityInSensorLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentHumidityInSensorLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentHumidityInSensor.Text = temperature.ToString("F1");
-            listHumidityInSensor.Add(temperature);
-            try
-            {
-                avgHumidityInSensor.Text = listHumidityInSensor.Average().ToString("F1");
-                maxHumidityInSensor.Text = listHumidityInSensor.Max().ToString("F1");
-                minHumidityInSensor.Text = listHumidityInSensor.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-            currentHumidityInSensor.Text = obj.ToString();
-        }
-
-        List<double> listPressureInSensor = new List<double>();
-
-        private void UpdateCurrentPressureInSensorLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentPressureInSensorLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentPressureInSensor.Text = temperature.ToString("F1");
-            listPressureInSensor.Add(temperature);
-            try
-            {
-                avgPressureInSensor.Text = listPressureInSensor.Average().ToString("F1");
-                maxPressureInSensor.Text = listPressureInSensor.Max().ToString("F1");
-                minPressureInSensor.Text = listPressureInSensor.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listSamplingSpeed = new List<double>();
-
-        private void UpdateCurrentSamplingSpeedLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentSamplingSpeedLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentSamplingSpeed.Text = temperature.ToString("F1");
-            listSamplingSpeed.Add(temperature);
-            try
-            {
-                avgSamplingSpeed.Text = listSamplingSpeed.Average().ToString("F1");
-                maxSamplingSpeed.Text = listSamplingSpeed.Max().ToString("F1");
-                minSamplingSpeed.Text = listSamplingSpeed.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
-        }
-
-        List<double> listSupplyVoltage = new List<double>();
-
-        private void UpdateCurrentSupplyVoltageLabel(int obj)
-        {
-            // Обновление метки для температуры воздуха
-            if (InvokeRequired)
-            {
-                Invoke(new Action<int>(UpdateCurrentSupplyVoltageLabel), obj);
-                return;
-            }
-            double temperature = obj / 10.0; // Преобразование к типу double и деление на 10
-            currentSupplyVoltage.Text = temperature.ToString("F1");
-            listSupplyVoltage.Add(temperature);
-            try
-            {
-                avgSupplyVoltage.Text = listSupplyVoltage.Average().ToString("F1");
-                maxSupplyVoltage.Text = listSupplyVoltage.Max().ToString("F1");
-                minSupplyVoltage.Text = listSupplyVoltage.Min().ToString("F1");
-            }
-            catch (Exception ex) { }
+            Setting setting = new Setting();
+            setting.Show();
         }
 
         private void porog_1_AirTemperature_KeyDown(object sender, KeyEventArgs e)
@@ -1536,10 +1521,112 @@ namespace GravitonEco
             }
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void setupZeroCarbonMonoxide_KeyDown(object sender, KeyEventArgs e)
         {
-            Setting setting = new Setting();
-            setting.Show();
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 520, ushort.Parse(setupZeroCarbonMonoxide.Text));
+                setupZeroCarbonMonoxide.Text = _client.ReadHoldingParametr(1, 520);
+            }
+        }
+
+        private void pgc_CarbonMonoxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 521, ushort.Parse(pgc_CarbonMonoxide.Text));
+                pgc_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 521);
+            }
+        }
+
+        private void acp_CarbonMonoxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 522, ushort.Parse(acp_CarbonMonoxide.Text));
+                acp_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 522);
+            }
+        }
+
+        private void sumZeroCarbonMonoxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 523, ushort.Parse(sumZeroCarbonMonoxide.Text));
+                sumZeroCarbonMonoxide.Text = _client.ReadHoldingParametr(1, 523);
+            }
+        }
+
+        private void setupZeroNitrogenOxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 512, ushort.Parse(setupZeroNitrogenOxide.Text));
+                setupZeroNitrogenOxide.Text = _client.ReadHoldingParametr(1, 512);
+            }
+        }
+
+        private void pgc_NitrogenOxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 513, ushort.Parse(pgc_NitrogenOxide.Text));
+                pgc_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 513);
+            }
+        }
+
+        private void acp_NitrogenOxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 514, ushort.Parse(acp_NitrogenOxide.Text));
+                acp_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 514);
+            }
+        }
+
+        private void sumZeroNitrogenOxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 515, ushort.Parse(sumZeroNitrogenOxide.Text));
+                sumZeroNitrogenOxide.Text = _client.ReadHoldingParametr(1, 515);
+            }
+        }
+
+        private void setupZeroNitrogenDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 516, ushort.Parse(setupZeroNitrogenDioxide.Text));
+                setupZeroNitrogenDioxide.Text = _client.ReadHoldingParametr(1, 516);
+            }
+        }
+
+        private void pgc_NitrogenDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 517, ushort.Parse(pgc_NitrogenDioxide.Text));
+                pgc_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 517);
+            }
+        }
+
+        private void acp_NitrogenDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 518, ushort.Parse(acp_NitrogenDioxide.Text));
+                acp_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 518);
+            }
+        }
+
+        private void sumZeroNitrogenDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 519, ushort.Parse(sumZeroNitrogenDioxide.Text));
+                sumZeroNitrogenDioxide.Text = _client.ReadHoldingParametr(1, 519);
+            }
         }
     }
 }
