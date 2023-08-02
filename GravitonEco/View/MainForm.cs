@@ -108,12 +108,6 @@ namespace GravitonEco
             {"coil_Напряжениепорог1",(1,6)},
             {"coil_Напряжениепорог2",(1,7)},
             {"coil_Напряжениедт",(1,8)},
-            {"holdingdate_year",(251,262)},
-            {"holdingdate_moths",(251,261)},
-            {"holdingdate_day",(251,260)},
-            {"holdingdate_hour",(251,258)},
-            {"holdingdate_minute",(251,257)},
-            {"holdingdate_second",(251,256)},
         };
             // Добавьте другие параметры, которые вам нужны
 
@@ -238,6 +232,26 @@ namespace GravitonEco
             acp_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 518);
             sumZeroNitrogenDioxide.Text = _client.ReadHoldingParametr(1, 519);
 
+            setupZeroSulfurDioxide.Text = _client.ReadHoldingParametr(1, 524);
+            pgc_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 525);
+            acp_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 526);
+            sumZeroSulfurDioxide.Text = _client.ReadHoldingParametr(1, 527);
+
+            setupZeroVolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 529);
+
+            constAtmosphericPressure.Text = _client.ReadHoldingParametr(1, 548);
+            constWindSpeed.Text = _client.ReadHoldingParametr(1, 544);
+
+            powerAirTemperature.Text = _client.ReadHoldingParametr(1, 258);
+            constAirTemperature.Text = _client.ReadHoldingParametr(1, 259);
+            stepAirTemperature.Text = _client.ReadHoldingParametr(1, 260);
+            timeAirTemperature.Text = _client.ReadHoldingParametr(1, 261);
+
+            powerRelativeHumidity.Text = _client.ReadHoldingParametr(3, 258);
+            constRelativeHumidity.Text = _client.ReadHoldingParametr(3, 259);
+            stepRelativeHumidity.Text = _client.ReadHoldingParametr(3, 260);
+            timeRelativeHumidity.Text = _client.ReadHoldingParametr(3, 261);
+
             porog_1_AirTemperature.KeyDown += porog_1_AirTemperature_KeyDown;
             porog_1_RelativeHumidity.KeyDown += porog_1_RelativeHumidity_KeyDown;
             porog_1_AtmosphericPressure.KeyDown += porog_1_AtmosphericPressure_KeyDown;
@@ -320,6 +334,25 @@ namespace GravitonEco
             acp_NitrogenDioxide.KeyDown += acp_NitrogenDioxide_KeyDown;
             sumZeroNitrogenDioxide.KeyDown += sumZeroNitrogenDioxide_KeyDown;
 
+            setupZeroSulfurDioxide.KeyDown += setupZeroSulfurDioxide_KeyDown;
+            pgc_SulfurDioxide.KeyDown += pgc_SulfurDioxide_KeyDown;
+            acp_SulfurDioxide.KeyDown += acp_SulfurDioxide_KeyDown;
+            sumZeroSulfurDioxide.KeyDown += sumZeroSulfurDioxide_KeyDown;
+
+            setupZeroVolatileOrganicCompounds.KeyDown += setupZeroVolatileOrganicCompounds_KeyDown;
+
+            constAtmosphericPressure.KeyDown += constAtmosphericPressure_KeyDown;
+            constWindSpeed.KeyDown += constWindSpeed_KeyDown;
+
+            powerAirTemperature.KeyDown += powerAirTemperature_KeyDown;
+            constAirTemperature.KeyDown += constAirTemperature_KeyDown;
+            stepAirTemperature.KeyDown += stepAirTemperature_KeyDown;
+            timeAirTemperature.KeyDown += timeAirTemperature_KeyDown;
+
+            powerRelativeHumidity.KeyDown += powerRelativeHumidity_KeyDown;
+            constRelativeHumidity.KeyDown += constRelativeHumidity_KeyDown;
+            stepRelativeHumidity.KeyDown += stepRelativeHumidity_KeyDown;
+            timeRelativeHumidity.KeyDown += timeRelativeHumidity_KeyDown;
 
             Task.Run(async () =>
             {
@@ -743,15 +776,6 @@ namespace GravitonEco
                     dx_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                     dt_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                 }
-
-                // Задайте список параметров, которые вы хотите объединить
-                List<string> date = new List<string> { "holdingdate_day", "holdingdate_moths", "holdingdate_year" };
-                List<string> time = new List<string> { "holdingdate_hour", "holdingdate_minute", "holdingdate_second" };
-
-                // Используйте LINQ для фильтрации значений и объедините только нужные параметры
-                string combinedDate = string.Join(".", data.Where(kvp => date.Contains(kvp.Key)).Select(kvp => kvp.Value.Split('-')[0]));
-                string combinedTime = string.Join(":", data.Where(kvp => time.Contains(kvp.Key)).Select(kvp => kvp.Value.Split('-')[0]));
-                dateSensor.Text = combinedDate + " " + combinedTime;
             }
         }
 
@@ -1626,6 +1650,141 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 519, ushort.Parse(sumZeroNitrogenDioxide.Text));
                 sumZeroNitrogenDioxide.Text = _client.ReadHoldingParametr(1, 519);
+            }
+        }
+
+        private void setupZeroSulfurDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 524, ushort.Parse(setupZeroSulfurDioxide.Text));
+                setupZeroSulfurDioxide.Text = _client.ReadHoldingParametr(1, 524);
+            }
+        }
+
+        private void pgc_SulfurDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 525, ushort.Parse(pgc_SulfurDioxide.Text));
+                pgc_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 525);
+            }
+        }
+
+        private void acp_SulfurDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 526, ushort.Parse(acp_SulfurDioxide.Text));
+                acp_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 526);
+            }
+        }
+
+        private void sumZeroSulfurDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 527, ushort.Parse(sumZeroSulfurDioxide.Text));
+                sumZeroSulfurDioxide.Text = _client.ReadHoldingParametr(1, 527);
+            }
+        }
+
+        private void setupZeroVolatileOrganicCompounds_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 529, ushort.Parse(setupZeroVolatileOrganicCompounds.Text));
+                setupZeroVolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 529);
+            }
+        }
+
+        private void constAtmosphericPressure_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 548, ushort.Parse(constAtmosphericPressure.Text));
+                constAtmosphericPressure.Text = _client.ReadHoldingParametr(1, 548);
+            }
+        }
+
+        private void constWindSpeed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 544, ushort.Parse(constWindSpeed.Text));
+                constWindSpeed.Text = _client.ReadHoldingParametr(1, 544);
+            }
+        }
+
+        private void powerAirTemperature_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 258, ushort.Parse(powerAirTemperature.Text));
+                powerAirTemperature.Text = _client.ReadHoldingParametr(1, 258);
+            }
+        }
+
+        private void constAirTemperature_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 259, ushort.Parse(constAirTemperature.Text));
+                constAirTemperature.Text = _client.ReadHoldingParametr(1, 259);
+            }
+        }
+
+        private void stepAirTemperature_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 260, ushort.Parse(stepAirTemperature.Text));
+                stepAirTemperature.Text = _client.ReadHoldingParametr(1, 260);
+            }
+        }
+
+        private void timeAirTemperature_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 261, ushort.Parse(timeAirTemperature.Text));
+                timeAirTemperature.Text = _client.ReadHoldingParametr(1, 261);
+            }
+        }
+
+        private void powerRelativeHumidity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(3, 258, ushort.Parse(powerRelativeHumidity.Text));
+                powerRelativeHumidity.Text = _client.ReadHoldingParametr(3, 258);
+            }
+        }
+
+        private void constRelativeHumidity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(3, 259, ushort.Parse(constRelativeHumidity.Text));
+                constRelativeHumidity.Text = _client.ReadHoldingParametr(3, 259);
+            }
+        }
+
+        private void stepRelativeHumidity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(3, 260, ushort.Parse(stepRelativeHumidity.Text));
+                stepRelativeHumidity.Text = _client.ReadHoldingParametr(3, 260);
+            }
+        }
+
+        private void timeRelativeHumidity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(3, 261, ushort.Parse(timeRelativeHumidity.Text));
+                timeRelativeHumidity.Text = _client.ReadHoldingParametr(3, 261);
             }
         }
     }

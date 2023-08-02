@@ -1,4 +1,5 @@
-﻿using NModbus;
+﻿using GravitonEco.View;
+using NModbus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,15 @@ namespace GravitonEco.Model
         {
             _ipAddress = ipAddress;
             _port = port;
-            _tcpClient = new TcpClient(_ipAddress, _port);
+            try
+            {
+                _tcpClient = new TcpClient(_ipAddress, _port);
+            }
+            catch(Exception ex)
+            {
+                Setting setting = new Setting();
+                setting.Show();
+            }
             _modbusFactory = new ModbusFactory();
             _modbusMaster = _modbusFactory.CreateMaster(_tcpClient);
         }
@@ -115,10 +124,6 @@ namespace GravitonEco.Model
                     {
                         value = await ReadCoilParameterAsync(slaveId, address);
                     }
-                    else if (paramName.StartsWith("holdingdate_"))
-                    {
-                        value = await ReadDateHoldingParameterAsync(slaveId, address);
-                    }
 
                     lock (result) // Защита словаря для параллельного доступа
                     {
@@ -136,20 +141,6 @@ namespace GravitonEco.Model
         {
             ushort[] registers = await _modbusMaster.ReadHoldingRegistersAsync(slaveId, address, 1);
             return registers[0].ToString();
-        }
-
-        public async Task<string> ReadDateHoldingParameterAsync(byte slaveId, ushort address)
-        {
-            ushort[] registers = _modbusMaster.ReadHoldingRegisters(slaveId, address, 1);
-            for (int index = 0; index < registers.Length; index++)
-            {
-                byte[] bytes = BitConverter.GetBytes(registers[index]);
-                string hexString = BitConverter.ToString(bytes);
-
-                return hexString;
-            }
-            _modbusMaster.Dispose();
-            return "";
         }
 
         public async Task<string> ReadInputParameterAsync(byte slaveId, ushort address)

@@ -29,28 +29,42 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
+            progressBar1 = new ProgressBar();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Image = Properties.Resources.logo;
             pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(502, 147);
+            pictureBox1.Size = new Size(503, 146);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // progressBar1
+            // 
+            progressBar1.Dock = DockStyle.Fill;
+            progressBar1.Location = new Point(0, 146);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(503, 53);
+            progressBar1.Style = ProgressBarStyle.Continuous;
+            progressBar1.TabIndex = 1;
+            // 
             // SplashForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(502, 147);
+            ClientSize = new Size(503, 199);
+            Controls.Add(progressBar1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "SplashForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "SplashForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -60,5 +74,6 @@
         #endregion
 
         private PictureBox pictureBox1;
+        private ProgressBar progressBar1;
     }
 }
