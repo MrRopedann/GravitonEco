@@ -9,6 +9,15 @@ namespace GravitonEco
         private string _host;
         private string _port;
         private ModbusTCPClient _client;
+        // Константа для задержки в миллисекундах
+        private const int DelayMilliseconds = 1000;
+
+        // Кеш для значений параметров и соответствующих элементов управления
+        private Dictionary<string, (byte slaveId, ushort address)> parameterControls = new Dictionary<string, (byte slaveId, ushort address)>();
+
+        // Кеш для другого словаря значений
+        private Dictionary<string, (byte slaveId, ushort address)> otherDataCache = new Dictionary<string, (byte slaveId, ushort address)>();
+
 
 
         public MainForm()
@@ -20,96 +29,92 @@ namespace GravitonEco
             _port = manager.GetPrivateString("DeviceConnectSetting", "Port");
             _client = new ModbusTCPClient(_host, Int32.Parse(_port));
             // Запуск задачи для асинхронного обновления данных
-            Dictionary<string, (byte slaveId, ushort address)> parameters = new Dictionary<string, (byte, ushort)>
-        {
-            { "input_Температура_воздуха", (2, 5) },
-            { "input_Относительная_влажность", (2, 6) },
-            { "input_Атмосферное_давление", (1, 1) },
-            { "input_Скорость_ветра", (1, 7) },
-            { "input_Направление_ветра", (2, 2) },
-            { "input_Оксид_углерода", (1, 10) },
-            { "input_Оксид_азота", (1, 12) },
-            { "input_Диоксид_азота", (1, 13) },
-            { "input_Диоксид_серы", (1, 19) },
-            { "input_Двуокись_углерода", (1, 11) },
-            { "input_Летучая_органика", (1, 8) },
-            { "input_Твёрдые_частицы_PM1", (1, 16) },
-            { "input_Твёрдые_частицы_PM2_5", (1, 17) },
-            { "input_Твёрдые_частицы_PM10", (1, 18) },
-            { "input_Уровень_вибрации", (1, 21) },
-            { "input_Уровень_наклона", (1, 20) },
-            { "input_Датчик_вскрытия", (3, 2) },
-            { "input_Температура_в_измерителе", (1, 5) },
-            { "input_Влажность_в_измерителе", (1, 6) },
-            { "input_Давление_в_измерителе", (2, 1) },
-            { "input_Скорость_пробоотбора", (3, 25) },
-            { "input_Напряжение_питания", (1, 5) },
+            otherDataCache["input_Температура_воздуха"] = (2, 5);
+            otherDataCache["input_Относительная_влажность"] = (2, 6);
+            otherDataCache["input_Атмосферное_давление"] = (1, 1);
+            otherDataCache["input_Скорость_ветра"] = (1, 7);
+            otherDataCache["input_Направление_ветра"] = (2, 2);
+            otherDataCache["input_Оксид_углерода"] = (1, 10);
+            otherDataCache["input_Оксид_азота"] = (1, 12);
+            otherDataCache["input_Диоксид_азота"] = (1, 13);
+            otherDataCache["input_Диоксид_серы"] = (1, 19);
+            otherDataCache["input_Двуокись_углерода"] = (1, 11);
+            otherDataCache["input_Летучая_органика"] = (1, 8);
+            otherDataCache["input_Твёрдые_частицы_PM1"] = (1, 16);
+            otherDataCache["input_Твёрдые_частицы_PM2_5"] = (1, 17);
+            otherDataCache["input_Твёрдые_частицы_PM10"] = (1, 18);
+            otherDataCache["input_Уровень_вибрации"] = (1, 21);
+            otherDataCache["input_Уровень_наклона"] = (1, 20);
+            otherDataCache["input_Датчик_вскрытия"] = (3, 2);
+            otherDataCache["input_Температура_в_измерителе"] = (1, 5);
+            otherDataCache["input_Влажность_в_измерителе"] = (1, 6);
+            otherDataCache["input_Давление_в_измерителе"] = (2, 1);
+            otherDataCache["input_Скорость_пробоотбора"] = (3, 25);
+            otherDataCache["input_Напряжение_питания"] = (1, 5);
 
-            {"coil_Температура_Порог_1", (2, 15)},
-            {"coil_ТемпиратураПорог2",(2,16)},
-            {"coil_Темпиратураdx",(2,17)},
-            {"coil_влажностьпорог1",(2,18)},
-            {"coil_влажностьпорог2",(2,19)},
-            {"coil_влажностьдх",(2,20)},
-            {"coil_Давлениепорог1",(2,3)},
-            {"coil_Давлениепорог2",(2,4)},
-            {"coil_Давлениедх",(2,5)},
-            {"coil_Скоростьветрапорог1",(2,21)},
-            {"coil_Скоростьветрапорог2",(2,22)},
-            {"coil_Скоростьветрадх",(2,23)},
-            {"coil_Направлениеветрапорог1",(2,6)},
-            {"coil_Направлениеветрапорог2",(2,7)},
-            {"coil_Направлениеветрадт",(2,8)},
-            {"coil_СОпорог1",(1,30)},
-            {"coil_СОпорог2",(1,31)},
-            {"coil_СОдт",(1,32)},
-            {"coil_NOпорог1",(1,36)},
-            {"coil_NOпорог2",(1,37)},
-            {"coil_NOдт",(1,38)},
-            {"coil_NO2порог1",(1,39)},
-            {"coil_NO2порог2",(1,40)},
-            {"coil_NO2дт",(1,41)},
-            {"coil_SO2порог1",(1,57)},
-            {"coil_SO2порог2",(1,58)},
-            {"coil_SO2дт",(1,59)},
-            {"coil_СО2порог1",(1,33)},
-            {"coil_СО2порог2",(1,34)},
-            {"coil_СО2дт",(1,35)},
-            {"coil_ЛОСпорог1",(1,24)},
-            {"coil_ЛОСпорог2",(1,25)},
-            {"coil_ЛОСдт",(1,26)},
-            {"coil_ПМ1порог1",(1,48)},
-            {"coil_ПМ1порог2",(1,49)},
-            {"coil_ПМ1дт",(1,50)},
-            {"coil_ПМ2_5порог1",(1,51)},
-            {"coil_ПМ2_5порог2",(1,52)},
-            {"coil_ПМ2_5дт",(1,53)},
-            {"coil_ПМ10порог1",(1,54)},
-            {"coil_ПМ10порог2",(1,55)},
-            {"coil_ПМ10дт",(1,56)},
-            {"coil_Вибрацияпорог1",(1,63)},
-            {"coil_Вибрацияпорог2",(1,64)},
-            {"coil_Вибрациядт",(1,64)},
-            {"coil_Наклонпорог1",(1,60)},
-            {"coil_Наклонпорог2",(1,61)},
-            {"coil_Наклондт",(1,62)},
-            {"coil_вскрытиепорог1",(3,6)},
-            {"coil_вскрытиепорог2",(3,7)},
-            {"coil_вскрытиедт",(3,8)},
-            {"coil_Темпиратураизмерителяпорог1",(1,15)},
-            {"coil_Темпиратураизмерителяпорог2",(1,16)},
-            {"coil_Темпиратураизмерителядт",(1,17)},
-            {"coil_Влажностьизмерителяпорог1",(1,18)},
-            {"coil_Влажностьизмерителяпорог2",(1,19)},
-            {"coil_Влажностьизмерителядт",(1,20)},
-            {"coil_Давлениеизмерителяпорог1",(1,3)},
-            {"coil_Давлениеизмерителяпорог2",(1,4)},
-            {"coil_Давлениеизмерителядт",(1,5)},
-            {"coil_Напряжениепорог1",(1,6)},
-            {"coil_Напряжениепорог2",(1,7)},
-            {"coil_Напряжениедт",(1,8)},
-        };
-
+            parameterControls["coil_Температура_Порог_1"] = (2, 15);
+            parameterControls["coil_ТемпиратураПорог2"] = (2, 16);
+            parameterControls["coil_Темпиратураdx"] = (2, 17);
+            parameterControls["coil_влажностьпорог1"] = (2, 18);
+            parameterControls["coil_влажностьпорог2"] = (2, 19);
+            parameterControls["coil_влажностьдх"] = (2, 20);
+            parameterControls["coil_Давлениепорог1"] = (2, 3);
+            parameterControls["coil_Давлениепорог2"] = (2, 4);
+            parameterControls["coil_Давлениедх"] = (2, 5);
+            parameterControls["coil_Скоростьветрапорог1"] = (2, 21);
+            parameterControls["coil_Скоростьветрапорог2"] = (2, 22);
+            parameterControls["coil_Скоростьветрадх"] = (2, 23);
+            parameterControls["coil_Направлениеветрапорог1"] = (2, 6);
+            parameterControls["coil_Направлениеветрапорог2"] = (2, 7);
+            parameterControls["coil_Направлениеветрадт"] = (2, 8);
+            parameterControls["coil_СОпорог1"] = (1, 30);
+            parameterControls["coil_СОпорог2"] = (1, 31);
+            parameterControls["coil_СОдт"] = (1, 32);
+            parameterControls["coil_NOпорог1"] = (1, 36);
+            parameterControls["coil_NOпорог2"] = (1, 37);
+            parameterControls["coil_NOдт"] = (1, 38);
+            parameterControls["coil_NO2порог1"] = (1, 39);
+            parameterControls["coil_NO2порог2"] = (1, 40);
+            parameterControls["coil_NO2дт"] = (1, 41);
+            parameterControls["coil_SO2порог1"] = (1, 57);
+            parameterControls["coil_SO2порог2"] = (1, 58);
+            parameterControls["coil_SO2дт"] = (1, 59);
+            parameterControls["coil_СО2порог1"] = (1, 33);
+            parameterControls["coil_СО2порог2"] = (1, 34);
+            parameterControls["coil_СО2дт"] = (1, 35);
+            parameterControls["coil_ЛОСпорог1"] = (1, 24);
+            parameterControls["coil_ЛОСпорог2"] = (1, 25);
+            parameterControls["coil_ЛОСдт"] = (1, 26);
+            parameterControls["coil_ПМ1порог1"] = (1, 48);
+            parameterControls["coil_ПМ1порог2"] = (1, 49);
+            parameterControls["coil_ПМ1дт"] = (1, 50);
+            parameterControls["coil_ПМ2_5порог1"] = (1, 51);
+            parameterControls["coil_ПМ2_5порог2"] = (1, 52);
+            parameterControls["coil_ПМ2_5дт"] = (1, 53);
+            parameterControls["coil_ПМ10порог1"] = (1, 54);
+            parameterControls["coil_ПМ10порог2"] = (1, 55);
+            parameterControls["coil_ПМ10дт"] = (1, 56);
+            parameterControls["coil_Вибрацияпорог1"] = (1, 63);
+            parameterControls["coil_Вибрацияпорог2"] = (1, 64);
+            parameterControls["coil_Вибрациядт"] = (1, 64);
+            parameterControls["coil_Наклонпорог1"] = (1, 60);
+            parameterControls["coil_Наклонпорог2"] = (1, 61);
+            parameterControls["coil_Наклондт"] = (1, 62);
+            parameterControls["coil_вскрытиепорог1"] = (3, 6);
+            parameterControls["coil_вскрытиепорог2"] = (3, 7);
+            parameterControls["coil_вскрытиедт"] = (3, 8);
+            parameterControls["coil_Темпиратураизмерителяпорог1"] = (1, 15);
+            parameterControls["coil_Темпиратураизмерителяпорог2"] = (1, 16);
+            parameterControls["coil_Темпиратураизмерителядт"] = (1, 17);
+            parameterControls["coil_Влажностьизмерителяпорог1"] = (1, 18);
+            parameterControls["coil_Влажностьизмерителяпорог2"] = (1, 19);
+            parameterControls["coil_Влажностьизмерителядт"] = (1, 20);
+            parameterControls["coil_Давлениеизмерителяпорог1"] = (1, 3);
+            parameterControls["coil_Давлениеизмерителяпорог2"] = (1, 4);
+            parameterControls["coil_Давлениеизмерителядт"] = (1, 5);
+            parameterControls["coil_Напряжениепорог1"] = (1, 6);
+            parameterControls["coil_Напряжениепорог2"] = (1, 7);
+            parameterControls["coil_Напряжениедт"] = (1, 8);
 
             porog_1_AirTemperature.Text = _client.ReadHoldingParametr(2, 20);
             porog_2_AirTemperature.Text = _client.ReadHoldingParametr(2, 21);
@@ -255,12 +260,25 @@ namespace GravitonEco
             {
                 while (true)
                 {
-                    Dictionary<string, string> data = await _client.ReadMultipleValuesAsync(parameters);
+                    Dictionary<string, string> data = await _client.ReadMultipleValuesAsync(otherDataCache);
                     Invoke(new Action(() => UpdateDataOnForm(data)));
 
                     await Task.Delay(1000);
                 }
             });
+
+            // Запуск задачи для асинхронного обновления данных из другого словаря
+            Task.Run(async () =>
+            {
+                while (true)
+                {
+                    Dictionary<string, string> otherData = await _client.ReadMultipleValuesAsync(parameterControls);
+
+                    Invoke(new Action(() => UpdateOtherDataOnForm(otherData)));
+                    await Task.Delay(500);
+                }
+            });
+
         }
 
         private void UpdateDataOnForm(Dictionary<string, string> data)
@@ -398,278 +416,291 @@ namespace GravitonEco
                 {
                     currentVolatileOrganicCompounds2.Text = paramValue;
                 }
-                else if (paramName == "coil_Температура_Порог_1")
+            }
+        }
+
+        private void UpdateOtherDataOnForm(Dictionary<string, string> data)
+        {
+            lock (parameterControls)
+            {
+                foreach (var kvp in data)
                 {
-                    porog_1_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ТемпиратураПорог2")
-                {
-                    porog_2_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Темпиратураdx")
-                {
-                    dx_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_влажностьпорог1")
-                {
-                    porog_1_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_влажностьпорог2")
-                {
-                    porog_2_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_влажностьдх")
-                {
-                    dx_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Давлениепорог1")
-                {
-                    porog_1_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Давлениепорог2")
-                {
-                    porog_2_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Давлениедх")
-                {
-                    dx_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Скоростьветрапорог1")
-                {
-                    porog_1_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Скоростьветрапорог2")
-                {
-                    porog_2_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Скоростьветрадх")
-                {
-                    dx_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Направлениеветрапорог1")
-                {
-                    porog_1_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Направлениеветрапорог2")
-                {
-                    porog_2_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Направлениеветрадт")
-                {
-                    dx_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_СОпорог1")
-                {
-                    porog_1_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_СОпорог2")
-                {
-                    porog_2_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_СОдт")
-                {
-                    dt_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dx_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_NOпорог1")
-                {
-                    porog_1_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_NOпорог2")
-                {
-                    porog_2_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_NOдт")
-                {
-                    dx_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_NO2порог1")
-                {
-                    porog_1_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_NO2порог2")
-                {
-                    porog_2_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_NO2дт")
-                {
-                    dx_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_SO2порог1")
-                {
-                    porog_1_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_SO2порог2")
-                {
-                    porog_2_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_SO2дт")
-                {
-                    dx_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_СО2порог1")
-                {
-                    porog_1_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_СО2порог2")
-                {
-                    porog_2_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_СО2дт")
-                {
-                    dx_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ЛОСпорог1")
-                {
-                    porog_1_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ЛОСпорог2")
-                {
-                    porog_2_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ЛОСдт")
-                {
-                    dx_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ПМ1порог1")
-                {
-                    porog_1_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ПМ1порог2")
-                {
-                    porog_2_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ПМ1дт")
-                {
-                    dx_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ПМ2_5порог1")
-                {
-                    porog_1_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ПМ2_5порог2")
-                {
-                    porog_2_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ПМ2_5дт")
-                {
-                    dx_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ПМ10порог1")
-                {
-                    porog_1_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ПМ10порог2")
-                {
-                    porog_2_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_ПМ10дт")
-                {
-                    dx_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Вибрацияпорог1")
-                {
-                    porog_1_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Вибрацияпорог2")
-                {
-                    porog_2_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Вибрациядт")
-                {
-                    dx_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Наклонпорог1")
-                {
-                    porog_1_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Наклонпорог2")
-                {
-                    porog_2_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Наклондт")
-                {
-                    dx_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_вскрытиепорог1")
-                {
-                    porog_1_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_вскрытиепорог2")
-                {
-                    porog_2_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_вскрытиедт")
-                {
-                    dx_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Темпиратураизмерителяпорог1")
-                {
-                    porog_1_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Темпиратураизмерителяпорог2")
-                {
-                    porog_2_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Темпиратураизмерителядт")
-                {
-                    dx_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Влажностьизмерителяпорог1")
-                {
-                    porog_1_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Влажностьизмерителяпорог2")
-                {
-                    porog_2_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Влажностьизмерителядт")
-                {
-                    dx_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Давлениеизмерителяпорог1")
-                {
-                    porog_1_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Давлениеизмерителяпорог2")
-                {
-                    porog_2_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Давлениеизмерителядт")
-                {
-                    dx_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Напряжениепорог1")
-                {
-                    porog_1_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Напряжениепорог2")
-                {
-                    porog_2_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                }
-                else if (paramName == "coil_Напряжениедт")
-                {
-                    dx_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                    dt_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    string paramName = kvp.Key;
+                    string paramValue = kvp.Value;
+
+                    if (paramName == "coil_Температура_Порог_1")
+                    {
+                        porog_1_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ТемпиратураПорог2")
+                    {
+                        porog_2_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Темпиратураdx")
+                    {
+                        dx_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_AirTemperature.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_влажностьпорог1")
+                    {
+                        porog_1_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_влажностьпорог2")
+                    {
+                        porog_2_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_влажностьдх")
+                    {
+                        dx_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_RelativeHumidity.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Давлениепорог1")
+                    {
+                        porog_1_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Давлениепорог2")
+                    {
+                        porog_2_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Давлениедх")
+                    {
+                        dx_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_AtmosphericPressure.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Скоростьветрапорог1")
+                    {
+                        porog_1_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Скоростьветрапорог2")
+                    {
+                        porog_2_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Скоростьветрадх")
+                    {
+                        dx_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_WindSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Направлениеветрапорог1")
+                    {
+                        porog_1_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Направлениеветрапорог2")
+                    {
+                        porog_2_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Направлениеветрадт")
+                    {
+                        dx_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_WindDirection.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_СОпорог1")
+                    {
+                        porog_1_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_СОпорог2")
+                    {
+                        porog_2_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_СОдт")
+                    {
+                        dt_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dx_CarbonMonoxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_NOпорог1")
+                    {
+                        porog_1_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_NOпорог2")
+                    {
+                        porog_2_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_NOдт")
+                    {
+                        dx_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_NitrogenOxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_NO2порог1")
+                    {
+                        porog_1_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_NO2порог2")
+                    {
+                        porog_2_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_NO2дт")
+                    {
+                        dx_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_NitrogenDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_SO2порог1")
+                    {
+                        porog_1_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_SO2порог2")
+                    {
+                        porog_2_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_SO2дт")
+                    {
+                        dx_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_SulfurDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_СО2порог1")
+                    {
+                        porog_1_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_СО2порог2")
+                    {
+                        porog_2_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_СО2дт")
+                    {
+                        dx_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_CarbonDioxide.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ЛОСпорог1")
+                    {
+                        porog_1_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ЛОСпорог2")
+                    {
+                        porog_2_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ЛОСдт")
+                    {
+                        dx_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_VolatileOrganicCompounds.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ПМ1порог1")
+                    {
+                        porog_1_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ПМ1порог2")
+                    {
+                        porog_2_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ПМ1дт")
+                    {
+                        dx_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_ParticulateMatterPM1.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ПМ2_5порог1")
+                    {
+                        porog_1_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ПМ2_5порог2")
+                    {
+                        porog_2_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ПМ2_5дт")
+                    {
+                        dx_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_ParticulateMatterPM2_5.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ПМ10порог1")
+                    {
+                        porog_1_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ПМ10порог2")
+                    {
+                        porog_2_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_ПМ10дт")
+                    {
+                        dx_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_ParticulateMatterPM10.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Вибрацияпорог1")
+                    {
+                        porog_1_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Вибрацияпорог2")
+                    {
+                        porog_2_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Вибрациядт")
+                    {
+                        dx_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_VibrationLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Наклонпорог1")
+                    {
+                        porog_1_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Наклонпорог2")
+                    {
+                        porog_2_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Наклондт")
+                    {
+                        dx_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_TiltLevel.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_вскрытиепорог1")
+                    {
+                        porog_1_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_вскрытиепорог2")
+                    {
+                        porog_2_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_вскрытиедт")
+                    {
+                        dx_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_TamperSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Темпиратураизмерителяпорог1")
+                    {
+                        porog_1_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Темпиратураизмерителяпорог2")
+                    {
+                        porog_2_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Темпиратураизмерителядт")
+                    {
+                        dx_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_TemperatureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Влажностьизмерителяпорог1")
+                    {
+                        porog_1_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Влажностьизмерителяпорог2")
+                    {
+                        porog_2_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Влажностьизмерителядт")
+                    {
+                        dx_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_HumidityInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Давлениеизмерителяпорог1")
+                    {
+                        porog_1_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Давлениеизмерителяпорог2")
+                    {
+                        porog_2_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Давлениеизмерителядт")
+                    {
+                        dx_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Напряжениепорог1")
+                    {
+                        porog_1_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Напряжениепорог2")
+                    {
+                        porog_2_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_Напряжениедт")
+                    {
+                        dx_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
                 }
             }
         }
