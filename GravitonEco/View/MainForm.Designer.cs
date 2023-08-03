@@ -28,4855 +28,5050 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            comboBox2 = new ComboBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            dateSensor = new Label();
-            comboBox1 = new ComboBox();
-            serialNumber = new Label();
-            softVersion = new Label();
-            apparatVersion = new Label();
-            pictureBox1 = new PictureBox();
-            label10 = new Label();
-            comboBox3 = new ComboBox();
-            splitContainer1 = new SplitContainer();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            tableLayoutPanel9 = new TableLayoutPanel();
-            minPressureInSensor = new Label();
-            porog_1_PressureInSensor = new TextBox();
-            pressureInSensor = new Label();
-            samplingSpeed = new Label();
-            temperatureInSensor = new Label();
-            humidityInSensor = new Label();
-            supplyVoltage = new Label();
-            minTemperatureInSensor = new Label();
-            maxTemperatureInSensor = new Label();
-            avgTemperatureInSensor = new Label();
-            currentTemperatureInSensor = new Label();
-            minSupplyVoltage = new Label();
-            maxSupplyVoltage = new Label();
-            avgSupplyVoltage = new Label();
-            currentSupplyVoltage = new Label();
-            maxSamplingSpeed = new Label();
-            minHumidityInSensor = new Label();
-            maxHumidityInSensor = new Label();
-            avgHumidityInSensor = new Label();
-            currentHumidityInSensor = new Label();
-            avgSamplingSpeed = new Label();
-            currentSamplingSpeed = new Label();
-            minSamplingSpeed = new Label();
-            currentPressureInSensor = new Label();
-            avgPressureInSensor = new Label();
-            maxPressureInSensor = new Label();
-            porog_1_TemperatureInSensor = new TextBox();
-            porog_1_HumidityInSensor = new TextBox();
-            porog_1_SupplyVoltage = new TextBox();
-            porog_1_SamplingSpeed = new TextBox();
-            porog_2_TemperatureInSensor = new TextBox();
-            porog_2_HumidityInSensor = new TextBox();
-            porog_2_SupplyVoltage = new TextBox();
-            porog_2_SamplingSpeed = new TextBox();
-            porog_2_PressureInSensor = new TextBox();
-            dx_TemperatureInSensor = new TextBox();
-            dx_HumidityInSensor = new TextBox();
-            dx_SupplyVoltage = new TextBox();
-            dx_SamplingSpeed = new TextBox();
-            dx_PressureInSensor = new TextBox();
-            dt_TemperatureInSensor = new TextBox();
-            dt_HumidityInSensor = new TextBox();
-            dt_SupplyVoltage = new TextBox();
-            dt_SamplingSpeed = new TextBox();
-            dt_PressureInSensor = new TextBox();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            porog_2_WindDirection = new TextBox();
-            windDirection = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label11 = new Label();
-            airTemperature = new Label();
-            relativeHumidity = new Label();
-            atmosphericPressure = new Label();
-            windSpeed = new Label();
-            minAirTemperature = new Label();
-            maxAirTemperature = new Label();
-            avgAirTemperature = new Label();
-            currentAirTemperature = new Label();
-            minAtmosphericPressure = new Label();
-            maxAtmosphericPressure = new Label();
-            avgAtmosphericPressure = new Label();
-            currentAtmosphericPressure = new Label();
-            minWindDirection = new Label();
-            currentWindDirection = new Label();
-            avgWindDirection = new Label();
-            minRelativeHumidity = new Label();
-            maxRelativeHumidity = new Label();
-            avgRelativeHumidity = new Label();
-            currentRelativeHumidity = new Label();
-            minWindSpeed = new Label();
-            maxWindSpeed = new Label();
-            avgWindSpeed = new Label();
-            currentWindSpeed = new Label();
-            maxWindDirection = new Label();
-            porog_1_AirTemperature = new TextBox();
-            porog_1_RelativeHumidity = new TextBox();
-            porog_1_AtmosphericPressure = new TextBox();
-            porog_2_AirTemperature = new TextBox();
-            porog_2_RelativeHumidity = new TextBox();
-            porog_2_AtmosphericPressure = new TextBox();
-            dx_AirTemperature = new TextBox();
-            dx_RelativeHumidity = new TextBox();
-            porog_1_WindDirection = new TextBox();
-            porog_1_WindSpeed = new TextBox();
-            porog_2_WindSpeed = new TextBox();
-            dx_WindDirection = new TextBox();
-            dx_AtmosphericPressure = new TextBox();
-            dt_AirTemperature = new TextBox();
-            dt_RelativeHumidity = new TextBox();
-            dt_AtmosphericPressure = new TextBox();
-            dt_WindSpeed = new TextBox();
-            dx_WindSpeed = new TextBox();
-            dt_WindDirection = new TextBox();
-            tableLayoutPanel5 = new TableLayoutPanel();
-            porog_1_VolatileOrganicCompounds = new TextBox();
-            minVolatileOrganicCompounds = new Label();
-            volatileOrganicCompounds = new Label();
-            carbonMonoxide = new Label();
-            nitrogenOxide = new Label();
-            nitrogenDioxide = new Label();
-            sulfurDioxide = new Label();
-            carbonDioxide = new Label();
-            minNitrogenOxide = new Label();
-            maxNitrogenOxide = new Label();
-            avgNitrogenOxide = new Label();
-            currentNitrogenOxide = new Label();
-            maxVolatileOrganicCompounds = new Label();
-            avgVolatileOrganicCompounds = new Label();
-            currentVolatileOrganicCompounds = new Label();
-            minSulfurDioxide = new Label();
-            maxSulfurDioxide = new Label();
-            avgSulfurDioxide = new Label();
-            currentSulfurDioxide = new Label();
-            minCarbonMonoxide = new Label();
-            maxCarbonMonoxide = new Label();
-            avgCarbonMonoxide = new Label();
-            currentCarbonMonoxide = new Label();
-            minNitrogenDioxide = new Label();
-            maxNitrogenDioxide = new Label();
-            avgNitrogenDioxide = new Label();
-            currentNitrogenDioxide = new Label();
-            minCarbonDioxide = new Label();
-            maxCarbonDioxide = new Label();
-            avgCarbonDioxide = new Label();
-            currentCarbonDioxide = new Label();
-            porog_1_CarbonMonoxide = new TextBox();
-            porog_1_NitrogenOxide = new TextBox();
-            porog_1_NitrogenDioxide = new TextBox();
-            porog_1_SulfurDioxide = new TextBox();
-            porog_1_CarbonDioxide = new TextBox();
-            porog_2_CarbonDioxide = new TextBox();
-            porog_2_SulfurDioxide = new TextBox();
-            porog_2_NitrogenDioxide = new TextBox();
-            porog_2_NitrogenOxide = new TextBox();
-            porog_2_CarbonMonoxide = new TextBox();
-            dx_CarbonMonoxide = new TextBox();
-            dx_NitrogenOxide = new TextBox();
-            dx_NitrogenDioxide = new TextBox();
-            dx_SulfurDioxide = new TextBox();
-            dx_CarbonDioxide = new TextBox();
-            dx_VolatileOrganicCompounds = new TextBox();
-            porog_2_VolatileOrganicCompounds = new TextBox();
-            dt_VolatileOrganicCompounds = new TextBox();
-            dt_CarbonDioxide = new TextBox();
-            dt_SulfurDioxide = new TextBox();
-            dt_NitrogenDioxide = new TextBox();
-            dt_NitrogenOxide = new TextBox();
-            dt_CarbonMonoxide = new TextBox();
-            tableLayoutPanel7 = new TableLayoutPanel();
-            porog_1_ParticulateMatterPM10 = new TextBox();
-            currentParticulateMatterPM1 = new Label();
-            avgParticulateMatterPM1 = new Label();
-            maxParticulateMatterPM1 = new Label();
-            particulateMatterPM10 = new Label();
-            particulateMatterPM1 = new Label();
-            particulateMatterPM2_5 = new Label();
-            minParticulateMatterPM1 = new Label();
-            minParticulateMatterPM10 = new Label();
-            maxParticulateMatterPM10 = new Label();
-            avgParticulateMatterPM10 = new Label();
-            currentParticulateMatterPM10 = new Label();
-            minParticulateMatterPM2_5 = new Label();
-            maxParticulateMatterPM2_5 = new Label();
-            avgParticulateMatterPM2_5 = new Label();
-            currentParticulateMatterPM2_5 = new Label();
-            porog_1_ParticulateMatterPM1 = new TextBox();
-            porog_1_ParticulateMatterPM2_5 = new TextBox();
-            porog_2_ParticulateMatterPM1 = new TextBox();
-            porog_2_ParticulateMatterPM2_5 = new TextBox();
-            porog_2_ParticulateMatterPM10 = new TextBox();
-            dx_ParticulateMatterPM1 = new TextBox();
-            dx_ParticulateMatterPM2_5 = new TextBox();
-            dx_ParticulateMatterPM10 = new TextBox();
-            dt_ParticulateMatterPM1 = new TextBox();
-            dt_ParticulateMatterPM2_5 = new TextBox();
-            dt_ParticulateMatterPM10 = new TextBox();
-            tableLayoutPanel8 = new TableLayoutPanel();
-            dt_TamperSensor = new TextBox();
-            dx_TamperSensor = new TextBox();
-            porog_2_TamperSensor = new TextBox();
-            porog_1_TamperSensor = new TextBox();
-            dt_TiltLevel = new TextBox();
-            dx_TiltLevel = new TextBox();
-            porog_2_TiltLevel = new TextBox();
-            porog_1_TiltLevel = new TextBox();
-            dt_VibrationLevel = new TextBox();
-            dx_VibrationLevel = new TextBox();
-            porog_2_VibrationLevel = new TextBox();
-            porog_1_VibrationLevel = new TextBox();
-            currentTamperSensor = new Label();
-            tamperSensor = new Label();
-            vibrationLevel = new Label();
-            tiltLevel = new Label();
-            minVibrationLevel = new Label();
-            maxTamperSensor = new Label();
-            maxVibrationLevel = new Label();
-            avgVibrationLevel = new Label();
-            currentVibrationLevel = new Label();
-            avgTamperSensor = new Label();
-            minTiltLevel = new Label();
-            maxTiltLevel = new Label();
-            avgTiltLevel = new Label();
-            currentTiltLevel = new Label();
-            minTamperSensor = new Label();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            label20 = new Label();
-            label21 = new Label();
-            label22 = new Label();
-            label23 = new Label();
-            label24 = new Label();
-            currentAirTemperature2 = new Label();
-            currentAtmosphericPressure2 = new Label();
-            currentRelativeHumidity2 = new Label();
-            currentWindSpeed2 = new Label();
-            powerAirTemperature = new TextBox();
-            powerRelativeHumidity = new TextBox();
-            constAirTemperature = new TextBox();
-            constRelativeHumidity = new TextBox();
-            constAtmosphericPressure = new TextBox();
-            stepAirTemperature = new TextBox();
-            stepRelativeHumidity = new TextBox();
-            constWindSpeed = new TextBox();
-            timeAirTemperature = new TextBox();
-            timeRelativeHumidity = new TextBox();
-            panel2 = new Panel();
-            label12 = new Label();
-            label13 = new Label();
-            tableLayoutPanel10 = new TableLayoutPanel();
-            label14 = new Label();
-            pgc_CarbonDioxide = new TextBox();
-            label27 = new Label();
-            label30 = new Label();
-            label31 = new Label();
-            label32 = new Label();
-            label33 = new Label();
-            label34 = new Label();
-            label35 = new Label();
-            label36 = new Label();
-            label37 = new Label();
-            label38 = new Label();
-            label39 = new Label();
-            currentCarbonMonoxide2 = new Label();
-            currentNitrogenDioxide2 = new Label();
-            currentCarbonDioxide2 = new Label();
-            currentNitrogenOxide2 = new Label();
-            currentSulfurDioxide2 = new Label();
-            setupZeroCarbonMonoxide = new TextBox();
-            setupZeroNitrogenOxide = new TextBox();
-            setupZeroNitrogenDioxide = new TextBox();
-            pgc_CarbonMonoxide = new TextBox();
-            pgc_NitrogenOxide = new TextBox();
-            pgc_NitrogenDioxide = new TextBox();
-            acp_CarbonMonoxide = new TextBox();
-            acp_NitrogenOxide = new TextBox();
-            setupZeroCarbonDioxide = new TextBox();
-            setupZeroSulfurDioxide = new TextBox();
-            pgc_SulfurDioxide = new TextBox();
-            acp_CarbonDioxide = new TextBox();
-            acp_NitrogenDioxide = new TextBox();
-            sumZeroCarbonMonoxide = new TextBox();
-            sumZeroNitrogenOxide = new TextBox();
-            sumZeroNitrogenDioxide = new TextBox();
-            sumZeroSulfurDioxide = new TextBox();
-            acp_SulfurDioxide = new TextBox();
-            sumZeroCarbonDioxide = new TextBox();
-            currentVolatileOrganicCompounds2 = new Label();
-            setupZeroVolatileOrganicCompounds = new TextBox();
-            panel1 = new Panel();
-            label46 = new Label();
-            label47 = new Label();
-            tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
-            splitContainer1.Panel1.SuspendLayout();
-            splitContainer1.Panel2.SuspendLayout();
-            splitContainer1.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
-            tableLayoutPanel9.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
-            tableLayoutPanel5.SuspendLayout();
-            tableLayoutPanel7.SuspendLayout();
-            tableLayoutPanel8.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
-            panel2.SuspendLayout();
-            tableLayoutPanel10.SuspendLayout();
-            panel1.SuspendLayout();
-            SuspendLayout();
+            global::System.ComponentModel.ComponentResourceManager resources = new global::System.ComponentModel.ComponentResourceManager(typeof(global::GravitonEco.MainForm));
+            this.comboBox2 = (new global::System.Windows.Forms.ComboBox());
+            this.tableLayoutPanel1 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.tableLayoutPanel2 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.dateSensor = (new global::System.Windows.Forms.Label());
+            this.comboBox1 = (new global::System.Windows.Forms.ComboBox());
+            this.serialNumber = (new global::System.Windows.Forms.Label());
+            this.softVersion = (new global::System.Windows.Forms.Label());
+            this.apparatVersion = (new global::System.Windows.Forms.Label());
+            this.pictureBox1 = (new global::System.Windows.Forms.PictureBox());
+            this.label10 = (new global::System.Windows.Forms.Label());
+            this.comboBox3 = (new global::System.Windows.Forms.ComboBox());
+            this.splitContainer1 = (new global::System.Windows.Forms.SplitContainer());
+            this.tableLayoutPanel3 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.tableLayoutPanel9 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.minPressureInSensor = (new global::System.Windows.Forms.Label());
+            this.porog_1_PressureInSensor = (new global::System.Windows.Forms.TextBox());
+            this.pressureInSensor = (new global::System.Windows.Forms.Label());
+            this.samplingSpeed = (new global::System.Windows.Forms.Label());
+            this.temperatureInSensor = (new global::System.Windows.Forms.Label());
+            this.humidityInSensor = (new global::System.Windows.Forms.Label());
+            this.supplyVoltage = (new global::System.Windows.Forms.Label());
+            this.minTemperatureInSensor = (new global::System.Windows.Forms.Label());
+            this.maxTemperatureInSensor = (new global::System.Windows.Forms.Label());
+            this.avgTemperatureInSensor = (new global::System.Windows.Forms.Label());
+            this.currentTemperatureInSensor = (new global::System.Windows.Forms.Label());
+            this.minSupplyVoltage = (new global::System.Windows.Forms.Label());
+            this.maxSupplyVoltage = (new global::System.Windows.Forms.Label());
+            this.avgSupplyVoltage = (new global::System.Windows.Forms.Label());
+            this.currentSupplyVoltage = (new global::System.Windows.Forms.Label());
+            this.maxSamplingSpeed = (new global::System.Windows.Forms.Label());
+            this.minHumidityInSensor = (new global::System.Windows.Forms.Label());
+            this.maxHumidityInSensor = (new global::System.Windows.Forms.Label());
+            this.avgHumidityInSensor = (new global::System.Windows.Forms.Label());
+            this.currentHumidityInSensor = (new global::System.Windows.Forms.Label());
+            this.avgSamplingSpeed = (new global::System.Windows.Forms.Label());
+            this.currentSamplingSpeed = (new global::System.Windows.Forms.Label());
+            this.minSamplingSpeed = (new global::System.Windows.Forms.Label());
+            this.currentPressureInSensor = (new global::System.Windows.Forms.Label());
+            this.avgPressureInSensor = (new global::System.Windows.Forms.Label());
+            this.maxPressureInSensor = (new global::System.Windows.Forms.Label());
+            this.porog_1_TemperatureInSensor = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_HumidityInSensor = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_SupplyVoltage = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_SamplingSpeed = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_TemperatureInSensor = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_HumidityInSensor = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_SupplyVoltage = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_SamplingSpeed = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_PressureInSensor = (new global::System.Windows.Forms.TextBox());
+            this.dx_TemperatureInSensor = (new global::System.Windows.Forms.TextBox());
+            this.dx_HumidityInSensor = (new global::System.Windows.Forms.TextBox());
+            this.dx_SupplyVoltage = (new global::System.Windows.Forms.TextBox());
+            this.dx_SamplingSpeed = (new global::System.Windows.Forms.TextBox());
+            this.dx_PressureInSensor = (new global::System.Windows.Forms.TextBox());
+            this.dt_TemperatureInSensor = (new global::System.Windows.Forms.TextBox());
+            this.dt_HumidityInSensor = (new global::System.Windows.Forms.TextBox());
+            this.dt_SupplyVoltage = (new global::System.Windows.Forms.TextBox());
+            this.dt_SamplingSpeed = (new global::System.Windows.Forms.TextBox());
+            this.dt_PressureInSensor = (new global::System.Windows.Forms.TextBox());
+            this.tableLayoutPanel4 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.porog_2_WindDirection = (new global::System.Windows.Forms.TextBox());
+            this.windDirection = (new global::System.Windows.Forms.Label());
+            this.label9 = (new global::System.Windows.Forms.Label());
+            this.label8 = (new global::System.Windows.Forms.Label());
+            this.label7 = (new global::System.Windows.Forms.Label());
+            this.label6 = (new global::System.Windows.Forms.Label());
+            this.label5 = (new global::System.Windows.Forms.Label());
+            this.label4 = (new global::System.Windows.Forms.Label());
+            this.label3 = (new global::System.Windows.Forms.Label());
+            this.label2 = (new global::System.Windows.Forms.Label());
+            this.label11 = (new global::System.Windows.Forms.Label());
+            this.airTemperature = (new global::System.Windows.Forms.Label());
+            this.relativeHumidity = (new global::System.Windows.Forms.Label());
+            this.atmosphericPressure = (new global::System.Windows.Forms.Label());
+            this.windSpeed = (new global::System.Windows.Forms.Label());
+            this.minAirTemperature = (new global::System.Windows.Forms.Label());
+            this.maxAirTemperature = (new global::System.Windows.Forms.Label());
+            this.avgAirTemperature = (new global::System.Windows.Forms.Label());
+            this.currentAirTemperature = (new global::System.Windows.Forms.Label());
+            this.minAtmosphericPressure = (new global::System.Windows.Forms.Label());
+            this.maxAtmosphericPressure = (new global::System.Windows.Forms.Label());
+            this.avgAtmosphericPressure = (new global::System.Windows.Forms.Label());
+            this.currentAtmosphericPressure = (new global::System.Windows.Forms.Label());
+            this.minWindDirection = (new global::System.Windows.Forms.Label());
+            this.currentWindDirection = (new global::System.Windows.Forms.Label());
+            this.avgWindDirection = (new global::System.Windows.Forms.Label());
+            this.minRelativeHumidity = (new global::System.Windows.Forms.Label());
+            this.maxRelativeHumidity = (new global::System.Windows.Forms.Label());
+            this.avgRelativeHumidity = (new global::System.Windows.Forms.Label());
+            this.currentRelativeHumidity = (new global::System.Windows.Forms.Label());
+            this.minWindSpeed = (new global::System.Windows.Forms.Label());
+            this.maxWindSpeed = (new global::System.Windows.Forms.Label());
+            this.avgWindSpeed = (new global::System.Windows.Forms.Label());
+            this.currentWindSpeed = (new global::System.Windows.Forms.Label());
+            this.maxWindDirection = (new global::System.Windows.Forms.Label());
+            this.porog_1_AirTemperature = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_RelativeHumidity = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_AtmosphericPressure = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_AirTemperature = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_RelativeHumidity = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_AtmosphericPressure = (new global::System.Windows.Forms.TextBox());
+            this.dx_AirTemperature = (new global::System.Windows.Forms.TextBox());
+            this.dx_RelativeHumidity = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_WindDirection = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_WindSpeed = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_WindSpeed = (new global::System.Windows.Forms.TextBox());
+            this.dx_WindDirection = (new global::System.Windows.Forms.TextBox());
+            this.dx_AtmosphericPressure = (new global::System.Windows.Forms.TextBox());
+            this.dt_AirTemperature = (new global::System.Windows.Forms.TextBox());
+            this.dt_RelativeHumidity = (new global::System.Windows.Forms.TextBox());
+            this.dt_AtmosphericPressure = (new global::System.Windows.Forms.TextBox());
+            this.dt_WindSpeed = (new global::System.Windows.Forms.TextBox());
+            this.dx_WindSpeed = (new global::System.Windows.Forms.TextBox());
+            this.dt_WindDirection = (new global::System.Windows.Forms.TextBox());
+            this.tableLayoutPanel5 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.porog_1_VolatileOrganicCompounds = (new global::System.Windows.Forms.TextBox());
+            this.minVolatileOrganicCompounds = (new global::System.Windows.Forms.Label());
+            this.volatileOrganicCompounds = (new global::System.Windows.Forms.Label());
+            this.carbonMonoxide = (new global::System.Windows.Forms.Label());
+            this.nitrogenOxide = (new global::System.Windows.Forms.Label());
+            this.nitrogenDioxide = (new global::System.Windows.Forms.Label());
+            this.sulfurDioxide = (new global::System.Windows.Forms.Label());
+            this.carbonDioxide = (new global::System.Windows.Forms.Label());
+            this.minNitrogenOxide = (new global::System.Windows.Forms.Label());
+            this.maxNitrogenOxide = (new global::System.Windows.Forms.Label());
+            this.avgNitrogenOxide = (new global::System.Windows.Forms.Label());
+            this.currentNitrogenOxide = (new global::System.Windows.Forms.Label());
+            this.maxVolatileOrganicCompounds = (new global::System.Windows.Forms.Label());
+            this.avgVolatileOrganicCompounds = (new global::System.Windows.Forms.Label());
+            this.currentVolatileOrganicCompounds = (new global::System.Windows.Forms.Label());
+            this.minSulfurDioxide = (new global::System.Windows.Forms.Label());
+            this.maxSulfurDioxide = (new global::System.Windows.Forms.Label());
+            this.avgSulfurDioxide = (new global::System.Windows.Forms.Label());
+            this.currentSulfurDioxide = (new global::System.Windows.Forms.Label());
+            this.minCarbonMonoxide = (new global::System.Windows.Forms.Label());
+            this.maxCarbonMonoxide = (new global::System.Windows.Forms.Label());
+            this.avgCarbonMonoxide = (new global::System.Windows.Forms.Label());
+            this.currentCarbonMonoxide = (new global::System.Windows.Forms.Label());
+            this.minNitrogenDioxide = (new global::System.Windows.Forms.Label());
+            this.maxNitrogenDioxide = (new global::System.Windows.Forms.Label());
+            this.avgNitrogenDioxide = (new global::System.Windows.Forms.Label());
+            this.currentNitrogenDioxide = (new global::System.Windows.Forms.Label());
+            this.minCarbonDioxide = (new global::System.Windows.Forms.Label());
+            this.maxCarbonDioxide = (new global::System.Windows.Forms.Label());
+            this.avgCarbonDioxide = (new global::System.Windows.Forms.Label());
+            this.currentCarbonDioxide = (new global::System.Windows.Forms.Label());
+            this.porog_1_CarbonMonoxide = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_NitrogenOxide = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_NitrogenDioxide = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_SulfurDioxide = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_CarbonDioxide = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_CarbonDioxide = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_SulfurDioxide = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_NitrogenDioxide = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_NitrogenOxide = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_CarbonMonoxide = (new global::System.Windows.Forms.TextBox());
+            this.dx_CarbonMonoxide = (new global::System.Windows.Forms.TextBox());
+            this.dx_NitrogenOxide = (new global::System.Windows.Forms.TextBox());
+            this.dx_NitrogenDioxide = (new global::System.Windows.Forms.TextBox());
+            this.dx_SulfurDioxide = (new global::System.Windows.Forms.TextBox());
+            this.dx_CarbonDioxide = (new global::System.Windows.Forms.TextBox());
+            this.dx_VolatileOrganicCompounds = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_VolatileOrganicCompounds = (new global::System.Windows.Forms.TextBox());
+            this.dt_VolatileOrganicCompounds = (new global::System.Windows.Forms.TextBox());
+            this.dt_CarbonDioxide = (new global::System.Windows.Forms.TextBox());
+            this.dt_SulfurDioxide = (new global::System.Windows.Forms.TextBox());
+            this.dt_NitrogenDioxide = (new global::System.Windows.Forms.TextBox());
+            this.dt_NitrogenOxide = (new global::System.Windows.Forms.TextBox());
+            this.dt_CarbonMonoxide = (new global::System.Windows.Forms.TextBox());
+            this.tableLayoutPanel7 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.porog_1_ParticulateMatterPM10 = (new global::System.Windows.Forms.TextBox());
+            this.currentParticulateMatterPM1 = (new global::System.Windows.Forms.Label());
+            this.avgParticulateMatterPM1 = (new global::System.Windows.Forms.Label());
+            this.maxParticulateMatterPM1 = (new global::System.Windows.Forms.Label());
+            this.particulateMatterPM10 = (new global::System.Windows.Forms.Label());
+            this.particulateMatterPM1 = (new global::System.Windows.Forms.Label());
+            this.particulateMatterPM2_5 = (new global::System.Windows.Forms.Label());
+            this.minParticulateMatterPM1 = (new global::System.Windows.Forms.Label());
+            this.minParticulateMatterPM10 = (new global::System.Windows.Forms.Label());
+            this.maxParticulateMatterPM10 = (new global::System.Windows.Forms.Label());
+            this.avgParticulateMatterPM10 = (new global::System.Windows.Forms.Label());
+            this.currentParticulateMatterPM10 = (new global::System.Windows.Forms.Label());
+            this.minParticulateMatterPM2_5 = (new global::System.Windows.Forms.Label());
+            this.maxParticulateMatterPM2_5 = (new global::System.Windows.Forms.Label());
+            this.avgParticulateMatterPM2_5 = (new global::System.Windows.Forms.Label());
+            this.currentParticulateMatterPM2_5 = (new global::System.Windows.Forms.Label());
+            this.porog_1_ParticulateMatterPM1 = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_ParticulateMatterPM2_5 = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_ParticulateMatterPM1 = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_ParticulateMatterPM2_5 = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_ParticulateMatterPM10 = (new global::System.Windows.Forms.TextBox());
+            this.dx_ParticulateMatterPM1 = (new global::System.Windows.Forms.TextBox());
+            this.dx_ParticulateMatterPM2_5 = (new global::System.Windows.Forms.TextBox());
+            this.dx_ParticulateMatterPM10 = (new global::System.Windows.Forms.TextBox());
+            this.dt_ParticulateMatterPM1 = (new global::System.Windows.Forms.TextBox());
+            this.dt_ParticulateMatterPM2_5 = (new global::System.Windows.Forms.TextBox());
+            this.dt_ParticulateMatterPM10 = (new global::System.Windows.Forms.TextBox());
+            this.tableLayoutPanel8 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.dt_TamperSensor = (new global::System.Windows.Forms.TextBox());
+            this.dx_TamperSensor = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_TamperSensor = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_TamperSensor = (new global::System.Windows.Forms.TextBox());
+            this.dt_TiltLevel = (new global::System.Windows.Forms.TextBox());
+            this.dx_TiltLevel = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_TiltLevel = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_TiltLevel = (new global::System.Windows.Forms.TextBox());
+            this.dt_VibrationLevel = (new global::System.Windows.Forms.TextBox());
+            this.dx_VibrationLevel = (new global::System.Windows.Forms.TextBox());
+            this.porog_2_VibrationLevel = (new global::System.Windows.Forms.TextBox());
+            this.porog_1_VibrationLevel = (new global::System.Windows.Forms.TextBox());
+            this.currentTamperSensor = (new global::System.Windows.Forms.Label());
+            this.tamperSensor = (new global::System.Windows.Forms.Label());
+            this.vibrationLevel = (new global::System.Windows.Forms.Label());
+            this.tiltLevel = (new global::System.Windows.Forms.Label());
+            this.minVibrationLevel = (new global::System.Windows.Forms.Label());
+            this.maxTamperSensor = (new global::System.Windows.Forms.Label());
+            this.maxVibrationLevel = (new global::System.Windows.Forms.Label());
+            this.avgVibrationLevel = (new global::System.Windows.Forms.Label());
+            this.currentVibrationLevel = (new global::System.Windows.Forms.Label());
+            this.avgTamperSensor = (new global::System.Windows.Forms.Label());
+            this.minTiltLevel = (new global::System.Windows.Forms.Label());
+            this.maxTiltLevel = (new global::System.Windows.Forms.Label());
+            this.avgTiltLevel = (new global::System.Windows.Forms.Label());
+            this.currentTiltLevel = (new global::System.Windows.Forms.Label());
+            this.minTamperSensor = (new global::System.Windows.Forms.Label());
+            this.tableLayoutPanel6 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.label15 = (new global::System.Windows.Forms.Label());
+            this.label16 = (new global::System.Windows.Forms.Label());
+            this.label17 = (new global::System.Windows.Forms.Label());
+            this.label18 = (new global::System.Windows.Forms.Label());
+            this.label19 = (new global::System.Windows.Forms.Label());
+            this.label20 = (new global::System.Windows.Forms.Label());
+            this.label21 = (new global::System.Windows.Forms.Label());
+            this.label22 = (new global::System.Windows.Forms.Label());
+            this.label23 = (new global::System.Windows.Forms.Label());
+            this.label24 = (new global::System.Windows.Forms.Label());
+            this.currentAirTemperature2 = (new global::System.Windows.Forms.Label());
+            this.currentAtmosphericPressure2 = (new global::System.Windows.Forms.Label());
+            this.currentRelativeHumidity2 = (new global::System.Windows.Forms.Label());
+            this.currentWindSpeed2 = (new global::System.Windows.Forms.Label());
+            this.powerAirTemperature = (new global::System.Windows.Forms.TextBox());
+            this.powerRelativeHumidity = (new global::System.Windows.Forms.TextBox());
+            this.constAirTemperature = (new global::System.Windows.Forms.TextBox());
+            this.constRelativeHumidity = (new global::System.Windows.Forms.TextBox());
+            this.constAtmosphericPressure = (new global::System.Windows.Forms.TextBox());
+            this.stepAirTemperature = (new global::System.Windows.Forms.TextBox());
+            this.stepRelativeHumidity = (new global::System.Windows.Forms.TextBox());
+            this.constWindSpeed = (new global::System.Windows.Forms.TextBox());
+            this.timeAirTemperature = (new global::System.Windows.Forms.TextBox());
+            this.timeRelativeHumidity = (new global::System.Windows.Forms.TextBox());
+            this.panel2 = (new global::System.Windows.Forms.Panel());
+            this.label12 = (new global::System.Windows.Forms.Label());
+            this.label13 = (new global::System.Windows.Forms.Label());
+            this.tableLayoutPanel10 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.label14 = (new global::System.Windows.Forms.Label());
+            this.pgc_CarbonDioxide = (new global::System.Windows.Forms.TextBox());
+            this.label27 = (new global::System.Windows.Forms.Label());
+            this.label30 = (new global::System.Windows.Forms.Label());
+            this.label31 = (new global::System.Windows.Forms.Label());
+            this.label32 = (new global::System.Windows.Forms.Label());
+            this.label33 = (new global::System.Windows.Forms.Label());
+            this.label34 = (new global::System.Windows.Forms.Label());
+            this.label35 = (new global::System.Windows.Forms.Label());
+            this.label36 = (new global::System.Windows.Forms.Label());
+            this.label37 = (new global::System.Windows.Forms.Label());
+            this.label38 = (new global::System.Windows.Forms.Label());
+            this.label39 = (new global::System.Windows.Forms.Label());
+            this.currentCarbonMonoxide2 = (new global::System.Windows.Forms.Label());
+            this.currentNitrogenDioxide2 = (new global::System.Windows.Forms.Label());
+            this.currentCarbonDioxide2 = (new global::System.Windows.Forms.Label());
+            this.currentNitrogenOxide2 = (new global::System.Windows.Forms.Label());
+            this.currentSulfurDioxide2 = (new global::System.Windows.Forms.Label());
+            this.setupZeroCarbonMonoxide = (new global::System.Windows.Forms.TextBox());
+            this.setupZeroNitrogenOxide = (new global::System.Windows.Forms.TextBox());
+            this.setupZeroNitrogenDioxide = (new global::System.Windows.Forms.TextBox());
+            this.pgc_CarbonMonoxide = (new global::System.Windows.Forms.TextBox());
+            this.pgc_NitrogenOxide = (new global::System.Windows.Forms.TextBox());
+            this.pgc_NitrogenDioxide = (new global::System.Windows.Forms.TextBox());
+            this.acp_CarbonMonoxide = (new global::System.Windows.Forms.TextBox());
+            this.acp_NitrogenOxide = (new global::System.Windows.Forms.TextBox());
+            this.setupZeroCarbonDioxide = (new global::System.Windows.Forms.TextBox());
+            this.setupZeroSulfurDioxide = (new global::System.Windows.Forms.TextBox());
+            this.pgc_SulfurDioxide = (new global::System.Windows.Forms.TextBox());
+            this.acp_CarbonDioxide = (new global::System.Windows.Forms.TextBox());
+            this.acp_NitrogenDioxide = (new global::System.Windows.Forms.TextBox());
+            this.sumZeroCarbonMonoxide = (new global::System.Windows.Forms.TextBox());
+            this.sumZeroNitrogenOxide = (new global::System.Windows.Forms.TextBox());
+            this.sumZeroNitrogenDioxide = (new global::System.Windows.Forms.TextBox());
+            this.sumZeroSulfurDioxide = (new global::System.Windows.Forms.TextBox());
+            this.acp_SulfurDioxide = (new global::System.Windows.Forms.TextBox());
+            this.sumZeroCarbonDioxide = (new global::System.Windows.Forms.TextBox());
+            this.currentVolatileOrganicCompounds2 = (new global::System.Windows.Forms.Label());
+            this.setupZeroVolatileOrganicCompounds = (new global::System.Windows.Forms.TextBox());
+            this.panel1 = (new global::System.Windows.Forms.Panel());
+            this.tableLayoutPanel11 = (new global::System.Windows.Forms.TableLayoutPanel());
+            this.textBox1 = (new global::System.Windows.Forms.TextBox());
+            this.label47 = (new global::System.Windows.Forms.Label());
+            this.label46 = (new global::System.Windows.Forms.Label());
+            this.pictureBox2 = (new global::System.Windows.Forms.PictureBox());
+            this.tableLayoutPanel2.SuspendLayout();
+            ((global::System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((global::System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tableLayoutPanel11.SuspendLayout();
+            ((global::System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.SuspendLayout();
             // 
             // comboBox2
             // 
-            comboBox2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            comboBox2.BackColor = Color.FromArgb(50, 50, 50);
-            comboBox2.FlatStyle = FlatStyle.Flat;
-            comboBox2.ForeColor = Color.FromArgb(25, 150, 190);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(130, 108);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(19, 23);
-            comboBox2.TabIndex = 6;
-            comboBox2.Text = "Время обновления";
+            this.comboBox2.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Left) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.comboBox2.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.comboBox2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.comboBox2.FormattingEnabled = (true);
+            this.comboBox2.Location = (new global::System.Drawing.Point(130, 108));
+            this.comboBox2.Name = ("comboBox2");
+            this.comboBox2.Size = (new global::System.Drawing.Size(19, 28));
+            this.comboBox2.TabIndex = (6);
+            this.comboBox2.Text = ("Время обновления");
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 8;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 3.62831855F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.283186F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.292035F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.938053F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.3628321F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.716814F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.4778757F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.1238937F));
-            tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.Size = new Size(200, 100);
-            tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.ColumnCount = (8);
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 3.62831855F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 16.283186F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.292035F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 8.938053F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 13.3628321F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 13.716814F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 12.4778757F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 22.1238937F));
+            this.tableLayoutPanel1.Location = (new global::System.Drawing.Point(0, 0));
+            this.tableLayoutPanel1.Name = ("tableLayoutPanel1");
+            this.tableLayoutPanel1.RowCount = (1);
+            this.tableLayoutPanel1.Size = (new global::System.Drawing.Size(200, 100));
+            this.tableLayoutPanel1.TabIndex = (0);
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 8;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 3.62831855F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.283186F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.292035F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.938053F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.3628321F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.716814F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.4778757F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.1238937F));
-            tableLayoutPanel2.Controls.Add(dateSensor, 7, 0);
-            tableLayoutPanel2.Controls.Add(comboBox1, 6, 0);
-            tableLayoutPanel2.Controls.Add(serialNumber, 4, 0);
-            tableLayoutPanel2.Controls.Add(softVersion, 3, 0);
-            tableLayoutPanel2.Controls.Add(apparatVersion, 2, 0);
-            tableLayoutPanel2.Controls.Add(pictureBox1, 0, 0);
-            tableLayoutPanel2.Controls.Add(label10, 1, 0);
-            tableLayoutPanel2.Controls.Add(comboBox3, 5, 0);
-            tableLayoutPanel2.Dock = DockStyle.Top;
-            tableLayoutPanel2.Location = new Point(0, 0);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(1211, 39);
-            tableLayoutPanel2.TabIndex = 2;
+            this.tableLayoutPanel2.ColumnCount = (8);
+            this.tableLayoutPanel2.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 3.62831855F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 16.283186F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.292035F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 8.938053F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 13.3628321F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 13.716814F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 12.4778757F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 22.1238937F));
+            this.tableLayoutPanel2.Controls.Add(this.dateSensor, 7, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboBox1, 6, 0);
+            this.tableLayoutPanel2.Controls.Add(this.serialNumber, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.softVersion, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.apparatVersion, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label10, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.comboBox3, 5, 0);
+            this.tableLayoutPanel2.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.tableLayoutPanel2.Location = (new global::System.Drawing.Point(0, 0));
+            this.tableLayoutPanel2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.tableLayoutPanel2.Name = ("tableLayoutPanel2");
+            this.tableLayoutPanel2.RowCount = (1);
+            this.tableLayoutPanel2.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = (new global::System.Drawing.Size(1876, 52));
+            this.tableLayoutPanel2.TabIndex = (2);
             // 
             // dateSensor
             // 
-            dateSensor.AutoSize = true;
-            dateSensor.BackColor = Color.FromArgb(50, 50, 50);
-            dateSensor.Dock = DockStyle.Fill;
-            dateSensor.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dateSensor.ForeColor = Color.FromArgb(190, 190, 190);
-            dateSensor.Location = new Point(943, 0);
-            dateSensor.Name = "dateSensor";
-            dateSensor.Size = new Size(265, 39);
-            dateSensor.TabIndex = 7;
-            dateSensor.Text = "18.07.2023 20:00";
-            dateSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.dateSensor.AutoSize = (true);
+            this.dateSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.dateSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dateSensor.Font = (new global::System.Drawing.Font("Segoe UI Semibold", 16.25F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.dateSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.dateSensor.Location = (new global::System.Drawing.Point(1460, 0));
+            this.dateSensor.Name = ("dateSensor");
+            this.dateSensor.Size = (new global::System.Drawing.Size(413, 52));
+            this.dateSensor.TabIndex = (7);
+            this.dateSensor.Text = ("18.07.2023 20:00");
+            this.dateSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // comboBox1
             // 
-            comboBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            comboBox1.BackColor = Color.FromArgb(50, 50, 50);
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.ForeColor = Color.FromArgb(25, 150, 190);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(792, 8);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(145, 23);
-            comboBox1.TabIndex = 6;
-            comboBox1.Text = "Время обновления";
+            this.comboBox1.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Left) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.comboBox1.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.comboBox1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.comboBox1.FormattingEnabled = (true);
+            this.comboBox1.Items.AddRange(new global::System.Object[] { "1", "10", "15", "20", "25", "30", "60", "120" });
+            this.comboBox1.Location = (new global::System.Drawing.Point(1226, 12));
+            this.comboBox1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.comboBox1.Name = ("comboBox1");
+            this.comboBox1.Size = (new global::System.Drawing.Size(228, 28));
+            this.comboBox1.TabIndex = (6);
+            this.comboBox1.Text = ("Время обновления");
+            this.comboBox1.SelectedIndexChanged += (this.comboBox1_SelectedIndexChanged);
             // 
             // serialNumber
             // 
-            serialNumber.AutoSize = true;
-            serialNumber.BackColor = Color.FromArgb(50, 50, 50);
-            serialNumber.Dock = DockStyle.Fill;
-            serialNumber.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
-            serialNumber.ForeColor = Color.FromArgb(190, 190, 190);
-            serialNumber.Location = new Point(464, 0);
-            serialNumber.Name = "serialNumber";
-            serialNumber.Size = new Size(156, 39);
-            serialNumber.TabIndex = 4;
-            serialNumber.Text = "SN-12345678";
-            serialNumber.TextAlign = ContentAlignment.MiddleCenter;
+            this.serialNumber.AutoSize = (true);
+            this.serialNumber.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.serialNumber.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.serialNumber.Font = (new global::System.Drawing.Font("Segoe UI Semibold", 16.25F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.serialNumber.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.serialNumber.Location = (new global::System.Drawing.Point(718, 0));
+            this.serialNumber.Name = ("serialNumber");
+            this.serialNumber.Size = (new global::System.Drawing.Size(245, 52));
+            this.serialNumber.TabIndex = (4);
+            this.serialNumber.Text = ("SN-12345678");
+            this.serialNumber.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // softVersion
             // 
-            softVersion.AutoSize = true;
-            softVersion.BackColor = Color.FromArgb(50, 50, 50);
-            softVersion.Dock = DockStyle.Fill;
-            softVersion.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
-            softVersion.ForeColor = Color.FromArgb(190, 190, 190);
-            softVersion.Location = new Point(356, 0);
-            softVersion.Name = "softVersion";
-            softVersion.Size = new Size(102, 39);
-            softVersion.TabIndex = 3;
-            softVersion.Text = "FV-0001";
-            softVersion.TextAlign = ContentAlignment.MiddleCenter;
+            this.softVersion.AutoSize = (true);
+            this.softVersion.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.softVersion.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.softVersion.Font = (new global::System.Drawing.Font("Segoe UI Semibold", 16.25F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.softVersion.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.softVersion.Location = (new global::System.Drawing.Point(551, 0));
+            this.softVersion.Name = ("softVersion");
+            this.softVersion.Size = (new global::System.Drawing.Size(161, 52));
+            this.softVersion.TabIndex = (3);
+            this.softVersion.Text = ("FV-0001");
+            this.softVersion.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // apparatVersion
             // 
-            apparatVersion.AutoSize = true;
-            apparatVersion.BackColor = Color.FromArgb(50, 50, 50);
-            apparatVersion.Dock = DockStyle.Fill;
-            apparatVersion.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
-            apparatVersion.ForeColor = Color.FromArgb(190, 190, 190);
-            apparatVersion.Location = new Point(244, 0);
-            apparatVersion.Name = "apparatVersion";
-            apparatVersion.Size = new Size(106, 39);
-            apparatVersion.TabIndex = 2;
-            apparatVersion.Text = "HV-0001";
-            apparatVersion.TextAlign = ContentAlignment.MiddleCenter;
+            this.apparatVersion.AutoSize = (true);
+            this.apparatVersion.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.apparatVersion.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.apparatVersion.Font = (new global::System.Drawing.Font("Segoe UI Semibold", 16.25F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.apparatVersion.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.apparatVersion.Location = (new global::System.Drawing.Point(377, 0));
+            this.apparatVersion.Name = ("apparatVersion");
+            this.apparatVersion.Size = (new global::System.Drawing.Size(168, 52));
+            this.apparatVersion.TabIndex = (2);
+            this.apparatVersion.Text = ("HV-0001");
+            this.apparatVersion.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.FromArgb(50, 50, 50);
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.settings;
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(38, 33);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            this.pictureBox1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.pictureBox1.Cursor = (global::System.Windows.Forms.Cursors.Hand);
+            this.pictureBox1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pictureBox1.Image = (global::GravitonEco.Properties.Resources.settings);
+            this.pictureBox1.Location = (new global::System.Drawing.Point(3, 4));
+            this.pictureBox1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pictureBox1.Name = ("pictureBox1");
+            this.pictureBox1.Size = (new global::System.Drawing.Size(62, 44));
+            this.pictureBox1.SizeMode = (global::System.Windows.Forms.PictureBoxSizeMode.Zoom);
+            this.pictureBox1.TabIndex = (0);
+            this.pictureBox1.TabStop = (false);
+            this.pictureBox1.Click += (this.pictureBox1_Click);
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.FromArgb(50, 50, 50);
-            label10.Cursor = Cursors.Hand;
-            label10.Dock = DockStyle.Fill;
-            label10.Font = new Font("Segoe UI Semibold", 16.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.FromArgb(50, 230, 80);
-            label10.Location = new Point(47, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(191, 39);
-            label10.TabIndex = 1;
-            label10.Text = "GRAVITON-ECO";
-            label10.TextAlign = ContentAlignment.MiddleCenter;
+            this.label10.AutoSize = (true);
+            this.label10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.label10.Cursor = (global::System.Windows.Forms.Cursors.Hand);
+            this.label10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label10.Font = (new global::System.Drawing.Font("Segoe UI Semibold", 16.25F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(230)), (global::System.Int32)((global::System.Byte)(80))));
+            this.label10.Location = (new global::System.Drawing.Point(71, 0));
+            this.label10.Name = ("label10");
+            this.label10.Size = (new global::System.Drawing.Size(300, 52));
+            this.label10.TabIndex = (1);
+            this.label10.Text = ("GRAVITON-ECO");
+            this.label10.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // comboBox3
             // 
-            comboBox3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            comboBox3.BackColor = Color.FromArgb(50, 50, 50);
-            comboBox3.FlatStyle = FlatStyle.Flat;
-            comboBox3.ForeColor = Color.FromArgb(25, 150, 190);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(626, 8);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(160, 23);
-            comboBox3.TabIndex = 5;
-            comboBox3.Text = "Период наблюдений";
+            this.comboBox3.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Left) | (global::System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBox3.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.comboBox3.FlatStyle = (global::System.Windows.Forms.FlatStyle.Flat);
+            this.comboBox3.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.comboBox3.FormattingEnabled = (true);
+            this.comboBox3.Location = (new global::System.Drawing.Point(969, 12));
+            this.comboBox3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.comboBox3.Name = ("comboBox3");
+            this.comboBox3.Size = (new global::System.Drawing.Size(251, 28));
+            this.comboBox3.TabIndex = (5);
+            this.comboBox3.Text = ("Период наблюдений");
             // 
             // splitContainer1
             // 
-            splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(0, 39);
-            splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.splitContainer1.Location = (new global::System.Drawing.Point(0, 52));
+            this.splitContainer1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.splitContainer1.Name = ("splitContainer1");
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(tableLayoutPanel3);
+            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel3);
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(tableLayoutPanel6);
-            splitContainer1.Panel2.Controls.Add(panel2);
-            splitContainer1.Panel2.Controls.Add(tableLayoutPanel10);
-            splitContainer1.Panel2.Controls.Add(panel1);
-            splitContainer1.Size = new Size(1211, 614);
-            splitContainer1.SplitterDistance = 613;
-            splitContainer1.TabIndex = 3;
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel6);
+            this.splitContainer1.Panel2.Controls.Add(this.panel2);
+            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel10);
+            this.splitContainer1.Panel2.Controls.Add(this.panel1);
+            this.splitContainer1.Size = (new global::System.Drawing.Size(1876, 819));
+            this.splitContainer1.SplitterDistance = (948);
+            this.splitContainer1.SplitterWidth = (5);
+            this.splitContainer1.TabIndex = (3);
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.ColumnCount = 1;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel9, 0, 4);
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel4, 0, 0);
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel5, 0, 1);
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel7, 0, 2);
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel8, 0, 3);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(0, 0);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 5;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 23.9600658F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 28.1198F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 14.143095F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 13.4775372F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 20.2995014F));
-            tableLayoutPanel3.Size = new Size(613, 614);
-            tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.ColumnCount = (1);
+            this.tableLayoutPanel3.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel9, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel8, 0, 3);
+            this.tableLayoutPanel3.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tableLayoutPanel3.Location = (new global::System.Drawing.Point(0, 0));
+            this.tableLayoutPanel3.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.tableLayoutPanel3.Name = ("tableLayoutPanel3");
+            this.tableLayoutPanel3.RowCount = (5);
+            this.tableLayoutPanel3.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 23.9600658F));
+            this.tableLayoutPanel3.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 28.1198F));
+            this.tableLayoutPanel3.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 14.143095F));
+            this.tableLayoutPanel3.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 13.4775372F));
+            this.tableLayoutPanel3.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 20.2995014F));
+            this.tableLayoutPanel3.Size = (new global::System.Drawing.Size(948, 819));
+            this.tableLayoutPanel3.TabIndex = (0);
             // 
             // tableLayoutPanel9
             // 
-            tableLayoutPanel9.BackColor = Color.FromArgb(30, 30, 30);
-            tableLayoutPanel9.ColumnCount = 9;
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.0722065F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.13054F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.68582535F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.546537F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.05079651F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.190808F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.770773F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.3711777F));
-            tableLayoutPanel9.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.1813364F));
-            tableLayoutPanel9.Controls.Add(minPressureInSensor, 1, 4);
-            tableLayoutPanel9.Controls.Add(porog_1_PressureInSensor, 5, 4);
-            tableLayoutPanel9.Controls.Add(pressureInSensor, 0, 4);
-            tableLayoutPanel9.Controls.Add(samplingSpeed, 0, 3);
-            tableLayoutPanel9.Controls.Add(temperatureInSensor, 0, 0);
-            tableLayoutPanel9.Controls.Add(humidityInSensor, 0, 1);
-            tableLayoutPanel9.Controls.Add(supplyVoltage, 0, 2);
-            tableLayoutPanel9.Controls.Add(minTemperatureInSensor, 1, 0);
-            tableLayoutPanel9.Controls.Add(maxTemperatureInSensor, 2, 0);
-            tableLayoutPanel9.Controls.Add(avgTemperatureInSensor, 3, 0);
-            tableLayoutPanel9.Controls.Add(currentTemperatureInSensor, 4, 0);
-            tableLayoutPanel9.Controls.Add(minSupplyVoltage, 1, 2);
-            tableLayoutPanel9.Controls.Add(maxSupplyVoltage, 2, 2);
-            tableLayoutPanel9.Controls.Add(avgSupplyVoltage, 3, 2);
-            tableLayoutPanel9.Controls.Add(currentSupplyVoltage, 4, 2);
-            tableLayoutPanel9.Controls.Add(maxSamplingSpeed, 2, 3);
-            tableLayoutPanel9.Controls.Add(minHumidityInSensor, 1, 1);
-            tableLayoutPanel9.Controls.Add(maxHumidityInSensor, 2, 1);
-            tableLayoutPanel9.Controls.Add(avgHumidityInSensor, 3, 1);
-            tableLayoutPanel9.Controls.Add(currentHumidityInSensor, 4, 1);
-            tableLayoutPanel9.Controls.Add(avgSamplingSpeed, 3, 3);
-            tableLayoutPanel9.Controls.Add(currentSamplingSpeed, 4, 3);
-            tableLayoutPanel9.Controls.Add(minSamplingSpeed, 1, 3);
-            tableLayoutPanel9.Controls.Add(currentPressureInSensor, 4, 4);
-            tableLayoutPanel9.Controls.Add(avgPressureInSensor, 3, 4);
-            tableLayoutPanel9.Controls.Add(maxPressureInSensor, 2, 4);
-            tableLayoutPanel9.Controls.Add(porog_1_TemperatureInSensor, 5, 0);
-            tableLayoutPanel9.Controls.Add(porog_1_HumidityInSensor, 5, 1);
-            tableLayoutPanel9.Controls.Add(porog_1_SupplyVoltage, 5, 2);
-            tableLayoutPanel9.Controls.Add(porog_1_SamplingSpeed, 5, 3);
-            tableLayoutPanel9.Controls.Add(porog_2_TemperatureInSensor, 6, 0);
-            tableLayoutPanel9.Controls.Add(porog_2_HumidityInSensor, 6, 1);
-            tableLayoutPanel9.Controls.Add(porog_2_SupplyVoltage, 6, 2);
-            tableLayoutPanel9.Controls.Add(porog_2_SamplingSpeed, 6, 3);
-            tableLayoutPanel9.Controls.Add(porog_2_PressureInSensor, 6, 4);
-            tableLayoutPanel9.Controls.Add(dx_TemperatureInSensor, 7, 0);
-            tableLayoutPanel9.Controls.Add(dx_HumidityInSensor, 7, 1);
-            tableLayoutPanel9.Controls.Add(dx_SupplyVoltage, 7, 2);
-            tableLayoutPanel9.Controls.Add(dx_SamplingSpeed, 7, 3);
-            tableLayoutPanel9.Controls.Add(dx_PressureInSensor, 7, 4);
-            tableLayoutPanel9.Controls.Add(dt_TemperatureInSensor, 8, 0);
-            tableLayoutPanel9.Controls.Add(dt_HumidityInSensor, 8, 1);
-            tableLayoutPanel9.Controls.Add(dt_SupplyVoltage, 8, 2);
-            tableLayoutPanel9.Controls.Add(dt_SamplingSpeed, 8, 3);
-            tableLayoutPanel9.Controls.Add(dt_PressureInSensor, 8, 4);
-            tableLayoutPanel9.Dock = DockStyle.Fill;
-            tableLayoutPanel9.Location = new Point(3, 490);
-            tableLayoutPanel9.Name = "tableLayoutPanel9";
-            tableLayoutPanel9.RowCount = 5;
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tableLayoutPanel9.Size = new Size(607, 121);
-            tableLayoutPanel9.TabIndex = 4;
+            this.tableLayoutPanel9.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.tableLayoutPanel9.ColumnCount = (9);
+            this.tableLayoutPanel9.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 25.0722065F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.13054F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.68582535F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.546537F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.05079651F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.190808F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 8.770773F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 13.3711777F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 15.1813364F));
+            this.tableLayoutPanel9.Controls.Add(this.minPressureInSensor, 1, 4);
+            this.tableLayoutPanel9.Controls.Add(this.porog_1_PressureInSensor, 5, 4);
+            this.tableLayoutPanel9.Controls.Add(this.pressureInSensor, 0, 4);
+            this.tableLayoutPanel9.Controls.Add(this.samplingSpeed, 0, 3);
+            this.tableLayoutPanel9.Controls.Add(this.temperatureInSensor, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.humidityInSensor, 0, 1);
+            this.tableLayoutPanel9.Controls.Add(this.supplyVoltage, 0, 2);
+            this.tableLayoutPanel9.Controls.Add(this.minTemperatureInSensor, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.maxTemperatureInSensor, 2, 0);
+            this.tableLayoutPanel9.Controls.Add(this.avgTemperatureInSensor, 3, 0);
+            this.tableLayoutPanel9.Controls.Add(this.currentTemperatureInSensor, 4, 0);
+            this.tableLayoutPanel9.Controls.Add(this.minSupplyVoltage, 1, 2);
+            this.tableLayoutPanel9.Controls.Add(this.maxSupplyVoltage, 2, 2);
+            this.tableLayoutPanel9.Controls.Add(this.avgSupplyVoltage, 3, 2);
+            this.tableLayoutPanel9.Controls.Add(this.currentSupplyVoltage, 4, 2);
+            this.tableLayoutPanel9.Controls.Add(this.maxSamplingSpeed, 2, 3);
+            this.tableLayoutPanel9.Controls.Add(this.minHumidityInSensor, 1, 1);
+            this.tableLayoutPanel9.Controls.Add(this.maxHumidityInSensor, 2, 1);
+            this.tableLayoutPanel9.Controls.Add(this.avgHumidityInSensor, 3, 1);
+            this.tableLayoutPanel9.Controls.Add(this.currentHumidityInSensor, 4, 1);
+            this.tableLayoutPanel9.Controls.Add(this.avgSamplingSpeed, 3, 3);
+            this.tableLayoutPanel9.Controls.Add(this.currentSamplingSpeed, 4, 3);
+            this.tableLayoutPanel9.Controls.Add(this.minSamplingSpeed, 1, 3);
+            this.tableLayoutPanel9.Controls.Add(this.currentPressureInSensor, 4, 4);
+            this.tableLayoutPanel9.Controls.Add(this.avgPressureInSensor, 3, 4);
+            this.tableLayoutPanel9.Controls.Add(this.maxPressureInSensor, 2, 4);
+            this.tableLayoutPanel9.Controls.Add(this.porog_1_TemperatureInSensor, 5, 0);
+            this.tableLayoutPanel9.Controls.Add(this.porog_1_HumidityInSensor, 5, 1);
+            this.tableLayoutPanel9.Controls.Add(this.porog_1_SupplyVoltage, 5, 2);
+            this.tableLayoutPanel9.Controls.Add(this.porog_1_SamplingSpeed, 5, 3);
+            this.tableLayoutPanel9.Controls.Add(this.porog_2_TemperatureInSensor, 6, 0);
+            this.tableLayoutPanel9.Controls.Add(this.porog_2_HumidityInSensor, 6, 1);
+            this.tableLayoutPanel9.Controls.Add(this.porog_2_SupplyVoltage, 6, 2);
+            this.tableLayoutPanel9.Controls.Add(this.porog_2_SamplingSpeed, 6, 3);
+            this.tableLayoutPanel9.Controls.Add(this.porog_2_PressureInSensor, 6, 4);
+            this.tableLayoutPanel9.Controls.Add(this.dx_TemperatureInSensor, 7, 0);
+            this.tableLayoutPanel9.Controls.Add(this.dx_HumidityInSensor, 7, 1);
+            this.tableLayoutPanel9.Controls.Add(this.dx_SupplyVoltage, 7, 2);
+            this.tableLayoutPanel9.Controls.Add(this.dx_SamplingSpeed, 7, 3);
+            this.tableLayoutPanel9.Controls.Add(this.dx_PressureInSensor, 7, 4);
+            this.tableLayoutPanel9.Controls.Add(this.dt_TemperatureInSensor, 8, 0);
+            this.tableLayoutPanel9.Controls.Add(this.dt_HumidityInSensor, 8, 1);
+            this.tableLayoutPanel9.Controls.Add(this.dt_SupplyVoltage, 8, 2);
+            this.tableLayoutPanel9.Controls.Add(this.dt_SamplingSpeed, 8, 3);
+            this.tableLayoutPanel9.Controls.Add(this.dt_PressureInSensor, 8, 4);
+            this.tableLayoutPanel9.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tableLayoutPanel9.Location = (new global::System.Drawing.Point(3, 655));
+            this.tableLayoutPanel9.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.tableLayoutPanel9.Name = ("tableLayoutPanel9");
+            this.tableLayoutPanel9.RowCount = (5);
+            this.tableLayoutPanel9.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel9.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel9.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel9.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel9.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel9.Size = (new global::System.Drawing.Size(942, 160));
+            this.tableLayoutPanel9.TabIndex = (4);
             // 
             // minPressureInSensor
             // 
-            minPressureInSensor.AutoSize = true;
-            minPressureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            minPressureInSensor.Dock = DockStyle.Fill;
-            minPressureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minPressureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            minPressureInSensor.Location = new Point(155, 92);
-            minPressureInSensor.Name = "minPressureInSensor";
-            minPressureInSensor.Size = new Size(31, 29);
-            minPressureInSensor.TabIndex = 98;
-            minPressureInSensor.Text = "0.9";
-            minPressureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.minPressureInSensor.AutoSize = (true);
+            this.minPressureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minPressureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minPressureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minPressureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minPressureInSensor.Location = (new global::System.Drawing.Point(239, 120));
+            this.minPressureInSensor.Name = ("minPressureInSensor");
+            this.minPressureInSensor.Size = (new global::System.Drawing.Size(51, 40));
+            this.minPressureInSensor.TabIndex = (98);
+            this.minPressureInSensor.Text = ("0.9");
+            this.minPressureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // porog_1_PressureInSensor
             // 
-            porog_1_PressureInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_PressureInSensor.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_PressureInSensor.Dock = DockStyle.Fill;
-            porog_1_PressureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_PressureInSensor.Location = new Point(325, 95);
-            porog_1_PressureInSensor.Name = "porog_1_PressureInSensor";
-            porog_1_PressureInSensor.Size = new Size(49, 23);
-            porog_1_PressureInSensor.TabIndex = 96;
-            porog_1_PressureInSensor.Text = "20";
-            porog_1_PressureInSensor.TextAlign = HorizontalAlignment.Center;
-            porog_1_PressureInSensor.KeyDown += porog_1_PressureInSensor_KeyDown;
+            this.porog_1_PressureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_PressureInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_PressureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_PressureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_PressureInSensor.Location = (new global::System.Drawing.Point(504, 124));
+            this.porog_1_PressureInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_PressureInSensor.Name = ("porog_1_PressureInSensor");
+            this.porog_1_PressureInSensor.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_PressureInSensor.TabIndex = (96);
+            this.porog_1_PressureInSensor.Text = ("20");
+            this.porog_1_PressureInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_PressureInSensor.KeyDown += (this.porog_1_PressureInSensor_KeyDown);
             // 
             // pressureInSensor
             // 
-            pressureInSensor.AutoSize = true;
-            pressureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            pressureInSensor.Dock = DockStyle.Fill;
-            pressureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            pressureInSensor.ForeColor = Color.FromArgb(190, 190, 190);
-            pressureInSensor.Location = new Point(3, 92);
-            pressureInSensor.Name = "pressureInSensor";
-            pressureInSensor.Size = new Size(146, 29);
-            pressureInSensor.TabIndex = 94;
-            pressureInSensor.Text = "Атм. дав-ние (650 - 1200 hPa)";
-            pressureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.pressureInSensor.AutoSize = (true);
+            this.pressureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.pressureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pressureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.pressureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.pressureInSensor.Location = (new global::System.Drawing.Point(3, 120));
+            this.pressureInSensor.Name = ("pressureInSensor");
+            this.pressureInSensor.Size = (new global::System.Drawing.Size(230, 40));
+            this.pressureInSensor.TabIndex = (94);
+            this.pressureInSensor.Text = ("Атм. дав-ние (650 - 1200 hPa)");
+            this.pressureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // samplingSpeed
             // 
-            samplingSpeed.AutoSize = true;
-            samplingSpeed.BackColor = Color.FromArgb(80, 80, 80);
-            samplingSpeed.Dock = DockStyle.Fill;
-            samplingSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            samplingSpeed.ForeColor = Color.FromArgb(190, 190, 190);
-            samplingSpeed.Location = new Point(3, 69);
-            samplingSpeed.Name = "samplingSpeed";
-            samplingSpeed.Size = new Size(146, 23);
-            samplingSpeed.TabIndex = 22;
-            samplingSpeed.Text = "Скор. потока (0 - 1 л/мин) ";
-            samplingSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.samplingSpeed.AutoSize = (true);
+            this.samplingSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.samplingSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.samplingSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.samplingSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.samplingSpeed.Location = (new global::System.Drawing.Point(3, 90));
+            this.samplingSpeed.Name = ("samplingSpeed");
+            this.samplingSpeed.Size = (new global::System.Drawing.Size(230, 30));
+            this.samplingSpeed.TabIndex = (22);
+            this.samplingSpeed.Text = ("Скор. потока (0 - 1 л/мин) ");
+            this.samplingSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // temperatureInSensor
             // 
-            temperatureInSensor.AutoSize = true;
-            temperatureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            temperatureInSensor.Dock = DockStyle.Fill;
-            temperatureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            temperatureInSensor.ForeColor = Color.FromArgb(190, 190, 190);
-            temperatureInSensor.Location = new Point(3, 0);
-            temperatureInSensor.Name = "temperatureInSensor";
-            temperatureInSensor.Size = new Size(146, 23);
-            temperatureInSensor.TabIndex = 19;
-            temperatureInSensor.Text = "Температура (- 45 до +45°С)";
-            temperatureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.temperatureInSensor.AutoSize = (true);
+            this.temperatureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.temperatureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.temperatureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.temperatureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.temperatureInSensor.Location = (new global::System.Drawing.Point(3, 0));
+            this.temperatureInSensor.Name = ("temperatureInSensor");
+            this.temperatureInSensor.Size = (new global::System.Drawing.Size(230, 30));
+            this.temperatureInSensor.TabIndex = (19);
+            this.temperatureInSensor.Text = ("Температура (- 45 до +45°С)");
+            this.temperatureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // humidityInSensor
             // 
-            humidityInSensor.AutoSize = true;
-            humidityInSensor.BackColor = Color.FromArgb(80, 80, 80);
-            humidityInSensor.Dock = DockStyle.Fill;
-            humidityInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            humidityInSensor.ForeColor = Color.FromArgb(190, 190, 190);
-            humidityInSensor.Location = new Point(3, 23);
-            humidityInSensor.Name = "humidityInSensor";
-            humidityInSensor.Size = new Size(146, 23);
-            humidityInSensor.TabIndex = 20;
-            humidityInSensor.Text = "Отн. влажность (0 - 98 %)";
-            humidityInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.humidityInSensor.AutoSize = (true);
+            this.humidityInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.humidityInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.humidityInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.humidityInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.humidityInSensor.Location = (new global::System.Drawing.Point(3, 30));
+            this.humidityInSensor.Name = ("humidityInSensor");
+            this.humidityInSensor.Size = (new global::System.Drawing.Size(230, 30));
+            this.humidityInSensor.TabIndex = (20);
+            this.humidityInSensor.Text = ("Отн. влажность (0 - 98 %)");
+            this.humidityInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // supplyVoltage
             // 
-            supplyVoltage.AutoSize = true;
-            supplyVoltage.BackColor = Color.FromArgb(50, 50, 50);
-            supplyVoltage.Dock = DockStyle.Fill;
-            supplyVoltage.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            supplyVoltage.ForeColor = Color.FromArgb(190, 190, 190);
-            supplyVoltage.Location = new Point(3, 46);
-            supplyVoltage.Name = "supplyVoltage";
-            supplyVoltage.Size = new Size(146, 23);
-            supplyVoltage.TabIndex = 21;
-            supplyVoltage.Text = "Напряжение (8 - 16 В)";
-            supplyVoltage.TextAlign = ContentAlignment.MiddleCenter;
+            this.supplyVoltage.AutoSize = (true);
+            this.supplyVoltage.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.supplyVoltage.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.supplyVoltage.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.supplyVoltage.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.supplyVoltage.Location = (new global::System.Drawing.Point(3, 60));
+            this.supplyVoltage.Name = ("supplyVoltage");
+            this.supplyVoltage.Size = (new global::System.Drawing.Size(230, 30));
+            this.supplyVoltage.TabIndex = (21);
+            this.supplyVoltage.Text = ("Напряжение (8 - 16 В)");
+            this.supplyVoltage.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minTemperatureInSensor
             // 
-            minTemperatureInSensor.AutoSize = true;
-            minTemperatureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            minTemperatureInSensor.Dock = DockStyle.Fill;
-            minTemperatureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minTemperatureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            minTemperatureInSensor.Location = new Point(155, 0);
-            minTemperatureInSensor.Name = "minTemperatureInSensor";
-            minTemperatureInSensor.Size = new Size(31, 23);
-            minTemperatureInSensor.TabIndex = 79;
-            minTemperatureInSensor.Text = "23.9";
-            minTemperatureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.minTemperatureInSensor.AutoSize = (true);
+            this.minTemperatureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minTemperatureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minTemperatureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minTemperatureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minTemperatureInSensor.Location = (new global::System.Drawing.Point(239, 0));
+            this.minTemperatureInSensor.Name = ("minTemperatureInSensor");
+            this.minTemperatureInSensor.Size = (new global::System.Drawing.Size(51, 30));
+            this.minTemperatureInSensor.TabIndex = (79);
+            this.minTemperatureInSensor.Text = ("23.9");
+            this.minTemperatureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxTemperatureInSensor
             // 
-            maxTemperatureInSensor.AutoSize = true;
-            maxTemperatureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            maxTemperatureInSensor.Dock = DockStyle.Fill;
-            maxTemperatureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxTemperatureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            maxTemperatureInSensor.Location = new Point(192, 0);
-            maxTemperatureInSensor.Name = "maxTemperatureInSensor";
-            maxTemperatureInSensor.Size = new Size(34, 23);
-            maxTemperatureInSensor.TabIndex = 80;
-            maxTemperatureInSensor.Text = "23.9";
-            maxTemperatureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxTemperatureInSensor.AutoSize = (true);
+            this.maxTemperatureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxTemperatureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxTemperatureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxTemperatureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxTemperatureInSensor.Location = (new global::System.Drawing.Point(296, 0));
+            this.maxTemperatureInSensor.Name = ("maxTemperatureInSensor");
+            this.maxTemperatureInSensor.Size = (new global::System.Drawing.Size(56, 30));
+            this.maxTemperatureInSensor.TabIndex = (80);
+            this.maxTemperatureInSensor.Text = ("23.9");
+            this.maxTemperatureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgTemperatureInSensor
             // 
-            avgTemperatureInSensor.AutoSize = true;
-            avgTemperatureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            avgTemperatureInSensor.Dock = DockStyle.Fill;
-            avgTemperatureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgTemperatureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            avgTemperatureInSensor.Location = new Point(232, 0);
-            avgTemperatureInSensor.Name = "avgTemperatureInSensor";
-            avgTemperatureInSensor.Size = new Size(33, 23);
-            avgTemperatureInSensor.TabIndex = 81;
-            avgTemperatureInSensor.Text = "23.9";
-            avgTemperatureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgTemperatureInSensor.AutoSize = (true);
+            this.avgTemperatureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgTemperatureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgTemperatureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgTemperatureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgTemperatureInSensor.Location = (new global::System.Drawing.Point(358, 0));
+            this.avgTemperatureInSensor.Name = ("avgTemperatureInSensor");
+            this.avgTemperatureInSensor.Size = (new global::System.Drawing.Size(55, 30));
+            this.avgTemperatureInSensor.TabIndex = (81);
+            this.avgTemperatureInSensor.Text = ("23.9");
+            this.avgTemperatureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentTemperatureInSensor
             // 
-            currentTemperatureInSensor.AutoSize = true;
-            currentTemperatureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            currentTemperatureInSensor.Dock = DockStyle.Fill;
-            currentTemperatureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentTemperatureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            currentTemperatureInSensor.Location = new Point(271, 0);
-            currentTemperatureInSensor.Name = "currentTemperatureInSensor";
-            currentTemperatureInSensor.Size = new Size(48, 23);
-            currentTemperatureInSensor.TabIndex = 82;
-            currentTemperatureInSensor.Text = "23.9";
-            currentTemperatureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentTemperatureInSensor.AutoSize = (true);
+            this.currentTemperatureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentTemperatureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentTemperatureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentTemperatureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentTemperatureInSensor.Location = (new global::System.Drawing.Point(419, 0));
+            this.currentTemperatureInSensor.Name = ("currentTemperatureInSensor");
+            this.currentTemperatureInSensor.Size = (new global::System.Drawing.Size(79, 30));
+            this.currentTemperatureInSensor.TabIndex = (82);
+            this.currentTemperatureInSensor.Text = ("23.9");
+            this.currentTemperatureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minSupplyVoltage
             // 
-            minSupplyVoltage.AutoSize = true;
-            minSupplyVoltage.BackColor = Color.FromArgb(50, 50, 50);
-            minSupplyVoltage.Dock = DockStyle.Fill;
-            minSupplyVoltage.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minSupplyVoltage.ForeColor = Color.FromArgb(250, 250, 250);
-            minSupplyVoltage.Location = new Point(155, 46);
-            minSupplyVoltage.Name = "minSupplyVoltage";
-            minSupplyVoltage.Size = new Size(31, 23);
-            minSupplyVoltage.TabIndex = 83;
-            minSupplyVoltage.Text = "0.9";
-            minSupplyVoltage.TextAlign = ContentAlignment.MiddleCenter;
+            this.minSupplyVoltage.AutoSize = (true);
+            this.minSupplyVoltage.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minSupplyVoltage.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minSupplyVoltage.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minSupplyVoltage.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minSupplyVoltage.Location = (new global::System.Drawing.Point(239, 60));
+            this.minSupplyVoltage.Name = ("minSupplyVoltage");
+            this.minSupplyVoltage.Size = (new global::System.Drawing.Size(51, 30));
+            this.minSupplyVoltage.TabIndex = (83);
+            this.minSupplyVoltage.Text = ("0.9");
+            this.minSupplyVoltage.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxSupplyVoltage
             // 
-            maxSupplyVoltage.AutoSize = true;
-            maxSupplyVoltage.BackColor = Color.FromArgb(50, 50, 50);
-            maxSupplyVoltage.Dock = DockStyle.Fill;
-            maxSupplyVoltage.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxSupplyVoltage.ForeColor = Color.FromArgb(250, 250, 250);
-            maxSupplyVoltage.Location = new Point(192, 46);
-            maxSupplyVoltage.Name = "maxSupplyVoltage";
-            maxSupplyVoltage.Size = new Size(34, 23);
-            maxSupplyVoltage.TabIndex = 84;
-            maxSupplyVoltage.Text = "0.9";
-            maxSupplyVoltage.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxSupplyVoltage.AutoSize = (true);
+            this.maxSupplyVoltage.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxSupplyVoltage.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxSupplyVoltage.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxSupplyVoltage.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxSupplyVoltage.Location = (new global::System.Drawing.Point(296, 60));
+            this.maxSupplyVoltage.Name = ("maxSupplyVoltage");
+            this.maxSupplyVoltage.Size = (new global::System.Drawing.Size(56, 30));
+            this.maxSupplyVoltage.TabIndex = (84);
+            this.maxSupplyVoltage.Text = ("0.9");
+            this.maxSupplyVoltage.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgSupplyVoltage
             // 
-            avgSupplyVoltage.AutoSize = true;
-            avgSupplyVoltage.BackColor = Color.FromArgb(50, 50, 50);
-            avgSupplyVoltage.Dock = DockStyle.Fill;
-            avgSupplyVoltage.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgSupplyVoltage.ForeColor = Color.FromArgb(250, 250, 250);
-            avgSupplyVoltage.Location = new Point(232, 46);
-            avgSupplyVoltage.Name = "avgSupplyVoltage";
-            avgSupplyVoltage.Size = new Size(33, 23);
-            avgSupplyVoltage.TabIndex = 85;
-            avgSupplyVoltage.Text = "0.9";
-            avgSupplyVoltage.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgSupplyVoltage.AutoSize = (true);
+            this.avgSupplyVoltage.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgSupplyVoltage.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgSupplyVoltage.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgSupplyVoltage.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgSupplyVoltage.Location = (new global::System.Drawing.Point(358, 60));
+            this.avgSupplyVoltage.Name = ("avgSupplyVoltage");
+            this.avgSupplyVoltage.Size = (new global::System.Drawing.Size(55, 30));
+            this.avgSupplyVoltage.TabIndex = (85);
+            this.avgSupplyVoltage.Text = ("0.9");
+            this.avgSupplyVoltage.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentSupplyVoltage
             // 
-            currentSupplyVoltage.AutoSize = true;
-            currentSupplyVoltage.BackColor = Color.FromArgb(50, 50, 50);
-            currentSupplyVoltage.Dock = DockStyle.Fill;
-            currentSupplyVoltage.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentSupplyVoltage.ForeColor = Color.FromArgb(250, 250, 250);
-            currentSupplyVoltage.Location = new Point(271, 46);
-            currentSupplyVoltage.Name = "currentSupplyVoltage";
-            currentSupplyVoltage.Size = new Size(48, 23);
-            currentSupplyVoltage.TabIndex = 78;
-            currentSupplyVoltage.Text = "0.9";
-            currentSupplyVoltage.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentSupplyVoltage.AutoSize = (true);
+            this.currentSupplyVoltage.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentSupplyVoltage.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentSupplyVoltage.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentSupplyVoltage.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentSupplyVoltage.Location = (new global::System.Drawing.Point(419, 60));
+            this.currentSupplyVoltage.Name = ("currentSupplyVoltage");
+            this.currentSupplyVoltage.Size = (new global::System.Drawing.Size(79, 30));
+            this.currentSupplyVoltage.TabIndex = (78);
+            this.currentSupplyVoltage.Text = ("0.9");
+            this.currentSupplyVoltage.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxSamplingSpeed
             // 
-            maxSamplingSpeed.AutoSize = true;
-            maxSamplingSpeed.BackColor = Color.FromArgb(80, 80, 80);
-            maxSamplingSpeed.Dock = DockStyle.Fill;
-            maxSamplingSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxSamplingSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            maxSamplingSpeed.Location = new Point(192, 69);
-            maxSamplingSpeed.Name = "maxSamplingSpeed";
-            maxSamplingSpeed.Size = new Size(34, 23);
-            maxSamplingSpeed.TabIndex = 86;
-            maxSamplingSpeed.Text = "20.5";
-            maxSamplingSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxSamplingSpeed.AutoSize = (true);
+            this.maxSamplingSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxSamplingSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxSamplingSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxSamplingSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxSamplingSpeed.Location = (new global::System.Drawing.Point(296, 90));
+            this.maxSamplingSpeed.Name = ("maxSamplingSpeed");
+            this.maxSamplingSpeed.Size = (new global::System.Drawing.Size(56, 30));
+            this.maxSamplingSpeed.TabIndex = (86);
+            this.maxSamplingSpeed.Text = ("20.5");
+            this.maxSamplingSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minHumidityInSensor
             // 
-            minHumidityInSensor.AutoSize = true;
-            minHumidityInSensor.BackColor = Color.FromArgb(80, 80, 80);
-            minHumidityInSensor.Dock = DockStyle.Fill;
-            minHumidityInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minHumidityInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            minHumidityInSensor.Location = new Point(155, 23);
-            minHumidityInSensor.Name = "minHumidityInSensor";
-            minHumidityInSensor.Size = new Size(31, 23);
-            minHumidityInSensor.TabIndex = 87;
-            minHumidityInSensor.Text = "19.1";
-            minHumidityInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.minHumidityInSensor.AutoSize = (true);
+            this.minHumidityInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minHumidityInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minHumidityInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minHumidityInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minHumidityInSensor.Location = (new global::System.Drawing.Point(239, 30));
+            this.minHumidityInSensor.Name = ("minHumidityInSensor");
+            this.minHumidityInSensor.Size = (new global::System.Drawing.Size(51, 30));
+            this.minHumidityInSensor.TabIndex = (87);
+            this.minHumidityInSensor.Text = ("19.1");
+            this.minHumidityInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxHumidityInSensor
             // 
-            maxHumidityInSensor.AutoSize = true;
-            maxHumidityInSensor.BackColor = Color.FromArgb(80, 80, 80);
-            maxHumidityInSensor.Dock = DockStyle.Fill;
-            maxHumidityInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxHumidityInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            maxHumidityInSensor.Location = new Point(192, 23);
-            maxHumidityInSensor.Name = "maxHumidityInSensor";
-            maxHumidityInSensor.Size = new Size(34, 23);
-            maxHumidityInSensor.TabIndex = 88;
-            maxHumidityInSensor.Text = "19.1";
-            maxHumidityInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxHumidityInSensor.AutoSize = (true);
+            this.maxHumidityInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxHumidityInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxHumidityInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxHumidityInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxHumidityInSensor.Location = (new global::System.Drawing.Point(296, 30));
+            this.maxHumidityInSensor.Name = ("maxHumidityInSensor");
+            this.maxHumidityInSensor.Size = (new global::System.Drawing.Size(56, 30));
+            this.maxHumidityInSensor.TabIndex = (88);
+            this.maxHumidityInSensor.Text = ("19.1");
+            this.maxHumidityInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgHumidityInSensor
             // 
-            avgHumidityInSensor.AutoSize = true;
-            avgHumidityInSensor.BackColor = Color.FromArgb(80, 80, 80);
-            avgHumidityInSensor.Dock = DockStyle.Fill;
-            avgHumidityInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgHumidityInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            avgHumidityInSensor.Location = new Point(232, 23);
-            avgHumidityInSensor.Name = "avgHumidityInSensor";
-            avgHumidityInSensor.Size = new Size(33, 23);
-            avgHumidityInSensor.TabIndex = 89;
-            avgHumidityInSensor.Text = "19.1";
-            avgHumidityInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgHumidityInSensor.AutoSize = (true);
+            this.avgHumidityInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgHumidityInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgHumidityInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgHumidityInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgHumidityInSensor.Location = (new global::System.Drawing.Point(358, 30));
+            this.avgHumidityInSensor.Name = ("avgHumidityInSensor");
+            this.avgHumidityInSensor.Size = (new global::System.Drawing.Size(55, 30));
+            this.avgHumidityInSensor.TabIndex = (89);
+            this.avgHumidityInSensor.Text = ("19.1");
+            this.avgHumidityInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentHumidityInSensor
             // 
-            currentHumidityInSensor.AutoSize = true;
-            currentHumidityInSensor.BackColor = Color.FromArgb(80, 80, 80);
-            currentHumidityInSensor.Dock = DockStyle.Fill;
-            currentHumidityInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentHumidityInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            currentHumidityInSensor.Location = new Point(271, 23);
-            currentHumidityInSensor.Name = "currentHumidityInSensor";
-            currentHumidityInSensor.Size = new Size(48, 23);
-            currentHumidityInSensor.TabIndex = 90;
-            currentHumidityInSensor.Text = "19.1";
-            currentHumidityInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentHumidityInSensor.AutoSize = (true);
+            this.currentHumidityInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentHumidityInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentHumidityInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentHumidityInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentHumidityInSensor.Location = (new global::System.Drawing.Point(419, 30));
+            this.currentHumidityInSensor.Name = ("currentHumidityInSensor");
+            this.currentHumidityInSensor.Size = (new global::System.Drawing.Size(79, 30));
+            this.currentHumidityInSensor.TabIndex = (90);
+            this.currentHumidityInSensor.Text = ("19.1");
+            this.currentHumidityInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgSamplingSpeed
             // 
-            avgSamplingSpeed.AutoSize = true;
-            avgSamplingSpeed.BackColor = Color.FromArgb(80, 80, 80);
-            avgSamplingSpeed.Dock = DockStyle.Fill;
-            avgSamplingSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgSamplingSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            avgSamplingSpeed.Location = new Point(232, 69);
-            avgSamplingSpeed.Name = "avgSamplingSpeed";
-            avgSamplingSpeed.Size = new Size(33, 23);
-            avgSamplingSpeed.TabIndex = 91;
-            avgSamplingSpeed.Text = "20.5";
-            avgSamplingSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgSamplingSpeed.AutoSize = (true);
+            this.avgSamplingSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgSamplingSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgSamplingSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgSamplingSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgSamplingSpeed.Location = (new global::System.Drawing.Point(358, 90));
+            this.avgSamplingSpeed.Name = ("avgSamplingSpeed");
+            this.avgSamplingSpeed.Size = (new global::System.Drawing.Size(55, 30));
+            this.avgSamplingSpeed.TabIndex = (91);
+            this.avgSamplingSpeed.Text = ("20.5");
+            this.avgSamplingSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentSamplingSpeed
             // 
-            currentSamplingSpeed.AutoSize = true;
-            currentSamplingSpeed.BackColor = Color.FromArgb(80, 80, 80);
-            currentSamplingSpeed.Dock = DockStyle.Fill;
-            currentSamplingSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentSamplingSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            currentSamplingSpeed.Location = new Point(271, 69);
-            currentSamplingSpeed.Name = "currentSamplingSpeed";
-            currentSamplingSpeed.Size = new Size(48, 23);
-            currentSamplingSpeed.TabIndex = 92;
-            currentSamplingSpeed.Text = "20.5";
-            currentSamplingSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentSamplingSpeed.AutoSize = (true);
+            this.currentSamplingSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentSamplingSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentSamplingSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentSamplingSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentSamplingSpeed.Location = (new global::System.Drawing.Point(419, 90));
+            this.currentSamplingSpeed.Name = ("currentSamplingSpeed");
+            this.currentSamplingSpeed.Size = (new global::System.Drawing.Size(79, 30));
+            this.currentSamplingSpeed.TabIndex = (92);
+            this.currentSamplingSpeed.Text = ("20.5");
+            this.currentSamplingSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minSamplingSpeed
             // 
-            minSamplingSpeed.AutoSize = true;
-            minSamplingSpeed.BackColor = Color.FromArgb(80, 80, 80);
-            minSamplingSpeed.Dock = DockStyle.Fill;
-            minSamplingSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minSamplingSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            minSamplingSpeed.Location = new Point(155, 69);
-            minSamplingSpeed.Name = "minSamplingSpeed";
-            minSamplingSpeed.Size = new Size(31, 23);
-            minSamplingSpeed.TabIndex = 93;
-            minSamplingSpeed.Text = "20.5";
-            minSamplingSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.minSamplingSpeed.AutoSize = (true);
+            this.minSamplingSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minSamplingSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minSamplingSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minSamplingSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minSamplingSpeed.Location = (new global::System.Drawing.Point(239, 90));
+            this.minSamplingSpeed.Name = ("minSamplingSpeed");
+            this.minSamplingSpeed.Size = (new global::System.Drawing.Size(51, 30));
+            this.minSamplingSpeed.TabIndex = (93);
+            this.minSamplingSpeed.Text = ("20.5");
+            this.minSamplingSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentPressureInSensor
             // 
-            currentPressureInSensor.AutoSize = true;
-            currentPressureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            currentPressureInSensor.Dock = DockStyle.Fill;
-            currentPressureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentPressureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            currentPressureInSensor.Location = new Point(271, 92);
-            currentPressureInSensor.Name = "currentPressureInSensor";
-            currentPressureInSensor.Size = new Size(48, 29);
-            currentPressureInSensor.TabIndex = 96;
-            currentPressureInSensor.Text = "0.9";
-            currentPressureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentPressureInSensor.AutoSize = (true);
+            this.currentPressureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentPressureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentPressureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentPressureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentPressureInSensor.Location = (new global::System.Drawing.Point(419, 120));
+            this.currentPressureInSensor.Name = ("currentPressureInSensor");
+            this.currentPressureInSensor.Size = (new global::System.Drawing.Size(79, 40));
+            this.currentPressureInSensor.TabIndex = (96);
+            this.currentPressureInSensor.Text = ("0.9");
+            this.currentPressureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgPressureInSensor
             // 
-            avgPressureInSensor.AutoSize = true;
-            avgPressureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            avgPressureInSensor.Dock = DockStyle.Fill;
-            avgPressureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgPressureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            avgPressureInSensor.Location = new Point(232, 92);
-            avgPressureInSensor.Name = "avgPressureInSensor";
-            avgPressureInSensor.Size = new Size(33, 29);
-            avgPressureInSensor.TabIndex = 97;
-            avgPressureInSensor.Text = "0.9";
-            avgPressureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgPressureInSensor.AutoSize = (true);
+            this.avgPressureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgPressureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgPressureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgPressureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgPressureInSensor.Location = (new global::System.Drawing.Point(358, 120));
+            this.avgPressureInSensor.Name = ("avgPressureInSensor");
+            this.avgPressureInSensor.Size = (new global::System.Drawing.Size(55, 40));
+            this.avgPressureInSensor.TabIndex = (97);
+            this.avgPressureInSensor.Text = ("0.9");
+            this.avgPressureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxPressureInSensor
             // 
-            maxPressureInSensor.AutoSize = true;
-            maxPressureInSensor.BackColor = Color.FromArgb(50, 50, 50);
-            maxPressureInSensor.Dock = DockStyle.Fill;
-            maxPressureInSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxPressureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            maxPressureInSensor.Location = new Point(192, 92);
-            maxPressureInSensor.Name = "maxPressureInSensor";
-            maxPressureInSensor.Size = new Size(34, 29);
-            maxPressureInSensor.TabIndex = 99;
-            maxPressureInSensor.Text = "0.9";
-            maxPressureInSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxPressureInSensor.AutoSize = (true);
+            this.maxPressureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxPressureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxPressureInSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxPressureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxPressureInSensor.Location = (new global::System.Drawing.Point(296, 120));
+            this.maxPressureInSensor.Name = ("maxPressureInSensor");
+            this.maxPressureInSensor.Size = (new global::System.Drawing.Size(56, 40));
+            this.maxPressureInSensor.TabIndex = (99);
+            this.maxPressureInSensor.Text = ("0.9");
+            this.maxPressureInSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // porog_1_TemperatureInSensor
             // 
-            porog_1_TemperatureInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_TemperatureInSensor.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_TemperatureInSensor.Dock = DockStyle.Fill;
-            porog_1_TemperatureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_TemperatureInSensor.Location = new Point(325, 3);
-            porog_1_TemperatureInSensor.Name = "porog_1_TemperatureInSensor";
-            porog_1_TemperatureInSensor.Size = new Size(49, 23);
-            porog_1_TemperatureInSensor.TabIndex = 100;
-            porog_1_TemperatureInSensor.Text = "20";
-            porog_1_TemperatureInSensor.TextAlign = HorizontalAlignment.Center;
-            porog_1_TemperatureInSensor.KeyDown += porog_1_TemperatureInSensor_KeyDown;
+            this.porog_1_TemperatureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_TemperatureInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_TemperatureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_TemperatureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_TemperatureInSensor.Location = (new global::System.Drawing.Point(504, 4));
+            this.porog_1_TemperatureInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_TemperatureInSensor.Name = ("porog_1_TemperatureInSensor");
+            this.porog_1_TemperatureInSensor.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_TemperatureInSensor.TabIndex = (100);
+            this.porog_1_TemperatureInSensor.Text = ("20");
+            this.porog_1_TemperatureInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_TemperatureInSensor.KeyDown += (this.porog_1_TemperatureInSensor_KeyDown);
             // 
             // porog_1_HumidityInSensor
             // 
-            porog_1_HumidityInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_HumidityInSensor.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_HumidityInSensor.Dock = DockStyle.Fill;
-            porog_1_HumidityInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_HumidityInSensor.Location = new Point(325, 26);
-            porog_1_HumidityInSensor.Name = "porog_1_HumidityInSensor";
-            porog_1_HumidityInSensor.Size = new Size(49, 23);
-            porog_1_HumidityInSensor.TabIndex = 101;
-            porog_1_HumidityInSensor.Text = "20";
-            porog_1_HumidityInSensor.TextAlign = HorizontalAlignment.Center;
-            porog_1_HumidityInSensor.KeyDown += porog_1_HumidityInSensor_KeyDown;
+            this.porog_1_HumidityInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_HumidityInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_HumidityInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_HumidityInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_HumidityInSensor.Location = (new global::System.Drawing.Point(504, 34));
+            this.porog_1_HumidityInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_HumidityInSensor.Name = ("porog_1_HumidityInSensor");
+            this.porog_1_HumidityInSensor.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_HumidityInSensor.TabIndex = (101);
+            this.porog_1_HumidityInSensor.Text = ("20");
+            this.porog_1_HumidityInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_HumidityInSensor.KeyDown += (this.porog_1_HumidityInSensor_KeyDown);
             // 
             // porog_1_SupplyVoltage
             // 
-            porog_1_SupplyVoltage.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_SupplyVoltage.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_SupplyVoltage.Dock = DockStyle.Fill;
-            porog_1_SupplyVoltage.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_SupplyVoltage.Location = new Point(325, 49);
-            porog_1_SupplyVoltage.Name = "porog_1_SupplyVoltage";
-            porog_1_SupplyVoltage.Size = new Size(49, 23);
-            porog_1_SupplyVoltage.TabIndex = 102;
-            porog_1_SupplyVoltage.Text = "20";
-            porog_1_SupplyVoltage.TextAlign = HorizontalAlignment.Center;
-            porog_1_SupplyVoltage.KeyDown += porog_1_SupplyVoltage_KeyDown;
+            this.porog_1_SupplyVoltage.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_SupplyVoltage.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_SupplyVoltage.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_SupplyVoltage.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_SupplyVoltage.Location = (new global::System.Drawing.Point(504, 64));
+            this.porog_1_SupplyVoltage.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_SupplyVoltage.Name = ("porog_1_SupplyVoltage");
+            this.porog_1_SupplyVoltage.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_SupplyVoltage.TabIndex = (102);
+            this.porog_1_SupplyVoltage.Text = ("20");
+            this.porog_1_SupplyVoltage.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_SupplyVoltage.KeyDown += (this.porog_1_SupplyVoltage_KeyDown);
             // 
             // porog_1_SamplingSpeed
             // 
-            porog_1_SamplingSpeed.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_SamplingSpeed.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_SamplingSpeed.Dock = DockStyle.Fill;
-            porog_1_SamplingSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_SamplingSpeed.Location = new Point(325, 72);
-            porog_1_SamplingSpeed.Name = "porog_1_SamplingSpeed";
-            porog_1_SamplingSpeed.Size = new Size(49, 23);
-            porog_1_SamplingSpeed.TabIndex = 103;
-            porog_1_SamplingSpeed.Text = "3/?";
-            porog_1_SamplingSpeed.TextAlign = HorizontalAlignment.Center;
+            this.porog_1_SamplingSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_SamplingSpeed.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_SamplingSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_SamplingSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_SamplingSpeed.Location = (new global::System.Drawing.Point(504, 94));
+            this.porog_1_SamplingSpeed.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_SamplingSpeed.Name = ("porog_1_SamplingSpeed");
+            this.porog_1_SamplingSpeed.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_SamplingSpeed.TabIndex = (103);
+            this.porog_1_SamplingSpeed.Text = ("3/?");
+            this.porog_1_SamplingSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
             // 
             // porog_2_TemperatureInSensor
             // 
-            porog_2_TemperatureInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_TemperatureInSensor.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_TemperatureInSensor.Dock = DockStyle.Fill;
-            porog_2_TemperatureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_TemperatureInSensor.Location = new Point(380, 3);
-            porog_2_TemperatureInSensor.Name = "porog_2_TemperatureInSensor";
-            porog_2_TemperatureInSensor.Size = new Size(47, 23);
-            porog_2_TemperatureInSensor.TabIndex = 104;
-            porog_2_TemperatureInSensor.Text = "20";
-            porog_2_TemperatureInSensor.TextAlign = HorizontalAlignment.Center;
-            porog_2_TemperatureInSensor.KeyDown += porog_2_TemperatureInSensor_KeyDown;
+            this.porog_2_TemperatureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_TemperatureInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_TemperatureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_TemperatureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_TemperatureInSensor.Location = (new global::System.Drawing.Point(590, 4));
+            this.porog_2_TemperatureInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_TemperatureInSensor.Name = ("porog_2_TemperatureInSensor");
+            this.porog_2_TemperatureInSensor.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_TemperatureInSensor.TabIndex = (104);
+            this.porog_2_TemperatureInSensor.Text = ("20");
+            this.porog_2_TemperatureInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_TemperatureInSensor.KeyDown += (this.porog_2_TemperatureInSensor_KeyDown);
             // 
             // porog_2_HumidityInSensor
             // 
-            porog_2_HumidityInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_HumidityInSensor.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_HumidityInSensor.Dock = DockStyle.Fill;
-            porog_2_HumidityInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_HumidityInSensor.Location = new Point(380, 26);
-            porog_2_HumidityInSensor.Name = "porog_2_HumidityInSensor";
-            porog_2_HumidityInSensor.Size = new Size(47, 23);
-            porog_2_HumidityInSensor.TabIndex = 105;
-            porog_2_HumidityInSensor.Text = "20";
-            porog_2_HumidityInSensor.TextAlign = HorizontalAlignment.Center;
-            porog_2_HumidityInSensor.KeyDown += porog_2_HumidityInSensor_KeyDown;
+            this.porog_2_HumidityInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_HumidityInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_HumidityInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_HumidityInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_HumidityInSensor.Location = (new global::System.Drawing.Point(590, 34));
+            this.porog_2_HumidityInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_HumidityInSensor.Name = ("porog_2_HumidityInSensor");
+            this.porog_2_HumidityInSensor.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_HumidityInSensor.TabIndex = (105);
+            this.porog_2_HumidityInSensor.Text = ("20");
+            this.porog_2_HumidityInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_HumidityInSensor.KeyDown += (this.porog_2_HumidityInSensor_KeyDown);
             // 
             // porog_2_SupplyVoltage
             // 
-            porog_2_SupplyVoltage.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_SupplyVoltage.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_SupplyVoltage.Dock = DockStyle.Fill;
-            porog_2_SupplyVoltage.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_SupplyVoltage.Location = new Point(380, 49);
-            porog_2_SupplyVoltage.Name = "porog_2_SupplyVoltage";
-            porog_2_SupplyVoltage.Size = new Size(47, 23);
-            porog_2_SupplyVoltage.TabIndex = 106;
-            porog_2_SupplyVoltage.Text = "20";
-            porog_2_SupplyVoltage.TextAlign = HorizontalAlignment.Center;
-            porog_2_SupplyVoltage.KeyDown += porog_2_SupplyVoltage_KeyDown;
+            this.porog_2_SupplyVoltage.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_SupplyVoltage.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_SupplyVoltage.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_SupplyVoltage.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_SupplyVoltage.Location = (new global::System.Drawing.Point(590, 64));
+            this.porog_2_SupplyVoltage.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_SupplyVoltage.Name = ("porog_2_SupplyVoltage");
+            this.porog_2_SupplyVoltage.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_SupplyVoltage.TabIndex = (106);
+            this.porog_2_SupplyVoltage.Text = ("20");
+            this.porog_2_SupplyVoltage.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_SupplyVoltage.KeyDown += (this.porog_2_SupplyVoltage_KeyDown);
             // 
             // porog_2_SamplingSpeed
             // 
-            porog_2_SamplingSpeed.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_SamplingSpeed.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_SamplingSpeed.Dock = DockStyle.Fill;
-            porog_2_SamplingSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_SamplingSpeed.Location = new Point(380, 72);
-            porog_2_SamplingSpeed.Name = "porog_2_SamplingSpeed";
-            porog_2_SamplingSpeed.Size = new Size(47, 23);
-            porog_2_SamplingSpeed.TabIndex = 107;
-            porog_2_SamplingSpeed.Text = "3/?";
-            porog_2_SamplingSpeed.TextAlign = HorizontalAlignment.Center;
+            this.porog_2_SamplingSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_SamplingSpeed.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_SamplingSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_SamplingSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_SamplingSpeed.Location = (new global::System.Drawing.Point(590, 94));
+            this.porog_2_SamplingSpeed.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_SamplingSpeed.Name = ("porog_2_SamplingSpeed");
+            this.porog_2_SamplingSpeed.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_SamplingSpeed.TabIndex = (107);
+            this.porog_2_SamplingSpeed.Text = ("3/?");
+            this.porog_2_SamplingSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
             // 
             // porog_2_PressureInSensor
             // 
-            porog_2_PressureInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_PressureInSensor.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_PressureInSensor.Dock = DockStyle.Fill;
-            porog_2_PressureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_PressureInSensor.Location = new Point(380, 95);
-            porog_2_PressureInSensor.Name = "porog_2_PressureInSensor";
-            porog_2_PressureInSensor.Size = new Size(47, 23);
-            porog_2_PressureInSensor.TabIndex = 108;
-            porog_2_PressureInSensor.Text = "20";
-            porog_2_PressureInSensor.TextAlign = HorizontalAlignment.Center;
-            porog_2_PressureInSensor.KeyDown += porog_2_PressureInSensor_KeyDown;
+            this.porog_2_PressureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_PressureInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_PressureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_PressureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_PressureInSensor.Location = (new global::System.Drawing.Point(590, 124));
+            this.porog_2_PressureInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_PressureInSensor.Name = ("porog_2_PressureInSensor");
+            this.porog_2_PressureInSensor.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_PressureInSensor.TabIndex = (108);
+            this.porog_2_PressureInSensor.Text = ("20");
+            this.porog_2_PressureInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_PressureInSensor.KeyDown += (this.porog_2_PressureInSensor_KeyDown);
             // 
             // dx_TemperatureInSensor
             // 
-            dx_TemperatureInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            dx_TemperatureInSensor.BorderStyle = BorderStyle.FixedSingle;
-            dx_TemperatureInSensor.Dock = DockStyle.Fill;
-            dx_TemperatureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_TemperatureInSensor.Location = new Point(433, 3);
-            dx_TemperatureInSensor.Name = "dx_TemperatureInSensor";
-            dx_TemperatureInSensor.Size = new Size(75, 23);
-            dx_TemperatureInSensor.TabIndex = 109;
-            dx_TemperatureInSensor.Text = "20";
-            dx_TemperatureInSensor.TextAlign = HorizontalAlignment.Center;
-            dx_TemperatureInSensor.KeyDown += dx_TemperatureInSensor_KeyDown;
+            this.dx_TemperatureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_TemperatureInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_TemperatureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_TemperatureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_TemperatureInSensor.Location = (new global::System.Drawing.Point(672, 4));
+            this.dx_TemperatureInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_TemperatureInSensor.Name = ("dx_TemperatureInSensor");
+            this.dx_TemperatureInSensor.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_TemperatureInSensor.TabIndex = (109);
+            this.dx_TemperatureInSensor.Text = ("20");
+            this.dx_TemperatureInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_TemperatureInSensor.KeyDown += (this.dx_TemperatureInSensor_KeyDown);
             // 
             // dx_HumidityInSensor
             // 
-            dx_HumidityInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            dx_HumidityInSensor.BorderStyle = BorderStyle.FixedSingle;
-            dx_HumidityInSensor.Dock = DockStyle.Fill;
-            dx_HumidityInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_HumidityInSensor.Location = new Point(433, 26);
-            dx_HumidityInSensor.Name = "dx_HumidityInSensor";
-            dx_HumidityInSensor.Size = new Size(75, 23);
-            dx_HumidityInSensor.TabIndex = 110;
-            dx_HumidityInSensor.Text = "20";
-            dx_HumidityInSensor.TextAlign = HorizontalAlignment.Center;
-            dx_HumidityInSensor.KeyDown += dx_HumidityInSensor_KeyDown;
+            this.dx_HumidityInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_HumidityInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_HumidityInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_HumidityInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_HumidityInSensor.Location = (new global::System.Drawing.Point(672, 34));
+            this.dx_HumidityInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_HumidityInSensor.Name = ("dx_HumidityInSensor");
+            this.dx_HumidityInSensor.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_HumidityInSensor.TabIndex = (110);
+            this.dx_HumidityInSensor.Text = ("20");
+            this.dx_HumidityInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_HumidityInSensor.KeyDown += (this.dx_HumidityInSensor_KeyDown);
             // 
             // dx_SupplyVoltage
             // 
-            dx_SupplyVoltage.BackColor = Color.FromArgb(30, 30, 30);
-            dx_SupplyVoltage.BorderStyle = BorderStyle.FixedSingle;
-            dx_SupplyVoltage.Dock = DockStyle.Fill;
-            dx_SupplyVoltage.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_SupplyVoltage.Location = new Point(433, 49);
-            dx_SupplyVoltage.Name = "dx_SupplyVoltage";
-            dx_SupplyVoltage.Size = new Size(75, 23);
-            dx_SupplyVoltage.TabIndex = 111;
-            dx_SupplyVoltage.Text = "20";
-            dx_SupplyVoltage.TextAlign = HorizontalAlignment.Center;
-            dx_SupplyVoltage.KeyDown += dx_SupplyVoltage_KeyDown;
+            this.dx_SupplyVoltage.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_SupplyVoltage.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_SupplyVoltage.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_SupplyVoltage.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_SupplyVoltage.Location = (new global::System.Drawing.Point(672, 64));
+            this.dx_SupplyVoltage.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_SupplyVoltage.Name = ("dx_SupplyVoltage");
+            this.dx_SupplyVoltage.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_SupplyVoltage.TabIndex = (111);
+            this.dx_SupplyVoltage.Text = ("20");
+            this.dx_SupplyVoltage.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_SupplyVoltage.KeyDown += (this.dx_SupplyVoltage_KeyDown);
             // 
             // dx_SamplingSpeed
             // 
-            dx_SamplingSpeed.BackColor = Color.FromArgb(30, 30, 30);
-            dx_SamplingSpeed.BorderStyle = BorderStyle.FixedSingle;
-            dx_SamplingSpeed.Dock = DockStyle.Fill;
-            dx_SamplingSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_SamplingSpeed.Location = new Point(433, 72);
-            dx_SamplingSpeed.Name = "dx_SamplingSpeed";
-            dx_SamplingSpeed.Size = new Size(75, 23);
-            dx_SamplingSpeed.TabIndex = 112;
-            dx_SamplingSpeed.Text = "3/?";
-            dx_SamplingSpeed.TextAlign = HorizontalAlignment.Center;
+            this.dx_SamplingSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_SamplingSpeed.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_SamplingSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_SamplingSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_SamplingSpeed.Location = (new global::System.Drawing.Point(672, 94));
+            this.dx_SamplingSpeed.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_SamplingSpeed.Name = ("dx_SamplingSpeed");
+            this.dx_SamplingSpeed.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_SamplingSpeed.TabIndex = (112);
+            this.dx_SamplingSpeed.Text = ("3/?");
+            this.dx_SamplingSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
             // 
             // dx_PressureInSensor
             // 
-            dx_PressureInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            dx_PressureInSensor.BorderStyle = BorderStyle.FixedSingle;
-            dx_PressureInSensor.Dock = DockStyle.Fill;
-            dx_PressureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_PressureInSensor.Location = new Point(433, 95);
-            dx_PressureInSensor.Name = "dx_PressureInSensor";
-            dx_PressureInSensor.Size = new Size(75, 23);
-            dx_PressureInSensor.TabIndex = 113;
-            dx_PressureInSensor.Text = "20";
-            dx_PressureInSensor.TextAlign = HorizontalAlignment.Center;
-            dx_PressureInSensor.KeyDown += dx_PressureInSensor_KeyDown;
+            this.dx_PressureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_PressureInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_PressureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_PressureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_PressureInSensor.Location = (new global::System.Drawing.Point(672, 124));
+            this.dx_PressureInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_PressureInSensor.Name = ("dx_PressureInSensor");
+            this.dx_PressureInSensor.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_PressureInSensor.TabIndex = (113);
+            this.dx_PressureInSensor.Text = ("20");
+            this.dx_PressureInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_PressureInSensor.KeyDown += (this.dx_PressureInSensor_KeyDown);
             // 
             // dt_TemperatureInSensor
             // 
-            dt_TemperatureInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            dt_TemperatureInSensor.BorderStyle = BorderStyle.FixedSingle;
-            dt_TemperatureInSensor.Dock = DockStyle.Fill;
-            dt_TemperatureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_TemperatureInSensor.Location = new Point(514, 3);
-            dt_TemperatureInSensor.Name = "dt_TemperatureInSensor";
-            dt_TemperatureInSensor.Size = new Size(90, 23);
-            dt_TemperatureInSensor.TabIndex = 114;
-            dt_TemperatureInSensor.Text = "20";
-            dt_TemperatureInSensor.TextAlign = HorizontalAlignment.Center;
-            dt_TemperatureInSensor.KeyDown += dt_TemperatureInSensor_KeyDown;
+            this.dt_TemperatureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_TemperatureInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_TemperatureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_TemperatureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_TemperatureInSensor.Location = (new global::System.Drawing.Point(797, 4));
+            this.dt_TemperatureInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_TemperatureInSensor.Name = ("dt_TemperatureInSensor");
+            this.dt_TemperatureInSensor.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_TemperatureInSensor.TabIndex = (114);
+            this.dt_TemperatureInSensor.Text = ("20");
+            this.dt_TemperatureInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_TemperatureInSensor.KeyDown += (this.dt_TemperatureInSensor_KeyDown);
             // 
             // dt_HumidityInSensor
             // 
-            dt_HumidityInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            dt_HumidityInSensor.BorderStyle = BorderStyle.FixedSingle;
-            dt_HumidityInSensor.Dock = DockStyle.Fill;
-            dt_HumidityInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_HumidityInSensor.Location = new Point(514, 26);
-            dt_HumidityInSensor.Name = "dt_HumidityInSensor";
-            dt_HumidityInSensor.Size = new Size(90, 23);
-            dt_HumidityInSensor.TabIndex = 115;
-            dt_HumidityInSensor.Text = "20";
-            dt_HumidityInSensor.TextAlign = HorizontalAlignment.Center;
-            dt_HumidityInSensor.KeyDown += dt_HumidityInSensor_KeyDown;
+            this.dt_HumidityInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_HumidityInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_HumidityInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_HumidityInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_HumidityInSensor.Location = (new global::System.Drawing.Point(797, 34));
+            this.dt_HumidityInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_HumidityInSensor.Name = ("dt_HumidityInSensor");
+            this.dt_HumidityInSensor.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_HumidityInSensor.TabIndex = (115);
+            this.dt_HumidityInSensor.Text = ("20");
+            this.dt_HumidityInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_HumidityInSensor.KeyDown += (this.dt_HumidityInSensor_KeyDown);
             // 
             // dt_SupplyVoltage
             // 
-            dt_SupplyVoltage.BackColor = Color.FromArgb(30, 30, 30);
-            dt_SupplyVoltage.BorderStyle = BorderStyle.FixedSingle;
-            dt_SupplyVoltage.Dock = DockStyle.Fill;
-            dt_SupplyVoltage.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_SupplyVoltage.Location = new Point(514, 49);
-            dt_SupplyVoltage.Name = "dt_SupplyVoltage";
-            dt_SupplyVoltage.Size = new Size(90, 23);
-            dt_SupplyVoltage.TabIndex = 116;
-            dt_SupplyVoltage.Text = "20";
-            dt_SupplyVoltage.TextAlign = HorizontalAlignment.Center;
-            dt_SupplyVoltage.KeyDown += dt_SupplyVoltage_KeyDown;
+            this.dt_SupplyVoltage.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_SupplyVoltage.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_SupplyVoltage.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_SupplyVoltage.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_SupplyVoltage.Location = (new global::System.Drawing.Point(797, 64));
+            this.dt_SupplyVoltage.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_SupplyVoltage.Name = ("dt_SupplyVoltage");
+            this.dt_SupplyVoltage.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_SupplyVoltage.TabIndex = (116);
+            this.dt_SupplyVoltage.Text = ("20");
+            this.dt_SupplyVoltage.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_SupplyVoltage.KeyDown += (this.dt_SupplyVoltage_KeyDown);
             // 
             // dt_SamplingSpeed
             // 
-            dt_SamplingSpeed.BackColor = Color.FromArgb(30, 30, 30);
-            dt_SamplingSpeed.BorderStyle = BorderStyle.FixedSingle;
-            dt_SamplingSpeed.Dock = DockStyle.Fill;
-            dt_SamplingSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_SamplingSpeed.Location = new Point(514, 72);
-            dt_SamplingSpeed.Name = "dt_SamplingSpeed";
-            dt_SamplingSpeed.Size = new Size(90, 23);
-            dt_SamplingSpeed.TabIndex = 117;
-            dt_SamplingSpeed.Text = "3/?";
-            dt_SamplingSpeed.TextAlign = HorizontalAlignment.Center;
+            this.dt_SamplingSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_SamplingSpeed.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_SamplingSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_SamplingSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_SamplingSpeed.Location = (new global::System.Drawing.Point(797, 94));
+            this.dt_SamplingSpeed.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_SamplingSpeed.Name = ("dt_SamplingSpeed");
+            this.dt_SamplingSpeed.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_SamplingSpeed.TabIndex = (117);
+            this.dt_SamplingSpeed.Text = ("3/?");
+            this.dt_SamplingSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
             // 
             // dt_PressureInSensor
             // 
-            dt_PressureInSensor.BackColor = Color.FromArgb(30, 30, 30);
-            dt_PressureInSensor.BorderStyle = BorderStyle.FixedSingle;
-            dt_PressureInSensor.Dock = DockStyle.Fill;
-            dt_PressureInSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_PressureInSensor.Location = new Point(514, 95);
-            dt_PressureInSensor.Name = "dt_PressureInSensor";
-            dt_PressureInSensor.Size = new Size(90, 23);
-            dt_PressureInSensor.TabIndex = 118;
-            dt_PressureInSensor.Text = "20";
-            dt_PressureInSensor.TextAlign = HorizontalAlignment.Center;
-            dt_PressureInSensor.KeyDown += dt_PressureInSensor_KeyDown;
+            this.dt_PressureInSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_PressureInSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_PressureInSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_PressureInSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_PressureInSensor.Location = (new global::System.Drawing.Point(797, 124));
+            this.dt_PressureInSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_PressureInSensor.Name = ("dt_PressureInSensor");
+            this.dt_PressureInSensor.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_PressureInSensor.TabIndex = (118);
+            this.dt_PressureInSensor.Text = ("20");
+            this.dt_PressureInSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_PressureInSensor.KeyDown += (this.dt_PressureInSensor_KeyDown);
             // 
             // tableLayoutPanel4
             // 
-            tableLayoutPanel4.BackColor = Color.FromArgb(30, 30, 30);
-            tableLayoutPanel4.ColumnCount = 9;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.0696373F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.1281333F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.68523645F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.54596043F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.052924F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.192201F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.774372F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.3704729F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.181057F));
-            tableLayoutPanel4.Controls.Add(porog_2_WindDirection, 6, 5);
-            tableLayoutPanel4.Controls.Add(windDirection, 0, 5);
-            tableLayoutPanel4.Controls.Add(label9, 8, 0);
-            tableLayoutPanel4.Controls.Add(label8, 7, 0);
-            tableLayoutPanel4.Controls.Add(label7, 6, 0);
-            tableLayoutPanel4.Controls.Add(label6, 5, 0);
-            tableLayoutPanel4.Controls.Add(label5, 4, 0);
-            tableLayoutPanel4.Controls.Add(label4, 3, 0);
-            tableLayoutPanel4.Controls.Add(label3, 2, 0);
-            tableLayoutPanel4.Controls.Add(label2, 1, 0);
-            tableLayoutPanel4.Controls.Add(label11, 0, 0);
-            tableLayoutPanel4.Controls.Add(airTemperature, 0, 1);
-            tableLayoutPanel4.Controls.Add(relativeHumidity, 0, 2);
-            tableLayoutPanel4.Controls.Add(atmosphericPressure, 0, 3);
-            tableLayoutPanel4.Controls.Add(windSpeed, 0, 4);
-            tableLayoutPanel4.Controls.Add(minAirTemperature, 1, 1);
-            tableLayoutPanel4.Controls.Add(maxAirTemperature, 2, 1);
-            tableLayoutPanel4.Controls.Add(avgAirTemperature, 3, 1);
-            tableLayoutPanel4.Controls.Add(currentAirTemperature, 4, 1);
-            tableLayoutPanel4.Controls.Add(minAtmosphericPressure, 1, 3);
-            tableLayoutPanel4.Controls.Add(maxAtmosphericPressure, 2, 3);
-            tableLayoutPanel4.Controls.Add(avgAtmosphericPressure, 3, 3);
-            tableLayoutPanel4.Controls.Add(currentAtmosphericPressure, 4, 3);
-            tableLayoutPanel4.Controls.Add(minWindDirection, 1, 5);
-            tableLayoutPanel4.Controls.Add(currentWindDirection, 4, 5);
-            tableLayoutPanel4.Controls.Add(avgWindDirection, 3, 5);
-            tableLayoutPanel4.Controls.Add(minRelativeHumidity, 1, 2);
-            tableLayoutPanel4.Controls.Add(maxRelativeHumidity, 2, 2);
-            tableLayoutPanel4.Controls.Add(avgRelativeHumidity, 3, 2);
-            tableLayoutPanel4.Controls.Add(currentRelativeHumidity, 4, 2);
-            tableLayoutPanel4.Controls.Add(minWindSpeed, 1, 4);
-            tableLayoutPanel4.Controls.Add(maxWindSpeed, 2, 4);
-            tableLayoutPanel4.Controls.Add(avgWindSpeed, 3, 4);
-            tableLayoutPanel4.Controls.Add(currentWindSpeed, 4, 4);
-            tableLayoutPanel4.Controls.Add(maxWindDirection, 2, 5);
-            tableLayoutPanel4.Controls.Add(porog_1_AirTemperature, 5, 1);
-            tableLayoutPanel4.Controls.Add(porog_1_RelativeHumidity, 5, 2);
-            tableLayoutPanel4.Controls.Add(porog_1_AtmosphericPressure, 5, 3);
-            tableLayoutPanel4.Controls.Add(porog_2_AirTemperature, 6, 1);
-            tableLayoutPanel4.Controls.Add(porog_2_RelativeHumidity, 6, 2);
-            tableLayoutPanel4.Controls.Add(porog_2_AtmosphericPressure, 6, 3);
-            tableLayoutPanel4.Controls.Add(dx_AirTemperature, 7, 1);
-            tableLayoutPanel4.Controls.Add(dx_RelativeHumidity, 7, 2);
-            tableLayoutPanel4.Controls.Add(porog_1_WindDirection, 5, 5);
-            tableLayoutPanel4.Controls.Add(porog_1_WindSpeed, 5, 4);
-            tableLayoutPanel4.Controls.Add(porog_2_WindSpeed, 6, 4);
-            tableLayoutPanel4.Controls.Add(dx_WindDirection, 7, 5);
-            tableLayoutPanel4.Controls.Add(dx_AtmosphericPressure, 7, 3);
-            tableLayoutPanel4.Controls.Add(dt_AirTemperature, 8, 1);
-            tableLayoutPanel4.Controls.Add(dt_RelativeHumidity, 8, 2);
-            tableLayoutPanel4.Controls.Add(dt_AtmosphericPressure, 8, 3);
-            tableLayoutPanel4.Controls.Add(dt_WindSpeed, 8, 4);
-            tableLayoutPanel4.Controls.Add(dx_WindSpeed, 7, 4);
-            tableLayoutPanel4.Controls.Add(dt_WindDirection, 8, 5);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(3, 3);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 6;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 15.2777777F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 15.2777777F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 18.0555553F));
-            tableLayoutPanel4.Size = new Size(607, 141);
-            tableLayoutPanel4.TabIndex = 0;
+            this.tableLayoutPanel4.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.tableLayoutPanel4.ColumnCount = (9);
+            this.tableLayoutPanel4.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 25.0696373F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.1281333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.68523645F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.54596043F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.052924F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.192201F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 8.774372F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 13.3704729F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 15.181057F));
+            this.tableLayoutPanel4.Controls.Add(this.porog_2_WindDirection, 6, 5);
+            this.tableLayoutPanel4.Controls.Add(this.windDirection, 0, 5);
+            this.tableLayoutPanel4.Controls.Add(this.label9, 8, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label8, 7, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label7, 6, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label6, 5, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label5, 4, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label4, 3, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.airTemperature, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.relativeHumidity, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.atmosphericPressure, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.windSpeed, 0, 4);
+            this.tableLayoutPanel4.Controls.Add(this.minAirTemperature, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.maxAirTemperature, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.avgAirTemperature, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.currentAirTemperature, 4, 1);
+            this.tableLayoutPanel4.Controls.Add(this.minAtmosphericPressure, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.maxAtmosphericPressure, 2, 3);
+            this.tableLayoutPanel4.Controls.Add(this.avgAtmosphericPressure, 3, 3);
+            this.tableLayoutPanel4.Controls.Add(this.currentAtmosphericPressure, 4, 3);
+            this.tableLayoutPanel4.Controls.Add(this.minWindDirection, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.currentWindDirection, 4, 5);
+            this.tableLayoutPanel4.Controls.Add(this.avgWindDirection, 3, 5);
+            this.tableLayoutPanel4.Controls.Add(this.minRelativeHumidity, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.maxRelativeHumidity, 2, 2);
+            this.tableLayoutPanel4.Controls.Add(this.avgRelativeHumidity, 3, 2);
+            this.tableLayoutPanel4.Controls.Add(this.currentRelativeHumidity, 4, 2);
+            this.tableLayoutPanel4.Controls.Add(this.minWindSpeed, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.maxWindSpeed, 2, 4);
+            this.tableLayoutPanel4.Controls.Add(this.avgWindSpeed, 3, 4);
+            this.tableLayoutPanel4.Controls.Add(this.currentWindSpeed, 4, 4);
+            this.tableLayoutPanel4.Controls.Add(this.maxWindDirection, 2, 5);
+            this.tableLayoutPanel4.Controls.Add(this.porog_1_AirTemperature, 5, 1);
+            this.tableLayoutPanel4.Controls.Add(this.porog_1_RelativeHumidity, 5, 2);
+            this.tableLayoutPanel4.Controls.Add(this.porog_1_AtmosphericPressure, 5, 3);
+            this.tableLayoutPanel4.Controls.Add(this.porog_2_AirTemperature, 6, 1);
+            this.tableLayoutPanel4.Controls.Add(this.porog_2_RelativeHumidity, 6, 2);
+            this.tableLayoutPanel4.Controls.Add(this.porog_2_AtmosphericPressure, 6, 3);
+            this.tableLayoutPanel4.Controls.Add(this.dx_AirTemperature, 7, 1);
+            this.tableLayoutPanel4.Controls.Add(this.dx_RelativeHumidity, 7, 2);
+            this.tableLayoutPanel4.Controls.Add(this.porog_1_WindDirection, 5, 5);
+            this.tableLayoutPanel4.Controls.Add(this.porog_1_WindSpeed, 5, 4);
+            this.tableLayoutPanel4.Controls.Add(this.porog_2_WindSpeed, 6, 4);
+            this.tableLayoutPanel4.Controls.Add(this.dx_WindDirection, 7, 5);
+            this.tableLayoutPanel4.Controls.Add(this.dx_AtmosphericPressure, 7, 3);
+            this.tableLayoutPanel4.Controls.Add(this.dt_AirTemperature, 8, 1);
+            this.tableLayoutPanel4.Controls.Add(this.dt_RelativeHumidity, 8, 2);
+            this.tableLayoutPanel4.Controls.Add(this.dt_AtmosphericPressure, 8, 3);
+            this.tableLayoutPanel4.Controls.Add(this.dt_WindSpeed, 8, 4);
+            this.tableLayoutPanel4.Controls.Add(this.dx_WindSpeed, 7, 4);
+            this.tableLayoutPanel4.Controls.Add(this.dt_WindDirection, 8, 5);
+            this.tableLayoutPanel4.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tableLayoutPanel4.Location = (new global::System.Drawing.Point(3, 4));
+            this.tableLayoutPanel4.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.tableLayoutPanel4.Name = ("tableLayoutPanel4");
+            this.tableLayoutPanel4.RowCount = (6);
+            this.tableLayoutPanel4.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            this.tableLayoutPanel4.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            this.tableLayoutPanel4.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.6666679F));
+            this.tableLayoutPanel4.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 15.2777777F));
+            this.tableLayoutPanel4.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 15.2777777F));
+            this.tableLayoutPanel4.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 18.0555553F));
+            this.tableLayoutPanel4.Size = (new global::System.Drawing.Size(942, 188));
+            this.tableLayoutPanel4.TabIndex = (0);
             // 
             // porog_2_WindDirection
             // 
-            porog_2_WindDirection.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_WindDirection.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_WindDirection.Dock = DockStyle.Fill;
-            porog_2_WindDirection.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_WindDirection.Location = new Point(380, 114);
-            porog_2_WindDirection.Name = "porog_2_WindDirection";
-            porog_2_WindDirection.Size = new Size(47, 23);
-            porog_2_WindDirection.TabIndex = 54;
-            porog_2_WindDirection.Text = "20";
-            porog_2_WindDirection.TextAlign = HorizontalAlignment.Center;
-            porog_2_WindDirection.KeyDown += porog_2_WindDirection_KeyDown;
+            this.porog_2_WindDirection.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_WindDirection.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_WindDirection.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_WindDirection.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_WindDirection.Location = (new global::System.Drawing.Point(590, 155));
+            this.porog_2_WindDirection.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_WindDirection.Name = ("porog_2_WindDirection");
+            this.porog_2_WindDirection.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_WindDirection.TabIndex = (54);
+            this.porog_2_WindDirection.Text = ("20");
+            this.porog_2_WindDirection.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_WindDirection.KeyDown += (this.porog_2_WindDirection_KeyDown);
             // 
             // windDirection
             // 
-            windDirection.AutoSize = true;
-            windDirection.BackColor = Color.FromArgb(80, 80, 80);
-            windDirection.Dock = DockStyle.Fill;
-            windDirection.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            windDirection.ForeColor = Color.FromArgb(190, 190, 190);
-            windDirection.Location = new Point(3, 111);
-            windDirection.Name = "windDirection";
-            windDirection.Size = new Size(146, 30);
-            windDirection.TabIndex = 13;
-            windDirection.Text = "Напр. ветра (0 - 380°)";
-            windDirection.TextAlign = ContentAlignment.MiddleCenter;
+            this.windDirection.AutoSize = (true);
+            this.windDirection.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.windDirection.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.windDirection.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.windDirection.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.windDirection.Location = (new global::System.Drawing.Point(3, 151));
+            this.windDirection.Name = ("windDirection");
+            this.windDirection.Size = (new global::System.Drawing.Size(230, 37));
+            this.windDirection.TabIndex = (13);
+            this.windDirection.Text = ("Напр. ветра (0 - 380°)");
+            this.windDirection.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.FromArgb(23, 21, 21);
-            label9.Dock = DockStyle.Fill;
-            label9.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.FromArgb(25, 150, 190);
-            label9.Location = new Point(514, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(90, 23);
-            label9.TabIndex = 8;
-            label9.Text = "период";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
+            this.label9.AutoSize = (true);
+            this.label9.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label9.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label9.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label9.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label9.Location = (new global::System.Drawing.Point(797, 0));
+            this.label9.Name = ("label9");
+            this.label9.Size = (new global::System.Drawing.Size(142, 31));
+            this.label9.TabIndex = (8);
+            this.label9.Text = ("период");
+            this.label9.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.FromArgb(23, 21, 21);
-            label8.Dock = DockStyle.Fill;
-            label8.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.FromArgb(25, 150, 190);
-            label8.Location = new Point(433, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(75, 23);
-            label8.TabIndex = 7;
-            label8.Text = "нарастание";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
+            this.label8.AutoSize = (true);
+            this.label8.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label8.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label8.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label8.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label8.Location = (new global::System.Drawing.Point(672, 0));
+            this.label8.Name = ("label8");
+            this.label8.Size = (new global::System.Drawing.Size(119, 31));
+            this.label8.TabIndex = (7);
+            this.label8.Text = ("нарастание");
+            this.label8.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.FromArgb(23, 21, 21);
-            label7.Dock = DockStyle.Fill;
-            label7.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.FromArgb(25, 150, 190);
-            label7.Location = new Point(380, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(47, 23);
-            label7.TabIndex = 6;
-            label7.Text = "порог 2";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
+            this.label7.AutoSize = (true);
+            this.label7.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label7.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label7.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label7.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label7.Location = (new global::System.Drawing.Point(590, 0));
+            this.label7.Name = ("label7");
+            this.label7.Size = (new global::System.Drawing.Size(76, 31));
+            this.label7.TabIndex = (6);
+            this.label7.Text = ("порог 2");
+            this.label7.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.FromArgb(23, 21, 21);
-            label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.FromArgb(25, 150, 190);
-            label6.Location = new Point(325, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(49, 23);
-            label6.TabIndex = 5;
-            label6.Text = "порог 1";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
+            this.label6.AutoSize = (true);
+            this.label6.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label6.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label6.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label6.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label6.Location = (new global::System.Drawing.Point(504, 0));
+            this.label6.Name = ("label6");
+            this.label6.Size = (new global::System.Drawing.Size(80, 31));
+            this.label6.TabIndex = (5);
+            this.label6.Text = ("порог 1");
+            this.label6.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(23, 21, 21);
-            label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(25, 150, 190);
-            label5.Location = new Point(271, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(48, 23);
-            label5.TabIndex = 4;
-            label5.Text = "текущее";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
+            this.label5.AutoSize = (true);
+            this.label5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label5.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label5.Location = (new global::System.Drawing.Point(419, 0));
+            this.label5.Name = ("label5");
+            this.label5.Size = (new global::System.Drawing.Size(79, 31));
+            this.label5.TabIndex = (4);
+            this.label5.Text = ("текущее");
+            this.label5.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(23, 21, 21);
-            label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.FromArgb(25, 150, 190);
-            label4.Location = new Point(232, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(33, 23);
-            label4.TabIndex = 3;
-            label4.Text = "сред.";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            this.label4.AutoSize = (true);
+            this.label4.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label4.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label4.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label4.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label4.Location = (new global::System.Drawing.Point(358, 0));
+            this.label4.Name = ("label4");
+            this.label4.Size = (new global::System.Drawing.Size(55, 31));
+            this.label4.TabIndex = (3);
+            this.label4.Text = ("сред.");
+            this.label4.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(23, 21, 21);
-            label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(25, 150, 190);
-            label3.Location = new Point(192, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(34, 23);
-            label3.TabIndex = 2;
-            label3.Text = "макс.";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
+            this.label3.AutoSize = (true);
+            this.label3.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label3.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label3.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label3.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label3.Location = (new global::System.Drawing.Point(296, 0));
+            this.label3.Name = ("label3");
+            this.label3.Size = (new global::System.Drawing.Size(56, 31));
+            this.label3.TabIndex = (2);
+            this.label3.Text = ("макс.");
+            this.label3.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(23, 21, 21);
-            label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(25, 150, 190);
-            label2.Location = new Point(155, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(31, 23);
-            label2.TabIndex = 1;
-            label2.Text = "мин.";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            this.label2.AutoSize = (true);
+            this.label2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label2.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label2.Location = (new global::System.Drawing.Point(239, 0));
+            this.label2.Name = ("label2");
+            this.label2.Size = (new global::System.Drawing.Size(51, 31));
+            this.label2.TabIndex = (1);
+            this.label2.Text = ("мин.");
+            this.label2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.FromArgb(23, 21, 21);
-            label11.Dock = DockStyle.Fill;
-            label11.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.FromArgb(25, 150, 190);
-            label11.Location = new Point(3, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(146, 23);
-            label11.TabIndex = 0;
-            label11.Text = "Параметр";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
+            this.label11.AutoSize = (true);
+            this.label11.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label11.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label11.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label11.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label11.Location = (new global::System.Drawing.Point(3, 0));
+            this.label11.Name = ("label11");
+            this.label11.Size = (new global::System.Drawing.Size(230, 31));
+            this.label11.TabIndex = (0);
+            this.label11.Text = ("Параметр");
+            this.label11.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // airTemperature
             // 
-            airTemperature.AutoSize = true;
-            airTemperature.BackColor = Color.FromArgb(80, 80, 80);
-            airTemperature.Dock = DockStyle.Fill;
-            airTemperature.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            airTemperature.ForeColor = Color.FromArgb(190, 190, 190);
-            airTemperature.Location = new Point(3, 23);
-            airTemperature.Name = "airTemperature";
-            airTemperature.Size = new Size(146, 23);
-            airTemperature.TabIndex = 9;
-            airTemperature.Text = "Температура (- 45 до +45°С)";
-            airTemperature.TextAlign = ContentAlignment.MiddleCenter;
+            this.airTemperature.AutoSize = (true);
+            this.airTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.airTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.airTemperature.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.airTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.airTemperature.Location = (new global::System.Drawing.Point(3, 31));
+            this.airTemperature.Name = ("airTemperature");
+            this.airTemperature.Size = (new global::System.Drawing.Size(230, 31));
+            this.airTemperature.TabIndex = (9);
+            this.airTemperature.Text = ("Температура (- 45 до +45°С)");
+            this.airTemperature.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // relativeHumidity
             // 
-            relativeHumidity.AutoSize = true;
-            relativeHumidity.BackColor = Color.FromArgb(50, 50, 50);
-            relativeHumidity.Dock = DockStyle.Fill;
-            relativeHumidity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            relativeHumidity.ForeColor = Color.FromArgb(190, 190, 190);
-            relativeHumidity.Location = new Point(3, 46);
-            relativeHumidity.Name = "relativeHumidity";
-            relativeHumidity.Size = new Size(146, 23);
-            relativeHumidity.TabIndex = 10;
-            relativeHumidity.Text = "Отн. влажность (0 - 98 %)";
-            relativeHumidity.TextAlign = ContentAlignment.MiddleCenter;
+            this.relativeHumidity.AutoSize = (true);
+            this.relativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.relativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.relativeHumidity.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.relativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.relativeHumidity.Location = (new global::System.Drawing.Point(3, 62));
+            this.relativeHumidity.Name = ("relativeHumidity");
+            this.relativeHumidity.Size = (new global::System.Drawing.Size(230, 31));
+            this.relativeHumidity.TabIndex = (10);
+            this.relativeHumidity.Text = ("Отн. влажность (0 - 98 %)");
+            this.relativeHumidity.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // atmosphericPressure
             // 
-            atmosphericPressure.AutoSize = true;
-            atmosphericPressure.BackColor = Color.FromArgb(80, 80, 80);
-            atmosphericPressure.Dock = DockStyle.Fill;
-            atmosphericPressure.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            atmosphericPressure.ForeColor = Color.FromArgb(190, 190, 190);
-            atmosphericPressure.Location = new Point(3, 69);
-            atmosphericPressure.Name = "atmosphericPressure";
-            atmosphericPressure.Size = new Size(146, 21);
-            atmosphericPressure.TabIndex = 11;
-            atmosphericPressure.Text = "Атм. дав-ние (650 - 1200 hPa)";
-            atmosphericPressure.TextAlign = ContentAlignment.MiddleCenter;
+            this.atmosphericPressure.AutoSize = (true);
+            this.atmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.atmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.atmosphericPressure.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.atmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.atmosphericPressure.Location = (new global::System.Drawing.Point(3, 93));
+            this.atmosphericPressure.Name = ("atmosphericPressure");
+            this.atmosphericPressure.Size = (new global::System.Drawing.Size(230, 29));
+            this.atmosphericPressure.TabIndex = (11);
+            this.atmosphericPressure.Text = ("Атм. дав-ние (650 - 1200 hPa)");
+            this.atmosphericPressure.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // windSpeed
             // 
-            windSpeed.AutoSize = true;
-            windSpeed.BackColor = Color.FromArgb(50, 50, 50);
-            windSpeed.Dock = DockStyle.Fill;
-            windSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            windSpeed.ForeColor = Color.FromArgb(190, 190, 190);
-            windSpeed.Location = new Point(3, 90);
-            windSpeed.Name = "windSpeed";
-            windSpeed.Size = new Size(146, 21);
-            windSpeed.TabIndex = 12;
-            windSpeed.Text = "Скор. ветра (0 - 1000 м/с)";
-            windSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.windSpeed.AutoSize = (true);
+            this.windSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.windSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.windSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.windSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.windSpeed.Location = (new global::System.Drawing.Point(3, 122));
+            this.windSpeed.Name = ("windSpeed");
+            this.windSpeed.Size = (new global::System.Drawing.Size(230, 29));
+            this.windSpeed.TabIndex = (12);
+            this.windSpeed.Text = ("Скор. ветра (0 - 1000 м/с)");
+            this.windSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minAirTemperature
             // 
-            minAirTemperature.AutoSize = true;
-            minAirTemperature.BackColor = Color.FromArgb(80, 80, 80);
-            minAirTemperature.Dock = DockStyle.Fill;
-            minAirTemperature.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minAirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            minAirTemperature.Location = new Point(155, 23);
-            minAirTemperature.Name = "minAirTemperature";
-            minAirTemperature.Size = new Size(31, 23);
-            minAirTemperature.TabIndex = 14;
-            minAirTemperature.Text = "23.9";
-            minAirTemperature.TextAlign = ContentAlignment.MiddleCenter;
+            this.minAirTemperature.AutoSize = (true);
+            this.minAirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minAirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minAirTemperature.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minAirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minAirTemperature.Location = (new global::System.Drawing.Point(239, 31));
+            this.minAirTemperature.Name = ("minAirTemperature");
+            this.minAirTemperature.Size = (new global::System.Drawing.Size(51, 31));
+            this.minAirTemperature.TabIndex = (14);
+            this.minAirTemperature.Text = ("23.9");
+            this.minAirTemperature.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxAirTemperature
             // 
-            maxAirTemperature.AutoSize = true;
-            maxAirTemperature.BackColor = Color.FromArgb(80, 80, 80);
-            maxAirTemperature.Dock = DockStyle.Fill;
-            maxAirTemperature.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxAirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            maxAirTemperature.Location = new Point(192, 23);
-            maxAirTemperature.Name = "maxAirTemperature";
-            maxAirTemperature.Size = new Size(34, 23);
-            maxAirTemperature.TabIndex = 15;
-            maxAirTemperature.Text = "23.9";
-            maxAirTemperature.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxAirTemperature.AutoSize = (true);
+            this.maxAirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxAirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxAirTemperature.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxAirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxAirTemperature.Location = (new global::System.Drawing.Point(296, 31));
+            this.maxAirTemperature.Name = ("maxAirTemperature");
+            this.maxAirTemperature.Size = (new global::System.Drawing.Size(56, 31));
+            this.maxAirTemperature.TabIndex = (15);
+            this.maxAirTemperature.Text = ("23.9");
+            this.maxAirTemperature.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgAirTemperature
             // 
-            avgAirTemperature.AutoSize = true;
-            avgAirTemperature.BackColor = Color.FromArgb(80, 80, 80);
-            avgAirTemperature.Dock = DockStyle.Fill;
-            avgAirTemperature.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgAirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            avgAirTemperature.Location = new Point(232, 23);
-            avgAirTemperature.Name = "avgAirTemperature";
-            avgAirTemperature.Size = new Size(33, 23);
-            avgAirTemperature.TabIndex = 16;
-            avgAirTemperature.Text = "23.9";
-            avgAirTemperature.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgAirTemperature.AutoSize = (true);
+            this.avgAirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgAirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgAirTemperature.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgAirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgAirTemperature.Location = (new global::System.Drawing.Point(358, 31));
+            this.avgAirTemperature.Name = ("avgAirTemperature");
+            this.avgAirTemperature.Size = (new global::System.Drawing.Size(55, 31));
+            this.avgAirTemperature.TabIndex = (16);
+            this.avgAirTemperature.Text = ("23.9");
+            this.avgAirTemperature.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentAirTemperature
             // 
-            currentAirTemperature.AutoSize = true;
-            currentAirTemperature.BackColor = Color.FromArgb(80, 80, 80);
-            currentAirTemperature.Dock = DockStyle.Fill;
-            currentAirTemperature.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentAirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            currentAirTemperature.Location = new Point(271, 23);
-            currentAirTemperature.Name = "currentAirTemperature";
-            currentAirTemperature.Size = new Size(48, 23);
-            currentAirTemperature.TabIndex = 17;
-            currentAirTemperature.Text = "23.9";
-            currentAirTemperature.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentAirTemperature.AutoSize = (true);
+            this.currentAirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentAirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentAirTemperature.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentAirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentAirTemperature.Location = (new global::System.Drawing.Point(419, 31));
+            this.currentAirTemperature.Name = ("currentAirTemperature");
+            this.currentAirTemperature.Size = (new global::System.Drawing.Size(79, 31));
+            this.currentAirTemperature.TabIndex = (17);
+            this.currentAirTemperature.Text = ("23.9");
+            this.currentAirTemperature.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minAtmosphericPressure
             // 
-            minAtmosphericPressure.AutoSize = true;
-            minAtmosphericPressure.BackColor = Color.FromArgb(80, 80, 80);
-            minAtmosphericPressure.Dock = DockStyle.Fill;
-            minAtmosphericPressure.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minAtmosphericPressure.ForeColor = Color.FromArgb(250, 250, 250);
-            minAtmosphericPressure.Location = new Point(155, 69);
-            minAtmosphericPressure.Name = "minAtmosphericPressure";
-            minAtmosphericPressure.Size = new Size(31, 21);
-            minAtmosphericPressure.TabIndex = 18;
-            minAtmosphericPressure.Text = "0.9";
-            minAtmosphericPressure.TextAlign = ContentAlignment.MiddleCenter;
+            this.minAtmosphericPressure.AutoSize = (true);
+            this.minAtmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minAtmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minAtmosphericPressure.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minAtmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minAtmosphericPressure.Location = (new global::System.Drawing.Point(239, 93));
+            this.minAtmosphericPressure.Name = ("minAtmosphericPressure");
+            this.minAtmosphericPressure.Size = (new global::System.Drawing.Size(51, 29));
+            this.minAtmosphericPressure.TabIndex = (18);
+            this.minAtmosphericPressure.Text = ("0.9");
+            this.minAtmosphericPressure.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxAtmosphericPressure
             // 
-            maxAtmosphericPressure.AutoSize = true;
-            maxAtmosphericPressure.BackColor = Color.FromArgb(80, 80, 80);
-            maxAtmosphericPressure.Dock = DockStyle.Fill;
-            maxAtmosphericPressure.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxAtmosphericPressure.ForeColor = Color.FromArgb(250, 250, 250);
-            maxAtmosphericPressure.Location = new Point(192, 69);
-            maxAtmosphericPressure.Name = "maxAtmosphericPressure";
-            maxAtmosphericPressure.Size = new Size(34, 21);
-            maxAtmosphericPressure.TabIndex = 19;
-            maxAtmosphericPressure.Text = "0.9";
-            maxAtmosphericPressure.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxAtmosphericPressure.AutoSize = (true);
+            this.maxAtmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxAtmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxAtmosphericPressure.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxAtmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxAtmosphericPressure.Location = (new global::System.Drawing.Point(296, 93));
+            this.maxAtmosphericPressure.Name = ("maxAtmosphericPressure");
+            this.maxAtmosphericPressure.Size = (new global::System.Drawing.Size(56, 29));
+            this.maxAtmosphericPressure.TabIndex = (19);
+            this.maxAtmosphericPressure.Text = ("0.9");
+            this.maxAtmosphericPressure.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgAtmosphericPressure
             // 
-            avgAtmosphericPressure.AutoSize = true;
-            avgAtmosphericPressure.BackColor = Color.FromArgb(80, 80, 80);
-            avgAtmosphericPressure.Dock = DockStyle.Fill;
-            avgAtmosphericPressure.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgAtmosphericPressure.ForeColor = Color.FromArgb(250, 250, 250);
-            avgAtmosphericPressure.Location = new Point(232, 69);
-            avgAtmosphericPressure.Name = "avgAtmosphericPressure";
-            avgAtmosphericPressure.Size = new Size(33, 21);
-            avgAtmosphericPressure.TabIndex = 20;
-            avgAtmosphericPressure.Text = "0.9";
-            avgAtmosphericPressure.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgAtmosphericPressure.AutoSize = (true);
+            this.avgAtmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgAtmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgAtmosphericPressure.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgAtmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgAtmosphericPressure.Location = (new global::System.Drawing.Point(358, 93));
+            this.avgAtmosphericPressure.Name = ("avgAtmosphericPressure");
+            this.avgAtmosphericPressure.Size = (new global::System.Drawing.Size(55, 29));
+            this.avgAtmosphericPressure.TabIndex = (20);
+            this.avgAtmosphericPressure.Text = ("0.9");
+            this.avgAtmosphericPressure.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentAtmosphericPressure
             // 
-            currentAtmosphericPressure.AutoSize = true;
-            currentAtmosphericPressure.BackColor = Color.FromArgb(80, 80, 80);
-            currentAtmosphericPressure.Dock = DockStyle.Fill;
-            currentAtmosphericPressure.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentAtmosphericPressure.ForeColor = Color.FromArgb(250, 250, 250);
-            currentAtmosphericPressure.Location = new Point(271, 69);
-            currentAtmosphericPressure.Name = "currentAtmosphericPressure";
-            currentAtmosphericPressure.Size = new Size(48, 21);
-            currentAtmosphericPressure.TabIndex = 21;
-            currentAtmosphericPressure.Text = "0.9";
-            currentAtmosphericPressure.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentAtmosphericPressure.AutoSize = (true);
+            this.currentAtmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentAtmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentAtmosphericPressure.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentAtmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentAtmosphericPressure.Location = (new global::System.Drawing.Point(419, 93));
+            this.currentAtmosphericPressure.Name = ("currentAtmosphericPressure");
+            this.currentAtmosphericPressure.Size = (new global::System.Drawing.Size(79, 29));
+            this.currentAtmosphericPressure.TabIndex = (21);
+            this.currentAtmosphericPressure.Text = ("0.9");
+            this.currentAtmosphericPressure.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minWindDirection
             // 
-            minWindDirection.AutoSize = true;
-            minWindDirection.BackColor = Color.FromArgb(80, 80, 80);
-            minWindDirection.Dock = DockStyle.Fill;
-            minWindDirection.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minWindDirection.ForeColor = Color.FromArgb(250, 250, 250);
-            minWindDirection.Location = new Point(155, 111);
-            minWindDirection.Name = "minWindDirection";
-            minWindDirection.Size = new Size(31, 30);
-            minWindDirection.TabIndex = 22;
-            minWindDirection.Text = "800";
-            minWindDirection.TextAlign = ContentAlignment.MiddleCenter;
+            this.minWindDirection.AutoSize = (true);
+            this.minWindDirection.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minWindDirection.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minWindDirection.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minWindDirection.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minWindDirection.Location = (new global::System.Drawing.Point(239, 151));
+            this.minWindDirection.Name = ("minWindDirection");
+            this.minWindDirection.Size = (new global::System.Drawing.Size(51, 37));
+            this.minWindDirection.TabIndex = (22);
+            this.minWindDirection.Text = ("800");
+            this.minWindDirection.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentWindDirection
             // 
-            currentWindDirection.AutoSize = true;
-            currentWindDirection.BackColor = Color.FromArgb(80, 80, 80);
-            currentWindDirection.Dock = DockStyle.Fill;
-            currentWindDirection.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentWindDirection.ForeColor = Color.FromArgb(250, 250, 250);
-            currentWindDirection.Location = new Point(271, 111);
-            currentWindDirection.Name = "currentWindDirection";
-            currentWindDirection.Size = new Size(48, 30);
-            currentWindDirection.TabIndex = 23;
-            currentWindDirection.Text = "800";
-            currentWindDirection.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentWindDirection.AutoSize = (true);
+            this.currentWindDirection.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentWindDirection.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentWindDirection.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentWindDirection.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentWindDirection.Location = (new global::System.Drawing.Point(419, 151));
+            this.currentWindDirection.Name = ("currentWindDirection");
+            this.currentWindDirection.Size = (new global::System.Drawing.Size(79, 37));
+            this.currentWindDirection.TabIndex = (23);
+            this.currentWindDirection.Text = ("800");
+            this.currentWindDirection.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgWindDirection
             // 
-            avgWindDirection.AutoSize = true;
-            avgWindDirection.BackColor = Color.FromArgb(80, 80, 80);
-            avgWindDirection.Dock = DockStyle.Fill;
-            avgWindDirection.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgWindDirection.ForeColor = Color.FromArgb(250, 250, 250);
-            avgWindDirection.Location = new Point(232, 111);
-            avgWindDirection.Name = "avgWindDirection";
-            avgWindDirection.Size = new Size(33, 30);
-            avgWindDirection.TabIndex = 24;
-            avgWindDirection.Text = "800";
-            avgWindDirection.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgWindDirection.AutoSize = (true);
+            this.avgWindDirection.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgWindDirection.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgWindDirection.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgWindDirection.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgWindDirection.Location = (new global::System.Drawing.Point(358, 151));
+            this.avgWindDirection.Name = ("avgWindDirection");
+            this.avgWindDirection.Size = (new global::System.Drawing.Size(55, 37));
+            this.avgWindDirection.TabIndex = (24);
+            this.avgWindDirection.Text = ("800");
+            this.avgWindDirection.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minRelativeHumidity
             // 
-            minRelativeHumidity.AutoSize = true;
-            minRelativeHumidity.BackColor = Color.FromArgb(50, 50, 50);
-            minRelativeHumidity.Dock = DockStyle.Fill;
-            minRelativeHumidity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minRelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            minRelativeHumidity.Location = new Point(155, 46);
-            minRelativeHumidity.Name = "minRelativeHumidity";
-            minRelativeHumidity.Size = new Size(31, 23);
-            minRelativeHumidity.TabIndex = 25;
-            minRelativeHumidity.Text = "19.1";
-            minRelativeHumidity.TextAlign = ContentAlignment.MiddleCenter;
+            this.minRelativeHumidity.AutoSize = (true);
+            this.minRelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minRelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minRelativeHumidity.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minRelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minRelativeHumidity.Location = (new global::System.Drawing.Point(239, 62));
+            this.minRelativeHumidity.Name = ("minRelativeHumidity");
+            this.minRelativeHumidity.Size = (new global::System.Drawing.Size(51, 31));
+            this.minRelativeHumidity.TabIndex = (25);
+            this.minRelativeHumidity.Text = ("19.1");
+            this.minRelativeHumidity.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxRelativeHumidity
             // 
-            maxRelativeHumidity.AutoSize = true;
-            maxRelativeHumidity.BackColor = Color.FromArgb(50, 50, 50);
-            maxRelativeHumidity.Dock = DockStyle.Fill;
-            maxRelativeHumidity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxRelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            maxRelativeHumidity.Location = new Point(192, 46);
-            maxRelativeHumidity.Name = "maxRelativeHumidity";
-            maxRelativeHumidity.Size = new Size(34, 23);
-            maxRelativeHumidity.TabIndex = 27;
-            maxRelativeHumidity.Text = "19.1";
-            maxRelativeHumidity.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxRelativeHumidity.AutoSize = (true);
+            this.maxRelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxRelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxRelativeHumidity.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxRelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxRelativeHumidity.Location = (new global::System.Drawing.Point(296, 62));
+            this.maxRelativeHumidity.Name = ("maxRelativeHumidity");
+            this.maxRelativeHumidity.Size = (new global::System.Drawing.Size(56, 31));
+            this.maxRelativeHumidity.TabIndex = (27);
+            this.maxRelativeHumidity.Text = ("19.1");
+            this.maxRelativeHumidity.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgRelativeHumidity
             // 
-            avgRelativeHumidity.AutoSize = true;
-            avgRelativeHumidity.BackColor = Color.FromArgb(50, 50, 50);
-            avgRelativeHumidity.Dock = DockStyle.Fill;
-            avgRelativeHumidity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgRelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            avgRelativeHumidity.Location = new Point(232, 46);
-            avgRelativeHumidity.Name = "avgRelativeHumidity";
-            avgRelativeHumidity.Size = new Size(33, 23);
-            avgRelativeHumidity.TabIndex = 28;
-            avgRelativeHumidity.Text = "19.1";
-            avgRelativeHumidity.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgRelativeHumidity.AutoSize = (true);
+            this.avgRelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgRelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgRelativeHumidity.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgRelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgRelativeHumidity.Location = (new global::System.Drawing.Point(358, 62));
+            this.avgRelativeHumidity.Name = ("avgRelativeHumidity");
+            this.avgRelativeHumidity.Size = (new global::System.Drawing.Size(55, 31));
+            this.avgRelativeHumidity.TabIndex = (28);
+            this.avgRelativeHumidity.Text = ("19.1");
+            this.avgRelativeHumidity.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentRelativeHumidity
             // 
-            currentRelativeHumidity.AutoSize = true;
-            currentRelativeHumidity.BackColor = Color.FromArgb(50, 50, 50);
-            currentRelativeHumidity.Dock = DockStyle.Fill;
-            currentRelativeHumidity.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentRelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            currentRelativeHumidity.Location = new Point(271, 46);
-            currentRelativeHumidity.Name = "currentRelativeHumidity";
-            currentRelativeHumidity.Size = new Size(48, 23);
-            currentRelativeHumidity.TabIndex = 29;
-            currentRelativeHumidity.Text = "19.1";
-            currentRelativeHumidity.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentRelativeHumidity.AutoSize = (true);
+            this.currentRelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentRelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentRelativeHumidity.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentRelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentRelativeHumidity.Location = (new global::System.Drawing.Point(419, 62));
+            this.currentRelativeHumidity.Name = ("currentRelativeHumidity");
+            this.currentRelativeHumidity.Size = (new global::System.Drawing.Size(79, 31));
+            this.currentRelativeHumidity.TabIndex = (29);
+            this.currentRelativeHumidity.Text = ("19.1");
+            this.currentRelativeHumidity.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minWindSpeed
             // 
-            minWindSpeed.AutoSize = true;
-            minWindSpeed.BackColor = Color.FromArgb(50, 50, 50);
-            minWindSpeed.Dock = DockStyle.Fill;
-            minWindSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minWindSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            minWindSpeed.Location = new Point(155, 90);
-            minWindSpeed.Name = "minWindSpeed";
-            minWindSpeed.Size = new Size(31, 21);
-            minWindSpeed.TabIndex = 30;
-            minWindSpeed.Text = "20.5";
-            minWindSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.minWindSpeed.AutoSize = (true);
+            this.minWindSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minWindSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minWindSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minWindSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minWindSpeed.Location = (new global::System.Drawing.Point(239, 122));
+            this.minWindSpeed.Name = ("minWindSpeed");
+            this.minWindSpeed.Size = (new global::System.Drawing.Size(51, 29));
+            this.minWindSpeed.TabIndex = (30);
+            this.minWindSpeed.Text = ("20.5");
+            this.minWindSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxWindSpeed
             // 
-            maxWindSpeed.AutoSize = true;
-            maxWindSpeed.BackColor = Color.FromArgb(50, 50, 50);
-            maxWindSpeed.Dock = DockStyle.Fill;
-            maxWindSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxWindSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            maxWindSpeed.Location = new Point(192, 90);
-            maxWindSpeed.Name = "maxWindSpeed";
-            maxWindSpeed.Size = new Size(34, 21);
-            maxWindSpeed.TabIndex = 31;
-            maxWindSpeed.Text = "20.5";
-            maxWindSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxWindSpeed.AutoSize = (true);
+            this.maxWindSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxWindSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxWindSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxWindSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxWindSpeed.Location = (new global::System.Drawing.Point(296, 122));
+            this.maxWindSpeed.Name = ("maxWindSpeed");
+            this.maxWindSpeed.Size = (new global::System.Drawing.Size(56, 29));
+            this.maxWindSpeed.TabIndex = (31);
+            this.maxWindSpeed.Text = ("20.5");
+            this.maxWindSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgWindSpeed
             // 
-            avgWindSpeed.AutoSize = true;
-            avgWindSpeed.BackColor = Color.FromArgb(50, 50, 50);
-            avgWindSpeed.Dock = DockStyle.Fill;
-            avgWindSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgWindSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            avgWindSpeed.Location = new Point(232, 90);
-            avgWindSpeed.Name = "avgWindSpeed";
-            avgWindSpeed.Size = new Size(33, 21);
-            avgWindSpeed.TabIndex = 32;
-            avgWindSpeed.Text = "20.5";
-            avgWindSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgWindSpeed.AutoSize = (true);
+            this.avgWindSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgWindSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgWindSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgWindSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgWindSpeed.Location = (new global::System.Drawing.Point(358, 122));
+            this.avgWindSpeed.Name = ("avgWindSpeed");
+            this.avgWindSpeed.Size = (new global::System.Drawing.Size(55, 29));
+            this.avgWindSpeed.TabIndex = (32);
+            this.avgWindSpeed.Text = ("20.5");
+            this.avgWindSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentWindSpeed
             // 
-            currentWindSpeed.AutoSize = true;
-            currentWindSpeed.BackColor = Color.FromArgb(50, 50, 50);
-            currentWindSpeed.Dock = DockStyle.Fill;
-            currentWindSpeed.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentWindSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            currentWindSpeed.Location = new Point(271, 90);
-            currentWindSpeed.Name = "currentWindSpeed";
-            currentWindSpeed.Size = new Size(48, 21);
-            currentWindSpeed.TabIndex = 33;
-            currentWindSpeed.Text = "20.5";
-            currentWindSpeed.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentWindSpeed.AutoSize = (true);
+            this.currentWindSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentWindSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentWindSpeed.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentWindSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentWindSpeed.Location = (new global::System.Drawing.Point(419, 122));
+            this.currentWindSpeed.Name = ("currentWindSpeed");
+            this.currentWindSpeed.Size = (new global::System.Drawing.Size(79, 29));
+            this.currentWindSpeed.TabIndex = (33);
+            this.currentWindSpeed.Text = ("20.5");
+            this.currentWindSpeed.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxWindDirection
             // 
-            maxWindDirection.AutoSize = true;
-            maxWindDirection.BackColor = Color.FromArgb(80, 80, 80);
-            maxWindDirection.Dock = DockStyle.Fill;
-            maxWindDirection.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxWindDirection.ForeColor = Color.FromArgb(250, 250, 250);
-            maxWindDirection.Location = new Point(192, 111);
-            maxWindDirection.Name = "maxWindDirection";
-            maxWindDirection.Size = new Size(34, 30);
-            maxWindDirection.TabIndex = 34;
-            maxWindDirection.Text = "800";
-            maxWindDirection.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxWindDirection.AutoSize = (true);
+            this.maxWindDirection.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxWindDirection.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxWindDirection.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxWindDirection.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxWindDirection.Location = (new global::System.Drawing.Point(296, 151));
+            this.maxWindDirection.Name = ("maxWindDirection");
+            this.maxWindDirection.Size = (new global::System.Drawing.Size(56, 37));
+            this.maxWindDirection.TabIndex = (34);
+            this.maxWindDirection.Text = ("800");
+            this.maxWindDirection.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // porog_1_AirTemperature
             // 
-            porog_1_AirTemperature.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_AirTemperature.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_AirTemperature.Dock = DockStyle.Fill;
-            porog_1_AirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_AirTemperature.Location = new Point(325, 26);
-            porog_1_AirTemperature.Name = "porog_1_AirTemperature";
-            porog_1_AirTemperature.Size = new Size(49, 23);
-            porog_1_AirTemperature.TabIndex = 35;
-            porog_1_AirTemperature.Text = "20";
-            porog_1_AirTemperature.TextAlign = HorizontalAlignment.Center;
-            porog_1_AirTemperature.KeyDown += porog_1_AirTemperature_KeyDown;
+            this.porog_1_AirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_AirTemperature.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_AirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_AirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_AirTemperature.Location = (new global::System.Drawing.Point(504, 35));
+            this.porog_1_AirTemperature.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_AirTemperature.Name = ("porog_1_AirTemperature");
+            this.porog_1_AirTemperature.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_AirTemperature.TabIndex = (35);
+            this.porog_1_AirTemperature.Text = ("20");
+            this.porog_1_AirTemperature.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_AirTemperature.KeyDown += (this.porog_1_AirTemperature_KeyDown);
             // 
             // porog_1_RelativeHumidity
             // 
-            porog_1_RelativeHumidity.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_RelativeHumidity.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_RelativeHumidity.Dock = DockStyle.Fill;
-            porog_1_RelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_RelativeHumidity.Location = new Point(325, 49);
-            porog_1_RelativeHumidity.Name = "porog_1_RelativeHumidity";
-            porog_1_RelativeHumidity.Size = new Size(49, 23);
-            porog_1_RelativeHumidity.TabIndex = 36;
-            porog_1_RelativeHumidity.Text = "20";
-            porog_1_RelativeHumidity.TextAlign = HorizontalAlignment.Center;
-            porog_1_RelativeHumidity.KeyDown += porog_1_RelativeHumidity_KeyDown;
+            this.porog_1_RelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_RelativeHumidity.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_RelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_RelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_RelativeHumidity.Location = (new global::System.Drawing.Point(504, 66));
+            this.porog_1_RelativeHumidity.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_RelativeHumidity.Name = ("porog_1_RelativeHumidity");
+            this.porog_1_RelativeHumidity.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_RelativeHumidity.TabIndex = (36);
+            this.porog_1_RelativeHumidity.Text = ("20");
+            this.porog_1_RelativeHumidity.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_RelativeHumidity.KeyDown += (this.porog_1_RelativeHumidity_KeyDown);
             // 
             // porog_1_AtmosphericPressure
             // 
-            porog_1_AtmosphericPressure.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_AtmosphericPressure.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_AtmosphericPressure.Dock = DockStyle.Fill;
-            porog_1_AtmosphericPressure.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_AtmosphericPressure.Location = new Point(325, 72);
-            porog_1_AtmosphericPressure.Name = "porog_1_AtmosphericPressure";
-            porog_1_AtmosphericPressure.Size = new Size(49, 23);
-            porog_1_AtmosphericPressure.TabIndex = 37;
-            porog_1_AtmosphericPressure.Text = "20";
-            porog_1_AtmosphericPressure.TextAlign = HorizontalAlignment.Center;
-            porog_1_AtmosphericPressure.KeyDown += porog_1_AtmosphericPressure_KeyDown;
+            this.porog_1_AtmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_AtmosphericPressure.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_AtmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_AtmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_AtmosphericPressure.Location = (new global::System.Drawing.Point(504, 97));
+            this.porog_1_AtmosphericPressure.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_AtmosphericPressure.Name = ("porog_1_AtmosphericPressure");
+            this.porog_1_AtmosphericPressure.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_AtmosphericPressure.TabIndex = (37);
+            this.porog_1_AtmosphericPressure.Text = ("20");
+            this.porog_1_AtmosphericPressure.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_AtmosphericPressure.KeyDown += (this.porog_1_AtmosphericPressure_KeyDown);
             // 
             // porog_2_AirTemperature
             // 
-            porog_2_AirTemperature.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_AirTemperature.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_AirTemperature.Dock = DockStyle.Fill;
-            porog_2_AirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_AirTemperature.Location = new Point(380, 26);
-            porog_2_AirTemperature.Name = "porog_2_AirTemperature";
-            porog_2_AirTemperature.Size = new Size(47, 23);
-            porog_2_AirTemperature.TabIndex = 38;
-            porog_2_AirTemperature.Text = "20";
-            porog_2_AirTemperature.TextAlign = HorizontalAlignment.Center;
-            porog_2_AirTemperature.KeyDown += porog_2_AirTemperature_KeyDown;
+            this.porog_2_AirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_AirTemperature.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_AirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_AirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_AirTemperature.Location = (new global::System.Drawing.Point(590, 35));
+            this.porog_2_AirTemperature.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_AirTemperature.Name = ("porog_2_AirTemperature");
+            this.porog_2_AirTemperature.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_AirTemperature.TabIndex = (38);
+            this.porog_2_AirTemperature.Text = ("20");
+            this.porog_2_AirTemperature.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_AirTemperature.KeyDown += (this.porog_2_AirTemperature_KeyDown);
             // 
             // porog_2_RelativeHumidity
             // 
-            porog_2_RelativeHumidity.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_RelativeHumidity.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_RelativeHumidity.Dock = DockStyle.Fill;
-            porog_2_RelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_RelativeHumidity.Location = new Point(380, 49);
-            porog_2_RelativeHumidity.Name = "porog_2_RelativeHumidity";
-            porog_2_RelativeHumidity.Size = new Size(47, 23);
-            porog_2_RelativeHumidity.TabIndex = 39;
-            porog_2_RelativeHumidity.Text = "20";
-            porog_2_RelativeHumidity.TextAlign = HorizontalAlignment.Center;
-            porog_2_RelativeHumidity.KeyDown += porog_2_RelativeHumidity_KeyDown;
+            this.porog_2_RelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_RelativeHumidity.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_RelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_RelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_RelativeHumidity.Location = (new global::System.Drawing.Point(590, 66));
+            this.porog_2_RelativeHumidity.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_RelativeHumidity.Name = ("porog_2_RelativeHumidity");
+            this.porog_2_RelativeHumidity.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_RelativeHumidity.TabIndex = (39);
+            this.porog_2_RelativeHumidity.Text = ("20");
+            this.porog_2_RelativeHumidity.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_RelativeHumidity.KeyDown += (this.porog_2_RelativeHumidity_KeyDown);
             // 
             // porog_2_AtmosphericPressure
             // 
-            porog_2_AtmosphericPressure.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_AtmosphericPressure.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_AtmosphericPressure.Dock = DockStyle.Fill;
-            porog_2_AtmosphericPressure.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_AtmosphericPressure.Location = new Point(380, 72);
-            porog_2_AtmosphericPressure.Name = "porog_2_AtmosphericPressure";
-            porog_2_AtmosphericPressure.Size = new Size(47, 23);
-            porog_2_AtmosphericPressure.TabIndex = 40;
-            porog_2_AtmosphericPressure.Text = "20";
-            porog_2_AtmosphericPressure.TextAlign = HorizontalAlignment.Center;
-            porog_2_AtmosphericPressure.KeyDown += porog_2_AtmosphericPressure_KeyDown;
+            this.porog_2_AtmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_AtmosphericPressure.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_AtmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_AtmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_AtmosphericPressure.Location = (new global::System.Drawing.Point(590, 97));
+            this.porog_2_AtmosphericPressure.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_AtmosphericPressure.Name = ("porog_2_AtmosphericPressure");
+            this.porog_2_AtmosphericPressure.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_AtmosphericPressure.TabIndex = (40);
+            this.porog_2_AtmosphericPressure.Text = ("20");
+            this.porog_2_AtmosphericPressure.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_AtmosphericPressure.KeyDown += (this.porog_2_AtmosphericPressure_KeyDown);
             // 
             // dx_AirTemperature
             // 
-            dx_AirTemperature.BackColor = Color.FromArgb(30, 30, 30);
-            dx_AirTemperature.BorderStyle = BorderStyle.FixedSingle;
-            dx_AirTemperature.Dock = DockStyle.Fill;
-            dx_AirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_AirTemperature.Location = new Point(433, 26);
-            dx_AirTemperature.Name = "dx_AirTemperature";
-            dx_AirTemperature.Size = new Size(75, 23);
-            dx_AirTemperature.TabIndex = 41;
-            dx_AirTemperature.Text = "20";
-            dx_AirTemperature.TextAlign = HorizontalAlignment.Center;
-            dx_AirTemperature.KeyDown += dx_AirTemperature_KeyDown;
+            this.dx_AirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_AirTemperature.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_AirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_AirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_AirTemperature.Location = (new global::System.Drawing.Point(672, 35));
+            this.dx_AirTemperature.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_AirTemperature.Name = ("dx_AirTemperature");
+            this.dx_AirTemperature.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_AirTemperature.TabIndex = (41);
+            this.dx_AirTemperature.Text = ("20");
+            this.dx_AirTemperature.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_AirTemperature.KeyDown += (this.dx_AirTemperature_KeyDown);
             // 
             // dx_RelativeHumidity
             // 
-            dx_RelativeHumidity.BackColor = Color.FromArgb(30, 30, 30);
-            dx_RelativeHumidity.BorderStyle = BorderStyle.FixedSingle;
-            dx_RelativeHumidity.Dock = DockStyle.Fill;
-            dx_RelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_RelativeHumidity.Location = new Point(433, 49);
-            dx_RelativeHumidity.Name = "dx_RelativeHumidity";
-            dx_RelativeHumidity.Size = new Size(75, 23);
-            dx_RelativeHumidity.TabIndex = 42;
-            dx_RelativeHumidity.Text = "20";
-            dx_RelativeHumidity.TextAlign = HorizontalAlignment.Center;
-            dx_RelativeHumidity.KeyDown += dx_RelativeHumidity_KeyDown;
+            this.dx_RelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_RelativeHumidity.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_RelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_RelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_RelativeHumidity.Location = (new global::System.Drawing.Point(672, 66));
+            this.dx_RelativeHumidity.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_RelativeHumidity.Name = ("dx_RelativeHumidity");
+            this.dx_RelativeHumidity.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_RelativeHumidity.TabIndex = (42);
+            this.dx_RelativeHumidity.Text = ("20");
+            this.dx_RelativeHumidity.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_RelativeHumidity.KeyDown += (this.dx_RelativeHumidity_KeyDown);
             // 
             // porog_1_WindDirection
             // 
-            porog_1_WindDirection.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_WindDirection.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_WindDirection.Dock = DockStyle.Fill;
-            porog_1_WindDirection.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_WindDirection.Location = new Point(325, 114);
-            porog_1_WindDirection.Name = "porog_1_WindDirection";
-            porog_1_WindDirection.Size = new Size(49, 23);
-            porog_1_WindDirection.TabIndex = 43;
-            porog_1_WindDirection.Text = "20";
-            porog_1_WindDirection.TextAlign = HorizontalAlignment.Center;
-            porog_1_WindDirection.KeyDown += porog_1_WindDirection_KeyDown;
+            this.porog_1_WindDirection.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_WindDirection.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_WindDirection.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_WindDirection.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_WindDirection.Location = (new global::System.Drawing.Point(504, 155));
+            this.porog_1_WindDirection.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_WindDirection.Name = ("porog_1_WindDirection");
+            this.porog_1_WindDirection.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_WindDirection.TabIndex = (43);
+            this.porog_1_WindDirection.Text = ("20");
+            this.porog_1_WindDirection.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_WindDirection.KeyDown += (this.porog_1_WindDirection_KeyDown);
             // 
             // porog_1_WindSpeed
             // 
-            porog_1_WindSpeed.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_WindSpeed.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_WindSpeed.Dock = DockStyle.Fill;
-            porog_1_WindSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_WindSpeed.Location = new Point(325, 93);
-            porog_1_WindSpeed.Name = "porog_1_WindSpeed";
-            porog_1_WindSpeed.Size = new Size(49, 23);
-            porog_1_WindSpeed.TabIndex = 44;
-            porog_1_WindSpeed.Text = "20";
-            porog_1_WindSpeed.TextAlign = HorizontalAlignment.Center;
-            porog_1_WindSpeed.KeyDown += porog_1_WindSpeed_KeyDown;
+            this.porog_1_WindSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_WindSpeed.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_WindSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_WindSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_WindSpeed.Location = (new global::System.Drawing.Point(504, 126));
+            this.porog_1_WindSpeed.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_WindSpeed.Name = ("porog_1_WindSpeed");
+            this.porog_1_WindSpeed.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_WindSpeed.TabIndex = (44);
+            this.porog_1_WindSpeed.Text = ("20");
+            this.porog_1_WindSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_WindSpeed.KeyDown += (this.porog_1_WindSpeed_KeyDown);
             // 
             // porog_2_WindSpeed
             // 
-            porog_2_WindSpeed.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_WindSpeed.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_WindSpeed.Dock = DockStyle.Fill;
-            porog_2_WindSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_WindSpeed.Location = new Point(380, 93);
-            porog_2_WindSpeed.Name = "porog_2_WindSpeed";
-            porog_2_WindSpeed.Size = new Size(47, 23);
-            porog_2_WindSpeed.TabIndex = 45;
-            porog_2_WindSpeed.Text = "20";
-            porog_2_WindSpeed.TextAlign = HorizontalAlignment.Center;
-            porog_2_WindSpeed.KeyDown += porog_2_WindSpeed_KeyDown;
+            this.porog_2_WindSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_WindSpeed.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_WindSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_WindSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_WindSpeed.Location = (new global::System.Drawing.Point(590, 126));
+            this.porog_2_WindSpeed.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_WindSpeed.Name = ("porog_2_WindSpeed");
+            this.porog_2_WindSpeed.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_WindSpeed.TabIndex = (45);
+            this.porog_2_WindSpeed.Text = ("20");
+            this.porog_2_WindSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_WindSpeed.KeyDown += (this.porog_2_WindSpeed_KeyDown);
             // 
             // dx_WindDirection
             // 
-            dx_WindDirection.BackColor = Color.FromArgb(30, 30, 30);
-            dx_WindDirection.BorderStyle = BorderStyle.FixedSingle;
-            dx_WindDirection.Dock = DockStyle.Fill;
-            dx_WindDirection.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_WindDirection.Location = new Point(433, 114);
-            dx_WindDirection.Name = "dx_WindDirection";
-            dx_WindDirection.Size = new Size(75, 23);
-            dx_WindDirection.TabIndex = 46;
-            dx_WindDirection.Text = "20";
-            dx_WindDirection.TextAlign = HorizontalAlignment.Center;
-            dx_WindDirection.KeyDown += dx_WindDirection_KeyDown;
+            this.dx_WindDirection.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_WindDirection.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_WindDirection.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_WindDirection.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_WindDirection.Location = (new global::System.Drawing.Point(672, 155));
+            this.dx_WindDirection.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_WindDirection.Name = ("dx_WindDirection");
+            this.dx_WindDirection.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_WindDirection.TabIndex = (46);
+            this.dx_WindDirection.Text = ("20");
+            this.dx_WindDirection.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_WindDirection.KeyDown += (this.dx_WindDirection_KeyDown);
             // 
             // dx_AtmosphericPressure
             // 
-            dx_AtmosphericPressure.BackColor = Color.FromArgb(30, 30, 30);
-            dx_AtmosphericPressure.BorderStyle = BorderStyle.FixedSingle;
-            dx_AtmosphericPressure.Dock = DockStyle.Fill;
-            dx_AtmosphericPressure.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_AtmosphericPressure.Location = new Point(433, 72);
-            dx_AtmosphericPressure.Name = "dx_AtmosphericPressure";
-            dx_AtmosphericPressure.Size = new Size(75, 23);
-            dx_AtmosphericPressure.TabIndex = 47;
-            dx_AtmosphericPressure.Text = "20";
-            dx_AtmosphericPressure.TextAlign = HorizontalAlignment.Center;
-            dx_AtmosphericPressure.KeyDown += dx_AtmosphericPressure_KeyDown;
+            this.dx_AtmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_AtmosphericPressure.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_AtmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_AtmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_AtmosphericPressure.Location = (new global::System.Drawing.Point(672, 97));
+            this.dx_AtmosphericPressure.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_AtmosphericPressure.Name = ("dx_AtmosphericPressure");
+            this.dx_AtmosphericPressure.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_AtmosphericPressure.TabIndex = (47);
+            this.dx_AtmosphericPressure.Text = ("20");
+            this.dx_AtmosphericPressure.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_AtmosphericPressure.KeyDown += (this.dx_AtmosphericPressure_KeyDown);
             // 
             // dt_AirTemperature
             // 
-            dt_AirTemperature.BackColor = Color.FromArgb(30, 30, 30);
-            dt_AirTemperature.BorderStyle = BorderStyle.FixedSingle;
-            dt_AirTemperature.Dock = DockStyle.Fill;
-            dt_AirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_AirTemperature.Location = new Point(514, 26);
-            dt_AirTemperature.Name = "dt_AirTemperature";
-            dt_AirTemperature.Size = new Size(90, 23);
-            dt_AirTemperature.TabIndex = 48;
-            dt_AirTemperature.Text = "20";
-            dt_AirTemperature.TextAlign = HorizontalAlignment.Center;
-            dt_AirTemperature.KeyDown += dt_AirTemperature_KeyDown;
+            this.dt_AirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_AirTemperature.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_AirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_AirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_AirTemperature.Location = (new global::System.Drawing.Point(797, 35));
+            this.dt_AirTemperature.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_AirTemperature.Name = ("dt_AirTemperature");
+            this.dt_AirTemperature.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_AirTemperature.TabIndex = (48);
+            this.dt_AirTemperature.Text = ("20");
+            this.dt_AirTemperature.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_AirTemperature.KeyDown += (this.dt_AirTemperature_KeyDown);
             // 
             // dt_RelativeHumidity
             // 
-            dt_RelativeHumidity.BackColor = Color.FromArgb(30, 30, 30);
-            dt_RelativeHumidity.BorderStyle = BorderStyle.FixedSingle;
-            dt_RelativeHumidity.Dock = DockStyle.Fill;
-            dt_RelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_RelativeHumidity.Location = new Point(514, 49);
-            dt_RelativeHumidity.Name = "dt_RelativeHumidity";
-            dt_RelativeHumidity.Size = new Size(90, 23);
-            dt_RelativeHumidity.TabIndex = 49;
-            dt_RelativeHumidity.Text = "20";
-            dt_RelativeHumidity.TextAlign = HorizontalAlignment.Center;
-            dt_RelativeHumidity.KeyDown += dt_RelativeHumidity_KeyDown;
+            this.dt_RelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_RelativeHumidity.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_RelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_RelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_RelativeHumidity.Location = (new global::System.Drawing.Point(797, 66));
+            this.dt_RelativeHumidity.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_RelativeHumidity.Name = ("dt_RelativeHumidity");
+            this.dt_RelativeHumidity.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_RelativeHumidity.TabIndex = (49);
+            this.dt_RelativeHumidity.Text = ("20");
+            this.dt_RelativeHumidity.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_RelativeHumidity.KeyDown += (this.dt_RelativeHumidity_KeyDown);
             // 
             // dt_AtmosphericPressure
             // 
-            dt_AtmosphericPressure.BackColor = Color.FromArgb(30, 30, 30);
-            dt_AtmosphericPressure.BorderStyle = BorderStyle.FixedSingle;
-            dt_AtmosphericPressure.Dock = DockStyle.Fill;
-            dt_AtmosphericPressure.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_AtmosphericPressure.Location = new Point(514, 72);
-            dt_AtmosphericPressure.Name = "dt_AtmosphericPressure";
-            dt_AtmosphericPressure.Size = new Size(90, 23);
-            dt_AtmosphericPressure.TabIndex = 50;
-            dt_AtmosphericPressure.Text = "20";
-            dt_AtmosphericPressure.TextAlign = HorizontalAlignment.Center;
-            dt_AtmosphericPressure.KeyDown += dt_AtmosphericPressure_KeyDown;
+            this.dt_AtmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_AtmosphericPressure.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_AtmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_AtmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_AtmosphericPressure.Location = (new global::System.Drawing.Point(797, 97));
+            this.dt_AtmosphericPressure.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_AtmosphericPressure.Name = ("dt_AtmosphericPressure");
+            this.dt_AtmosphericPressure.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_AtmosphericPressure.TabIndex = (50);
+            this.dt_AtmosphericPressure.Text = ("20");
+            this.dt_AtmosphericPressure.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_AtmosphericPressure.KeyDown += (this.dt_AtmosphericPressure_KeyDown);
             // 
             // dt_WindSpeed
             // 
-            dt_WindSpeed.BackColor = Color.FromArgb(30, 30, 30);
-            dt_WindSpeed.BorderStyle = BorderStyle.FixedSingle;
-            dt_WindSpeed.Dock = DockStyle.Fill;
-            dt_WindSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_WindSpeed.Location = new Point(514, 93);
-            dt_WindSpeed.Name = "dt_WindSpeed";
-            dt_WindSpeed.Size = new Size(90, 23);
-            dt_WindSpeed.TabIndex = 51;
-            dt_WindSpeed.Text = "20";
-            dt_WindSpeed.TextAlign = HorizontalAlignment.Center;
-            dt_WindSpeed.KeyDown += dt_WindSpeed_KeyDown;
+            this.dt_WindSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_WindSpeed.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_WindSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_WindSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_WindSpeed.Location = (new global::System.Drawing.Point(797, 126));
+            this.dt_WindSpeed.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_WindSpeed.Name = ("dt_WindSpeed");
+            this.dt_WindSpeed.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_WindSpeed.TabIndex = (51);
+            this.dt_WindSpeed.Text = ("20");
+            this.dt_WindSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_WindSpeed.KeyDown += (this.dt_WindSpeed_KeyDown);
             // 
             // dx_WindSpeed
             // 
-            dx_WindSpeed.BackColor = Color.FromArgb(30, 30, 30);
-            dx_WindSpeed.BorderStyle = BorderStyle.FixedSingle;
-            dx_WindSpeed.Dock = DockStyle.Fill;
-            dx_WindSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_WindSpeed.Location = new Point(433, 93);
-            dx_WindSpeed.Name = "dx_WindSpeed";
-            dx_WindSpeed.Size = new Size(75, 23);
-            dx_WindSpeed.TabIndex = 52;
-            dx_WindSpeed.Text = "20";
-            dx_WindSpeed.TextAlign = HorizontalAlignment.Center;
-            dx_WindSpeed.KeyDown += dx_WindSpeed_KeyDown;
+            this.dx_WindSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_WindSpeed.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_WindSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_WindSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_WindSpeed.Location = (new global::System.Drawing.Point(672, 126));
+            this.dx_WindSpeed.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_WindSpeed.Name = ("dx_WindSpeed");
+            this.dx_WindSpeed.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_WindSpeed.TabIndex = (52);
+            this.dx_WindSpeed.Text = ("20");
+            this.dx_WindSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_WindSpeed.KeyDown += (this.dx_WindSpeed_KeyDown);
             // 
             // dt_WindDirection
             // 
-            dt_WindDirection.BackColor = Color.FromArgb(30, 30, 30);
-            dt_WindDirection.BorderStyle = BorderStyle.FixedSingle;
-            dt_WindDirection.Dock = DockStyle.Fill;
-            dt_WindDirection.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_WindDirection.Location = new Point(514, 114);
-            dt_WindDirection.Name = "dt_WindDirection";
-            dt_WindDirection.Size = new Size(90, 23);
-            dt_WindDirection.TabIndex = 53;
-            dt_WindDirection.Text = "20";
-            dt_WindDirection.TextAlign = HorizontalAlignment.Center;
-            dt_WindDirection.KeyDown += dt_WindDirection_KeyDown;
+            this.dt_WindDirection.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_WindDirection.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_WindDirection.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_WindDirection.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_WindDirection.Location = (new global::System.Drawing.Point(797, 155));
+            this.dt_WindDirection.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_WindDirection.Name = ("dt_WindDirection");
+            this.dt_WindDirection.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_WindDirection.TabIndex = (53);
+            this.dt_WindDirection.Text = ("20");
+            this.dt_WindDirection.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_WindDirection.KeyDown += (this.dt_WindDirection_KeyDown);
             // 
             // tableLayoutPanel5
             // 
-            tableLayoutPanel5.BackColor = Color.FromArgb(30, 30, 30);
-            tableLayoutPanel5.ColumnCount = 9;
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.0699787F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.129995F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.685231F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.54999447F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.049993F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.189992F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.774365F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.3704624F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.179987F));
-            tableLayoutPanel5.Controls.Add(porog_1_VolatileOrganicCompounds, 5, 5);
-            tableLayoutPanel5.Controls.Add(minVolatileOrganicCompounds, 1, 5);
-            tableLayoutPanel5.Controls.Add(volatileOrganicCompounds, 0, 5);
-            tableLayoutPanel5.Controls.Add(carbonMonoxide, 0, 0);
-            tableLayoutPanel5.Controls.Add(nitrogenOxide, 0, 1);
-            tableLayoutPanel5.Controls.Add(nitrogenDioxide, 0, 2);
-            tableLayoutPanel5.Controls.Add(sulfurDioxide, 0, 3);
-            tableLayoutPanel5.Controls.Add(carbonDioxide, 0, 4);
-            tableLayoutPanel5.Controls.Add(minNitrogenOxide, 1, 1);
-            tableLayoutPanel5.Controls.Add(maxNitrogenOxide, 2, 1);
-            tableLayoutPanel5.Controls.Add(avgNitrogenOxide, 3, 1);
-            tableLayoutPanel5.Controls.Add(currentNitrogenOxide, 4, 1);
-            tableLayoutPanel5.Controls.Add(maxVolatileOrganicCompounds, 2, 5);
-            tableLayoutPanel5.Controls.Add(avgVolatileOrganicCompounds, 3, 5);
-            tableLayoutPanel5.Controls.Add(currentVolatileOrganicCompounds, 4, 5);
-            tableLayoutPanel5.Controls.Add(minSulfurDioxide, 1, 3);
-            tableLayoutPanel5.Controls.Add(maxSulfurDioxide, 2, 3);
-            tableLayoutPanel5.Controls.Add(avgSulfurDioxide, 3, 3);
-            tableLayoutPanel5.Controls.Add(currentSulfurDioxide, 4, 3);
-            tableLayoutPanel5.Controls.Add(minCarbonMonoxide, 1, 0);
-            tableLayoutPanel5.Controls.Add(maxCarbonMonoxide, 2, 0);
-            tableLayoutPanel5.Controls.Add(avgCarbonMonoxide, 3, 0);
-            tableLayoutPanel5.Controls.Add(currentCarbonMonoxide, 4, 0);
-            tableLayoutPanel5.Controls.Add(minNitrogenDioxide, 1, 2);
-            tableLayoutPanel5.Controls.Add(maxNitrogenDioxide, 2, 2);
-            tableLayoutPanel5.Controls.Add(avgNitrogenDioxide, 3, 2);
-            tableLayoutPanel5.Controls.Add(currentNitrogenDioxide, 4, 2);
-            tableLayoutPanel5.Controls.Add(minCarbonDioxide, 1, 4);
-            tableLayoutPanel5.Controls.Add(maxCarbonDioxide, 2, 4);
-            tableLayoutPanel5.Controls.Add(avgCarbonDioxide, 3, 4);
-            tableLayoutPanel5.Controls.Add(currentCarbonDioxide, 4, 4);
-            tableLayoutPanel5.Controls.Add(porog_1_CarbonMonoxide, 5, 0);
-            tableLayoutPanel5.Controls.Add(porog_1_NitrogenOxide, 5, 1);
-            tableLayoutPanel5.Controls.Add(porog_1_NitrogenDioxide, 5, 2);
-            tableLayoutPanel5.Controls.Add(porog_1_SulfurDioxide, 5, 3);
-            tableLayoutPanel5.Controls.Add(porog_1_CarbonDioxide, 5, 4);
-            tableLayoutPanel5.Controls.Add(porog_2_CarbonDioxide, 6, 4);
-            tableLayoutPanel5.Controls.Add(porog_2_SulfurDioxide, 6, 3);
-            tableLayoutPanel5.Controls.Add(porog_2_NitrogenDioxide, 6, 2);
-            tableLayoutPanel5.Controls.Add(porog_2_NitrogenOxide, 6, 1);
-            tableLayoutPanel5.Controls.Add(porog_2_CarbonMonoxide, 6, 0);
-            tableLayoutPanel5.Controls.Add(dx_CarbonMonoxide, 7, 0);
-            tableLayoutPanel5.Controls.Add(dx_NitrogenOxide, 7, 1);
-            tableLayoutPanel5.Controls.Add(dx_NitrogenDioxide, 7, 2);
-            tableLayoutPanel5.Controls.Add(dx_SulfurDioxide, 7, 3);
-            tableLayoutPanel5.Controls.Add(dx_CarbonDioxide, 7, 4);
-            tableLayoutPanel5.Controls.Add(dx_VolatileOrganicCompounds, 7, 5);
-            tableLayoutPanel5.Controls.Add(porog_2_VolatileOrganicCompounds, 6, 5);
-            tableLayoutPanel5.Controls.Add(dt_VolatileOrganicCompounds, 8, 5);
-            tableLayoutPanel5.Controls.Add(dt_CarbonDioxide, 8, 4);
-            tableLayoutPanel5.Controls.Add(dt_SulfurDioxide, 8, 3);
-            tableLayoutPanel5.Controls.Add(dt_NitrogenDioxide, 8, 2);
-            tableLayoutPanel5.Controls.Add(dt_NitrogenOxide, 8, 1);
-            tableLayoutPanel5.Controls.Add(dt_CarbonMonoxide, 8, 0);
-            tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(3, 150);
-            tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 6;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.66667F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutPanel5.Size = new Size(607, 166);
-            tableLayoutPanel5.TabIndex = 1;
+            this.tableLayoutPanel5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.tableLayoutPanel5.ColumnCount = (9);
+            this.tableLayoutPanel5.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 25.0699787F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.129995F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.685231F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.54999447F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.049993F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.189992F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 8.774365F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 13.3704624F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 15.179987F));
+            this.tableLayoutPanel5.Controls.Add(this.porog_1_VolatileOrganicCompounds, 5, 5);
+            this.tableLayoutPanel5.Controls.Add(this.minVolatileOrganicCompounds, 1, 5);
+            this.tableLayoutPanel5.Controls.Add(this.volatileOrganicCompounds, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.carbonMonoxide, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.nitrogenOxide, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.nitrogenDioxide, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.sulfurDioxide, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(this.carbonDioxide, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.minNitrogenOxide, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.maxNitrogenOxide, 2, 1);
+            this.tableLayoutPanel5.Controls.Add(this.avgNitrogenOxide, 3, 1);
+            this.tableLayoutPanel5.Controls.Add(this.currentNitrogenOxide, 4, 1);
+            this.tableLayoutPanel5.Controls.Add(this.maxVolatileOrganicCompounds, 2, 5);
+            this.tableLayoutPanel5.Controls.Add(this.avgVolatileOrganicCompounds, 3, 5);
+            this.tableLayoutPanel5.Controls.Add(this.currentVolatileOrganicCompounds, 4, 5);
+            this.tableLayoutPanel5.Controls.Add(this.minSulfurDioxide, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.maxSulfurDioxide, 2, 3);
+            this.tableLayoutPanel5.Controls.Add(this.avgSulfurDioxide, 3, 3);
+            this.tableLayoutPanel5.Controls.Add(this.currentSulfurDioxide, 4, 3);
+            this.tableLayoutPanel5.Controls.Add(this.minCarbonMonoxide, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.maxCarbonMonoxide, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.avgCarbonMonoxide, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.currentCarbonMonoxide, 4, 0);
+            this.tableLayoutPanel5.Controls.Add(this.minNitrogenDioxide, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.maxNitrogenDioxide, 2, 2);
+            this.tableLayoutPanel5.Controls.Add(this.avgNitrogenDioxide, 3, 2);
+            this.tableLayoutPanel5.Controls.Add(this.currentNitrogenDioxide, 4, 2);
+            this.tableLayoutPanel5.Controls.Add(this.minCarbonDioxide, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.maxCarbonDioxide, 2, 4);
+            this.tableLayoutPanel5.Controls.Add(this.avgCarbonDioxide, 3, 4);
+            this.tableLayoutPanel5.Controls.Add(this.currentCarbonDioxide, 4, 4);
+            this.tableLayoutPanel5.Controls.Add(this.porog_1_CarbonMonoxide, 5, 0);
+            this.tableLayoutPanel5.Controls.Add(this.porog_1_NitrogenOxide, 5, 1);
+            this.tableLayoutPanel5.Controls.Add(this.porog_1_NitrogenDioxide, 5, 2);
+            this.tableLayoutPanel5.Controls.Add(this.porog_1_SulfurDioxide, 5, 3);
+            this.tableLayoutPanel5.Controls.Add(this.porog_1_CarbonDioxide, 5, 4);
+            this.tableLayoutPanel5.Controls.Add(this.porog_2_CarbonDioxide, 6, 4);
+            this.tableLayoutPanel5.Controls.Add(this.porog_2_SulfurDioxide, 6, 3);
+            this.tableLayoutPanel5.Controls.Add(this.porog_2_NitrogenDioxide, 6, 2);
+            this.tableLayoutPanel5.Controls.Add(this.porog_2_NitrogenOxide, 6, 1);
+            this.tableLayoutPanel5.Controls.Add(this.porog_2_CarbonMonoxide, 6, 0);
+            this.tableLayoutPanel5.Controls.Add(this.dx_CarbonMonoxide, 7, 0);
+            this.tableLayoutPanel5.Controls.Add(this.dx_NitrogenOxide, 7, 1);
+            this.tableLayoutPanel5.Controls.Add(this.dx_NitrogenDioxide, 7, 2);
+            this.tableLayoutPanel5.Controls.Add(this.dx_SulfurDioxide, 7, 3);
+            this.tableLayoutPanel5.Controls.Add(this.dx_CarbonDioxide, 7, 4);
+            this.tableLayoutPanel5.Controls.Add(this.dx_VolatileOrganicCompounds, 7, 5);
+            this.tableLayoutPanel5.Controls.Add(this.porog_2_VolatileOrganicCompounds, 6, 5);
+            this.tableLayoutPanel5.Controls.Add(this.dt_VolatileOrganicCompounds, 8, 5);
+            this.tableLayoutPanel5.Controls.Add(this.dt_CarbonDioxide, 8, 4);
+            this.tableLayoutPanel5.Controls.Add(this.dt_SulfurDioxide, 8, 3);
+            this.tableLayoutPanel5.Controls.Add(this.dt_NitrogenDioxide, 8, 2);
+            this.tableLayoutPanel5.Controls.Add(this.dt_NitrogenOxide, 8, 1);
+            this.tableLayoutPanel5.Controls.Add(this.dt_CarbonMonoxide, 8, 0);
+            this.tableLayoutPanel5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tableLayoutPanel5.Location = (new global::System.Drawing.Point(3, 200));
+            this.tableLayoutPanel5.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.tableLayoutPanel5.Name = ("tableLayoutPanel5");
+            this.tableLayoutPanel5.RowCount = (6);
+            this.tableLayoutPanel5.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.6666641F));
+            this.tableLayoutPanel5.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.6666641F));
+            this.tableLayoutPanel5.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.6666641F));
+            this.tableLayoutPanel5.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.6666641F));
+            this.tableLayoutPanel5.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.6666641F));
+            this.tableLayoutPanel5.Size = (new global::System.Drawing.Size(942, 222));
+            this.tableLayoutPanel5.TabIndex = (1);
             // 
             // porog_1_VolatileOrganicCompounds
             // 
-            porog_1_VolatileOrganicCompounds.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_VolatileOrganicCompounds.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_VolatileOrganicCompounds.Dock = DockStyle.Fill;
-            porog_1_VolatileOrganicCompounds.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_VolatileOrganicCompounds.Location = new Point(325, 138);
-            porog_1_VolatileOrganicCompounds.Name = "porog_1_VolatileOrganicCompounds";
-            porog_1_VolatileOrganicCompounds.Size = new Size(49, 23);
-            porog_1_VolatileOrganicCompounds.TabIndex = 83;
-            porog_1_VolatileOrganicCompounds.Text = "20";
-            porog_1_VolatileOrganicCompounds.TextAlign = HorizontalAlignment.Center;
-            porog_1_VolatileOrganicCompounds.KeyDown += porog_1_VolatileOrganicCompounds_KeyDown;
+            this.porog_1_VolatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_VolatileOrganicCompounds.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_VolatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_VolatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_VolatileOrganicCompounds.Location = (new global::System.Drawing.Point(504, 185));
+            this.porog_1_VolatileOrganicCompounds.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_VolatileOrganicCompounds.Name = ("porog_1_VolatileOrganicCompounds");
+            this.porog_1_VolatileOrganicCompounds.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_VolatileOrganicCompounds.TabIndex = (83);
+            this.porog_1_VolatileOrganicCompounds.Text = ("20");
+            this.porog_1_VolatileOrganicCompounds.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_VolatileOrganicCompounds.KeyDown += (this.porog_1_VolatileOrganicCompounds_KeyDown);
             // 
             // minVolatileOrganicCompounds
             // 
-            minVolatileOrganicCompounds.AutoSize = true;
-            minVolatileOrganicCompounds.BackColor = Color.FromArgb(80, 80, 80);
-            minVolatileOrganicCompounds.Dock = DockStyle.Fill;
-            minVolatileOrganicCompounds.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minVolatileOrganicCompounds.ForeColor = Color.FromArgb(250, 250, 250);
-            minVolatileOrganicCompounds.Location = new Point(155, 135);
-            minVolatileOrganicCompounds.Name = "minVolatileOrganicCompounds";
-            minVolatileOrganicCompounds.Size = new Size(31, 31);
-            minVolatileOrganicCompounds.TabIndex = 59;
-            minVolatileOrganicCompounds.Text = "2.3";
-            minVolatileOrganicCompounds.TextAlign = ContentAlignment.MiddleCenter;
+            this.minVolatileOrganicCompounds.AutoSize = (true);
+            this.minVolatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minVolatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minVolatileOrganicCompounds.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minVolatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minVolatileOrganicCompounds.Location = (new global::System.Drawing.Point(239, 181));
+            this.minVolatileOrganicCompounds.Name = ("minVolatileOrganicCompounds");
+            this.minVolatileOrganicCompounds.Size = (new global::System.Drawing.Size(51, 41));
+            this.minVolatileOrganicCompounds.TabIndex = (59);
+            this.minVolatileOrganicCompounds.Text = ("2.3");
+            this.minVolatileOrganicCompounds.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // volatileOrganicCompounds
             // 
-            volatileOrganicCompounds.AutoSize = true;
-            volatileOrganicCompounds.BackColor = Color.FromArgb(80, 80, 80);
-            volatileOrganicCompounds.Dock = DockStyle.Fill;
-            volatileOrganicCompounds.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            volatileOrganicCompounds.ForeColor = Color.FromArgb(190, 190, 190);
-            volatileOrganicCompounds.Location = new Point(3, 135);
-            volatileOrganicCompounds.Name = "volatileOrganicCompounds";
-            volatileOrganicCompounds.Size = new Size(146, 31);
-            volatileOrganicCompounds.TabIndex = 15;
-            volatileOrganicCompounds.Text = "ЛОС (0 - 10 000 ppb)";
-            volatileOrganicCompounds.TextAlign = ContentAlignment.MiddleCenter;
+            this.volatileOrganicCompounds.AutoSize = (true);
+            this.volatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.volatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.volatileOrganicCompounds.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.volatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.volatileOrganicCompounds.Location = (new global::System.Drawing.Point(3, 181));
+            this.volatileOrganicCompounds.Name = ("volatileOrganicCompounds");
+            this.volatileOrganicCompounds.Size = (new global::System.Drawing.Size(230, 41));
+            this.volatileOrganicCompounds.TabIndex = (15);
+            this.volatileOrganicCompounds.Text = ("ЛОС (0 - 10 000 ppb)");
+            this.volatileOrganicCompounds.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // carbonMonoxide
             // 
-            carbonMonoxide.AutoSize = true;
-            carbonMonoxide.BackColor = Color.FromArgb(50, 50, 50);
-            carbonMonoxide.Dock = DockStyle.Fill;
-            carbonMonoxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            carbonMonoxide.ForeColor = Color.FromArgb(190, 190, 190);
-            carbonMonoxide.Location = new Point(3, 0);
-            carbonMonoxide.Name = "carbonMonoxide";
-            carbonMonoxide.Size = new Size(146, 27);
-            carbonMonoxide.TabIndex = 10;
-            carbonMonoxide.Text = "CO (0 - 40 000 ppb)";
-            carbonMonoxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.carbonMonoxide.AutoSize = (true);
+            this.carbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.carbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.carbonMonoxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.carbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.carbonMonoxide.Location = (new global::System.Drawing.Point(3, 0));
+            this.carbonMonoxide.Name = ("carbonMonoxide");
+            this.carbonMonoxide.Size = (new global::System.Drawing.Size(230, 37));
+            this.carbonMonoxide.TabIndex = (10);
+            this.carbonMonoxide.Text = ("CO (0 - 40 000 ppb)");
+            this.carbonMonoxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // nitrogenOxide
             // 
-            nitrogenOxide.AutoSize = true;
-            nitrogenOxide.BackColor = Color.FromArgb(80, 80, 80);
-            nitrogenOxide.Dock = DockStyle.Fill;
-            nitrogenOxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nitrogenOxide.ForeColor = Color.FromArgb(190, 190, 190);
-            nitrogenOxide.Location = new Point(3, 27);
-            nitrogenOxide.Name = "nitrogenOxide";
-            nitrogenOxide.Size = new Size(146, 27);
-            nitrogenOxide.TabIndex = 11;
-            nitrogenOxide.Text = "NO (0 - 1 000 ppb)";
-            nitrogenOxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.nitrogenOxide.AutoSize = (true);
+            this.nitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.nitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.nitrogenOxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.nitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.nitrogenOxide.Location = (new global::System.Drawing.Point(3, 37));
+            this.nitrogenOxide.Name = ("nitrogenOxide");
+            this.nitrogenOxide.Size = (new global::System.Drawing.Size(230, 36));
+            this.nitrogenOxide.TabIndex = (11);
+            this.nitrogenOxide.Text = ("NO (0 - 1 000 ppb)");
+            this.nitrogenOxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // nitrogenDioxide
             // 
-            nitrogenDioxide.AutoSize = true;
-            nitrogenDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            nitrogenDioxide.Dock = DockStyle.Fill;
-            nitrogenDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            nitrogenDioxide.ForeColor = Color.FromArgb(190, 190, 190);
-            nitrogenDioxide.Location = new Point(3, 54);
-            nitrogenDioxide.Name = "nitrogenDioxide";
-            nitrogenDioxide.Size = new Size(146, 27);
-            nitrogenDioxide.TabIndex = 12;
-            nitrogenDioxide.Text = "NO2 (0 - 1 000 ppb)";
-            nitrogenDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.nitrogenDioxide.AutoSize = (true);
+            this.nitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.nitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.nitrogenDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.nitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.nitrogenDioxide.Location = (new global::System.Drawing.Point(3, 73));
+            this.nitrogenDioxide.Name = ("nitrogenDioxide");
+            this.nitrogenDioxide.Size = (new global::System.Drawing.Size(230, 36));
+            this.nitrogenDioxide.TabIndex = (12);
+            this.nitrogenDioxide.Text = ("NO2 (0 - 1 000 ppb)");
+            this.nitrogenDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // sulfurDioxide
             // 
-            sulfurDioxide.AutoSize = true;
-            sulfurDioxide.BackColor = Color.FromArgb(80, 80, 80);
-            sulfurDioxide.Dock = DockStyle.Fill;
-            sulfurDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            sulfurDioxide.ForeColor = Color.FromArgb(190, 190, 190);
-            sulfurDioxide.Location = new Point(3, 81);
-            sulfurDioxide.Name = "sulfurDioxide";
-            sulfurDioxide.Size = new Size(146, 27);
-            sulfurDioxide.TabIndex = 13;
-            sulfurDioxide.Text = "SO2 (0 - 1 000 ppb)";
-            sulfurDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.sulfurDioxide.AutoSize = (true);
+            this.sulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.sulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.sulfurDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.sulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.sulfurDioxide.Location = (new global::System.Drawing.Point(3, 109));
+            this.sulfurDioxide.Name = ("sulfurDioxide");
+            this.sulfurDioxide.Size = (new global::System.Drawing.Size(230, 36));
+            this.sulfurDioxide.TabIndex = (13);
+            this.sulfurDioxide.Text = ("SO2 (0 - 1 000 ppb)");
+            this.sulfurDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // carbonDioxide
             // 
-            carbonDioxide.AutoSize = true;
-            carbonDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            carbonDioxide.Dock = DockStyle.Fill;
-            carbonDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            carbonDioxide.ForeColor = Color.FromArgb(190, 190, 190);
-            carbonDioxide.Location = new Point(3, 108);
-            carbonDioxide.Name = "carbonDioxide";
-            carbonDioxide.Size = new Size(146, 27);
-            carbonDioxide.TabIndex = 14;
-            carbonDioxide.Text = "CO2 (0 - 5 000 ppm)";
-            carbonDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.carbonDioxide.AutoSize = (true);
+            this.carbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.carbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.carbonDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.carbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.carbonDioxide.Location = (new global::System.Drawing.Point(3, 145));
+            this.carbonDioxide.Name = ("carbonDioxide");
+            this.carbonDioxide.Size = (new global::System.Drawing.Size(230, 36));
+            this.carbonDioxide.TabIndex = (14);
+            this.carbonDioxide.Text = ("CO2 (0 - 5 000 ppm)");
+            this.carbonDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minNitrogenOxide
             // 
-            minNitrogenOxide.AutoSize = true;
-            minNitrogenOxide.BackColor = Color.FromArgb(80, 80, 80);
-            minNitrogenOxide.Dock = DockStyle.Fill;
-            minNitrogenOxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minNitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            minNitrogenOxide.Location = new Point(155, 27);
-            minNitrogenOxide.Name = "minNitrogenOxide";
-            minNitrogenOxide.Size = new Size(31, 27);
-            minNitrogenOxide.TabIndex = 35;
-            minNitrogenOxide.Text = "0.3";
-            minNitrogenOxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.minNitrogenOxide.AutoSize = (true);
+            this.minNitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minNitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minNitrogenOxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minNitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minNitrogenOxide.Location = (new global::System.Drawing.Point(239, 37));
+            this.minNitrogenOxide.Name = ("minNitrogenOxide");
+            this.minNitrogenOxide.Size = (new global::System.Drawing.Size(51, 36));
+            this.minNitrogenOxide.TabIndex = (35);
+            this.minNitrogenOxide.Text = ("0.3");
+            this.minNitrogenOxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxNitrogenOxide
             // 
-            maxNitrogenOxide.AutoSize = true;
-            maxNitrogenOxide.BackColor = Color.FromArgb(80, 80, 80);
-            maxNitrogenOxide.Dock = DockStyle.Fill;
-            maxNitrogenOxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxNitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            maxNitrogenOxide.Location = new Point(192, 27);
-            maxNitrogenOxide.Name = "maxNitrogenOxide";
-            maxNitrogenOxide.Size = new Size(34, 27);
-            maxNitrogenOxide.TabIndex = 36;
-            maxNitrogenOxide.Text = "0.3";
-            maxNitrogenOxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxNitrogenOxide.AutoSize = (true);
+            this.maxNitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxNitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxNitrogenOxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxNitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxNitrogenOxide.Location = (new global::System.Drawing.Point(296, 37));
+            this.maxNitrogenOxide.Name = ("maxNitrogenOxide");
+            this.maxNitrogenOxide.Size = (new global::System.Drawing.Size(56, 36));
+            this.maxNitrogenOxide.TabIndex = (36);
+            this.maxNitrogenOxide.Text = ("0.3");
+            this.maxNitrogenOxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgNitrogenOxide
             // 
-            avgNitrogenOxide.AutoSize = true;
-            avgNitrogenOxide.BackColor = Color.FromArgb(80, 80, 80);
-            avgNitrogenOxide.Dock = DockStyle.Fill;
-            avgNitrogenOxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgNitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            avgNitrogenOxide.Location = new Point(232, 27);
-            avgNitrogenOxide.Name = "avgNitrogenOxide";
-            avgNitrogenOxide.Size = new Size(33, 27);
-            avgNitrogenOxide.TabIndex = 37;
-            avgNitrogenOxide.Text = "0.3";
-            avgNitrogenOxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgNitrogenOxide.AutoSize = (true);
+            this.avgNitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgNitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgNitrogenOxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgNitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgNitrogenOxide.Location = (new global::System.Drawing.Point(358, 37));
+            this.avgNitrogenOxide.Name = ("avgNitrogenOxide");
+            this.avgNitrogenOxide.Size = (new global::System.Drawing.Size(55, 36));
+            this.avgNitrogenOxide.TabIndex = (37);
+            this.avgNitrogenOxide.Text = ("0.3");
+            this.avgNitrogenOxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentNitrogenOxide
             // 
-            currentNitrogenOxide.AutoSize = true;
-            currentNitrogenOxide.BackColor = Color.FromArgb(80, 80, 80);
-            currentNitrogenOxide.Dock = DockStyle.Fill;
-            currentNitrogenOxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentNitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            currentNitrogenOxide.Location = new Point(271, 27);
-            currentNitrogenOxide.Name = "currentNitrogenOxide";
-            currentNitrogenOxide.Size = new Size(48, 27);
-            currentNitrogenOxide.TabIndex = 38;
-            currentNitrogenOxide.Text = "0.3";
-            currentNitrogenOxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentNitrogenOxide.AutoSize = (true);
+            this.currentNitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentNitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentNitrogenOxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentNitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentNitrogenOxide.Location = (new global::System.Drawing.Point(419, 37));
+            this.currentNitrogenOxide.Name = ("currentNitrogenOxide");
+            this.currentNitrogenOxide.Size = (new global::System.Drawing.Size(79, 36));
+            this.currentNitrogenOxide.TabIndex = (38);
+            this.currentNitrogenOxide.Text = ("0.3");
+            this.currentNitrogenOxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxVolatileOrganicCompounds
             // 
-            maxVolatileOrganicCompounds.AutoSize = true;
-            maxVolatileOrganicCompounds.BackColor = Color.FromArgb(80, 80, 80);
-            maxVolatileOrganicCompounds.Dock = DockStyle.Fill;
-            maxVolatileOrganicCompounds.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxVolatileOrganicCompounds.ForeColor = Color.FromArgb(250, 250, 250);
-            maxVolatileOrganicCompounds.Location = new Point(192, 135);
-            maxVolatileOrganicCompounds.Name = "maxVolatileOrganicCompounds";
-            maxVolatileOrganicCompounds.Size = new Size(34, 31);
-            maxVolatileOrganicCompounds.TabIndex = 39;
-            maxVolatileOrganicCompounds.Text = "2.3";
-            maxVolatileOrganicCompounds.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxVolatileOrganicCompounds.AutoSize = (true);
+            this.maxVolatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxVolatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxVolatileOrganicCompounds.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxVolatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxVolatileOrganicCompounds.Location = (new global::System.Drawing.Point(296, 181));
+            this.maxVolatileOrganicCompounds.Name = ("maxVolatileOrganicCompounds");
+            this.maxVolatileOrganicCompounds.Size = (new global::System.Drawing.Size(56, 41));
+            this.maxVolatileOrganicCompounds.TabIndex = (39);
+            this.maxVolatileOrganicCompounds.Text = ("2.3");
+            this.maxVolatileOrganicCompounds.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgVolatileOrganicCompounds
             // 
-            avgVolatileOrganicCompounds.AutoSize = true;
-            avgVolatileOrganicCompounds.BackColor = Color.FromArgb(80, 80, 80);
-            avgVolatileOrganicCompounds.Dock = DockStyle.Fill;
-            avgVolatileOrganicCompounds.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgVolatileOrganicCompounds.ForeColor = Color.FromArgb(250, 250, 250);
-            avgVolatileOrganicCompounds.Location = new Point(232, 135);
-            avgVolatileOrganicCompounds.Name = "avgVolatileOrganicCompounds";
-            avgVolatileOrganicCompounds.Size = new Size(33, 31);
-            avgVolatileOrganicCompounds.TabIndex = 40;
-            avgVolatileOrganicCompounds.Text = "2.3";
-            avgVolatileOrganicCompounds.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgVolatileOrganicCompounds.AutoSize = (true);
+            this.avgVolatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgVolatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgVolatileOrganicCompounds.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgVolatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgVolatileOrganicCompounds.Location = (new global::System.Drawing.Point(358, 181));
+            this.avgVolatileOrganicCompounds.Name = ("avgVolatileOrganicCompounds");
+            this.avgVolatileOrganicCompounds.Size = (new global::System.Drawing.Size(55, 41));
+            this.avgVolatileOrganicCompounds.TabIndex = (40);
+            this.avgVolatileOrganicCompounds.Text = ("2.3");
+            this.avgVolatileOrganicCompounds.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentVolatileOrganicCompounds
             // 
-            currentVolatileOrganicCompounds.AutoSize = true;
-            currentVolatileOrganicCompounds.BackColor = Color.FromArgb(80, 80, 80);
-            currentVolatileOrganicCompounds.Dock = DockStyle.Fill;
-            currentVolatileOrganicCompounds.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentVolatileOrganicCompounds.ForeColor = Color.FromArgb(250, 250, 250);
-            currentVolatileOrganicCompounds.Location = new Point(271, 135);
-            currentVolatileOrganicCompounds.Name = "currentVolatileOrganicCompounds";
-            currentVolatileOrganicCompounds.Size = new Size(48, 31);
-            currentVolatileOrganicCompounds.TabIndex = 41;
-            currentVolatileOrganicCompounds.Text = "2.3";
-            currentVolatileOrganicCompounds.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentVolatileOrganicCompounds.AutoSize = (true);
+            this.currentVolatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentVolatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentVolatileOrganicCompounds.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentVolatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentVolatileOrganicCompounds.Location = (new global::System.Drawing.Point(419, 181));
+            this.currentVolatileOrganicCompounds.Name = ("currentVolatileOrganicCompounds");
+            this.currentVolatileOrganicCompounds.Size = (new global::System.Drawing.Size(79, 41));
+            this.currentVolatileOrganicCompounds.TabIndex = (41);
+            this.currentVolatileOrganicCompounds.Text = ("2.3");
+            this.currentVolatileOrganicCompounds.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minSulfurDioxide
             // 
-            minSulfurDioxide.AutoSize = true;
-            minSulfurDioxide.BackColor = Color.FromArgb(80, 80, 80);
-            minSulfurDioxide.Dock = DockStyle.Fill;
-            minSulfurDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minSulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            minSulfurDioxide.Location = new Point(155, 81);
-            minSulfurDioxide.Name = "minSulfurDioxide";
-            minSulfurDioxide.Size = new Size(31, 27);
-            minSulfurDioxide.TabIndex = 42;
-            minSulfurDioxide.Text = "30.2";
-            minSulfurDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.minSulfurDioxide.AutoSize = (true);
+            this.minSulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minSulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minSulfurDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minSulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minSulfurDioxide.Location = (new global::System.Drawing.Point(239, 109));
+            this.minSulfurDioxide.Name = ("minSulfurDioxide");
+            this.minSulfurDioxide.Size = (new global::System.Drawing.Size(51, 36));
+            this.minSulfurDioxide.TabIndex = (42);
+            this.minSulfurDioxide.Text = ("30.2");
+            this.minSulfurDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxSulfurDioxide
             // 
-            maxSulfurDioxide.AutoSize = true;
-            maxSulfurDioxide.BackColor = Color.FromArgb(80, 80, 80);
-            maxSulfurDioxide.Dock = DockStyle.Fill;
-            maxSulfurDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxSulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            maxSulfurDioxide.Location = new Point(192, 81);
-            maxSulfurDioxide.Name = "maxSulfurDioxide";
-            maxSulfurDioxide.Size = new Size(34, 27);
-            maxSulfurDioxide.TabIndex = 43;
-            maxSulfurDioxide.Text = "30.2";
-            maxSulfurDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxSulfurDioxide.AutoSize = (true);
+            this.maxSulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxSulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxSulfurDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxSulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxSulfurDioxide.Location = (new global::System.Drawing.Point(296, 109));
+            this.maxSulfurDioxide.Name = ("maxSulfurDioxide");
+            this.maxSulfurDioxide.Size = (new global::System.Drawing.Size(56, 36));
+            this.maxSulfurDioxide.TabIndex = (43);
+            this.maxSulfurDioxide.Text = ("30.2");
+            this.maxSulfurDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgSulfurDioxide
             // 
-            avgSulfurDioxide.AutoSize = true;
-            avgSulfurDioxide.BackColor = Color.FromArgb(80, 80, 80);
-            avgSulfurDioxide.Dock = DockStyle.Fill;
-            avgSulfurDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgSulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            avgSulfurDioxide.Location = new Point(232, 81);
-            avgSulfurDioxide.Name = "avgSulfurDioxide";
-            avgSulfurDioxide.Size = new Size(33, 27);
-            avgSulfurDioxide.TabIndex = 44;
-            avgSulfurDioxide.Text = "30.2";
-            avgSulfurDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgSulfurDioxide.AutoSize = (true);
+            this.avgSulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgSulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgSulfurDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgSulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgSulfurDioxide.Location = (new global::System.Drawing.Point(358, 109));
+            this.avgSulfurDioxide.Name = ("avgSulfurDioxide");
+            this.avgSulfurDioxide.Size = (new global::System.Drawing.Size(55, 36));
+            this.avgSulfurDioxide.TabIndex = (44);
+            this.avgSulfurDioxide.Text = ("30.2");
+            this.avgSulfurDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentSulfurDioxide
             // 
-            currentSulfurDioxide.AutoSize = true;
-            currentSulfurDioxide.BackColor = Color.FromArgb(80, 80, 80);
-            currentSulfurDioxide.Dock = DockStyle.Fill;
-            currentSulfurDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentSulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            currentSulfurDioxide.Location = new Point(271, 81);
-            currentSulfurDioxide.Name = "currentSulfurDioxide";
-            currentSulfurDioxide.Size = new Size(48, 27);
-            currentSulfurDioxide.TabIndex = 45;
-            currentSulfurDioxide.Text = "30.2";
-            currentSulfurDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentSulfurDioxide.AutoSize = (true);
+            this.currentSulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentSulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentSulfurDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentSulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentSulfurDioxide.Location = (new global::System.Drawing.Point(419, 109));
+            this.currentSulfurDioxide.Name = ("currentSulfurDioxide");
+            this.currentSulfurDioxide.Size = (new global::System.Drawing.Size(79, 36));
+            this.currentSulfurDioxide.TabIndex = (45);
+            this.currentSulfurDioxide.Text = ("30.2");
+            this.currentSulfurDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minCarbonMonoxide
             // 
-            minCarbonMonoxide.AutoSize = true;
-            minCarbonMonoxide.BackColor = Color.FromArgb(50, 50, 50);
-            minCarbonMonoxide.Dock = DockStyle.Fill;
-            minCarbonMonoxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minCarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            minCarbonMonoxide.Location = new Point(155, 0);
-            minCarbonMonoxide.Name = "minCarbonMonoxide";
-            minCarbonMonoxide.Size = new Size(31, 27);
-            minCarbonMonoxide.TabIndex = 46;
-            minCarbonMonoxide.Text = "1.2";
-            minCarbonMonoxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.minCarbonMonoxide.AutoSize = (true);
+            this.minCarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minCarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minCarbonMonoxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minCarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minCarbonMonoxide.Location = (new global::System.Drawing.Point(239, 0));
+            this.minCarbonMonoxide.Name = ("minCarbonMonoxide");
+            this.minCarbonMonoxide.Size = (new global::System.Drawing.Size(51, 37));
+            this.minCarbonMonoxide.TabIndex = (46);
+            this.minCarbonMonoxide.Text = ("1.2");
+            this.minCarbonMonoxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxCarbonMonoxide
             // 
-            maxCarbonMonoxide.AutoSize = true;
-            maxCarbonMonoxide.BackColor = Color.FromArgb(50, 50, 50);
-            maxCarbonMonoxide.Dock = DockStyle.Fill;
-            maxCarbonMonoxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxCarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            maxCarbonMonoxide.Location = new Point(192, 0);
-            maxCarbonMonoxide.Name = "maxCarbonMonoxide";
-            maxCarbonMonoxide.Size = new Size(34, 27);
-            maxCarbonMonoxide.TabIndex = 47;
-            maxCarbonMonoxide.Text = "1.2";
-            maxCarbonMonoxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxCarbonMonoxide.AutoSize = (true);
+            this.maxCarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxCarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxCarbonMonoxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxCarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxCarbonMonoxide.Location = (new global::System.Drawing.Point(296, 0));
+            this.maxCarbonMonoxide.Name = ("maxCarbonMonoxide");
+            this.maxCarbonMonoxide.Size = (new global::System.Drawing.Size(56, 37));
+            this.maxCarbonMonoxide.TabIndex = (47);
+            this.maxCarbonMonoxide.Text = ("1.2");
+            this.maxCarbonMonoxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgCarbonMonoxide
             // 
-            avgCarbonMonoxide.AutoSize = true;
-            avgCarbonMonoxide.BackColor = Color.FromArgb(50, 50, 50);
-            avgCarbonMonoxide.Dock = DockStyle.Fill;
-            avgCarbonMonoxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgCarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            avgCarbonMonoxide.Location = new Point(232, 0);
-            avgCarbonMonoxide.Name = "avgCarbonMonoxide";
-            avgCarbonMonoxide.Size = new Size(33, 27);
-            avgCarbonMonoxide.TabIndex = 48;
-            avgCarbonMonoxide.Text = "1.2";
-            avgCarbonMonoxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgCarbonMonoxide.AutoSize = (true);
+            this.avgCarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgCarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgCarbonMonoxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgCarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgCarbonMonoxide.Location = (new global::System.Drawing.Point(358, 0));
+            this.avgCarbonMonoxide.Name = ("avgCarbonMonoxide");
+            this.avgCarbonMonoxide.Size = (new global::System.Drawing.Size(55, 37));
+            this.avgCarbonMonoxide.TabIndex = (48);
+            this.avgCarbonMonoxide.Text = ("1.2");
+            this.avgCarbonMonoxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentCarbonMonoxide
             // 
-            currentCarbonMonoxide.AutoSize = true;
-            currentCarbonMonoxide.BackColor = Color.FromArgb(50, 50, 50);
-            currentCarbonMonoxide.Dock = DockStyle.Fill;
-            currentCarbonMonoxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentCarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            currentCarbonMonoxide.Location = new Point(271, 0);
-            currentCarbonMonoxide.Name = "currentCarbonMonoxide";
-            currentCarbonMonoxide.Size = new Size(48, 27);
-            currentCarbonMonoxide.TabIndex = 49;
-            currentCarbonMonoxide.Text = "1.2";
-            currentCarbonMonoxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentCarbonMonoxide.AutoSize = (true);
+            this.currentCarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentCarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentCarbonMonoxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentCarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentCarbonMonoxide.Location = (new global::System.Drawing.Point(419, 0));
+            this.currentCarbonMonoxide.Name = ("currentCarbonMonoxide");
+            this.currentCarbonMonoxide.Size = (new global::System.Drawing.Size(79, 37));
+            this.currentCarbonMonoxide.TabIndex = (49);
+            this.currentCarbonMonoxide.Text = ("1.2");
+            this.currentCarbonMonoxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minNitrogenDioxide
             // 
-            minNitrogenDioxide.AutoSize = true;
-            minNitrogenDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            minNitrogenDioxide.Dock = DockStyle.Fill;
-            minNitrogenDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minNitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            minNitrogenDioxide.Location = new Point(155, 54);
-            minNitrogenDioxide.Name = "minNitrogenDioxide";
-            minNitrogenDioxide.Size = new Size(31, 27);
-            minNitrogenDioxide.TabIndex = 50;
-            minNitrogenDioxide.Text = "55.3";
-            minNitrogenDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.minNitrogenDioxide.AutoSize = (true);
+            this.minNitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minNitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minNitrogenDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minNitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minNitrogenDioxide.Location = (new global::System.Drawing.Point(239, 73));
+            this.minNitrogenDioxide.Name = ("minNitrogenDioxide");
+            this.minNitrogenDioxide.Size = (new global::System.Drawing.Size(51, 36));
+            this.minNitrogenDioxide.TabIndex = (50);
+            this.minNitrogenDioxide.Text = ("55.3");
+            this.minNitrogenDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxNitrogenDioxide
             // 
-            maxNitrogenDioxide.AutoSize = true;
-            maxNitrogenDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            maxNitrogenDioxide.Dock = DockStyle.Fill;
-            maxNitrogenDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxNitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            maxNitrogenDioxide.Location = new Point(192, 54);
-            maxNitrogenDioxide.Name = "maxNitrogenDioxide";
-            maxNitrogenDioxide.Size = new Size(34, 27);
-            maxNitrogenDioxide.TabIndex = 51;
-            maxNitrogenDioxide.Text = "55.3";
-            maxNitrogenDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxNitrogenDioxide.AutoSize = (true);
+            this.maxNitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxNitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxNitrogenDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxNitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxNitrogenDioxide.Location = (new global::System.Drawing.Point(296, 73));
+            this.maxNitrogenDioxide.Name = ("maxNitrogenDioxide");
+            this.maxNitrogenDioxide.Size = (new global::System.Drawing.Size(56, 36));
+            this.maxNitrogenDioxide.TabIndex = (51);
+            this.maxNitrogenDioxide.Text = ("55.3");
+            this.maxNitrogenDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgNitrogenDioxide
             // 
-            avgNitrogenDioxide.AutoSize = true;
-            avgNitrogenDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            avgNitrogenDioxide.Dock = DockStyle.Fill;
-            avgNitrogenDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgNitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            avgNitrogenDioxide.Location = new Point(232, 54);
-            avgNitrogenDioxide.Name = "avgNitrogenDioxide";
-            avgNitrogenDioxide.Size = new Size(33, 27);
-            avgNitrogenDioxide.TabIndex = 52;
-            avgNitrogenDioxide.Text = "55.3";
-            avgNitrogenDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgNitrogenDioxide.AutoSize = (true);
+            this.avgNitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgNitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgNitrogenDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgNitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgNitrogenDioxide.Location = (new global::System.Drawing.Point(358, 73));
+            this.avgNitrogenDioxide.Name = ("avgNitrogenDioxide");
+            this.avgNitrogenDioxide.Size = (new global::System.Drawing.Size(55, 36));
+            this.avgNitrogenDioxide.TabIndex = (52);
+            this.avgNitrogenDioxide.Text = ("55.3");
+            this.avgNitrogenDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentNitrogenDioxide
             // 
-            currentNitrogenDioxide.AutoSize = true;
-            currentNitrogenDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            currentNitrogenDioxide.Dock = DockStyle.Fill;
-            currentNitrogenDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentNitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            currentNitrogenDioxide.Location = new Point(271, 54);
-            currentNitrogenDioxide.Name = "currentNitrogenDioxide";
-            currentNitrogenDioxide.Size = new Size(48, 27);
-            currentNitrogenDioxide.TabIndex = 53;
-            currentNitrogenDioxide.Text = "55.3";
-            currentNitrogenDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentNitrogenDioxide.AutoSize = (true);
+            this.currentNitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentNitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentNitrogenDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentNitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentNitrogenDioxide.Location = (new global::System.Drawing.Point(419, 73));
+            this.currentNitrogenDioxide.Name = ("currentNitrogenDioxide");
+            this.currentNitrogenDioxide.Size = (new global::System.Drawing.Size(79, 36));
+            this.currentNitrogenDioxide.TabIndex = (53);
+            this.currentNitrogenDioxide.Text = ("55.3");
+            this.currentNitrogenDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minCarbonDioxide
             // 
-            minCarbonDioxide.AutoSize = true;
-            minCarbonDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            minCarbonDioxide.Dock = DockStyle.Fill;
-            minCarbonDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minCarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            minCarbonDioxide.Location = new Point(155, 108);
-            minCarbonDioxide.Name = "minCarbonDioxide";
-            minCarbonDioxide.Size = new Size(31, 27);
-            minCarbonDioxide.TabIndex = 54;
-            minCarbonDioxide.Text = "255";
-            minCarbonDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.minCarbonDioxide.AutoSize = (true);
+            this.minCarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minCarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minCarbonDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minCarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minCarbonDioxide.Location = (new global::System.Drawing.Point(239, 145));
+            this.minCarbonDioxide.Name = ("minCarbonDioxide");
+            this.minCarbonDioxide.Size = (new global::System.Drawing.Size(51, 36));
+            this.minCarbonDioxide.TabIndex = (54);
+            this.minCarbonDioxide.Text = ("255");
+            this.minCarbonDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxCarbonDioxide
             // 
-            maxCarbonDioxide.AutoSize = true;
-            maxCarbonDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            maxCarbonDioxide.Dock = DockStyle.Fill;
-            maxCarbonDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxCarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            maxCarbonDioxide.Location = new Point(192, 108);
-            maxCarbonDioxide.Name = "maxCarbonDioxide";
-            maxCarbonDioxide.Size = new Size(34, 27);
-            maxCarbonDioxide.TabIndex = 55;
-            maxCarbonDioxide.Text = "255";
-            maxCarbonDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxCarbonDioxide.AutoSize = (true);
+            this.maxCarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxCarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxCarbonDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxCarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxCarbonDioxide.Location = (new global::System.Drawing.Point(296, 145));
+            this.maxCarbonDioxide.Name = ("maxCarbonDioxide");
+            this.maxCarbonDioxide.Size = (new global::System.Drawing.Size(56, 36));
+            this.maxCarbonDioxide.TabIndex = (55);
+            this.maxCarbonDioxide.Text = ("255");
+            this.maxCarbonDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgCarbonDioxide
             // 
-            avgCarbonDioxide.AutoSize = true;
-            avgCarbonDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            avgCarbonDioxide.Dock = DockStyle.Fill;
-            avgCarbonDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgCarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            avgCarbonDioxide.Location = new Point(232, 108);
-            avgCarbonDioxide.Name = "avgCarbonDioxide";
-            avgCarbonDioxide.Size = new Size(33, 27);
-            avgCarbonDioxide.TabIndex = 56;
-            avgCarbonDioxide.Text = "255";
-            avgCarbonDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgCarbonDioxide.AutoSize = (true);
+            this.avgCarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgCarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgCarbonDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgCarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgCarbonDioxide.Location = (new global::System.Drawing.Point(358, 145));
+            this.avgCarbonDioxide.Name = ("avgCarbonDioxide");
+            this.avgCarbonDioxide.Size = (new global::System.Drawing.Size(55, 36));
+            this.avgCarbonDioxide.TabIndex = (56);
+            this.avgCarbonDioxide.Text = ("255");
+            this.avgCarbonDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentCarbonDioxide
             // 
-            currentCarbonDioxide.AutoSize = true;
-            currentCarbonDioxide.BackColor = Color.FromArgb(50, 50, 50);
-            currentCarbonDioxide.Dock = DockStyle.Fill;
-            currentCarbonDioxide.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentCarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            currentCarbonDioxide.Location = new Point(271, 108);
-            currentCarbonDioxide.Name = "currentCarbonDioxide";
-            currentCarbonDioxide.Size = new Size(48, 27);
-            currentCarbonDioxide.TabIndex = 57;
-            currentCarbonDioxide.Text = "255";
-            currentCarbonDioxide.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentCarbonDioxide.AutoSize = (true);
+            this.currentCarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentCarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentCarbonDioxide.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentCarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentCarbonDioxide.Location = (new global::System.Drawing.Point(419, 145));
+            this.currentCarbonDioxide.Name = ("currentCarbonDioxide");
+            this.currentCarbonDioxide.Size = (new global::System.Drawing.Size(79, 36));
+            this.currentCarbonDioxide.TabIndex = (57);
+            this.currentCarbonDioxide.Text = ("255");
+            this.currentCarbonDioxide.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // porog_1_CarbonMonoxide
             // 
-            porog_1_CarbonMonoxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_CarbonMonoxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_CarbonMonoxide.Dock = DockStyle.Fill;
-            porog_1_CarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_CarbonMonoxide.Location = new Point(325, 3);
-            porog_1_CarbonMonoxide.Name = "porog_1_CarbonMonoxide";
-            porog_1_CarbonMonoxide.Size = new Size(49, 23);
-            porog_1_CarbonMonoxide.TabIndex = 60;
-            porog_1_CarbonMonoxide.Text = "20";
-            porog_1_CarbonMonoxide.TextAlign = HorizontalAlignment.Center;
-            porog_1_CarbonMonoxide.KeyDown += porog_1_CarbonMonoxide_KeyDown;
+            this.porog_1_CarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_CarbonMonoxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_CarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_CarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_CarbonMonoxide.Location = (new global::System.Drawing.Point(504, 4));
+            this.porog_1_CarbonMonoxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_CarbonMonoxide.Name = ("porog_1_CarbonMonoxide");
+            this.porog_1_CarbonMonoxide.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_CarbonMonoxide.TabIndex = (60);
+            this.porog_1_CarbonMonoxide.Text = ("20");
+            this.porog_1_CarbonMonoxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_CarbonMonoxide.KeyDown += (this.porog_1_CarbonMonoxide_KeyDown);
             // 
             // porog_1_NitrogenOxide
             // 
-            porog_1_NitrogenOxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_NitrogenOxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_NitrogenOxide.Dock = DockStyle.Fill;
-            porog_1_NitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_NitrogenOxide.Location = new Point(325, 30);
-            porog_1_NitrogenOxide.Name = "porog_1_NitrogenOxide";
-            porog_1_NitrogenOxide.Size = new Size(49, 23);
-            porog_1_NitrogenOxide.TabIndex = 61;
-            porog_1_NitrogenOxide.Text = "20";
-            porog_1_NitrogenOxide.TextAlign = HorizontalAlignment.Center;
-            porog_1_NitrogenOxide.KeyDown += porog_1_NitrogenOxide_KeyDown;
+            this.porog_1_NitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_NitrogenOxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_NitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_NitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_NitrogenOxide.Location = (new global::System.Drawing.Point(504, 41));
+            this.porog_1_NitrogenOxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_NitrogenOxide.Name = ("porog_1_NitrogenOxide");
+            this.porog_1_NitrogenOxide.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_NitrogenOxide.TabIndex = (61);
+            this.porog_1_NitrogenOxide.Text = ("20");
+            this.porog_1_NitrogenOxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_NitrogenOxide.KeyDown += (this.porog_1_NitrogenOxide_KeyDown);
             // 
             // porog_1_NitrogenDioxide
             // 
-            porog_1_NitrogenDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_NitrogenDioxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_NitrogenDioxide.Dock = DockStyle.Fill;
-            porog_1_NitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_NitrogenDioxide.Location = new Point(325, 57);
-            porog_1_NitrogenDioxide.Name = "porog_1_NitrogenDioxide";
-            porog_1_NitrogenDioxide.Size = new Size(49, 23);
-            porog_1_NitrogenDioxide.TabIndex = 62;
-            porog_1_NitrogenDioxide.Text = "20";
-            porog_1_NitrogenDioxide.TextAlign = HorizontalAlignment.Center;
-            porog_1_NitrogenDioxide.KeyDown += porog_1_NitrogenDioxide_KeyDown;
+            this.porog_1_NitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_NitrogenDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_NitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_NitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_NitrogenDioxide.Location = (new global::System.Drawing.Point(504, 77));
+            this.porog_1_NitrogenDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_NitrogenDioxide.Name = ("porog_1_NitrogenDioxide");
+            this.porog_1_NitrogenDioxide.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_NitrogenDioxide.TabIndex = (62);
+            this.porog_1_NitrogenDioxide.Text = ("20");
+            this.porog_1_NitrogenDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_NitrogenDioxide.KeyDown += (this.porog_1_NitrogenDioxide_KeyDown);
             // 
             // porog_1_SulfurDioxide
             // 
-            porog_1_SulfurDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_SulfurDioxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_SulfurDioxide.Dock = DockStyle.Fill;
-            porog_1_SulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_SulfurDioxide.Location = new Point(325, 84);
-            porog_1_SulfurDioxide.Name = "porog_1_SulfurDioxide";
-            porog_1_SulfurDioxide.Size = new Size(49, 23);
-            porog_1_SulfurDioxide.TabIndex = 63;
-            porog_1_SulfurDioxide.Text = "20";
-            porog_1_SulfurDioxide.TextAlign = HorizontalAlignment.Center;
-            porog_1_SulfurDioxide.KeyDown += porog_1_SulfurDioxide_KeyDown;
+            this.porog_1_SulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_SulfurDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_SulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_SulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_SulfurDioxide.Location = (new global::System.Drawing.Point(504, 113));
+            this.porog_1_SulfurDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_SulfurDioxide.Name = ("porog_1_SulfurDioxide");
+            this.porog_1_SulfurDioxide.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_SulfurDioxide.TabIndex = (63);
+            this.porog_1_SulfurDioxide.Text = ("20");
+            this.porog_1_SulfurDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_SulfurDioxide.KeyDown += (this.porog_1_SulfurDioxide_KeyDown);
             // 
             // porog_1_CarbonDioxide
             // 
-            porog_1_CarbonDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_CarbonDioxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_CarbonDioxide.Dock = DockStyle.Fill;
-            porog_1_CarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_CarbonDioxide.Location = new Point(325, 111);
-            porog_1_CarbonDioxide.Name = "porog_1_CarbonDioxide";
-            porog_1_CarbonDioxide.Size = new Size(49, 23);
-            porog_1_CarbonDioxide.TabIndex = 64;
-            porog_1_CarbonDioxide.Text = "20";
-            porog_1_CarbonDioxide.TextAlign = HorizontalAlignment.Center;
-            porog_1_CarbonDioxide.KeyDown += porog_1_CarbonDioxide_KeyDown;
+            this.porog_1_CarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_CarbonDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_CarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_CarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_CarbonDioxide.Location = (new global::System.Drawing.Point(504, 149));
+            this.porog_1_CarbonDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_CarbonDioxide.Name = ("porog_1_CarbonDioxide");
+            this.porog_1_CarbonDioxide.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_CarbonDioxide.TabIndex = (64);
+            this.porog_1_CarbonDioxide.Text = ("20");
+            this.porog_1_CarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_CarbonDioxide.KeyDown += (this.porog_1_CarbonDioxide_KeyDown);
             // 
             // porog_2_CarbonDioxide
             // 
-            porog_2_CarbonDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_CarbonDioxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_CarbonDioxide.Dock = DockStyle.Fill;
-            porog_2_CarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_CarbonDioxide.Location = new Point(380, 111);
-            porog_2_CarbonDioxide.Name = "porog_2_CarbonDioxide";
-            porog_2_CarbonDioxide.Size = new Size(47, 23);
-            porog_2_CarbonDioxide.TabIndex = 65;
-            porog_2_CarbonDioxide.Text = "20";
-            porog_2_CarbonDioxide.TextAlign = HorizontalAlignment.Center;
-            porog_2_CarbonDioxide.KeyDown += porog_2_CarbonDioxide_KeyDown;
+            this.porog_2_CarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_CarbonDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_CarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_CarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_CarbonDioxide.Location = (new global::System.Drawing.Point(590, 149));
+            this.porog_2_CarbonDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_CarbonDioxide.Name = ("porog_2_CarbonDioxide");
+            this.porog_2_CarbonDioxide.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_CarbonDioxide.TabIndex = (65);
+            this.porog_2_CarbonDioxide.Text = ("20");
+            this.porog_2_CarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_CarbonDioxide.KeyDown += (this.porog_2_CarbonDioxide_KeyDown);
             // 
             // porog_2_SulfurDioxide
             // 
-            porog_2_SulfurDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_SulfurDioxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_SulfurDioxide.Dock = DockStyle.Fill;
-            porog_2_SulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_SulfurDioxide.Location = new Point(380, 84);
-            porog_2_SulfurDioxide.Name = "porog_2_SulfurDioxide";
-            porog_2_SulfurDioxide.Size = new Size(47, 23);
-            porog_2_SulfurDioxide.TabIndex = 66;
-            porog_2_SulfurDioxide.Text = "20";
-            porog_2_SulfurDioxide.TextAlign = HorizontalAlignment.Center;
-            porog_2_SulfurDioxide.KeyDown += porog_2_SulfurDioxide_KeyDown;
+            this.porog_2_SulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_SulfurDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_SulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_SulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_SulfurDioxide.Location = (new global::System.Drawing.Point(590, 113));
+            this.porog_2_SulfurDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_SulfurDioxide.Name = ("porog_2_SulfurDioxide");
+            this.porog_2_SulfurDioxide.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_SulfurDioxide.TabIndex = (66);
+            this.porog_2_SulfurDioxide.Text = ("20");
+            this.porog_2_SulfurDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_SulfurDioxide.KeyDown += (this.porog_2_SulfurDioxide_KeyDown);
             // 
             // porog_2_NitrogenDioxide
             // 
-            porog_2_NitrogenDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_NitrogenDioxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_NitrogenDioxide.Dock = DockStyle.Fill;
-            porog_2_NitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_NitrogenDioxide.Location = new Point(380, 57);
-            porog_2_NitrogenDioxide.Name = "porog_2_NitrogenDioxide";
-            porog_2_NitrogenDioxide.Size = new Size(47, 23);
-            porog_2_NitrogenDioxide.TabIndex = 67;
-            porog_2_NitrogenDioxide.Text = "20";
-            porog_2_NitrogenDioxide.TextAlign = HorizontalAlignment.Center;
-            porog_2_NitrogenDioxide.KeyDown += porog_2_NitrogenDioxide_KeyDown;
+            this.porog_2_NitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_NitrogenDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_NitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_NitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_NitrogenDioxide.Location = (new global::System.Drawing.Point(590, 77));
+            this.porog_2_NitrogenDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_NitrogenDioxide.Name = ("porog_2_NitrogenDioxide");
+            this.porog_2_NitrogenDioxide.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_NitrogenDioxide.TabIndex = (67);
+            this.porog_2_NitrogenDioxide.Text = ("20");
+            this.porog_2_NitrogenDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_NitrogenDioxide.KeyDown += (this.porog_2_NitrogenDioxide_KeyDown);
             // 
             // porog_2_NitrogenOxide
             // 
-            porog_2_NitrogenOxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_NitrogenOxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_NitrogenOxide.Dock = DockStyle.Fill;
-            porog_2_NitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_NitrogenOxide.Location = new Point(380, 30);
-            porog_2_NitrogenOxide.Name = "porog_2_NitrogenOxide";
-            porog_2_NitrogenOxide.Size = new Size(47, 23);
-            porog_2_NitrogenOxide.TabIndex = 68;
-            porog_2_NitrogenOxide.Text = "20";
-            porog_2_NitrogenOxide.TextAlign = HorizontalAlignment.Center;
-            porog_2_NitrogenOxide.KeyDown += porog_2_NitrogenOxide_KeyDown;
+            this.porog_2_NitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_NitrogenOxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_NitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_NitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_NitrogenOxide.Location = (new global::System.Drawing.Point(590, 41));
+            this.porog_2_NitrogenOxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_NitrogenOxide.Name = ("porog_2_NitrogenOxide");
+            this.porog_2_NitrogenOxide.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_NitrogenOxide.TabIndex = (68);
+            this.porog_2_NitrogenOxide.Text = ("20");
+            this.porog_2_NitrogenOxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_NitrogenOxide.KeyDown += (this.porog_2_NitrogenOxide_KeyDown);
             // 
             // porog_2_CarbonMonoxide
             // 
-            porog_2_CarbonMonoxide.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_CarbonMonoxide.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_CarbonMonoxide.Dock = DockStyle.Fill;
-            porog_2_CarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_CarbonMonoxide.Location = new Point(380, 3);
-            porog_2_CarbonMonoxide.Name = "porog_2_CarbonMonoxide";
-            porog_2_CarbonMonoxide.Size = new Size(47, 23);
-            porog_2_CarbonMonoxide.TabIndex = 69;
-            porog_2_CarbonMonoxide.Text = "20";
-            porog_2_CarbonMonoxide.TextAlign = HorizontalAlignment.Center;
-            porog_2_CarbonMonoxide.KeyDown += porog_2_CarbonMonoxide_KeyDown;
+            this.porog_2_CarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_CarbonMonoxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_CarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_CarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_CarbonMonoxide.Location = (new global::System.Drawing.Point(590, 4));
+            this.porog_2_CarbonMonoxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_CarbonMonoxide.Name = ("porog_2_CarbonMonoxide");
+            this.porog_2_CarbonMonoxide.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_CarbonMonoxide.TabIndex = (69);
+            this.porog_2_CarbonMonoxide.Text = ("20");
+            this.porog_2_CarbonMonoxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_CarbonMonoxide.KeyDown += (this.porog_2_CarbonMonoxide_KeyDown);
             // 
             // dx_CarbonMonoxide
             // 
-            dx_CarbonMonoxide.BackColor = Color.FromArgb(30, 30, 30);
-            dx_CarbonMonoxide.BorderStyle = BorderStyle.FixedSingle;
-            dx_CarbonMonoxide.Dock = DockStyle.Fill;
-            dx_CarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_CarbonMonoxide.Location = new Point(433, 3);
-            dx_CarbonMonoxide.Name = "dx_CarbonMonoxide";
-            dx_CarbonMonoxide.Size = new Size(75, 23);
-            dx_CarbonMonoxide.TabIndex = 70;
-            dx_CarbonMonoxide.Text = "20";
-            dx_CarbonMonoxide.TextAlign = HorizontalAlignment.Center;
-            dx_CarbonMonoxide.KeyDown += dx_CarbonMonoxide_KeyDown;
+            this.dx_CarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_CarbonMonoxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_CarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_CarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_CarbonMonoxide.Location = (new global::System.Drawing.Point(672, 4));
+            this.dx_CarbonMonoxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_CarbonMonoxide.Name = ("dx_CarbonMonoxide");
+            this.dx_CarbonMonoxide.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_CarbonMonoxide.TabIndex = (70);
+            this.dx_CarbonMonoxide.Text = ("20");
+            this.dx_CarbonMonoxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_CarbonMonoxide.KeyDown += (this.dx_CarbonMonoxide_KeyDown);
             // 
             // dx_NitrogenOxide
             // 
-            dx_NitrogenOxide.BackColor = Color.FromArgb(30, 30, 30);
-            dx_NitrogenOxide.BorderStyle = BorderStyle.FixedSingle;
-            dx_NitrogenOxide.Dock = DockStyle.Fill;
-            dx_NitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_NitrogenOxide.Location = new Point(433, 30);
-            dx_NitrogenOxide.Name = "dx_NitrogenOxide";
-            dx_NitrogenOxide.Size = new Size(75, 23);
-            dx_NitrogenOxide.TabIndex = 71;
-            dx_NitrogenOxide.Text = "20";
-            dx_NitrogenOxide.TextAlign = HorizontalAlignment.Center;
-            dx_NitrogenOxide.KeyDown += dx_NitrogenOxide_KeyDown;
+            this.dx_NitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_NitrogenOxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_NitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_NitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_NitrogenOxide.Location = (new global::System.Drawing.Point(672, 41));
+            this.dx_NitrogenOxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_NitrogenOxide.Name = ("dx_NitrogenOxide");
+            this.dx_NitrogenOxide.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_NitrogenOxide.TabIndex = (71);
+            this.dx_NitrogenOxide.Text = ("20");
+            this.dx_NitrogenOxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_NitrogenOxide.KeyDown += (this.dx_NitrogenOxide_KeyDown);
             // 
             // dx_NitrogenDioxide
             // 
-            dx_NitrogenDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            dx_NitrogenDioxide.BorderStyle = BorderStyle.FixedSingle;
-            dx_NitrogenDioxide.Dock = DockStyle.Fill;
-            dx_NitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_NitrogenDioxide.Location = new Point(433, 57);
-            dx_NitrogenDioxide.Name = "dx_NitrogenDioxide";
-            dx_NitrogenDioxide.Size = new Size(75, 23);
-            dx_NitrogenDioxide.TabIndex = 72;
-            dx_NitrogenDioxide.Text = "20";
-            dx_NitrogenDioxide.TextAlign = HorizontalAlignment.Center;
-            dx_NitrogenDioxide.KeyDown += dx_NitrogenDioxide_KeyDown;
+            this.dx_NitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_NitrogenDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_NitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_NitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_NitrogenDioxide.Location = (new global::System.Drawing.Point(672, 77));
+            this.dx_NitrogenDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_NitrogenDioxide.Name = ("dx_NitrogenDioxide");
+            this.dx_NitrogenDioxide.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_NitrogenDioxide.TabIndex = (72);
+            this.dx_NitrogenDioxide.Text = ("20");
+            this.dx_NitrogenDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_NitrogenDioxide.KeyDown += (this.dx_NitrogenDioxide_KeyDown);
             // 
             // dx_SulfurDioxide
             // 
-            dx_SulfurDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            dx_SulfurDioxide.BorderStyle = BorderStyle.FixedSingle;
-            dx_SulfurDioxide.Dock = DockStyle.Fill;
-            dx_SulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_SulfurDioxide.Location = new Point(433, 84);
-            dx_SulfurDioxide.Name = "dx_SulfurDioxide";
-            dx_SulfurDioxide.Size = new Size(75, 23);
-            dx_SulfurDioxide.TabIndex = 73;
-            dx_SulfurDioxide.Text = "20";
-            dx_SulfurDioxide.TextAlign = HorizontalAlignment.Center;
-            dx_SulfurDioxide.KeyDown += dx_SulfurDioxide_KeyDown;
+            this.dx_SulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_SulfurDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_SulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_SulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_SulfurDioxide.Location = (new global::System.Drawing.Point(672, 113));
+            this.dx_SulfurDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_SulfurDioxide.Name = ("dx_SulfurDioxide");
+            this.dx_SulfurDioxide.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_SulfurDioxide.TabIndex = (73);
+            this.dx_SulfurDioxide.Text = ("20");
+            this.dx_SulfurDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_SulfurDioxide.KeyDown += (this.dx_SulfurDioxide_KeyDown);
             // 
             // dx_CarbonDioxide
             // 
-            dx_CarbonDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            dx_CarbonDioxide.BorderStyle = BorderStyle.FixedSingle;
-            dx_CarbonDioxide.Dock = DockStyle.Fill;
-            dx_CarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_CarbonDioxide.Location = new Point(433, 111);
-            dx_CarbonDioxide.Name = "dx_CarbonDioxide";
-            dx_CarbonDioxide.Size = new Size(75, 23);
-            dx_CarbonDioxide.TabIndex = 74;
-            dx_CarbonDioxide.Text = "20";
-            dx_CarbonDioxide.TextAlign = HorizontalAlignment.Center;
-            dx_CarbonDioxide.KeyDown += dx_CarbonDioxide_KeyDown;
+            this.dx_CarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_CarbonDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_CarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_CarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_CarbonDioxide.Location = (new global::System.Drawing.Point(672, 149));
+            this.dx_CarbonDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_CarbonDioxide.Name = ("dx_CarbonDioxide");
+            this.dx_CarbonDioxide.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_CarbonDioxide.TabIndex = (74);
+            this.dx_CarbonDioxide.Text = ("20");
+            this.dx_CarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_CarbonDioxide.KeyDown += (this.dx_CarbonDioxide_KeyDown);
             // 
             // dx_VolatileOrganicCompounds
             // 
-            dx_VolatileOrganicCompounds.BackColor = Color.FromArgb(30, 30, 30);
-            dx_VolatileOrganicCompounds.BorderStyle = BorderStyle.FixedSingle;
-            dx_VolatileOrganicCompounds.Dock = DockStyle.Fill;
-            dx_VolatileOrganicCompounds.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_VolatileOrganicCompounds.Location = new Point(433, 138);
-            dx_VolatileOrganicCompounds.Name = "dx_VolatileOrganicCompounds";
-            dx_VolatileOrganicCompounds.Size = new Size(75, 23);
-            dx_VolatileOrganicCompounds.TabIndex = 75;
-            dx_VolatileOrganicCompounds.Text = "20";
-            dx_VolatileOrganicCompounds.TextAlign = HorizontalAlignment.Center;
-            dx_VolatileOrganicCompounds.KeyDown += dx_VolatileOrganicCompounds_KeyDown;
+            this.dx_VolatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_VolatileOrganicCompounds.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_VolatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_VolatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_VolatileOrganicCompounds.Location = (new global::System.Drawing.Point(672, 185));
+            this.dx_VolatileOrganicCompounds.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_VolatileOrganicCompounds.Name = ("dx_VolatileOrganicCompounds");
+            this.dx_VolatileOrganicCompounds.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_VolatileOrganicCompounds.TabIndex = (75);
+            this.dx_VolatileOrganicCompounds.Text = ("20");
+            this.dx_VolatileOrganicCompounds.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_VolatileOrganicCompounds.KeyDown += (this.dx_VolatileOrganicCompounds_KeyDown);
             // 
             // porog_2_VolatileOrganicCompounds
             // 
-            porog_2_VolatileOrganicCompounds.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_VolatileOrganicCompounds.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_VolatileOrganicCompounds.Dock = DockStyle.Fill;
-            porog_2_VolatileOrganicCompounds.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_VolatileOrganicCompounds.Location = new Point(380, 138);
-            porog_2_VolatileOrganicCompounds.Name = "porog_2_VolatileOrganicCompounds";
-            porog_2_VolatileOrganicCompounds.Size = new Size(47, 23);
-            porog_2_VolatileOrganicCompounds.TabIndex = 76;
-            porog_2_VolatileOrganicCompounds.Text = "20";
-            porog_2_VolatileOrganicCompounds.TextAlign = HorizontalAlignment.Center;
-            porog_2_VolatileOrganicCompounds.KeyDown += porog_2_VolatileOrganicCompounds_KeyDown;
+            this.porog_2_VolatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_VolatileOrganicCompounds.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_VolatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_VolatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_VolatileOrganicCompounds.Location = (new global::System.Drawing.Point(590, 185));
+            this.porog_2_VolatileOrganicCompounds.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_VolatileOrganicCompounds.Name = ("porog_2_VolatileOrganicCompounds");
+            this.porog_2_VolatileOrganicCompounds.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_VolatileOrganicCompounds.TabIndex = (76);
+            this.porog_2_VolatileOrganicCompounds.Text = ("20");
+            this.porog_2_VolatileOrganicCompounds.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_VolatileOrganicCompounds.KeyDown += (this.porog_2_VolatileOrganicCompounds_KeyDown);
             // 
             // dt_VolatileOrganicCompounds
             // 
-            dt_VolatileOrganicCompounds.BackColor = Color.FromArgb(30, 30, 30);
-            dt_VolatileOrganicCompounds.BorderStyle = BorderStyle.FixedSingle;
-            dt_VolatileOrganicCompounds.Dock = DockStyle.Fill;
-            dt_VolatileOrganicCompounds.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_VolatileOrganicCompounds.Location = new Point(514, 138);
-            dt_VolatileOrganicCompounds.Name = "dt_VolatileOrganicCompounds";
-            dt_VolatileOrganicCompounds.Size = new Size(90, 23);
-            dt_VolatileOrganicCompounds.TabIndex = 77;
-            dt_VolatileOrganicCompounds.Text = "20";
-            dt_VolatileOrganicCompounds.TextAlign = HorizontalAlignment.Center;
-            dt_VolatileOrganicCompounds.KeyDown += dt_VolatileOrganicCompounds_KeyDown;
+            this.dt_VolatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_VolatileOrganicCompounds.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_VolatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_VolatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_VolatileOrganicCompounds.Location = (new global::System.Drawing.Point(797, 185));
+            this.dt_VolatileOrganicCompounds.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_VolatileOrganicCompounds.Name = ("dt_VolatileOrganicCompounds");
+            this.dt_VolatileOrganicCompounds.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_VolatileOrganicCompounds.TabIndex = (77);
+            this.dt_VolatileOrganicCompounds.Text = ("20");
+            this.dt_VolatileOrganicCompounds.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_VolatileOrganicCompounds.KeyDown += (this.dt_VolatileOrganicCompounds_KeyDown);
             // 
             // dt_CarbonDioxide
             // 
-            dt_CarbonDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            dt_CarbonDioxide.BorderStyle = BorderStyle.FixedSingle;
-            dt_CarbonDioxide.Dock = DockStyle.Fill;
-            dt_CarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_CarbonDioxide.Location = new Point(514, 111);
-            dt_CarbonDioxide.Name = "dt_CarbonDioxide";
-            dt_CarbonDioxide.Size = new Size(90, 23);
-            dt_CarbonDioxide.TabIndex = 78;
-            dt_CarbonDioxide.Text = "20";
-            dt_CarbonDioxide.TextAlign = HorizontalAlignment.Center;
-            dt_CarbonDioxide.KeyDown += dt_CarbonDioxide_KeyDown;
+            this.dt_CarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_CarbonDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_CarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_CarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_CarbonDioxide.Location = (new global::System.Drawing.Point(797, 149));
+            this.dt_CarbonDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_CarbonDioxide.Name = ("dt_CarbonDioxide");
+            this.dt_CarbonDioxide.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_CarbonDioxide.TabIndex = (78);
+            this.dt_CarbonDioxide.Text = ("20");
+            this.dt_CarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_CarbonDioxide.KeyDown += (this.dt_CarbonDioxide_KeyDown);
             // 
             // dt_SulfurDioxide
             // 
-            dt_SulfurDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            dt_SulfurDioxide.BorderStyle = BorderStyle.FixedSingle;
-            dt_SulfurDioxide.Dock = DockStyle.Fill;
-            dt_SulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_SulfurDioxide.Location = new Point(514, 84);
-            dt_SulfurDioxide.Name = "dt_SulfurDioxide";
-            dt_SulfurDioxide.Size = new Size(90, 23);
-            dt_SulfurDioxide.TabIndex = 79;
-            dt_SulfurDioxide.Text = "20";
-            dt_SulfurDioxide.TextAlign = HorizontalAlignment.Center;
-            dt_SulfurDioxide.KeyDown += dt_SulfurDioxide_KeyDown;
+            this.dt_SulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_SulfurDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_SulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_SulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_SulfurDioxide.Location = (new global::System.Drawing.Point(797, 113));
+            this.dt_SulfurDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_SulfurDioxide.Name = ("dt_SulfurDioxide");
+            this.dt_SulfurDioxide.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_SulfurDioxide.TabIndex = (79);
+            this.dt_SulfurDioxide.Text = ("20");
+            this.dt_SulfurDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_SulfurDioxide.KeyDown += (this.dt_SulfurDioxide_KeyDown);
             // 
             // dt_NitrogenDioxide
             // 
-            dt_NitrogenDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            dt_NitrogenDioxide.BorderStyle = BorderStyle.FixedSingle;
-            dt_NitrogenDioxide.Dock = DockStyle.Fill;
-            dt_NitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_NitrogenDioxide.Location = new Point(514, 57);
-            dt_NitrogenDioxide.Name = "dt_NitrogenDioxide";
-            dt_NitrogenDioxide.Size = new Size(90, 23);
-            dt_NitrogenDioxide.TabIndex = 80;
-            dt_NitrogenDioxide.Text = "20";
-            dt_NitrogenDioxide.TextAlign = HorizontalAlignment.Center;
-            dt_NitrogenDioxide.KeyDown += dt_NitrogenDioxide_KeyDown;
+            this.dt_NitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_NitrogenDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_NitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_NitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_NitrogenDioxide.Location = (new global::System.Drawing.Point(797, 77));
+            this.dt_NitrogenDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_NitrogenDioxide.Name = ("dt_NitrogenDioxide");
+            this.dt_NitrogenDioxide.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_NitrogenDioxide.TabIndex = (80);
+            this.dt_NitrogenDioxide.Text = ("20");
+            this.dt_NitrogenDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_NitrogenDioxide.KeyDown += (this.dt_NitrogenDioxide_KeyDown);
             // 
             // dt_NitrogenOxide
             // 
-            dt_NitrogenOxide.BackColor = Color.FromArgb(30, 30, 30);
-            dt_NitrogenOxide.BorderStyle = BorderStyle.FixedSingle;
-            dt_NitrogenOxide.Dock = DockStyle.Fill;
-            dt_NitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_NitrogenOxide.Location = new Point(514, 30);
-            dt_NitrogenOxide.Name = "dt_NitrogenOxide";
-            dt_NitrogenOxide.Size = new Size(90, 23);
-            dt_NitrogenOxide.TabIndex = 81;
-            dt_NitrogenOxide.Text = "20";
-            dt_NitrogenOxide.TextAlign = HorizontalAlignment.Center;
-            dt_NitrogenOxide.KeyDown += dt_NitrogenOxide_KeyDown;
+            this.dt_NitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_NitrogenOxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_NitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_NitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_NitrogenOxide.Location = (new global::System.Drawing.Point(797, 41));
+            this.dt_NitrogenOxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_NitrogenOxide.Name = ("dt_NitrogenOxide");
+            this.dt_NitrogenOxide.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_NitrogenOxide.TabIndex = (81);
+            this.dt_NitrogenOxide.Text = ("20");
+            this.dt_NitrogenOxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_NitrogenOxide.KeyDown += (this.dt_NitrogenOxide_KeyDown);
             // 
             // dt_CarbonMonoxide
             // 
-            dt_CarbonMonoxide.BackColor = Color.FromArgb(30, 30, 30);
-            dt_CarbonMonoxide.BorderStyle = BorderStyle.FixedSingle;
-            dt_CarbonMonoxide.Dock = DockStyle.Fill;
-            dt_CarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_CarbonMonoxide.Location = new Point(514, 3);
-            dt_CarbonMonoxide.Name = "dt_CarbonMonoxide";
-            dt_CarbonMonoxide.Size = new Size(90, 23);
-            dt_CarbonMonoxide.TabIndex = 82;
-            dt_CarbonMonoxide.Text = "20";
-            dt_CarbonMonoxide.TextAlign = HorizontalAlignment.Center;
-            dt_CarbonMonoxide.KeyDown += dt_CarbonMonoxide_KeyDown;
+            this.dt_CarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_CarbonMonoxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_CarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_CarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_CarbonMonoxide.Location = (new global::System.Drawing.Point(797, 4));
+            this.dt_CarbonMonoxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_CarbonMonoxide.Name = ("dt_CarbonMonoxide");
+            this.dt_CarbonMonoxide.Size = (new global::System.Drawing.Size(142, 27));
+            this.dt_CarbonMonoxide.TabIndex = (82);
+            this.dt_CarbonMonoxide.Text = ("20");
+            this.dt_CarbonMonoxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_CarbonMonoxide.KeyDown += (this.dt_CarbonMonoxide_KeyDown);
             // 
             // tableLayoutPanel7
             // 
-            tableLayoutPanel7.BackColor = Color.FromArgb(30, 30, 30);
-            tableLayoutPanel7.ColumnCount = 9;
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.070467F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.12824774F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.69012451F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.550122F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.050168F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.19017F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.770164F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.3702488F));
-            tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.1802826F));
-            tableLayoutPanel7.Controls.Add(porog_1_ParticulateMatterPM10, 5, 2);
-            tableLayoutPanel7.Controls.Add(currentParticulateMatterPM1, 4, 0);
-            tableLayoutPanel7.Controls.Add(avgParticulateMatterPM1, 3, 0);
-            tableLayoutPanel7.Controls.Add(maxParticulateMatterPM1, 2, 0);
-            tableLayoutPanel7.Controls.Add(particulateMatterPM10, 0, 2);
-            tableLayoutPanel7.Controls.Add(particulateMatterPM1, 0, 0);
-            tableLayoutPanel7.Controls.Add(particulateMatterPM2_5, 0, 1);
-            tableLayoutPanel7.Controls.Add(minParticulateMatterPM1, 1, 0);
-            tableLayoutPanel7.Controls.Add(minParticulateMatterPM10, 1, 2);
-            tableLayoutPanel7.Controls.Add(maxParticulateMatterPM10, 2, 2);
-            tableLayoutPanel7.Controls.Add(avgParticulateMatterPM10, 3, 2);
-            tableLayoutPanel7.Controls.Add(currentParticulateMatterPM10, 4, 2);
-            tableLayoutPanel7.Controls.Add(minParticulateMatterPM2_5, 1, 1);
-            tableLayoutPanel7.Controls.Add(maxParticulateMatterPM2_5, 2, 1);
-            tableLayoutPanel7.Controls.Add(avgParticulateMatterPM2_5, 3, 1);
-            tableLayoutPanel7.Controls.Add(currentParticulateMatterPM2_5, 4, 1);
-            tableLayoutPanel7.Controls.Add(porog_1_ParticulateMatterPM1, 5, 0);
-            tableLayoutPanel7.Controls.Add(porog_1_ParticulateMatterPM2_5, 5, 1);
-            tableLayoutPanel7.Controls.Add(porog_2_ParticulateMatterPM1, 6, 0);
-            tableLayoutPanel7.Controls.Add(porog_2_ParticulateMatterPM2_5, 6, 1);
-            tableLayoutPanel7.Controls.Add(porog_2_ParticulateMatterPM10, 6, 2);
-            tableLayoutPanel7.Controls.Add(dx_ParticulateMatterPM1, 7, 0);
-            tableLayoutPanel7.Controls.Add(dx_ParticulateMatterPM2_5, 7, 1);
-            tableLayoutPanel7.Controls.Add(dx_ParticulateMatterPM10, 7, 2);
-            tableLayoutPanel7.Controls.Add(dt_ParticulateMatterPM1, 8, 0);
-            tableLayoutPanel7.Controls.Add(dt_ParticulateMatterPM2_5, 8, 1);
-            tableLayoutPanel7.Controls.Add(dt_ParticulateMatterPM10, 8, 2);
-            tableLayoutPanel7.Dock = DockStyle.Fill;
-            tableLayoutPanel7.Location = new Point(3, 322);
-            tableLayoutPanel7.Name = "tableLayoutPanel7";
-            tableLayoutPanel7.RowCount = 3;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel7.Size = new Size(607, 80);
-            tableLayoutPanel7.TabIndex = 2;
+            this.tableLayoutPanel7.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.tableLayoutPanel7.ColumnCount = (9);
+            this.tableLayoutPanel7.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 25.070467F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.12824774F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.69012451F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.550122F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.050168F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.19017F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 8.770164F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 13.3702488F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 15.1802826F));
+            this.tableLayoutPanel7.Controls.Add(this.porog_1_ParticulateMatterPM10, 5, 2);
+            this.tableLayoutPanel7.Controls.Add(this.currentParticulateMatterPM1, 4, 0);
+            this.tableLayoutPanel7.Controls.Add(this.avgParticulateMatterPM1, 3, 0);
+            this.tableLayoutPanel7.Controls.Add(this.maxParticulateMatterPM1, 2, 0);
+            this.tableLayoutPanel7.Controls.Add(this.particulateMatterPM10, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.particulateMatterPM1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.particulateMatterPM2_5, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.minParticulateMatterPM1, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.minParticulateMatterPM10, 1, 2);
+            this.tableLayoutPanel7.Controls.Add(this.maxParticulateMatterPM10, 2, 2);
+            this.tableLayoutPanel7.Controls.Add(this.avgParticulateMatterPM10, 3, 2);
+            this.tableLayoutPanel7.Controls.Add(this.currentParticulateMatterPM10, 4, 2);
+            this.tableLayoutPanel7.Controls.Add(this.minParticulateMatterPM2_5, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(this.maxParticulateMatterPM2_5, 2, 1);
+            this.tableLayoutPanel7.Controls.Add(this.avgParticulateMatterPM2_5, 3, 1);
+            this.tableLayoutPanel7.Controls.Add(this.currentParticulateMatterPM2_5, 4, 1);
+            this.tableLayoutPanel7.Controls.Add(this.porog_1_ParticulateMatterPM1, 5, 0);
+            this.tableLayoutPanel7.Controls.Add(this.porog_1_ParticulateMatterPM2_5, 5, 1);
+            this.tableLayoutPanel7.Controls.Add(this.porog_2_ParticulateMatterPM1, 6, 0);
+            this.tableLayoutPanel7.Controls.Add(this.porog_2_ParticulateMatterPM2_5, 6, 1);
+            this.tableLayoutPanel7.Controls.Add(this.porog_2_ParticulateMatterPM10, 6, 2);
+            this.tableLayoutPanel7.Controls.Add(this.dx_ParticulateMatterPM1, 7, 0);
+            this.tableLayoutPanel7.Controls.Add(this.dx_ParticulateMatterPM2_5, 7, 1);
+            this.tableLayoutPanel7.Controls.Add(this.dx_ParticulateMatterPM10, 7, 2);
+            this.tableLayoutPanel7.Controls.Add(this.dt_ParticulateMatterPM1, 8, 0);
+            this.tableLayoutPanel7.Controls.Add(this.dt_ParticulateMatterPM2_5, 8, 1);
+            this.tableLayoutPanel7.Controls.Add(this.dt_ParticulateMatterPM10, 8, 2);
+            this.tableLayoutPanel7.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tableLayoutPanel7.Location = (new global::System.Drawing.Point(3, 430));
+            this.tableLayoutPanel7.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.tableLayoutPanel7.Name = ("tableLayoutPanel7");
+            this.tableLayoutPanel7.RowCount = (3);
+            this.tableLayoutPanel7.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            this.tableLayoutPanel7.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            this.tableLayoutPanel7.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            this.tableLayoutPanel7.Size = (new global::System.Drawing.Size(942, 107));
+            this.tableLayoutPanel7.TabIndex = (2);
             // 
             // porog_1_ParticulateMatterPM10
             // 
-            porog_1_ParticulateMatterPM10.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_ParticulateMatterPM10.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_ParticulateMatterPM10.Dock = DockStyle.Fill;
-            porog_1_ParticulateMatterPM10.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_ParticulateMatterPM10.Location = new Point(325, 55);
-            porog_1_ParticulateMatterPM10.Name = "porog_1_ParticulateMatterPM10";
-            porog_1_ParticulateMatterPM10.Size = new Size(49, 23);
-            porog_1_ParticulateMatterPM10.TabIndex = 95;
-            porog_1_ParticulateMatterPM10.Text = "20";
-            porog_1_ParticulateMatterPM10.TextAlign = HorizontalAlignment.Center;
-            porog_1_ParticulateMatterPM10.KeyDown += porog_1_ParticulateMatterPM10_KeyDown;
+            this.porog_1_ParticulateMatterPM10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_ParticulateMatterPM10.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_ParticulateMatterPM10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_ParticulateMatterPM10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_ParticulateMatterPM10.Location = (new global::System.Drawing.Point(505, 74));
+            this.porog_1_ParticulateMatterPM10.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_ParticulateMatterPM10.Name = ("porog_1_ParticulateMatterPM10");
+            this.porog_1_ParticulateMatterPM10.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_ParticulateMatterPM10.TabIndex = (95);
+            this.porog_1_ParticulateMatterPM10.Text = ("20");
+            this.porog_1_ParticulateMatterPM10.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_ParticulateMatterPM10.KeyDown += (this.porog_1_ParticulateMatterPM10_KeyDown);
             // 
             // currentParticulateMatterPM1
             // 
-            currentParticulateMatterPM1.AutoSize = true;
-            currentParticulateMatterPM1.BackColor = Color.FromArgb(50, 50, 50);
-            currentParticulateMatterPM1.Dock = DockStyle.Fill;
-            currentParticulateMatterPM1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentParticulateMatterPM1.ForeColor = Color.FromArgb(250, 250, 250);
-            currentParticulateMatterPM1.Location = new Point(271, 0);
-            currentParticulateMatterPM1.Name = "currentParticulateMatterPM1";
-            currentParticulateMatterPM1.Size = new Size(48, 26);
-            currentParticulateMatterPM1.TabIndex = 61;
-            currentParticulateMatterPM1.Text = "14.3";
-            currentParticulateMatterPM1.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentParticulateMatterPM1.AutoSize = (true);
+            this.currentParticulateMatterPM1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentParticulateMatterPM1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentParticulateMatterPM1.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentParticulateMatterPM1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentParticulateMatterPM1.Location = (new global::System.Drawing.Point(420, 0));
+            this.currentParticulateMatterPM1.Name = ("currentParticulateMatterPM1");
+            this.currentParticulateMatterPM1.Size = (new global::System.Drawing.Size(79, 35));
+            this.currentParticulateMatterPM1.TabIndex = (61);
+            this.currentParticulateMatterPM1.Text = ("14.3");
+            this.currentParticulateMatterPM1.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgParticulateMatterPM1
             // 
-            avgParticulateMatterPM1.AutoSize = true;
-            avgParticulateMatterPM1.BackColor = Color.FromArgb(50, 50, 50);
-            avgParticulateMatterPM1.Dock = DockStyle.Fill;
-            avgParticulateMatterPM1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgParticulateMatterPM1.ForeColor = Color.FromArgb(250, 250, 250);
-            avgParticulateMatterPM1.Location = new Point(232, 0);
-            avgParticulateMatterPM1.Name = "avgParticulateMatterPM1";
-            avgParticulateMatterPM1.Size = new Size(33, 26);
-            avgParticulateMatterPM1.TabIndex = 60;
-            avgParticulateMatterPM1.Text = "14.3";
-            avgParticulateMatterPM1.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgParticulateMatterPM1.AutoSize = (true);
+            this.avgParticulateMatterPM1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgParticulateMatterPM1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgParticulateMatterPM1.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgParticulateMatterPM1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgParticulateMatterPM1.Location = (new global::System.Drawing.Point(359, 0));
+            this.avgParticulateMatterPM1.Name = ("avgParticulateMatterPM1");
+            this.avgParticulateMatterPM1.Size = (new global::System.Drawing.Size(55, 35));
+            this.avgParticulateMatterPM1.TabIndex = (60);
+            this.avgParticulateMatterPM1.Text = ("14.3");
+            this.avgParticulateMatterPM1.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxParticulateMatterPM1
             // 
-            maxParticulateMatterPM1.AutoSize = true;
-            maxParticulateMatterPM1.BackColor = Color.FromArgb(50, 50, 50);
-            maxParticulateMatterPM1.Dock = DockStyle.Fill;
-            maxParticulateMatterPM1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxParticulateMatterPM1.ForeColor = Color.FromArgb(250, 250, 250);
-            maxParticulateMatterPM1.Location = new Point(192, 0);
-            maxParticulateMatterPM1.Name = "maxParticulateMatterPM1";
-            maxParticulateMatterPM1.Size = new Size(34, 26);
-            maxParticulateMatterPM1.TabIndex = 59;
-            maxParticulateMatterPM1.Text = "14.3";
-            maxParticulateMatterPM1.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxParticulateMatterPM1.AutoSize = (true);
+            this.maxParticulateMatterPM1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxParticulateMatterPM1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxParticulateMatterPM1.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxParticulateMatterPM1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxParticulateMatterPM1.Location = (new global::System.Drawing.Point(296, 0));
+            this.maxParticulateMatterPM1.Name = ("maxParticulateMatterPM1");
+            this.maxParticulateMatterPM1.Size = (new global::System.Drawing.Size(57, 35));
+            this.maxParticulateMatterPM1.TabIndex = (59);
+            this.maxParticulateMatterPM1.Text = ("14.3");
+            this.maxParticulateMatterPM1.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // particulateMatterPM10
             // 
-            particulateMatterPM10.AutoSize = true;
-            particulateMatterPM10.BackColor = Color.FromArgb(50, 50, 50);
-            particulateMatterPM10.Dock = DockStyle.Fill;
-            particulateMatterPM10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            particulateMatterPM10.ForeColor = Color.FromArgb(190, 190, 190);
-            particulateMatterPM10.Location = new Point(3, 52);
-            particulateMatterPM10.Name = "particulateMatterPM10";
-            particulateMatterPM10.Size = new Size(146, 28);
-            particulateMatterPM10.TabIndex = 17;
-            particulateMatterPM10.Text = "PM 10 (0 - 1000 мкг / м³)";
-            particulateMatterPM10.TextAlign = ContentAlignment.MiddleCenter;
+            this.particulateMatterPM10.AutoSize = (true);
+            this.particulateMatterPM10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.particulateMatterPM10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.particulateMatterPM10.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.particulateMatterPM10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.particulateMatterPM10.Location = (new global::System.Drawing.Point(3, 70));
+            this.particulateMatterPM10.Name = ("particulateMatterPM10");
+            this.particulateMatterPM10.Size = (new global::System.Drawing.Size(230, 37));
+            this.particulateMatterPM10.TabIndex = (17);
+            this.particulateMatterPM10.Text = ("PM 10 (0 - 1000 мкг / м³)");
+            this.particulateMatterPM10.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // particulateMatterPM1
             // 
-            particulateMatterPM1.AutoSize = true;
-            particulateMatterPM1.BackColor = Color.FromArgb(50, 50, 50);
-            particulateMatterPM1.Dock = DockStyle.Fill;
-            particulateMatterPM1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            particulateMatterPM1.ForeColor = Color.FromArgb(190, 190, 190);
-            particulateMatterPM1.Location = new Point(3, 0);
-            particulateMatterPM1.Name = "particulateMatterPM1";
-            particulateMatterPM1.Size = new Size(146, 26);
-            particulateMatterPM1.TabIndex = 15;
-            particulateMatterPM1.Text = "PM 1.0 (0 - 1000 мкг / м³)";
-            particulateMatterPM1.TextAlign = ContentAlignment.MiddleCenter;
+            this.particulateMatterPM1.AutoSize = (true);
+            this.particulateMatterPM1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.particulateMatterPM1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.particulateMatterPM1.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.particulateMatterPM1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.particulateMatterPM1.Location = (new global::System.Drawing.Point(3, 0));
+            this.particulateMatterPM1.Name = ("particulateMatterPM1");
+            this.particulateMatterPM1.Size = (new global::System.Drawing.Size(230, 35));
+            this.particulateMatterPM1.TabIndex = (15);
+            this.particulateMatterPM1.Text = ("PM 1.0 (0 - 1000 мкг / м³)");
+            this.particulateMatterPM1.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // particulateMatterPM2_5
             // 
-            particulateMatterPM2_5.AutoSize = true;
-            particulateMatterPM2_5.BackColor = Color.FromArgb(80, 80, 80);
-            particulateMatterPM2_5.Dock = DockStyle.Fill;
-            particulateMatterPM2_5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            particulateMatterPM2_5.ForeColor = Color.FromArgb(190, 190, 190);
-            particulateMatterPM2_5.Location = new Point(3, 26);
-            particulateMatterPM2_5.Name = "particulateMatterPM2_5";
-            particulateMatterPM2_5.Size = new Size(146, 26);
-            particulateMatterPM2_5.TabIndex = 16;
-            particulateMatterPM2_5.Text = "PM 2.5 (0 - 1000 мкг / м³)";
-            particulateMatterPM2_5.TextAlign = ContentAlignment.MiddleCenter;
+            this.particulateMatterPM2_5.AutoSize = (true);
+            this.particulateMatterPM2_5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.particulateMatterPM2_5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.particulateMatterPM2_5.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.particulateMatterPM2_5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.particulateMatterPM2_5.Location = (new global::System.Drawing.Point(3, 35));
+            this.particulateMatterPM2_5.Name = ("particulateMatterPM2_5");
+            this.particulateMatterPM2_5.Size = (new global::System.Drawing.Size(230, 35));
+            this.particulateMatterPM2_5.TabIndex = (16);
+            this.particulateMatterPM2_5.Text = ("PM 2.5 (0 - 1000 мкг / м³)");
+            this.particulateMatterPM2_5.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minParticulateMatterPM1
             // 
-            minParticulateMatterPM1.AutoSize = true;
-            minParticulateMatterPM1.BackColor = Color.FromArgb(50, 50, 50);
-            minParticulateMatterPM1.Dock = DockStyle.Fill;
-            minParticulateMatterPM1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minParticulateMatterPM1.ForeColor = Color.FromArgb(250, 250, 250);
-            minParticulateMatterPM1.Location = new Point(155, 0);
-            minParticulateMatterPM1.Name = "minParticulateMatterPM1";
-            minParticulateMatterPM1.Size = new Size(31, 26);
-            minParticulateMatterPM1.TabIndex = 58;
-            minParticulateMatterPM1.Text = "14.3";
-            minParticulateMatterPM1.TextAlign = ContentAlignment.MiddleCenter;
+            this.minParticulateMatterPM1.AutoSize = (true);
+            this.minParticulateMatterPM1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minParticulateMatterPM1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minParticulateMatterPM1.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minParticulateMatterPM1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minParticulateMatterPM1.Location = (new global::System.Drawing.Point(239, 0));
+            this.minParticulateMatterPM1.Name = ("minParticulateMatterPM1");
+            this.minParticulateMatterPM1.Size = (new global::System.Drawing.Size(51, 35));
+            this.minParticulateMatterPM1.TabIndex = (58);
+            this.minParticulateMatterPM1.Text = ("14.3");
+            this.minParticulateMatterPM1.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minParticulateMatterPM10
             // 
-            minParticulateMatterPM10.AutoSize = true;
-            minParticulateMatterPM10.BackColor = Color.FromArgb(50, 50, 50);
-            minParticulateMatterPM10.Dock = DockStyle.Fill;
-            minParticulateMatterPM10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minParticulateMatterPM10.ForeColor = Color.FromArgb(250, 250, 250);
-            minParticulateMatterPM10.Location = new Point(155, 52);
-            minParticulateMatterPM10.Name = "minParticulateMatterPM10";
-            minParticulateMatterPM10.Size = new Size(31, 28);
-            minParticulateMatterPM10.TabIndex = 62;
-            minParticulateMatterPM10.Text = "14.3";
-            minParticulateMatterPM10.TextAlign = ContentAlignment.MiddleCenter;
+            this.minParticulateMatterPM10.AutoSize = (true);
+            this.minParticulateMatterPM10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minParticulateMatterPM10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minParticulateMatterPM10.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minParticulateMatterPM10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minParticulateMatterPM10.Location = (new global::System.Drawing.Point(239, 70));
+            this.minParticulateMatterPM10.Name = ("minParticulateMatterPM10");
+            this.minParticulateMatterPM10.Size = (new global::System.Drawing.Size(51, 37));
+            this.minParticulateMatterPM10.TabIndex = (62);
+            this.minParticulateMatterPM10.Text = ("14.3");
+            this.minParticulateMatterPM10.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxParticulateMatterPM10
             // 
-            maxParticulateMatterPM10.AutoSize = true;
-            maxParticulateMatterPM10.BackColor = Color.FromArgb(50, 50, 50);
-            maxParticulateMatterPM10.Dock = DockStyle.Fill;
-            maxParticulateMatterPM10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxParticulateMatterPM10.ForeColor = Color.FromArgb(250, 250, 250);
-            maxParticulateMatterPM10.Location = new Point(192, 52);
-            maxParticulateMatterPM10.Name = "maxParticulateMatterPM10";
-            maxParticulateMatterPM10.Size = new Size(34, 28);
-            maxParticulateMatterPM10.TabIndex = 63;
-            maxParticulateMatterPM10.Text = "14.3";
-            maxParticulateMatterPM10.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxParticulateMatterPM10.AutoSize = (true);
+            this.maxParticulateMatterPM10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxParticulateMatterPM10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxParticulateMatterPM10.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxParticulateMatterPM10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxParticulateMatterPM10.Location = (new global::System.Drawing.Point(296, 70));
+            this.maxParticulateMatterPM10.Name = ("maxParticulateMatterPM10");
+            this.maxParticulateMatterPM10.Size = (new global::System.Drawing.Size(57, 37));
+            this.maxParticulateMatterPM10.TabIndex = (63);
+            this.maxParticulateMatterPM10.Text = ("14.3");
+            this.maxParticulateMatterPM10.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgParticulateMatterPM10
             // 
-            avgParticulateMatterPM10.AutoSize = true;
-            avgParticulateMatterPM10.BackColor = Color.FromArgb(50, 50, 50);
-            avgParticulateMatterPM10.Dock = DockStyle.Fill;
-            avgParticulateMatterPM10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgParticulateMatterPM10.ForeColor = Color.FromArgb(250, 250, 250);
-            avgParticulateMatterPM10.Location = new Point(232, 52);
-            avgParticulateMatterPM10.Name = "avgParticulateMatterPM10";
-            avgParticulateMatterPM10.Size = new Size(33, 28);
-            avgParticulateMatterPM10.TabIndex = 64;
-            avgParticulateMatterPM10.Text = "14.3";
-            avgParticulateMatterPM10.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgParticulateMatterPM10.AutoSize = (true);
+            this.avgParticulateMatterPM10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgParticulateMatterPM10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgParticulateMatterPM10.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgParticulateMatterPM10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgParticulateMatterPM10.Location = (new global::System.Drawing.Point(359, 70));
+            this.avgParticulateMatterPM10.Name = ("avgParticulateMatterPM10");
+            this.avgParticulateMatterPM10.Size = (new global::System.Drawing.Size(55, 37));
+            this.avgParticulateMatterPM10.TabIndex = (64);
+            this.avgParticulateMatterPM10.Text = ("14.3");
+            this.avgParticulateMatterPM10.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentParticulateMatterPM10
             // 
-            currentParticulateMatterPM10.AutoSize = true;
-            currentParticulateMatterPM10.BackColor = Color.FromArgb(50, 50, 50);
-            currentParticulateMatterPM10.Dock = DockStyle.Fill;
-            currentParticulateMatterPM10.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentParticulateMatterPM10.ForeColor = Color.FromArgb(250, 250, 250);
-            currentParticulateMatterPM10.Location = new Point(271, 52);
-            currentParticulateMatterPM10.Name = "currentParticulateMatterPM10";
-            currentParticulateMatterPM10.Size = new Size(48, 28);
-            currentParticulateMatterPM10.TabIndex = 65;
-            currentParticulateMatterPM10.Text = "14.3";
-            currentParticulateMatterPM10.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentParticulateMatterPM10.AutoSize = (true);
+            this.currentParticulateMatterPM10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentParticulateMatterPM10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentParticulateMatterPM10.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentParticulateMatterPM10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentParticulateMatterPM10.Location = (new global::System.Drawing.Point(420, 70));
+            this.currentParticulateMatterPM10.Name = ("currentParticulateMatterPM10");
+            this.currentParticulateMatterPM10.Size = (new global::System.Drawing.Size(79, 37));
+            this.currentParticulateMatterPM10.TabIndex = (65);
+            this.currentParticulateMatterPM10.Text = ("14.3");
+            this.currentParticulateMatterPM10.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minParticulateMatterPM2_5
             // 
-            minParticulateMatterPM2_5.AutoSize = true;
-            minParticulateMatterPM2_5.BackColor = Color.FromArgb(80, 80, 80);
-            minParticulateMatterPM2_5.Dock = DockStyle.Fill;
-            minParticulateMatterPM2_5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minParticulateMatterPM2_5.ForeColor = Color.FromArgb(250, 250, 250);
-            minParticulateMatterPM2_5.Location = new Point(155, 26);
-            minParticulateMatterPM2_5.Name = "minParticulateMatterPM2_5";
-            minParticulateMatterPM2_5.Size = new Size(31, 26);
-            minParticulateMatterPM2_5.TabIndex = 66;
-            minParticulateMatterPM2_5.Text = "14.3";
-            minParticulateMatterPM2_5.TextAlign = ContentAlignment.MiddleCenter;
+            this.minParticulateMatterPM2_5.AutoSize = (true);
+            this.minParticulateMatterPM2_5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minParticulateMatterPM2_5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minParticulateMatterPM2_5.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minParticulateMatterPM2_5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minParticulateMatterPM2_5.Location = (new global::System.Drawing.Point(239, 35));
+            this.minParticulateMatterPM2_5.Name = ("minParticulateMatterPM2_5");
+            this.minParticulateMatterPM2_5.Size = (new global::System.Drawing.Size(51, 35));
+            this.minParticulateMatterPM2_5.TabIndex = (66);
+            this.minParticulateMatterPM2_5.Text = ("14.3");
+            this.minParticulateMatterPM2_5.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxParticulateMatterPM2_5
             // 
-            maxParticulateMatterPM2_5.AutoSize = true;
-            maxParticulateMatterPM2_5.BackColor = Color.FromArgb(80, 80, 80);
-            maxParticulateMatterPM2_5.Dock = DockStyle.Fill;
-            maxParticulateMatterPM2_5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxParticulateMatterPM2_5.ForeColor = Color.FromArgb(250, 250, 250);
-            maxParticulateMatterPM2_5.Location = new Point(192, 26);
-            maxParticulateMatterPM2_5.Name = "maxParticulateMatterPM2_5";
-            maxParticulateMatterPM2_5.Size = new Size(34, 26);
-            maxParticulateMatterPM2_5.TabIndex = 67;
-            maxParticulateMatterPM2_5.Text = "14.3";
-            maxParticulateMatterPM2_5.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxParticulateMatterPM2_5.AutoSize = (true);
+            this.maxParticulateMatterPM2_5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxParticulateMatterPM2_5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxParticulateMatterPM2_5.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxParticulateMatterPM2_5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxParticulateMatterPM2_5.Location = (new global::System.Drawing.Point(296, 35));
+            this.maxParticulateMatterPM2_5.Name = ("maxParticulateMatterPM2_5");
+            this.maxParticulateMatterPM2_5.Size = (new global::System.Drawing.Size(57, 35));
+            this.maxParticulateMatterPM2_5.TabIndex = (67);
+            this.maxParticulateMatterPM2_5.Text = ("14.3");
+            this.maxParticulateMatterPM2_5.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgParticulateMatterPM2_5
             // 
-            avgParticulateMatterPM2_5.AutoSize = true;
-            avgParticulateMatterPM2_5.BackColor = Color.FromArgb(80, 80, 80);
-            avgParticulateMatterPM2_5.Dock = DockStyle.Fill;
-            avgParticulateMatterPM2_5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgParticulateMatterPM2_5.ForeColor = Color.FromArgb(250, 250, 250);
-            avgParticulateMatterPM2_5.Location = new Point(232, 26);
-            avgParticulateMatterPM2_5.Name = "avgParticulateMatterPM2_5";
-            avgParticulateMatterPM2_5.Size = new Size(33, 26);
-            avgParticulateMatterPM2_5.TabIndex = 68;
-            avgParticulateMatterPM2_5.Text = "14.3";
-            avgParticulateMatterPM2_5.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgParticulateMatterPM2_5.AutoSize = (true);
+            this.avgParticulateMatterPM2_5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgParticulateMatterPM2_5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgParticulateMatterPM2_5.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgParticulateMatterPM2_5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgParticulateMatterPM2_5.Location = (new global::System.Drawing.Point(359, 35));
+            this.avgParticulateMatterPM2_5.Name = ("avgParticulateMatterPM2_5");
+            this.avgParticulateMatterPM2_5.Size = (new global::System.Drawing.Size(55, 35));
+            this.avgParticulateMatterPM2_5.TabIndex = (68);
+            this.avgParticulateMatterPM2_5.Text = ("14.3");
+            this.avgParticulateMatterPM2_5.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentParticulateMatterPM2_5
             // 
-            currentParticulateMatterPM2_5.AutoSize = true;
-            currentParticulateMatterPM2_5.BackColor = Color.FromArgb(80, 80, 80);
-            currentParticulateMatterPM2_5.Dock = DockStyle.Fill;
-            currentParticulateMatterPM2_5.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentParticulateMatterPM2_5.ForeColor = Color.FromArgb(250, 250, 250);
-            currentParticulateMatterPM2_5.Location = new Point(271, 26);
-            currentParticulateMatterPM2_5.Name = "currentParticulateMatterPM2_5";
-            currentParticulateMatterPM2_5.Size = new Size(48, 26);
-            currentParticulateMatterPM2_5.TabIndex = 69;
-            currentParticulateMatterPM2_5.Text = "14.3";
-            currentParticulateMatterPM2_5.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentParticulateMatterPM2_5.AutoSize = (true);
+            this.currentParticulateMatterPM2_5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentParticulateMatterPM2_5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentParticulateMatterPM2_5.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentParticulateMatterPM2_5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentParticulateMatterPM2_5.Location = (new global::System.Drawing.Point(420, 35));
+            this.currentParticulateMatterPM2_5.Name = ("currentParticulateMatterPM2_5");
+            this.currentParticulateMatterPM2_5.Size = (new global::System.Drawing.Size(79, 35));
+            this.currentParticulateMatterPM2_5.TabIndex = (69);
+            this.currentParticulateMatterPM2_5.Text = ("14.3");
+            this.currentParticulateMatterPM2_5.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // porog_1_ParticulateMatterPM1
             // 
-            porog_1_ParticulateMatterPM1.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_ParticulateMatterPM1.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_ParticulateMatterPM1.Dock = DockStyle.Fill;
-            porog_1_ParticulateMatterPM1.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_ParticulateMatterPM1.Location = new Point(325, 3);
-            porog_1_ParticulateMatterPM1.Name = "porog_1_ParticulateMatterPM1";
-            porog_1_ParticulateMatterPM1.Size = new Size(49, 23);
-            porog_1_ParticulateMatterPM1.TabIndex = 84;
-            porog_1_ParticulateMatterPM1.Text = "20";
-            porog_1_ParticulateMatterPM1.TextAlign = HorizontalAlignment.Center;
-            porog_1_ParticulateMatterPM1.KeyDown += porog_1_ParticulateMatterPM1_KeyDown;
+            this.porog_1_ParticulateMatterPM1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_ParticulateMatterPM1.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_ParticulateMatterPM1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_ParticulateMatterPM1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_ParticulateMatterPM1.Location = (new global::System.Drawing.Point(505, 4));
+            this.porog_1_ParticulateMatterPM1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_ParticulateMatterPM1.Name = ("porog_1_ParticulateMatterPM1");
+            this.porog_1_ParticulateMatterPM1.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_ParticulateMatterPM1.TabIndex = (84);
+            this.porog_1_ParticulateMatterPM1.Text = ("20");
+            this.porog_1_ParticulateMatterPM1.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_ParticulateMatterPM1.KeyDown += (this.porog_1_ParticulateMatterPM1_KeyDown);
             // 
             // porog_1_ParticulateMatterPM2_5
             // 
-            porog_1_ParticulateMatterPM2_5.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_ParticulateMatterPM2_5.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_ParticulateMatterPM2_5.Dock = DockStyle.Fill;
-            porog_1_ParticulateMatterPM2_5.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_ParticulateMatterPM2_5.Location = new Point(325, 29);
-            porog_1_ParticulateMatterPM2_5.Name = "porog_1_ParticulateMatterPM2_5";
-            porog_1_ParticulateMatterPM2_5.Size = new Size(49, 23);
-            porog_1_ParticulateMatterPM2_5.TabIndex = 85;
-            porog_1_ParticulateMatterPM2_5.Text = "20";
-            porog_1_ParticulateMatterPM2_5.TextAlign = HorizontalAlignment.Center;
-            porog_1_ParticulateMatterPM2_5.KeyDown += porog_1_ParticulateMatterPM2_5_KeyDown;
+            this.porog_1_ParticulateMatterPM2_5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_ParticulateMatterPM2_5.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_ParticulateMatterPM2_5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_ParticulateMatterPM2_5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_ParticulateMatterPM2_5.Location = (new global::System.Drawing.Point(505, 39));
+            this.porog_1_ParticulateMatterPM2_5.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_ParticulateMatterPM2_5.Name = ("porog_1_ParticulateMatterPM2_5");
+            this.porog_1_ParticulateMatterPM2_5.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_ParticulateMatterPM2_5.TabIndex = (85);
+            this.porog_1_ParticulateMatterPM2_5.Text = ("20");
+            this.porog_1_ParticulateMatterPM2_5.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_ParticulateMatterPM2_5.KeyDown += (this.porog_1_ParticulateMatterPM2_5_KeyDown);
             // 
             // porog_2_ParticulateMatterPM1
             // 
-            porog_2_ParticulateMatterPM1.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_ParticulateMatterPM1.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_ParticulateMatterPM1.Dock = DockStyle.Fill;
-            porog_2_ParticulateMatterPM1.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_ParticulateMatterPM1.Location = new Point(380, 3);
-            porog_2_ParticulateMatterPM1.Name = "porog_2_ParticulateMatterPM1";
-            porog_2_ParticulateMatterPM1.Size = new Size(47, 23);
-            porog_2_ParticulateMatterPM1.TabIndex = 86;
-            porog_2_ParticulateMatterPM1.Text = "20";
-            porog_2_ParticulateMatterPM1.TextAlign = HorizontalAlignment.Center;
-            porog_2_ParticulateMatterPM1.KeyDown += porog_2_ParticulateMatterPM1_KeyDown;
+            this.porog_2_ParticulateMatterPM1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_ParticulateMatterPM1.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_ParticulateMatterPM1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_ParticulateMatterPM1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_ParticulateMatterPM1.Location = (new global::System.Drawing.Point(591, 4));
+            this.porog_2_ParticulateMatterPM1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_ParticulateMatterPM1.Name = ("porog_2_ParticulateMatterPM1");
+            this.porog_2_ParticulateMatterPM1.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_ParticulateMatterPM1.TabIndex = (86);
+            this.porog_2_ParticulateMatterPM1.Text = ("20");
+            this.porog_2_ParticulateMatterPM1.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_ParticulateMatterPM1.KeyDown += (this.porog_2_ParticulateMatterPM1_KeyDown);
             // 
             // porog_2_ParticulateMatterPM2_5
             // 
-            porog_2_ParticulateMatterPM2_5.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_ParticulateMatterPM2_5.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_ParticulateMatterPM2_5.Dock = DockStyle.Fill;
-            porog_2_ParticulateMatterPM2_5.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_ParticulateMatterPM2_5.Location = new Point(380, 29);
-            porog_2_ParticulateMatterPM2_5.Name = "porog_2_ParticulateMatterPM2_5";
-            porog_2_ParticulateMatterPM2_5.Size = new Size(47, 23);
-            porog_2_ParticulateMatterPM2_5.TabIndex = 87;
-            porog_2_ParticulateMatterPM2_5.Text = "20";
-            porog_2_ParticulateMatterPM2_5.TextAlign = HorizontalAlignment.Center;
-            porog_2_ParticulateMatterPM2_5.KeyDown += porog_2_ParticulateMatterPM2_5_KeyDown;
+            this.porog_2_ParticulateMatterPM2_5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_ParticulateMatterPM2_5.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_ParticulateMatterPM2_5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_ParticulateMatterPM2_5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_ParticulateMatterPM2_5.Location = (new global::System.Drawing.Point(591, 39));
+            this.porog_2_ParticulateMatterPM2_5.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_ParticulateMatterPM2_5.Name = ("porog_2_ParticulateMatterPM2_5");
+            this.porog_2_ParticulateMatterPM2_5.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_ParticulateMatterPM2_5.TabIndex = (87);
+            this.porog_2_ParticulateMatterPM2_5.Text = ("20");
+            this.porog_2_ParticulateMatterPM2_5.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_ParticulateMatterPM2_5.KeyDown += (this.porog_2_ParticulateMatterPM2_5_KeyDown);
             // 
             // porog_2_ParticulateMatterPM10
             // 
-            porog_2_ParticulateMatterPM10.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_ParticulateMatterPM10.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_ParticulateMatterPM10.Dock = DockStyle.Fill;
-            porog_2_ParticulateMatterPM10.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_ParticulateMatterPM10.Location = new Point(380, 55);
-            porog_2_ParticulateMatterPM10.Name = "porog_2_ParticulateMatterPM10";
-            porog_2_ParticulateMatterPM10.Size = new Size(47, 23);
-            porog_2_ParticulateMatterPM10.TabIndex = 88;
-            porog_2_ParticulateMatterPM10.Text = "20";
-            porog_2_ParticulateMatterPM10.TextAlign = HorizontalAlignment.Center;
-            porog_2_ParticulateMatterPM10.KeyDown += porog_2_ParticulateMatterPM10_KeyDown;
+            this.porog_2_ParticulateMatterPM10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_ParticulateMatterPM10.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_ParticulateMatterPM10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_ParticulateMatterPM10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_ParticulateMatterPM10.Location = (new global::System.Drawing.Point(591, 74));
+            this.porog_2_ParticulateMatterPM10.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_ParticulateMatterPM10.Name = ("porog_2_ParticulateMatterPM10");
+            this.porog_2_ParticulateMatterPM10.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_ParticulateMatterPM10.TabIndex = (88);
+            this.porog_2_ParticulateMatterPM10.Text = ("20");
+            this.porog_2_ParticulateMatterPM10.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_ParticulateMatterPM10.KeyDown += (this.porog_2_ParticulateMatterPM10_KeyDown);
             // 
             // dx_ParticulateMatterPM1
             // 
-            dx_ParticulateMatterPM1.BackColor = Color.FromArgb(30, 30, 30);
-            dx_ParticulateMatterPM1.BorderStyle = BorderStyle.FixedSingle;
-            dx_ParticulateMatterPM1.Dock = DockStyle.Fill;
-            dx_ParticulateMatterPM1.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_ParticulateMatterPM1.Location = new Point(433, 3);
-            dx_ParticulateMatterPM1.Name = "dx_ParticulateMatterPM1";
-            dx_ParticulateMatterPM1.Size = new Size(75, 23);
-            dx_ParticulateMatterPM1.TabIndex = 89;
-            dx_ParticulateMatterPM1.Text = "20";
-            dx_ParticulateMatterPM1.TextAlign = HorizontalAlignment.Center;
-            dx_ParticulateMatterPM1.KeyDown += dx_ParticulateMatterPM1_KeyDown;
+            this.dx_ParticulateMatterPM1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_ParticulateMatterPM1.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_ParticulateMatterPM1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_ParticulateMatterPM1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_ParticulateMatterPM1.Location = (new global::System.Drawing.Point(673, 4));
+            this.dx_ParticulateMatterPM1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_ParticulateMatterPM1.Name = ("dx_ParticulateMatterPM1");
+            this.dx_ParticulateMatterPM1.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_ParticulateMatterPM1.TabIndex = (89);
+            this.dx_ParticulateMatterPM1.Text = ("20");
+            this.dx_ParticulateMatterPM1.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_ParticulateMatterPM1.KeyDown += (this.dx_ParticulateMatterPM1_KeyDown);
             // 
             // dx_ParticulateMatterPM2_5
             // 
-            dx_ParticulateMatterPM2_5.BackColor = Color.FromArgb(30, 30, 30);
-            dx_ParticulateMatterPM2_5.BorderStyle = BorderStyle.FixedSingle;
-            dx_ParticulateMatterPM2_5.Dock = DockStyle.Fill;
-            dx_ParticulateMatterPM2_5.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_ParticulateMatterPM2_5.Location = new Point(433, 29);
-            dx_ParticulateMatterPM2_5.Name = "dx_ParticulateMatterPM2_5";
-            dx_ParticulateMatterPM2_5.Size = new Size(75, 23);
-            dx_ParticulateMatterPM2_5.TabIndex = 90;
-            dx_ParticulateMatterPM2_5.Text = "20";
-            dx_ParticulateMatterPM2_5.TextAlign = HorizontalAlignment.Center;
-            dx_ParticulateMatterPM2_5.KeyDown += dx_ParticulateMatterPM2_5_KeyDown;
+            this.dx_ParticulateMatterPM2_5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_ParticulateMatterPM2_5.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_ParticulateMatterPM2_5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_ParticulateMatterPM2_5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_ParticulateMatterPM2_5.Location = (new global::System.Drawing.Point(673, 39));
+            this.dx_ParticulateMatterPM2_5.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_ParticulateMatterPM2_5.Name = ("dx_ParticulateMatterPM2_5");
+            this.dx_ParticulateMatterPM2_5.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_ParticulateMatterPM2_5.TabIndex = (90);
+            this.dx_ParticulateMatterPM2_5.Text = ("20");
+            this.dx_ParticulateMatterPM2_5.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_ParticulateMatterPM2_5.KeyDown += (this.dx_ParticulateMatterPM2_5_KeyDown);
             // 
             // dx_ParticulateMatterPM10
             // 
-            dx_ParticulateMatterPM10.BackColor = Color.FromArgb(30, 30, 30);
-            dx_ParticulateMatterPM10.BorderStyle = BorderStyle.FixedSingle;
-            dx_ParticulateMatterPM10.Dock = DockStyle.Fill;
-            dx_ParticulateMatterPM10.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_ParticulateMatterPM10.Location = new Point(433, 55);
-            dx_ParticulateMatterPM10.Name = "dx_ParticulateMatterPM10";
-            dx_ParticulateMatterPM10.Size = new Size(75, 23);
-            dx_ParticulateMatterPM10.TabIndex = 91;
-            dx_ParticulateMatterPM10.Text = "20";
-            dx_ParticulateMatterPM10.TextAlign = HorizontalAlignment.Center;
-            dx_ParticulateMatterPM10.KeyDown += dx_ParticulateMatterPM10_KeyDown;
+            this.dx_ParticulateMatterPM10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_ParticulateMatterPM10.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_ParticulateMatterPM10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_ParticulateMatterPM10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_ParticulateMatterPM10.Location = (new global::System.Drawing.Point(673, 74));
+            this.dx_ParticulateMatterPM10.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_ParticulateMatterPM10.Name = ("dx_ParticulateMatterPM10");
+            this.dx_ParticulateMatterPM10.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_ParticulateMatterPM10.TabIndex = (91);
+            this.dx_ParticulateMatterPM10.Text = ("20");
+            this.dx_ParticulateMatterPM10.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_ParticulateMatterPM10.KeyDown += (this.dx_ParticulateMatterPM10_KeyDown);
             // 
             // dt_ParticulateMatterPM1
             // 
-            dt_ParticulateMatterPM1.BackColor = Color.FromArgb(30, 30, 30);
-            dt_ParticulateMatterPM1.BorderStyle = BorderStyle.FixedSingle;
-            dt_ParticulateMatterPM1.Dock = DockStyle.Fill;
-            dt_ParticulateMatterPM1.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_ParticulateMatterPM1.Location = new Point(514, 3);
-            dt_ParticulateMatterPM1.Name = "dt_ParticulateMatterPM1";
-            dt_ParticulateMatterPM1.Size = new Size(90, 23);
-            dt_ParticulateMatterPM1.TabIndex = 92;
-            dt_ParticulateMatterPM1.Text = "20";
-            dt_ParticulateMatterPM1.TextAlign = HorizontalAlignment.Center;
-            dt_ParticulateMatterPM1.KeyDown += dt_ParticulateMatterPM1_KeyDown;
+            this.dt_ParticulateMatterPM1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_ParticulateMatterPM1.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_ParticulateMatterPM1.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_ParticulateMatterPM1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_ParticulateMatterPM1.Location = (new global::System.Drawing.Point(798, 4));
+            this.dt_ParticulateMatterPM1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_ParticulateMatterPM1.Name = ("dt_ParticulateMatterPM1");
+            this.dt_ParticulateMatterPM1.Size = (new global::System.Drawing.Size(141, 27));
+            this.dt_ParticulateMatterPM1.TabIndex = (92);
+            this.dt_ParticulateMatterPM1.Text = ("20");
+            this.dt_ParticulateMatterPM1.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_ParticulateMatterPM1.KeyDown += (this.dt_ParticulateMatterPM1_KeyDown);
             // 
             // dt_ParticulateMatterPM2_5
             // 
-            dt_ParticulateMatterPM2_5.BackColor = Color.FromArgb(30, 30, 30);
-            dt_ParticulateMatterPM2_5.BorderStyle = BorderStyle.FixedSingle;
-            dt_ParticulateMatterPM2_5.Dock = DockStyle.Fill;
-            dt_ParticulateMatterPM2_5.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_ParticulateMatterPM2_5.Location = new Point(514, 29);
-            dt_ParticulateMatterPM2_5.Name = "dt_ParticulateMatterPM2_5";
-            dt_ParticulateMatterPM2_5.Size = new Size(90, 23);
-            dt_ParticulateMatterPM2_5.TabIndex = 93;
-            dt_ParticulateMatterPM2_5.Text = "20";
-            dt_ParticulateMatterPM2_5.TextAlign = HorizontalAlignment.Center;
-            dt_ParticulateMatterPM2_5.KeyDown += dt_ParticulateMatterPM2_5_KeyDown;
+            this.dt_ParticulateMatterPM2_5.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_ParticulateMatterPM2_5.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_ParticulateMatterPM2_5.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_ParticulateMatterPM2_5.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_ParticulateMatterPM2_5.Location = (new global::System.Drawing.Point(798, 39));
+            this.dt_ParticulateMatterPM2_5.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_ParticulateMatterPM2_5.Name = ("dt_ParticulateMatterPM2_5");
+            this.dt_ParticulateMatterPM2_5.Size = (new global::System.Drawing.Size(141, 27));
+            this.dt_ParticulateMatterPM2_5.TabIndex = (93);
+            this.dt_ParticulateMatterPM2_5.Text = ("20");
+            this.dt_ParticulateMatterPM2_5.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_ParticulateMatterPM2_5.KeyDown += (this.dt_ParticulateMatterPM2_5_KeyDown);
             // 
             // dt_ParticulateMatterPM10
             // 
-            dt_ParticulateMatterPM10.BackColor = Color.FromArgb(30, 30, 30);
-            dt_ParticulateMatterPM10.BorderStyle = BorderStyle.FixedSingle;
-            dt_ParticulateMatterPM10.Dock = DockStyle.Fill;
-            dt_ParticulateMatterPM10.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_ParticulateMatterPM10.Location = new Point(514, 55);
-            dt_ParticulateMatterPM10.Name = "dt_ParticulateMatterPM10";
-            dt_ParticulateMatterPM10.Size = new Size(90, 23);
-            dt_ParticulateMatterPM10.TabIndex = 94;
-            dt_ParticulateMatterPM10.Text = "20";
-            dt_ParticulateMatterPM10.TextAlign = HorizontalAlignment.Center;
-            dt_ParticulateMatterPM10.KeyDown += dt_ParticulateMatterPM10_KeyDown;
+            this.dt_ParticulateMatterPM10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_ParticulateMatterPM10.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_ParticulateMatterPM10.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_ParticulateMatterPM10.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_ParticulateMatterPM10.Location = (new global::System.Drawing.Point(798, 74));
+            this.dt_ParticulateMatterPM10.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_ParticulateMatterPM10.Name = ("dt_ParticulateMatterPM10");
+            this.dt_ParticulateMatterPM10.Size = (new global::System.Drawing.Size(141, 27));
+            this.dt_ParticulateMatterPM10.TabIndex = (94);
+            this.dt_ParticulateMatterPM10.Text = ("20");
+            this.dt_ParticulateMatterPM10.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_ParticulateMatterPM10.KeyDown += (this.dt_ParticulateMatterPM10_KeyDown);
             // 
             // tableLayoutPanel8
             // 
-            tableLayoutPanel8.BackColor = Color.FromArgb(30, 30, 30);
-            tableLayoutPanel8.ColumnCount = 9;
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.07F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.13F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.69F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6.55F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.05F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.19F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.77F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.37F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.18F));
-            tableLayoutPanel8.Controls.Add(dt_TamperSensor, 8, 2);
-            tableLayoutPanel8.Controls.Add(dx_TamperSensor, 7, 2);
-            tableLayoutPanel8.Controls.Add(porog_2_TamperSensor, 6, 2);
-            tableLayoutPanel8.Controls.Add(porog_1_TamperSensor, 5, 2);
-            tableLayoutPanel8.Controls.Add(dt_TiltLevel, 8, 1);
-            tableLayoutPanel8.Controls.Add(dx_TiltLevel, 7, 1);
-            tableLayoutPanel8.Controls.Add(porog_2_TiltLevel, 6, 1);
-            tableLayoutPanel8.Controls.Add(porog_1_TiltLevel, 5, 1);
-            tableLayoutPanel8.Controls.Add(dt_VibrationLevel, 8, 0);
-            tableLayoutPanel8.Controls.Add(dx_VibrationLevel, 7, 0);
-            tableLayoutPanel8.Controls.Add(porog_2_VibrationLevel, 6, 0);
-            tableLayoutPanel8.Controls.Add(porog_1_VibrationLevel, 5, 0);
-            tableLayoutPanel8.Controls.Add(currentTamperSensor, 4, 2);
-            tableLayoutPanel8.Controls.Add(tamperSensor, 0, 2);
-            tableLayoutPanel8.Controls.Add(vibrationLevel, 0, 0);
-            tableLayoutPanel8.Controls.Add(tiltLevel, 0, 1);
-            tableLayoutPanel8.Controls.Add(minVibrationLevel, 1, 0);
-            tableLayoutPanel8.Controls.Add(maxTamperSensor, 2, 2);
-            tableLayoutPanel8.Controls.Add(maxVibrationLevel, 2, 0);
-            tableLayoutPanel8.Controls.Add(avgVibrationLevel, 3, 0);
-            tableLayoutPanel8.Controls.Add(currentVibrationLevel, 4, 0);
-            tableLayoutPanel8.Controls.Add(avgTamperSensor, 3, 2);
-            tableLayoutPanel8.Controls.Add(minTiltLevel, 1, 1);
-            tableLayoutPanel8.Controls.Add(maxTiltLevel, 2, 1);
-            tableLayoutPanel8.Controls.Add(avgTiltLevel, 3, 1);
-            tableLayoutPanel8.Controls.Add(currentTiltLevel, 4, 1);
-            tableLayoutPanel8.Controls.Add(minTamperSensor, 1, 2);
-            tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(3, 408);
-            tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 3;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel8.Size = new Size(607, 76);
-            tableLayoutPanel8.TabIndex = 3;
+            this.tableLayoutPanel8.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.tableLayoutPanel8.ColumnCount = (9);
+            this.tableLayoutPanel8.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 25.07F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.13F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.69F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 6.55F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.05F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 9.19F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 8.77F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 13.37F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 15.18F));
+            this.tableLayoutPanel8.Controls.Add(this.dt_TamperSensor, 8, 2);
+            this.tableLayoutPanel8.Controls.Add(this.dx_TamperSensor, 7, 2);
+            this.tableLayoutPanel8.Controls.Add(this.porog_2_TamperSensor, 6, 2);
+            this.tableLayoutPanel8.Controls.Add(this.porog_1_TamperSensor, 5, 2);
+            this.tableLayoutPanel8.Controls.Add(this.dt_TiltLevel, 8, 1);
+            this.tableLayoutPanel8.Controls.Add(this.dx_TiltLevel, 7, 1);
+            this.tableLayoutPanel8.Controls.Add(this.porog_2_TiltLevel, 6, 1);
+            this.tableLayoutPanel8.Controls.Add(this.porog_1_TiltLevel, 5, 1);
+            this.tableLayoutPanel8.Controls.Add(this.dt_VibrationLevel, 8, 0);
+            this.tableLayoutPanel8.Controls.Add(this.dx_VibrationLevel, 7, 0);
+            this.tableLayoutPanel8.Controls.Add(this.porog_2_VibrationLevel, 6, 0);
+            this.tableLayoutPanel8.Controls.Add(this.porog_1_VibrationLevel, 5, 0);
+            this.tableLayoutPanel8.Controls.Add(this.currentTamperSensor, 4, 2);
+            this.tableLayoutPanel8.Controls.Add(this.tamperSensor, 0, 2);
+            this.tableLayoutPanel8.Controls.Add(this.vibrationLevel, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.tiltLevel, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.minVibrationLevel, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.maxTamperSensor, 2, 2);
+            this.tableLayoutPanel8.Controls.Add(this.maxVibrationLevel, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.avgVibrationLevel, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.currentVibrationLevel, 4, 0);
+            this.tableLayoutPanel8.Controls.Add(this.avgTamperSensor, 3, 2);
+            this.tableLayoutPanel8.Controls.Add(this.minTiltLevel, 1, 1);
+            this.tableLayoutPanel8.Controls.Add(this.maxTiltLevel, 2, 1);
+            this.tableLayoutPanel8.Controls.Add(this.avgTiltLevel, 3, 1);
+            this.tableLayoutPanel8.Controls.Add(this.currentTiltLevel, 4, 1);
+            this.tableLayoutPanel8.Controls.Add(this.minTamperSensor, 1, 2);
+            this.tableLayoutPanel8.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tableLayoutPanel8.Location = (new global::System.Drawing.Point(3, 545));
+            this.tableLayoutPanel8.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.tableLayoutPanel8.Name = ("tableLayoutPanel8");
+            this.tableLayoutPanel8.RowCount = (3);
+            this.tableLayoutPanel8.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            this.tableLayoutPanel8.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            this.tableLayoutPanel8.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 33.3333321F));
+            this.tableLayoutPanel8.Size = (new global::System.Drawing.Size(942, 102));
+            this.tableLayoutPanel8.TabIndex = (3);
             // 
             // dt_TamperSensor
             // 
-            dt_TamperSensor.BackColor = Color.FromArgb(30, 30, 30);
-            dt_TamperSensor.BorderStyle = BorderStyle.FixedSingle;
-            dt_TamperSensor.Dock = DockStyle.Fill;
-            dt_TamperSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_TamperSensor.Location = new Point(514, 53);
-            dt_TamperSensor.Name = "dt_TamperSensor";
-            dt_TamperSensor.Size = new Size(90, 23);
-            dt_TamperSensor.TabIndex = 96;
-            dt_TamperSensor.Text = "20";
-            dt_TamperSensor.TextAlign = HorizontalAlignment.Center;
-            dt_TamperSensor.KeyDown += dt_TamperSensor_KeyDown;
+            this.dt_TamperSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_TamperSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_TamperSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_TamperSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_TamperSensor.Location = (new global::System.Drawing.Point(798, 70));
+            this.dt_TamperSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_TamperSensor.Name = ("dt_TamperSensor");
+            this.dt_TamperSensor.Size = (new global::System.Drawing.Size(141, 27));
+            this.dt_TamperSensor.TabIndex = (96);
+            this.dt_TamperSensor.Text = ("20");
+            this.dt_TamperSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_TamperSensor.KeyDown += (this.dt_TamperSensor_KeyDown);
             // 
             // dx_TamperSensor
             // 
-            dx_TamperSensor.BackColor = Color.FromArgb(30, 30, 30);
-            dx_TamperSensor.BorderStyle = BorderStyle.FixedSingle;
-            dx_TamperSensor.Dock = DockStyle.Fill;
-            dx_TamperSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_TamperSensor.Location = new Point(433, 53);
-            dx_TamperSensor.Name = "dx_TamperSensor";
-            dx_TamperSensor.Size = new Size(75, 23);
-            dx_TamperSensor.TabIndex = 95;
-            dx_TamperSensor.Text = "20";
-            dx_TamperSensor.TextAlign = HorizontalAlignment.Center;
-            dx_TamperSensor.KeyDown += dx_TamperSensor_KeyDown;
+            this.dx_TamperSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_TamperSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_TamperSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_TamperSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_TamperSensor.Location = (new global::System.Drawing.Point(673, 70));
+            this.dx_TamperSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_TamperSensor.Name = ("dx_TamperSensor");
+            this.dx_TamperSensor.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_TamperSensor.TabIndex = (95);
+            this.dx_TamperSensor.Text = ("20");
+            this.dx_TamperSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_TamperSensor.KeyDown += (this.dx_TamperSensor_KeyDown);
             // 
             // porog_2_TamperSensor
             // 
-            porog_2_TamperSensor.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_TamperSensor.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_TamperSensor.Dock = DockStyle.Fill;
-            porog_2_TamperSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_TamperSensor.Location = new Point(380, 53);
-            porog_2_TamperSensor.Name = "porog_2_TamperSensor";
-            porog_2_TamperSensor.Size = new Size(47, 23);
-            porog_2_TamperSensor.TabIndex = 94;
-            porog_2_TamperSensor.Text = "20";
-            porog_2_TamperSensor.TextAlign = HorizontalAlignment.Center;
-            porog_2_TamperSensor.KeyDown += porog_2_TamperSensor_KeyDown;
+            this.porog_2_TamperSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_TamperSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_TamperSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_TamperSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_TamperSensor.Location = (new global::System.Drawing.Point(591, 70));
+            this.porog_2_TamperSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_TamperSensor.Name = ("porog_2_TamperSensor");
+            this.porog_2_TamperSensor.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_TamperSensor.TabIndex = (94);
+            this.porog_2_TamperSensor.Text = ("20");
+            this.porog_2_TamperSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_TamperSensor.KeyDown += (this.porog_2_TamperSensor_KeyDown);
             // 
             // porog_1_TamperSensor
             // 
-            porog_1_TamperSensor.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_TamperSensor.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_TamperSensor.Dock = DockStyle.Fill;
-            porog_1_TamperSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_TamperSensor.Location = new Point(325, 53);
-            porog_1_TamperSensor.Name = "porog_1_TamperSensor";
-            porog_1_TamperSensor.Size = new Size(49, 23);
-            porog_1_TamperSensor.TabIndex = 93;
-            porog_1_TamperSensor.Text = "20";
-            porog_1_TamperSensor.TextAlign = HorizontalAlignment.Center;
-            porog_1_TamperSensor.KeyDown += porog_1_TamperSensor_KeyDown;
+            this.porog_1_TamperSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_TamperSensor.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_TamperSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_TamperSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_TamperSensor.Location = (new global::System.Drawing.Point(505, 70));
+            this.porog_1_TamperSensor.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_TamperSensor.Name = ("porog_1_TamperSensor");
+            this.porog_1_TamperSensor.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_TamperSensor.TabIndex = (93);
+            this.porog_1_TamperSensor.Text = ("20");
+            this.porog_1_TamperSensor.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_TamperSensor.KeyDown += (this.porog_1_TamperSensor_KeyDown);
             // 
             // dt_TiltLevel
             // 
-            dt_TiltLevel.BackColor = Color.FromArgb(30, 30, 30);
-            dt_TiltLevel.BorderStyle = BorderStyle.FixedSingle;
-            dt_TiltLevel.Dock = DockStyle.Fill;
-            dt_TiltLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_TiltLevel.Location = new Point(514, 28);
-            dt_TiltLevel.Name = "dt_TiltLevel";
-            dt_TiltLevel.Size = new Size(90, 23);
-            dt_TiltLevel.TabIndex = 92;
-            dt_TiltLevel.Text = "20";
-            dt_TiltLevel.TextAlign = HorizontalAlignment.Center;
-            dt_TiltLevel.KeyDown += dt_TiltLevel_KeyDown;
+            this.dt_TiltLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_TiltLevel.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_TiltLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_TiltLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_TiltLevel.Location = (new global::System.Drawing.Point(798, 37));
+            this.dt_TiltLevel.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_TiltLevel.Name = ("dt_TiltLevel");
+            this.dt_TiltLevel.Size = (new global::System.Drawing.Size(141, 27));
+            this.dt_TiltLevel.TabIndex = (92);
+            this.dt_TiltLevel.Text = ("20");
+            this.dt_TiltLevel.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_TiltLevel.KeyDown += (this.dt_TiltLevel_KeyDown);
             // 
             // dx_TiltLevel
             // 
-            dx_TiltLevel.BackColor = Color.FromArgb(30, 30, 30);
-            dx_TiltLevel.BorderStyle = BorderStyle.FixedSingle;
-            dx_TiltLevel.Dock = DockStyle.Fill;
-            dx_TiltLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_TiltLevel.Location = new Point(433, 28);
-            dx_TiltLevel.Name = "dx_TiltLevel";
-            dx_TiltLevel.Size = new Size(75, 23);
-            dx_TiltLevel.TabIndex = 91;
-            dx_TiltLevel.Text = "20";
-            dx_TiltLevel.TextAlign = HorizontalAlignment.Center;
-            dx_TiltLevel.KeyDown += dx_TiltLevel_KeyDown;
+            this.dx_TiltLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_TiltLevel.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_TiltLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_TiltLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_TiltLevel.Location = (new global::System.Drawing.Point(673, 37));
+            this.dx_TiltLevel.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_TiltLevel.Name = ("dx_TiltLevel");
+            this.dx_TiltLevel.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_TiltLevel.TabIndex = (91);
+            this.dx_TiltLevel.Text = ("20");
+            this.dx_TiltLevel.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_TiltLevel.KeyDown += (this.dx_TiltLevel_KeyDown);
             // 
             // porog_2_TiltLevel
             // 
-            porog_2_TiltLevel.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_TiltLevel.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_TiltLevel.Dock = DockStyle.Fill;
-            porog_2_TiltLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_TiltLevel.Location = new Point(380, 28);
-            porog_2_TiltLevel.Name = "porog_2_TiltLevel";
-            porog_2_TiltLevel.Size = new Size(47, 23);
-            porog_2_TiltLevel.TabIndex = 90;
-            porog_2_TiltLevel.Text = "20";
-            porog_2_TiltLevel.TextAlign = HorizontalAlignment.Center;
-            porog_2_TiltLevel.KeyDown += porog_2_TiltLevel_KeyDown;
+            this.porog_2_TiltLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_TiltLevel.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_TiltLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_TiltLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_TiltLevel.Location = (new global::System.Drawing.Point(591, 37));
+            this.porog_2_TiltLevel.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_TiltLevel.Name = ("porog_2_TiltLevel");
+            this.porog_2_TiltLevel.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_TiltLevel.TabIndex = (90);
+            this.porog_2_TiltLevel.Text = ("20");
+            this.porog_2_TiltLevel.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_TiltLevel.KeyDown += (this.porog_2_TiltLevel_KeyDown);
             // 
             // porog_1_TiltLevel
             // 
-            porog_1_TiltLevel.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_TiltLevel.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_TiltLevel.Dock = DockStyle.Fill;
-            porog_1_TiltLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_TiltLevel.Location = new Point(325, 28);
-            porog_1_TiltLevel.Name = "porog_1_TiltLevel";
-            porog_1_TiltLevel.Size = new Size(49, 23);
-            porog_1_TiltLevel.TabIndex = 89;
-            porog_1_TiltLevel.Text = "20";
-            porog_1_TiltLevel.TextAlign = HorizontalAlignment.Center;
-            porog_1_TiltLevel.KeyDown += porog_1_TiltLevel_KeyDown;
+            this.porog_1_TiltLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_TiltLevel.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_TiltLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_TiltLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_TiltLevel.Location = (new global::System.Drawing.Point(505, 37));
+            this.porog_1_TiltLevel.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_TiltLevel.Name = ("porog_1_TiltLevel");
+            this.porog_1_TiltLevel.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_TiltLevel.TabIndex = (89);
+            this.porog_1_TiltLevel.Text = ("20");
+            this.porog_1_TiltLevel.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_TiltLevel.KeyDown += (this.porog_1_TiltLevel_KeyDown);
             // 
             // dt_VibrationLevel
             // 
-            dt_VibrationLevel.BackColor = Color.FromArgb(30, 30, 30);
-            dt_VibrationLevel.BorderStyle = BorderStyle.FixedSingle;
-            dt_VibrationLevel.Dock = DockStyle.Fill;
-            dt_VibrationLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            dt_VibrationLevel.Location = new Point(514, 3);
-            dt_VibrationLevel.Name = "dt_VibrationLevel";
-            dt_VibrationLevel.Size = new Size(90, 23);
-            dt_VibrationLevel.TabIndex = 88;
-            dt_VibrationLevel.Text = "20";
-            dt_VibrationLevel.TextAlign = HorizontalAlignment.Center;
-            dt_VibrationLevel.KeyDown += dt_VibrationLevel_KeyDown;
+            this.dt_VibrationLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dt_VibrationLevel.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dt_VibrationLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dt_VibrationLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dt_VibrationLevel.Location = (new global::System.Drawing.Point(798, 4));
+            this.dt_VibrationLevel.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dt_VibrationLevel.Name = ("dt_VibrationLevel");
+            this.dt_VibrationLevel.Size = (new global::System.Drawing.Size(141, 27));
+            this.dt_VibrationLevel.TabIndex = (88);
+            this.dt_VibrationLevel.Text = ("20");
+            this.dt_VibrationLevel.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_VibrationLevel.KeyDown += (this.dt_VibrationLevel_KeyDown);
             // 
             // dx_VibrationLevel
             // 
-            dx_VibrationLevel.BackColor = Color.FromArgb(30, 30, 30);
-            dx_VibrationLevel.BorderStyle = BorderStyle.FixedSingle;
-            dx_VibrationLevel.Dock = DockStyle.Fill;
-            dx_VibrationLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            dx_VibrationLevel.Location = new Point(433, 3);
-            dx_VibrationLevel.Name = "dx_VibrationLevel";
-            dx_VibrationLevel.Size = new Size(75, 23);
-            dx_VibrationLevel.TabIndex = 87;
-            dx_VibrationLevel.Text = "20";
-            dx_VibrationLevel.TextAlign = HorizontalAlignment.Center;
-            dx_VibrationLevel.KeyDown += dx_VibrationLevel_KeyDown;
+            this.dx_VibrationLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.dx_VibrationLevel.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.dx_VibrationLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.dx_VibrationLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.dx_VibrationLevel.Location = (new global::System.Drawing.Point(673, 4));
+            this.dx_VibrationLevel.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.dx_VibrationLevel.Name = ("dx_VibrationLevel");
+            this.dx_VibrationLevel.Size = (new global::System.Drawing.Size(119, 27));
+            this.dx_VibrationLevel.TabIndex = (87);
+            this.dx_VibrationLevel.Text = ("20");
+            this.dx_VibrationLevel.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_VibrationLevel.KeyDown += (this.dx_VibrationLevel_KeyDown);
             // 
             // porog_2_VibrationLevel
             // 
-            porog_2_VibrationLevel.BackColor = Color.FromArgb(30, 30, 30);
-            porog_2_VibrationLevel.BorderStyle = BorderStyle.FixedSingle;
-            porog_2_VibrationLevel.Dock = DockStyle.Fill;
-            porog_2_VibrationLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_2_VibrationLevel.Location = new Point(380, 3);
-            porog_2_VibrationLevel.Name = "porog_2_VibrationLevel";
-            porog_2_VibrationLevel.Size = new Size(47, 23);
-            porog_2_VibrationLevel.TabIndex = 86;
-            porog_2_VibrationLevel.Text = "20";
-            porog_2_VibrationLevel.TextAlign = HorizontalAlignment.Center;
-            porog_2_VibrationLevel.KeyDown += porog_2_VibrationLevel_KeyDown;
+            this.porog_2_VibrationLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_2_VibrationLevel.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_2_VibrationLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_2_VibrationLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_2_VibrationLevel.Location = (new global::System.Drawing.Point(591, 4));
+            this.porog_2_VibrationLevel.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_2_VibrationLevel.Name = ("porog_2_VibrationLevel");
+            this.porog_2_VibrationLevel.Size = (new global::System.Drawing.Size(76, 27));
+            this.porog_2_VibrationLevel.TabIndex = (86);
+            this.porog_2_VibrationLevel.Text = ("20");
+            this.porog_2_VibrationLevel.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_VibrationLevel.KeyDown += (this.porog_2_VibrationLevel_KeyDown);
             // 
             // porog_1_VibrationLevel
             // 
-            porog_1_VibrationLevel.BackColor = Color.FromArgb(30, 30, 30);
-            porog_1_VibrationLevel.BorderStyle = BorderStyle.FixedSingle;
-            porog_1_VibrationLevel.Dock = DockStyle.Fill;
-            porog_1_VibrationLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            porog_1_VibrationLevel.Location = new Point(325, 3);
-            porog_1_VibrationLevel.Name = "porog_1_VibrationLevel";
-            porog_1_VibrationLevel.Size = new Size(49, 23);
-            porog_1_VibrationLevel.TabIndex = 85;
-            porog_1_VibrationLevel.Text = "20";
-            porog_1_VibrationLevel.TextAlign = HorizontalAlignment.Center;
-            porog_1_VibrationLevel.KeyDown += porog_1_VibrationLevel_KeyDown;
+            this.porog_1_VibrationLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.porog_1_VibrationLevel.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.porog_1_VibrationLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.porog_1_VibrationLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.porog_1_VibrationLevel.Location = (new global::System.Drawing.Point(505, 4));
+            this.porog_1_VibrationLevel.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.porog_1_VibrationLevel.Name = ("porog_1_VibrationLevel");
+            this.porog_1_VibrationLevel.Size = (new global::System.Drawing.Size(80, 27));
+            this.porog_1_VibrationLevel.TabIndex = (85);
+            this.porog_1_VibrationLevel.Text = ("20");
+            this.porog_1_VibrationLevel.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_VibrationLevel.KeyDown += (this.porog_1_VibrationLevel_KeyDown);
             // 
             // currentTamperSensor
             // 
-            currentTamperSensor.AutoSize = true;
-            currentTamperSensor.BackColor = Color.FromArgb(80, 80, 80);
-            currentTamperSensor.Dock = DockStyle.Fill;
-            currentTamperSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentTamperSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            currentTamperSensor.Location = new Point(271, 50);
-            currentTamperSensor.Name = "currentTamperSensor";
-            currentTamperSensor.Size = new Size(48, 26);
-            currentTamperSensor.TabIndex = 70;
-            currentTamperSensor.Text = "14.3";
-            currentTamperSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentTamperSensor.AutoSize = (true);
+            this.currentTamperSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentTamperSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentTamperSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentTamperSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentTamperSensor.Location = (new global::System.Drawing.Point(420, 66));
+            this.currentTamperSensor.Name = ("currentTamperSensor");
+            this.currentTamperSensor.Size = (new global::System.Drawing.Size(79, 36));
+            this.currentTamperSensor.TabIndex = (70);
+            this.currentTamperSensor.Text = ("14.3");
+            this.currentTamperSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // tamperSensor
             // 
-            tamperSensor.AutoSize = true;
-            tamperSensor.BackColor = Color.FromArgb(80, 80, 80);
-            tamperSensor.Dock = DockStyle.Fill;
-            tamperSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            tamperSensor.ForeColor = Color.FromArgb(190, 190, 190);
-            tamperSensor.Location = new Point(3, 50);
-            tamperSensor.Name = "tamperSensor";
-            tamperSensor.Size = new Size(146, 26);
-            tamperSensor.TabIndex = 19;
-            tamperSensor.Text = "Взлом (0 - 100 %)";
-            tamperSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.tamperSensor.AutoSize = (true);
+            this.tamperSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.tamperSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tamperSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.tamperSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.tamperSensor.Location = (new global::System.Drawing.Point(3, 66));
+            this.tamperSensor.Name = ("tamperSensor");
+            this.tamperSensor.Size = (new global::System.Drawing.Size(230, 36));
+            this.tamperSensor.TabIndex = (19);
+            this.tamperSensor.Text = ("Взлом (0 - 100 %)");
+            this.tamperSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // vibrationLevel
             // 
-            vibrationLevel.AutoSize = true;
-            vibrationLevel.BackColor = Color.FromArgb(80, 80, 80);
-            vibrationLevel.Dock = DockStyle.Fill;
-            vibrationLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            vibrationLevel.ForeColor = Color.FromArgb(190, 190, 190);
-            vibrationLevel.Location = new Point(3, 0);
-            vibrationLevel.Name = "vibrationLevel";
-            vibrationLevel.Size = new Size(146, 25);
-            vibrationLevel.TabIndex = 17;
-            vibrationLevel.Text = "Микроускорения (0 - 10 м /с)";
-            vibrationLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.vibrationLevel.AutoSize = (true);
+            this.vibrationLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.vibrationLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.vibrationLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.vibrationLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.vibrationLevel.Location = (new global::System.Drawing.Point(3, 0));
+            this.vibrationLevel.Name = ("vibrationLevel");
+            this.vibrationLevel.Size = (new global::System.Drawing.Size(230, 33));
+            this.vibrationLevel.TabIndex = (17);
+            this.vibrationLevel.Text = ("Микроускорения (0 - 10 м /с)");
+            this.vibrationLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // tiltLevel
             // 
-            tiltLevel.AutoSize = true;
-            tiltLevel.BackColor = Color.FromArgb(50, 50, 50);
-            tiltLevel.Dock = DockStyle.Fill;
-            tiltLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            tiltLevel.ForeColor = Color.FromArgb(190, 190, 190);
-            tiltLevel.Location = new Point(3, 25);
-            tiltLevel.Name = "tiltLevel";
-            tiltLevel.Size = new Size(146, 25);
-            tiltLevel.TabIndex = 18;
-            tiltLevel.Text = "Наклон (0 - 45°)";
-            tiltLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.tiltLevel.AutoSize = (true);
+            this.tiltLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.tiltLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tiltLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.tiltLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.tiltLevel.Location = (new global::System.Drawing.Point(3, 33));
+            this.tiltLevel.Name = ("tiltLevel");
+            this.tiltLevel.Size = (new global::System.Drawing.Size(230, 33));
+            this.tiltLevel.TabIndex = (18);
+            this.tiltLevel.Text = ("Наклон (0 - 45°)");
+            this.tiltLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minVibrationLevel
             // 
-            minVibrationLevel.AutoSize = true;
-            minVibrationLevel.BackColor = Color.FromArgb(80, 80, 80);
-            minVibrationLevel.Dock = DockStyle.Fill;
-            minVibrationLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minVibrationLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            minVibrationLevel.Location = new Point(155, 0);
-            minVibrationLevel.Name = "minVibrationLevel";
-            minVibrationLevel.Size = new Size(31, 25);
-            minVibrationLevel.TabIndex = 71;
-            minVibrationLevel.Text = "14.3";
-            minVibrationLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.minVibrationLevel.AutoSize = (true);
+            this.minVibrationLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minVibrationLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minVibrationLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minVibrationLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minVibrationLevel.Location = (new global::System.Drawing.Point(239, 0));
+            this.minVibrationLevel.Name = ("minVibrationLevel");
+            this.minVibrationLevel.Size = (new global::System.Drawing.Size(51, 33));
+            this.minVibrationLevel.TabIndex = (71);
+            this.minVibrationLevel.Text = ("14.3");
+            this.minVibrationLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxTamperSensor
             // 
-            maxTamperSensor.AutoSize = true;
-            maxTamperSensor.BackColor = Color.FromArgb(80, 80, 80);
-            maxTamperSensor.Dock = DockStyle.Fill;
-            maxTamperSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxTamperSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            maxTamperSensor.Location = new Point(192, 50);
-            maxTamperSensor.Name = "maxTamperSensor";
-            maxTamperSensor.Size = new Size(34, 26);
-            maxTamperSensor.TabIndex = 72;
-            maxTamperSensor.Text = "14.3";
-            maxTamperSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxTamperSensor.AutoSize = (true);
+            this.maxTamperSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxTamperSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxTamperSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxTamperSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxTamperSensor.Location = (new global::System.Drawing.Point(296, 66));
+            this.maxTamperSensor.Name = ("maxTamperSensor");
+            this.maxTamperSensor.Size = (new global::System.Drawing.Size(57, 36));
+            this.maxTamperSensor.TabIndex = (72);
+            this.maxTamperSensor.Text = ("14.3");
+            this.maxTamperSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxVibrationLevel
             // 
-            maxVibrationLevel.AutoSize = true;
-            maxVibrationLevel.BackColor = Color.FromArgb(80, 80, 80);
-            maxVibrationLevel.Dock = DockStyle.Fill;
-            maxVibrationLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxVibrationLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            maxVibrationLevel.Location = new Point(192, 0);
-            maxVibrationLevel.Name = "maxVibrationLevel";
-            maxVibrationLevel.Size = new Size(34, 25);
-            maxVibrationLevel.TabIndex = 73;
-            maxVibrationLevel.Text = "14.3";
-            maxVibrationLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxVibrationLevel.AutoSize = (true);
+            this.maxVibrationLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.maxVibrationLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxVibrationLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxVibrationLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxVibrationLevel.Location = (new global::System.Drawing.Point(296, 0));
+            this.maxVibrationLevel.Name = ("maxVibrationLevel");
+            this.maxVibrationLevel.Size = (new global::System.Drawing.Size(57, 33));
+            this.maxVibrationLevel.TabIndex = (73);
+            this.maxVibrationLevel.Text = ("14.3");
+            this.maxVibrationLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgVibrationLevel
             // 
-            avgVibrationLevel.AutoSize = true;
-            avgVibrationLevel.BackColor = Color.FromArgb(80, 80, 80);
-            avgVibrationLevel.Dock = DockStyle.Fill;
-            avgVibrationLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgVibrationLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            avgVibrationLevel.Location = new Point(232, 0);
-            avgVibrationLevel.Name = "avgVibrationLevel";
-            avgVibrationLevel.Size = new Size(33, 25);
-            avgVibrationLevel.TabIndex = 74;
-            avgVibrationLevel.Text = "14.3";
-            avgVibrationLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgVibrationLevel.AutoSize = (true);
+            this.avgVibrationLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgVibrationLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgVibrationLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgVibrationLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgVibrationLevel.Location = (new global::System.Drawing.Point(359, 0));
+            this.avgVibrationLevel.Name = ("avgVibrationLevel");
+            this.avgVibrationLevel.Size = (new global::System.Drawing.Size(55, 33));
+            this.avgVibrationLevel.TabIndex = (74);
+            this.avgVibrationLevel.Text = ("14.3");
+            this.avgVibrationLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentVibrationLevel
             // 
-            currentVibrationLevel.AutoSize = true;
-            currentVibrationLevel.BackColor = Color.FromArgb(80, 80, 80);
-            currentVibrationLevel.Dock = DockStyle.Fill;
-            currentVibrationLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentVibrationLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            currentVibrationLevel.Location = new Point(271, 0);
-            currentVibrationLevel.Name = "currentVibrationLevel";
-            currentVibrationLevel.Size = new Size(48, 25);
-            currentVibrationLevel.TabIndex = 75;
-            currentVibrationLevel.Text = "14.3";
-            currentVibrationLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentVibrationLevel.AutoSize = (true);
+            this.currentVibrationLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentVibrationLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentVibrationLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentVibrationLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentVibrationLevel.Location = (new global::System.Drawing.Point(420, 0));
+            this.currentVibrationLevel.Name = ("currentVibrationLevel");
+            this.currentVibrationLevel.Size = (new global::System.Drawing.Size(79, 33));
+            this.currentVibrationLevel.TabIndex = (75);
+            this.currentVibrationLevel.Text = ("14.3");
+            this.currentVibrationLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgTamperSensor
             // 
-            avgTamperSensor.AutoSize = true;
-            avgTamperSensor.BackColor = Color.FromArgb(80, 80, 80);
-            avgTamperSensor.Dock = DockStyle.Fill;
-            avgTamperSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgTamperSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            avgTamperSensor.Location = new Point(232, 50);
-            avgTamperSensor.Name = "avgTamperSensor";
-            avgTamperSensor.Size = new Size(33, 26);
-            avgTamperSensor.TabIndex = 76;
-            avgTamperSensor.Text = "14.3";
-            avgTamperSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgTamperSensor.AutoSize = (true);
+            this.avgTamperSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.avgTamperSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgTamperSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgTamperSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgTamperSensor.Location = (new global::System.Drawing.Point(359, 66));
+            this.avgTamperSensor.Name = ("avgTamperSensor");
+            this.avgTamperSensor.Size = (new global::System.Drawing.Size(55, 36));
+            this.avgTamperSensor.TabIndex = (76);
+            this.avgTamperSensor.Text = ("14.3");
+            this.avgTamperSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minTiltLevel
             // 
-            minTiltLevel.AutoSize = true;
-            minTiltLevel.BackColor = Color.FromArgb(50, 50, 50);
-            minTiltLevel.Dock = DockStyle.Fill;
-            minTiltLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minTiltLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            minTiltLevel.Location = new Point(155, 25);
-            minTiltLevel.Name = "minTiltLevel";
-            minTiltLevel.Size = new Size(31, 25);
-            minTiltLevel.TabIndex = 77;
-            minTiltLevel.Text = "14.3";
-            minTiltLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.minTiltLevel.AutoSize = (true);
+            this.minTiltLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.minTiltLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minTiltLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minTiltLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minTiltLevel.Location = (new global::System.Drawing.Point(239, 33));
+            this.minTiltLevel.Name = ("minTiltLevel");
+            this.minTiltLevel.Size = (new global::System.Drawing.Size(51, 33));
+            this.minTiltLevel.TabIndex = (77);
+            this.minTiltLevel.Text = ("14.3");
+            this.minTiltLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // maxTiltLevel
             // 
-            maxTiltLevel.AutoSize = true;
-            maxTiltLevel.BackColor = Color.FromArgb(50, 50, 50);
-            maxTiltLevel.Dock = DockStyle.Fill;
-            maxTiltLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            maxTiltLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            maxTiltLevel.Location = new Point(192, 25);
-            maxTiltLevel.Name = "maxTiltLevel";
-            maxTiltLevel.Size = new Size(34, 25);
-            maxTiltLevel.TabIndex = 78;
-            maxTiltLevel.Text = "14.3";
-            maxTiltLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.maxTiltLevel.AutoSize = (true);
+            this.maxTiltLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.maxTiltLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.maxTiltLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.maxTiltLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.maxTiltLevel.Location = (new global::System.Drawing.Point(296, 33));
+            this.maxTiltLevel.Name = ("maxTiltLevel");
+            this.maxTiltLevel.Size = (new global::System.Drawing.Size(57, 33));
+            this.maxTiltLevel.TabIndex = (78);
+            this.maxTiltLevel.Text = ("14.3");
+            this.maxTiltLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // avgTiltLevel
             // 
-            avgTiltLevel.AutoSize = true;
-            avgTiltLevel.BackColor = Color.FromArgb(50, 50, 50);
-            avgTiltLevel.Dock = DockStyle.Fill;
-            avgTiltLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            avgTiltLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            avgTiltLevel.Location = new Point(232, 25);
-            avgTiltLevel.Name = "avgTiltLevel";
-            avgTiltLevel.Size = new Size(33, 25);
-            avgTiltLevel.TabIndex = 79;
-            avgTiltLevel.Text = "14.3";
-            avgTiltLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.avgTiltLevel.AutoSize = (true);
+            this.avgTiltLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.avgTiltLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.avgTiltLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.avgTiltLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.avgTiltLevel.Location = (new global::System.Drawing.Point(359, 33));
+            this.avgTiltLevel.Name = ("avgTiltLevel");
+            this.avgTiltLevel.Size = (new global::System.Drawing.Size(55, 33));
+            this.avgTiltLevel.TabIndex = (79);
+            this.avgTiltLevel.Text = ("14.3");
+            this.avgTiltLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentTiltLevel
             // 
-            currentTiltLevel.AutoSize = true;
-            currentTiltLevel.BackColor = Color.FromArgb(50, 50, 50);
-            currentTiltLevel.Dock = DockStyle.Fill;
-            currentTiltLevel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentTiltLevel.ForeColor = Color.FromArgb(250, 250, 250);
-            currentTiltLevel.Location = new Point(271, 25);
-            currentTiltLevel.Name = "currentTiltLevel";
-            currentTiltLevel.Size = new Size(48, 25);
-            currentTiltLevel.TabIndex = 80;
-            currentTiltLevel.Text = "14.3";
-            currentTiltLevel.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentTiltLevel.AutoSize = (true);
+            this.currentTiltLevel.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentTiltLevel.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentTiltLevel.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentTiltLevel.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentTiltLevel.Location = (new global::System.Drawing.Point(420, 33));
+            this.currentTiltLevel.Name = ("currentTiltLevel");
+            this.currentTiltLevel.Size = (new global::System.Drawing.Size(79, 33));
+            this.currentTiltLevel.TabIndex = (80);
+            this.currentTiltLevel.Text = ("14.3");
+            this.currentTiltLevel.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // minTamperSensor
             // 
-            minTamperSensor.AutoSize = true;
-            minTamperSensor.BackColor = Color.FromArgb(80, 80, 80);
-            minTamperSensor.Dock = DockStyle.Fill;
-            minTamperSensor.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            minTamperSensor.ForeColor = Color.FromArgb(250, 250, 250);
-            minTamperSensor.Location = new Point(155, 50);
-            minTamperSensor.Name = "minTamperSensor";
-            minTamperSensor.Size = new Size(31, 26);
-            minTamperSensor.TabIndex = 81;
-            minTamperSensor.Text = "14.3";
-            minTamperSensor.TextAlign = ContentAlignment.MiddleCenter;
+            this.minTamperSensor.AutoSize = (true);
+            this.minTamperSensor.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.minTamperSensor.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.minTamperSensor.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.minTamperSensor.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.minTamperSensor.Location = (new global::System.Drawing.Point(239, 66));
+            this.minTamperSensor.Name = ("minTamperSensor");
+            this.minTamperSensor.Size = (new global::System.Drawing.Size(51, 36));
+            this.minTamperSensor.TabIndex = (81);
+            this.minTamperSensor.Text = ("14.3");
+            this.minTamperSensor.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // tableLayoutPanel6
             // 
-            tableLayoutPanel6.BackColor = Color.FromArgb(30, 30, 30);
-            tableLayoutPanel6.ColumnCount = 6;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.0880833F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.2262506F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3989639F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.880827F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.5803089F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.82556F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel6.Controls.Add(label15, 5, 0);
-            tableLayoutPanel6.Controls.Add(label16, 4, 0);
-            tableLayoutPanel6.Controls.Add(label17, 3, 0);
-            tableLayoutPanel6.Controls.Add(label18, 2, 0);
-            tableLayoutPanel6.Controls.Add(label19, 1, 0);
-            tableLayoutPanel6.Controls.Add(label20, 0, 0);
-            tableLayoutPanel6.Controls.Add(label21, 0, 1);
-            tableLayoutPanel6.Controls.Add(label22, 0, 2);
-            tableLayoutPanel6.Controls.Add(label23, 0, 3);
-            tableLayoutPanel6.Controls.Add(label24, 0, 4);
-            tableLayoutPanel6.Controls.Add(currentAirTemperature2, 1, 1);
-            tableLayoutPanel6.Controls.Add(currentAtmosphericPressure2, 1, 3);
-            tableLayoutPanel6.Controls.Add(currentRelativeHumidity2, 1, 2);
-            tableLayoutPanel6.Controls.Add(currentWindSpeed2, 1, 4);
-            tableLayoutPanel6.Controls.Add(powerAirTemperature, 2, 1);
-            tableLayoutPanel6.Controls.Add(powerRelativeHumidity, 2, 2);
-            tableLayoutPanel6.Controls.Add(constAirTemperature, 3, 1);
-            tableLayoutPanel6.Controls.Add(constRelativeHumidity, 3, 2);
-            tableLayoutPanel6.Controls.Add(constAtmosphericPressure, 3, 3);
-            tableLayoutPanel6.Controls.Add(stepAirTemperature, 4, 1);
-            tableLayoutPanel6.Controls.Add(stepRelativeHumidity, 4, 2);
-            tableLayoutPanel6.Controls.Add(constWindSpeed, 3, 4);
-            tableLayoutPanel6.Controls.Add(timeAirTemperature, 5, 1);
-            tableLayoutPanel6.Controls.Add(timeRelativeHumidity, 5, 2);
-            tableLayoutPanel6.Dock = DockStyle.Top;
-            tableLayoutPanel6.Location = new Point(0, 314);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 5;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.90141F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.90141F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.90141F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 15.4929562F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 15.4929562F));
-            tableLayoutPanel6.Size = new Size(594, 176);
-            tableLayoutPanel6.TabIndex = 7;
+            this.tableLayoutPanel6.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.tableLayoutPanel6.ColumnCount = (6);
+            this.tableLayoutPanel6.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 31.0880833F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 11.2262506F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 11.3989639F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 10.880827F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 16.5803089F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 18.82556F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel6.Controls.Add(this.label15, 5, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label16, 4, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label17, 3, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label18, 2, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label19, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label20, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.label21, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.label22, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.label23, 0, 3);
+            this.tableLayoutPanel6.Controls.Add(this.label24, 0, 4);
+            this.tableLayoutPanel6.Controls.Add(this.currentAirTemperature2, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.currentAtmosphericPressure2, 1, 3);
+            this.tableLayoutPanel6.Controls.Add(this.currentRelativeHumidity2, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.currentWindSpeed2, 1, 4);
+            this.tableLayoutPanel6.Controls.Add(this.powerAirTemperature, 2, 1);
+            this.tableLayoutPanel6.Controls.Add(this.powerRelativeHumidity, 2, 2);
+            this.tableLayoutPanel6.Controls.Add(this.constAirTemperature, 3, 1);
+            this.tableLayoutPanel6.Controls.Add(this.constRelativeHumidity, 3, 2);
+            this.tableLayoutPanel6.Controls.Add(this.constAtmosphericPressure, 3, 3);
+            this.tableLayoutPanel6.Controls.Add(this.stepAirTemperature, 4, 1);
+            this.tableLayoutPanel6.Controls.Add(this.stepRelativeHumidity, 4, 2);
+            this.tableLayoutPanel6.Controls.Add(this.constWindSpeed, 3, 4);
+            this.tableLayoutPanel6.Controls.Add(this.timeAirTemperature, 5, 1);
+            this.tableLayoutPanel6.Controls.Add(this.timeRelativeHumidity, 5, 2);
+            this.tableLayoutPanel6.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.tableLayoutPanel6.Location = (new global::System.Drawing.Point(0, 419));
+            this.tableLayoutPanel6.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.tableLayoutPanel6.Name = ("tableLayoutPanel6");
+            this.tableLayoutPanel6.RowCount = (5);
+            this.tableLayoutPanel6.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.90141F));
+            this.tableLayoutPanel6.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.90141F));
+            this.tableLayoutPanel6.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.90141F));
+            this.tableLayoutPanel6.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 15.4929562F));
+            this.tableLayoutPanel6.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 15.4929562F));
+            this.tableLayoutPanel6.Size = (new global::System.Drawing.Size(923, 235));
+            this.tableLayoutPanel6.TabIndex = (7);
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.FromArgb(23, 21, 21);
-            label15.Dock = DockStyle.Fill;
-            label15.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = Color.FromArgb(25, 150, 190);
-            label15.Location = new Point(482, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(109, 36);
-            label15.TabIndex = 8;
-            label15.Text = "Время измен.";
-            label15.TextAlign = ContentAlignment.MiddleCenter;
+            this.label15.AutoSize = (true);
+            this.label15.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label15.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label15.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label15.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label15.Location = (new global::System.Drawing.Point(750, 0));
+            this.label15.Name = ("label15");
+            this.label15.Size = (new global::System.Drawing.Size(170, 48));
+            this.label15.TabIndex = (8);
+            this.label15.Text = ("Время измен.");
+            this.label15.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.BackColor = Color.FromArgb(23, 21, 21);
-            label16.Dock = DockStyle.Fill;
-            label16.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.ForeColor = Color.FromArgb(25, 150, 190);
-            label16.Location = new Point(384, 0);
-            label16.Name = "label16";
-            label16.Size = new Size(92, 36);
-            label16.TabIndex = 7;
-            label16.Text = "Шаг измен.";
-            label16.TextAlign = ContentAlignment.MiddleCenter;
+            this.label16.AutoSize = (true);
+            this.label16.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label16.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label16.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label16.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label16.Location = (new global::System.Drawing.Point(597, 0));
+            this.label16.Name = ("label16");
+            this.label16.Size = (new global::System.Drawing.Size(147, 48));
+            this.label16.TabIndex = (7);
+            this.label16.Text = ("Шаг измен.");
+            this.label16.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label17
             // 
-            label17.AutoSize = true;
-            label17.BackColor = Color.FromArgb(23, 21, 21);
-            label17.Dock = DockStyle.Fill;
-            label17.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.ForeColor = Color.FromArgb(25, 150, 190);
-            label17.Location = new Point(320, 0);
-            label17.Name = "label17";
-            label17.Size = new Size(58, 36);
-            label17.TabIndex = 6;
-            label17.Text = "Константа";
-            label17.TextAlign = ContentAlignment.MiddleCenter;
+            this.label17.AutoSize = (true);
+            this.label17.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label17.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label17.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label17.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label17.Location = (new global::System.Drawing.Point(497, 0));
+            this.label17.Name = ("label17");
+            this.label17.Size = (new global::System.Drawing.Size(94, 48));
+            this.label17.TabIndex = (6);
+            this.label17.Text = ("Константа");
+            this.label17.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label18
             // 
-            label18.AutoSize = true;
-            label18.BackColor = Color.FromArgb(23, 21, 21);
-            label18.Dock = DockStyle.Fill;
-            label18.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.ForeColor = Color.FromArgb(25, 150, 190);
-            label18.Location = new Point(253, 0);
-            label18.Name = "label18";
-            label18.Size = new Size(61, 36);
-            label18.TabIndex = 5;
-            label18.Text = "Мощность %";
-            label18.TextAlign = ContentAlignment.MiddleCenter;
+            this.label18.AutoSize = (true);
+            this.label18.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label18.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label18.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label18.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label18.Location = (new global::System.Drawing.Point(392, 0));
+            this.label18.Name = ("label18");
+            this.label18.Size = (new global::System.Drawing.Size(99, 48));
+            this.label18.TabIndex = (5);
+            this.label18.Text = ("Мощность %");
+            this.label18.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label19
             // 
-            label19.AutoSize = true;
-            label19.BackColor = Color.FromArgb(23, 21, 21);
-            label19.Dock = DockStyle.Fill;
-            label19.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label19.ForeColor = Color.FromArgb(25, 150, 190);
-            label19.Location = new Point(187, 0);
-            label19.Name = "label19";
-            label19.Size = new Size(60, 36);
-            label19.TabIndex = 4;
-            label19.Text = "текущее";
-            label19.TextAlign = ContentAlignment.MiddleCenter;
+            this.label19.AutoSize = (true);
+            this.label19.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label19.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label19.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label19.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label19.Location = (new global::System.Drawing.Point(289, 0));
+            this.label19.Name = ("label19");
+            this.label19.Size = (new global::System.Drawing.Size(97, 48));
+            this.label19.TabIndex = (4);
+            this.label19.Text = ("текущее");
+            this.label19.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label20
             // 
-            label20.AutoSize = true;
-            label20.BackColor = Color.FromArgb(23, 21, 21);
-            label20.Dock = DockStyle.Fill;
-            label20.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label20.ForeColor = Color.FromArgb(25, 150, 190);
-            label20.Location = new Point(3, 0);
-            label20.Name = "label20";
-            label20.Size = new Size(178, 36);
-            label20.TabIndex = 0;
-            label20.Text = "Параметр";
-            label20.TextAlign = ContentAlignment.MiddleCenter;
+            this.label20.AutoSize = (true);
+            this.label20.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label20.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label20.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label20.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label20.Location = (new global::System.Drawing.Point(3, 0));
+            this.label20.Name = ("label20");
+            this.label20.Size = (new global::System.Drawing.Size(280, 48));
+            this.label20.TabIndex = (0);
+            this.label20.Text = ("Параметр");
+            this.label20.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label21
             // 
-            label21.AutoSize = true;
-            label21.BackColor = Color.FromArgb(80, 80, 80);
-            label21.Dock = DockStyle.Fill;
-            label21.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label21.ForeColor = Color.FromArgb(190, 190, 190);
-            label21.Location = new Point(3, 36);
-            label21.Name = "label21";
-            label21.Size = new Size(178, 36);
-            label21.TabIndex = 9;
-            label21.Text = "Температура (°С)";
-            label21.TextAlign = ContentAlignment.MiddleCenter;
+            this.label21.AutoSize = (true);
+            this.label21.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.label21.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label21.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label21.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label21.Location = (new global::System.Drawing.Point(3, 48));
+            this.label21.Name = ("label21");
+            this.label21.Size = (new global::System.Drawing.Size(280, 48));
+            this.label21.TabIndex = (9);
+            this.label21.Text = ("Температура (°С)");
+            this.label21.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label22
             // 
-            label22.AutoSize = true;
-            label22.BackColor = Color.FromArgb(50, 50, 50);
-            label22.Dock = DockStyle.Fill;
-            label22.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label22.ForeColor = Color.FromArgb(190, 190, 190);
-            label22.Location = new Point(3, 72);
-            label22.Name = "label22";
-            label22.Size = new Size(178, 36);
-            label22.TabIndex = 10;
-            label22.Text = "Отн. влажность (%)";
-            label22.TextAlign = ContentAlignment.MiddleCenter;
+            this.label22.AutoSize = (true);
+            this.label22.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.label22.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label22.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label22.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label22.Location = (new global::System.Drawing.Point(3, 96));
+            this.label22.Name = ("label22");
+            this.label22.Size = (new global::System.Drawing.Size(280, 48));
+            this.label22.TabIndex = (10);
+            this.label22.Text = ("Отн. влажность (%)");
+            this.label22.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label23
             // 
-            label23.AutoSize = true;
-            label23.BackColor = Color.FromArgb(80, 80, 80);
-            label23.Dock = DockStyle.Fill;
-            label23.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label23.ForeColor = Color.FromArgb(190, 190, 190);
-            label23.Location = new Point(3, 108);
-            label23.Name = "label23";
-            label23.Size = new Size(178, 33);
-            label23.TabIndex = 11;
-            label23.Text = "Атм. давление (Hpa)";
-            label23.TextAlign = ContentAlignment.MiddleCenter;
+            this.label23.AutoSize = (true);
+            this.label23.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.label23.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label23.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label23.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label23.Location = (new global::System.Drawing.Point(3, 144));
+            this.label23.Name = ("label23");
+            this.label23.Size = (new global::System.Drawing.Size(280, 44));
+            this.label23.TabIndex = (11);
+            this.label23.Text = ("Атм. давление (Hpa)");
+            this.label23.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label24
             // 
-            label24.AutoSize = true;
-            label24.BackColor = Color.FromArgb(50, 50, 50);
-            label24.Dock = DockStyle.Fill;
-            label24.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label24.ForeColor = Color.FromArgb(190, 190, 190);
-            label24.Location = new Point(3, 141);
-            label24.Name = "label24";
-            label24.Size = new Size(178, 35);
-            label24.TabIndex = 12;
-            label24.Text = "Скорость ветра (м/с)";
-            label24.TextAlign = ContentAlignment.MiddleCenter;
+            this.label24.AutoSize = (true);
+            this.label24.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.label24.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label24.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label24.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label24.Location = (new global::System.Drawing.Point(3, 188));
+            this.label24.Name = ("label24");
+            this.label24.Size = (new global::System.Drawing.Size(280, 47));
+            this.label24.TabIndex = (12);
+            this.label24.Text = ("Скорость ветра (м/с)");
+            this.label24.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentAirTemperature2
             // 
-            currentAirTemperature2.AutoSize = true;
-            currentAirTemperature2.BackColor = Color.FromArgb(80, 80, 80);
-            currentAirTemperature2.Dock = DockStyle.Fill;
-            currentAirTemperature2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentAirTemperature2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentAirTemperature2.Location = new Point(187, 36);
-            currentAirTemperature2.Name = "currentAirTemperature2";
-            currentAirTemperature2.Size = new Size(60, 36);
-            currentAirTemperature2.TabIndex = 17;
-            currentAirTemperature2.Text = "23.9";
-            currentAirTemperature2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentAirTemperature2.AutoSize = (true);
+            this.currentAirTemperature2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentAirTemperature2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentAirTemperature2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentAirTemperature2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentAirTemperature2.Location = (new global::System.Drawing.Point(289, 48));
+            this.currentAirTemperature2.Name = ("currentAirTemperature2");
+            this.currentAirTemperature2.Size = (new global::System.Drawing.Size(97, 48));
+            this.currentAirTemperature2.TabIndex = (17);
+            this.currentAirTemperature2.Text = ("23.9");
+            this.currentAirTemperature2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentAtmosphericPressure2
             // 
-            currentAtmosphericPressure2.AutoSize = true;
-            currentAtmosphericPressure2.BackColor = Color.FromArgb(80, 80, 80);
-            currentAtmosphericPressure2.Dock = DockStyle.Fill;
-            currentAtmosphericPressure2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentAtmosphericPressure2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentAtmosphericPressure2.Location = new Point(187, 108);
-            currentAtmosphericPressure2.Name = "currentAtmosphericPressure2";
-            currentAtmosphericPressure2.Size = new Size(60, 33);
-            currentAtmosphericPressure2.TabIndex = 21;
-            currentAtmosphericPressure2.Text = "0.9";
-            currentAtmosphericPressure2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentAtmosphericPressure2.AutoSize = (true);
+            this.currentAtmosphericPressure2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentAtmosphericPressure2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentAtmosphericPressure2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentAtmosphericPressure2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentAtmosphericPressure2.Location = (new global::System.Drawing.Point(289, 144));
+            this.currentAtmosphericPressure2.Name = ("currentAtmosphericPressure2");
+            this.currentAtmosphericPressure2.Size = (new global::System.Drawing.Size(97, 44));
+            this.currentAtmosphericPressure2.TabIndex = (21);
+            this.currentAtmosphericPressure2.Text = ("0.9");
+            this.currentAtmosphericPressure2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentRelativeHumidity2
             // 
-            currentRelativeHumidity2.AutoSize = true;
-            currentRelativeHumidity2.BackColor = Color.FromArgb(50, 50, 50);
-            currentRelativeHumidity2.Dock = DockStyle.Fill;
-            currentRelativeHumidity2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentRelativeHumidity2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentRelativeHumidity2.Location = new Point(187, 72);
-            currentRelativeHumidity2.Name = "currentRelativeHumidity2";
-            currentRelativeHumidity2.Size = new Size(60, 36);
-            currentRelativeHumidity2.TabIndex = 29;
-            currentRelativeHumidity2.Text = "19.1";
-            currentRelativeHumidity2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentRelativeHumidity2.AutoSize = (true);
+            this.currentRelativeHumidity2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentRelativeHumidity2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentRelativeHumidity2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentRelativeHumidity2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentRelativeHumidity2.Location = (new global::System.Drawing.Point(289, 96));
+            this.currentRelativeHumidity2.Name = ("currentRelativeHumidity2");
+            this.currentRelativeHumidity2.Size = (new global::System.Drawing.Size(97, 48));
+            this.currentRelativeHumidity2.TabIndex = (29);
+            this.currentRelativeHumidity2.Text = ("19.1");
+            this.currentRelativeHumidity2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentWindSpeed2
             // 
-            currentWindSpeed2.AutoSize = true;
-            currentWindSpeed2.BackColor = Color.FromArgb(50, 50, 50);
-            currentWindSpeed2.Dock = DockStyle.Fill;
-            currentWindSpeed2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentWindSpeed2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentWindSpeed2.Location = new Point(187, 141);
-            currentWindSpeed2.Name = "currentWindSpeed2";
-            currentWindSpeed2.Size = new Size(60, 35);
-            currentWindSpeed2.TabIndex = 33;
-            currentWindSpeed2.Text = "20.5";
-            currentWindSpeed2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentWindSpeed2.AutoSize = (true);
+            this.currentWindSpeed2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentWindSpeed2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentWindSpeed2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentWindSpeed2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentWindSpeed2.Location = (new global::System.Drawing.Point(289, 188));
+            this.currentWindSpeed2.Name = ("currentWindSpeed2");
+            this.currentWindSpeed2.Size = (new global::System.Drawing.Size(97, 47));
+            this.currentWindSpeed2.TabIndex = (33);
+            this.currentWindSpeed2.Text = ("20.5");
+            this.currentWindSpeed2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // powerAirTemperature
             // 
-            powerAirTemperature.BackColor = Color.FromArgb(30, 30, 30);
-            powerAirTemperature.BorderStyle = BorderStyle.FixedSingle;
-            powerAirTemperature.Dock = DockStyle.Fill;
-            powerAirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            powerAirTemperature.Location = new Point(253, 39);
-            powerAirTemperature.Name = "powerAirTemperature";
-            powerAirTemperature.Size = new Size(61, 23);
-            powerAirTemperature.TabIndex = 35;
-            powerAirTemperature.Text = "20";
-            powerAirTemperature.TextAlign = HorizontalAlignment.Center;
-            powerAirTemperature.KeyDown += powerAirTemperature_KeyDown;
+            this.powerAirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.powerAirTemperature.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.powerAirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.powerAirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.powerAirTemperature.Location = (new global::System.Drawing.Point(392, 52));
+            this.powerAirTemperature.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.powerAirTemperature.Name = ("powerAirTemperature");
+            this.powerAirTemperature.Size = (new global::System.Drawing.Size(99, 27));
+            this.powerAirTemperature.TabIndex = (35);
+            this.powerAirTemperature.Text = ("20");
+            this.powerAirTemperature.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.powerAirTemperature.KeyDown += (this.powerAirTemperature_KeyDown);
             // 
             // powerRelativeHumidity
             // 
-            powerRelativeHumidity.BackColor = Color.FromArgb(30, 30, 30);
-            powerRelativeHumidity.BorderStyle = BorderStyle.FixedSingle;
-            powerRelativeHumidity.Dock = DockStyle.Fill;
-            powerRelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            powerRelativeHumidity.Location = new Point(253, 75);
-            powerRelativeHumidity.Name = "powerRelativeHumidity";
-            powerRelativeHumidity.Size = new Size(61, 23);
-            powerRelativeHumidity.TabIndex = 36;
-            powerRelativeHumidity.Text = "20";
-            powerRelativeHumidity.TextAlign = HorizontalAlignment.Center;
-            powerRelativeHumidity.KeyDown += powerRelativeHumidity_KeyDown;
+            this.powerRelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.powerRelativeHumidity.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.powerRelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.powerRelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.powerRelativeHumidity.Location = (new global::System.Drawing.Point(392, 100));
+            this.powerRelativeHumidity.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.powerRelativeHumidity.Name = ("powerRelativeHumidity");
+            this.powerRelativeHumidity.Size = (new global::System.Drawing.Size(99, 27));
+            this.powerRelativeHumidity.TabIndex = (36);
+            this.powerRelativeHumidity.Text = ("20");
+            this.powerRelativeHumidity.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.powerRelativeHumidity.KeyDown += (this.powerRelativeHumidity_KeyDown);
             // 
             // constAirTemperature
             // 
-            constAirTemperature.BackColor = Color.FromArgb(30, 30, 30);
-            constAirTemperature.BorderStyle = BorderStyle.FixedSingle;
-            constAirTemperature.Dock = DockStyle.Fill;
-            constAirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            constAirTemperature.Location = new Point(320, 39);
-            constAirTemperature.Name = "constAirTemperature";
-            constAirTemperature.Size = new Size(58, 23);
-            constAirTemperature.TabIndex = 38;
-            constAirTemperature.Text = "20";
-            constAirTemperature.TextAlign = HorizontalAlignment.Center;
-            constAirTemperature.KeyDown += constAirTemperature_KeyDown;
+            this.constAirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.constAirTemperature.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.constAirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.constAirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.constAirTemperature.Location = (new global::System.Drawing.Point(497, 52));
+            this.constAirTemperature.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.constAirTemperature.Name = ("constAirTemperature");
+            this.constAirTemperature.Size = (new global::System.Drawing.Size(94, 27));
+            this.constAirTemperature.TabIndex = (38);
+            this.constAirTemperature.Text = ("20");
+            this.constAirTemperature.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.constAirTemperature.KeyDown += (this.constAirTemperature_KeyDown);
             // 
             // constRelativeHumidity
             // 
-            constRelativeHumidity.BackColor = Color.FromArgb(30, 30, 30);
-            constRelativeHumidity.BorderStyle = BorderStyle.FixedSingle;
-            constRelativeHumidity.Dock = DockStyle.Fill;
-            constRelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            constRelativeHumidity.Location = new Point(320, 75);
-            constRelativeHumidity.Name = "constRelativeHumidity";
-            constRelativeHumidity.Size = new Size(58, 23);
-            constRelativeHumidity.TabIndex = 39;
-            constRelativeHumidity.Text = "20";
-            constRelativeHumidity.TextAlign = HorizontalAlignment.Center;
-            constRelativeHumidity.KeyDown += constRelativeHumidity_KeyDown;
+            this.constRelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.constRelativeHumidity.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.constRelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.constRelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.constRelativeHumidity.Location = (new global::System.Drawing.Point(497, 100));
+            this.constRelativeHumidity.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.constRelativeHumidity.Name = ("constRelativeHumidity");
+            this.constRelativeHumidity.Size = (new global::System.Drawing.Size(94, 27));
+            this.constRelativeHumidity.TabIndex = (39);
+            this.constRelativeHumidity.Text = ("20");
+            this.constRelativeHumidity.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.constRelativeHumidity.KeyDown += (this.constRelativeHumidity_KeyDown);
             // 
             // constAtmosphericPressure
             // 
-            constAtmosphericPressure.BackColor = Color.FromArgb(30, 30, 30);
-            constAtmosphericPressure.BorderStyle = BorderStyle.FixedSingle;
-            constAtmosphericPressure.Dock = DockStyle.Fill;
-            constAtmosphericPressure.ForeColor = Color.FromArgb(250, 250, 250);
-            constAtmosphericPressure.Location = new Point(320, 111);
-            constAtmosphericPressure.Name = "constAtmosphericPressure";
-            constAtmosphericPressure.Size = new Size(58, 23);
-            constAtmosphericPressure.TabIndex = 40;
-            constAtmosphericPressure.Text = "20";
-            constAtmosphericPressure.TextAlign = HorizontalAlignment.Center;
-            constAtmosphericPressure.KeyDown += constAtmosphericPressure_KeyDown;
+            this.constAtmosphericPressure.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.constAtmosphericPressure.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.constAtmosphericPressure.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.constAtmosphericPressure.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.constAtmosphericPressure.Location = (new global::System.Drawing.Point(497, 148));
+            this.constAtmosphericPressure.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.constAtmosphericPressure.Name = ("constAtmosphericPressure");
+            this.constAtmosphericPressure.Size = (new global::System.Drawing.Size(94, 27));
+            this.constAtmosphericPressure.TabIndex = (40);
+            this.constAtmosphericPressure.Text = ("20");
+            this.constAtmosphericPressure.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.constAtmosphericPressure.KeyDown += (this.constAtmosphericPressure_KeyDown);
             // 
             // stepAirTemperature
             // 
-            stepAirTemperature.BackColor = Color.FromArgb(30, 30, 30);
-            stepAirTemperature.BorderStyle = BorderStyle.FixedSingle;
-            stepAirTemperature.Dock = DockStyle.Fill;
-            stepAirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            stepAirTemperature.Location = new Point(384, 39);
-            stepAirTemperature.Name = "stepAirTemperature";
-            stepAirTemperature.Size = new Size(92, 23);
-            stepAirTemperature.TabIndex = 41;
-            stepAirTemperature.Text = "20";
-            stepAirTemperature.TextAlign = HorizontalAlignment.Center;
-            stepAirTemperature.KeyDown += stepAirTemperature_KeyDown;
+            this.stepAirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.stepAirTemperature.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.stepAirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.stepAirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.stepAirTemperature.Location = (new global::System.Drawing.Point(597, 52));
+            this.stepAirTemperature.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.stepAirTemperature.Name = ("stepAirTemperature");
+            this.stepAirTemperature.Size = (new global::System.Drawing.Size(147, 27));
+            this.stepAirTemperature.TabIndex = (41);
+            this.stepAirTemperature.Text = ("20");
+            this.stepAirTemperature.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.stepAirTemperature.KeyDown += (this.stepAirTemperature_KeyDown);
             // 
             // stepRelativeHumidity
             // 
-            stepRelativeHumidity.BackColor = Color.FromArgb(30, 30, 30);
-            stepRelativeHumidity.BorderStyle = BorderStyle.FixedSingle;
-            stepRelativeHumidity.Dock = DockStyle.Fill;
-            stepRelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            stepRelativeHumidity.Location = new Point(384, 75);
-            stepRelativeHumidity.Name = "stepRelativeHumidity";
-            stepRelativeHumidity.Size = new Size(92, 23);
-            stepRelativeHumidity.TabIndex = 42;
-            stepRelativeHumidity.Text = "20";
-            stepRelativeHumidity.TextAlign = HorizontalAlignment.Center;
-            stepRelativeHumidity.KeyDown += stepRelativeHumidity_KeyDown;
+            this.stepRelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.stepRelativeHumidity.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.stepRelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.stepRelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.stepRelativeHumidity.Location = (new global::System.Drawing.Point(597, 100));
+            this.stepRelativeHumidity.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.stepRelativeHumidity.Name = ("stepRelativeHumidity");
+            this.stepRelativeHumidity.Size = (new global::System.Drawing.Size(147, 27));
+            this.stepRelativeHumidity.TabIndex = (42);
+            this.stepRelativeHumidity.Text = ("20");
+            this.stepRelativeHumidity.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.stepRelativeHumidity.KeyDown += (this.stepRelativeHumidity_KeyDown);
             // 
             // constWindSpeed
             // 
-            constWindSpeed.BackColor = Color.FromArgb(30, 30, 30);
-            constWindSpeed.BorderStyle = BorderStyle.FixedSingle;
-            constWindSpeed.Dock = DockStyle.Fill;
-            constWindSpeed.ForeColor = Color.FromArgb(250, 250, 250);
-            constWindSpeed.Location = new Point(320, 144);
-            constWindSpeed.Name = "constWindSpeed";
-            constWindSpeed.Size = new Size(58, 23);
-            constWindSpeed.TabIndex = 45;
-            constWindSpeed.Text = "20";
-            constWindSpeed.TextAlign = HorizontalAlignment.Center;
-            constWindSpeed.KeyDown += constWindSpeed_KeyDown;
+            this.constWindSpeed.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.constWindSpeed.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.constWindSpeed.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.constWindSpeed.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.constWindSpeed.Location = (new global::System.Drawing.Point(497, 192));
+            this.constWindSpeed.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.constWindSpeed.Name = ("constWindSpeed");
+            this.constWindSpeed.Size = (new global::System.Drawing.Size(94, 27));
+            this.constWindSpeed.TabIndex = (45);
+            this.constWindSpeed.Text = ("20");
+            this.constWindSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.constWindSpeed.KeyDown += (this.constWindSpeed_KeyDown);
             // 
             // timeAirTemperature
             // 
-            timeAirTemperature.BackColor = Color.FromArgb(30, 30, 30);
-            timeAirTemperature.BorderStyle = BorderStyle.FixedSingle;
-            timeAirTemperature.Dock = DockStyle.Fill;
-            timeAirTemperature.ForeColor = Color.FromArgb(250, 250, 250);
-            timeAirTemperature.Location = new Point(482, 39);
-            timeAirTemperature.Name = "timeAirTemperature";
-            timeAirTemperature.Size = new Size(109, 23);
-            timeAirTemperature.TabIndex = 48;
-            timeAirTemperature.Text = "20";
-            timeAirTemperature.TextAlign = HorizontalAlignment.Center;
-            timeAirTemperature.KeyDown += timeAirTemperature_KeyDown;
+            this.timeAirTemperature.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.timeAirTemperature.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.timeAirTemperature.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.timeAirTemperature.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.timeAirTemperature.Location = (new global::System.Drawing.Point(750, 52));
+            this.timeAirTemperature.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.timeAirTemperature.Name = ("timeAirTemperature");
+            this.timeAirTemperature.Size = (new global::System.Drawing.Size(170, 27));
+            this.timeAirTemperature.TabIndex = (48);
+            this.timeAirTemperature.Text = ("20");
+            this.timeAirTemperature.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.timeAirTemperature.KeyDown += (this.timeAirTemperature_KeyDown);
             // 
             // timeRelativeHumidity
             // 
-            timeRelativeHumidity.BackColor = Color.FromArgb(30, 30, 30);
-            timeRelativeHumidity.BorderStyle = BorderStyle.FixedSingle;
-            timeRelativeHumidity.Dock = DockStyle.Fill;
-            timeRelativeHumidity.ForeColor = Color.FromArgb(250, 250, 250);
-            timeRelativeHumidity.Location = new Point(482, 75);
-            timeRelativeHumidity.Name = "timeRelativeHumidity";
-            timeRelativeHumidity.Size = new Size(109, 23);
-            timeRelativeHumidity.TabIndex = 49;
-            timeRelativeHumidity.Text = "20";
-            timeRelativeHumidity.TextAlign = HorizontalAlignment.Center;
-            timeRelativeHumidity.KeyDown += timeRelativeHumidity_KeyDown;
+            this.timeRelativeHumidity.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.timeRelativeHumidity.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.timeRelativeHumidity.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.timeRelativeHumidity.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.timeRelativeHumidity.Location = (new global::System.Drawing.Point(750, 100));
+            this.timeRelativeHumidity.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.timeRelativeHumidity.Name = ("timeRelativeHumidity");
+            this.timeRelativeHumidity.Size = (new global::System.Drawing.Size(170, 27));
+            this.timeRelativeHumidity.TabIndex = (49);
+            this.timeRelativeHumidity.Text = ("20");
+            this.timeRelativeHumidity.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.timeRelativeHumidity.KeyDown += (this.timeRelativeHumidity_KeyDown);
             // 
             // panel2
             // 
-            panel2.Controls.Add(label12);
-            panel2.Controls.Add(label13);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 245);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(594, 69);
-            panel2.TabIndex = 6;
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.panel2.Location = (new global::System.Drawing.Point(0, 327));
+            this.panel2.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.panel2.Name = ("panel2");
+            this.panel2.Size = (new global::System.Drawing.Size(923, 92));
+            this.panel2.TabIndex = (6);
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Dock = DockStyle.Top;
-            label12.ForeColor = Color.FromArgb(190, 190, 190);
-            label12.Location = new Point(0, 30);
-            label12.Name = "label12";
-            label12.Padding = new Padding(10, 10, 5, 5);
-            label12.Size = new Size(376, 30);
-            label12.TabIndex = 1;
-            label12.Text = "Калибровка датчиков атмосферного давления и скорости ветра";
+            this.label12.AutoSize = (true);
+            this.label12.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.label12.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label12.Location = (new global::System.Drawing.Point(0, 40));
+            this.label12.Name = ("label12");
+            this.label12.Padding = (new global::System.Windows.Forms.Padding(11, 13, 6, 7));
+            this.label12.Size = (new global::System.Drawing.Size(475, 40));
+            this.label12.TabIndex = (1);
+            this.label12.Text = ("Калибровка датчиков атмосферного давления и скорости ветра");
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Dock = DockStyle.Top;
-            label13.ForeColor = Color.FromArgb(190, 190, 190);
-            label13.Location = new Point(0, 0);
-            label13.Name = "label13";
-            label13.Padding = new Padding(10, 10, 5, 5);
-            label13.Size = new Size(703, 30);
-            label13.TabIndex = 0;
-            label13.Text = "Настройка параметров ПИД регуляторов, для поддержания заданной температуры и влажности в измерительной камере. ";
+            this.label13.AutoSize = (true);
+            this.label13.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.label13.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label13.Location = (new global::System.Drawing.Point(0, 0));
+            this.label13.Name = ("label13");
+            this.label13.Padding = (new global::System.Windows.Forms.Padding(11, 13, 6, 7));
+            this.label13.Size = (new global::System.Drawing.Size(894, 40));
+            this.label13.TabIndex = (0);
+            this.label13.Text = ("Настройка параметров ПИД регуляторов, для поддержания заданной температуры и влажности в измерительной камере. ");
             // 
             // tableLayoutPanel10
             // 
-            tableLayoutPanel10.BackColor = Color.FromArgb(30, 30, 30);
-            tableLayoutPanel10.ColumnCount = 6;
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.0880833F));
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.2262506F));
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.3989639F));
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.880827F));
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.5803089F));
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.82556F));
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel10.Controls.Add(label14, 0, 6);
-            tableLayoutPanel10.Controls.Add(pgc_CarbonDioxide, 3, 5);
-            tableLayoutPanel10.Controls.Add(label27, 0, 5);
-            tableLayoutPanel10.Controls.Add(label30, 5, 0);
-            tableLayoutPanel10.Controls.Add(label31, 4, 0);
-            tableLayoutPanel10.Controls.Add(label32, 3, 0);
-            tableLayoutPanel10.Controls.Add(label33, 2, 0);
-            tableLayoutPanel10.Controls.Add(label34, 1, 0);
-            tableLayoutPanel10.Controls.Add(label35, 0, 0);
-            tableLayoutPanel10.Controls.Add(label36, 0, 1);
-            tableLayoutPanel10.Controls.Add(label37, 0, 2);
-            tableLayoutPanel10.Controls.Add(label38, 0, 3);
-            tableLayoutPanel10.Controls.Add(label39, 0, 4);
-            tableLayoutPanel10.Controls.Add(currentCarbonMonoxide2, 1, 1);
-            tableLayoutPanel10.Controls.Add(currentNitrogenDioxide2, 1, 3);
-            tableLayoutPanel10.Controls.Add(currentCarbonDioxide2, 1, 5);
-            tableLayoutPanel10.Controls.Add(currentNitrogenOxide2, 1, 2);
-            tableLayoutPanel10.Controls.Add(currentSulfurDioxide2, 1, 4);
-            tableLayoutPanel10.Controls.Add(setupZeroCarbonMonoxide, 2, 1);
-            tableLayoutPanel10.Controls.Add(setupZeroNitrogenOxide, 2, 2);
-            tableLayoutPanel10.Controls.Add(setupZeroNitrogenDioxide, 2, 3);
-            tableLayoutPanel10.Controls.Add(pgc_CarbonMonoxide, 3, 1);
-            tableLayoutPanel10.Controls.Add(pgc_NitrogenOxide, 3, 2);
-            tableLayoutPanel10.Controls.Add(pgc_NitrogenDioxide, 3, 3);
-            tableLayoutPanel10.Controls.Add(acp_CarbonMonoxide, 4, 1);
-            tableLayoutPanel10.Controls.Add(acp_NitrogenOxide, 4, 2);
-            tableLayoutPanel10.Controls.Add(setupZeroCarbonDioxide, 2, 5);
-            tableLayoutPanel10.Controls.Add(setupZeroSulfurDioxide, 2, 4);
-            tableLayoutPanel10.Controls.Add(pgc_SulfurDioxide, 3, 4);
-            tableLayoutPanel10.Controls.Add(acp_CarbonDioxide, 4, 5);
-            tableLayoutPanel10.Controls.Add(acp_NitrogenDioxide, 4, 3);
-            tableLayoutPanel10.Controls.Add(sumZeroCarbonMonoxide, 5, 1);
-            tableLayoutPanel10.Controls.Add(sumZeroNitrogenOxide, 5, 2);
-            tableLayoutPanel10.Controls.Add(sumZeroNitrogenDioxide, 5, 3);
-            tableLayoutPanel10.Controls.Add(sumZeroSulfurDioxide, 5, 4);
-            tableLayoutPanel10.Controls.Add(acp_SulfurDioxide, 4, 4);
-            tableLayoutPanel10.Controls.Add(sumZeroCarbonDioxide, 5, 5);
-            tableLayoutPanel10.Controls.Add(currentVolatileOrganicCompounds2, 1, 6);
-            tableLayoutPanel10.Controls.Add(setupZeroVolatileOrganicCompounds, 2, 6);
-            tableLayoutPanel10.Dock = DockStyle.Top;
-            tableLayoutPanel10.Location = new Point(0, 69);
-            tableLayoutPanel10.Name = "tableLayoutPanel10";
-            tableLayoutPanel10.RowCount = 7;
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 16.90141F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 16.90141F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 16.90141F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 15.4929562F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 15.4929562F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 18.3098583F));
-            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            tableLayoutPanel10.Size = new Size(594, 176);
-            tableLayoutPanel10.TabIndex = 5;
+            this.tableLayoutPanel10.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.tableLayoutPanel10.ColumnCount = (6);
+            this.tableLayoutPanel10.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 31.0880833F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 11.2262506F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 11.3989639F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 10.880827F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 16.5803089F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 18.82556F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Absolute, 23F));
+            this.tableLayoutPanel10.Controls.Add(this.label14, 0, 6);
+            this.tableLayoutPanel10.Controls.Add(this.pgc_CarbonDioxide, 3, 5);
+            this.tableLayoutPanel10.Controls.Add(this.label27, 0, 5);
+            this.tableLayoutPanel10.Controls.Add(this.label30, 5, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label31, 4, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label32, 3, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label33, 2, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label34, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label35, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.label36, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.label37, 0, 2);
+            this.tableLayoutPanel10.Controls.Add(this.label38, 0, 3);
+            this.tableLayoutPanel10.Controls.Add(this.label39, 0, 4);
+            this.tableLayoutPanel10.Controls.Add(this.currentCarbonMonoxide2, 1, 1);
+            this.tableLayoutPanel10.Controls.Add(this.currentNitrogenDioxide2, 1, 3);
+            this.tableLayoutPanel10.Controls.Add(this.currentCarbonDioxide2, 1, 5);
+            this.tableLayoutPanel10.Controls.Add(this.currentNitrogenOxide2, 1, 2);
+            this.tableLayoutPanel10.Controls.Add(this.currentSulfurDioxide2, 1, 4);
+            this.tableLayoutPanel10.Controls.Add(this.setupZeroCarbonMonoxide, 2, 1);
+            this.tableLayoutPanel10.Controls.Add(this.setupZeroNitrogenOxide, 2, 2);
+            this.tableLayoutPanel10.Controls.Add(this.setupZeroNitrogenDioxide, 2, 3);
+            this.tableLayoutPanel10.Controls.Add(this.pgc_CarbonMonoxide, 3, 1);
+            this.tableLayoutPanel10.Controls.Add(this.pgc_NitrogenOxide, 3, 2);
+            this.tableLayoutPanel10.Controls.Add(this.pgc_NitrogenDioxide, 3, 3);
+            this.tableLayoutPanel10.Controls.Add(this.acp_CarbonMonoxide, 4, 1);
+            this.tableLayoutPanel10.Controls.Add(this.acp_NitrogenOxide, 4, 2);
+            this.tableLayoutPanel10.Controls.Add(this.setupZeroCarbonDioxide, 2, 5);
+            this.tableLayoutPanel10.Controls.Add(this.setupZeroSulfurDioxide, 2, 4);
+            this.tableLayoutPanel10.Controls.Add(this.pgc_SulfurDioxide, 3, 4);
+            this.tableLayoutPanel10.Controls.Add(this.acp_CarbonDioxide, 4, 5);
+            this.tableLayoutPanel10.Controls.Add(this.acp_NitrogenDioxide, 4, 3);
+            this.tableLayoutPanel10.Controls.Add(this.sumZeroCarbonMonoxide, 5, 1);
+            this.tableLayoutPanel10.Controls.Add(this.sumZeroNitrogenOxide, 5, 2);
+            this.tableLayoutPanel10.Controls.Add(this.sumZeroNitrogenDioxide, 5, 3);
+            this.tableLayoutPanel10.Controls.Add(this.sumZeroSulfurDioxide, 5, 4);
+            this.tableLayoutPanel10.Controls.Add(this.acp_SulfurDioxide, 4, 4);
+            this.tableLayoutPanel10.Controls.Add(this.sumZeroCarbonDioxide, 5, 5);
+            this.tableLayoutPanel10.Controls.Add(this.currentVolatileOrganicCompounds2, 1, 6);
+            this.tableLayoutPanel10.Controls.Add(this.setupZeroVolatileOrganicCompounds, 2, 6);
+            this.tableLayoutPanel10.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.tableLayoutPanel10.Location = (new global::System.Drawing.Point(0, 92));
+            this.tableLayoutPanel10.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.tableLayoutPanel10.Name = ("tableLayoutPanel10");
+            this.tableLayoutPanel10.RowCount = (7);
+            this.tableLayoutPanel10.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.90141F));
+            this.tableLayoutPanel10.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.90141F));
+            this.tableLayoutPanel10.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 16.90141F));
+            this.tableLayoutPanel10.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 15.4929562F));
+            this.tableLayoutPanel10.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 15.4929562F));
+            this.tableLayoutPanel10.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 18.3098583F));
+            this.tableLayoutPanel10.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanel10.Size = (new global::System.Drawing.Size(923, 235));
+            this.tableLayoutPanel10.TabIndex = (5);
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.BackColor = Color.FromArgb(50, 50, 50);
-            label14.Dock = DockStyle.Fill;
-            label14.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.ForeColor = Color.FromArgb(190, 190, 190);
-            label14.Location = new Point(3, 148);
-            label14.Name = "label14";
-            label14.Size = new Size(178, 28);
-            label14.TabIndex = 55;
-            label14.Text = "ЛОС (ppm) ";
-            label14.TextAlign = ContentAlignment.MiddleCenter;
+            this.label14.AutoSize = (true);
+            this.label14.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.label14.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label14.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label14.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label14.Location = (new global::System.Drawing.Point(3, 195));
+            this.label14.Name = ("label14");
+            this.label14.Size = (new global::System.Drawing.Size(280, 40));
+            this.label14.TabIndex = (55);
+            this.label14.Text = ("ЛОС (ppm) ");
+            this.label14.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // pgc_CarbonDioxide
             // 
-            pgc_CarbonDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            pgc_CarbonDioxide.BorderStyle = BorderStyle.FixedSingle;
-            pgc_CarbonDioxide.Dock = DockStyle.Fill;
-            pgc_CarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            pgc_CarbonDioxide.Location = new Point(320, 124);
-            pgc_CarbonDioxide.Name = "pgc_CarbonDioxide";
-            pgc_CarbonDioxide.Size = new Size(58, 23);
-            pgc_CarbonDioxide.TabIndex = 54;
-            pgc_CarbonDioxide.Text = "20";
-            pgc_CarbonDioxide.TextAlign = HorizontalAlignment.Center;
+            this.pgc_CarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.pgc_CarbonDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.pgc_CarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pgc_CarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.pgc_CarbonDioxide.Location = (new global::System.Drawing.Point(497, 163));
+            this.pgc_CarbonDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pgc_CarbonDioxide.Name = ("pgc_CarbonDioxide");
+            this.pgc_CarbonDioxide.Size = (new global::System.Drawing.Size(94, 27));
+            this.pgc_CarbonDioxide.TabIndex = (54);
+            this.pgc_CarbonDioxide.Text = ("20");
+            this.pgc_CarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
             // 
             // label27
             // 
-            label27.AutoSize = true;
-            label27.BackColor = Color.FromArgb(80, 80, 80);
-            label27.Dock = DockStyle.Fill;
-            label27.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label27.ForeColor = Color.FromArgb(190, 190, 190);
-            label27.Location = new Point(3, 121);
-            label27.Name = "label27";
-            label27.Size = new Size(178, 27);
-            label27.TabIndex = 13;
-            label27.Text = "CO2 (ppm)";
-            label27.TextAlign = ContentAlignment.MiddleCenter;
+            this.label27.AutoSize = (true);
+            this.label27.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.label27.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label27.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label27.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label27.Location = (new global::System.Drawing.Point(3, 159));
+            this.label27.Name = ("label27");
+            this.label27.Size = (new global::System.Drawing.Size(280, 36));
+            this.label27.TabIndex = (13);
+            this.label27.Text = ("CO2 (ppm)");
+            this.label27.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label30
             // 
-            label30.AutoSize = true;
-            label30.BackColor = Color.FromArgb(23, 21, 21);
-            label30.Dock = DockStyle.Fill;
-            label30.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label30.ForeColor = Color.FromArgb(25, 150, 190);
-            label30.Location = new Point(482, 0);
-            label30.Name = "label30";
-            label30.Size = new Size(109, 25);
-            label30.TabIndex = 8;
-            label30.Text = "Расчётный «0»";
-            label30.TextAlign = ContentAlignment.MiddleCenter;
+            this.label30.AutoSize = (true);
+            this.label30.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label30.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label30.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label30.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label30.Location = (new global::System.Drawing.Point(750, 0));
+            this.label30.Name = ("label30");
+            this.label30.Size = (new global::System.Drawing.Size(170, 33));
+            this.label30.TabIndex = (8);
+            this.label30.Text = ("Расчётный «0»");
+            this.label30.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label31
             // 
-            label31.AutoSize = true;
-            label31.BackColor = Color.FromArgb(23, 21, 21);
-            label31.Dock = DockStyle.Fill;
-            label31.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label31.ForeColor = Color.FromArgb(25, 150, 190);
-            label31.Location = new Point(384, 0);
-            label31.Name = "label31";
-            label31.Size = new Size(92, 25);
-            label31.TabIndex = 7;
-            label31.Text = "Знач-е АЦП";
-            label31.TextAlign = ContentAlignment.MiddleCenter;
+            this.label31.AutoSize = (true);
+            this.label31.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label31.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label31.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label31.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label31.Location = (new global::System.Drawing.Point(597, 0));
+            this.label31.Name = ("label31");
+            this.label31.Size = (new global::System.Drawing.Size(147, 33));
+            this.label31.TabIndex = (7);
+            this.label31.Text = ("Знач-е АЦП");
+            this.label31.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label32
             // 
-            label32.AutoSize = true;
-            label32.BackColor = Color.FromArgb(23, 21, 21);
-            label32.Dock = DockStyle.Fill;
-            label32.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label32.ForeColor = Color.FromArgb(25, 150, 190);
-            label32.Location = new Point(320, 0);
-            label32.Name = "label32";
-            label32.Size = new Size(58, 25);
-            label32.TabIndex = 6;
-            label32.Text = "Конц-я ПГС";
-            label32.TextAlign = ContentAlignment.MiddleCenter;
+            this.label32.AutoSize = (true);
+            this.label32.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label32.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label32.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label32.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label32.Location = (new global::System.Drawing.Point(497, 0));
+            this.label32.Name = ("label32");
+            this.label32.Size = (new global::System.Drawing.Size(94, 33));
+            this.label32.TabIndex = (6);
+            this.label32.Text = ("Конц-я ПГС");
+            this.label32.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label33
             // 
-            label33.AutoSize = true;
-            label33.BackColor = Color.FromArgb(23, 21, 21);
-            label33.Dock = DockStyle.Fill;
-            label33.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label33.ForeColor = Color.FromArgb(25, 150, 190);
-            label33.Location = new Point(253, 0);
-            label33.Name = "label33";
-            label33.Size = new Size(61, 25);
-            label33.TabIndex = 5;
-            label33.Text = "Уст. нуля";
-            label33.TextAlign = ContentAlignment.MiddleCenter;
+            this.label33.AutoSize = (true);
+            this.label33.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label33.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label33.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label33.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label33.Location = (new global::System.Drawing.Point(392, 0));
+            this.label33.Name = ("label33");
+            this.label33.Size = (new global::System.Drawing.Size(99, 33));
+            this.label33.TabIndex = (5);
+            this.label33.Text = ("Уст. нуля");
+            this.label33.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label34
             // 
-            label34.AutoSize = true;
-            label34.BackColor = Color.FromArgb(23, 21, 21);
-            label34.Dock = DockStyle.Fill;
-            label34.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label34.ForeColor = Color.FromArgb(25, 150, 190);
-            label34.Location = new Point(187, 0);
-            label34.Name = "label34";
-            label34.Size = new Size(60, 25);
-            label34.TabIndex = 4;
-            label34.Text = "текущее";
-            label34.TextAlign = ContentAlignment.MiddleCenter;
+            this.label34.AutoSize = (true);
+            this.label34.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label34.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label34.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label34.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label34.Location = (new global::System.Drawing.Point(289, 0));
+            this.label34.Name = ("label34");
+            this.label34.Size = (new global::System.Drawing.Size(97, 33));
+            this.label34.TabIndex = (4);
+            this.label34.Text = ("текущее");
+            this.label34.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label35
             // 
-            label35.AutoSize = true;
-            label35.BackColor = Color.FromArgb(23, 21, 21);
-            label35.Dock = DockStyle.Fill;
-            label35.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label35.ForeColor = Color.FromArgb(25, 150, 190);
-            label35.Location = new Point(3, 0);
-            label35.Name = "label35";
-            label35.Size = new Size(178, 25);
-            label35.TabIndex = 0;
-            label35.Text = "Параметр";
-            label35.TextAlign = ContentAlignment.MiddleCenter;
+            this.label35.AutoSize = (true);
+            this.label35.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.label35.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label35.Font = (new global::System.Drawing.Font("Segoe UI Black", 9F, global::System.Drawing.FontStyle.Bold, global::System.Drawing.GraphicsUnit.Point));
+            this.label35.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(25)), (global::System.Int32)((global::System.Byte)(150)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label35.Location = (new global::System.Drawing.Point(3, 0));
+            this.label35.Name = ("label35");
+            this.label35.Size = (new global::System.Drawing.Size(280, 33));
+            this.label35.TabIndex = (0);
+            this.label35.Text = ("Параметр");
+            this.label35.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label36
             // 
-            label36.AutoSize = true;
-            label36.BackColor = Color.FromArgb(80, 80, 80);
-            label36.Dock = DockStyle.Fill;
-            label36.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label36.ForeColor = Color.FromArgb(190, 190, 190);
-            label36.Location = new Point(3, 25);
-            label36.Name = "label36";
-            label36.Size = new Size(178, 25);
-            label36.TabIndex = 9;
-            label36.Text = "CO (ppm)";
-            label36.TextAlign = ContentAlignment.MiddleCenter;
+            this.label36.AutoSize = (true);
+            this.label36.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.label36.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label36.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label36.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label36.Location = (new global::System.Drawing.Point(3, 33));
+            this.label36.Name = ("label36");
+            this.label36.Size = (new global::System.Drawing.Size(280, 33));
+            this.label36.TabIndex = (9);
+            this.label36.Text = ("CO (ppm)");
+            this.label36.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label37
             // 
-            label37.AutoSize = true;
-            label37.BackColor = Color.FromArgb(50, 50, 50);
-            label37.Dock = DockStyle.Fill;
-            label37.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label37.ForeColor = Color.FromArgb(190, 190, 190);
-            label37.Location = new Point(3, 50);
-            label37.Name = "label37";
-            label37.Size = new Size(178, 25);
-            label37.TabIndex = 10;
-            label37.Text = "NO (ppb)";
-            label37.TextAlign = ContentAlignment.MiddleCenter;
+            this.label37.AutoSize = (true);
+            this.label37.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.label37.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label37.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label37.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label37.Location = (new global::System.Drawing.Point(3, 66));
+            this.label37.Name = ("label37");
+            this.label37.Size = (new global::System.Drawing.Size(280, 33));
+            this.label37.TabIndex = (10);
+            this.label37.Text = ("NO (ppb)");
+            this.label37.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label38
             // 
-            label38.AutoSize = true;
-            label38.BackColor = Color.FromArgb(80, 80, 80);
-            label38.Dock = DockStyle.Fill;
-            label38.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label38.ForeColor = Color.FromArgb(190, 190, 190);
-            label38.Location = new Point(3, 75);
-            label38.Name = "label38";
-            label38.Size = new Size(178, 23);
-            label38.TabIndex = 11;
-            label38.Text = "NO2 (ppb)";
-            label38.TextAlign = ContentAlignment.MiddleCenter;
+            this.label38.AutoSize = (true);
+            this.label38.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.label38.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label38.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label38.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label38.Location = (new global::System.Drawing.Point(3, 99));
+            this.label38.Name = ("label38");
+            this.label38.Size = (new global::System.Drawing.Size(280, 30));
+            this.label38.TabIndex = (11);
+            this.label38.Text = ("NO2 (ppb)");
+            this.label38.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // label39
             // 
-            label39.AutoSize = true;
-            label39.BackColor = Color.FromArgb(50, 50, 50);
-            label39.Dock = DockStyle.Fill;
-            label39.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label39.ForeColor = Color.FromArgb(190, 190, 190);
-            label39.Location = new Point(3, 98);
-            label39.Name = "label39";
-            label39.Size = new Size(178, 23);
-            label39.TabIndex = 12;
-            label39.Text = "SO2 (ppb)";
-            label39.TextAlign = ContentAlignment.MiddleCenter;
+            this.label39.AutoSize = (true);
+            this.label39.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.label39.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label39.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label39.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label39.Location = (new global::System.Drawing.Point(3, 129));
+            this.label39.Name = ("label39");
+            this.label39.Size = (new global::System.Drawing.Size(280, 30));
+            this.label39.TabIndex = (12);
+            this.label39.Text = ("SO2 (ppb)");
+            this.label39.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentCarbonMonoxide2
             // 
-            currentCarbonMonoxide2.AutoSize = true;
-            currentCarbonMonoxide2.BackColor = Color.FromArgb(80, 80, 80);
-            currentCarbonMonoxide2.Dock = DockStyle.Fill;
-            currentCarbonMonoxide2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentCarbonMonoxide2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentCarbonMonoxide2.Location = new Point(187, 25);
-            currentCarbonMonoxide2.Name = "currentCarbonMonoxide2";
-            currentCarbonMonoxide2.Size = new Size(60, 25);
-            currentCarbonMonoxide2.TabIndex = 17;
-            currentCarbonMonoxide2.Text = "23.9";
-            currentCarbonMonoxide2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentCarbonMonoxide2.AutoSize = (true);
+            this.currentCarbonMonoxide2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentCarbonMonoxide2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentCarbonMonoxide2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentCarbonMonoxide2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentCarbonMonoxide2.Location = (new global::System.Drawing.Point(289, 33));
+            this.currentCarbonMonoxide2.Name = ("currentCarbonMonoxide2");
+            this.currentCarbonMonoxide2.Size = (new global::System.Drawing.Size(97, 33));
+            this.currentCarbonMonoxide2.TabIndex = (17);
+            this.currentCarbonMonoxide2.Text = ("23.9");
+            this.currentCarbonMonoxide2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentNitrogenDioxide2
             // 
-            currentNitrogenDioxide2.AutoSize = true;
-            currentNitrogenDioxide2.BackColor = Color.FromArgb(80, 80, 80);
-            currentNitrogenDioxide2.Dock = DockStyle.Fill;
-            currentNitrogenDioxide2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentNitrogenDioxide2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentNitrogenDioxide2.Location = new Point(187, 75);
-            currentNitrogenDioxide2.Name = "currentNitrogenDioxide2";
-            currentNitrogenDioxide2.Size = new Size(60, 23);
-            currentNitrogenDioxide2.TabIndex = 21;
-            currentNitrogenDioxide2.Text = "0.9";
-            currentNitrogenDioxide2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentNitrogenDioxide2.AutoSize = (true);
+            this.currentNitrogenDioxide2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentNitrogenDioxide2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentNitrogenDioxide2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentNitrogenDioxide2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentNitrogenDioxide2.Location = (new global::System.Drawing.Point(289, 99));
+            this.currentNitrogenDioxide2.Name = ("currentNitrogenDioxide2");
+            this.currentNitrogenDioxide2.Size = (new global::System.Drawing.Size(97, 30));
+            this.currentNitrogenDioxide2.TabIndex = (21);
+            this.currentNitrogenDioxide2.Text = ("0.9");
+            this.currentNitrogenDioxide2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentCarbonDioxide2
             // 
-            currentCarbonDioxide2.AutoSize = true;
-            currentCarbonDioxide2.BackColor = Color.FromArgb(80, 80, 80);
-            currentCarbonDioxide2.Dock = DockStyle.Fill;
-            currentCarbonDioxide2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentCarbonDioxide2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentCarbonDioxide2.Location = new Point(187, 121);
-            currentCarbonDioxide2.Name = "currentCarbonDioxide2";
-            currentCarbonDioxide2.Size = new Size(60, 27);
-            currentCarbonDioxide2.TabIndex = 23;
-            currentCarbonDioxide2.Text = "800";
-            currentCarbonDioxide2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentCarbonDioxide2.AutoSize = (true);
+            this.currentCarbonDioxide2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80)), (global::System.Int32)((global::System.Byte)(80))));
+            this.currentCarbonDioxide2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentCarbonDioxide2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentCarbonDioxide2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentCarbonDioxide2.Location = (new global::System.Drawing.Point(289, 159));
+            this.currentCarbonDioxide2.Name = ("currentCarbonDioxide2");
+            this.currentCarbonDioxide2.Size = (new global::System.Drawing.Size(97, 36));
+            this.currentCarbonDioxide2.TabIndex = (23);
+            this.currentCarbonDioxide2.Text = ("800");
+            this.currentCarbonDioxide2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentNitrogenOxide2
             // 
-            currentNitrogenOxide2.AutoSize = true;
-            currentNitrogenOxide2.BackColor = Color.FromArgb(50, 50, 50);
-            currentNitrogenOxide2.Dock = DockStyle.Fill;
-            currentNitrogenOxide2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentNitrogenOxide2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentNitrogenOxide2.Location = new Point(187, 50);
-            currentNitrogenOxide2.Name = "currentNitrogenOxide2";
-            currentNitrogenOxide2.Size = new Size(60, 25);
-            currentNitrogenOxide2.TabIndex = 29;
-            currentNitrogenOxide2.Text = "19.1";
-            currentNitrogenOxide2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentNitrogenOxide2.AutoSize = (true);
+            this.currentNitrogenOxide2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentNitrogenOxide2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentNitrogenOxide2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentNitrogenOxide2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentNitrogenOxide2.Location = (new global::System.Drawing.Point(289, 66));
+            this.currentNitrogenOxide2.Name = ("currentNitrogenOxide2");
+            this.currentNitrogenOxide2.Size = (new global::System.Drawing.Size(97, 33));
+            this.currentNitrogenOxide2.TabIndex = (29);
+            this.currentNitrogenOxide2.Text = ("19.1");
+            this.currentNitrogenOxide2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // currentSulfurDioxide2
             // 
-            currentSulfurDioxide2.AutoSize = true;
-            currentSulfurDioxide2.BackColor = Color.FromArgb(50, 50, 50);
-            currentSulfurDioxide2.Dock = DockStyle.Fill;
-            currentSulfurDioxide2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentSulfurDioxide2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentSulfurDioxide2.Location = new Point(187, 98);
-            currentSulfurDioxide2.Name = "currentSulfurDioxide2";
-            currentSulfurDioxide2.Size = new Size(60, 23);
-            currentSulfurDioxide2.TabIndex = 33;
-            currentSulfurDioxide2.Text = "20.5";
-            currentSulfurDioxide2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentSulfurDioxide2.AutoSize = (true);
+            this.currentSulfurDioxide2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentSulfurDioxide2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentSulfurDioxide2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentSulfurDioxide2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentSulfurDioxide2.Location = (new global::System.Drawing.Point(289, 129));
+            this.currentSulfurDioxide2.Name = ("currentSulfurDioxide2");
+            this.currentSulfurDioxide2.Size = (new global::System.Drawing.Size(97, 30));
+            this.currentSulfurDioxide2.TabIndex = (33);
+            this.currentSulfurDioxide2.Text = ("20.5");
+            this.currentSulfurDioxide2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // setupZeroCarbonMonoxide
             // 
-            setupZeroCarbonMonoxide.BackColor = Color.FromArgb(30, 30, 30);
-            setupZeroCarbonMonoxide.BorderStyle = BorderStyle.FixedSingle;
-            setupZeroCarbonMonoxide.Dock = DockStyle.Fill;
-            setupZeroCarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            setupZeroCarbonMonoxide.Location = new Point(253, 28);
-            setupZeroCarbonMonoxide.Name = "setupZeroCarbonMonoxide";
-            setupZeroCarbonMonoxide.Size = new Size(61, 23);
-            setupZeroCarbonMonoxide.TabIndex = 35;
-            setupZeroCarbonMonoxide.Text = "20";
-            setupZeroCarbonMonoxide.TextAlign = HorizontalAlignment.Center;
-            setupZeroCarbonMonoxide.KeyDown += setupZeroCarbonMonoxide_KeyDown;
+            this.setupZeroCarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.setupZeroCarbonMonoxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.setupZeroCarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.setupZeroCarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.setupZeroCarbonMonoxide.Location = (new global::System.Drawing.Point(392, 37));
+            this.setupZeroCarbonMonoxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.setupZeroCarbonMonoxide.Name = ("setupZeroCarbonMonoxide");
+            this.setupZeroCarbonMonoxide.Size = (new global::System.Drawing.Size(99, 27));
+            this.setupZeroCarbonMonoxide.TabIndex = (35);
+            this.setupZeroCarbonMonoxide.Text = ("20");
+            this.setupZeroCarbonMonoxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.setupZeroCarbonMonoxide.KeyDown += (this.setupZeroCarbonMonoxide_KeyDown);
             // 
             // setupZeroNitrogenOxide
             // 
-            setupZeroNitrogenOxide.BackColor = Color.FromArgb(30, 30, 30);
-            setupZeroNitrogenOxide.BorderStyle = BorderStyle.FixedSingle;
-            setupZeroNitrogenOxide.Dock = DockStyle.Fill;
-            setupZeroNitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            setupZeroNitrogenOxide.Location = new Point(253, 53);
-            setupZeroNitrogenOxide.Name = "setupZeroNitrogenOxide";
-            setupZeroNitrogenOxide.Size = new Size(61, 23);
-            setupZeroNitrogenOxide.TabIndex = 36;
-            setupZeroNitrogenOxide.Text = "20";
-            setupZeroNitrogenOxide.TextAlign = HorizontalAlignment.Center;
-            setupZeroNitrogenOxide.KeyDown += setupZeroNitrogenOxide_KeyDown;
+            this.setupZeroNitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.setupZeroNitrogenOxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.setupZeroNitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.setupZeroNitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.setupZeroNitrogenOxide.Location = (new global::System.Drawing.Point(392, 70));
+            this.setupZeroNitrogenOxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.setupZeroNitrogenOxide.Name = ("setupZeroNitrogenOxide");
+            this.setupZeroNitrogenOxide.Size = (new global::System.Drawing.Size(99, 27));
+            this.setupZeroNitrogenOxide.TabIndex = (36);
+            this.setupZeroNitrogenOxide.Text = ("20");
+            this.setupZeroNitrogenOxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.setupZeroNitrogenOxide.KeyDown += (this.setupZeroNitrogenOxide_KeyDown);
             // 
             // setupZeroNitrogenDioxide
             // 
-            setupZeroNitrogenDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            setupZeroNitrogenDioxide.BorderStyle = BorderStyle.FixedSingle;
-            setupZeroNitrogenDioxide.Dock = DockStyle.Fill;
-            setupZeroNitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            setupZeroNitrogenDioxide.Location = new Point(253, 78);
-            setupZeroNitrogenDioxide.Name = "setupZeroNitrogenDioxide";
-            setupZeroNitrogenDioxide.Size = new Size(61, 23);
-            setupZeroNitrogenDioxide.TabIndex = 37;
-            setupZeroNitrogenDioxide.Text = "20";
-            setupZeroNitrogenDioxide.TextAlign = HorizontalAlignment.Center;
-            setupZeroNitrogenDioxide.KeyDown += setupZeroNitrogenDioxide_KeyDown;
+            this.setupZeroNitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.setupZeroNitrogenDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.setupZeroNitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.setupZeroNitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.setupZeroNitrogenDioxide.Location = (new global::System.Drawing.Point(392, 103));
+            this.setupZeroNitrogenDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.setupZeroNitrogenDioxide.Name = ("setupZeroNitrogenDioxide");
+            this.setupZeroNitrogenDioxide.Size = (new global::System.Drawing.Size(99, 27));
+            this.setupZeroNitrogenDioxide.TabIndex = (37);
+            this.setupZeroNitrogenDioxide.Text = ("20");
+            this.setupZeroNitrogenDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.setupZeroNitrogenDioxide.KeyDown += (this.setupZeroNitrogenDioxide_KeyDown);
             // 
             // pgc_CarbonMonoxide
             // 
-            pgc_CarbonMonoxide.BackColor = Color.FromArgb(30, 30, 30);
-            pgc_CarbonMonoxide.BorderStyle = BorderStyle.FixedSingle;
-            pgc_CarbonMonoxide.Dock = DockStyle.Fill;
-            pgc_CarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            pgc_CarbonMonoxide.Location = new Point(320, 28);
-            pgc_CarbonMonoxide.Name = "pgc_CarbonMonoxide";
-            pgc_CarbonMonoxide.Size = new Size(58, 23);
-            pgc_CarbonMonoxide.TabIndex = 38;
-            pgc_CarbonMonoxide.Text = "20";
-            pgc_CarbonMonoxide.TextAlign = HorizontalAlignment.Center;
-            pgc_CarbonMonoxide.KeyDown += pgc_CarbonMonoxide_KeyDown;
+            this.pgc_CarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.pgc_CarbonMonoxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.pgc_CarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pgc_CarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.pgc_CarbonMonoxide.Location = (new global::System.Drawing.Point(497, 37));
+            this.pgc_CarbonMonoxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pgc_CarbonMonoxide.Name = ("pgc_CarbonMonoxide");
+            this.pgc_CarbonMonoxide.Size = (new global::System.Drawing.Size(94, 27));
+            this.pgc_CarbonMonoxide.TabIndex = (38);
+            this.pgc_CarbonMonoxide.Text = ("20");
+            this.pgc_CarbonMonoxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.pgc_CarbonMonoxide.KeyDown += (this.pgc_CarbonMonoxide_KeyDown);
             // 
             // pgc_NitrogenOxide
             // 
-            pgc_NitrogenOxide.BackColor = Color.FromArgb(30, 30, 30);
-            pgc_NitrogenOxide.BorderStyle = BorderStyle.FixedSingle;
-            pgc_NitrogenOxide.Dock = DockStyle.Fill;
-            pgc_NitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            pgc_NitrogenOxide.Location = new Point(320, 53);
-            pgc_NitrogenOxide.Name = "pgc_NitrogenOxide";
-            pgc_NitrogenOxide.Size = new Size(58, 23);
-            pgc_NitrogenOxide.TabIndex = 39;
-            pgc_NitrogenOxide.Text = "20";
-            pgc_NitrogenOxide.TextAlign = HorizontalAlignment.Center;
-            pgc_NitrogenOxide.KeyDown += pgc_NitrogenOxide_KeyDown;
+            this.pgc_NitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.pgc_NitrogenOxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.pgc_NitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pgc_NitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.pgc_NitrogenOxide.Location = (new global::System.Drawing.Point(497, 70));
+            this.pgc_NitrogenOxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pgc_NitrogenOxide.Name = ("pgc_NitrogenOxide");
+            this.pgc_NitrogenOxide.Size = (new global::System.Drawing.Size(94, 27));
+            this.pgc_NitrogenOxide.TabIndex = (39);
+            this.pgc_NitrogenOxide.Text = ("20");
+            this.pgc_NitrogenOxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.pgc_NitrogenOxide.KeyDown += (this.pgc_NitrogenOxide_KeyDown);
             // 
             // pgc_NitrogenDioxide
             // 
-            pgc_NitrogenDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            pgc_NitrogenDioxide.BorderStyle = BorderStyle.FixedSingle;
-            pgc_NitrogenDioxide.Dock = DockStyle.Fill;
-            pgc_NitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            pgc_NitrogenDioxide.Location = new Point(320, 78);
-            pgc_NitrogenDioxide.Name = "pgc_NitrogenDioxide";
-            pgc_NitrogenDioxide.Size = new Size(58, 23);
-            pgc_NitrogenDioxide.TabIndex = 40;
-            pgc_NitrogenDioxide.Text = "20";
-            pgc_NitrogenDioxide.TextAlign = HorizontalAlignment.Center;
-            pgc_NitrogenDioxide.KeyDown += pgc_NitrogenDioxide_KeyDown;
+            this.pgc_NitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.pgc_NitrogenDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.pgc_NitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pgc_NitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.pgc_NitrogenDioxide.Location = (new global::System.Drawing.Point(497, 103));
+            this.pgc_NitrogenDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pgc_NitrogenDioxide.Name = ("pgc_NitrogenDioxide");
+            this.pgc_NitrogenDioxide.Size = (new global::System.Drawing.Size(94, 27));
+            this.pgc_NitrogenDioxide.TabIndex = (40);
+            this.pgc_NitrogenDioxide.Text = ("20");
+            this.pgc_NitrogenDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.pgc_NitrogenDioxide.KeyDown += (this.pgc_NitrogenDioxide_KeyDown);
             // 
             // acp_CarbonMonoxide
             // 
-            acp_CarbonMonoxide.BackColor = Color.FromArgb(30, 30, 30);
-            acp_CarbonMonoxide.BorderStyle = BorderStyle.FixedSingle;
-            acp_CarbonMonoxide.Dock = DockStyle.Fill;
-            acp_CarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            acp_CarbonMonoxide.Location = new Point(384, 28);
-            acp_CarbonMonoxide.Name = "acp_CarbonMonoxide";
-            acp_CarbonMonoxide.Size = new Size(92, 23);
-            acp_CarbonMonoxide.TabIndex = 41;
-            acp_CarbonMonoxide.Text = "20";
-            acp_CarbonMonoxide.TextAlign = HorizontalAlignment.Center;
-            acp_CarbonMonoxide.KeyDown += acp_CarbonMonoxide_KeyDown;
+            this.acp_CarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.acp_CarbonMonoxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.acp_CarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.acp_CarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.acp_CarbonMonoxide.Location = (new global::System.Drawing.Point(597, 37));
+            this.acp_CarbonMonoxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.acp_CarbonMonoxide.Name = ("acp_CarbonMonoxide");
+            this.acp_CarbonMonoxide.Size = (new global::System.Drawing.Size(147, 27));
+            this.acp_CarbonMonoxide.TabIndex = (41);
+            this.acp_CarbonMonoxide.Text = ("20");
+            this.acp_CarbonMonoxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.acp_CarbonMonoxide.KeyDown += (this.acp_CarbonMonoxide_KeyDown);
             // 
             // acp_NitrogenOxide
             // 
-            acp_NitrogenOxide.BackColor = Color.FromArgb(30, 30, 30);
-            acp_NitrogenOxide.BorderStyle = BorderStyle.FixedSingle;
-            acp_NitrogenOxide.Dock = DockStyle.Fill;
-            acp_NitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            acp_NitrogenOxide.Location = new Point(384, 53);
-            acp_NitrogenOxide.Name = "acp_NitrogenOxide";
-            acp_NitrogenOxide.Size = new Size(92, 23);
-            acp_NitrogenOxide.TabIndex = 42;
-            acp_NitrogenOxide.Text = "20";
-            acp_NitrogenOxide.TextAlign = HorizontalAlignment.Center;
-            acp_NitrogenOxide.KeyDown += acp_NitrogenOxide_KeyDown;
+            this.acp_NitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.acp_NitrogenOxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.acp_NitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.acp_NitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.acp_NitrogenOxide.Location = (new global::System.Drawing.Point(597, 70));
+            this.acp_NitrogenOxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.acp_NitrogenOxide.Name = ("acp_NitrogenOxide");
+            this.acp_NitrogenOxide.Size = (new global::System.Drawing.Size(147, 27));
+            this.acp_NitrogenOxide.TabIndex = (42);
+            this.acp_NitrogenOxide.Text = ("20");
+            this.acp_NitrogenOxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.acp_NitrogenOxide.KeyDown += (this.acp_NitrogenOxide_KeyDown);
             // 
             // setupZeroCarbonDioxide
             // 
-            setupZeroCarbonDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            setupZeroCarbonDioxide.BorderStyle = BorderStyle.FixedSingle;
-            setupZeroCarbonDioxide.Dock = DockStyle.Fill;
-            setupZeroCarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            setupZeroCarbonDioxide.Location = new Point(253, 124);
-            setupZeroCarbonDioxide.Name = "setupZeroCarbonDioxide";
-            setupZeroCarbonDioxide.Size = new Size(61, 23);
-            setupZeroCarbonDioxide.TabIndex = 43;
-            setupZeroCarbonDioxide.Text = "20";
-            setupZeroCarbonDioxide.TextAlign = HorizontalAlignment.Center;
+            this.setupZeroCarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.setupZeroCarbonDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.setupZeroCarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.setupZeroCarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.setupZeroCarbonDioxide.Location = (new global::System.Drawing.Point(392, 163));
+            this.setupZeroCarbonDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.setupZeroCarbonDioxide.Name = ("setupZeroCarbonDioxide");
+            this.setupZeroCarbonDioxide.Size = (new global::System.Drawing.Size(99, 27));
+            this.setupZeroCarbonDioxide.TabIndex = (43);
+            this.setupZeroCarbonDioxide.Text = ("20");
+            this.setupZeroCarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
             // 
             // setupZeroSulfurDioxide
             // 
-            setupZeroSulfurDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            setupZeroSulfurDioxide.BorderStyle = BorderStyle.FixedSingle;
-            setupZeroSulfurDioxide.Dock = DockStyle.Fill;
-            setupZeroSulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            setupZeroSulfurDioxide.Location = new Point(253, 101);
-            setupZeroSulfurDioxide.Name = "setupZeroSulfurDioxide";
-            setupZeroSulfurDioxide.Size = new Size(61, 23);
-            setupZeroSulfurDioxide.TabIndex = 44;
-            setupZeroSulfurDioxide.Text = "20";
-            setupZeroSulfurDioxide.TextAlign = HorizontalAlignment.Center;
-            setupZeroSulfurDioxide.KeyDown += setupZeroSulfurDioxide_KeyDown;
+            this.setupZeroSulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.setupZeroSulfurDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.setupZeroSulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.setupZeroSulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.setupZeroSulfurDioxide.Location = (new global::System.Drawing.Point(392, 133));
+            this.setupZeroSulfurDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.setupZeroSulfurDioxide.Name = ("setupZeroSulfurDioxide");
+            this.setupZeroSulfurDioxide.Size = (new global::System.Drawing.Size(99, 27));
+            this.setupZeroSulfurDioxide.TabIndex = (44);
+            this.setupZeroSulfurDioxide.Text = ("20");
+            this.setupZeroSulfurDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.setupZeroSulfurDioxide.KeyDown += (this.setupZeroSulfurDioxide_KeyDown);
             // 
             // pgc_SulfurDioxide
             // 
-            pgc_SulfurDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            pgc_SulfurDioxide.BorderStyle = BorderStyle.FixedSingle;
-            pgc_SulfurDioxide.Dock = DockStyle.Fill;
-            pgc_SulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            pgc_SulfurDioxide.Location = new Point(320, 101);
-            pgc_SulfurDioxide.Name = "pgc_SulfurDioxide";
-            pgc_SulfurDioxide.Size = new Size(58, 23);
-            pgc_SulfurDioxide.TabIndex = 45;
-            pgc_SulfurDioxide.Text = "20";
-            pgc_SulfurDioxide.TextAlign = HorizontalAlignment.Center;
-            pgc_SulfurDioxide.KeyDown += pgc_SulfurDioxide_KeyDown;
+            this.pgc_SulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.pgc_SulfurDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.pgc_SulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pgc_SulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.pgc_SulfurDioxide.Location = (new global::System.Drawing.Point(497, 133));
+            this.pgc_SulfurDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.pgc_SulfurDioxide.Name = ("pgc_SulfurDioxide");
+            this.pgc_SulfurDioxide.Size = (new global::System.Drawing.Size(94, 27));
+            this.pgc_SulfurDioxide.TabIndex = (45);
+            this.pgc_SulfurDioxide.Text = ("20");
+            this.pgc_SulfurDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.pgc_SulfurDioxide.KeyDown += (this.pgc_SulfurDioxide_KeyDown);
             // 
             // acp_CarbonDioxide
             // 
-            acp_CarbonDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            acp_CarbonDioxide.BorderStyle = BorderStyle.FixedSingle;
-            acp_CarbonDioxide.Dock = DockStyle.Fill;
-            acp_CarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            acp_CarbonDioxide.Location = new Point(384, 124);
-            acp_CarbonDioxide.Name = "acp_CarbonDioxide";
-            acp_CarbonDioxide.Size = new Size(92, 23);
-            acp_CarbonDioxide.TabIndex = 46;
-            acp_CarbonDioxide.Text = "20";
-            acp_CarbonDioxide.TextAlign = HorizontalAlignment.Center;
+            this.acp_CarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.acp_CarbonDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.acp_CarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.acp_CarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.acp_CarbonDioxide.Location = (new global::System.Drawing.Point(597, 163));
+            this.acp_CarbonDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.acp_CarbonDioxide.Name = ("acp_CarbonDioxide");
+            this.acp_CarbonDioxide.Size = (new global::System.Drawing.Size(147, 27));
+            this.acp_CarbonDioxide.TabIndex = (46);
+            this.acp_CarbonDioxide.Text = ("20");
+            this.acp_CarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
             // 
             // acp_NitrogenDioxide
             // 
-            acp_NitrogenDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            acp_NitrogenDioxide.BorderStyle = BorderStyle.FixedSingle;
-            acp_NitrogenDioxide.Dock = DockStyle.Fill;
-            acp_NitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            acp_NitrogenDioxide.Location = new Point(384, 78);
-            acp_NitrogenDioxide.Name = "acp_NitrogenDioxide";
-            acp_NitrogenDioxide.Size = new Size(92, 23);
-            acp_NitrogenDioxide.TabIndex = 47;
-            acp_NitrogenDioxide.Text = "20";
-            acp_NitrogenDioxide.TextAlign = HorizontalAlignment.Center;
-            acp_NitrogenDioxide.KeyDown += acp_NitrogenDioxide_KeyDown;
+            this.acp_NitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.acp_NitrogenDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.acp_NitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.acp_NitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.acp_NitrogenDioxide.Location = (new global::System.Drawing.Point(597, 103));
+            this.acp_NitrogenDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.acp_NitrogenDioxide.Name = ("acp_NitrogenDioxide");
+            this.acp_NitrogenDioxide.Size = (new global::System.Drawing.Size(147, 27));
+            this.acp_NitrogenDioxide.TabIndex = (47);
+            this.acp_NitrogenDioxide.Text = ("20");
+            this.acp_NitrogenDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.acp_NitrogenDioxide.KeyDown += (this.acp_NitrogenDioxide_KeyDown);
             // 
             // sumZeroCarbonMonoxide
             // 
-            sumZeroCarbonMonoxide.BackColor = Color.FromArgb(30, 30, 30);
-            sumZeroCarbonMonoxide.BorderStyle = BorderStyle.FixedSingle;
-            sumZeroCarbonMonoxide.Dock = DockStyle.Fill;
-            sumZeroCarbonMonoxide.ForeColor = Color.FromArgb(250, 250, 250);
-            sumZeroCarbonMonoxide.Location = new Point(482, 28);
-            sumZeroCarbonMonoxide.Name = "sumZeroCarbonMonoxide";
-            sumZeroCarbonMonoxide.Size = new Size(109, 23);
-            sumZeroCarbonMonoxide.TabIndex = 48;
-            sumZeroCarbonMonoxide.Text = "20";
-            sumZeroCarbonMonoxide.TextAlign = HorizontalAlignment.Center;
-            sumZeroCarbonMonoxide.KeyDown += sumZeroCarbonMonoxide_KeyDown;
+            this.sumZeroCarbonMonoxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.sumZeroCarbonMonoxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.sumZeroCarbonMonoxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.sumZeroCarbonMonoxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.sumZeroCarbonMonoxide.Location = (new global::System.Drawing.Point(750, 37));
+            this.sumZeroCarbonMonoxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.sumZeroCarbonMonoxide.Name = ("sumZeroCarbonMonoxide");
+            this.sumZeroCarbonMonoxide.Size = (new global::System.Drawing.Size(170, 27));
+            this.sumZeroCarbonMonoxide.TabIndex = (48);
+            this.sumZeroCarbonMonoxide.Text = ("20");
+            this.sumZeroCarbonMonoxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.sumZeroCarbonMonoxide.KeyDown += (this.sumZeroCarbonMonoxide_KeyDown);
             // 
             // sumZeroNitrogenOxide
             // 
-            sumZeroNitrogenOxide.BackColor = Color.FromArgb(30, 30, 30);
-            sumZeroNitrogenOxide.BorderStyle = BorderStyle.FixedSingle;
-            sumZeroNitrogenOxide.Dock = DockStyle.Fill;
-            sumZeroNitrogenOxide.ForeColor = Color.FromArgb(250, 250, 250);
-            sumZeroNitrogenOxide.Location = new Point(482, 53);
-            sumZeroNitrogenOxide.Name = "sumZeroNitrogenOxide";
-            sumZeroNitrogenOxide.Size = new Size(109, 23);
-            sumZeroNitrogenOxide.TabIndex = 49;
-            sumZeroNitrogenOxide.Text = "20";
-            sumZeroNitrogenOxide.TextAlign = HorizontalAlignment.Center;
-            sumZeroNitrogenOxide.KeyDown += sumZeroNitrogenOxide_KeyDown;
+            this.sumZeroNitrogenOxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.sumZeroNitrogenOxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.sumZeroNitrogenOxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.sumZeroNitrogenOxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.sumZeroNitrogenOxide.Location = (new global::System.Drawing.Point(750, 70));
+            this.sumZeroNitrogenOxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.sumZeroNitrogenOxide.Name = ("sumZeroNitrogenOxide");
+            this.sumZeroNitrogenOxide.Size = (new global::System.Drawing.Size(170, 27));
+            this.sumZeroNitrogenOxide.TabIndex = (49);
+            this.sumZeroNitrogenOxide.Text = ("20");
+            this.sumZeroNitrogenOxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.sumZeroNitrogenOxide.KeyDown += (this.sumZeroNitrogenOxide_KeyDown);
             // 
             // sumZeroNitrogenDioxide
             // 
-            sumZeroNitrogenDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            sumZeroNitrogenDioxide.BorderStyle = BorderStyle.FixedSingle;
-            sumZeroNitrogenDioxide.Dock = DockStyle.Fill;
-            sumZeroNitrogenDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            sumZeroNitrogenDioxide.Location = new Point(482, 78);
-            sumZeroNitrogenDioxide.Name = "sumZeroNitrogenDioxide";
-            sumZeroNitrogenDioxide.Size = new Size(109, 23);
-            sumZeroNitrogenDioxide.TabIndex = 50;
-            sumZeroNitrogenDioxide.Text = "20";
-            sumZeroNitrogenDioxide.TextAlign = HorizontalAlignment.Center;
-            sumZeroNitrogenDioxide.KeyDown += sumZeroNitrogenDioxide_KeyDown;
+            this.sumZeroNitrogenDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.sumZeroNitrogenDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.sumZeroNitrogenDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.sumZeroNitrogenDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.sumZeroNitrogenDioxide.Location = (new global::System.Drawing.Point(750, 103));
+            this.sumZeroNitrogenDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.sumZeroNitrogenDioxide.Name = ("sumZeroNitrogenDioxide");
+            this.sumZeroNitrogenDioxide.Size = (new global::System.Drawing.Size(170, 27));
+            this.sumZeroNitrogenDioxide.TabIndex = (50);
+            this.sumZeroNitrogenDioxide.Text = ("20");
+            this.sumZeroNitrogenDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.sumZeroNitrogenDioxide.KeyDown += (this.sumZeroNitrogenDioxide_KeyDown);
             // 
             // sumZeroSulfurDioxide
             // 
-            sumZeroSulfurDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            sumZeroSulfurDioxide.BorderStyle = BorderStyle.FixedSingle;
-            sumZeroSulfurDioxide.Dock = DockStyle.Fill;
-            sumZeroSulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            sumZeroSulfurDioxide.Location = new Point(482, 101);
-            sumZeroSulfurDioxide.Name = "sumZeroSulfurDioxide";
-            sumZeroSulfurDioxide.Size = new Size(109, 23);
-            sumZeroSulfurDioxide.TabIndex = 51;
-            sumZeroSulfurDioxide.Text = "20";
-            sumZeroSulfurDioxide.TextAlign = HorizontalAlignment.Center;
-            sumZeroSulfurDioxide.KeyDown += sumZeroSulfurDioxide_KeyDown;
+            this.sumZeroSulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.sumZeroSulfurDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.sumZeroSulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.sumZeroSulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.sumZeroSulfurDioxide.Location = (new global::System.Drawing.Point(750, 133));
+            this.sumZeroSulfurDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.sumZeroSulfurDioxide.Name = ("sumZeroSulfurDioxide");
+            this.sumZeroSulfurDioxide.Size = (new global::System.Drawing.Size(170, 27));
+            this.sumZeroSulfurDioxide.TabIndex = (51);
+            this.sumZeroSulfurDioxide.Text = ("20");
+            this.sumZeroSulfurDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.sumZeroSulfurDioxide.KeyDown += (this.sumZeroSulfurDioxide_KeyDown);
             // 
             // acp_SulfurDioxide
             // 
-            acp_SulfurDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            acp_SulfurDioxide.BorderStyle = BorderStyle.FixedSingle;
-            acp_SulfurDioxide.Dock = DockStyle.Fill;
-            acp_SulfurDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            acp_SulfurDioxide.Location = new Point(384, 101);
-            acp_SulfurDioxide.Name = "acp_SulfurDioxide";
-            acp_SulfurDioxide.Size = new Size(92, 23);
-            acp_SulfurDioxide.TabIndex = 52;
-            acp_SulfurDioxide.Text = "20";
-            acp_SulfurDioxide.TextAlign = HorizontalAlignment.Center;
-            acp_SulfurDioxide.KeyDown += acp_SulfurDioxide_KeyDown;
+            this.acp_SulfurDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.acp_SulfurDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.acp_SulfurDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.acp_SulfurDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.acp_SulfurDioxide.Location = (new global::System.Drawing.Point(597, 133));
+            this.acp_SulfurDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.acp_SulfurDioxide.Name = ("acp_SulfurDioxide");
+            this.acp_SulfurDioxide.Size = (new global::System.Drawing.Size(147, 27));
+            this.acp_SulfurDioxide.TabIndex = (52);
+            this.acp_SulfurDioxide.Text = ("20");
+            this.acp_SulfurDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.acp_SulfurDioxide.KeyDown += (this.acp_SulfurDioxide_KeyDown);
             // 
             // sumZeroCarbonDioxide
             // 
-            sumZeroCarbonDioxide.BackColor = Color.FromArgb(30, 30, 30);
-            sumZeroCarbonDioxide.BorderStyle = BorderStyle.FixedSingle;
-            sumZeroCarbonDioxide.Dock = DockStyle.Fill;
-            sumZeroCarbonDioxide.ForeColor = Color.FromArgb(250, 250, 250);
-            sumZeroCarbonDioxide.Location = new Point(482, 124);
-            sumZeroCarbonDioxide.Name = "sumZeroCarbonDioxide";
-            sumZeroCarbonDioxide.Size = new Size(109, 23);
-            sumZeroCarbonDioxide.TabIndex = 53;
-            sumZeroCarbonDioxide.Text = "20";
-            sumZeroCarbonDioxide.TextAlign = HorizontalAlignment.Center;
+            this.sumZeroCarbonDioxide.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.sumZeroCarbonDioxide.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.sumZeroCarbonDioxide.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.sumZeroCarbonDioxide.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.sumZeroCarbonDioxide.Location = (new global::System.Drawing.Point(750, 163));
+            this.sumZeroCarbonDioxide.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.sumZeroCarbonDioxide.Name = ("sumZeroCarbonDioxide");
+            this.sumZeroCarbonDioxide.Size = (new global::System.Drawing.Size(170, 27));
+            this.sumZeroCarbonDioxide.TabIndex = (53);
+            this.sumZeroCarbonDioxide.Text = ("20");
+            this.sumZeroCarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
             // 
             // currentVolatileOrganicCompounds2
             // 
-            currentVolatileOrganicCompounds2.AutoSize = true;
-            currentVolatileOrganicCompounds2.BackColor = Color.FromArgb(50, 50, 50);
-            currentVolatileOrganicCompounds2.Dock = DockStyle.Fill;
-            currentVolatileOrganicCompounds2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            currentVolatileOrganicCompounds2.ForeColor = Color.FromArgb(250, 250, 250);
-            currentVolatileOrganicCompounds2.Location = new Point(187, 148);
-            currentVolatileOrganicCompounds2.Name = "currentVolatileOrganicCompounds2";
-            currentVolatileOrganicCompounds2.Size = new Size(60, 28);
-            currentVolatileOrganicCompounds2.TabIndex = 56;
-            currentVolatileOrganicCompounds2.Text = "20.5";
-            currentVolatileOrganicCompounds2.TextAlign = ContentAlignment.MiddleCenter;
+            this.currentVolatileOrganicCompounds2.AutoSize = (true);
+            this.currentVolatileOrganicCompounds2.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50)), (global::System.Int32)((global::System.Byte)(50))));
+            this.currentVolatileOrganicCompounds2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.currentVolatileOrganicCompounds2.Font = (new global::System.Drawing.Font("Segoe UI", 9F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.currentVolatileOrganicCompounds2.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.currentVolatileOrganicCompounds2.Location = (new global::System.Drawing.Point(289, 195));
+            this.currentVolatileOrganicCompounds2.Name = ("currentVolatileOrganicCompounds2");
+            this.currentVolatileOrganicCompounds2.Size = (new global::System.Drawing.Size(97, 40));
+            this.currentVolatileOrganicCompounds2.TabIndex = (56);
+            this.currentVolatileOrganicCompounds2.Text = ("20.5");
+            this.currentVolatileOrganicCompounds2.TextAlign = (global::System.Drawing.ContentAlignment.MiddleCenter);
             // 
             // setupZeroVolatileOrganicCompounds
             // 
-            setupZeroVolatileOrganicCompounds.BackColor = Color.FromArgb(30, 30, 30);
-            setupZeroVolatileOrganicCompounds.BorderStyle = BorderStyle.FixedSingle;
-            setupZeroVolatileOrganicCompounds.Dock = DockStyle.Fill;
-            setupZeroVolatileOrganicCompounds.ForeColor = Color.FromArgb(250, 250, 250);
-            setupZeroVolatileOrganicCompounds.Location = new Point(253, 151);
-            setupZeroVolatileOrganicCompounds.Name = "setupZeroVolatileOrganicCompounds";
-            setupZeroVolatileOrganicCompounds.Size = new Size(61, 23);
-            setupZeroVolatileOrganicCompounds.TabIndex = 57;
-            setupZeroVolatileOrganicCompounds.Text = "20";
-            setupZeroVolatileOrganicCompounds.TextAlign = HorizontalAlignment.Center;
-            setupZeroVolatileOrganicCompounds.KeyDown += setupZeroVolatileOrganicCompounds_KeyDown;
+            this.setupZeroVolatileOrganicCompounds.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.setupZeroVolatileOrganicCompounds.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.setupZeroVolatileOrganicCompounds.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.setupZeroVolatileOrganicCompounds.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.setupZeroVolatileOrganicCompounds.Location = (new global::System.Drawing.Point(392, 199));
+            this.setupZeroVolatileOrganicCompounds.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.setupZeroVolatileOrganicCompounds.Name = ("setupZeroVolatileOrganicCompounds");
+            this.setupZeroVolatileOrganicCompounds.Size = (new global::System.Drawing.Size(99, 27));
+            this.setupZeroVolatileOrganicCompounds.TabIndex = (57);
+            this.setupZeroVolatileOrganicCompounds.Text = ("20");
+            this.setupZeroVolatileOrganicCompounds.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.setupZeroVolatileOrganicCompounds.KeyDown += (this.setupZeroVolatileOrganicCompounds_KeyDown);
             // 
             // panel1
             // 
-            panel1.Controls.Add(label46);
-            panel1.Controls.Add(label47);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(594, 69);
-            panel1.TabIndex = 4;
+            this.panel1.Controls.Add(this.tableLayoutPanel11);
+            this.panel1.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.panel1.Location = (new global::System.Drawing.Point(0, 0));
+            this.panel1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.panel1.Name = ("panel1");
+            this.panel1.Size = (new global::System.Drawing.Size(923, 92));
+            this.panel1.TabIndex = (4);
             // 
-            // label46
+            // tableLayoutPanel11
             // 
-            label46.AutoSize = true;
-            label46.Dock = DockStyle.Top;
-            label46.ForeColor = Color.FromArgb(190, 190, 190);
-            label46.Location = new Point(0, 30);
-            label46.Name = "label46";
-            label46.Padding = new Padding(10, 10, 5, 5);
-            label46.Size = new Size(362, 30);
-            label46.TabIndex = 1;
-            label46.Text = "в объёмные доли концентрации вещества измеряемые в ppb";
+            this.tableLayoutPanel11.ColumnCount = (3);
+            this.tableLayoutPanel11.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 84.50057F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 15.4994259F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel11.Controls.Add(this.textBox1, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.label47, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.label46, 0, 1);
+            this.tableLayoutPanel11.Controls.Add(this.pictureBox2, 2, 0);
+            this.tableLayoutPanel11.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.tableLayoutPanel11.Location = (new global::System.Drawing.Point(0, 0));
+            this.tableLayoutPanel11.Name = ("tableLayoutPanel11");
+            this.tableLayoutPanel11.RowCount = (2);
+            this.tableLayoutPanel11.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel11.Size = (new global::System.Drawing.Size(923, 92));
+            this.tableLayoutPanel11.TabIndex = (0);
+            this.tableLayoutPanel11.Paint += (this.tableLayoutPanel11_Paint);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((global::System.Windows.Forms.AnchorStyles)((global::System.Windows.Forms.AnchorStyles.Top) | (global::System.Windows.Forms.AnchorStyles.Bottom)));
+            this.textBox1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
+            this.textBox1.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
+            this.textBox1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
+            this.textBox1.Location = (new global::System.Drawing.Point(732, 4));
+            this.textBox1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.textBox1.Name = ("textBox1");
+            this.textBox1.PasswordChar = ('*');
+            this.textBox1.Size = (new global::System.Drawing.Size(127, 27));
+            this.textBox1.TabIndex = (49);
+            this.textBox1.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.textBox1.KeyDown += (this.textBox1_KeyDown);
             // 
             // label47
             // 
-            label47.AutoSize = true;
-            label47.Dock = DockStyle.Top;
-            label47.ForeColor = Color.FromArgb(190, 190, 190);
-            label47.Location = new Point(0, 0);
-            label47.Name = "label47";
-            label47.Padding = new Padding(10, 10, 5, 5);
-            label47.Size = new Size(631, 30);
-            label47.TabIndex = 0;
-            label47.Text = "Установка коэффициентов пересчёта значений тока электрохимических ячеек, получаемые в единицах АЦП,";
+            this.label47.AutoSize = (true);
+            this.label47.Dock = (global::System.Windows.Forms.DockStyle.Top);
+            this.label47.Font = (new global::System.Drawing.Font("Segoe UI", 8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label47.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label47.Location = (new global::System.Drawing.Point(3, 0));
+            this.label47.Name = ("label47");
+            this.label47.Padding = (new global::System.Windows.Forms.Padding(11, 13, 6, 7));
+            this.label47.Size = (new global::System.Drawing.Size(723, 39));
+            this.label47.TabIndex = (0);
+            this.label47.Text = ("Установка коэффициентов пересчёта значений тока электрохимических ячеек, получаемые в единицах АЦП,");
+            this.label47.Click += (this.label47_Click);
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = (true);
+            this.label46.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.label46.Font = (new global::System.Drawing.Font("Segoe UI", 8F, global::System.Drawing.FontStyle.Regular, global::System.Drawing.GraphicsUnit.Point));
+            this.label46.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190)), (global::System.Int32)((global::System.Byte)(190))));
+            this.label46.Location = (new global::System.Drawing.Point(3, 49));
+            this.label46.Name = ("label46");
+            this.label46.Padding = (new global::System.Windows.Forms.Padding(11, 13, 6, 7));
+            this.label46.Size = (new global::System.Drawing.Size(723, 43));
+            this.label46.TabIndex = (1);
+            this.label46.Text = ("в объёмные доли концентрации вещества измеряемые в ppb");
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = (global::System.Windows.Forms.Cursors.Hand);
+            this.pictureBox2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
+            this.pictureBox2.Image = (global::GravitonEco.Properties.Resources.password_red);
+            this.pictureBox2.Location = (new global::System.Drawing.Point(865, 3));
+            this.pictureBox2.Name = ("pictureBox2");
+            this.pictureBox2.Size = (new global::System.Drawing.Size(55, 43));
+            this.pictureBox2.SizeMode = (global::System.Windows.Forms.PictureBoxSizeMode.Zoom);
+            this.pictureBox2.TabIndex = (50);
+            this.pictureBox2.TabStop = (false);
+            this.pictureBox2.Click += (this.pictureBox2_Click);
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(23, 21, 21);
-            ClientSize = new Size(1211, 653);
-            Controls.Add(splitContainer1);
-            Controls.Add(tableLayoutPanel2);
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "MainForm";
-            Text = "СТАНЦИЯ ОНЛАЙН МОНИТОРИНГА GRAVITON ECO";
-            WindowState = FormWindowState.Maximized;
-            Load += MainForm_Load;
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            splitContainer1.Panel1.ResumeLayout(false);
-            splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
-            splitContainer1.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel9.ResumeLayout(false);
-            tableLayoutPanel9.PerformLayout();
-            tableLayoutPanel4.ResumeLayout(false);
-            tableLayoutPanel4.PerformLayout();
-            tableLayoutPanel5.ResumeLayout(false);
-            tableLayoutPanel5.PerformLayout();
-            tableLayoutPanel7.ResumeLayout(false);
-            tableLayoutPanel7.PerformLayout();
-            tableLayoutPanel8.ResumeLayout(false);
-            tableLayoutPanel8.PerformLayout();
-            tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel6.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            tableLayoutPanel10.ResumeLayout(false);
-            tableLayoutPanel10.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = (new global::System.Drawing.SizeF(8F, 20F));
+            this.AutoScaleMode = (global::System.Windows.Forms.AutoScaleMode.Font);
+            this.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(23)), (global::System.Int32)((global::System.Byte)(21)), (global::System.Int32)((global::System.Byte)(21))));
+            this.ClientSize = (new global::System.Drawing.Size(1876, 871));
+            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Icon = ((global::System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
+            this.Name = ("MainForm");
+            this.Text = ("СТАНЦИЯ ОНЛАЙН МОНИТОРИНГА GRAVITON ECO");
+            this.WindowState = (global::System.Windows.Forms.FormWindowState.Maximized);
+            this.Load += (this.MainForm_Load);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((global::System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((global::System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tableLayoutPanel10.ResumeLayout(false);
+            this.tableLayoutPanel10.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel11.ResumeLayout(false);
+            this.tableLayoutPanel11.PerformLayout();
+            ((global::System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.ResumeLayout(false);
         }
 
         #endregion
@@ -5177,5 +5372,8 @@
         private Panel panel1;
         private Label label46;
         private Label label47;
+        private global::System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
+        private global::System.Windows.Forms.TextBox textBox1;
+        private global::System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -1,6 +1,8 @@
 using GravitonEco.Controller;
 using GravitonEco.Model;
 using GravitonEco.View;
+using System.Text;
+using System.Windows.Forms;
 
 namespace GravitonEco
 {
@@ -9,21 +11,23 @@ namespace GravitonEco
         private string _host;
         private string _port;
         private ModbusTCPClient _client;
+        private CancellationTokenSource cts;
         // Константа для задержки в миллисекундах
-        private const int DelayMilliseconds = 1000;
+        private int _delaySeconds = 1;
 
         // Кеш для значений параметров и соответствующих элементов управления
         private Dictionary<string, (byte slaveId, ushort address)> parameterControls = new Dictionary<string, (byte slaveId, ushort address)>();
 
         // Кеш для другого словаря значений
         private Dictionary<string, (byte slaveId, ushort address)> otherDataCache = new Dictionary<string, (byte slaveId, ushort address)>();
+        private Dictionary<string, (byte slaveId, ushort address)> otherDateTimeCache = new Dictionary<string, (byte slaveId, ushort address)>();
 
 
 
         public MainForm()
         {
             InitializeComponent();
-
+            cts = new CancellationTokenSource();
             INIManager manager = new INIManager(@"./Config/setting_device_connection.ini");
             _host = manager.GetPrivateString("DeviceConnectSetting", "Host");
             _port = manager.GetPrivateString("DeviceConnectSetting", "Port");
@@ -115,6 +119,13 @@ namespace GravitonEco
             parameterControls["coil_Напряжениепорог1"] = (1, 6);
             parameterControls["coil_Напряжениепорог2"] = (1, 7);
             parameterControls["coil_Напряжениедт"] = (1, 8);
+
+            otherDateTimeCache["holdingdate_Секунды"] = (251, 256);
+            otherDateTimeCache["holdingdate_Минуты"] = (251, 257);
+            otherDateTimeCache["holdingdate_Часы"] = (251, 258);
+            otherDateTimeCache["holdingdate_День"] = (251, 259);
+            otherDateTimeCache["holdingdate_Месяц"] = (251, 260);
+            otherDateTimeCache["holdingdate_Год"] = (251, 262);
 
             porog_1_AirTemperature.Text = _client.ReadHoldingParametr(2, 20);
             porog_2_AirTemperature.Text = _client.ReadHoldingParametr(2, 21);
@@ -256,6 +267,38 @@ namespace GravitonEco
             stepRelativeHumidity.Text = _client.ReadHoldingParametr(3, 260);
             timeRelativeHumidity.Text = _client.ReadHoldingParametr(3, 261);
 
+            setupZeroCarbonMonoxide.Enabled = false;
+            pgc_CarbonMonoxide.Enabled = false;
+            acp_CarbonMonoxide.Enabled = false;
+            sumZeroCarbonMonoxide.Enabled = false;
+            setupZeroNitrogenOxide.Enabled = false;
+            pgc_NitrogenOxide.Enabled = false;
+            acp_NitrogenOxide.Enabled = false;
+            sumZeroNitrogenOxide.Enabled = false;
+            setupZeroNitrogenDioxide.Enabled = false;
+            pgc_NitrogenDioxide.Enabled = false;
+            acp_NitrogenDioxide.Enabled = false;
+            sumZeroNitrogenDioxide.Enabled = false;
+            setupZeroSulfurDioxide.Enabled = false;
+            pgc_SulfurDioxide.Enabled = false;
+            acp_SulfurDioxide.Enabled = false;
+            sumZeroSulfurDioxide.Enabled = false;
+            setupZeroVolatileOrganicCompounds.Enabled = false;
+            constAtmosphericPressure.Enabled = false;
+            constWindSpeed.Enabled = false;
+            powerAirTemperature.Enabled = false;
+            constAirTemperature.Enabled = false;
+            stepAirTemperature.Enabled = false;
+            timeAirTemperature.Enabled = false;
+            powerRelativeHumidity.Enabled = false;
+            constRelativeHumidity.Enabled = false;
+            stepRelativeHumidity.Enabled = false;
+            timeRelativeHumidity.Enabled = false;
+            setupZeroCarbonDioxide.Enabled = false;
+            pgc_CarbonDioxide.Enabled = false;
+            acp_CarbonDioxide.Enabled = false;
+            sumZeroCarbonDioxide.Enabled = false;
+
             Task.Run(async () =>
             {
                 while (true)
@@ -275,10 +318,20 @@ namespace GravitonEco
                     Dictionary<string, string> otherData = await _client.ReadMultipleValuesAsync(parameterControls);
 
                     Invoke(new Action(() => UpdateOtherDataOnForm(otherData)));
-                    await Task.Delay(500);
+                    await Task.Delay(_delaySeconds * 1000, cts.Token);
                 }
             });
 
+            Task.Run(async () =>
+            {
+                while (true)
+                {
+                    Dictionary<string, string> otherData = await _client.ReadMultipleValuesAsync(otherDateTimeCache);
+
+                    Invoke(new Action(() => UpdateDateTimeOnForm(otherData)));
+                    await Task.Delay(500);
+                }
+            });
         }
 
         private void UpdateDataOnForm(Dictionary<string, string> data)
@@ -416,7 +469,21 @@ namespace GravitonEco
                 {
                     currentVolatileOrganicCompounds2.Text = paramValue;
                 }
+                /*
+                
+                */
             }
+        }
+
+        private void UpdateDateTimeOnForm(Dictionary<string, string> data)
+        {
+            string _year = _client.ReadHoldingParametrdate(251, 262).Split('-')[0];
+            string _moths = _client.ReadHoldingParametrdate(251, 261).Split('-')[0];
+            string _day = _client.ReadHoldingParametrdate(251, 260).Split('-')[0];
+            string _hour = _client.ReadHoldingParametrdate(251, 258).Split('-')[0];
+            string _minute = _client.ReadHoldingParametrdate(251, 257).Split('-')[0];
+            string _second = _client.ReadHoldingParametrdate(251, 256).Split('-')[0];
+            dateSensor.Text = _day + "." + _moths + "." + _year + " " + _hour + ":" + _minute + ":" + _second;
         }
 
         private void UpdateOtherDataOnForm(Dictionary<string, string> data)
@@ -1823,6 +1890,137 @@ namespace GravitonEco
                 timeRelativeHumidity.Text = _client.ReadHoldingParametr(3, 261);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
+        }
+
+        private void label47_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+        bool lockSetting = false;
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "589985")
+            {
+                // Проверяем, была ли уже изменена иконка
+                if (lockSetting)
+                {
+                    // Если иконка уже была изменена, то меняем на исходную
+                    pictureBox2.Image = Properties.Resources.password_red; // Замените "original_icon" на имя ресурса иконки по умолчанию
+                    setupZeroCarbonMonoxide.Enabled = false;
+                    pgc_CarbonMonoxide.Enabled = false;
+                    acp_CarbonMonoxide.Enabled = false;
+                    sumZeroCarbonMonoxide.Enabled = false;
+                    setupZeroNitrogenOxide.Enabled = false;
+                    pgc_NitrogenOxide.Enabled = false;
+                    acp_NitrogenOxide.Enabled = false;
+                    sumZeroNitrogenOxide.Enabled = false;
+                    setupZeroNitrogenDioxide.Enabled = false;
+                    pgc_NitrogenDioxide.Enabled = false;
+                    acp_NitrogenDioxide.Enabled = false;
+                    sumZeroNitrogenDioxide.Enabled = false;
+                    setupZeroSulfurDioxide.Enabled = false;
+                    pgc_SulfurDioxide.Enabled = false;
+                    acp_SulfurDioxide.Enabled = false;
+                    sumZeroSulfurDioxide.Enabled = false;
+                    setupZeroVolatileOrganicCompounds.Enabled = false;
+                    constAtmosphericPressure.Enabled = false;
+                    constWindSpeed.Enabled = false;
+                    powerAirTemperature.Enabled = false;
+                    constAirTemperature.Enabled = false;
+                    stepAirTemperature.Enabled = false;
+                    timeAirTemperature.Enabled = false;
+                    powerRelativeHumidity.Enabled = false;
+                    constRelativeHumidity.Enabled = false;
+                    stepRelativeHumidity.Enabled = false;
+                    timeRelativeHumidity.Enabled = false;
+                    setupZeroCarbonDioxide.Enabled = false;
+                    pgc_CarbonDioxide.Enabled = false;
+                    acp_CarbonDioxide.Enabled = false;
+                    sumZeroCarbonDioxide.Enabled = false;
+                }
+                else
+                {
+                    // Если иконка не была изменена, то меняем на новую иконку
+                    pictureBox2.Image = Properties.Resources.password_green; // Замените "new_icon" на имя ресурса новой иконки
+                    setupZeroCarbonMonoxide.Enabled = true;
+                    pgc_CarbonMonoxide.Enabled = true;
+                    acp_CarbonMonoxide.Enabled = true;
+                    sumZeroCarbonMonoxide.Enabled = true;
+                    setupZeroNitrogenOxide.Enabled = true;
+                    pgc_NitrogenOxide.Enabled = true;
+                    acp_NitrogenOxide.Enabled = true;
+                    sumZeroNitrogenOxide.Enabled = true;
+                    setupZeroCarbonDioxide.Enabled = true;
+                    pgc_CarbonDioxide.Enabled = true;
+                    acp_CarbonDioxide.Enabled = true;
+                    sumZeroCarbonDioxide.Enabled = true;
+                    setupZeroNitrogenDioxide.Enabled = true;
+                    pgc_NitrogenDioxide.Enabled = true;
+                    acp_NitrogenDioxide.Enabled = true;
+                    sumZeroNitrogenDioxide.Enabled = true;
+                    setupZeroSulfurDioxide.Enabled = true;
+                    pgc_SulfurDioxide.Enabled = true;
+                    acp_SulfurDioxide.Enabled = true;
+                    sumZeroSulfurDioxide.Enabled = true;
+                    setupZeroVolatileOrganicCompounds.Enabled = true;
+                    constAtmosphericPressure.Enabled = true;
+                    constWindSpeed.Enabled = true;
+                    powerAirTemperature.Enabled = true;
+                    constAirTemperature.Enabled = true;
+                    stepAirTemperature.Enabled = true;
+                    timeAirTemperature.Enabled = true;
+                    powerRelativeHumidity.Enabled = true;
+                    constRelativeHumidity.Enabled = true;
+                    stepRelativeHumidity.Enabled = true;
+                    timeRelativeHumidity.Enabled = true;
+                }
+
+                // Инвертируем состояние флага isIconChanged
+                lockSetting = !lockSetting;
+            }
+        }
+
+        private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _delaySeconds = Int32.Parse(comboBox1.SelectedItem.ToString());
+            // Отменяем предыдущую задержку, если она есть
+            cts.Cancel();
+
+            // Создаем новый токен отмены
+            cts = new CancellationTokenSource();
+
+            try
+            {
+                Task.Run(async () =>
+                {
+                    while (true)
+                    {
+                        Dictionary<string, string> otherData = await _client.ReadMultipleValuesAsync(parameterControls);
+
+                        Invoke(new Action(() => UpdateOtherDataOnForm(otherData)));
+                        await Task.Delay(_delaySeconds * 1000, cts.Token);
+                    }
+                });
+            }
+            catch (TaskCanceledException)
+            {
+                // Задержка была отменена, если новое значение было выбрано в ComboBox
+                // до истечения предыдущей задержки
+                // Можно проигнорировать или обработать этот случай по вашему усмотрению
+            }
+
+            MessageBox.Show("Интервал изменен", "Уведомление");
         }
     }
 }

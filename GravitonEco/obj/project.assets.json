@@ -45,24 +45,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user01\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Пользователь\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user01\\Documents\\GitHub\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
+      "projectUniqueName": "C:\\Users\\Пользователь\\Desktop\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
       "projectName": "GravitonEco",
-      "projectPath": "C:\\Users\\user01\\Documents\\GitHub\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
-      "packagesPath": "C:\\Users\\user01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user01\\Documents\\GitHub\\GravitonEco\\GravitonEco\\obj\\",
+      "projectPath": "C:\\Users\\Пользователь\\Desktop\\GravitonEco\\GravitonEco\\GravitonEco.csproj",
+      "packagesPath": "C:\\Users\\Пользователь\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Пользователь\\Desktop\\GravitonEco\\GravitonEco\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\user01\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Пользователь\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -70,7 +65,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -113,7 +107,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
