@@ -7,36 +7,50 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GravitonEco.View
 {
     public partial class SplashForm : Form
     {
+
+        private System.Windows.Forms.Timer timer;
+        private int progressValue;
+        private const int totalTimeInSeconds = 20;
+        private const int timerIntervalInMilliseconds = 100;
+
         public SplashForm()
         {
             InitializeComponent();
+            InitializeProgressBar();
         }
 
-        public static void ShowSplashScreen()
+        private void InitializeProgressBar()
         {
-            SplashForm splashForm = new SplashForm();
-            splashForm.Show();
-
-            // Задержка на стартовом экране (2 секунды в данном примере)
-            //Thread.Sleep(5000);
-
-            Application.DoEvents(); // Обновление интерфейса, чтобы стартовый экран успел отрисоваться
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = totalTimeInSeconds * 1000 / timerIntervalInMilliseconds; // Рассчитываем общее количество шагов прогресса
+            progressBar1.Value = 0;
+            progressValue = 0;
+            timer = new System.Windows.Forms.Timer();
+            timer.Interval = timerIntervalInMilliseconds;
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
         }
 
-        public static void CloseSplashScreen()
+        private void startButton_Click(object sender, EventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            progressValue++;
+            progressBar1.Value = progressValue;
+
+            if (progressValue >= progressBar1.Maximum)
             {
-                if (form is SplashForm splashForm)
-                {
-                    splashForm.Close();
-                    break;
-                }
+                timer.Stop();
+                this.Close();
             }
         }
     }
