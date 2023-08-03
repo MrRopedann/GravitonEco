@@ -109,7 +109,6 @@ namespace GravitonEco
             {"coil_Напряжениепорог2",(1,7)},
             {"coil_Напряжениедт",(1,8)},
         };
-            // Добавьте другие параметры, которые вам нужны
 
 
             porog_1_AirTemperature.Text = _client.ReadHoldingParametr(2, 20);
@@ -162,10 +161,10 @@ namespace GravitonEco
             dx_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 46);
             dt_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 47);
 
-            porog_1_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 32);
-            porog_2_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 33);
-            dx_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 34);
-            dt_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 35);
+            porog_1_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 24);
+            porog_2_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 25);
+            dx_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 26);
+            dt_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 26);
 
             porog_1_ParticulateMatterPM1.Text = _client.ReadHoldingParametr(2, 64);
             porog_2_ParticulateMatterPM1.Text = _client.ReadHoldingParametr(2, 65);
@@ -252,118 +251,14 @@ namespace GravitonEco
             stepRelativeHumidity.Text = _client.ReadHoldingParametr(3, 260);
             timeRelativeHumidity.Text = _client.ReadHoldingParametr(3, 261);
 
-            porog_1_AirTemperature.KeyDown += porog_1_AirTemperature_KeyDown;
-            porog_1_RelativeHumidity.KeyDown += porog_1_RelativeHumidity_KeyDown;
-            porog_1_AtmosphericPressure.KeyDown += porog_1_AtmosphericPressure_KeyDown;
-            porog_2_AirTemperature.KeyDown += porog_2_AirTemperature_KeyDown;
-            porog_2_RelativeHumidity.KeyDown += porog_2_RelativeHumidity_KeyDown;
-            porog_2_AtmosphericPressure.KeyDown += porog_2_AtmosphericPressure_KeyDown;
-            dx_AirTemperature.KeyDown += dx_AirTemperature_KeyDown;
-            dx_RelativeHumidity.KeyDown += dx_RelativeHumidity_KeyDown;
-            porog_1_WindDirection.KeyDown += porog_1_WindDirection_KeyDown;
-            porog_1_WindSpeed.KeyDown += porog_1_WindSpeed_KeyDown;
-            porog_2_WindSpeed.KeyDown += porog_2_WindSpeed_KeyDown;
-            dx_WindDirection.KeyDown += dx_WindDirection_KeyDown;
-            dx_AtmosphericPressure.KeyDown += dx_AtmosphericPressure_KeyDown;
-            dt_AirTemperature.KeyDown += dt_AirTemperature_KeyDown;
-            dt_RelativeHumidity.KeyDown += dt_RelativeHumidity_KeyDown;
-            dt_AtmosphericPressure.KeyDown += dt_AtmosphericPressure_KeyDown;
-            dt_WindSpeed.KeyDown += dt_WindSpeed_KeyDown;
-            dx_WindSpeed.KeyDown += dx_WindSpeed_KeyDown;
-            dt_WindDirection.KeyDown += dt_WindDirection_KeyDown;
-            porog_1_VolatileOrganicCompounds.KeyDown += porog_1_VolatileOrganicCompounds_KeyDown;
-            porog_1_CarbonMonoxide.KeyDown += porog_1_CarbonMonoxide_KeyDown;
-            porog_1_NitrogenOxide.KeyDown += porog_1_NitrogenOxide_KeyDown;
-            porog_1_NitrogenDioxide.KeyDown += porog_1_NitrogenDioxide_KeyDown;
-            porog_1_SulfurDioxide.KeyDown += porog_1_SulfurDioxide_KeyDown;
-            porog_1_CarbonDioxide.KeyDown += porog_1_CarbonDioxide_KeyDown;
-            porog_2_CarbonDioxide.KeyDown += porog_2_CarbonDioxide_KeyDown;
-            porog_2_SulfurDioxide.KeyDown += porog_2_SulfurDioxide_KeyDown;
-            porog_2_NitrogenDioxide.KeyDown += porog_2_NitrogenDioxide_KeyDown;
-            porog_2_NitrogenOxide.KeyDown += porog_2_NitrogenOxide_KeyDown;
-            porog_2_CarbonMonoxide.KeyDown += porog_2_CarbonMonoxide_KeyDown;
-            dx_CarbonMonoxide.KeyDown += dx_CarbonMonoxide_KeyDown;
-            dx_NitrogenOxide.KeyDown += dx_NitrogenOxide_KeyDown;
-            dx_NitrogenDioxide.KeyDown += dx_NitrogenDioxide_KeyDown;
-            dx_SulfurDioxide.KeyDown += dx_SulfurDioxide_KeyDown;
-            dx_CarbonDioxide.KeyDown += dx_CarbonDioxide_KeyDown;
-            dx_VolatileOrganicCompounds.KeyDown += dx_VolatileOrganicCompounds_KeyDown;
-            porog_2_VolatileOrganicCompounds.KeyDown += porog_2_VolatileOrganicCompounds_KeyDown;
-            dt_VolatileOrganicCompounds.KeyDown += dt_VolatileOrganicCompounds_KeyDown;
-            dt_CarbonDioxide.KeyDown += dt_CarbonDioxide_KeyDown;
-            dt_SulfurDioxide.KeyDown += dt_SulfurDioxide_KeyDown;
-            dt_NitrogenDioxide.KeyDown += dt_NitrogenDioxide_KeyDown;
-            dt_NitrogenOxide.KeyDown += dt_NitrogenOxide_KeyDown;
-            dt_CarbonMonoxide.KeyDown += dt_CarbonMonoxide_KeyDown;
-            porog_1_ParticulateMatterPM10.KeyDown += porog_1_ParticulateMatterPM10_KeyDown;
-            porog_1_ParticulateMatterPM1.KeyDown += porog_1_ParticulateMatterPM1_KeyDown;
-            porog_1_ParticulateMatterPM2_5.KeyDown += porog_1_ParticulateMatterPM2_5_KeyDown;
-            porog_2_ParticulateMatterPM1.KeyDown += porog_2_ParticulateMatterPM1_KeyDown;
-            porog_2_ParticulateMatterPM2_5.KeyDown += porog_2_ParticulateMatterPM2_5_KeyDown;
-            porog_2_ParticulateMatterPM10.KeyDown += porog_2_ParticulateMatterPM10_KeyDown;
-            dx_ParticulateMatterPM1.KeyDown += dx_ParticulateMatterPM1_KeyDown;
-            dx_ParticulateMatterPM2_5.KeyDown += dx_ParticulateMatterPM2_5_KeyDown;
-            dx_ParticulateMatterPM10.KeyDown += dx_ParticulateMatterPM10_KeyDown;
-            dt_ParticulateMatterPM1.KeyDown += dt_ParticulateMatterPM1_KeyDown;
-            dt_ParticulateMatterPM2_5.KeyDown += dt_ParticulateMatterPM2_5_KeyDown;
-            dt_ParticulateMatterPM10.KeyDown += dt_ParticulateMatterPM10_KeyDown;
-            dt_TamperSensor.KeyDown += dt_TamperSensor_KeyDown;
-            dx_TamperSensor.KeyDown += dx_TamperSensor_KeyDown;
-            porog_2_TamperSensor.KeyDown += porog_2_TamperSensor_KeyDown;
-            porog_1_TamperSensor.KeyDown += porog_1_TamperSensor_KeyDown;
-            dt_TiltLevel.KeyDown += dt_TiltLevel_KeyDown;
-            dx_TiltLevel.KeyDown += dx_TiltLevel_KeyDown;
-            porog_2_TiltLevel.KeyDown += porog_2_TiltLevel_KeyDown;
-            porog_1_TiltLevel.KeyDown += porog_1_TiltLevel_KeyDown;
-            dt_VibrationLevel.KeyDown += dt_VibrationLevel_KeyDown;
-            dx_VibrationLevel.KeyDown += dx_VibrationLevel_KeyDown;
-            porog_2_VibrationLevel.KeyDown += porog_2_VibrationLevel_KeyDown;
-            porog_1_VibrationLevel.KeyDown += porog_1_VibrationLevel_KeyDown;
-            //setupZeroCarbonMonoxide.KeyDown = _client.ReadHoldingParametr(1, 520);
-            pgc_CarbonMonoxide.KeyDown += pgc_CarbonMonoxide_KeyDown;
-            acp_CarbonMonoxide.KeyDown += acp_CarbonMonoxide_KeyDown;
-            sumZeroCarbonMonoxide.KeyDown += sumZeroCarbonMonoxide_KeyDown;
-
-            setupZeroNitrogenOxide.KeyDown += setupZeroNitrogenOxide_KeyDown;
-            pgc_NitrogenOxide.KeyDown += pgc_NitrogenOxide_KeyDown;
-            acp_NitrogenOxide.KeyDown += acp_NitrogenOxide_KeyDown;
-            sumZeroNitrogenOxide.KeyDown += sumZeroNitrogenOxide_KeyDown;
-
-            setupZeroNitrogenDioxide.KeyDown += setupZeroNitrogenDioxide_KeyDown;
-            pgc_NitrogenDioxide.KeyDown += pgc_NitrogenDioxide_KeyDown;
-            acp_NitrogenDioxide.KeyDown += acp_NitrogenDioxide_KeyDown;
-            sumZeroNitrogenDioxide.KeyDown += sumZeroNitrogenDioxide_KeyDown;
-
-            setupZeroSulfurDioxide.KeyDown += setupZeroSulfurDioxide_KeyDown;
-            pgc_SulfurDioxide.KeyDown += pgc_SulfurDioxide_KeyDown;
-            acp_SulfurDioxide.KeyDown += acp_SulfurDioxide_KeyDown;
-            sumZeroSulfurDioxide.KeyDown += sumZeroSulfurDioxide_KeyDown;
-
-            setupZeroVolatileOrganicCompounds.KeyDown += setupZeroVolatileOrganicCompounds_KeyDown;
-
-            constAtmosphericPressure.KeyDown += constAtmosphericPressure_KeyDown;
-            constWindSpeed.KeyDown += constWindSpeed_KeyDown;
-
-            powerAirTemperature.KeyDown += powerAirTemperature_KeyDown;
-            constAirTemperature.KeyDown += constAirTemperature_KeyDown;
-            stepAirTemperature.KeyDown += stepAirTemperature_KeyDown;
-            timeAirTemperature.KeyDown += timeAirTemperature_KeyDown;
-
-            powerRelativeHumidity.KeyDown += powerRelativeHumidity_KeyDown;
-            constRelativeHumidity.KeyDown += constRelativeHumidity_KeyDown;
-            stepRelativeHumidity.KeyDown += stepRelativeHumidity_KeyDown;
-            timeRelativeHumidity.KeyDown += timeRelativeHumidity_KeyDown;
-
             Task.Run(async () =>
             {
                 while (true)
                 {
                     Dictionary<string, string> data = await _client.ReadMultipleValuesAsync(parameters);
-
-                    // Вызов метода для обновления данных в основном потоке UI
                     Invoke(new Action(() => UpdateDataOnForm(data)));
 
-                    await Task.Delay(1000); // Приостанавливаем выполнение на 1 секунду перед следующим обновлением данных
+                    await Task.Delay(1000);
                 }
             });
         }
@@ -795,6 +690,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 20, ushort.Parse(porog_1_AirTemperature.Text));
                 porog_1_AirTemperature.Text = _client.ReadHoldingParametr(2, 20);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -804,6 +700,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 21, ushort.Parse(porog_2_AirTemperature.Text));
                 porog_2_AirTemperature.Text = _client.ReadHoldingParametr(2, 21);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -813,6 +710,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 22, ushort.Parse(dx_AirTemperature.Text));
                 dx_AirTemperature.Text = _client.ReadHoldingParametr(2, 22);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -822,6 +720,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 23, ushort.Parse(dt_AirTemperature.Text));
                 dt_AirTemperature.Text = _client.ReadHoldingParametr(2, 23);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -831,6 +730,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 24, ushort.Parse(porog_1_RelativeHumidity.Text));
                 porog_1_RelativeHumidity.Text = _client.ReadHoldingParametr(2, 24);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -840,6 +740,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 25, ushort.Parse(porog_2_RelativeHumidity.Text));
                 porog_2_RelativeHumidity.Text = _client.ReadHoldingParametr(2, 25);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -849,6 +750,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 26, ushort.Parse(dx_RelativeHumidity.Text));
                 dx_RelativeHumidity.Text = _client.ReadHoldingParametr(2, 26);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -858,6 +760,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 27, ushort.Parse(dt_RelativeHumidity.Text));
                 dt_RelativeHumidity.Text = _client.ReadHoldingParametr(2, 27);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -867,6 +770,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 4, ushort.Parse(porog_1_AtmosphericPressure.Text));
                 porog_1_AtmosphericPressure.Text = _client.ReadHoldingParametr(2, 4);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -876,6 +780,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 5, ushort.Parse(porog_2_AtmosphericPressure.Text));
                 porog_2_AtmosphericPressure.Text = _client.ReadHoldingParametr(2, 5);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -885,6 +790,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 6, ushort.Parse(dx_AtmosphericPressure.Text));
                 dx_AtmosphericPressure.Text = _client.ReadHoldingParametr(2, 6);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -894,6 +800,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 7, ushort.Parse(dt_AtmosphericPressure.Text));
                 dt_AtmosphericPressure.Text = _client.ReadHoldingParametr(2, 7);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -903,6 +810,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 28, ushort.Parse(porog_1_WindSpeed.Text));
                 porog_1_WindSpeed.Text = _client.ReadHoldingParametr(1, 28);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -912,6 +820,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 29, ushort.Parse(porog_2_WindSpeed.Text));
                 porog_2_WindSpeed.Text = _client.ReadHoldingParametr(1, 29);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -921,6 +830,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 30, ushort.Parse(dx_WindSpeed.Text));
                 dx_WindSpeed.Text = _client.ReadHoldingParametr(1, 30);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -930,6 +840,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 31, ushort.Parse(dt_WindSpeed.Text));
                 dt_WindSpeed.Text = _client.ReadHoldingParametr(1, 31);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -939,6 +850,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 8, ushort.Parse(porog_1_WindDirection.Text));
                 porog_1_WindDirection.Text = _client.ReadHoldingParametr(2, 8);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -948,6 +860,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 9, ushort.Parse(porog_2_WindDirection.Text));
                 porog_2_WindDirection.Text = _client.ReadHoldingParametr(2, 9);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -957,6 +870,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 10, ushort.Parse(dx_WindDirection.Text));
                 dx_WindDirection.Text = _client.ReadHoldingParametr(2, 10);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -966,6 +880,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 11, ushort.Parse(dt_WindDirection.Text));
                 dt_WindDirection.Text = _client.ReadHoldingParametr(2, 11);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -975,6 +890,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 40, ushort.Parse(porog_1_CarbonMonoxide.Text));
                 porog_1_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 40);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -984,6 +900,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 41, ushort.Parse(porog_2_CarbonMonoxide.Text));
                 porog_2_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 41);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -993,6 +910,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 42, ushort.Parse(dx_CarbonMonoxide.Text));
                 dx_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 42);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1002,6 +920,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 43, ushort.Parse(dt_CarbonMonoxide.Text));
                 dt_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 43);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1011,6 +930,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 48, ushort.Parse(porog_1_NitrogenOxide.Text));
                 porog_1_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 48);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1020,6 +940,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 49, ushort.Parse(porog_2_NitrogenOxide.Text));
                 porog_2_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 49);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1029,6 +950,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 50, ushort.Parse(dx_NitrogenOxide.Text));
                 dx_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 50);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1038,6 +960,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 51, ushort.Parse(dt_NitrogenOxide.Text));
                 dt_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 51);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1047,6 +970,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 52, ushort.Parse(porog_1_NitrogenDioxide.Text));
                 porog_1_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 52);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1056,6 +980,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 53, ushort.Parse(porog_2_NitrogenDioxide.Text));
                 porog_2_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 53);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1065,6 +990,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 54, ushort.Parse(dx_NitrogenDioxide.Text));
                 dx_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 54);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1074,6 +1000,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 55, ushort.Parse(dt_NitrogenDioxide.Text));
                 dt_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 55);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1083,6 +1010,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 76, ushort.Parse(porog_1_SulfurDioxide.Text));
                 porog_1_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 76);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1092,6 +1020,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 77, ushort.Parse(porog_2_SulfurDioxide.Text));
                 porog_2_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 77);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1101,6 +1030,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 78, ushort.Parse(dx_SulfurDioxide.Text));
                 dx_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 78);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1110,6 +1040,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 79, ushort.Parse(dt_SulfurDioxide.Text));
                 dt_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 79);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1119,6 +1050,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 44, ushort.Parse(porog_1_CarbonDioxide.Text));
                 porog_1_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 44);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1128,6 +1060,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 45, ushort.Parse(porog_2_CarbonDioxide.Text));
                 porog_2_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 45);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1137,6 +1070,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 46, ushort.Parse(dx_CarbonDioxide.Text));
                 dx_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 46);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1146,6 +1080,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 47, ushort.Parse(dt_CarbonDioxide.Text));
                 dt_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 47);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1153,8 +1088,9 @@ namespace GravitonEco
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _client.WriteHoldingParametr(1, 32, ushort.Parse(porog_1_VolatileOrganicCompounds.Text));
-                porog_1_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 33);
+                _client.WriteHoldingParametr(1, 24, ushort.Parse(porog_1_VolatileOrganicCompounds.Text));
+                porog_1_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 24);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1162,8 +1098,9 @@ namespace GravitonEco
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _client.WriteHoldingParametr(1, 33, ushort.Parse(porog_2_VolatileOrganicCompounds.Text));
-                porog_2_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 33);
+                _client.WriteHoldingParametr(1, 25, ushort.Parse(porog_2_VolatileOrganicCompounds.Text));
+                porog_2_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 25);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1171,8 +1108,9 @@ namespace GravitonEco
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _client.WriteHoldingParametr(1, 34, ushort.Parse(dx_VolatileOrganicCompounds.Text));
-                dx_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 34);
+                _client.WriteHoldingParametr(1, 26, ushort.Parse(dx_VolatileOrganicCompounds.Text));
+                dx_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 26);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1182,6 +1120,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 35, ushort.Parse(dt_VolatileOrganicCompounds.Text));
                 dt_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 35);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1191,6 +1130,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 64, ushort.Parse(porog_1_ParticulateMatterPM1.Text));
                 porog_1_ParticulateMatterPM1.Text = _client.ReadHoldingParametr(2, 64);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1200,6 +1140,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 65, ushort.Parse(porog_2_ParticulateMatterPM1.Text));
                 porog_2_ParticulateMatterPM1.Text = _client.ReadHoldingParametr(2, 65);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1209,6 +1150,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 66, ushort.Parse(dx_ParticulateMatterPM1.Text));
                 dx_ParticulateMatterPM1.Text = _client.ReadHoldingParametr(2, 66);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1218,6 +1160,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 67, ushort.Parse(dt_ParticulateMatterPM1.Text));
                 dt_ParticulateMatterPM1.Text = _client.ReadHoldingParametr(2, 67);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1227,6 +1170,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 68, ushort.Parse(porog_1_ParticulateMatterPM2_5.Text));
                 porog_1_ParticulateMatterPM2_5.Text = _client.ReadHoldingParametr(2, 68);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1236,6 +1180,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 69, ushort.Parse(porog_2_ParticulateMatterPM2_5.Text));
                 porog_2_ParticulateMatterPM2_5.Text = _client.ReadHoldingParametr(2, 69);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1245,6 +1190,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 70, ushort.Parse(dx_ParticulateMatterPM2_5.Text));
                 dx_ParticulateMatterPM2_5.Text = _client.ReadHoldingParametr(2, 70);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1254,6 +1200,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 71, ushort.Parse(dt_ParticulateMatterPM2_5.Text));
                 dt_ParticulateMatterPM2_5.Text = _client.ReadHoldingParametr(2, 71);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1263,6 +1210,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 72, ushort.Parse(porog_1_ParticulateMatterPM10.Text));
                 porog_1_ParticulateMatterPM10.Text = _client.ReadHoldingParametr(2, 72);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1272,6 +1220,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 73, ushort.Parse(porog_2_ParticulateMatterPM10.Text));
                 porog_2_ParticulateMatterPM10.Text = _client.ReadHoldingParametr(2, 73);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1281,6 +1230,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 74, ushort.Parse(dx_ParticulateMatterPM10.Text));
                 dx_ParticulateMatterPM10.Text = _client.ReadHoldingParametr(2, 74);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1290,6 +1240,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(2, 75, ushort.Parse(dt_ParticulateMatterPM10.Text));
                 dt_ParticulateMatterPM10.Text = _client.ReadHoldingParametr(2, 75);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1299,6 +1250,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 84, ushort.Parse(porog_1_VibrationLevel.Text));
                 porog_1_VibrationLevel.Text = _client.ReadHoldingParametr(1, 84);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1308,6 +1260,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 85, ushort.Parse(porog_2_VibrationLevel.Text));
                 porog_2_VibrationLevel.Text = _client.ReadHoldingParametr(1, 85);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1317,6 +1270,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 86, ushort.Parse(dx_VibrationLevel.Text));
                 dx_VibrationLevel.Text = _client.ReadHoldingParametr(1, 86);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1326,6 +1280,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 87, ushort.Parse(dt_VibrationLevel.Text));
                 dt_VibrationLevel.Text = _client.ReadHoldingParametr(1, 87);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1335,6 +1290,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 80, ushort.Parse(porog_1_TiltLevel.Text));
                 porog_1_TiltLevel.Text = _client.ReadHoldingParametr(1, 80);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1344,6 +1300,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 81, ushort.Parse(porog_2_TiltLevel.Text));
                 porog_2_TiltLevel.Text = _client.ReadHoldingParametr(1, 81);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1353,6 +1310,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 82, ushort.Parse(dx_TiltLevel.Text));
                 dx_TiltLevel.Text = _client.ReadHoldingParametr(1, 82);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1362,6 +1320,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 83, ushort.Parse(dt_TiltLevel.Text));
                 dt_TiltLevel.Text = _client.ReadHoldingParametr(1, 83);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1371,6 +1330,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(3, 8, ushort.Parse(porog_1_TamperSensor.Text));
                 porog_1_TamperSensor.Text = _client.ReadHoldingParametr(3, 8);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1380,6 +1340,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(3, 9, ushort.Parse(porog_2_TamperSensor.Text));
                 porog_2_TamperSensor.Text = _client.ReadHoldingParametr(3, 9);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1389,6 +1350,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(3, 10, ushort.Parse(dx_TamperSensor.Text));
                 dx_TamperSensor.Text = _client.ReadHoldingParametr(3, 10);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1398,6 +1360,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(3, 11, ushort.Parse(dt_TamperSensor.Text));
                 dt_TamperSensor.Text = _client.ReadHoldingParametr(3, 11);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1407,6 +1370,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 20, ushort.Parse(porog_1_TemperatureInSensor.Text));
                 porog_1_TemperatureInSensor.Text = _client.ReadHoldingParametr(1, 20);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1416,6 +1380,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 21, ushort.Parse(porog_2_TemperatureInSensor.Text));
                 porog_2_TemperatureInSensor.Text = _client.ReadHoldingParametr(1, 21);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1425,6 +1390,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 22, ushort.Parse(dx_TemperatureInSensor.Text));
                 dx_TemperatureInSensor.Text = _client.ReadHoldingParametr(1, 22);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1434,6 +1400,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 23, ushort.Parse(dt_TemperatureInSensor.Text));
                 dt_TemperatureInSensor.Text = _client.ReadHoldingParametr(1, 23);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1443,6 +1410,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 24, ushort.Parse(porog_1_HumidityInSensor.Text));
                 porog_1_HumidityInSensor.Text = _client.ReadHoldingParametr(1, 24);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1452,6 +1420,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 25, ushort.Parse(porog_2_HumidityInSensor.Text));
                 porog_2_HumidityInSensor.Text = _client.ReadHoldingParametr(1, 25);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1461,6 +1430,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 26, ushort.Parse(dx_HumidityInSensor.Text));
                 dx_HumidityInSensor.Text = _client.ReadHoldingParametr(1, 26);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1470,6 +1440,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 27, ushort.Parse(dt_HumidityInSensor.Text));
                 dt_HumidityInSensor.Text = _client.ReadHoldingParametr(1, 27);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1479,6 +1450,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 8, ushort.Parse(porog_1_SupplyVoltage.Text));
                 porog_1_SupplyVoltage.Text = _client.ReadHoldingParametr(1, 8);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1488,6 +1460,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 9, ushort.Parse(porog_2_SupplyVoltage.Text));
                 porog_2_SupplyVoltage.Text = _client.ReadHoldingParametr(1, 9);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1497,6 +1470,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 10, ushort.Parse(dx_SupplyVoltage.Text));
                 dx_SupplyVoltage.Text = _client.ReadHoldingParametr(1, 10);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1506,6 +1480,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 11, ushort.Parse(dt_SupplyVoltage.Text));
                 dt_SupplyVoltage.Text = _client.ReadHoldingParametr(1, 11);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1515,6 +1490,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 4, ushort.Parse(porog_1_PressureInSensor.Text));
                 porog_1_PressureInSensor.Text = _client.ReadHoldingParametr(1, 4);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1524,6 +1500,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 5, ushort.Parse(porog_2_PressureInSensor.Text));
                 porog_2_PressureInSensor.Text = _client.ReadHoldingParametr(1, 5);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1533,6 +1510,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 6, ushort.Parse(dx_PressureInSensor.Text));
                 dx_PressureInSensor.Text = _client.ReadHoldingParametr(1, 6);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1542,6 +1520,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 7, ushort.Parse(dt_PressureInSensor.Text));
                 dt_PressureInSensor.Text = _client.ReadHoldingParametr(1, 7);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1551,6 +1530,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 520, ushort.Parse(setupZeroCarbonMonoxide.Text));
                 setupZeroCarbonMonoxide.Text = _client.ReadHoldingParametr(1, 520);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1560,6 +1540,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 521, ushort.Parse(pgc_CarbonMonoxide.Text));
                 pgc_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 521);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1569,6 +1550,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 522, ushort.Parse(acp_CarbonMonoxide.Text));
                 acp_CarbonMonoxide.Text = _client.ReadHoldingParametr(1, 522);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1578,6 +1560,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 523, ushort.Parse(sumZeroCarbonMonoxide.Text));
                 sumZeroCarbonMonoxide.Text = _client.ReadHoldingParametr(1, 523);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1587,6 +1570,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 512, ushort.Parse(setupZeroNitrogenOxide.Text));
                 setupZeroNitrogenOxide.Text = _client.ReadHoldingParametr(1, 512);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1596,6 +1580,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 513, ushort.Parse(pgc_NitrogenOxide.Text));
                 pgc_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 513);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1605,6 +1590,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 514, ushort.Parse(acp_NitrogenOxide.Text));
                 acp_NitrogenOxide.Text = _client.ReadHoldingParametr(1, 514);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1614,6 +1600,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 515, ushort.Parse(sumZeroNitrogenOxide.Text));
                 sumZeroNitrogenOxide.Text = _client.ReadHoldingParametr(1, 515);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1623,6 +1610,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 516, ushort.Parse(setupZeroNitrogenDioxide.Text));
                 setupZeroNitrogenDioxide.Text = _client.ReadHoldingParametr(1, 516);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1632,6 +1620,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 517, ushort.Parse(pgc_NitrogenDioxide.Text));
                 pgc_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 517);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1641,6 +1630,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 518, ushort.Parse(acp_NitrogenDioxide.Text));
                 acp_NitrogenDioxide.Text = _client.ReadHoldingParametr(1, 518);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1650,6 +1640,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 519, ushort.Parse(sumZeroNitrogenDioxide.Text));
                 sumZeroNitrogenDioxide.Text = _client.ReadHoldingParametr(1, 519);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1659,6 +1650,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 524, ushort.Parse(setupZeroSulfurDioxide.Text));
                 setupZeroSulfurDioxide.Text = _client.ReadHoldingParametr(1, 524);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1668,6 +1660,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 525, ushort.Parse(pgc_SulfurDioxide.Text));
                 pgc_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 525);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1677,6 +1670,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 526, ushort.Parse(acp_SulfurDioxide.Text));
                 acp_SulfurDioxide.Text = _client.ReadHoldingParametr(1, 526);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1686,6 +1680,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 527, ushort.Parse(sumZeroSulfurDioxide.Text));
                 sumZeroSulfurDioxide.Text = _client.ReadHoldingParametr(1, 527);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1695,6 +1690,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 529, ushort.Parse(setupZeroVolatileOrganicCompounds.Text));
                 setupZeroVolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 529);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1704,6 +1700,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 548, ushort.Parse(constAtmosphericPressure.Text));
                 constAtmosphericPressure.Text = _client.ReadHoldingParametr(1, 548);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1713,6 +1710,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 544, ushort.Parse(constWindSpeed.Text));
                 constWindSpeed.Text = _client.ReadHoldingParametr(1, 544);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1722,6 +1720,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 258, ushort.Parse(powerAirTemperature.Text));
                 powerAirTemperature.Text = _client.ReadHoldingParametr(1, 258);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1731,6 +1730,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 259, ushort.Parse(constAirTemperature.Text));
                 constAirTemperature.Text = _client.ReadHoldingParametr(1, 259);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1740,6 +1740,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 260, ushort.Parse(stepAirTemperature.Text));
                 stepAirTemperature.Text = _client.ReadHoldingParametr(1, 260);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1749,6 +1750,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(1, 261, ushort.Parse(timeAirTemperature.Text));
                 timeAirTemperature.Text = _client.ReadHoldingParametr(1, 261);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1758,6 +1760,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(3, 258, ushort.Parse(powerRelativeHumidity.Text));
                 powerRelativeHumidity.Text = _client.ReadHoldingParametr(3, 258);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1767,6 +1770,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(3, 259, ushort.Parse(constRelativeHumidity.Text));
                 constRelativeHumidity.Text = _client.ReadHoldingParametr(3, 259);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1776,6 +1780,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(3, 260, ushort.Parse(stepRelativeHumidity.Text));
                 stepRelativeHumidity.Text = _client.ReadHoldingParametr(3, 260);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
 
@@ -1785,6 +1790,7 @@ namespace GravitonEco
             {
                 _client.WriteHoldingParametr(3, 261, ushort.Parse(timeRelativeHumidity.Text));
                 timeRelativeHumidity.Text = _client.ReadHoldingParametr(3, 261);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
     }
