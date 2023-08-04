@@ -36,11 +36,11 @@
             // pictureBox1
             // 
             pictureBox1.Dock = DockStyle.Top;
-            pictureBox1.Image = Properties.Resources.logo;
+            pictureBox1.Image = Properties.Resources.logo1;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(503, 146);
+            pictureBox1.Size = new Size(562, 60);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -48,9 +48,9 @@
             // progressBar1
             // 
             progressBar1.Dock = DockStyle.Fill;
-            progressBar1.Location = new Point(0, 146);
+            progressBar1.Location = new Point(0, 60);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(503, 53);
+            progressBar1.Size = new Size(562, 35);
             progressBar1.Style = ProgressBarStyle.Continuous;
             progressBar1.TabIndex = 1;
             // 
@@ -58,7 +58,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(503, 199);
+            BackColor = Color.White;
+            ClientSize = new Size(562, 95);
             Controls.Add(progressBar1);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;

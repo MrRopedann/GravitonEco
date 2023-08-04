@@ -43,6 +43,10 @@
             "NModbus": {
               "target": "Package",
               "version": "[3.0.78, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.4, )"
             }
           },
           "imports": [

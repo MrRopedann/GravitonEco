@@ -1,8 +1,11 @@
 using GravitonEco.Controller;
 using GravitonEco.Model;
 using GravitonEco.View;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 using System.Text;
 using System.Windows.Forms;
+using ApplicationContext = GravitonEco.Controller.ApplicationContext;
 
 namespace GravitonEco
 {
@@ -11,6 +14,7 @@ namespace GravitonEco
         private string _host;
         private string _port;
         private ModbusTCPClient _client;
+        private ApplicationContext dbContext;
         // Константа для задержки в миллисекундах
         private int _delaySeconds = 1;
 
@@ -26,7 +30,7 @@ namespace GravitonEco
         public MainForm()
         {
             InitializeComponent();
-            cts = new CancellationTokenSource();
+            dbContext = new ApplicationContext();
             INIManager manager = new INIManager(@"./Config/setting_device_connection.ini");
             _host = manager.GetPrivateString("DeviceConnectSetting", "Host");
             _port = manager.GetPrivateString("DeviceConnectSetting", "Port");
@@ -342,7 +346,7 @@ namespace GravitonEco
 
                 if (paramName == "input_Температура_воздуха")
                 {
-                    currentAirTemperature.Text = paramValue;
+                    currentAirTemperature.Text = ConvertToDouble(paramValue).ToString();
                 }
                 else if (paramName == "input_Атмосферное_давление")
                 {
@@ -350,11 +354,11 @@ namespace GravitonEco
                 }
                 else if (paramName == "input_Относительная_влажность")
                 {
-                    currentRelativeHumidity.Text = paramValue;
+                    currentRelativeHumidity.Text = ConvertToDouble(paramValue).ToString();
                 }
                 else if (paramName == "input_Скорость_ветра")
                 {
-                    currentWindSpeed.Text = paramValue;
+                    currentWindSpeed.Text = ConvertToDouble(paramValue).ToString();
                 }
                 else if (paramName == "input_Направление_ветра")
                 {
@@ -382,7 +386,7 @@ namespace GravitonEco
                 }
                 else if (paramName == "input_Летучая_органика")
                 {
-                    currentVolatileOrganicCompounds.Text = paramValue;
+                    currentVolatileOrganicCompounds.Text = ConvertToDoubleLoc(paramValue).ToString();
                 }
                 else if (paramName == "input_Твёрдые_частицы_PM1")
                 {
@@ -410,11 +414,11 @@ namespace GravitonEco
                 }
                 else if (paramName == "input_Температура_в_измерителе")
                 {
-                    currentTemperatureInSensor.Text = paramValue;
+                    currentTemperatureInSensor.Text = ConvertToDouble(paramValue).ToString();
                 }
                 else if (paramName == "input_Влажность_в_измерителе")
                 {
-                    currentHumidityInSensor.Text = paramValue;
+                    currentHumidityInSensor.Text = ConvertToDouble(paramValue).ToString();
                 }
                 else if (paramName == "input_Давление_в_измерителе")
                 {
@@ -422,15 +426,15 @@ namespace GravitonEco
                 }
                 else if (paramName == "input_Скорость_пробоотбора")
                 {
-                    currentSamplingSpeed.Text = paramValue;
+                    currentSamplingSpeed.Text = ConvertToDouble(paramValue).ToString();
                 }
                 else if (paramName == "input_Напряжение_питания")
                 {
-                    currentSupplyVoltage.Text = paramValue;
+                    currentSupplyVoltage.Text = ConvertToDouble(paramValue).ToString();
                 }
                 if (paramName == "input_Температура_воздуха")
                 {
-                    currentAirTemperature2.Text = paramValue;
+                    currentAirTemperature2.Text = ConvertToDouble(paramValue).ToString();
                 }
                 else if (paramName == "input_Атмосферное_давление")
                 {
@@ -438,11 +442,11 @@ namespace GravitonEco
                 }
                 else if (paramName == "input_Относительная_влажность")
                 {
-                    currentRelativeHumidity2.Text = paramValue;
+                    currentRelativeHumidity2.Text = ConvertToDouble(paramValue).ToString();
                 }
                 else if (paramName == "input_Скорость_ветра")
                 {
-                    currentWindSpeed2.Text = paramValue;
+                    currentWindSpeed2.Text = ConvertToDouble(paramValue).ToString();
                 }
                 else if (paramName == "input_Оксид_углерода")
                 {
@@ -466,7 +470,7 @@ namespace GravitonEco
                 }
                 else if (paramName == "input_Летучая_органика")
                 {
-                    currentVolatileOrganicCompounds2.Text = paramValue;
+                    currentVolatileOrganicCompounds2.Text = ConvertToDoubleLoc(paramValue).ToString();
                 }
                 /*
                 
@@ -1973,6 +1977,40 @@ namespace GravitonEco
 
                 // Инвертируем состояние флага isIconChanged
                 lockSetting = !lockSetting;
+            }
+        }
+
+        public static double ConvertToDouble(string stringValue)
+        {
+            // Преобразуем строку в целое число
+            int integerValue = int.Parse(stringValue);
+
+            // Делим целое число на 10.0, чтобы получить число с плавающей точкой
+            double doubleValue = integerValue / 10.0;
+
+            return doubleValue;
+        }
+        public static double ConvertToDoubleLoc(string stringValue)
+        {
+            // Преобразуем строку в целое число
+            int integerValue = int.Parse(stringValue);
+
+            // Делим целое число на 10.0, чтобы получить число с плавающей точкой
+            double doubleValue = integerValue / 100.0;
+
+            return doubleValue;
+        }
+
+        private void UpdateLabelValue(string nameAtribut, Dictionary<string, SensorDataStats> stats)
+        {
+            if (stats.ContainsKey(nameAtribut))
+            {
+                var sensorDataStats = stats[nameAtribut];
+                minAirTemperature.Text = (sensorDataStats.MinValue).ToString();
+            }
+            else
+            {
+                minAirTemperature.Text = $"Нет данных для {nameAtribut}";
             }
         }
     }
