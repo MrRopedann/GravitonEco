@@ -11,7 +11,6 @@ namespace GravitonEco
         private string _host;
         private string _port;
         private ModbusTCPClient _client;
-        private CancellationTokenSource cts;
         // Константа для задержки в миллисекундах
         private int _delaySeconds = 1;
 
@@ -54,7 +53,7 @@ namespace GravitonEco
             otherDataCache["input_Влажность_в_измерителе"] = (1, 6);
             otherDataCache["input_Давление_в_измерителе"] = (2, 1);
             otherDataCache["input_Скорость_пробоотбора"] = (3, 25);
-            otherDataCache["input_Напряжение_питания"] = (1, 5);
+            otherDataCache["input_Напряжение_питания"] = (1, 2);
 
             parameterControls["coil_Температура_Порог_1"] = (2, 15);
             parameterControls["coil_ТемпиратураПорог2"] = (2, 16);
@@ -177,10 +176,10 @@ namespace GravitonEco
             dx_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 46);
             dt_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 47);
 
-            porog_1_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 24);
-            porog_2_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 25);
-            dx_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 26);
-            dt_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 26);
+            porog_1_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 32);
+            porog_2_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 33);
+            dx_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 34);
+            dt_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 35);
 
             porog_1_ParticulateMatterPM1.Text = _client.ReadHoldingParametr(2, 64);
             porog_2_ParticulateMatterPM1.Text = _client.ReadHoldingParametr(2, 65);
@@ -318,7 +317,7 @@ namespace GravitonEco
                     Dictionary<string, string> otherData = await _client.ReadMultipleValuesAsync(parameterControls);
 
                     Invoke(new Action(() => UpdateOtherDataOnForm(otherData)));
-                    await Task.Delay(_delaySeconds * 1000, cts.Token);
+                    await Task.Delay(_delaySeconds * 1000);
                 }
             });
 
@@ -744,29 +743,29 @@ namespace GravitonEco
                     }
                     else if (paramName == "coil_Давлениеизмерителяпорог1")
                     {
-                        porog_1_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        porog_1_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                     }
                     else if (paramName == "coil_Давлениеизмерителяпорог2")
                     {
-                        porog_2_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        porog_2_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                     }
                     else if (paramName == "coil_Давлениеизмерителядт")
                     {
-                        dx_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                        dt_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dx_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                     }
                     else if (paramName == "coil_Напряжениепорог1")
                     {
-                        porog_1_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        porog_1_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                     }
                     else if (paramName == "coil_Напряжениепорог2")
                     {
-                        porog_2_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        porog_2_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                     }
                     else if (paramName == "coil_Напряжениедт")
                     {
-                        dx_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
-                        dt_PressureInSensor.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dx_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                     }
                 }
             }
@@ -1186,8 +1185,8 @@ namespace GravitonEco
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _client.WriteHoldingParametr(1, 24, ushort.Parse(porog_1_VolatileOrganicCompounds.Text));
-                porog_1_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 24);
+                _client.WriteHoldingParametr(1, 32, ushort.Parse(porog_1_VolatileOrganicCompounds.Text));
+                porog_1_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 32);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
@@ -1196,8 +1195,8 @@ namespace GravitonEco
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _client.WriteHoldingParametr(1, 25, ushort.Parse(porog_2_VolatileOrganicCompounds.Text));
-                porog_2_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 25);
+                _client.WriteHoldingParametr(1, 33, ushort.Parse(porog_2_VolatileOrganicCompounds.Text));
+                porog_2_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 33);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
@@ -1206,8 +1205,8 @@ namespace GravitonEco
         {
             if (e.KeyCode == Keys.Enter)
             {
-                _client.WriteHoldingParametr(1, 26, ushort.Parse(dx_VolatileOrganicCompounds.Text));
-                dx_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 26);
+                _client.WriteHoldingParametr(1, 34, ushort.Parse(dx_VolatileOrganicCompounds.Text));
+                dx_VolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 34);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
@@ -1892,20 +1891,6 @@ namespace GravitonEco
             }
         }
 
-        private void label47_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel11_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
         bool lockSetting = false;
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -1989,38 +1974,6 @@ namespace GravitonEco
                 // Инвертируем состояние флага isIconChanged
                 lockSetting = !lockSetting;
             }
-        }
-
-        private async void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            _delaySeconds = Int32.Parse(comboBox1.SelectedItem.ToString());
-            // Отменяем предыдущую задержку, если она есть
-            cts.Cancel();
-
-            // Создаем новый токен отмены
-            cts = new CancellationTokenSource();
-
-            try
-            {
-                Task.Run(async () =>
-                {
-                    while (true)
-                    {
-                        Dictionary<string, string> otherData = await _client.ReadMultipleValuesAsync(parameterControls);
-
-                        Invoke(new Action(() => UpdateOtherDataOnForm(otherData)));
-                        await Task.Delay(_delaySeconds * 1000, cts.Token);
-                    }
-                });
-            }
-            catch (TaskCanceledException)
-            {
-                // Задержка была отменена, если новое значение было выбрано в ComboBox
-                // до истечения предыдущей задержки
-                // Можно проигнорировать или обработать этот случай по вашему усмотрению
-            }
-
-            MessageBox.Show("Интервал изменен", "Уведомление");
         }
     }
 }

@@ -434,7 +434,6 @@
             this.comboBox1.Size = (new global::System.Drawing.Size(228, 28));
             this.comboBox1.TabIndex = (6);
             this.comboBox1.Text = ("Время обновления");
-            this.comboBox1.SelectedIndexChanged += (this.comboBox1_SelectedIndexChanged);
             // 
             // serialNumber
             // 
@@ -4957,9 +4956,9 @@
             // tableLayoutPanel11
             // 
             this.tableLayoutPanel11.ColumnCount = (3);
-            this.tableLayoutPanel11.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 84.50057F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 15.4994259F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 79.956665F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 12.1343441F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 7.80065F));
             this.tableLayoutPanel11.Controls.Add(this.textBox1, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.label47, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.label46, 0, 1);
@@ -4968,11 +4967,10 @@
             this.tableLayoutPanel11.Location = (new global::System.Drawing.Point(0, 0));
             this.tableLayoutPanel11.Name = ("tableLayoutPanel11");
             this.tableLayoutPanel11.RowCount = (2);
-            this.tableLayoutPanel11.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel11.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel11.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel11.Size = (new global::System.Drawing.Size(923, 92));
             this.tableLayoutPanel11.TabIndex = (0);
-            this.tableLayoutPanel11.Paint += (this.tableLayoutPanel11_Paint);
             // 
             // textBox1
             // 
@@ -4980,14 +4978,13 @@
             this.textBox1.BackColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30)), (global::System.Int32)((global::System.Byte)(30))));
             this.textBox1.BorderStyle = (global::System.Windows.Forms.BorderStyle.FixedSingle);
             this.textBox1.ForeColor = (global::System.Drawing.Color.FromArgb((global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250)), (global::System.Int32)((global::System.Byte)(250))));
-            this.textBox1.Location = (new global::System.Drawing.Point(732, 4));
+            this.textBox1.Location = (new global::System.Drawing.Point(741, 4));
             this.textBox1.Margin = (new global::System.Windows.Forms.Padding(3, 4, 3, 4));
             this.textBox1.Name = ("textBox1");
             this.textBox1.PasswordChar = ('*');
-            this.textBox1.Size = (new global::System.Drawing.Size(127, 27));
+            this.textBox1.Size = (new global::System.Drawing.Size(106, 27));
             this.textBox1.TabIndex = (49);
             this.textBox1.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
-            this.textBox1.KeyDown += (this.textBox1_KeyDown);
             // 
             // label47
             // 
@@ -4998,10 +4995,9 @@
             this.label47.Location = (new global::System.Drawing.Point(3, 0));
             this.label47.Name = ("label47");
             this.label47.Padding = (new global::System.Windows.Forms.Padding(11, 13, 6, 7));
-            this.label47.Size = (new global::System.Drawing.Size(723, 39));
+            this.label47.Size = (new global::System.Drawing.Size(732, 39));
             this.label47.TabIndex = (0);
             this.label47.Text = ("Установка коэффициентов пересчёта значений тока электрохимических ячеек, получаемые в единицах АЦП,");
-            this.label47.Click += (this.label47_Click);
             // 
             // label46
             // 
@@ -5012,7 +5008,7 @@
             this.label46.Location = (new global::System.Drawing.Point(3, 49));
             this.label46.Name = ("label46");
             this.label46.Padding = (new global::System.Windows.Forms.Padding(11, 13, 6, 7));
-            this.label46.Size = (new global::System.Drawing.Size(723, 43));
+            this.label46.Size = (new global::System.Drawing.Size(732, 43));
             this.label46.TabIndex = (1);
             this.label46.Text = ("в объёмные доли концентрации вещества измеряемые в ppb");
             // 
@@ -5021,9 +5017,9 @@
             this.pictureBox2.Cursor = (global::System.Windows.Forms.Cursors.Hand);
             this.pictureBox2.Dock = (global::System.Windows.Forms.DockStyle.Fill);
             this.pictureBox2.Image = (global::GravitonEco.Properties.Resources.password_red);
-            this.pictureBox2.Location = (new global::System.Drawing.Point(865, 3));
+            this.pictureBox2.Location = (new global::System.Drawing.Point(853, 3));
             this.pictureBox2.Name = ("pictureBox2");
-            this.pictureBox2.Size = (new global::System.Drawing.Size(55, 43));
+            this.pictureBox2.Size = (new global::System.Drawing.Size(67, 43));
             this.pictureBox2.SizeMode = (global::System.Windows.Forms.PictureBoxSizeMode.Zoom);
             this.pictureBox2.TabIndex = (50);
             this.pictureBox2.TabStop = (false);
