@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 using System.Text;
 using System.Windows.Forms;
-using ApplicationContext = GravitonEco.Controller.ApplicationContext;
 
 namespace GravitonEco
 {
@@ -14,7 +13,9 @@ namespace GravitonEco
         private string _host;
         private string _port;
         private ModbusTCPClient _client;
-        private ApplicationContext dbContext;
+        int x0 = 0;
+        int x_acp = 2000;
+        int x_gs = 2000;
         // Константа для задержки в миллисекундах
         private int _delaySeconds = 1;
 
@@ -30,11 +31,15 @@ namespace GravitonEco
         public MainForm()
         {
             InitializeComponent();
-            dbContext = new ApplicationContext();
             INIManager manager = new INIManager(@"./Config/setting_device_connection.ini");
             _host = manager.GetPrivateString("DeviceConnectSetting", "Host");
             _port = manager.GetPrivateString("DeviceConnectSetting", "Port");
             _client = new ModbusTCPClient(_host, Int32.Parse(_port));
+
+            apparatVersion.Text = _client.ReadInputParametr(251, 65284);
+            softVersion.Text = _client.ReadInputParametr(251, 65285);
+            serialNumber.Text = _client.ReadInputParametr(251, 65280) + " - " + _client.ReadInputParametr(251, 65281);
+
             // Запуск задачи для асинхронного обновления данных
             otherDataCache["input_Температура_воздуха"] = (2, 5);
             otherDataCache["input_Относительная_влажность"] = (2, 6);
@@ -122,6 +127,9 @@ namespace GravitonEco
             parameterControls["coil_Напряжениепорог1"] = (1, 6);
             parameterControls["coil_Напряжениепорог2"] = (1, 7);
             parameterControls["coil_Напряжениедт"] = (1, 8);
+            parameterControls["coil_СкоростьПотокапорог1"] = (3, 75);
+            parameterControls["coil_СкоростьПотокапорог2"] = (3, 76);
+            parameterControls["coil_СкоростьПотокадт"] = (3, 77);
 
             otherDateTimeCache["holdingdate_Секунды"] = (251, 256);
             otherDateTimeCache["holdingdate_Минуты"] = (251, 257);
@@ -269,6 +277,19 @@ namespace GravitonEco
             constRelativeHumidity.Text = _client.ReadHoldingParametr(3, 259);
             stepRelativeHumidity.Text = _client.ReadHoldingParametr(3, 260);
             timeRelativeHumidity.Text = _client.ReadHoldingParametr(3, 261);
+
+            porog_1_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 100);
+            porog_2_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 101);
+            dx_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 102);
+            dt_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 103);
+
+            acp_NitrogenOxide.Text = x_acp.ToString();
+            pgc_NitrogenOxide.Text = x_gs.ToString();
+            setupZeroNitrogenOxide.Text = x0.ToString();
+
+            setupZeroCarbonDioxide.Text = x0.ToString();
+            pgc_CarbonDioxide.Text = x_gs.ToString();
+            acp_CarbonDioxide.Text = x_acp.ToString();
 
             setupZeroCarbonMonoxide.Enabled = false;
             pgc_CarbonMonoxide.Enabled = false;
@@ -466,7 +487,9 @@ namespace GravitonEco
                 }
                 else if (paramName == "input_Двуокись_углерода")
                 {
-                    currentCarbonDioxide2.Text = paramValue;
+                    sumZeroCarbonDioxide.Text = paramValue;
+                    currentCarbonDioxide.Text = ((Int32.Parse(paramValue) - x0) * (Convert.ToDouble(x_gs) / Convert.ToDouble(x_acp))).ToString();
+                    currentCarbonDioxide2.Text = ((Int32.Parse(paramValue) - x0) * (Convert.ToDouble(x_gs) / Convert.ToDouble(x_acp))).ToString();
                 }
                 else if (paramName == "input_Летучая_органика")
                 {
@@ -770,6 +793,19 @@ namespace GravitonEco
                     {
                         dx_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                         dt_SupplyVoltage.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_СкоростьПотокапорог1")
+                    {
+                        porog_1_SamplingSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_СкоростьПотокапорог2")
+                    {
+                        porog_2_SamplingSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                    }
+                    else if (paramName == "coil_СкоростьПотокадт")
+                    {
+                        dx_SamplingSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
+                        dt_SamplingSpeed.ForeColor = bool.Parse(paramValue) ? Color.Red : Color.White;
                     }
                 }
             }
@@ -2001,16 +2037,70 @@ namespace GravitonEco
             return doubleValue;
         }
 
-        private void UpdateLabelValue(string nameAtribut, Dictionary<string, SensorDataStats> stats)
+        private void porog_1_SamplingSpeed_KeyDown(object sender, KeyEventArgs e)
         {
-            if (stats.ContainsKey(nameAtribut))
+            if (e.KeyCode == Keys.Enter)
             {
-                var sensorDataStats = stats[nameAtribut];
-                minAirTemperature.Text = (sensorDataStats.MinValue).ToString();
+                _client.WriteHoldingParametr(3, 100, ushort.Parse(porog_1_SamplingSpeed.Text));
+                porog_1_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 100);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
-            else
+        }
+
+        private void porog_2_SamplingSpeed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
             {
-                minAirTemperature.Text = $"Нет данных для {nameAtribut}";
+                _client.WriteHoldingParametr(3, 101, ushort.Parse(porog_2_SamplingSpeed.Text));
+                porog_2_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 101);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void dx_SamplingSpeed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(3, 102, ushort.Parse(dx_SamplingSpeed.Text));
+                dx_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 102);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void dt_SamplingSpeed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(3, 103, ushort.Parse(dt_SamplingSpeed.Text));
+                dt_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 103);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void setupZeroCarbonDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                x0 = Int32.Parse(setupZeroCarbonDioxide.Text);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void pgc_CarbonDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                x_gs = Int32.Parse(pgc_CarbonDioxide.Text);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void acp_CarbonDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                x_acp = Int32.Parse(acp_CarbonDioxide.Text);
+                MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
     }

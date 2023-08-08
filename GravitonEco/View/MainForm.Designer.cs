@@ -1059,6 +1059,7 @@
             this.porog_1_SamplingSpeed.TabIndex = (103);
             this.porog_1_SamplingSpeed.Text = ("3/?");
             this.porog_1_SamplingSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_1_SamplingSpeed.KeyDown += (this.porog_1_SamplingSpeed_KeyDown);
             // 
             // porog_2_TemperatureInSensor
             // 
@@ -1118,6 +1119,7 @@
             this.porog_2_SamplingSpeed.TabIndex = (107);
             this.porog_2_SamplingSpeed.Text = ("3/?");
             this.porog_2_SamplingSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.porog_2_SamplingSpeed.KeyDown += (this.porog_2_SamplingSpeed_KeyDown);
             // 
             // porog_2_PressureInSensor
             // 
@@ -1192,6 +1194,7 @@
             this.dx_SamplingSpeed.TabIndex = (112);
             this.dx_SamplingSpeed.Text = ("3/?");
             this.dx_SamplingSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dx_SamplingSpeed.KeyDown += (this.dx_SamplingSpeed_KeyDown);
             // 
             // dx_PressureInSensor
             // 
@@ -1266,6 +1269,7 @@
             this.dt_SamplingSpeed.TabIndex = (117);
             this.dt_SamplingSpeed.Text = ("3/?");
             this.dt_SamplingSpeed.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.dt_SamplingSpeed.KeyDown += (this.dt_SamplingSpeed_KeyDown);
             // 
             // dt_PressureInSensor
             // 
@@ -4405,8 +4409,9 @@
             this.pgc_CarbonDioxide.Name = ("pgc_CarbonDioxide");
             this.pgc_CarbonDioxide.Size = (new global::System.Drawing.Size(94, 27));
             this.pgc_CarbonDioxide.TabIndex = (54);
-            this.pgc_CarbonDioxide.Text = ("20");
+            this.pgc_CarbonDioxide.Text = ("2010");
             this.pgc_CarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.pgc_CarbonDioxide.KeyDown += (this.pgc_CarbonDioxide_KeyDown);
             // 
             // label27
             // 
@@ -4765,6 +4770,7 @@
             this.setupZeroCarbonDioxide.TabIndex = (43);
             this.setupZeroCarbonDioxide.Text = ("20");
             this.setupZeroCarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.setupZeroCarbonDioxide.KeyDown += (this.setupZeroCarbonDioxide_KeyDown);
             // 
             // setupZeroSulfurDioxide
             // 
@@ -4807,8 +4813,9 @@
             this.acp_CarbonDioxide.Name = ("acp_CarbonDioxide");
             this.acp_CarbonDioxide.Size = (new global::System.Drawing.Size(147, 27));
             this.acp_CarbonDioxide.TabIndex = (46);
-            this.acp_CarbonDioxide.Text = ("20");
+            this.acp_CarbonDioxide.Text = ("4000");
             this.acp_CarbonDioxide.TextAlign = (global::System.Windows.Forms.HorizontalAlignment.Center);
+            this.acp_CarbonDioxide.KeyDown += (this.acp_CarbonDioxide_KeyDown);
             // 
             // acp_NitrogenDioxide
             // 
