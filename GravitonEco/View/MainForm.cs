@@ -52,9 +52,9 @@ namespace GravitonEco
             otherDataCache["input_Диоксид_серы"] = (1, 19);
             otherDataCache["input_Двуокись_углерода"] = (1, 11);
             otherDataCache["input_Летучая_органика"] = (1, 8);
-            otherDataCache["input_Твёрдые_частицы_PM1"] = (1, 16);
-            otherDataCache["input_Твёрдые_частицы_PM2_5"] = (1, 17);
-            otherDataCache["input_Твёрдые_частицы_PM10"] = (1, 18);
+            otherDataCache["input_Твёрдые_частицы_PM1"] = (2, 16);
+            otherDataCache["input_Твёрдые_частицы_PM2_5"] = (2, 17);
+            otherDataCache["input_Твёрдые_частицы_PM10"] = (2, 18);
             otherDataCache["input_Уровень_вибрации"] = (1, 21);
             otherDataCache["input_Уровень_наклона"] = (1, 20);
             otherDataCache["input_Датчик_вскрытия"] = (3, 2);
@@ -97,15 +97,15 @@ namespace GravitonEco
             parameterControls["coil_ЛОСпорог1"] = (1, 24);
             parameterControls["coil_ЛОСпорог2"] = (1, 25);
             parameterControls["coil_ЛОСдт"] = (1, 26);
-            parameterControls["coil_ПМ1порог1"] = (1, 48);
-            parameterControls["coil_ПМ1порог2"] = (1, 49);
-            parameterControls["coil_ПМ1дт"] = (1, 50);
-            parameterControls["coil_ПМ2_5порог1"] = (1, 51);
-            parameterControls["coil_ПМ2_5порог2"] = (1, 52);
-            parameterControls["coil_ПМ2_5дт"] = (1, 53);
-            parameterControls["coil_ПМ10порог1"] = (1, 54);
-            parameterControls["coil_ПМ10порог2"] = (1, 55);
-            parameterControls["coil_ПМ10дт"] = (1, 56);
+            parameterControls["coil_ПМ1порог1"] = (2, 48);
+            parameterControls["coil_ПМ1порог2"] = (2, 49);
+            parameterControls["coil_ПМ1дт"] = (2, 50);
+            parameterControls["coil_ПМ2_5порог1"] = (2, 51);
+            parameterControls["coil_ПМ2_5порог2"] = (2, 52);
+            parameterControls["coil_ПМ2_5дт"] = (2, 53);
+            parameterControls["coil_ПМ10порог1"] = (2, 54);
+            parameterControls["coil_ПМ10порог2"] = (2, 55);
+            parameterControls["coil_ПМ10дт"] = (2, 56);
             parameterControls["coil_Вибрацияпорог1"] = (1, 63);
             parameterControls["coil_Вибрацияпорог2"] = (1, 64);
             parameterControls["coil_Вибрациядт"] = (1, 64);
@@ -495,9 +495,6 @@ namespace GravitonEco
                 {
                     currentVolatileOrganicCompounds2.Text = ConvertToDoubleLoc(paramValue).ToString();
                 }
-                /*
-                
-                */
             }
         }
 
