@@ -17,6 +17,11 @@ namespace GravitonEco.View
     {
         string _ipAddresSensor;
         int _portSensor;
+        string _ipAddresDb;
+        int _portDb;
+        string _dataBaseName;
+        string _dataBaseUserName;
+        string _dataBasePasswort;
         string path = @"./Config/setting_device_connection.ini";
 
         public Setting()
@@ -28,6 +33,12 @@ namespace GravitonEco.View
                 INIManager manager = new INIManager(path);
                 ipAddresSensor.Text = manager.GetPrivateString("DeviceConnectSetting", "Host");
                 portSensor.Text = manager.GetPrivateString("DeviceConnectSetting", "Port");
+
+                ipAddresDb.Text = manager.GetPrivateString("DataBaseConnectSetting", "IpAddresDb");
+                portDb.Text = manager.GetPrivateString("DataBaseConnectSetting", "PortDb");
+                dataBaseName.Text = manager.GetPrivateString("DataBaseConnectSetting", "DataBaseName");
+                dataBaseUserName.Text = manager.GetPrivateString("DataBaseConnectSetting", "DataBaseUserName");
+                dataBasePasswort.Text = manager.GetPrivateString("DataBaseConnectSetting", "DataBasePasswort");
             }
         }
 
@@ -56,11 +67,31 @@ namespace GravitonEco.View
         {
             _ipAddresSensor = ipAddresSensor.Text;
             _portSensor = Int32.Parse(portSensor.Text);
-            TextWriter tw = new StreamWriter(path);
-            tw.Close();
+
             INIManager manager = new INIManager(path);
             manager.WritePrivateString("DeviceConnectSetting", "Host", _ipAddresSensor);
             manager.WritePrivateString("DeviceConnectSetting", "Port", _portSensor.ToString());
+            MessageBox.Show("Настройки сохранены", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void saveDataBaseConnection_Click(object sender, EventArgs e)
+        {
+            //_ipAddresSensor = ipAddresSensor.Text;
+            //_portSensor = Int32.Parse(portSensor.Text);
+            _ipAddresDb = ipAddresDb.Text;
+            _portDb = Int32.Parse(portDb.Text);
+            _dataBaseName = dataBaseName.Text;
+            _dataBaseUserName = dataBaseName.Text;
+            _dataBasePasswort = dataBasePasswort.Text;
+
+            INIManager manager = new INIManager(path);
+            //manager.WritePrivateString("DeviceConnectSetting", "Host", _ipAddresSensor);
+            //manager.WritePrivateString("DeviceConnectSetting", "Port", _portSensor.ToString());
+            manager.WritePrivateString("DataBaseConnectSetting", "IpAddresDb", _ipAddresDb);
+            manager.WritePrivateString("DataBaseConnectSetting", "PortDb", _portDb.ToString());
+            manager.WritePrivateString("DataBaseConnectSetting", "DataBaseName", _dataBaseName);
+            manager.WritePrivateString("DataBaseConnectSetting", "DataBaseUserName", _dataBaseUserName);
+            manager.WritePrivateString("DataBaseConnectSetting", "DataBasePasswort", _dataBasePasswort);
             MessageBox.Show("Настройки сохранены", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }

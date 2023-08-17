@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="NModbus" Version="3.0.78" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
   </ItemGroup>
 
   <ItemGroup>

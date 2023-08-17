@@ -124,6 +124,10 @@ namespace GravitonEco.Model
                     {
                         value = await ReadCoilParameterAsync(slaveId, address);
                     }
+                    else if (paramName.StartsWith("holdingdate_"))
+                    {
+                        value = await ReadHoldingParametrdateAsync(slaveId, address);
+                    }
 
                     lock (result) // Защита словаря для параллельного доступа
                     {
@@ -141,6 +145,19 @@ namespace GravitonEco.Model
         {
             ushort[] registers = await _modbusMaster.ReadHoldingRegistersAsync(slaveId, address, 1);
             return registers[0].ToString();
+        }
+
+        public async Task<string> ReadHoldingParametrdateAsync(byte slaveId, ushort address)
+        {
+            ushort[] registers = await _modbusMaster.ReadHoldingRegistersAsync(slaveId, address, 1);
+            for (int index = 0; index < registers.Length; index++)
+            {
+                byte[] bytes = BitConverter.GetBytes(registers[index]);
+                string hexString = BitConverter.ToString(bytes);
+
+                return hexString;
+            }
+            return "";
         }
 
         public async Task<string> ReadInputParameterAsync(byte slaveId, ushort address)
