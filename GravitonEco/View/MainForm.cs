@@ -42,7 +42,9 @@ namespace GravitonEco
 
             // Запуск задачи для асинхронного обновления данных
             otherDataCache["input_Температура_воздуха"] = (2, 5);
+            otherDataCache["input_Температура_воздуха2"] = (1, 5);
             otherDataCache["input_Относительная_влажность"] = (2, 6);
+            otherDataCache["input_Относительная_влажность2"] = (4, 5);
             otherDataCache["input_Атмосферное_давление"] = (1, 1);
             otherDataCache["input_Скорость_ветра"] = (1, 7);
             otherDataCache["input_Направление_ветра"] = (2, 2);
@@ -63,6 +65,8 @@ namespace GravitonEco
             otherDataCache["input_Давление_в_измерителе"] = (2, 1);
             otherDataCache["input_Скорость_пробоотбора"] = (3, 25);
             otherDataCache["input_Напряжение_питания"] = (1, 2);
+            otherDataCache["holding_Мощьность_темпиратуры"] = (1, 258);
+            otherDataCache["holding_Мощьность_влажность"] = (4, 258);
 
             parameterControls["coil_Температура_Порог_1"] = (2, 15);
             parameterControls["coil_ТемпиратураПорог2"] = (2, 16);
@@ -273,10 +277,10 @@ namespace GravitonEco
             stepAirTemperature.Text = _client.ReadHoldingParametr(1, 260);
             timeAirTemperature.Text = _client.ReadHoldingParametr(1, 261);
 
-            powerRelativeHumidity.Text = _client.ReadHoldingParametr(3, 258);
-            constRelativeHumidity.Text = _client.ReadHoldingParametr(3, 259);
-            stepRelativeHumidity.Text = _client.ReadHoldingParametr(3, 260);
-            timeRelativeHumidity.Text = _client.ReadHoldingParametr(3, 261);
+            powerRelativeHumidity.Text = _client.ReadHoldingParametr(4, 258);
+            constRelativeHumidity.Text = _client.ReadHoldingParametr(4, 259);
+            stepRelativeHumidity.Text = _client.ReadHoldingParametr(4, 260);
+            timeRelativeHumidity.Text = _client.ReadHoldingParametr(4, 261);
 
             porog_1_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 100);
             porog_2_SamplingSpeed.Text = _client.ReadHoldingParametr(3, 101);
@@ -377,6 +381,10 @@ namespace GravitonEco
                 {
                     currentRelativeHumidity.Text = ConvertToDouble(paramValue).ToString();
                 }
+                else if (paramName == "input_Относительная_влажность2")
+                {
+                    currentRelativeHumidity.Text = ConvertToDouble(paramValue).ToString();
+                }
                 else if (paramName == "input_Скорость_ветра")
                 {
                     currentWindSpeed.Text = ConvertToDouble(paramValue).ToString();
@@ -453,7 +461,7 @@ namespace GravitonEco
                 {
                     currentSupplyVoltage.Text = ConvertToDouble(paramValue).ToString();
                 }
-                if (paramName == "input_Температура_воздуха")
+                if (paramName == "input_Температура_воздуха2")
                 {
                     currentAirTemperature2.Text = ConvertToDouble(paramValue).ToString();
                 }
@@ -494,6 +502,14 @@ namespace GravitonEco
                 else if (paramName == "input_Летучая_органика")
                 {
                     currentVolatileOrganicCompounds2.Text = ConvertToDoubleLoc(paramValue).ToString();
+                }
+                else if (paramName == "holding_Мощьность_темпиратуры")
+                {
+                    powerAirTemperature.Text = paramValue;
+                }
+                else if (paramName == "holding_Мощьность_влажность")
+                {
+                    powerRelativeHumidity.Text = paramValue;
                 }
             }
         }
@@ -1893,7 +1909,7 @@ namespace GravitonEco
             if (e.KeyCode == Keys.Enter)
             {
                 _client.WriteHoldingParametr(3, 258, ushort.Parse(powerRelativeHumidity.Text));
-                powerRelativeHumidity.Text = _client.ReadHoldingParametr(3, 258);
+                powerRelativeHumidity.Text = _client.ReadHoldingParametr(4, 258);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
@@ -1903,7 +1919,7 @@ namespace GravitonEco
             if (e.KeyCode == Keys.Enter)
             {
                 _client.WriteHoldingParametr(3, 259, ushort.Parse(constRelativeHumidity.Text));
-                constRelativeHumidity.Text = _client.ReadHoldingParametr(3, 259);
+                constRelativeHumidity.Text = _client.ReadHoldingParametr(4, 259);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
@@ -1913,7 +1929,7 @@ namespace GravitonEco
             if (e.KeyCode == Keys.Enter)
             {
                 _client.WriteHoldingParametr(3, 260, ushort.Parse(stepRelativeHumidity.Text));
-                stepRelativeHumidity.Text = _client.ReadHoldingParametr(3, 260);
+                stepRelativeHumidity.Text = _client.ReadHoldingParametr(4, 260);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
@@ -1923,7 +1939,7 @@ namespace GravitonEco
             if (e.KeyCode == Keys.Enter)
             {
                 _client.WriteHoldingParametr(3, 261, ushort.Parse(timeRelativeHumidity.Text));
-                timeRelativeHumidity.Text = _client.ReadHoldingParametr(3, 261);
+                timeRelativeHumidity.Text = _client.ReadHoldingParametr(4, 261);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
