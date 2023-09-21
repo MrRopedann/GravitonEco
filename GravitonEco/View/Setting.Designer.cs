@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
+            groupBox3 = new GroupBox();
+            button1 = new Button();
+            newPassword = new TextBox();
+            label8 = new Label();
+            oldPassword = new TextBox();
+            label9 = new Label();
             groupBox2 = new GroupBox();
             dataBasePasswort = new TextBox();
             label7 = new Label();
@@ -50,6 +56,7 @@
             ipAddresSensor = new TextBox();
             label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
+            groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -59,6 +66,7 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(groupBox3, 0, 1);
             tableLayoutPanel1.Controls.Add(groupBox2, 1, 0);
             tableLayoutPanel1.Controls.Add(groupBox1, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -70,6 +78,83 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Size = new Size(914, 600);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(button1);
+            groupBox3.Controls.Add(newPassword);
+            groupBox3.Controls.Add(label8);
+            groupBox3.Controls.Add(oldPassword);
+            groupBox3.Controls.Add(label9);
+            groupBox3.Dock = DockStyle.Fill;
+            groupBox3.FlatStyle = FlatStyle.Flat;
+            groupBox3.ForeColor = Color.FromArgb(25, 150, 190);
+            groupBox3.Location = new Point(3, 304);
+            groupBox3.Margin = new Padding(3, 4, 3, 4);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Padding = new Padding(3, 4, 3, 4);
+            groupBox3.Size = new Size(451, 292);
+            groupBox3.TabIndex = 2;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Пароль администратора";
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderColor = Color.FromArgb(50, 50, 50);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.FromArgb(250, 250, 250);
+            button1.Location = new Point(6, 245);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(183, 39);
+            button1.TabIndex = 40;
+            button1.Text = "Сохранить";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // newPassword
+            // 
+            newPassword.BackColor = Color.FromArgb(30, 30, 30);
+            newPassword.BorderStyle = BorderStyle.FixedSingle;
+            newPassword.ForeColor = Color.FromArgb(250, 250, 250);
+            newPassword.Location = new Point(138, 104);
+            newPassword.Margin = new Padding(3, 4, 3, 4);
+            newPassword.Name = "newPassword";
+            newPassword.PasswordChar = '*';
+            newPassword.Size = new Size(153, 27);
+            newPassword.TabIndex = 38;
+            newPassword.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(17, 106);
+            label8.Name = "label8";
+            label8.Size = new Size(115, 20);
+            label8.TabIndex = 37;
+            label8.Text = "Новый пароль:";
+            // 
+            // oldPassword
+            // 
+            oldPassword.BackColor = Color.FromArgb(30, 30, 30);
+            oldPassword.BorderStyle = BorderStyle.FixedSingle;
+            oldPassword.ForeColor = Color.FromArgb(250, 250, 250);
+            oldPassword.Location = new Point(138, 45);
+            oldPassword.Margin = new Padding(3, 4, 3, 4);
+            oldPassword.Name = "oldPassword";
+            oldPassword.PasswordChar = '*';
+            oldPassword.Size = new Size(153, 27);
+            oldPassword.TabIndex = 36;
+            oldPassword.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(13, 52);
+            label9.Name = "label9";
+            label9.Size = new Size(119, 20);
+            label9.TabIndex = 0;
+            label9.Text = "Старый пароль:";
             // 
             // groupBox2
             // 
@@ -337,6 +422,8 @@
             Name = "Setting";
             Text = "Настройки";
             tableLayoutPanel1.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -367,5 +454,11 @@
         private Label label7;
         private TextBox dataBaseUserName;
         private Label label6;
+        private GroupBox groupBox3;
+        private Button button1;
+        private TextBox newPassword;
+        private Label label8;
+        private TextBox oldPassword;
+        private Label label9;
     }
 }

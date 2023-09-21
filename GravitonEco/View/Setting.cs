@@ -1,4 +1,5 @@
 ﻿using GravitonEco.Controller;
+using GravitonEco.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,9 @@ namespace GravitonEco.View
         string _dataBaseUserName;
         string _dataBasePasswort;
         string path = @"./Config/setting_device_connection.ini";
+        private ModbusTCPClient _client;
+        private string _host;
+        private string _port;
 
         public Setting()
         {
@@ -93,6 +97,27 @@ namespace GravitonEco.View
             manager.WritePrivateString("DataBaseConnectSetting", "DataBaseUserName", _dataBaseUserName);
             manager.WritePrivateString("DataBaseConnectSetting", "DataBasePasswort", _dataBasePasswort);
             MessageBox.Show("Настройки сохранены", "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            INIManager manager = new INIManager(path);
+            _host = manager.GetPrivateString("DeviceConnectSetting", "Host");
+            _port = manager.GetPrivateString("DeviceConnectSetting", "Port");
+            _client = new ModbusTCPClient(_host, Int32.Parse(_port));
+            if (oldPassword.Text == _client.ReadHoldingParametr(1, 530) + "" + _client.ReadHoldingParametr(1, 531))
+            {
+                char[] tempCharPassword = newPassword.Text.ToCharArray();
+                ushort oneBlockPassword = ushort.Parse(tempCharPassword[0] + "" + tempCharPassword[1] + "" + tempCharPassword[2] + "" + tempCharPassword[3]);
+                ushort twoBlockPassword = ushort.Parse(tempCharPassword[4] + "" + tempCharPassword[5] + "" + tempCharPassword[6] + "" + tempCharPassword[7]);
+                _client.WriteHoldingParametr(1, 530, oneBlockPassword);
+                _client.WriteHoldingParametr(1, 531, twoBlockPassword);
+                MessageBox.Show("Пароль перезаписан\n Новый пароль: " + _client.ReadHoldingParametr(1, 530) + "" + _client.ReadHoldingParametr(1, 531), "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Старый пароль не верный!\n Старый пароль: "+ _client.ReadHoldingParametr(1, 530) + "" + _client.ReadHoldingParametr(1, 531), "Уведомление", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

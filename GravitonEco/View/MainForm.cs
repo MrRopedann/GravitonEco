@@ -1,10 +1,6 @@
 using GravitonEco.Controller;
 using GravitonEco.Model;
 using GravitonEco.View;
-using Microsoft.EntityFrameworkCore;
-using System.Reflection.Emit;
-using System.Text;
-using System.Windows.Forms;
 
 namespace GravitonEco
 {
@@ -25,6 +21,7 @@ namespace GravitonEco
         // Кеш для другого словаря значений
         private Dictionary<string, (byte slaveId, ushort address)> otherDataCache = new Dictionary<string, (byte slaveId, ushort address)>();
         private Dictionary<string, (byte slaveId, ushort address)> otherDateTimeCache = new Dictionary<string, (byte slaveId, ushort address)>();
+        private Dictionary<string, (byte slaveId, ushort address)> otherFormulParametr = new Dictionary<string, (byte slaveId, ushort address)>();
 
 
 
@@ -36,9 +33,9 @@ namespace GravitonEco
             _port = manager.GetPrivateString("DeviceConnectSetting", "Port");
             _client = new ModbusTCPClient(_host, Int32.Parse(_port));
 
-            apparatVersion.Text = _client.ReadInputParametr(251, 65284);
-            softVersion.Text = _client.ReadInputParametr(251, 65285);
-            serialNumber.Text = _client.ReadInputParametr(251, 65280) + " - " + _client.ReadInputParametr(251, 65281);
+            apparatVersion.Text = "HV-" + _client.ReadHoldingParametr(251, 244);
+            softVersion.Text = "FV-" + _client.ReadHoldingParametr(251, 245);
+            serialNumber.Text = "SN-" + _client.ReadHoldingParametr(251, 18) + "" + _client.ReadHoldingParametr(251, 19) + "" + _client.ReadHoldingParametr(251, 20) + "" + _client.ReadHoldingParametr(251, 21) + "" + _client.ReadHoldingParametr(251, 22) + "" + _client.ReadHoldingParametr(251, 23);
 
             // Запуск задачи для асинхронного обновления данных
             otherDataCache["input_Температура_воздуха"] = (2, 5);
@@ -52,7 +49,6 @@ namespace GravitonEco
             otherDataCache["input_Оксид_азота"] = (1, 12);
             otherDataCache["input_Диоксид_азота"] = (1, 13);
             otherDataCache["input_Диоксид_серы"] = (1, 19);
-            otherDataCache["input_Двуокись_углерода"] = (1, 11);
             otherDataCache["input_Летучая_органика"] = (1, 8);
             otherDataCache["input_Твёрдые_частицы_PM1"] = (2, 16);
             otherDataCache["input_Твёрдые_частицы_PM2_5"] = (2, 17);
@@ -67,6 +63,10 @@ namespace GravitonEco
             otherDataCache["input_Напряжение_питания"] = (1, 2);
             otherDataCache["holding_Мощьность_темпиратуры"] = (1, 258);
             otherDataCache["holding_Мощьность_влажность"] = (4, 258);
+
+            otherFormulParametr["input_Двуокись_углерода"] = (1, 11);
+            otherFormulParametr["input_Дополнительный_вход_1"] = (1, 7);
+            otherFormulParametr["input_Дополнительный_вход_2"] = (2, 2);
 
             parameterControls["coil_Температура_Порог_1"] = (2, 15);
             parameterControls["coil_ТемпиратураПорог2"] = (2, 16);
@@ -270,7 +270,16 @@ namespace GravitonEco
             setupZeroVolatileOrganicCompounds.Text = _client.ReadHoldingParametr(1, 529);
 
             constAtmosphericPressure.Text = _client.ReadHoldingParametr(1, 548);
-            constWindSpeed.Text = _client.ReadHoldingParametr(1, 544);
+
+            setupZeroWindSpeed.Text = _client.ReadHoldingParametr(1, 536);
+            constWindSpeed.Text = _client.ReadHoldingParametr(1, 537);
+            acp_windSpeed.Text = _client.ReadHoldingParametr(1, 538);
+            sumZeroWindSpeed.Text = _client.ReadHoldingParametr(1, 539);
+
+            setupZeroAdditionalInput_2.Text = _client.ReadHoldingParametr(1, 540);
+            pgc_AdditionalInput_2.Text = _client.ReadHoldingParametr(1, 541);
+            acp_AdditionalInput_2.Text = _client.ReadHoldingParametr(1, 542);
+            sumZeroAdditionalInput_2.Text = _client.ReadHoldingParametr(1, 543);
 
             powerAirTemperature.Text = _client.ReadHoldingParametr(1, 258);
             constAirTemperature.Text = _client.ReadHoldingParametr(1, 259);
@@ -291,9 +300,10 @@ namespace GravitonEco
             pgc_NitrogenOxide.Text = x_gs.ToString();
             setupZeroNitrogenOxide.Text = x0.ToString();
 
-            setupZeroCarbonDioxide.Text = x0.ToString();
-            pgc_CarbonDioxide.Text = x_gs.ToString();
-            acp_CarbonDioxide.Text = x_acp.ToString();
+            setupZeroCarbonDioxide.Text = _client.ReadHoldingParametr(1, 532).ToString();
+            pgc_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 533).ToString();
+            acp_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 534).ToString();
+            sumZeroCarbonDioxide.Text = _client.ReadHoldingParametr(1, 535).ToString();
 
             setupZeroCarbonMonoxide.Enabled = false;
             pgc_CarbonMonoxide.Enabled = false;
@@ -326,8 +336,16 @@ namespace GravitonEco
             pgc_CarbonDioxide.Enabled = false;
             acp_CarbonDioxide.Enabled = false;
             sumZeroCarbonDioxide.Enabled = false;
+            setupZeroWindSpeed.Enabled = false;
+            acp_windSpeed.Enabled = false;
+            sumZeroWindSpeed.Enabled = false;
+            setupZeroAdditionalInput_2.Enabled = false;
+            pgc_AdditionalInput_2.Enabled = false;
+            acp_AdditionalInput_2.Enabled = false;
+            sumZeroAdditionalInput_2.Enabled = false;
+            sumZeroVolatileOrganicCompounds.Enabled = false;
 
-            Task.Run(async () =>
+            async Task UpdateDataLoop0()
             {
                 while (true)
                 {
@@ -336,30 +354,73 @@ namespace GravitonEco
 
                     await Task.Delay(1000);
                 }
-            });
+            }
 
             // Запуск задачи для асинхронного обновления данных из другого словаря
-            Task.Run(async () =>
+            async Task UpdateDataLoop1()
             {
                 while (true)
                 {
-                    Dictionary<string, string> otherData = await _client.ReadMultipleValuesAsync(parameterControls);
+                    Dictionary<string, string> otherData3 = await _client.ReadMultipleValuesAsync(parameterControls);
 
-                    Invoke(new Action(() => UpdateOtherDataOnForm(otherData)));
-                    await Task.Delay(_delaySeconds * 1000);
+                    Invoke(new Action(() => UpdateOtherDataOnForm(otherData3)));
+                    await Task.Delay(1000);
                 }
-            });
+            }
 
-            Task.Run(async () =>
+            async Task UpdateDataLoop2()
             {
                 while (true)
                 {
-                    Dictionary<string, string> otherData = await _client.ReadMultipleValuesAsync(otherDateTimeCache);
+                    Dictionary<string, string> otherData2 = await _client.ReadMultipleValuesAsync(otherDateTimeCache);
 
-                    Invoke(new Action(() => UpdateDateTimeOnForm(otherData)));
+                    Invoke(new Action(() => UpdateDateTimeOnForm(otherData2)));
                     await Task.Delay(500);
                 }
-            });
+            }
+
+            async Task UpdateDataLoop3()
+            {
+                while (true)
+                {
+                    Dictionary<string, string> otherData1 = await _client.ReadMultipleValuesAsync(otherFormulParametr);
+                    Invoke(new Action(() => UpdateDataFormul(otherData1)));
+                    await Task.Delay(500);
+                }
+            }
+
+            Task.Run(UpdateDataLoop0);
+            Task.Run(UpdateDataLoop1);
+            Task.Run(UpdateDataLoop2);
+            Task.Run(UpdateDataLoop3);
+        }
+
+        private void UpdateDataFormul(Dictionary<string, string> data)
+        {
+            foreach (var kvp in data)
+            {
+                string paramName = kvp.Key;
+                string paramValue = kvp.Value;
+
+                if (paramName == "input_Двуокись_углерода")
+                {
+                    currentCarbonDioxide2.Text = paramValue;
+                    currentCarbonDioxide.Text = ((Int32.Parse(paramValue) - Int32.Parse(_client.ReadHoldingParametr(1, 532))) * (Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 533))) / Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 534))))).ToString();
+                    //currentCarbonDioxide2.Text = ((Int32.Parse(paramValue) - Int32.Parse(_client.ReadHoldingParametr(1, 532))) * (Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 533))) / Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 534))))).ToString();
+                }
+                else if (paramName == "input_Дополнительный_вход_1")
+                {
+                    currentWindSpeed2.Text = paramValue;
+                    currentWindSpeed.Text = ((Int32.Parse(paramValue) - Int32.Parse(_client.ReadHoldingParametr(1, 536))) * (Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 537))) / Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 538))))).ToString();
+                    //currentWindSpeed2.Text = ((Int32.Parse(paramValue) - Int32.Parse(_client.ReadHoldingParametr(1, 536))) * (Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 537))) / Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 538))))).ToString();
+                }
+                else if (paramName == "input_Дополнительный_вход_2")
+                {
+                    additionalInput_2.Text = paramValue;
+                    additionalInput_2.Text = ((Int32.Parse(paramValue) - Int32.Parse(_client.ReadHoldingParametr(1, 540))) * (Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 541))) / Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 542))))).ToString();
+                    //additionalInput_2.Text = ((Int32.Parse(paramValue) - Int32.Parse(_client.ReadHoldingParametr(1, 540))) * (Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 541))) / Convert.ToDouble(Int32.Parse(_client.ReadHoldingParametr(1, 542))))).ToString();
+                }
+            }
         }
 
         private void UpdateDataOnForm(Dictionary<string, string> data)
@@ -492,12 +553,6 @@ namespace GravitonEco
                 else if (paramName == "input_Диоксид_серы")
                 {
                     currentSulfurDioxide2.Text = paramValue;
-                }
-                else if (paramName == "input_Двуокись_углерода")
-                {
-                    sumZeroCarbonDioxide.Text = paramValue;
-                    currentCarbonDioxide.Text = ((Int32.Parse(paramValue) - x0) * (Convert.ToDouble(x_gs) / Convert.ToDouble(x_acp))).ToString();
-                    currentCarbonDioxide2.Text = ((Int32.Parse(paramValue) - x0) * (Convert.ToDouble(x_gs) / Convert.ToDouble(x_acp))).ToString();
                 }
                 else if (paramName == "input_Летучая_органика")
                 {
@@ -1854,16 +1909,6 @@ namespace GravitonEco
             }
         }
 
-        private void constWindSpeed_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                _client.WriteHoldingParametr(1, 544, ushort.Parse(constWindSpeed.Text));
-                constWindSpeed.Text = _client.ReadHoldingParametr(1, 544);
-                MessageBox.Show("Данные отправлены", "Уведомление");
-            }
-        }
-
         private void powerAirTemperature_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -1948,7 +1993,7 @@ namespace GravitonEco
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "589985")
+            if (textBox1.Text == _client.ReadHoldingParametr(1, 530) + "" + _client.ReadHoldingParametr(1, 531))
             {
                 // Проверяем, была ли уже изменена иконка
                 if (lockSetting)
@@ -1986,6 +2031,14 @@ namespace GravitonEco
                     pgc_CarbonDioxide.Enabled = false;
                     acp_CarbonDioxide.Enabled = false;
                     sumZeroCarbonDioxide.Enabled = false;
+                    setupZeroWindSpeed.Enabled = false;
+                    acp_windSpeed.Enabled = false;
+                    sumZeroWindSpeed.Enabled = false;
+                    setupZeroAdditionalInput_2.Enabled = false;
+                    pgc_AdditionalInput_2.Enabled = false;
+                    acp_AdditionalInput_2.Enabled = false;
+                    sumZeroAdditionalInput_2.Enabled = false;
+                    sumZeroVolatileOrganicCompounds.Enabled = false;
                 }
                 else
                 {
@@ -2022,6 +2075,14 @@ namespace GravitonEco
                     constRelativeHumidity.Enabled = true;
                     stepRelativeHumidity.Enabled = true;
                     timeRelativeHumidity.Enabled = true;
+                    setupZeroWindSpeed.Enabled = true;
+                    acp_windSpeed.Enabled = true;
+                    sumZeroWindSpeed.Enabled = true;
+                    setupZeroAdditionalInput_2.Enabled = true;
+                    pgc_AdditionalInput_2.Enabled = true;
+                    acp_AdditionalInput_2.Enabled = true;
+                    sumZeroAdditionalInput_2.Enabled = true;
+                    sumZeroVolatileOrganicCompounds.Enabled = true;
                 }
 
                 // Инвертируем состояние флага isIconChanged
@@ -2094,7 +2155,8 @@ namespace GravitonEco
         {
             if (e.KeyCode == Keys.Enter)
             {
-                x0 = Int32.Parse(setupZeroCarbonDioxide.Text);
+                _client.WriteHoldingParametr(1, 532, ushort.Parse(setupZeroCarbonDioxide.Text));
+                setupZeroCarbonDioxide.Text = _client.ReadHoldingParametr(1, 532);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
@@ -2103,7 +2165,8 @@ namespace GravitonEco
         {
             if (e.KeyCode == Keys.Enter)
             {
-                x_gs = Int32.Parse(pgc_CarbonDioxide.Text);
+                _client.WriteHoldingParametr(1, 533, ushort.Parse(pgc_CarbonDioxide.Text));
+                pgc_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 533);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
@@ -2112,7 +2175,98 @@ namespace GravitonEco
         {
             if (e.KeyCode == Keys.Enter)
             {
-                x_acp = Int32.Parse(acp_CarbonDioxide.Text);
+                _client.WriteHoldingParametr(1, 534, ushort.Parse(acp_CarbonDioxide.Text));
+                acp_CarbonDioxide.Text = _client.ReadHoldingParametr(1, 534);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void sumZeroCarbonDioxide_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 535, ushort.Parse(sumZeroCarbonDioxide.Text));
+                sumZeroCarbonDioxide.Text = _client.ReadHoldingParametr(1, 535);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void setupZeroWindSpeed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 536, ushort.Parse(setupZeroWindSpeed.Text));
+                setupZeroWindSpeed.Text = _client.ReadHoldingParametr(1, 536);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void constWindSpeed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 537, ushort.Parse(constWindSpeed.Text));
+                constWindSpeed.Text = _client.ReadHoldingParametr(1, 537);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void acp_windSpeed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 538, ushort.Parse(acp_windSpeed.Text));
+                acp_windSpeed.Text = _client.ReadHoldingParametr(1, 538);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void sumZeroWindSpeed_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 539, ushort.Parse(sumZeroWindSpeed.Text));
+                sumZeroWindSpeed.Text = _client.ReadHoldingParametr(1, 539);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void setupZeroAdditionalInput_2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 540, ushort.Parse(setupZeroAdditionalInput_2.Text));
+                setupZeroAdditionalInput_2.Text = _client.ReadHoldingParametr(1, 540);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void pgc_AdditionalInput_2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 541, ushort.Parse(pgc_AdditionalInput_2.Text));
+                pgc_AdditionalInput_2.Text = _client.ReadHoldingParametr(1, 541);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void acp_AdditionalInput_2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 542, ushort.Parse(acp_AdditionalInput_2.Text));
+                acp_AdditionalInput_2.Text = _client.ReadHoldingParametr(1, 542);
+                MessageBox.Show("Данные отправлены", "Уведомление");
+            }
+        }
+
+        private void sumZeroAdditionalInput_2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                _client.WriteHoldingParametr(1, 543, ushort.Parse(sumZeroAdditionalInput_2.Text));
+                sumZeroAdditionalInput_2.Text = _client.ReadHoldingParametr(1, 543);
                 MessageBox.Show("Данные отправлены", "Уведомление");
             }
         }
