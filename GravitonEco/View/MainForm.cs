@@ -103,6 +103,7 @@ namespace GravitonEco
             parameterControls["coil_ÏÌ2_5ןמנמד1"] = (2, 51);
             parameterControls["coil_ÏÌ2_5ןמנמד2"] = (2, 52);
             parameterControls["coil_ÏÌ2_5הע"] = (2, 53);
+            //
             parameterControls["coil_ÏÌ10ןמנמד1"] = (2, 54);
             parameterControls["coil_ÏÌ10ןמנמד2"] = (2, 55);
             parameterControls["coil_ÏÌ10הע"] = (2, 56);
