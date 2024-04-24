@@ -215,6 +215,7 @@
     <Compile Include="Helpers\LayoutHelper.cs" />
     <Compile Include="Managers\INIManager.cs" />
     <Compile Include="Object\Sensor.cs" />
+    <Compile Include="Object\SensorConfiguration.cs" />
     <Compile Include="View\LogSensor.cs">
       <SubType>Form</SubType>
     </Compile>
