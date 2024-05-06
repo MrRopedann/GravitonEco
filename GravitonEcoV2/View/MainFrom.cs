@@ -1,4 +1,5 @@
 ﻿using GravitonEcoV2.Helpers;
+using GravitonEcoV2.Managers;
 using GravitonEcoV2.Updaters;
 using GravitonEcoV2.View;
 using System;
@@ -88,16 +89,16 @@ namespace GravitonEcoV2
             // Добавляем серию к графику
             chart1.Series.Add(series2);
 
-           ModbusConnectionManager modbusConnectionManager = ModbusConnectionManager.Instance;
+            ModbusConnectionManager modbusConnectionManager = ModbusConnectionManager.Instance;
+            ServerConnectionManager serverConnectionManager = ServerConnectionManager.Instance;
 
             ///*Тесты на эмуляторе*/
             ////Task.Run(() => _ = new SensorUpdater(currentAirTemperature, modbusConnectionManager, 1, 5, 1));
             ////Task.Run(() => _ = new PorogUpdater(porog_1_AirTemperature, modbusConnectionManager, 1, 18, 1));
             //var in1 = new PorogInitialize(porog_1_AirTemperature, modbusConnectionManager, 1, 1, 1);
 
-            Task.Run(() =>
-                UpdateSensorConnection(modbusConnectionManager)
-            );
+            Task.Run(() => UpdateSensorConnection(modbusConnectionManager));
+            Task.Run(() => UpdateServerConnection(serverConnectionManager));
 
             ///* Обновление текущих значений */
             //Внешние
@@ -372,6 +373,21 @@ namespace GravitonEcoV2
                 else
                 {
                     isConnectDevise.Image = Properties.Resources.mobile_connection_red;
+                }
+            }
+        }
+
+        private void UpdateServerConnection(ServerConnectionManager serverConnection)
+        {
+            while (true)
+            {
+                if (serverConnection.IsDeviceAvailable())
+                {
+                    isConnectServer.Image = Properties.Resources.mesh_green;
+                }
+                else
+                {
+                    isConnectServer.Image = Properties.Resources.mesh_red;
                 }
             }
         }

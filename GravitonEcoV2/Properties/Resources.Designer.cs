@@ -63,6 +63,26 @@ namespace GravitonEcoV2.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mesh_green {
+            get {
+                object obj = ResourceManager.GetObject("mesh_green", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mesh_red {
+            get {
+                object obj = ResourceManager.GetObject("mesh_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mobile_connection_green {
             get {
                 object obj = ResourceManager.GetObject("mobile_connection_green", resourceCulture);
