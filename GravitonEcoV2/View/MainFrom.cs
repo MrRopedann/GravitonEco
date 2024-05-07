@@ -97,8 +97,7 @@ namespace GravitonEcoV2
             ////Task.Run(() => _ = new PorogUpdater(porog_1_AirTemperature, modbusConnectionManager, 1, 18, 1));
             //var in1 = new PorogInitialize(porog_1_AirTemperature, modbusConnectionManager, 1, 1, 1);
 
-            Task.Run(() => UpdateSensorConnection(modbusConnectionManager));
-            Task.Run(() => UpdateServerConnection(serverConnectionManager));
+            Task.Run(() => UpdateServerAndSensorConnection(serverConnectionManager, modbusConnectionManager)); 
 
             ///* Обновление текущих значений */
             //Внешние
@@ -362,22 +361,7 @@ namespace GravitonEcoV2
             // Этот метод будет вызываться при каждом срабатывании события ValueChanged
         }
 
-        private void UpdateSensorConnection(ModbusConnectionManager modbusConnectionManager)
-        {
-            while (true)
-            {
-                if (modbusConnectionManager.IsDeviceAvailable())
-                {
-                    isConnectDevise.Image = Properties.Resources.mobile_connection_green;
-                }
-                else
-                {
-                    isConnectDevise.Image = Properties.Resources.mobile_connection_red;
-                }
-            }
-        }
-
-        private void UpdateServerConnection(ServerConnectionManager serverConnection)
+        private void UpdateServerAndSensorConnection(ServerConnectionManager serverConnection, ModbusConnectionManager modbusConnectionManager)
         {
             while (true)
             {
@@ -388,6 +372,15 @@ namespace GravitonEcoV2
                 else
                 {
                     isConnectServer.Image = Properties.Resources.mesh_red;
+                }
+
+                if (modbusConnectionManager.IsDeviceAvailable())
+                {
+                    isConnectDevise.Image = Properties.Resources.mobile_connection_green;
+                }
+                else
+                {
+                    isConnectDevise.Image = Properties.Resources.mobile_connection_red;
                 }
             }
         }

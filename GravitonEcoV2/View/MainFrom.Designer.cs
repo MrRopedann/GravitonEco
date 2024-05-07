@@ -32,12 +32,16 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.HeaderPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.isConnectServer = new System.Windows.Forms.PictureBox();
+            this.isConnectDevise = new System.Windows.Forms.PictureBox();
             this.SerialNumber = new System.Windows.Forms.Label();
             this.SoftVersion = new System.Windows.Forms.Label();
+            this.SettingBtn = new System.Windows.Forms.PictureBox();
             this.NameStation = new System.Windows.Forms.Label();
             this.ApparatVersion = new System.Windows.Forms.Label();
             this.PeriodComboBox = new System.Windows.Forms.ComboBox();
             this.UnlockPinField = new System.Windows.Forms.TextBox();
+            this.UnlockImage = new System.Windows.Forms.PictureBox();
             this.DateTimeLabel = new System.Windows.Forms.Label();
             this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.mainContentTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -276,11 +280,11 @@
             this.timeAirTemperature = new System.Windows.Forms.TextBox();
             this.timeRelativeHumidity = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.isConnectServer = new System.Windows.Forms.PictureBox();
-            this.isConnectDevise = new System.Windows.Forms.PictureBox();
-            this.SettingBtn = new System.Windows.Forms.PictureBox();
-            this.UnlockImage = new System.Windows.Forms.PictureBox();
             this.HeaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.isConnectServer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.isConnectDevise)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnlockImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -295,10 +299,6 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isConnectServer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isConnectDevise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SettingBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UnlockImage)).BeginInit();
             this.SuspendLayout();
             // 
             // HeaderPanel
@@ -314,7 +314,7 @@
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.155125F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.801477F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.343808F));
-            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 304F));
+            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 317F));
             this.HeaderPanel.Controls.Add(this.isConnectServer, 9, 0);
             this.HeaderPanel.Controls.Add(this.isConnectDevise, 8, 0);
             this.HeaderPanel.Controls.Add(this.SerialNumber, 4, 0);
@@ -334,6 +334,32 @@
             this.HeaderPanel.Size = new System.Drawing.Size(1390, 36);
             this.HeaderPanel.TabIndex = 0;
             // 
+            // isConnectServer
+            // 
+            this.isConnectServer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.isConnectServer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.isConnectServer.Image = global::GravitonEcoV2.Properties.Resources.mesh_red;
+            this.isConnectServer.Location = new System.Drawing.Point(1025, 3);
+            this.isConnectServer.Name = "isConnectServer";
+            this.isConnectServer.Size = new System.Drawing.Size(40, 30);
+            this.isConnectServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.isConnectServer.TabIndex = 38;
+            this.isConnectServer.TabStop = false;
+            this.isConnectServer.Tag = "ServerConnecting";
+            // 
+            // isConnectDevise
+            // 
+            this.isConnectDevise.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.isConnectDevise.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.isConnectDevise.Image = global::GravitonEcoV2.Properties.Resources.mobile_connection_red;
+            this.isConnectDevise.Location = new System.Drawing.Point(974, 3);
+            this.isConnectDevise.Name = "isConnectDevise";
+            this.isConnectDevise.Size = new System.Drawing.Size(45, 30);
+            this.isConnectDevise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.isConnectDevise.TabIndex = 9;
+            this.isConnectDevise.TabStop = false;
+            this.isConnectDevise.Tag = "ModbusConnecting";
+            // 
             // SerialNumber
             // 
             this.SerialNumber.AutoSize = true;
@@ -341,9 +367,9 @@
             this.SerialNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SerialNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SerialNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SerialNumber.Location = new System.Drawing.Point(509, 0);
+            this.SerialNumber.Location = new System.Drawing.Point(504, 0);
             this.SerialNumber.Name = "SerialNumber";
-            this.SerialNumber.Size = new System.Drawing.Size(145, 36);
+            this.SerialNumber.Size = new System.Drawing.Size(144, 36);
             this.SerialNumber.TabIndex = 4;
             this.SerialNumber.Text = "SN-12345678";
             this.SerialNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -355,12 +381,26 @@
             this.SoftVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SoftVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SoftVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SoftVersion.Location = new System.Drawing.Point(412, 0);
+            this.SoftVersion.Location = new System.Drawing.Point(408, 0);
             this.SoftVersion.Name = "SoftVersion";
-            this.SoftVersion.Size = new System.Drawing.Size(91, 36);
+            this.SoftVersion.Size = new System.Drawing.Size(90, 36);
             this.SoftVersion.TabIndex = 3;
             this.SoftVersion.Text = "FV-0001";
             this.SoftVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // SettingBtn
+            // 
+            this.SettingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SettingBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SettingBtn.Image = global::GravitonEcoV2.Properties.Resources.settings;
+            this.SettingBtn.Location = new System.Drawing.Point(3, 3);
+            this.SettingBtn.Name = "SettingBtn";
+            this.SettingBtn.Size = new System.Drawing.Size(38, 30);
+            this.SettingBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SettingBtn.TabIndex = 0;
+            this.SettingBtn.TabStop = false;
+            this.SettingBtn.Click += new System.EventHandler(this.SettingBtn_Click);
             // 
             // NameStation
             // 
@@ -372,7 +412,7 @@
             this.NameStation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(230)))), ((int)(((byte)(80)))));
             this.NameStation.Location = new System.Drawing.Point(47, 0);
             this.NameStation.Name = "NameStation";
-            this.NameStation.Size = new System.Drawing.Size(256, 36);
+            this.NameStation.Size = new System.Drawing.Size(253, 36);
             this.NameStation.TabIndex = 1;
             this.NameStation.Text = "GRAVITON-ECO";
             this.NameStation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -385,9 +425,9 @@
             this.ApparatVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ApparatVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.ApparatVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.ApparatVersion.Location = new System.Drawing.Point(309, 0);
+            this.ApparatVersion.Location = new System.Drawing.Point(306, 0);
             this.ApparatVersion.Name = "ApparatVersion";
-            this.ApparatVersion.Size = new System.Drawing.Size(97, 36);
+            this.ApparatVersion.Size = new System.Drawing.Size(96, 36);
             this.ApparatVersion.TabIndex = 2;
             this.ApparatVersion.Text = "HV-0001";
             this.ApparatVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -405,9 +445,9 @@
             "1000",
             "5000",
             "10000"});
-            this.PeriodComboBox.Location = new System.Drawing.Point(660, 6);
+            this.PeriodComboBox.Location = new System.Drawing.Point(654, 6);
             this.PeriodComboBox.Name = "PeriodComboBox";
-            this.PeriodComboBox.Size = new System.Drawing.Size(145, 23);
+            this.PeriodComboBox.Size = new System.Drawing.Size(144, 23);
             this.PeriodComboBox.TabIndex = 5;
             this.PeriodComboBox.Text = "Период наблюдений";
             // 
@@ -418,12 +458,24 @@
             this.UnlockPinField.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnlockPinField.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UnlockPinField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.UnlockPinField.Location = new System.Drawing.Point(811, 3);
+            this.UnlockPinField.Location = new System.Drawing.Point(804, 3);
             this.UnlockPinField.Name = "UnlockPinField";
             this.UnlockPinField.PasswordChar = '*';
-            this.UnlockPinField.Size = new System.Drawing.Size(121, 23);
+            this.UnlockPinField.Size = new System.Drawing.Size(120, 23);
             this.UnlockPinField.TabIndex = 6;
             this.UnlockPinField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // UnlockImage
+            // 
+            this.UnlockImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UnlockImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UnlockImage.Image = global::GravitonEcoV2.Properties.Resources.password_red;
+            this.UnlockImage.Location = new System.Drawing.Point(930, 3);
+            this.UnlockImage.Name = "UnlockImage";
+            this.UnlockImage.Size = new System.Drawing.Size(38, 30);
+            this.UnlockImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UnlockImage.TabIndex = 7;
+            this.UnlockImage.TabStop = false;
             // 
             // DateTimeLabel
             // 
@@ -432,9 +484,9 @@
             this.DateTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.DateTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.DateTimeLabel.Location = new System.Drawing.Point(1082, 0);
+            this.DateTimeLabel.Location = new System.Drawing.Point(1071, 0);
             this.DateTimeLabel.Name = "DateTimeLabel";
-            this.DateTimeLabel.Size = new System.Drawing.Size(305, 36);
+            this.DateTimeLabel.Size = new System.Drawing.Size(316, 36);
             this.DateTimeLabel.TabIndex = 8;
             this.DateTimeLabel.Text = "18.07.2023 20:00";
             this.DateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4125,58 +4177,6 @@
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
             // 
-            // isConnectServer
-            // 
-            this.isConnectServer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.isConnectServer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.isConnectServer.Image = global::GravitonEcoV2.Properties.Resources.mesh_red;
-            this.isConnectServer.Location = new System.Drawing.Point(1035, 3);
-            this.isConnectServer.Name = "isConnectServer";
-            this.isConnectServer.Size = new System.Drawing.Size(41, 30);
-            this.isConnectServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.isConnectServer.TabIndex = 38;
-            this.isConnectServer.TabStop = false;
-            this.isConnectServer.Tag = "ServerConnecting";
-            // 
-            // isConnectDevise
-            // 
-            this.isConnectDevise.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.isConnectDevise.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.isConnectDevise.Image = global::GravitonEcoV2.Properties.Resources.mobile_connection_red;
-            this.isConnectDevise.Location = new System.Drawing.Point(983, 3);
-            this.isConnectDevise.Name = "isConnectDevise";
-            this.isConnectDevise.Size = new System.Drawing.Size(46, 30);
-            this.isConnectDevise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.isConnectDevise.TabIndex = 9;
-            this.isConnectDevise.TabStop = false;
-            this.isConnectDevise.Tag = "ModbusConnecting";
-            // 
-            // SettingBtn
-            // 
-            this.SettingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.SettingBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SettingBtn.Image = global::GravitonEcoV2.Properties.Resources.settings;
-            this.SettingBtn.Location = new System.Drawing.Point(3, 3);
-            this.SettingBtn.Name = "SettingBtn";
-            this.SettingBtn.Size = new System.Drawing.Size(38, 30);
-            this.SettingBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SettingBtn.TabIndex = 0;
-            this.SettingBtn.TabStop = false;
-            this.SettingBtn.Click += new System.EventHandler(this.SettingBtn_Click);
-            // 
-            // UnlockImage
-            // 
-            this.UnlockImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UnlockImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UnlockImage.Image = global::GravitonEcoV2.Properties.Resources.password_red;
-            this.UnlockImage.Location = new System.Drawing.Point(938, 3);
-            this.UnlockImage.Name = "UnlockImage";
-            this.UnlockImage.Size = new System.Drawing.Size(39, 30);
-            this.UnlockImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.UnlockImage.TabIndex = 7;
-            this.UnlockImage.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4192,6 +4192,10 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.isConnectServer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.isConnectDevise)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnlockImage)).EndInit();
             this.MainSplitContainer.Panel1.ResumeLayout(false);
             this.MainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
@@ -4213,10 +4217,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isConnectServer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isConnectDevise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SettingBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UnlockImage)).EndInit();
             this.ResumeLayout(false);
 
         }

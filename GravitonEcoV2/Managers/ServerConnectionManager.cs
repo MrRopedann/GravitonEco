@@ -57,43 +57,15 @@ namespace GravitonEcoV2.Managers
 
         public bool IsDeviceAvailable()
         {
-            lock (lockObject)
+            if (tcpClient == null || !tcpClient.Connected || tcpClient is null)
             {
-                try
-                {
-                    if (tcpClient == null || !tcpClient.Connected || tcpClient is null)
-                    {
-                        logger.Warn("Соединение отсутствует. Повторное подключение...");
-                        InitializeServerConnection();
-                        return false;
-                    }
-                    else
-                    {
-                        using (TcpClient testTcpClient = new TcpClient())
-                        {
-                            IPEndPoint remoteEndPoint = (IPEndPoint)tcpClient.Client.RemoteEndPoint;
-                            IAsyncResult result = testTcpClient.BeginConnect(remoteEndPoint.Address.ToString(), remoteEndPoint.Port, null, null);
-                            bool success = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(20)); // Время ожидания подключения
-
-                            if (success)
-                            {
-                                testTcpClient.EndConnect(result);
-                                //logger.Info("Устройство доступно по TCP.");
-                                return true;
-                            }
-                            else
-                            {
-                                logger.Error("Не удалось подключиться к устройству по TCP.");
-                                return false;
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    logger.Error($"Ошибка при проверке доступности устройства: {ex.Message}");
-                    return false;
-                }
+                logger.Warn("Соединение отсутствует. Повторное подключение...");
+                InitializeServerConnection();
+                return false;
+            }
+            else 
+            {
+                return true;
             }
         }
     }
