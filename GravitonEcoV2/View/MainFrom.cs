@@ -2,6 +2,7 @@
 using GravitonEcoV2.Managers;
 using GravitonEcoV2.Updaters;
 using GravitonEcoV2.View;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -67,27 +68,23 @@ namespace GravitonEcoV2
             LayoutHelper.ApplyColumnRowLayout(tableLayoutPanels, columnWidths2, rowHeights2);
 
             /* Разметка колонок (конец) */
-
-            Series series2 = new Series("Series2");
-            series2.ChartType = SeriesChartType.Line;
-            series2.BorderWidth = 3;
             chart1.ChartAreas[0].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            // Настройка цвета меток на осях
             chart1.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190))))); // Цвет меток по оси X
             chart1.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190))))); // Цвет меток по оси Y
 
-            series2.Points.AddXY(0, 0);
-            series2.Points.AddXY(1, 20);
-            series2.Points.AddXY(2, 35);
-            series2.Points.AddXY(3, 15);
-            series2.Points.AddXY(4, 10);
-            series2.Points.AddXY(5, 20);
-            series2.Points.AddXY(6, 65);
+            Series series2 = new Series("Temperature");
+            series2.ChartType = SeriesChartType.Line;
+            series2.BorderWidth = 3;
             series2.LegendText = "Температура";
             series2.Color = System.Drawing.Color.Red;
-
-            // Добавляем серию к графику
             chart1.Series.Add(series2);
+
+            Series series3 = new Series("Humidity");
+            series3.ChartType = SeriesChartType.Line;
+            series3.BorderWidth = 3;
+            series3.LegendText = "Влажность";
+            series3.Color = System.Drawing.Color.Blue;
+            chart1.Series.Add(series3);
 
             ModbusConnectionManager modbusConnectionManager = ModbusConnectionManager.Instance;
             ServerConnectionManager serverConnectionManager = ServerConnectionManager.Instance;
@@ -97,7 +94,8 @@ namespace GravitonEcoV2
             ////Task.Run(() => _ = new PorogUpdater(porog_1_AirTemperature, modbusConnectionManager, 1, 18, 1));
             //var in1 = new PorogInitialize(porog_1_AirTemperature, modbusConnectionManager, 1, 1, 1);
 
-            Task.Run(() => UpdateServerAndSensorConnection(serverConnectionManager, modbusConnectionManager)); 
+            Task.Run(() => UpdateServerAndSensorConnection(serverConnectionManager, modbusConnectionManager));
+            
 
             ///* Обновление текущих значений */
             //Внешние
@@ -404,11 +402,22 @@ namespace GravitonEcoV2
             Setting setting = new Setting();
             setting.Show();
         }
-
+        
         private void NameStation_Click(object sender, EventArgs e)
         {
             LogSensor logSensor = new LogSensor();
             logSensor.Show();
+        }
+
+        private void currentAirTemperature_TextChanged(object sender, EventArgs e)
+        {
+            DateTime timenow = DateTime.Now;
+
+            if (radioButton1.Checked)
+            {
+                chart1.Series.FindByName("Temperature").Points.AddXY(timenow.ToString("hh:mm:ss"), Convert.ToDouble(currentAirTemperature.Text));
+                chart1.Series.FindByName("Humidity").Points.AddXY(timenow.ToString("hh:mm:ss"), Convert.ToDouble(currentRelativeHumidity.Text));
+            }
         }
     }
 }

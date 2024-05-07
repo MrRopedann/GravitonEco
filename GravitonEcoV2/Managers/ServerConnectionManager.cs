@@ -65,7 +65,13 @@ namespace GravitonEcoV2.Managers
             }
             else 
             {
-                return true;
+                NetworkStream stream = tcpClient.GetStream();
+                byte[] requestBuffer = new byte[20];
+                var count = stream.Read(requestBuffer, 0, 20);
+                if (count == 0)
+                    return false;
+                else
+                    return true;
             }
         }
     }
