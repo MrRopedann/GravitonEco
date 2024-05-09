@@ -104,33 +104,33 @@ namespace GravitonEcoV2
             _ = new SensorUpdater(currentAtmosphericPressure, modbusConnectionManager, 2, 1, 1);
             _ = new SensorUpdater(currentWindSpeed, modbusConnectionManager, 1, 544, 1);
             _ = new SensorUpdater(currentWindDirection, modbusConnectionManager, 2, 2, 1);
-            //Газы
-            _ = new SensorUpdater(currentCarbonMonoxide, modbusConnectionManager, 1, 11, 1);
-            _ = new SensorUpdater(currentCarbonDioxide, modbusConnectionManager, 1, 10, 1);
-            _ = new SensorUpdater(currentNitrogenOxide, modbusConnectionManager, 1, 12, 1);
-            _ = new SensorUpdater(currentNitrogenDioxide, modbusConnectionManager, 1, 13, 1);
-            _ = new SensorUpdater(currentSulfurDioxide, modbusConnectionManager, 1, 19, 1);
-            _ = new SensorUpdater(currentVolatileOrganicCompounds, modbusConnectionManager, 1, 8, 1);
-            // PM
-            _ = new SensorUpdater(currentParticulateMatterPM1, modbusConnectionManager, 2, 16, 1);
-            _ = new SensorUpdater(currentParticulateMatterPM2_5, modbusConnectionManager, 2, 17, 1);
-            _ = new SensorUpdater(currentParticulateMatterPM10, modbusConnectionManager, 2, 18, 1);
-            // Охранная система
-            _ = new SensorUpdater(currentVibrationLevel, modbusConnectionManager, 1, 21, 1);
-            _ = new SensorUpdater(currentTiltLevel, modbusConnectionManager, 1, 20, 1);
-            //_ = new SensorUpdater(currentTamperSensor, modbusConnectionManager, 3, 2, 1);// Нет инфы по регистрам
-            currentTamperSensor.Enabled = false;
-            // Внутренее(Не уверен за адреса и регистры)
-            //_ = new SensorUpdater(currentTemperatureInSensor, modbusConnectionManager, 1, 5, 1);
-            currentTemperatureInSensor.Enabled = false;
-            //_ = new SensorUpdater(currentHumidityInSensor, modbusConnectionManager, 1, 6, 1);
-            currentHumidityInSensor.Enabled = false;
-            //_ = new SensorUpdater(currentSupplyVoltage, modbusConnectionManager, 1, 2, 1);
-            currentSupplyVoltage.Enabled = false;
-            //_ = new SensorUpdater(currentSamplingSpeed, modbusConnectionManager, 3, 25, 1);
-            currentSamplingSpeed.Enabled = false;
-            //_ = new SensorUpdater(currentPressureInSensor, modbusConnectionManager, 1, 1, 1);
-            currentPressureInSensor.Enabled = false;
+            ////Газы
+            //_ = new SensorUpdater(currentCarbonMonoxide, modbusConnectionManager, 1, 11, 1);
+            //_ = new SensorUpdater(currentCarbonDioxide, modbusConnectionManager, 1, 10, 1);
+            //_ = new SensorUpdater(currentNitrogenOxide, modbusConnectionManager, 1, 12, 1);
+            //_ = new SensorUpdater(currentNitrogenDioxide, modbusConnectionManager, 1, 13, 1);
+            //_ = new SensorUpdater(currentSulfurDioxide, modbusConnectionManager, 1, 19, 1);
+            //_ = new SensorUpdater(currentVolatileOrganicCompounds, modbusConnectionManager, 1, 8, 1);
+            //// PM
+            //_ = new SensorUpdater(currentParticulateMatterPM1, modbusConnectionManager, 2, 16, 1);
+            //_ = new SensorUpdater(currentParticulateMatterPM2_5, modbusConnectionManager, 2, 17, 1);
+            //_ = new SensorUpdater(currentParticulateMatterPM10, modbusConnectionManager, 2, 18, 1);
+            //// Охранная система
+            //_ = new SensorUpdater(currentVibrationLevel, modbusConnectionManager, 1, 21, 1);
+            //_ = new SensorUpdater(currentTiltLevel, modbusConnectionManager, 1, 20, 1);
+            ////_ = new SensorUpdater(currentTamperSensor, modbusConnectionManager, 3, 2, 1);// Нет инфы по регистрам
+            //currentTamperSensor.Enabled = false;
+            //// Внутренее(Не уверен за адреса и регистры)
+            ////_ = new SensorUpdater(currentTemperatureInSensor, modbusConnectionManager, 1, 5, 1);
+            //currentTemperatureInSensor.Enabled = false;
+            ////_ = new SensorUpdater(currentHumidityInSensor, modbusConnectionManager, 1, 6, 1);
+            //currentHumidityInSensor.Enabled = false;
+            ////_ = new SensorUpdater(currentSupplyVoltage, modbusConnectionManager, 1, 2, 1);
+            //currentSupplyVoltage.Enabled = false;
+            ////_ = new SensorUpdater(currentSamplingSpeed, modbusConnectionManager, 3, 25, 1);
+            //currentSamplingSpeed.Enabled = false;
+            ////_ = new SensorUpdater(currentPressureInSensor, modbusConnectionManager, 1, 1, 1);
+            //currentPressureInSensor.Enabled = false;
             // Сработки парогов
 
             //var t1 = new PorogUpdater(porog_1_AirTemperature, modbusConnectionManager, 2, 15, 1);
