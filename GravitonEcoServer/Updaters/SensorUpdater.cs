@@ -8,61 +8,27 @@ using System.Threading.Tasks;
 
 namespace GravitonEcoServer.Updaters
 {
-    public class SensorUpdater
+    // Класс для асинхронного обновления температуры
+    public class SensorUpdater : ModbusUpdaterBase
     {
-        private readonly ModbusConnectionManager connectionManager;
-        private readonly Logger logger = LogManager.GetCurrentClassLogger();
-        private readonly byte slaveAddress;
-        private readonly ushort startAddress;
-        private readonly ushort numberOfPoints;
-        private int previousValue;
-        public string Alias { get; }
-
-        public SensorUpdater(ModbusConnectionManager connectionManager, string alias, byte slaveAddress, ushort startAddress, ushort numberOfPoints)
+        private byte _slaveAdress { get; set; }
+        private ushort _startAdress { get; set; }
+        private ushort _numberOfPoints { get; set; }
+        public SensorUpdater(string alias, ModbusConnectionManager connectionManager, byte slaveAdress, ushort startAdress, ushort numberOfPoints)
+             : base(alias, connectionManager)
         {
-            this.connectionManager = connectionManager ?? throw new ArgumentNullException(nameof(connectionManager));
-            Alias = alias;
-            this.slaveAddress = slaveAddress;
-            this.startAddress = startAddress;
-            this.numberOfPoints = numberOfPoints;
-            previousValue = 0;
+            _slaveAdress = slaveAdress;
+            _startAdress = startAdress;
+            _numberOfPoints = numberOfPoints;
         }
 
-        public void StartMonitoring()
+        protected override async Task UpdateAsync()
         {
-            Task.Run(async () =>
+            await UpdateRegistersAsync(async (modbusMaster) =>
             {
-                while (true)
-                {
-                    await Task.Delay(TimeSpan.FromSeconds(30));
-                    CheckSensorValue();
-                }
+                // Ваш код для ReadInputRegistersAsync
+                return await modbusMaster.ReadInputRegistersAsync(_slaveAdress, _startAdress, _numberOfPoints);
             });
-        }
-
-        private async Task CheckSensorValue()
-        {
-            try
-            {
-                var modbusMaster = connectionManager.GetModbusMaster();
-                if (modbusMaster != null && connectionManager.IsDeviceAvailable())
-                {
-                    ushort[] registers = await modbusMaster.ReadInputRegistersAsync(slaveAddress, startAddress, numberOfPoints);
-                    if (registers != null && registers.Length > 0)
-                    {
-                        int value = registers[0];
-                        if (value != previousValue)
-                        {
-                            previousValue = value;
-                            OnValueChanged(value);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                logger.Error($"Error checking sensor value: {ex.Message}");
-            }
         }
     }
 }

@@ -314,7 +314,7 @@
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.155125F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.801477F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.343808F));
-            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 326F));
+            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 331F));
             this.HeaderPanel.Controls.Add(this.isConnectServer, 9, 0);
             this.HeaderPanel.Controls.Add(this.isConnectDevise, 8, 0);
             this.HeaderPanel.Controls.Add(this.SerialNumber, 4, 0);
@@ -339,9 +339,9 @@
             this.isConnectServer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.isConnectServer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.isConnectServer.Image = global::GravitonEcoV2.Properties.Resources.mesh_red;
-            this.isConnectServer.Location = new System.Drawing.Point(1016, 3);
+            this.isConnectServer.Location = new System.Drawing.Point(1011, 3);
             this.isConnectServer.Name = "isConnectServer";
-            this.isConnectServer.Size = new System.Drawing.Size(40, 30);
+            this.isConnectServer.Size = new System.Drawing.Size(39, 30);
             this.isConnectServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.isConnectServer.TabIndex = 38;
             this.isConnectServer.TabStop = false;
@@ -352,9 +352,9 @@
             this.isConnectDevise.Cursor = System.Windows.Forms.Cursors.Hand;
             this.isConnectDevise.Dock = System.Windows.Forms.DockStyle.Fill;
             this.isConnectDevise.Image = global::GravitonEcoV2.Properties.Resources.mobile_connection_red;
-            this.isConnectDevise.Location = new System.Drawing.Point(965, 3);
+            this.isConnectDevise.Location = new System.Drawing.Point(961, 3);
             this.isConnectDevise.Name = "isConnectDevise";
-            this.isConnectDevise.Size = new System.Drawing.Size(45, 30);
+            this.isConnectDevise.Size = new System.Drawing.Size(44, 30);
             this.isConnectDevise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.isConnectDevise.TabIndex = 9;
             this.isConnectDevise.TabStop = false;
@@ -367,7 +367,7 @@
             this.SerialNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SerialNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SerialNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SerialNumber.Location = new System.Drawing.Point(500, 0);
+            this.SerialNumber.Location = new System.Drawing.Point(498, 0);
             this.SerialNumber.Name = "SerialNumber";
             this.SerialNumber.Size = new System.Drawing.Size(142, 36);
             this.SerialNumber.TabIndex = 4;
@@ -381,7 +381,7 @@
             this.SoftVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SoftVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SoftVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SoftVersion.Location = new System.Drawing.Point(405, 0);
+            this.SoftVersion.Location = new System.Drawing.Point(403, 0);
             this.SoftVersion.Name = "SoftVersion";
             this.SoftVersion.Size = new System.Drawing.Size(89, 36);
             this.SoftVersion.TabIndex = 3;
@@ -396,7 +396,7 @@
             this.SettingBtn.Image = global::GravitonEcoV2.Properties.Resources.settings;
             this.SettingBtn.Location = new System.Drawing.Point(3, 3);
             this.SettingBtn.Name = "SettingBtn";
-            this.SettingBtn.Size = new System.Drawing.Size(38, 30);
+            this.SettingBtn.Size = new System.Drawing.Size(37, 30);
             this.SettingBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.SettingBtn.TabIndex = 0;
             this.SettingBtn.TabStop = false;
@@ -410,9 +410,9 @@
             this.NameStation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameStation.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.NameStation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(230)))), ((int)(((byte)(80)))));
-            this.NameStation.Location = new System.Drawing.Point(47, 0);
+            this.NameStation.Location = new System.Drawing.Point(46, 0);
             this.NameStation.Name = "NameStation";
-            this.NameStation.Size = new System.Drawing.Size(251, 36);
+            this.NameStation.Size = new System.Drawing.Size(250, 36);
             this.NameStation.TabIndex = 1;
             this.NameStation.Text = "GRAVITON-ECO";
             this.NameStation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -425,7 +425,7 @@
             this.ApparatVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ApparatVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.ApparatVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.ApparatVersion.Location = new System.Drawing.Point(304, 0);
+            this.ApparatVersion.Location = new System.Drawing.Point(302, 0);
             this.ApparatVersion.Name = "ApparatVersion";
             this.ApparatVersion.Size = new System.Drawing.Size(95, 36);
             this.ApparatVersion.TabIndex = 2;
@@ -445,7 +445,7 @@
             "1000",
             "5000",
             "10000"});
-            this.PeriodComboBox.Location = new System.Drawing.Point(648, 6);
+            this.PeriodComboBox.Location = new System.Drawing.Point(646, 6);
             this.PeriodComboBox.Name = "PeriodComboBox";
             this.PeriodComboBox.Size = new System.Drawing.Size(142, 23);
             this.PeriodComboBox.TabIndex = 5;
@@ -458,10 +458,10 @@
             this.UnlockPinField.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnlockPinField.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UnlockPinField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.UnlockPinField.Location = new System.Drawing.Point(796, 3);
+            this.UnlockPinField.Location = new System.Drawing.Point(794, 3);
             this.UnlockPinField.Name = "UnlockPinField";
             this.UnlockPinField.PasswordChar = '*';
-            this.UnlockPinField.Size = new System.Drawing.Size(119, 23);
+            this.UnlockPinField.Size = new System.Drawing.Size(118, 23);
             this.UnlockPinField.TabIndex = 6;
             this.UnlockPinField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -470,9 +470,9 @@
             this.UnlockImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UnlockImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnlockImage.Image = global::GravitonEcoV2.Properties.Resources.password_red;
-            this.UnlockImage.Location = new System.Drawing.Point(921, 3);
+            this.UnlockImage.Location = new System.Drawing.Point(918, 3);
             this.UnlockImage.Name = "UnlockImage";
-            this.UnlockImage.Size = new System.Drawing.Size(38, 30);
+            this.UnlockImage.Size = new System.Drawing.Size(37, 30);
             this.UnlockImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UnlockImage.TabIndex = 7;
             this.UnlockImage.TabStop = false;
@@ -484,9 +484,9 @@
             this.DateTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.DateTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.DateTimeLabel.Location = new System.Drawing.Point(1062, 0);
+            this.DateTimeLabel.Location = new System.Drawing.Point(1056, 0);
             this.DateTimeLabel.Name = "DateTimeLabel";
-            this.DateTimeLabel.Size = new System.Drawing.Size(325, 36);
+            this.DateTimeLabel.Size = new System.Drawing.Size(331, 36);
             this.DateTimeLabel.TabIndex = 8;
             this.DateTimeLabel.Text = "18.07.2023 20:00";
             this.DateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

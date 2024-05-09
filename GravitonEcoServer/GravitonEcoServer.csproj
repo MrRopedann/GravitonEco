@@ -59,6 +59,7 @@
     <Compile Include="Managers\TcpServer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Updaters\ModbusUpdaterBase.cs" />
     <Compile Include="Updaters\SensorUpdater.cs" />
   </ItemGroup>
   <ItemGroup>
