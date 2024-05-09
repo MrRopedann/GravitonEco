@@ -1,41 +1,42 @@
-﻿using NLog;
-using NModbus.Device;
-using NModbus;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net.Http;
-using System.Management.Instrumentation;
+using NModbus;
+using NLog;
 
-namespace GravitonEcoV2.Managers
+namespace GravitonEcoServer.Managers
 {
-    public class ServerConnectionManager
+    public class ModbusConnectionManager
     {
-        private static ServerConnectionManager instance;
+        private static ModbusConnectionManager instance;
+        private ModbusFactory modbusFactory;
+        private readonly object lockObject = new object(); // Добавляем объект блокировки для потокобезопасности
         private TcpClient tcpClient;
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
-        private readonly object lockObject = new object();
+        string pathSensor = @"./Setting/setting_device_connection.ini";
 
-        private ServerConnectionManager()
+        private ModbusConnectionManager()
         {
-            InitializeServerConnection();
+            InitializeModbusConnection();
         }
 
-        private void InitializeServerConnection()
+        private void InitializeModbusConnection()
         {
             try
             {
-                //INIManager manager = new INIManager(pathSensor);
-                //string ipAddressStr = manager.GetPrivateString("DeviceConnectSetting", "Host");
-                //int port = Int32.Parse(manager.GetPrivateString("DeviceConnectSetting", "Port"));
+                INIManager manager = new INIManager(pathSensor);
+                string ipAddressStr = manager.GetPrivateString("DeviceConnectSetting", "Host");
+                int port = Int32.Parse(manager.GetPrivateString("DeviceConnectSetting", "Port"));
 
-                IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
+                IPAddress ipAddress = IPAddress.Parse(ipAddressStr);
 
-                tcpClient = new TcpClient(ipAddress.ToString(), 8888);
+                tcpClient = new TcpClient(ipAddress.ToString(), port);
+                modbusFactory = new ModbusFactory();
+                modbusMaster = modbusFactory.CreateMaster(tcpClient);
             }
             catch (Exception ex)
             {
@@ -43,15 +44,34 @@ namespace GravitonEcoV2.Managers
             }
         }
 
-        public static ServerConnectionManager Instance
+        public static ModbusConnectionManager Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new ServerConnectionManager();
+                    instance = new ModbusConnectionManager();
                 }
                 return instance;
+            }
+        }
+
+        private IModbusMaster modbusMaster;
+        public IModbusMaster GetModbusMaster()
+        {
+            lock (lockObject)
+            {
+                // Проверяем, что у нас есть подключение и оно активно
+                if (tcpClient != null && tcpClient.Connected)
+                {
+                    return modbusMaster;
+                }
+                else
+                {
+                    logger.Warn("Соединение отсутствует. Повторное подключение...");
+                    InitializeModbusConnection();
+                    return modbusMaster;
+                }
             }
         }
 
@@ -64,8 +84,7 @@ namespace GravitonEcoV2.Managers
                     if (tcpClient == null || !tcpClient.Connected || tcpClient is null)
                     {
                         logger.Warn("Соединение отсутствует. Повторное подключение...");
-                        InitializeServerConnection();
-                        tcpClient.Close();
+                        InitializeModbusConnection();
                         return false;
                     }
                     else
@@ -85,7 +104,6 @@ namespace GravitonEcoV2.Managers
                             else
                             {
                                 logger.Error("Не удалось подключиться к устройству по TCP.");
-                                tcpClient.Close();
                                 return false;
                             }
                         }
@@ -99,4 +117,5 @@ namespace GravitonEcoV2.Managers
             }
         }
     }
+
 }
