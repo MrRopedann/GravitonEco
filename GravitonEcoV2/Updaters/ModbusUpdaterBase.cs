@@ -72,6 +72,51 @@ namespace GravitonEcoV2.Updaters
             }
         }
 
+        protected async Task UpdateRegistersAsync(Func<IModbusMaster, Task<bool[]>> readRegistersFunc)
+        {
+            try
+            {
+                IModbusMaster modbusMaster = connectionManager.GetModbusMaster();
+                if (modbusMaster != null && connectionManager.IsDeviceAvailable())
+                {
+                    bool[] registers = await readRegistersFunc(modbusMaster);
+                    if (registers != null && registers.Length > 0)
+                    {
+                        string newValue = registers[0].ToString();
+                        await Task.Run(() =>
+                        {
+                            control.BeginInvoke(new Action(() =>
+                            {
+                                // Обновление Text у Label или установка значения для TextBox
+                                if (control is Label label)
+                                {
+                                    label.Text = newValue.ToString();
+                                }
+                                else if (control is TextBox textBox)
+                                {
+                                    textBox.ForeColor = Boolean.Parse(newValue.ToString()) ? Color.Red : Color.Green;
+                                }
+
+                            }));
+                        });
+                        OnValueReceived(newValue);
+                    }
+                    else
+                    {
+                        await HandleNoRegistersReceived();
+                    }
+                }
+                else
+                {
+                    await HandleNoRegistersReceived();
+                }
+            }
+            catch (Exception ex)
+            {
+                logger.Error($"Ошибка передачи данных [МЕТОД - UpdateRegistersAsync]: {ex.Message}");
+            }
+        }
+
         protected async Task HandleNoRegistersReceived()
         {
             logger.Error("Не удалось получить значения регистров. Обработка ситуации...");

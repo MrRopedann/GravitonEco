@@ -1,8 +1,11 @@
-﻿using GravitonEcoV2.Helpers;
+﻿using GravitonEcoV2.Communication;
+using GravitonEcoV2.Helpers;
 using GravitonEcoV2.Managers;
 using GravitonEcoV2.Updaters;
+using GravitonEcoV2.Updaters.PorogHandlers;
 using GravitonEcoV2.View;
 using Newtonsoft.Json.Linq;
+using NModbus;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,13 +23,14 @@ namespace GravitonEcoV2
     {
         private List<RadioButton> allRadioButtons = new List<RadioButton>();
         private List<SensorUpdater> sensorUpdaters = new List<SensorUpdater>();
+        ModbusConnectionManager modbusConnectionManager;
 
         public MainForm()
         {
             InitializeComponent();
             InitializeStartComponent();
 
-            ModbusConnectionManager modbusConnectionManager = ModbusConnectionManager.Instance;
+            modbusConnectionManager = ModbusConnectionManager.Instance;
             ServerConnectionManager serverConnectionManager = ServerConnectionManager.Instance;
 
             Task.Run(() => UpdateServerAndSensorConnection(serverConnectionManager, modbusConnectionManager));
@@ -39,6 +43,7 @@ namespace GravitonEcoV2
             _ = new SensorUpdater(currentAtmosphericPressure, modbusConnectionManager, 2, 1, 1);
             _ = new SensorUpdater(currentWindSpeed, modbusConnectionManager, 1, 544, 1);
             _ = new SensorUpdater(currentWindDirection, modbusConnectionManager, 2, 2, 1);
+            _ = new PorogUpdater(porog_1_AirTemperature, modbusConnectionManager, 2, 15, 1);
 
         }
 
@@ -220,6 +225,34 @@ namespace GravitonEcoV2
             series3.LegendText = "Влажность";
             series3.Color = System.Drawing.Color.Blue;
             chart1.Series.Add(series3);
+        }
+
+        private void porog_1_AirTemperature_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                IModbusMaster modbusMaster = modbusConnectionManager.GetModbusMaster();
+                modbusMaster.WriteSingleRegisterAsync(2, 20, Convert.ToUInt16(porog_1_AirTemperature.Text));
+            }
+        }
+
+        private void UnlockPinField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (UnlockPinField.Text == "0000")
+                { 
+                    tableLayoutPanel2.Enabled = true;
+                    tableLayoutPanel3.Enabled = true;
+                    UnlockImage.Image = Properties.Resources.password_green;
+                }
+                else
+                {
+                    tableLayoutPanel2.Enabled = false;
+                    tableLayoutPanel3.Enabled = false;
+                    UnlockImage.Image = Properties.Resources.password_red;
+                }
+            }
         }
     }
 }

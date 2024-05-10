@@ -36,16 +36,12 @@ namespace GravitonEcoV2
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.HeaderPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.isConnectServer = new System.Windows.Forms.PictureBox();
-            this.isConnectDevise = new System.Windows.Forms.PictureBox();
             this.SerialNumber = new System.Windows.Forms.Label();
             this.SoftVersion = new System.Windows.Forms.Label();
-            this.SettingBtn = new System.Windows.Forms.PictureBox();
             this.NameStation = new System.Windows.Forms.Label();
             this.ApparatVersion = new System.Windows.Forms.Label();
             this.PeriodComboBox = new System.Windows.Forms.ComboBox();
             this.UnlockPinField = new System.Windows.Forms.TextBox();
-            this.UnlockImage = new System.Windows.Forms.PictureBox();
             this.DateTimeLabel = new System.Windows.Forms.Label();
             this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
             this.mainContentTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -284,11 +280,11 @@ namespace GravitonEcoV2
             this.timeAirTemperature = new System.Windows.Forms.TextBox();
             this.timeRelativeHumidity = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.isConnectServer = new System.Windows.Forms.PictureBox();
+            this.isConnectDevise = new System.Windows.Forms.PictureBox();
+            this.SettingBtn = new System.Windows.Forms.PictureBox();
+            this.UnlockImage = new System.Windows.Forms.PictureBox();
             this.HeaderPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.isConnectServer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isConnectDevise)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SettingBtn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UnlockImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
             this.MainSplitContainer.Panel1.SuspendLayout();
             this.MainSplitContainer.Panel2.SuspendLayout();
@@ -303,6 +299,10 @@ namespace GravitonEcoV2
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.isConnectServer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.isConnectDevise)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnlockImage)).BeginInit();
             this.SuspendLayout();
             // 
             // HeaderPanel
@@ -318,7 +318,7 @@ namespace GravitonEcoV2
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.155125F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.801477F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.343808F));
-            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 343F));
+            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 356F));
             this.HeaderPanel.Controls.Add(this.isConnectServer, 9, 0);
             this.HeaderPanel.Controls.Add(this.isConnectDevise, 8, 0);
             this.HeaderPanel.Controls.Add(this.SerialNumber, 4, 0);
@@ -338,32 +338,6 @@ namespace GravitonEcoV2
             this.HeaderPanel.Size = new System.Drawing.Size(1390, 36);
             this.HeaderPanel.TabIndex = 0;
             // 
-            // isConnectServer
-            // 
-            this.isConnectServer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.isConnectServer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.isConnectServer.Image = global::GravitonEcoV2.Properties.Resources.mesh_red;
-            this.isConnectServer.Location = new System.Drawing.Point(1001, 3);
-            this.isConnectServer.Name = "isConnectServer";
-            this.isConnectServer.Size = new System.Drawing.Size(39, 30);
-            this.isConnectServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.isConnectServer.TabIndex = 38;
-            this.isConnectServer.TabStop = false;
-            this.isConnectServer.Tag = "ServerConnecting";
-            // 
-            // isConnectDevise
-            // 
-            this.isConnectDevise.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.isConnectDevise.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.isConnectDevise.Image = global::GravitonEcoV2.Properties.Resources.mobile_connection_red;
-            this.isConnectDevise.Location = new System.Drawing.Point(951, 3);
-            this.isConnectDevise.Name = "isConnectDevise";
-            this.isConnectDevise.Size = new System.Drawing.Size(44, 30);
-            this.isConnectDevise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.isConnectDevise.TabIndex = 9;
-            this.isConnectDevise.TabStop = false;
-            this.isConnectDevise.Tag = "ModbusConnecting";
-            // 
             // SerialNumber
             // 
             this.SerialNumber.AutoSize = true;
@@ -371,9 +345,9 @@ namespace GravitonEcoV2
             this.SerialNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SerialNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SerialNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SerialNumber.Location = new System.Drawing.Point(493, 0);
+            this.SerialNumber.Location = new System.Drawing.Point(486, 0);
             this.SerialNumber.Name = "SerialNumber";
-            this.SerialNumber.Size = new System.Drawing.Size(140, 36);
+            this.SerialNumber.Size = new System.Drawing.Size(138, 36);
             this.SerialNumber.TabIndex = 4;
             this.SerialNumber.Text = "SN-12345678";
             this.SerialNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -385,26 +359,12 @@ namespace GravitonEcoV2
             this.SoftVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SoftVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SoftVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SoftVersion.Location = new System.Drawing.Point(399, 0);
+            this.SoftVersion.Location = new System.Drawing.Point(393, 0);
             this.SoftVersion.Name = "SoftVersion";
-            this.SoftVersion.Size = new System.Drawing.Size(88, 36);
+            this.SoftVersion.Size = new System.Drawing.Size(87, 36);
             this.SoftVersion.TabIndex = 3;
             this.SoftVersion.Text = "FV-0001";
             this.SoftVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // SettingBtn
-            // 
-            this.SettingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.SettingBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SettingBtn.Image = global::GravitonEcoV2.Properties.Resources.settings;
-            this.SettingBtn.Location = new System.Drawing.Point(3, 3);
-            this.SettingBtn.Name = "SettingBtn";
-            this.SettingBtn.Size = new System.Drawing.Size(37, 30);
-            this.SettingBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.SettingBtn.TabIndex = 0;
-            this.SettingBtn.TabStop = false;
-            this.SettingBtn.Click += new System.EventHandler(this.SettingBtn_Click);
             // 
             // NameStation
             // 
@@ -414,9 +374,9 @@ namespace GravitonEcoV2
             this.NameStation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.NameStation.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.NameStation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(230)))), ((int)(((byte)(80)))));
-            this.NameStation.Location = new System.Drawing.Point(46, 0);
+            this.NameStation.Location = new System.Drawing.Point(45, 0);
             this.NameStation.Name = "NameStation";
-            this.NameStation.Size = new System.Drawing.Size(247, 36);
+            this.NameStation.Size = new System.Drawing.Size(244, 36);
             this.NameStation.TabIndex = 1;
             this.NameStation.Text = "GRAVITON-ECO";
             this.NameStation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -429,9 +389,9 @@ namespace GravitonEcoV2
             this.ApparatVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ApparatVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.ApparatVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.ApparatVersion.Location = new System.Drawing.Point(299, 0);
+            this.ApparatVersion.Location = new System.Drawing.Point(295, 0);
             this.ApparatVersion.Name = "ApparatVersion";
-            this.ApparatVersion.Size = new System.Drawing.Size(94, 36);
+            this.ApparatVersion.Size = new System.Drawing.Size(92, 36);
             this.ApparatVersion.TabIndex = 2;
             this.ApparatVersion.Text = "HV-0001";
             this.ApparatVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -449,9 +409,9 @@ namespace GravitonEcoV2
             "1000",
             "5000",
             "10000"});
-            this.PeriodComboBox.Location = new System.Drawing.Point(639, 6);
+            this.PeriodComboBox.Location = new System.Drawing.Point(630, 6);
             this.PeriodComboBox.Name = "PeriodComboBox";
-            this.PeriodComboBox.Size = new System.Drawing.Size(140, 23);
+            this.PeriodComboBox.Size = new System.Drawing.Size(138, 23);
             this.PeriodComboBox.TabIndex = 5;
             this.PeriodComboBox.Text = "Период наблюдений";
             // 
@@ -462,24 +422,13 @@ namespace GravitonEcoV2
             this.UnlockPinField.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnlockPinField.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UnlockPinField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.UnlockPinField.Location = new System.Drawing.Point(785, 3);
+            this.UnlockPinField.Location = new System.Drawing.Point(774, 3);
             this.UnlockPinField.Name = "UnlockPinField";
             this.UnlockPinField.PasswordChar = '*';
-            this.UnlockPinField.Size = new System.Drawing.Size(117, 23);
+            this.UnlockPinField.Size = new System.Drawing.Size(115, 23);
             this.UnlockPinField.TabIndex = 6;
             this.UnlockPinField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // UnlockImage
-            // 
-            this.UnlockImage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UnlockImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UnlockImage.Image = global::GravitonEcoV2.Properties.Resources.password_red;
-            this.UnlockImage.Location = new System.Drawing.Point(908, 3);
-            this.UnlockImage.Name = "UnlockImage";
-            this.UnlockImage.Size = new System.Drawing.Size(37, 30);
-            this.UnlockImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.UnlockImage.TabIndex = 7;
-            this.UnlockImage.TabStop = false;
+            this.UnlockPinField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnlockPinField_KeyPress);
             // 
             // DateTimeLabel
             // 
@@ -488,9 +437,9 @@ namespace GravitonEcoV2
             this.DateTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.DateTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.DateTimeLabel.Location = new System.Drawing.Point(1046, 0);
+            this.DateTimeLabel.Location = new System.Drawing.Point(1030, 0);
             this.DateTimeLabel.Name = "DateTimeLabel";
-            this.DateTimeLabel.Size = new System.Drawing.Size(341, 36);
+            this.DateTimeLabel.Size = new System.Drawing.Size(357, 36);
             this.DateTimeLabel.TabIndex = 8;
             this.DateTimeLabel.Text = "18.07.2023 20:00";
             this.DateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3003,6 +2952,7 @@ namespace GravitonEcoV2
             this.porog_1_AirTemperature.TabIndex = 19;
             this.porog_1_AirTemperature.Text = "20";
             this.porog_1_AirTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.porog_1_AirTemperature.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.porog_1_AirTemperature_KeyPress);
             // 
             // currentAirTemperature
             // 
@@ -3226,6 +3176,7 @@ namespace GravitonEcoV2
             this.tableLayoutPanel2.Controls.Add(this.setupZeroSulfurDioxide, 2, 4);
             this.tableLayoutPanel2.Controls.Add(this.setupZeroCarbonDioxide, 2, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Enabled = false;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 7;
@@ -3819,6 +3770,7 @@ namespace GravitonEcoV2
             this.tableLayoutPanel3.Controls.Add(this.timeAirTemperature, 5, 1);
             this.tableLayoutPanel3.Controls.Add(this.timeRelativeHumidity, 5, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Enabled = false;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 179);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
@@ -4190,6 +4142,58 @@ namespace GravitonEcoV2
             this.chart1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseMove);
             this.chart1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseUp);
             // 
+            // isConnectServer
+            // 
+            this.isConnectServer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.isConnectServer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.isConnectServer.Image = global::GravitonEcoV2.Properties.Resources.mesh_red;
+            this.isConnectServer.Location = new System.Drawing.Point(986, 3);
+            this.isConnectServer.Name = "isConnectServer";
+            this.isConnectServer.Size = new System.Drawing.Size(38, 30);
+            this.isConnectServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.isConnectServer.TabIndex = 38;
+            this.isConnectServer.TabStop = false;
+            this.isConnectServer.Tag = "ServerConnecting";
+            // 
+            // isConnectDevise
+            // 
+            this.isConnectDevise.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.isConnectDevise.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.isConnectDevise.Image = global::GravitonEcoV2.Properties.Resources.mobile_connection_red;
+            this.isConnectDevise.Location = new System.Drawing.Point(937, 3);
+            this.isConnectDevise.Name = "isConnectDevise";
+            this.isConnectDevise.Size = new System.Drawing.Size(43, 30);
+            this.isConnectDevise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.isConnectDevise.TabIndex = 9;
+            this.isConnectDevise.TabStop = false;
+            this.isConnectDevise.Tag = "ModbusConnecting";
+            // 
+            // SettingBtn
+            // 
+            this.SettingBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.SettingBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SettingBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SettingBtn.Image = global::GravitonEcoV2.Properties.Resources.settings;
+            this.SettingBtn.Location = new System.Drawing.Point(3, 3);
+            this.SettingBtn.Name = "SettingBtn";
+            this.SettingBtn.Size = new System.Drawing.Size(36, 30);
+            this.SettingBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SettingBtn.TabIndex = 0;
+            this.SettingBtn.TabStop = false;
+            this.SettingBtn.Click += new System.EventHandler(this.SettingBtn_Click);
+            // 
+            // UnlockImage
+            // 
+            this.UnlockImage.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UnlockImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UnlockImage.Image = global::GravitonEcoV2.Properties.Resources.password_red;
+            this.UnlockImage.Location = new System.Drawing.Point(895, 3);
+            this.UnlockImage.Name = "UnlockImage";
+            this.UnlockImage.Size = new System.Drawing.Size(36, 30);
+            this.UnlockImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.UnlockImage.TabIndex = 7;
+            this.UnlockImage.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4205,10 +4209,6 @@ namespace GravitonEcoV2
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.HeaderPanel.ResumeLayout(false);
             this.HeaderPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.isConnectServer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.isConnectDevise)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.SettingBtn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UnlockImage)).EndInit();
             this.MainSplitContainer.Panel1.ResumeLayout(false);
             this.MainSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).EndInit();
@@ -4230,6 +4230,10 @@ namespace GravitonEcoV2
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.isConnectServer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.isConnectDevise)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UnlockImage)).EndInit();
             this.ResumeLayout(false);
 
         }

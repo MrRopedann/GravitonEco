@@ -214,6 +214,7 @@
     <Compile Include="Managers\ServerConnectionManager.cs" />
     <Compile Include="Object\Sensor.cs" />
     <Compile Include="Object\SensorConfiguration.cs" />
+    <Compile Include="Updaters\PorogHandlers\PorogUpdater.cs" />
     <Compile Include="View\LogSensor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,13 +292,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Changelog.txt" />
+    <None Include="Resources\password_green.png" />
     <None Include="Resources\mesh_red.png" />
     <None Include="Resources\mesh_green.png" />
     <None Include="Resources\mobile_connection_red.png" />
     <None Include="Resources\mobile_connection_green.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Updaters\PorogHandlers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
