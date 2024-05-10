@@ -65,7 +65,7 @@ namespace GravitonEcoV2.Managers
                     {
                         logger.Warn("Соединение отсутствует. Повторное подключение...");
                         InitializeServerConnection();
-                        tcpClient.Close();
+                        //tcpClient.Close();
                         return false;
                     }
                     else
