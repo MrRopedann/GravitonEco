@@ -782,6 +782,342 @@
 				<Value>11</Value>
 				<DefValue>11</DefValue>
 			</Register>
+			<Register>
+				<Name>(ПОРОГ_2_Значение)Темп.Внеш</Name>
+				<Addr>21</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(ПОРОГ_2_Значение)Темп.Внеш</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>11</DefValue>
+			</Register>
+			<Register>
+				<Name>(ПОРОГ_2_значение) Отн.Влаж внеш</Name>
+				<Addr>25</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(ПОРОГ_2_значение) Отн.Влаж внеш</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>11</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)Доп.Вход 2</Name>
+				<Addr>9</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Порог_2_значение)Доп.Вход 2</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>11</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)PM1.0</Name>
+				<Addr>41</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Порог_2_значение)PM1.0</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)PM2.5</Name>
+				<Addr>69</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Порог_2_значение)PM2.5</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)PM10</Name>
+				<Addr>73</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Порог_2_значение)PM10</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(ПОРОГ_2_значение) Атм.Давление(ул)</Name>
+				<Addr>5</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(ПОРОГ_2_значение) Атм.Давление(ул)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Темп.Внеш</Name>
+				<Addr>22</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>10000</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Нарастание_значение) Темп.Внеш</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Отн.Влаж внеш</Name>
+				<Addr>26</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Нарастание_значение) Отн.Влаж внеш</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>False</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)Доп.Вход 2</Name>
+				<Addr>10</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Нарастание_значение)Доп.Вход 2</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)PM1.0</Name>
+				<Addr>42</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Нарастание_значение)PM1.0</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)PM2.5</Name>
+				<Addr>70</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Нарастание_значение)PM2.5</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)PM10</Name>
+				<Addr>74</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Нарастание_значение)PM10</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(нарастание_значение) Атм.Давление(ул)</Name>
+				<Addr>6</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(нарастание_значение) Атм.Давление(ул)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Период_значение) Темп.Внеш</Name>
+				<Addr>23</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>10000</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Период_значение) Темп.Внеш</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
+			</Register>
+			<Register>
+				<Name>(Период_значение) Отн.Влаж внеш</Name>
+				<Addr>27</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_2).(Период_значение) Отн.Влаж внеш</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
+			</Register>
 		</Device>
 		<Device>
 			<Name>Устройство(ID_1)</Name>
@@ -1964,8 +2300,8 @@
 				<DefValue>10</DefValue>
 			</Register>
 			<Register>
-				<Name>(Порог_1_значение)CO</Name>
-				<Addr>40</Addr>
+				<Name>(Порог_2_значение)CO</Name>
+				<Addr>41</Addr>
 				<BitAddr>0</BitAddr>
 				<vType>18</vType>
 				<Description>
@@ -1979,7 +2315,7 @@
 				<DataFormat>2</DataFormat>
 				<Percent>0</Percent>
 				<Period>100</Period>
-				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_1_значение)CO</RegFullName>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение)CO</RegFullName>
 				<RegsCount>1</RegsCount>
 				<Value>11</Value>
 				<DefValue>10</DefValue>
@@ -2090,7 +2426,7 @@
 				<DefValue>11</DefValue>
 			</Register>
 			<Register>
-				<Name>(Порог_1_значение) Микроускорение_1</Name>
+				<Name>(Порог_1_значение) Микроускорение</Name>
 				<Addr>84</Addr>
 				<BitAddr>0</BitAddr>
 				<vType>18</vType>
@@ -2105,7 +2441,7 @@
 				<DataFormat>2</DataFormat>
 				<Percent>0</Percent>
 				<Period>100</Period>
-				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_1_значение) Микроускорение_1</RegFullName>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_1_значение) Микроускорение</RegFullName>
 				<RegsCount>1</RegsCount>
 				<Value>11</Value>
 				<DefValue>11</DefValue>
@@ -2193,6 +2529,573 @@
 				<RegsCount>1</RegsCount>
 				<Value>11</Value>
 				<DefValue>11</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)Атм.давл(кам)</Name>
+				<Addr>5</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение)Атм.давл(кам)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>11</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение) Доп.Вход 1 (осв)</Name>
+				<Addr>29</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение) Доп.Вход 1 (осв)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)NO</Name>
+				<Addr>49</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение)NO</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)NO2</Name>
+				<Addr>53</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение)NO2</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)SO2</Name>
+				<Addr>77</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение)SO2</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)CO2</Name>
+				<Addr>45</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение)CO2</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение)ЛОС</Name>
+				<Addr>33</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение)ЛОС</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение) Микроускорение</Name>
+				<Addr>85</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение) Микроускорение</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение) Наклон</Name>
+				<Addr>81</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение) Наклон</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение) Темпиратура(кам)</Name>
+				<Addr>21</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение) Темпиратура(кам)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение) Отн.Влажность(кам)</Name>
+				<Addr>25</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение) Отн.Влажность(кам)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение) Напряжение</Name>
+				<Addr>9</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Порог_2_значение) Напряжение</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)Атм.давл(кам)</Name>
+				<Addr>6</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение)Атм.давл(кам)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Доп.Вход 1 (осв)</Name>
+				<Addr>30</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение) Доп.Вход 1 (осв)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>False</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)CO</Name>
+				<Addr>42</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение)CO</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)NO</Name>
+				<Addr>50</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение)NO</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)NO2</Name>
+				<Addr>54</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение)NO2</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)SO2</Name>
+				<Addr>78</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение)SO2</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)CO2</Name>
+				<Addr>46</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение)CO2</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение)ЛОС</Name>
+				<Addr>34</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение)ЛОС</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>False</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Микроускорение</Name>
+				<Addr>86</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение) Микроускорение</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_хначение) Наклон</Name>
+				<Addr>82</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>1</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_хначение) Наклон</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Темпиратура(кам)</Name>
+				<Addr>22</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение) Темпиратура(кам)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Отн.Влажность(кам)</Name>
+				<Addr>26</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение) Отн.Влажность(кам)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Напряжение</Name>
+				<Addr>10</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение) Напряжение</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Период_значение)Атм.давл(кам)</Name>
+				<Addr>7</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Период_значение)Атм.давл(кам)</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Доп.Вход 1 (осв)_1</Name>
+				<Addr>6</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_1).(Нарастание_значение) Доп.Вход 1 (осв)_1</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>0</DefValue>
 			</Register>
 		</Device>
 		<Device>
@@ -2388,7 +3291,7 @@
 				<DefValue>true</DefValue>
 			</Register>
 			<Register>
-				<Name>(Порог_1_значение) Взлом_1</Name>
+				<Name>(Порог_1_значение) Взлом</Name>
 				<Addr>8</Addr>
 				<BitAddr>0</BitAddr>
 				<vType>18</vType>
@@ -2403,7 +3306,7 @@
 				<DataFormat>2</DataFormat>
 				<Percent>0</Percent>
 				<Period>100</Period>
-				<RegFullName>GravitonEco.Устройство(ID_3).(Порог_1_значение) Взлом_1</RegFullName>
+				<RegFullName>GravitonEco.Устройство(ID_3).(Порог_1_значение) Взлом</RegFullName>
 				<RegsCount>1</RegsCount>
 				<Value>11</Value>
 				<DefValue>11</DefValue>
@@ -2428,6 +3331,90 @@
 				<RegsCount>1</RegsCount>
 				<Value>11</Value>
 				<DefValue>11</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение) Взлом</Name>
+				<Addr>89</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_3).(Порог_2_значение) Взлом</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Порог_2_значение) Скорость потока</Name>
+				<Addr>101</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_3).(Порог_2_значение) Скорость потока</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>10</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Взлом</Name>
+				<Addr>10</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_3).(Нарастание_значение) Взлом</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
+			</Register>
+			<Register>
+				<Name>(Нарастание_значение) Скорость потока</Name>
+				<Addr>102</Addr>
+				<BitAddr>0</BitAddr>
+				<vType>18</vType>
+				<Description>
+				</Description>
+				<mSpace>0</mSpace>
+				<ConstGroupName>
+				</ConstGroupName>
+				<Group>
+				</Group>
+				<WorkType>2</WorkType>
+				<DataFormat>2</DataFormat>
+				<Percent>0</Percent>
+				<Period>100</Period>
+				<RegFullName>GravitonEco.Устройство(ID_3).(Нарастание_значение) Скорость потока</RegFullName>
+				<RegsCount>1</RegsCount>
+				<Value>0</Value>
+				<DefValue>false</DefValue>
 			</Register>
 		</Device>
 	</Server>
