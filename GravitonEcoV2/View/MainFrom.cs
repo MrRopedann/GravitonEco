@@ -24,6 +24,7 @@ namespace GravitonEcoV2
         public MainForm()
         {
             InitializeComponent();
+            InitializeStartComponent();
 
             ModbusConnectionManager modbusConnectionManager = ModbusConnectionManager.Instance;
             ServerConnectionManager serverConnectionManager = ServerConnectionManager.Instance;
@@ -147,6 +148,76 @@ namespace GravitonEcoV2
                 mouseDown = e.Location;
 
             }
+        }
+
+        private void InitializeStartComponent()
+        {
+            allRadioButtons.Add(radioButton1);
+            allRadioButtons.Add(radioButton2);
+            allRadioButtons.Add(radioButton3);
+            allRadioButtons.Add(radioButton4);
+            allRadioButtons.Add(radioButton5);
+            allRadioButtons.Add(radioButton6);
+            allRadioButtons.Add(radioButton7);
+            allRadioButtons.Add(radioButton8);
+            allRadioButtons.Add(radioButton9);
+            allRadioButtons.Add(radioButton10);
+            allRadioButtons.Add(radioButton11);
+            allRadioButtons.Add(radioButton12);
+            allRadioButtons.Add(radioButton13);
+            allRadioButtons.Add(radioButton14);
+            allRadioButtons.Add(radioButton15);
+            allRadioButtons.Add(radioButton16);
+            allRadioButtons.Add(radioButton17);
+            allRadioButtons.Add(radioButton18);
+            allRadioButtons.Add(radioButton19);
+            allRadioButtons.Add(radioButton20);
+            allRadioButtons.Add(radioButton21);
+            allRadioButtons.Add(radioButton22);
+
+            // Привязываем событие CheckedChanged к обработчику
+            foreach (RadioButton radioButton in allRadioButtons)
+            {
+                radioButton.CheckedChanged += radioButton_CheckedChanged;
+            }
+
+            int[] columnWidths = secondaryContentTableLayoutPanel1.GetColumnWidths();
+            int[] rowHeights = secondaryContentTableLayoutPanel1.GetRowHeights();
+
+            int[] columnWidths2 = tableLayoutPanel2.GetColumnWidths();
+            int[] rowHeights2 = tableLayoutPanel2.GetRowHeights();
+
+            TableLayoutPanel[] tableLayouts = { secondaryContentTableLayoutPanel2, secondaryContentTableLayoutPanel3, secondaryContentTableLayoutPanel4, secondaryContentTableLayoutPanel5 };
+
+            TableLayoutPanel[] tableLayoutPanels = { tableLayoutPanel2, tableLayoutPanel3 };
+
+            LayoutHelper.ApplyColumnRowLayout(tableLayouts, columnWidths, rowHeights);
+            LayoutHelper.ApplyColumnRowLayout(tableLayoutPanels, columnWidths2, rowHeights2);
+
+            chart1.ChartAreas[0].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            chart1.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190))))); // Цвет меток по оси X
+            chart1.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190))))); // Цвет меток по оси Y
+
+            chart1.ChartAreas[0].Position.Auto = false;
+            //chart1.ChartAreas[0].InnerPlotPosition.Auto = false;
+            chart1.ChartAreas[0].CursorX.AutoScroll = true;
+            chart1.ChartAreas[0].CursorY.AutoScroll = true;
+            chart1.ChartAreas[0].AxisY.Maximum = 36;
+            chart1.ChartAreas[0].AxisY.Minimum = 0;
+
+            Series series2 = new Series("Temperature");
+            series2.ChartType = SeriesChartType.Line;
+            series2.BorderWidth = 3;
+            series2.LegendText = "Температура";
+            series2.Color = System.Drawing.Color.Red;
+            chart1.Series.Add(series2);
+
+            Series series3 = new Series("Humidity");
+            series3.ChartType = SeriesChartType.Line;
+            series3.BorderWidth = 3;
+            series3.LegendText = "Влажность";
+            series3.Color = System.Drawing.Color.Blue;
+            chart1.Series.Add(series3);
         }
     }
 }

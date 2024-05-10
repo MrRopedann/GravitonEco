@@ -318,7 +318,7 @@ namespace GravitonEcoV2
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.155125F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.801477F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.343808F));
-            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 337F));
+            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 343F));
             this.HeaderPanel.Controls.Add(this.isConnectServer, 9, 0);
             this.HeaderPanel.Controls.Add(this.isConnectDevise, 8, 0);
             this.HeaderPanel.Controls.Add(this.SerialNumber, 4, 0);
@@ -343,7 +343,7 @@ namespace GravitonEcoV2
             this.isConnectServer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.isConnectServer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.isConnectServer.Image = global::GravitonEcoV2.Properties.Resources.mesh_red;
-            this.isConnectServer.Location = new System.Drawing.Point(1005, 3);
+            this.isConnectServer.Location = new System.Drawing.Point(1001, 3);
             this.isConnectServer.Name = "isConnectServer";
             this.isConnectServer.Size = new System.Drawing.Size(39, 30);
             this.isConnectServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -356,7 +356,7 @@ namespace GravitonEcoV2
             this.isConnectDevise.Cursor = System.Windows.Forms.Cursors.Hand;
             this.isConnectDevise.Dock = System.Windows.Forms.DockStyle.Fill;
             this.isConnectDevise.Image = global::GravitonEcoV2.Properties.Resources.mobile_connection_red;
-            this.isConnectDevise.Location = new System.Drawing.Point(955, 3);
+            this.isConnectDevise.Location = new System.Drawing.Point(951, 3);
             this.isConnectDevise.Name = "isConnectDevise";
             this.isConnectDevise.Size = new System.Drawing.Size(44, 30);
             this.isConnectDevise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -371,9 +371,9 @@ namespace GravitonEcoV2
             this.SerialNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SerialNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SerialNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SerialNumber.Location = new System.Drawing.Point(494, 0);
+            this.SerialNumber.Location = new System.Drawing.Point(493, 0);
             this.SerialNumber.Name = "SerialNumber";
-            this.SerialNumber.Size = new System.Drawing.Size(141, 36);
+            this.SerialNumber.Size = new System.Drawing.Size(140, 36);
             this.SerialNumber.TabIndex = 4;
             this.SerialNumber.Text = "SN-12345678";
             this.SerialNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -385,7 +385,7 @@ namespace GravitonEcoV2
             this.SoftVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SoftVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SoftVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SoftVersion.Location = new System.Drawing.Point(400, 0);
+            this.SoftVersion.Location = new System.Drawing.Point(399, 0);
             this.SoftVersion.Name = "SoftVersion";
             this.SoftVersion.Size = new System.Drawing.Size(88, 36);
             this.SoftVersion.TabIndex = 3;
@@ -416,7 +416,7 @@ namespace GravitonEcoV2
             this.NameStation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(230)))), ((int)(((byte)(80)))));
             this.NameStation.Location = new System.Drawing.Point(46, 0);
             this.NameStation.Name = "NameStation";
-            this.NameStation.Size = new System.Drawing.Size(248, 36);
+            this.NameStation.Size = new System.Drawing.Size(247, 36);
             this.NameStation.TabIndex = 1;
             this.NameStation.Text = "GRAVITON-ECO";
             this.NameStation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -429,7 +429,7 @@ namespace GravitonEcoV2
             this.ApparatVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ApparatVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.ApparatVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.ApparatVersion.Location = new System.Drawing.Point(300, 0);
+            this.ApparatVersion.Location = new System.Drawing.Point(299, 0);
             this.ApparatVersion.Name = "ApparatVersion";
             this.ApparatVersion.Size = new System.Drawing.Size(94, 36);
             this.ApparatVersion.TabIndex = 2;
@@ -449,9 +449,9 @@ namespace GravitonEcoV2
             "1000",
             "5000",
             "10000"});
-            this.PeriodComboBox.Location = new System.Drawing.Point(641, 6);
+            this.PeriodComboBox.Location = new System.Drawing.Point(639, 6);
             this.PeriodComboBox.Name = "PeriodComboBox";
-            this.PeriodComboBox.Size = new System.Drawing.Size(141, 23);
+            this.PeriodComboBox.Size = new System.Drawing.Size(140, 23);
             this.PeriodComboBox.TabIndex = 5;
             this.PeriodComboBox.Text = "Период наблюдений";
             // 
@@ -462,10 +462,10 @@ namespace GravitonEcoV2
             this.UnlockPinField.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnlockPinField.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UnlockPinField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.UnlockPinField.Location = new System.Drawing.Point(788, 3);
+            this.UnlockPinField.Location = new System.Drawing.Point(785, 3);
             this.UnlockPinField.Name = "UnlockPinField";
             this.UnlockPinField.PasswordChar = '*';
-            this.UnlockPinField.Size = new System.Drawing.Size(118, 23);
+            this.UnlockPinField.Size = new System.Drawing.Size(117, 23);
             this.UnlockPinField.TabIndex = 6;
             this.UnlockPinField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -474,7 +474,7 @@ namespace GravitonEcoV2
             this.UnlockImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UnlockImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnlockImage.Image = global::GravitonEcoV2.Properties.Resources.password_red;
-            this.UnlockImage.Location = new System.Drawing.Point(912, 3);
+            this.UnlockImage.Location = new System.Drawing.Point(908, 3);
             this.UnlockImage.Name = "UnlockImage";
             this.UnlockImage.Size = new System.Drawing.Size(37, 30);
             this.UnlockImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -488,9 +488,9 @@ namespace GravitonEcoV2
             this.DateTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.DateTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.DateTimeLabel.Location = new System.Drawing.Point(1050, 0);
+            this.DateTimeLabel.Location = new System.Drawing.Point(1046, 0);
             this.DateTimeLabel.Name = "DateTimeLabel";
-            this.DateTimeLabel.Size = new System.Drawing.Size(337, 36);
+            this.DateTimeLabel.Size = new System.Drawing.Size(341, 36);
             this.DateTimeLabel.TabIndex = 8;
             this.DateTimeLabel.Text = "18.07.2023 20:00";
             this.DateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4231,73 +4231,6 @@ namespace GravitonEcoV2
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
-
-            allRadioButtons.Add(radioButton1);
-            allRadioButtons.Add(radioButton2);
-            allRadioButtons.Add(radioButton3);
-            allRadioButtons.Add(radioButton4);
-            allRadioButtons.Add(radioButton5);
-            allRadioButtons.Add(radioButton6);
-            allRadioButtons.Add(radioButton7);
-            allRadioButtons.Add(radioButton8);
-            allRadioButtons.Add(radioButton9);
-            allRadioButtons.Add(radioButton10);
-            allRadioButtons.Add(radioButton11);
-            allRadioButtons.Add(radioButton12);
-            allRadioButtons.Add(radioButton13);
-            allRadioButtons.Add(radioButton14);
-            allRadioButtons.Add(radioButton15);
-            allRadioButtons.Add(radioButton16);
-            allRadioButtons.Add(radioButton17);
-            allRadioButtons.Add(radioButton18);
-            allRadioButtons.Add(radioButton19);
-            allRadioButtons.Add(radioButton20);
-            allRadioButtons.Add(radioButton21);
-            allRadioButtons.Add(radioButton22);
-
-            // Привязываем событие CheckedChanged к обработчику
-            foreach (RadioButton radioButton in allRadioButtons)
-            {
-                radioButton.CheckedChanged += radioButton_CheckedChanged;
-            }
-
-            int[] columnWidths = secondaryContentTableLayoutPanel1.GetColumnWidths();
-            int[] rowHeights = secondaryContentTableLayoutPanel1.GetRowHeights();
-
-            int[] columnWidths2 = tableLayoutPanel2.GetColumnWidths();
-            int[] rowHeights2 = tableLayoutPanel2.GetRowHeights();
-
-            TableLayoutPanel[] tableLayouts = { secondaryContentTableLayoutPanel2, secondaryContentTableLayoutPanel3, secondaryContentTableLayoutPanel4, secondaryContentTableLayoutPanel5 };
-
-            TableLayoutPanel[] tableLayoutPanels = { tableLayoutPanel2, tableLayoutPanel3 };
-
-            LayoutHelper.ApplyColumnRowLayout(tableLayouts, columnWidths, rowHeights);
-            LayoutHelper.ApplyColumnRowLayout(tableLayoutPanels, columnWidths2, rowHeights2);
-
-            chart1.ChartAreas[0].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            chart1.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190))))); // Цвет меток по оси X
-            chart1.ChartAreas[0].AxisY.LabelStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190))))); // Цвет меток по оси Y
-
-            chart1.ChartAreas[0].Position.Auto = false;
-            //chart1.ChartAreas[0].InnerPlotPosition.Auto = false;
-            chart1.ChartAreas[0].CursorX.AutoScroll = true;
-            chart1.ChartAreas[0].CursorY.AutoScroll = true;
-            chart1.ChartAreas[0].AxisY.Maximum = 36;
-            chart1.ChartAreas[0].AxisY.Minimum = 0;
-
-            Series series2 = new Series("Temperature");
-            series2.ChartType = SeriesChartType.Line;
-            series2.BorderWidth = 3;
-            series2.LegendText = "Температура";
-            series2.Color = System.Drawing.Color.Red;
-            chart1.Series.Add(series2);
-
-            Series series3 = new Series("Humidity");
-            series3.ChartType = SeriesChartType.Line;
-            series3.BorderWidth = 3;
-            series3.LegendText = "Влажность";
-            series3.Color = System.Drawing.Color.Blue;
-            chart1.Series.Add(series3);
 
         }
 
