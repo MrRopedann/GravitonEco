@@ -104,9 +104,9 @@ namespace GravitonEcoV2
 
             if (radioButton1.Checked)
             {
-                
                 chart1.Series.FindByName("Temperature").Points.AddXY(timenow.ToString("hh:mm:ss"), Convert.ToDouble(currentAirTemperature.Text));
                 chart1.Series.FindByName("Humidity").Points.AddXY(timenow.ToString("hh:mm:ss"), Convert.ToDouble(currentRelativeHumidity.Text));
+                chart1.ChartAreas[0].AxisX.ScaleView.Zoom(chart1.ChartAreas[0].AxisX.Maximum - 5, chart1.ChartAreas[0].AxisX.Maximum); //Скролл на график
             }
         }
 
@@ -202,8 +202,10 @@ namespace GravitonEcoV2
             //chart1.ChartAreas[0].InnerPlotPosition.Auto = false;
             chart1.ChartAreas[0].CursorX.AutoScroll = true;
             chart1.ChartAreas[0].CursorY.AutoScroll = true;
+            /* Закомментировал, не пускает значения больше 36 в график
             chart1.ChartAreas[0].AxisY.Maximum = 36;
             chart1.ChartAreas[0].AxisY.Minimum = 0;
+            */
 
             Series series2 = new Series("Temperature");
             series2.ChartType = SeriesChartType.Line;
