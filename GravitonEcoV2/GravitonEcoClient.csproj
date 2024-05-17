@@ -290,6 +290,8 @@
     <Compile Include="Managers\ServerConnectionManager.cs" />
     <Compile Include="Object\Sensor.cs" />
     <Compile Include="Object\SensorConfiguration.cs" />
+    <Compile Include="Updaters\HttpHandlers\HttpUpdater.cs" />
+    <Compile Include="Updaters\HttpRequestUpdater.cs" />
     <Compile Include="Updaters\PorogHandlers\PorogUpdater.cs" />
     <Compile Include="View\LogSensor.cs">
       <SubType>Form</SubType>

@@ -173,6 +173,10 @@ namespace GravitonEcoV2
             this.nitrogenOxide = new System.Windows.Forms.Label();
             this.carbonMonoxide = new System.Windows.Forms.Label();
             this.secondaryContentTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.periodLabel = new System.Windows.Forms.Label();
             this.increaseLabel = new System.Windows.Forms.Label();
             this.porog2Label = new System.Windows.Forms.Label();
@@ -191,7 +195,6 @@ namespace GravitonEcoV2
             this.dt_RelativeHumidity = new System.Windows.Forms.TextBox();
             this.dt_AtmosphericPressure = new System.Windows.Forms.TextBox();
             this.dt_WindSpeed = new System.Windows.Forms.TextBox();
-            this.dt_WindDirection = new System.Windows.Forms.TextBox();
             this.dx_WindDirection = new System.Windows.Forms.TextBox();
             this.dx_WindSpeed = new System.Windows.Forms.TextBox();
             this.dx_AtmosphericPressure = new System.Windows.Forms.TextBox();
@@ -217,6 +220,18 @@ namespace GravitonEcoV2
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.dt_WindDirection = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.MessageImage = new System.Windows.Forms.PictureBox();
             this.MessagesLabel = new System.Windows.Forms.Label();
@@ -323,7 +338,7 @@ namespace GravitonEcoV2
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.155125F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.801477F));
             this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.343808F));
-            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 377F));
+            this.HeaderPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 390F));
             this.HeaderPanel.Controls.Add(this.isConnectServer, 9, 0);
             this.HeaderPanel.Controls.Add(this.isConnectDevise, 8, 0);
             this.HeaderPanel.Controls.Add(this.SerialNumber, 4, 0);
@@ -348,7 +363,7 @@ namespace GravitonEcoV2
             this.isConnectServer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.isConnectServer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.isConnectServer.Image = global::GravitonEcoV2.Properties.Resources.mesh_red;
-            this.isConnectServer.Location = new System.Drawing.Point(967, 3);
+            this.isConnectServer.Location = new System.Drawing.Point(954, 3);
             this.isConnectServer.Name = "isConnectServer";
             this.isConnectServer.Size = new System.Drawing.Size(37, 30);
             this.isConnectServer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -361,9 +376,9 @@ namespace GravitonEcoV2
             this.isConnectDevise.Cursor = System.Windows.Forms.Cursors.Hand;
             this.isConnectDevise.Dock = System.Windows.Forms.DockStyle.Fill;
             this.isConnectDevise.Image = global::GravitonEcoV2.Properties.Resources.mobile_connection_red;
-            this.isConnectDevise.Location = new System.Drawing.Point(919, 3);
+            this.isConnectDevise.Location = new System.Drawing.Point(907, 3);
             this.isConnectDevise.Name = "isConnectDevise";
-            this.isConnectDevise.Size = new System.Drawing.Size(42, 30);
+            this.isConnectDevise.Size = new System.Drawing.Size(41, 30);
             this.isConnectDevise.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.isConnectDevise.TabIndex = 9;
             this.isConnectDevise.TabStop = false;
@@ -376,9 +391,9 @@ namespace GravitonEcoV2
             this.SerialNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SerialNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SerialNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SerialNumber.Location = new System.Drawing.Point(476, 0);
+            this.SerialNumber.Location = new System.Drawing.Point(471, 0);
             this.SerialNumber.Name = "SerialNumber";
-            this.SerialNumber.Size = new System.Drawing.Size(135, 36);
+            this.SerialNumber.Size = new System.Drawing.Size(133, 36);
             this.SerialNumber.TabIndex = 4;
             this.SerialNumber.Text = "SN-12345678";
             this.SerialNumber.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -390,9 +405,9 @@ namespace GravitonEcoV2
             this.SoftVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SoftVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.SoftVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.SoftVersion.Location = new System.Drawing.Point(385, 0);
+            this.SoftVersion.Location = new System.Drawing.Point(381, 0);
             this.SoftVersion.Name = "SoftVersion";
-            this.SoftVersion.Size = new System.Drawing.Size(85, 36);
+            this.SoftVersion.Size = new System.Drawing.Size(84, 36);
             this.SoftVersion.TabIndex = 3;
             this.SoftVersion.Text = "FV-0001";
             this.SoftVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -421,7 +436,7 @@ namespace GravitonEcoV2
             this.NameStation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(230)))), ((int)(((byte)(80)))));
             this.NameStation.Location = new System.Drawing.Point(44, 0);
             this.NameStation.Name = "NameStation";
-            this.NameStation.Size = new System.Drawing.Size(239, 36);
+            this.NameStation.Size = new System.Drawing.Size(236, 36);
             this.NameStation.TabIndex = 1;
             this.NameStation.Text = "GRAVITON-ECO";
             this.NameStation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -434,9 +449,9 @@ namespace GravitonEcoV2
             this.ApparatVersion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ApparatVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.ApparatVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.ApparatVersion.Location = new System.Drawing.Point(289, 0);
+            this.ApparatVersion.Location = new System.Drawing.Point(286, 0);
             this.ApparatVersion.Name = "ApparatVersion";
-            this.ApparatVersion.Size = new System.Drawing.Size(90, 36);
+            this.ApparatVersion.Size = new System.Drawing.Size(89, 36);
             this.ApparatVersion.TabIndex = 2;
             this.ApparatVersion.Text = "HV-0001";
             this.ApparatVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -454,9 +469,9 @@ namespace GravitonEcoV2
             "1000",
             "5000",
             "10000"});
-            this.PeriodComboBox.Location = new System.Drawing.Point(617, 6);
+            this.PeriodComboBox.Location = new System.Drawing.Point(610, 6);
             this.PeriodComboBox.Name = "PeriodComboBox";
-            this.PeriodComboBox.Size = new System.Drawing.Size(135, 23);
+            this.PeriodComboBox.Size = new System.Drawing.Size(133, 23);
             this.PeriodComboBox.TabIndex = 5;
             this.PeriodComboBox.Text = "Период наблюдений";
             // 
@@ -467,10 +482,10 @@ namespace GravitonEcoV2
             this.UnlockPinField.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnlockPinField.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.UnlockPinField.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.UnlockPinField.Location = new System.Drawing.Point(758, 3);
+            this.UnlockPinField.Location = new System.Drawing.Point(749, 3);
             this.UnlockPinField.Name = "UnlockPinField";
             this.UnlockPinField.PasswordChar = '*';
-            this.UnlockPinField.Size = new System.Drawing.Size(113, 23);
+            this.UnlockPinField.Size = new System.Drawing.Size(111, 23);
             this.UnlockPinField.TabIndex = 6;
             this.UnlockPinField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.UnlockPinField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UnlockPinField_KeyPress);
@@ -480,9 +495,9 @@ namespace GravitonEcoV2
             this.UnlockImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UnlockImage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UnlockImage.Image = global::GravitonEcoV2.Properties.Resources.password_red;
-            this.UnlockImage.Location = new System.Drawing.Point(877, 3);
+            this.UnlockImage.Location = new System.Drawing.Point(866, 3);
             this.UnlockImage.Name = "UnlockImage";
-            this.UnlockImage.Size = new System.Drawing.Size(36, 30);
+            this.UnlockImage.Size = new System.Drawing.Size(35, 30);
             this.UnlockImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.UnlockImage.TabIndex = 7;
             this.UnlockImage.TabStop = false;
@@ -494,9 +509,9 @@ namespace GravitonEcoV2
             this.DateTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DateTimeLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 16.25F, System.Drawing.FontStyle.Bold);
             this.DateTimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.DateTimeLabel.Location = new System.Drawing.Point(1010, 0);
+            this.DateTimeLabel.Location = new System.Drawing.Point(997, 0);
             this.DateTimeLabel.Name = "DateTimeLabel";
-            this.DateTimeLabel.Size = new System.Drawing.Size(377, 36);
+            this.DateTimeLabel.Size = new System.Drawing.Size(390, 36);
             this.DateTimeLabel.TabIndex = 8;
             this.DateTimeLabel.Text = "18.07.2023 20:00";
             this.DateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -546,11 +561,11 @@ namespace GravitonEcoV2
             this.secondaryContentTableLayoutPanel5.ColumnCount = 10;
             this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.633782F));
             this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.06577F));
-            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.702315F));
-            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.9151F));
-            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.040793F));
-            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.13561F));
-            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.504961F));
+            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.132668F));
+            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.275321F));
+            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.276748F));
+            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.41369F));
+            this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.97718F));
             this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.38699F));
             this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.371554F));
             this.secondaryContentTableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.056229F));
@@ -903,9 +918,9 @@ namespace GravitonEcoV2
             this.porog_1_PressureInSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_PressureInSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_PressureInSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_PressureInSensor.Location = new System.Drawing.Point(489, 107);
+            this.porog_1_PressureInSensor.Location = new System.Drawing.Point(422, 107);
             this.porog_1_PressureInSensor.Name = "porog_1_PressureInSensor";
-            this.porog_1_PressureInSensor.Size = new System.Drawing.Size(39, 23);
+            this.porog_1_PressureInSensor.Size = new System.Drawing.Size(106, 23);
             this.porog_1_PressureInSensor.TabIndex = 54;
             this.porog_1_PressureInSensor.Text = "20";
             this.porog_1_PressureInSensor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -917,9 +932,9 @@ namespace GravitonEcoV2
             this.porog_1_SamplingSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_SamplingSpeed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_SamplingSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_SamplingSpeed.Location = new System.Drawing.Point(489, 81);
+            this.porog_1_SamplingSpeed.Location = new System.Drawing.Point(422, 81);
             this.porog_1_SamplingSpeed.Name = "porog_1_SamplingSpeed";
-            this.porog_1_SamplingSpeed.Size = new System.Drawing.Size(39, 23);
+            this.porog_1_SamplingSpeed.Size = new System.Drawing.Size(106, 23);
             this.porog_1_SamplingSpeed.TabIndex = 50;
             this.porog_1_SamplingSpeed.Text = "20";
             this.porog_1_SamplingSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -931,9 +946,9 @@ namespace GravitonEcoV2
             this.porog_1_SupplyVoltage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_SupplyVoltage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_SupplyVoltage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_SupplyVoltage.Location = new System.Drawing.Point(489, 55);
+            this.porog_1_SupplyVoltage.Location = new System.Drawing.Point(422, 55);
             this.porog_1_SupplyVoltage.Name = "porog_1_SupplyVoltage";
-            this.porog_1_SupplyVoltage.Size = new System.Drawing.Size(39, 23);
+            this.porog_1_SupplyVoltage.Size = new System.Drawing.Size(106, 23);
             this.porog_1_SupplyVoltage.TabIndex = 47;
             this.porog_1_SupplyVoltage.Text = "20";
             this.porog_1_SupplyVoltage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -945,9 +960,9 @@ namespace GravitonEcoV2
             this.porog_1_HumidityInSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_HumidityInSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_HumidityInSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_HumidityInSensor.Location = new System.Drawing.Point(489, 29);
+            this.porog_1_HumidityInSensor.Location = new System.Drawing.Point(422, 29);
             this.porog_1_HumidityInSensor.Name = "porog_1_HumidityInSensor";
-            this.porog_1_HumidityInSensor.Size = new System.Drawing.Size(39, 23);
+            this.porog_1_HumidityInSensor.Size = new System.Drawing.Size(106, 23);
             this.porog_1_HumidityInSensor.TabIndex = 42;
             this.porog_1_HumidityInSensor.Text = "20";
             this.porog_1_HumidityInSensor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -959,9 +974,9 @@ namespace GravitonEcoV2
             this.porog_1_TemperatureInSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_TemperatureInSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_TemperatureInSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_TemperatureInSensor.Location = new System.Drawing.Point(489, 3);
+            this.porog_1_TemperatureInSensor.Location = new System.Drawing.Point(422, 3);
             this.porog_1_TemperatureInSensor.Name = "porog_1_TemperatureInSensor";
-            this.porog_1_TemperatureInSensor.Size = new System.Drawing.Size(39, 23);
+            this.porog_1_TemperatureInSensor.Size = new System.Drawing.Size(106, 23);
             this.porog_1_TemperatureInSensor.TabIndex = 38;
             this.porog_1_TemperatureInSensor.Text = "20";
             this.porog_1_TemperatureInSensor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -973,9 +988,9 @@ namespace GravitonEcoV2
             this.currentTemperatureInSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentTemperatureInSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentTemperatureInSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentTemperatureInSensor.Location = new System.Drawing.Point(411, 0);
+            this.currentTemperatureInSensor.Location = new System.Drawing.Point(349, 0);
             this.currentTemperatureInSensor.Name = "currentTemperatureInSensor";
-            this.currentTemperatureInSensor.Size = new System.Drawing.Size(72, 26);
+            this.currentTemperatureInSensor.Size = new System.Drawing.Size(67, 26);
             this.currentTemperatureInSensor.TabIndex = 26;
             this.currentTemperatureInSensor.Text = "23.9";
             this.currentTemperatureInSensor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -987,9 +1002,9 @@ namespace GravitonEcoV2
             this.currentHumidityInSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentHumidityInSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentHumidityInSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentHumidityInSensor.Location = new System.Drawing.Point(411, 26);
+            this.currentHumidityInSensor.Location = new System.Drawing.Point(349, 26);
             this.currentHumidityInSensor.Name = "currentHumidityInSensor";
-            this.currentHumidityInSensor.Size = new System.Drawing.Size(72, 26);
+            this.currentHumidityInSensor.Size = new System.Drawing.Size(67, 26);
             this.currentHumidityInSensor.TabIndex = 28;
             this.currentHumidityInSensor.Text = "23.9";
             this.currentHumidityInSensor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1001,9 +1016,9 @@ namespace GravitonEcoV2
             this.currentSupplyVoltage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentSupplyVoltage.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentSupplyVoltage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentSupplyVoltage.Location = new System.Drawing.Point(411, 52);
+            this.currentSupplyVoltage.Location = new System.Drawing.Point(349, 52);
             this.currentSupplyVoltage.Name = "currentSupplyVoltage";
-            this.currentSupplyVoltage.Size = new System.Drawing.Size(72, 26);
+            this.currentSupplyVoltage.Size = new System.Drawing.Size(67, 26);
             this.currentSupplyVoltage.TabIndex = 29;
             this.currentSupplyVoltage.Text = "23.9";
             this.currentSupplyVoltage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1015,9 +1030,9 @@ namespace GravitonEcoV2
             this.currentSamplingSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentSamplingSpeed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentSamplingSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentSamplingSpeed.Location = new System.Drawing.Point(411, 78);
+            this.currentSamplingSpeed.Location = new System.Drawing.Point(349, 78);
             this.currentSamplingSpeed.Name = "currentSamplingSpeed";
-            this.currentSamplingSpeed.Size = new System.Drawing.Size(72, 26);
+            this.currentSamplingSpeed.Size = new System.Drawing.Size(67, 26);
             this.currentSamplingSpeed.TabIndex = 30;
             this.currentSamplingSpeed.Text = "23.9";
             this.currentSamplingSpeed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1029,9 +1044,9 @@ namespace GravitonEcoV2
             this.currentPressureInSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentPressureInSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentPressureInSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentPressureInSensor.Location = new System.Drawing.Point(411, 104);
+            this.currentPressureInSensor.Location = new System.Drawing.Point(349, 104);
             this.currentPressureInSensor.Name = "currentPressureInSensor";
-            this.currentPressureInSensor.Size = new System.Drawing.Size(72, 26);
+            this.currentPressureInSensor.Size = new System.Drawing.Size(67, 26);
             this.currentPressureInSensor.TabIndex = 31;
             this.currentPressureInSensor.Text = "23.9";
             this.currentPressureInSensor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1111,11 +1126,11 @@ namespace GravitonEcoV2
             this.secondaryContentTableLayoutPanel4.ColumnCount = 10;
             this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.035874F));
             this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.66368F));
-            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.922823F));
-            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.80485F));
-            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.040793F));
-            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.35612F));
-            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.394708F));
+            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.132668F));
+            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.275321F));
+            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.419401F));
+            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.27104F));
+            this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.11983F));
             this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.497244F));
             this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.151048F));
             this.secondaryContentTableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.945976F));
@@ -1208,9 +1223,9 @@ namespace GravitonEcoV2
             this.dt_VibrationLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_VibrationLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_VibrationLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_VibrationLevel.Location = new System.Drawing.Point(650, 3);
+            this.dt_VibrationLevel.Location = new System.Drawing.Point(651, 3);
             this.dt_VibrationLevel.Name = "dt_VibrationLevel";
-            this.dt_VibrationLevel.Size = new System.Drawing.Size(48, 23);
+            this.dt_VibrationLevel.Size = new System.Drawing.Size(47, 23);
             this.dt_VibrationLevel.TabIndex = 29;
             this.dt_VibrationLevel.Text = "20";
             this.dt_VibrationLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1222,9 +1237,9 @@ namespace GravitonEcoV2
             this.dt_TiltLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_TiltLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_TiltLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_TiltLevel.Location = new System.Drawing.Point(650, 28);
+            this.dt_TiltLevel.Location = new System.Drawing.Point(651, 28);
             this.dt_TiltLevel.Name = "dt_TiltLevel";
-            this.dt_TiltLevel.Size = new System.Drawing.Size(48, 23);
+            this.dt_TiltLevel.Size = new System.Drawing.Size(47, 23);
             this.dt_TiltLevel.TabIndex = 33;
             this.dt_TiltLevel.Text = "20";
             this.dt_TiltLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1236,9 +1251,9 @@ namespace GravitonEcoV2
             this.dt_TamperSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_TamperSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_TamperSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_TamperSensor.Location = new System.Drawing.Point(650, 53);
+            this.dt_TamperSensor.Location = new System.Drawing.Point(651, 53);
             this.dt_TamperSensor.Name = "dt_TamperSensor";
-            this.dt_TamperSensor.Size = new System.Drawing.Size(48, 23);
+            this.dt_TamperSensor.Size = new System.Drawing.Size(47, 23);
             this.dt_TamperSensor.TabIndex = 37;
             this.dt_TamperSensor.Text = "20";
             this.dt_TamperSensor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1250,7 +1265,7 @@ namespace GravitonEcoV2
             this.dx_TamperSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_TamperSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_TamperSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_TamperSensor.Location = new System.Drawing.Point(586, 53);
+            this.dx_TamperSensor.Location = new System.Drawing.Point(587, 53);
             this.dx_TamperSensor.Name = "dx_TamperSensor";
             this.dx_TamperSensor.Size = new System.Drawing.Size(58, 23);
             this.dx_TamperSensor.TabIndex = 36;
@@ -1264,7 +1279,7 @@ namespace GravitonEcoV2
             this.dx_TiltLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_TiltLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_TiltLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_TiltLevel.Location = new System.Drawing.Point(586, 28);
+            this.dx_TiltLevel.Location = new System.Drawing.Point(587, 28);
             this.dx_TiltLevel.Name = "dx_TiltLevel";
             this.dx_TiltLevel.Size = new System.Drawing.Size(58, 23);
             this.dx_TiltLevel.TabIndex = 32;
@@ -1278,7 +1293,7 @@ namespace GravitonEcoV2
             this.dx_VibrationLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_VibrationLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_VibrationLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_VibrationLevel.Location = new System.Drawing.Point(586, 3);
+            this.dx_VibrationLevel.Location = new System.Drawing.Point(587, 3);
             this.dx_VibrationLevel.Name = "dx_VibrationLevel";
             this.dx_VibrationLevel.Size = new System.Drawing.Size(58, 23);
             this.dx_VibrationLevel.TabIndex = 28;
@@ -1292,7 +1307,7 @@ namespace GravitonEcoV2
             this.porog_2_VibrationLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_VibrationLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_VibrationLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_VibrationLevel.Location = new System.Drawing.Point(534, 3);
+            this.porog_2_VibrationLevel.Location = new System.Drawing.Point(535, 3);
             this.porog_2_VibrationLevel.Name = "porog_2_VibrationLevel";
             this.porog_2_VibrationLevel.Size = new System.Drawing.Size(46, 23);
             this.porog_2_VibrationLevel.TabIndex = 27;
@@ -1306,7 +1321,7 @@ namespace GravitonEcoV2
             this.porog_2_TiltLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_TiltLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_TiltLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_TiltLevel.Location = new System.Drawing.Point(534, 28);
+            this.porog_2_TiltLevel.Location = new System.Drawing.Point(535, 28);
             this.porog_2_TiltLevel.Name = "porog_2_TiltLevel";
             this.porog_2_TiltLevel.Size = new System.Drawing.Size(46, 23);
             this.porog_2_TiltLevel.TabIndex = 31;
@@ -1320,7 +1335,7 @@ namespace GravitonEcoV2
             this.porog_2_TamperSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_TamperSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_TamperSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_TamperSensor.Location = new System.Drawing.Point(534, 53);
+            this.porog_2_TamperSensor.Location = new System.Drawing.Point(535, 53);
             this.porog_2_TamperSensor.Name = "porog_2_TamperSensor";
             this.porog_2_TamperSensor.Size = new System.Drawing.Size(46, 23);
             this.porog_2_TamperSensor.TabIndex = 35;
@@ -1334,9 +1349,9 @@ namespace GravitonEcoV2
             this.porog_1_TamperSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_TamperSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_TamperSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_TamperSensor.Location = new System.Drawing.Point(490, 53);
+            this.porog_1_TamperSensor.Location = new System.Drawing.Point(422, 53);
             this.porog_1_TamperSensor.Name = "porog_1_TamperSensor";
-            this.porog_1_TamperSensor.Size = new System.Drawing.Size(38, 23);
+            this.porog_1_TamperSensor.Size = new System.Drawing.Size(107, 23);
             this.porog_1_TamperSensor.TabIndex = 34;
             this.porog_1_TamperSensor.Text = "20";
             this.porog_1_TamperSensor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1348,9 +1363,9 @@ namespace GravitonEcoV2
             this.porog_1_TiltLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_TiltLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_TiltLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_TiltLevel.Location = new System.Drawing.Point(490, 28);
+            this.porog_1_TiltLevel.Location = new System.Drawing.Point(422, 28);
             this.porog_1_TiltLevel.Name = "porog_1_TiltLevel";
-            this.porog_1_TiltLevel.Size = new System.Drawing.Size(38, 23);
+            this.porog_1_TiltLevel.Size = new System.Drawing.Size(107, 23);
             this.porog_1_TiltLevel.TabIndex = 30;
             this.porog_1_TiltLevel.Text = "20";
             this.porog_1_TiltLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1362,9 +1377,9 @@ namespace GravitonEcoV2
             this.porog_1_VibrationLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_VibrationLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_VibrationLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_VibrationLevel.Location = new System.Drawing.Point(490, 3);
+            this.porog_1_VibrationLevel.Location = new System.Drawing.Point(422, 3);
             this.porog_1_VibrationLevel.Name = "porog_1_VibrationLevel";
-            this.porog_1_VibrationLevel.Size = new System.Drawing.Size(38, 23);
+            this.porog_1_VibrationLevel.Size = new System.Drawing.Size(107, 23);
             this.porog_1_VibrationLevel.TabIndex = 26;
             this.porog_1_VibrationLevel.Text = "20";
             this.porog_1_VibrationLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1376,9 +1391,9 @@ namespace GravitonEcoV2
             this.currentVibrationLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentVibrationLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentVibrationLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentVibrationLevel.Location = new System.Drawing.Point(411, 0);
+            this.currentVibrationLevel.Location = new System.Drawing.Point(350, 0);
             this.currentVibrationLevel.Name = "currentVibrationLevel";
-            this.currentVibrationLevel.Size = new System.Drawing.Size(73, 25);
+            this.currentVibrationLevel.Size = new System.Drawing.Size(66, 25);
             this.currentVibrationLevel.TabIndex = 23;
             this.currentVibrationLevel.Text = "23.9";
             this.currentVibrationLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1390,9 +1405,9 @@ namespace GravitonEcoV2
             this.currentTiltLevel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentTiltLevel.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentTiltLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentTiltLevel.Location = new System.Drawing.Point(411, 25);
+            this.currentTiltLevel.Location = new System.Drawing.Point(350, 25);
             this.currentTiltLevel.Name = "currentTiltLevel";
-            this.currentTiltLevel.Size = new System.Drawing.Size(73, 25);
+            this.currentTiltLevel.Size = new System.Drawing.Size(66, 25);
             this.currentTiltLevel.TabIndex = 24;
             this.currentTiltLevel.Text = "23.9";
             this.currentTiltLevel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1404,9 +1419,9 @@ namespace GravitonEcoV2
             this.currentTamperSensor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentTamperSensor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentTamperSensor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentTamperSensor.Location = new System.Drawing.Point(411, 50);
+            this.currentTamperSensor.Location = new System.Drawing.Point(350, 50);
             this.currentTamperSensor.Name = "currentTamperSensor";
-            this.currentTamperSensor.Size = new System.Drawing.Size(73, 25);
+            this.currentTamperSensor.Size = new System.Drawing.Size(66, 25);
             this.currentTamperSensor.TabIndex = 25;
             this.currentTamperSensor.Text = "23.9";
             this.currentTamperSensor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1458,11 +1473,11 @@ namespace GravitonEcoV2
             this.secondaryContentTableLayoutPanel3.ColumnCount = 10;
             this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.886398F));
             this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.66368F));
-            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.922823F));
-            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.6946F));
-            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.040793F));
-            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.24587F));
-            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.725469F));
+            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.132668F));
+            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.275321F));
+            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.562054F));
+            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.12839F));
+            this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.40514F));
             this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.38699F));
             this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.371554F));
             this.secondaryContentTableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.945976F));
@@ -1555,9 +1570,9 @@ namespace GravitonEcoV2
             this.dt_ParticulateMatterPM10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_ParticulateMatterPM10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_ParticulateMatterPM10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_ParticulateMatterPM10.Location = new System.Drawing.Point(651, 57);
+            this.dt_ParticulateMatterPM10.Location = new System.Drawing.Point(652, 57);
             this.dt_ParticulateMatterPM10.Name = "dt_ParticulateMatterPM10";
-            this.dt_ParticulateMatterPM10.Size = new System.Drawing.Size(47, 23);
+            this.dt_ParticulateMatterPM10.Size = new System.Drawing.Size(46, 23);
             this.dt_ParticulateMatterPM10.TabIndex = 60;
             this.dt_ParticulateMatterPM10.Text = "20";
             this.dt_ParticulateMatterPM10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1569,9 +1584,9 @@ namespace GravitonEcoV2
             this.dt_ParticulateMatterPM2_5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_ParticulateMatterPM2_5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_ParticulateMatterPM2_5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_ParticulateMatterPM2_5.Location = new System.Drawing.Point(651, 30);
+            this.dt_ParticulateMatterPM2_5.Location = new System.Drawing.Point(652, 30);
             this.dt_ParticulateMatterPM2_5.Name = "dt_ParticulateMatterPM2_5";
-            this.dt_ParticulateMatterPM2_5.Size = new System.Drawing.Size(47, 23);
+            this.dt_ParticulateMatterPM2_5.Size = new System.Drawing.Size(46, 23);
             this.dt_ParticulateMatterPM2_5.TabIndex = 56;
             this.dt_ParticulateMatterPM2_5.Text = "20";
             this.dt_ParticulateMatterPM2_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1583,9 +1598,9 @@ namespace GravitonEcoV2
             this.dt_ParticulateMatterPM1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_ParticulateMatterPM1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_ParticulateMatterPM1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_ParticulateMatterPM1.Location = new System.Drawing.Point(651, 3);
+            this.dt_ParticulateMatterPM1.Location = new System.Drawing.Point(652, 3);
             this.dt_ParticulateMatterPM1.Name = "dt_ParticulateMatterPM1";
-            this.dt_ParticulateMatterPM1.Size = new System.Drawing.Size(47, 23);
+            this.dt_ParticulateMatterPM1.Size = new System.Drawing.Size(46, 23);
             this.dt_ParticulateMatterPM1.TabIndex = 52;
             this.dt_ParticulateMatterPM1.Text = "20";
             this.dt_ParticulateMatterPM1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1597,7 +1612,7 @@ namespace GravitonEcoV2
             this.dx_ParticulateMatterPM1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_ParticulateMatterPM1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_ParticulateMatterPM1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_ParticulateMatterPM1.Location = new System.Drawing.Point(586, 3);
+            this.dx_ParticulateMatterPM1.Location = new System.Drawing.Point(587, 3);
             this.dx_ParticulateMatterPM1.Name = "dx_ParticulateMatterPM1";
             this.dx_ParticulateMatterPM1.Size = new System.Drawing.Size(59, 23);
             this.dx_ParticulateMatterPM1.TabIndex = 51;
@@ -1611,7 +1626,7 @@ namespace GravitonEcoV2
             this.dx_ParticulateMatterPM2_5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_ParticulateMatterPM2_5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_ParticulateMatterPM2_5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_ParticulateMatterPM2_5.Location = new System.Drawing.Point(586, 30);
+            this.dx_ParticulateMatterPM2_5.Location = new System.Drawing.Point(587, 30);
             this.dx_ParticulateMatterPM2_5.Name = "dx_ParticulateMatterPM2_5";
             this.dx_ParticulateMatterPM2_5.Size = new System.Drawing.Size(59, 23);
             this.dx_ParticulateMatterPM2_5.TabIndex = 55;
@@ -1625,7 +1640,7 @@ namespace GravitonEcoV2
             this.dx_ParticulateMatterPM10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_ParticulateMatterPM10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_ParticulateMatterPM10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_ParticulateMatterPM10.Location = new System.Drawing.Point(586, 57);
+            this.dx_ParticulateMatterPM10.Location = new System.Drawing.Point(587, 57);
             this.dx_ParticulateMatterPM10.Name = "dx_ParticulateMatterPM10";
             this.dx_ParticulateMatterPM10.Size = new System.Drawing.Size(59, 23);
             this.dx_ParticulateMatterPM10.TabIndex = 59;
@@ -1639,7 +1654,7 @@ namespace GravitonEcoV2
             this.porog_2_ParticulateMatterPM10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_ParticulateMatterPM10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_ParticulateMatterPM10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_ParticulateMatterPM10.Location = new System.Drawing.Point(535, 57);
+            this.porog_2_ParticulateMatterPM10.Location = new System.Drawing.Point(536, 57);
             this.porog_2_ParticulateMatterPM10.Name = "porog_2_ParticulateMatterPM10";
             this.porog_2_ParticulateMatterPM10.Size = new System.Drawing.Size(45, 23);
             this.porog_2_ParticulateMatterPM10.TabIndex = 58;
@@ -1653,7 +1668,7 @@ namespace GravitonEcoV2
             this.porog_2_ParticulateMatterPM2_5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_ParticulateMatterPM2_5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_ParticulateMatterPM2_5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_ParticulateMatterPM2_5.Location = new System.Drawing.Point(535, 30);
+            this.porog_2_ParticulateMatterPM2_5.Location = new System.Drawing.Point(536, 30);
             this.porog_2_ParticulateMatterPM2_5.Name = "porog_2_ParticulateMatterPM2_5";
             this.porog_2_ParticulateMatterPM2_5.Size = new System.Drawing.Size(45, 23);
             this.porog_2_ParticulateMatterPM2_5.TabIndex = 54;
@@ -1667,7 +1682,7 @@ namespace GravitonEcoV2
             this.porog_2_ParticulateMatterPM1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_ParticulateMatterPM1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_ParticulateMatterPM1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_ParticulateMatterPM1.Location = new System.Drawing.Point(535, 3);
+            this.porog_2_ParticulateMatterPM1.Location = new System.Drawing.Point(536, 3);
             this.porog_2_ParticulateMatterPM1.Name = "porog_2_ParticulateMatterPM1";
             this.porog_2_ParticulateMatterPM1.Size = new System.Drawing.Size(45, 23);
             this.porog_2_ParticulateMatterPM1.TabIndex = 50;
@@ -1681,9 +1696,9 @@ namespace GravitonEcoV2
             this.porog_1_ParticulateMatterPM1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_ParticulateMatterPM1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_ParticulateMatterPM1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_ParticulateMatterPM1.Location = new System.Drawing.Point(488, 3);
+            this.porog_1_ParticulateMatterPM1.Location = new System.Drawing.Point(421, 3);
             this.porog_1_ParticulateMatterPM1.Name = "porog_1_ParticulateMatterPM1";
-            this.porog_1_ParticulateMatterPM1.Size = new System.Drawing.Size(41, 23);
+            this.porog_1_ParticulateMatterPM1.Size = new System.Drawing.Size(109, 23);
             this.porog_1_ParticulateMatterPM1.TabIndex = 49;
             this.porog_1_ParticulateMatterPM1.Text = "20";
             this.porog_1_ParticulateMatterPM1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1695,9 +1710,9 @@ namespace GravitonEcoV2
             this.porog_1_ParticulateMatterPM2_5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_ParticulateMatterPM2_5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_ParticulateMatterPM2_5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_ParticulateMatterPM2_5.Location = new System.Drawing.Point(488, 30);
+            this.porog_1_ParticulateMatterPM2_5.Location = new System.Drawing.Point(421, 30);
             this.porog_1_ParticulateMatterPM2_5.Name = "porog_1_ParticulateMatterPM2_5";
-            this.porog_1_ParticulateMatterPM2_5.Size = new System.Drawing.Size(41, 23);
+            this.porog_1_ParticulateMatterPM2_5.Size = new System.Drawing.Size(109, 23);
             this.porog_1_ParticulateMatterPM2_5.TabIndex = 53;
             this.porog_1_ParticulateMatterPM2_5.Text = "20";
             this.porog_1_ParticulateMatterPM2_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1709,9 +1724,9 @@ namespace GravitonEcoV2
             this.porog_1_ParticulateMatterPM10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_ParticulateMatterPM10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_ParticulateMatterPM10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_ParticulateMatterPM10.Location = new System.Drawing.Point(488, 57);
+            this.porog_1_ParticulateMatterPM10.Location = new System.Drawing.Point(421, 57);
             this.porog_1_ParticulateMatterPM10.Name = "porog_1_ParticulateMatterPM10";
-            this.porog_1_ParticulateMatterPM10.Size = new System.Drawing.Size(41, 23);
+            this.porog_1_ParticulateMatterPM10.Size = new System.Drawing.Size(109, 23);
             this.porog_1_ParticulateMatterPM10.TabIndex = 57;
             this.porog_1_ParticulateMatterPM10.Text = "20";
             this.porog_1_ParticulateMatterPM10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1723,9 +1738,9 @@ namespace GravitonEcoV2
             this.currentParticulateMatterPM10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentParticulateMatterPM10.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentParticulateMatterPM10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentParticulateMatterPM10.Location = new System.Drawing.Point(410, 54);
+            this.currentParticulateMatterPM10.Location = new System.Drawing.Point(350, 54);
             this.currentParticulateMatterPM10.Name = "currentParticulateMatterPM10";
-            this.currentParticulateMatterPM10.Size = new System.Drawing.Size(72, 28);
+            this.currentParticulateMatterPM10.Size = new System.Drawing.Size(65, 28);
             this.currentParticulateMatterPM10.TabIndex = 22;
             this.currentParticulateMatterPM10.Text = "23.9";
             this.currentParticulateMatterPM10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1737,9 +1752,9 @@ namespace GravitonEcoV2
             this.currentParticulateMatterPM2_5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentParticulateMatterPM2_5.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentParticulateMatterPM2_5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentParticulateMatterPM2_5.Location = new System.Drawing.Point(410, 27);
+            this.currentParticulateMatterPM2_5.Location = new System.Drawing.Point(350, 27);
             this.currentParticulateMatterPM2_5.Name = "currentParticulateMatterPM2_5";
-            this.currentParticulateMatterPM2_5.Size = new System.Drawing.Size(72, 27);
+            this.currentParticulateMatterPM2_5.Size = new System.Drawing.Size(65, 27);
             this.currentParticulateMatterPM2_5.TabIndex = 21;
             this.currentParticulateMatterPM2_5.Text = "23.9";
             this.currentParticulateMatterPM2_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1751,9 +1766,9 @@ namespace GravitonEcoV2
             this.currentParticulateMatterPM1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentParticulateMatterPM1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentParticulateMatterPM1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentParticulateMatterPM1.Location = new System.Drawing.Point(410, 0);
+            this.currentParticulateMatterPM1.Location = new System.Drawing.Point(350, 0);
             this.currentParticulateMatterPM1.Name = "currentParticulateMatterPM1";
-            this.currentParticulateMatterPM1.Size = new System.Drawing.Size(72, 27);
+            this.currentParticulateMatterPM1.Size = new System.Drawing.Size(65, 27);
             this.currentParticulateMatterPM1.TabIndex = 20;
             this.currentParticulateMatterPM1.Text = "23.9";
             this.currentParticulateMatterPM1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1804,12 +1819,12 @@ namespace GravitonEcoV2
             // 
             this.secondaryContentTableLayoutPanel2.ColumnCount = 10;
             this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.886398F));
-            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.66368F));
-            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.702315F));
-            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.80485F));
-            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.261301F));
-            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.9151F));
-            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.945976F));
+            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.53638F));
+            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.132668F));
+            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.132668F));
+            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.847361F));
+            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.843081F));
+            this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.54779F));
             this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.276736F));
             this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.371554F));
             this.secondaryContentTableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.835722F));
@@ -1909,9 +1924,9 @@ namespace GravitonEcoV2
             this.dt_CarbonMonoxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_CarbonMonoxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_CarbonMonoxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_CarbonMonoxide.Location = new System.Drawing.Point(651, 3);
+            this.dt_CarbonMonoxide.Location = new System.Drawing.Point(653, 3);
             this.dt_CarbonMonoxide.Name = "dt_CarbonMonoxide";
-            this.dt_CarbonMonoxide.Size = new System.Drawing.Size(47, 23);
+            this.dt_CarbonMonoxide.Size = new System.Drawing.Size(45, 23);
             this.dt_CarbonMonoxide.TabIndex = 29;
             this.dt_CarbonMonoxide.Text = "20";
             this.dt_CarbonMonoxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1923,9 +1938,9 @@ namespace GravitonEcoV2
             this.dt_NitrogenOxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_NitrogenOxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_NitrogenOxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_NitrogenOxide.Location = new System.Drawing.Point(651, 25);
+            this.dt_NitrogenOxide.Location = new System.Drawing.Point(653, 25);
             this.dt_NitrogenOxide.Name = "dt_NitrogenOxide";
-            this.dt_NitrogenOxide.Size = new System.Drawing.Size(47, 23);
+            this.dt_NitrogenOxide.Size = new System.Drawing.Size(45, 23);
             this.dt_NitrogenOxide.TabIndex = 28;
             this.dt_NitrogenOxide.Text = "20";
             this.dt_NitrogenOxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1937,9 +1952,9 @@ namespace GravitonEcoV2
             this.dt_NitrogenDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_NitrogenDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_NitrogenDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_NitrogenDioxide.Location = new System.Drawing.Point(651, 47);
+            this.dt_NitrogenDioxide.Location = new System.Drawing.Point(653, 47);
             this.dt_NitrogenDioxide.Name = "dt_NitrogenDioxide";
-            this.dt_NitrogenDioxide.Size = new System.Drawing.Size(47, 23);
+            this.dt_NitrogenDioxide.Size = new System.Drawing.Size(45, 23);
             this.dt_NitrogenDioxide.TabIndex = 36;
             this.dt_NitrogenDioxide.Text = "20";
             this.dt_NitrogenDioxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1951,9 +1966,9 @@ namespace GravitonEcoV2
             this.dt_SulfurDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_SulfurDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_SulfurDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_SulfurDioxide.Location = new System.Drawing.Point(651, 69);
+            this.dt_SulfurDioxide.Location = new System.Drawing.Point(653, 69);
             this.dt_SulfurDioxide.Name = "dt_SulfurDioxide";
-            this.dt_SulfurDioxide.Size = new System.Drawing.Size(47, 23);
+            this.dt_SulfurDioxide.Size = new System.Drawing.Size(45, 23);
             this.dt_SulfurDioxide.TabIndex = 40;
             this.dt_SulfurDioxide.Text = "20";
             this.dt_SulfurDioxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1965,9 +1980,9 @@ namespace GravitonEcoV2
             this.dt_CarbonDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_CarbonDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_CarbonDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_CarbonDioxide.Location = new System.Drawing.Point(651, 91);
+            this.dt_CarbonDioxide.Location = new System.Drawing.Point(653, 91);
             this.dt_CarbonDioxide.Name = "dt_CarbonDioxide";
-            this.dt_CarbonDioxide.Size = new System.Drawing.Size(47, 23);
+            this.dt_CarbonDioxide.Size = new System.Drawing.Size(45, 23);
             this.dt_CarbonDioxide.TabIndex = 44;
             this.dt_CarbonDioxide.Text = "20";
             this.dt_CarbonDioxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1979,9 +1994,9 @@ namespace GravitonEcoV2
             this.dt_VolatileOrganicCompounds.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_VolatileOrganicCompounds.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_VolatileOrganicCompounds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_VolatileOrganicCompounds.Location = new System.Drawing.Point(651, 113);
+            this.dt_VolatileOrganicCompounds.Location = new System.Drawing.Point(653, 113);
             this.dt_VolatileOrganicCompounds.Name = "dt_VolatileOrganicCompounds";
-            this.dt_VolatileOrganicCompounds.Size = new System.Drawing.Size(47, 23);
+            this.dt_VolatileOrganicCompounds.Size = new System.Drawing.Size(45, 23);
             this.dt_VolatileOrganicCompounds.TabIndex = 48;
             this.dt_VolatileOrganicCompounds.Text = "20";
             this.dt_VolatileOrganicCompounds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1993,9 +2008,9 @@ namespace GravitonEcoV2
             this.dx_VolatileOrganicCompounds.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_VolatileOrganicCompounds.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_VolatileOrganicCompounds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_VolatileOrganicCompounds.Location = new System.Drawing.Point(586, 113);
+            this.dx_VolatileOrganicCompounds.Location = new System.Drawing.Point(587, 113);
             this.dx_VolatileOrganicCompounds.Name = "dx_VolatileOrganicCompounds";
-            this.dx_VolatileOrganicCompounds.Size = new System.Drawing.Size(59, 23);
+            this.dx_VolatileOrganicCompounds.Size = new System.Drawing.Size(60, 23);
             this.dx_VolatileOrganicCompounds.TabIndex = 47;
             this.dx_VolatileOrganicCompounds.Text = "20";
             this.dx_VolatileOrganicCompounds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2007,9 +2022,9 @@ namespace GravitonEcoV2
             this.dx_CarbonDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_CarbonDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_CarbonDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_CarbonDioxide.Location = new System.Drawing.Point(586, 91);
+            this.dx_CarbonDioxide.Location = new System.Drawing.Point(587, 91);
             this.dx_CarbonDioxide.Name = "dx_CarbonDioxide";
-            this.dx_CarbonDioxide.Size = new System.Drawing.Size(59, 23);
+            this.dx_CarbonDioxide.Size = new System.Drawing.Size(60, 23);
             this.dx_CarbonDioxide.TabIndex = 43;
             this.dx_CarbonDioxide.Text = "20";
             this.dx_CarbonDioxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2021,9 +2036,9 @@ namespace GravitonEcoV2
             this.dx_SulfurDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_SulfurDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_SulfurDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_SulfurDioxide.Location = new System.Drawing.Point(586, 69);
+            this.dx_SulfurDioxide.Location = new System.Drawing.Point(587, 69);
             this.dx_SulfurDioxide.Name = "dx_SulfurDioxide";
-            this.dx_SulfurDioxide.Size = new System.Drawing.Size(59, 23);
+            this.dx_SulfurDioxide.Size = new System.Drawing.Size(60, 23);
             this.dx_SulfurDioxide.TabIndex = 39;
             this.dx_SulfurDioxide.Text = "20";
             this.dx_SulfurDioxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2035,9 +2050,9 @@ namespace GravitonEcoV2
             this.dx_NitrogenDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_NitrogenDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_NitrogenDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_NitrogenDioxide.Location = new System.Drawing.Point(586, 47);
+            this.dx_NitrogenDioxide.Location = new System.Drawing.Point(587, 47);
             this.dx_NitrogenDioxide.Name = "dx_NitrogenDioxide";
-            this.dx_NitrogenDioxide.Size = new System.Drawing.Size(59, 23);
+            this.dx_NitrogenDioxide.Size = new System.Drawing.Size(60, 23);
             this.dx_NitrogenDioxide.TabIndex = 35;
             this.dx_NitrogenDioxide.Text = "20";
             this.dx_NitrogenDioxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2049,9 +2064,9 @@ namespace GravitonEcoV2
             this.dx_NitrogenOxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_NitrogenOxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_NitrogenOxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_NitrogenOxide.Location = new System.Drawing.Point(586, 25);
+            this.dx_NitrogenOxide.Location = new System.Drawing.Point(587, 25);
             this.dx_NitrogenOxide.Name = "dx_NitrogenOxide";
-            this.dx_NitrogenOxide.Size = new System.Drawing.Size(59, 23);
+            this.dx_NitrogenOxide.Size = new System.Drawing.Size(60, 23);
             this.dx_NitrogenOxide.TabIndex = 32;
             this.dx_NitrogenOxide.Text = "20";
             this.dx_NitrogenOxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2063,9 +2078,9 @@ namespace GravitonEcoV2
             this.dx_CarbonMonoxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_CarbonMonoxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_CarbonMonoxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_CarbonMonoxide.Location = new System.Drawing.Point(586, 3);
+            this.dx_CarbonMonoxide.Location = new System.Drawing.Point(587, 3);
             this.dx_CarbonMonoxide.Name = "dx_CarbonMonoxide";
-            this.dx_CarbonMonoxide.Size = new System.Drawing.Size(59, 23);
+            this.dx_CarbonMonoxide.Size = new System.Drawing.Size(60, 23);
             this.dx_CarbonMonoxide.TabIndex = 27;
             this.dx_CarbonMonoxide.Text = "20";
             this.dx_CarbonMonoxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2077,7 +2092,7 @@ namespace GravitonEcoV2
             this.porog_2_CarbonMonoxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_CarbonMonoxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_CarbonMonoxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_CarbonMonoxide.Location = new System.Drawing.Point(535, 3);
+            this.porog_2_CarbonMonoxide.Location = new System.Drawing.Point(536, 3);
             this.porog_2_CarbonMonoxide.Name = "porog_2_CarbonMonoxide";
             this.porog_2_CarbonMonoxide.Size = new System.Drawing.Size(45, 23);
             this.porog_2_CarbonMonoxide.TabIndex = 26;
@@ -2108,7 +2123,7 @@ namespace GravitonEcoV2
             this.porog_2_NitrogenOxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_NitrogenOxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_NitrogenOxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_NitrogenOxide.Location = new System.Drawing.Point(535, 25);
+            this.porog_2_NitrogenOxide.Location = new System.Drawing.Point(536, 25);
             this.porog_2_NitrogenOxide.Name = "porog_2_NitrogenOxide";
             this.porog_2_NitrogenOxide.Size = new System.Drawing.Size(45, 23);
             this.porog_2_NitrogenOxide.TabIndex = 31;
@@ -2139,7 +2154,7 @@ namespace GravitonEcoV2
             this.porog_2_NitrogenDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_NitrogenDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_NitrogenDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_NitrogenDioxide.Location = new System.Drawing.Point(535, 47);
+            this.porog_2_NitrogenDioxide.Location = new System.Drawing.Point(536, 47);
             this.porog_2_NitrogenDioxide.Name = "porog_2_NitrogenDioxide";
             this.porog_2_NitrogenDioxide.Size = new System.Drawing.Size(45, 23);
             this.porog_2_NitrogenDioxide.TabIndex = 34;
@@ -2170,7 +2185,7 @@ namespace GravitonEcoV2
             this.porog_2_SulfurDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_SulfurDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_SulfurDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_SulfurDioxide.Location = new System.Drawing.Point(535, 69);
+            this.porog_2_SulfurDioxide.Location = new System.Drawing.Point(536, 69);
             this.porog_2_SulfurDioxide.Name = "porog_2_SulfurDioxide";
             this.porog_2_SulfurDioxide.Size = new System.Drawing.Size(45, 23);
             this.porog_2_SulfurDioxide.TabIndex = 38;
@@ -2201,7 +2216,7 @@ namespace GravitonEcoV2
             this.porog_2_CarbonDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_CarbonDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_CarbonDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_CarbonDioxide.Location = new System.Drawing.Point(535, 91);
+            this.porog_2_CarbonDioxide.Location = new System.Drawing.Point(536, 91);
             this.porog_2_CarbonDioxide.Name = "porog_2_CarbonDioxide";
             this.porog_2_CarbonDioxide.Size = new System.Drawing.Size(45, 23);
             this.porog_2_CarbonDioxide.TabIndex = 42;
@@ -2215,7 +2230,7 @@ namespace GravitonEcoV2
             this.porog_2_VolatileOrganicCompounds.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_2_VolatileOrganicCompounds.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_2_VolatileOrganicCompounds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_2_VolatileOrganicCompounds.Location = new System.Drawing.Point(535, 113);
+            this.porog_2_VolatileOrganicCompounds.Location = new System.Drawing.Point(536, 113);
             this.porog_2_VolatileOrganicCompounds.Name = "porog_2_VolatileOrganicCompounds";
             this.porog_2_VolatileOrganicCompounds.Size = new System.Drawing.Size(45, 23);
             this.porog_2_VolatileOrganicCompounds.TabIndex = 46;
@@ -2229,9 +2244,9 @@ namespace GravitonEcoV2
             this.porog_1_VolatileOrganicCompounds.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_VolatileOrganicCompounds.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_VolatileOrganicCompounds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_VolatileOrganicCompounds.Location = new System.Drawing.Point(487, 113);
+            this.porog_1_VolatileOrganicCompounds.Location = new System.Drawing.Point(420, 113);
             this.porog_1_VolatileOrganicCompounds.Name = "porog_1_VolatileOrganicCompounds";
-            this.porog_1_VolatileOrganicCompounds.Size = new System.Drawing.Size(42, 23);
+            this.porog_1_VolatileOrganicCompounds.Size = new System.Drawing.Size(110, 23);
             this.porog_1_VolatileOrganicCompounds.TabIndex = 45;
             this.porog_1_VolatileOrganicCompounds.Text = "20";
             this.porog_1_VolatileOrganicCompounds.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2243,9 +2258,9 @@ namespace GravitonEcoV2
             this.porog_1_CarbonDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_CarbonDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_CarbonDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_CarbonDioxide.Location = new System.Drawing.Point(487, 91);
+            this.porog_1_CarbonDioxide.Location = new System.Drawing.Point(420, 91);
             this.porog_1_CarbonDioxide.Name = "porog_1_CarbonDioxide";
-            this.porog_1_CarbonDioxide.Size = new System.Drawing.Size(42, 23);
+            this.porog_1_CarbonDioxide.Size = new System.Drawing.Size(110, 23);
             this.porog_1_CarbonDioxide.TabIndex = 41;
             this.porog_1_CarbonDioxide.Text = "20";
             this.porog_1_CarbonDioxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2257,9 +2272,9 @@ namespace GravitonEcoV2
             this.porog_1_SulfurDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_SulfurDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_SulfurDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_SulfurDioxide.Location = new System.Drawing.Point(487, 69);
+            this.porog_1_SulfurDioxide.Location = new System.Drawing.Point(420, 69);
             this.porog_1_SulfurDioxide.Name = "porog_1_SulfurDioxide";
-            this.porog_1_SulfurDioxide.Size = new System.Drawing.Size(42, 23);
+            this.porog_1_SulfurDioxide.Size = new System.Drawing.Size(110, 23);
             this.porog_1_SulfurDioxide.TabIndex = 37;
             this.porog_1_SulfurDioxide.Text = "20";
             this.porog_1_SulfurDioxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2271,9 +2286,9 @@ namespace GravitonEcoV2
             this.porog_1_NitrogenDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_NitrogenDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_NitrogenDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_NitrogenDioxide.Location = new System.Drawing.Point(487, 47);
+            this.porog_1_NitrogenDioxide.Location = new System.Drawing.Point(420, 47);
             this.porog_1_NitrogenDioxide.Name = "porog_1_NitrogenDioxide";
-            this.porog_1_NitrogenDioxide.Size = new System.Drawing.Size(42, 23);
+            this.porog_1_NitrogenDioxide.Size = new System.Drawing.Size(110, 23);
             this.porog_1_NitrogenDioxide.TabIndex = 33;
             this.porog_1_NitrogenDioxide.Text = "20";
             this.porog_1_NitrogenDioxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2285,9 +2300,9 @@ namespace GravitonEcoV2
             this.porog_1_NitrogenOxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_NitrogenOxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_NitrogenOxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_NitrogenOxide.Location = new System.Drawing.Point(487, 25);
+            this.porog_1_NitrogenOxide.Location = new System.Drawing.Point(420, 25);
             this.porog_1_NitrogenOxide.Name = "porog_1_NitrogenOxide";
-            this.porog_1_NitrogenOxide.Size = new System.Drawing.Size(42, 23);
+            this.porog_1_NitrogenOxide.Size = new System.Drawing.Size(110, 23);
             this.porog_1_NitrogenOxide.TabIndex = 30;
             this.porog_1_NitrogenOxide.Text = "20";
             this.porog_1_NitrogenOxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2299,9 +2314,9 @@ namespace GravitonEcoV2
             this.porog_1_CarbonMonoxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_CarbonMonoxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_CarbonMonoxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_CarbonMonoxide.Location = new System.Drawing.Point(487, 3);
+            this.porog_1_CarbonMonoxide.Location = new System.Drawing.Point(420, 3);
             this.porog_1_CarbonMonoxide.Name = "porog_1_CarbonMonoxide";
-            this.porog_1_CarbonMonoxide.Size = new System.Drawing.Size(42, 23);
+            this.porog_1_CarbonMonoxide.Size = new System.Drawing.Size(110, 23);
             this.porog_1_CarbonMonoxide.TabIndex = 25;
             this.porog_1_CarbonMonoxide.Text = "20";
             this.porog_1_CarbonMonoxide.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2313,9 +2328,9 @@ namespace GravitonEcoV2
             this.currentCarbonMonoxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentCarbonMonoxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentCarbonMonoxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentCarbonMonoxide.Location = new System.Drawing.Point(411, 0);
+            this.currentCarbonMonoxide.Location = new System.Drawing.Point(351, 0);
             this.currentCarbonMonoxide.Name = "currentCarbonMonoxide";
-            this.currentCarbonMonoxide.Size = new System.Drawing.Size(70, 22);
+            this.currentCarbonMonoxide.Size = new System.Drawing.Size(63, 22);
             this.currentCarbonMonoxide.TabIndex = 19;
             this.currentCarbonMonoxide.Text = "23.9";
             this.currentCarbonMonoxide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2327,9 +2342,9 @@ namespace GravitonEcoV2
             this.currentNitrogenOxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentNitrogenOxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentNitrogenOxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentNitrogenOxide.Location = new System.Drawing.Point(411, 22);
+            this.currentNitrogenOxide.Location = new System.Drawing.Point(351, 22);
             this.currentNitrogenOxide.Name = "currentNitrogenOxide";
-            this.currentNitrogenOxide.Size = new System.Drawing.Size(70, 22);
+            this.currentNitrogenOxide.Size = new System.Drawing.Size(63, 22);
             this.currentNitrogenOxide.TabIndex = 20;
             this.currentNitrogenOxide.Text = "23.9";
             this.currentNitrogenOxide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2341,9 +2356,9 @@ namespace GravitonEcoV2
             this.currentNitrogenDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentNitrogenDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentNitrogenDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentNitrogenDioxide.Location = new System.Drawing.Point(411, 44);
+            this.currentNitrogenDioxide.Location = new System.Drawing.Point(351, 44);
             this.currentNitrogenDioxide.Name = "currentNitrogenDioxide";
-            this.currentNitrogenDioxide.Size = new System.Drawing.Size(70, 22);
+            this.currentNitrogenDioxide.Size = new System.Drawing.Size(63, 22);
             this.currentNitrogenDioxide.TabIndex = 21;
             this.currentNitrogenDioxide.Text = "23.9";
             this.currentNitrogenDioxide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2355,9 +2370,9 @@ namespace GravitonEcoV2
             this.currentSulfurDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentSulfurDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentSulfurDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentSulfurDioxide.Location = new System.Drawing.Point(411, 66);
+            this.currentSulfurDioxide.Location = new System.Drawing.Point(351, 66);
             this.currentSulfurDioxide.Name = "currentSulfurDioxide";
-            this.currentSulfurDioxide.Size = new System.Drawing.Size(70, 22);
+            this.currentSulfurDioxide.Size = new System.Drawing.Size(63, 22);
             this.currentSulfurDioxide.TabIndex = 22;
             this.currentSulfurDioxide.Text = "23.9";
             this.currentSulfurDioxide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2369,9 +2384,9 @@ namespace GravitonEcoV2
             this.currentCarbonDioxide.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentCarbonDioxide.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentCarbonDioxide.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentCarbonDioxide.Location = new System.Drawing.Point(411, 88);
+            this.currentCarbonDioxide.Location = new System.Drawing.Point(351, 88);
             this.currentCarbonDioxide.Name = "currentCarbonDioxide";
-            this.currentCarbonDioxide.Size = new System.Drawing.Size(70, 22);
+            this.currentCarbonDioxide.Size = new System.Drawing.Size(63, 22);
             this.currentCarbonDioxide.TabIndex = 23;
             this.currentCarbonDioxide.Text = "23.9";
             this.currentCarbonDioxide.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2383,9 +2398,9 @@ namespace GravitonEcoV2
             this.currentVolatileOrganicCompounds.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentVolatileOrganicCompounds.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentVolatileOrganicCompounds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentVolatileOrganicCompounds.Location = new System.Drawing.Point(411, 110);
+            this.currentVolatileOrganicCompounds.Location = new System.Drawing.Point(351, 110);
             this.currentVolatileOrganicCompounds.Name = "currentVolatileOrganicCompounds";
-            this.currentVolatileOrganicCompounds.Size = new System.Drawing.Size(70, 27);
+            this.currentVolatileOrganicCompounds.Size = new System.Drawing.Size(63, 27);
             this.currentVolatileOrganicCompounds.TabIndex = 24;
             this.currentVolatileOrganicCompounds.Text = "23.9";
             this.currentVolatileOrganicCompounds.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2478,15 +2493,19 @@ namespace GravitonEcoV2
             // 
             this.secondaryContentTableLayoutPanel1.ColumnCount = 10;
             this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.736921F));
-            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.90612F));
-            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.392603F));
-            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.112376F));
-            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.108109F));
-            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.815078F));
-            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.819345F));
-            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.672831F));
-            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.80654F));
-            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.52632F));
+            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.67903F));
+            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.275321F));
+            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.990014F));
+            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.990014F));
+            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.843081F));
+            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.987162F));
+            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.129814F));
+            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.84165F));
+            this.secondaryContentTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.98145F));
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label36, 4, 4);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label35, 3, 4);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label34, 2, 4);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label33, 4, 2);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.periodLabel, 9, 0);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.increaseLabel, 8, 0);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.porog2Label, 7, 0);
@@ -2505,7 +2524,6 @@ namespace GravitonEcoV2
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.dt_RelativeHumidity, 9, 2);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.dt_AtmosphericPressure, 9, 3);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.dt_WindSpeed, 9, 4);
-            this.secondaryContentTableLayoutPanel1.Controls.Add(this.dt_WindDirection, 9, 5);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.dx_WindDirection, 8, 5);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.dx_WindSpeed, 8, 4);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.dx_AtmosphericPressure, 8, 3);
@@ -2531,6 +2549,18 @@ namespace GravitonEcoV2
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.radioButton3, 0, 3);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.radioButton4, 0, 4);
             this.secondaryContentTableLayoutPanel1.Controls.Add(this.radioButton5, 0, 5);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label19, 2, 1);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label20, 3, 1);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label21, 4, 1);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label22, 2, 3);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label23, 3, 3);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label24, 4, 3);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label29, 4, 5);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label30, 3, 5);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label31, 2, 5);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label32, 3, 2);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.dt_WindDirection, 9, 5);
+            this.secondaryContentTableLayoutPanel1.Controls.Add(this.label37, 2, 2);
             this.secondaryContentTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.secondaryContentTableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.secondaryContentTableLayoutPanel1.Name = "secondaryContentTableLayoutPanel1";
@@ -2541,8 +2571,65 @@ namespace GravitonEcoV2
             this.secondaryContentTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.secondaryContentTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.secondaryContentTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.secondaryContentTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.secondaryContentTableLayoutPanel1.Size = new System.Drawing.Size(701, 147);
             this.secondaryContentTableLayoutPanel1.TabIndex = 0;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label36.Location = new System.Drawing.Point(296, 96);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(42, 24);
+            this.label36.TabIndex = 61;
+            this.label36.Text = "23,9";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label35.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label35.Location = new System.Drawing.Point(248, 96);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(42, 24);
+            this.label35.TabIndex = 61;
+            this.label35.Text = "23,9";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label34.Location = new System.Drawing.Point(198, 96);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(44, 24);
+            this.label34.TabIndex = 61;
+            this.label34.Text = "23,9";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label33.Location = new System.Drawing.Point(296, 48);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(42, 24);
+            this.label33.TabIndex = 61;
+            this.label33.Text = "23,9";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // periodLabel
             // 
@@ -2550,9 +2637,9 @@ namespace GravitonEcoV2
             this.periodLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.periodLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.periodLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.periodLabel.Location = new System.Drawing.Point(623, 0);
+            this.periodLabel.Location = new System.Drawing.Point(611, 0);
             this.periodLabel.Name = "periodLabel";
-            this.periodLabel.Size = new System.Drawing.Size(75, 24);
+            this.periodLabel.Size = new System.Drawing.Size(87, 24);
             this.periodLabel.TabIndex = 8;
             this.periodLabel.Text = "Период";
             this.periodLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2563,9 +2650,9 @@ namespace GravitonEcoV2
             this.increaseLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.increaseLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.increaseLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.increaseLabel.Location = new System.Drawing.Point(541, 0);
+            this.increaseLabel.Location = new System.Drawing.Point(537, 0);
             this.increaseLabel.Name = "increaseLabel";
-            this.increaseLabel.Size = new System.Drawing.Size(76, 24);
+            this.increaseLabel.Size = new System.Drawing.Size(68, 24);
             this.increaseLabel.TabIndex = 7;
             this.increaseLabel.Text = "Нарастание";
             this.increaseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2578,7 +2665,7 @@ namespace GravitonEcoV2
             this.porog2Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
             this.porog2Label.Location = new System.Drawing.Point(474, 0);
             this.porog2Label.Name = "porog2Label";
-            this.porog2Label.Size = new System.Drawing.Size(61, 24);
+            this.porog2Label.Size = new System.Drawing.Size(57, 24);
             this.porog2Label.TabIndex = 6;
             this.porog2Label.Text = "Порог 2";
             this.porog2Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2589,9 +2676,9 @@ namespace GravitonEcoV2
             this.porog1Label.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog1Label.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.porog1Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.porog1Label.Location = new System.Drawing.Point(413, 0);
+            this.porog1Label.Location = new System.Drawing.Point(412, 0);
             this.porog1Label.Name = "porog1Label";
-            this.porog1Label.Size = new System.Drawing.Size(55, 24);
+            this.porog1Label.Size = new System.Drawing.Size(56, 24);
             this.porog1Label.TabIndex = 5;
             this.porog1Label.Text = "Порог 1";
             this.porog1Label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2602,7 +2689,7 @@ namespace GravitonEcoV2
             this.currentParametrLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentParametrLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.currentParametrLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.currentParametrLabel.Location = new System.Drawing.Point(345, 0);
+            this.currentParametrLabel.Location = new System.Drawing.Point(344, 0);
             this.currentParametrLabel.Name = "currentParametrLabel";
             this.currentParametrLabel.Size = new System.Drawing.Size(62, 24);
             this.currentParametrLabel.TabIndex = 4;
@@ -2615,9 +2702,9 @@ namespace GravitonEcoV2
             this.avgParametrLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.avgParametrLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.avgParametrLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.avgParametrLabel.Location = new System.Drawing.Point(289, 0);
+            this.avgParametrLabel.Location = new System.Drawing.Point(296, 0);
             this.avgParametrLabel.Name = "avgParametrLabel";
-            this.avgParametrLabel.Size = new System.Drawing.Size(50, 24);
+            this.avgParametrLabel.Size = new System.Drawing.Size(42, 24);
             this.avgParametrLabel.TabIndex = 3;
             this.avgParametrLabel.Text = "Сред.";
             this.avgParametrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2628,9 +2715,9 @@ namespace GravitonEcoV2
             this.maxParametrLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maxParametrLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.maxParametrLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.maxParametrLabel.Location = new System.Drawing.Point(240, 0);
+            this.maxParametrLabel.Location = new System.Drawing.Point(248, 0);
             this.maxParametrLabel.Name = "maxParametrLabel";
-            this.maxParametrLabel.Size = new System.Drawing.Size(43, 24);
+            this.maxParametrLabel.Size = new System.Drawing.Size(42, 24);
             this.maxParametrLabel.TabIndex = 2;
             this.maxParametrLabel.Text = "Макс.";
             this.maxParametrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2641,9 +2728,9 @@ namespace GravitonEcoV2
             this.minParametrLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.minParametrLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.minParametrLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.minParametrLabel.Location = new System.Drawing.Point(182, 0);
+            this.minParametrLabel.Location = new System.Drawing.Point(198, 0);
             this.minParametrLabel.Name = "minParametrLabel";
-            this.minParametrLabel.Size = new System.Drawing.Size(52, 24);
+            this.minParametrLabel.Size = new System.Drawing.Size(44, 24);
             this.minParametrLabel.TabIndex = 1;
             this.minParametrLabel.Text = "Мин.";
             this.minParametrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2655,9 +2742,9 @@ namespace GravitonEcoV2
             this.ParametrLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ParametrLabel.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold);
             this.ParametrLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(150)))), ((int)(((byte)(190)))));
-            this.ParametrLabel.Location = new System.Drawing.Point(29, 0);
+            this.ParametrLabel.Location = new System.Drawing.Point(28, 0);
             this.ParametrLabel.Name = "ParametrLabel";
-            this.ParametrLabel.Size = new System.Drawing.Size(147, 24);
+            this.ParametrLabel.Size = new System.Drawing.Size(164, 24);
             this.ParametrLabel.TabIndex = 0;
             this.ParametrLabel.Text = "Параметр";
             this.ParametrLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2669,9 +2756,9 @@ namespace GravitonEcoV2
             this.airTemperature.Dock = System.Windows.Forms.DockStyle.Fill;
             this.airTemperature.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.airTemperature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.airTemperature.Location = new System.Drawing.Point(29, 24);
+            this.airTemperature.Location = new System.Drawing.Point(28, 24);
             this.airTemperature.Name = "airTemperature";
-            this.airTemperature.Size = new System.Drawing.Size(147, 24);
+            this.airTemperature.Size = new System.Drawing.Size(164, 24);
             this.airTemperature.TabIndex = 9;
             this.airTemperature.Text = "Температура (- 45 до +45°С)";
             this.airTemperature.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2683,9 +2770,9 @@ namespace GravitonEcoV2
             this.relativeHumidity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.relativeHumidity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.relativeHumidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.relativeHumidity.Location = new System.Drawing.Point(29, 48);
+            this.relativeHumidity.Location = new System.Drawing.Point(28, 48);
             this.relativeHumidity.Name = "relativeHumidity";
-            this.relativeHumidity.Size = new System.Drawing.Size(147, 24);
+            this.relativeHumidity.Size = new System.Drawing.Size(164, 24);
             this.relativeHumidity.TabIndex = 10;
             this.relativeHumidity.Text = "Отн. влажность (0 - 98 %)";
             this.relativeHumidity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2697,9 +2784,9 @@ namespace GravitonEcoV2
             this.atmosphericPressure.Dock = System.Windows.Forms.DockStyle.Fill;
             this.atmosphericPressure.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.atmosphericPressure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.atmosphericPressure.Location = new System.Drawing.Point(29, 72);
+            this.atmosphericPressure.Location = new System.Drawing.Point(28, 72);
             this.atmosphericPressure.Name = "atmosphericPressure";
-            this.atmosphericPressure.Size = new System.Drawing.Size(147, 24);
+            this.atmosphericPressure.Size = new System.Drawing.Size(164, 24);
             this.atmosphericPressure.TabIndex = 11;
             this.atmosphericPressure.Text = "Атм. дав-ние (650 - 1200 hPa)";
             this.atmosphericPressure.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2711,9 +2798,9 @@ namespace GravitonEcoV2
             this.windSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.windSpeed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.windSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.windSpeed.Location = new System.Drawing.Point(29, 96);
+            this.windSpeed.Location = new System.Drawing.Point(28, 96);
             this.windSpeed.Name = "windSpeed";
-            this.windSpeed.Size = new System.Drawing.Size(147, 24);
+            this.windSpeed.Size = new System.Drawing.Size(164, 24);
             this.windSpeed.TabIndex = 13;
             this.windSpeed.Text = "Напряжение 1";
             this.windSpeed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2725,9 +2812,9 @@ namespace GravitonEcoV2
             this.windDirection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.windDirection.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.windDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.windDirection.Location = new System.Drawing.Point(29, 120);
+            this.windDirection.Location = new System.Drawing.Point(28, 120);
             this.windDirection.Name = "windDirection";
-            this.windDirection.Size = new System.Drawing.Size(147, 27);
+            this.windDirection.Size = new System.Drawing.Size(164, 27);
             this.windDirection.TabIndex = 12;
             this.windDirection.Text = "Напряжение 2";
             this.windDirection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2739,9 +2826,9 @@ namespace GravitonEcoV2
             this.dt_AirTemperature.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_AirTemperature.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_AirTemperature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_AirTemperature.Location = new System.Drawing.Point(623, 27);
+            this.dt_AirTemperature.Location = new System.Drawing.Point(611, 27);
             this.dt_AirTemperature.Name = "dt_AirTemperature";
-            this.dt_AirTemperature.Size = new System.Drawing.Size(75, 23);
+            this.dt_AirTemperature.Size = new System.Drawing.Size(87, 23);
             this.dt_AirTemperature.TabIndex = 34;
             this.dt_AirTemperature.Text = "20";
             this.dt_AirTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2753,9 +2840,9 @@ namespace GravitonEcoV2
             this.dt_RelativeHumidity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_RelativeHumidity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_RelativeHumidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_RelativeHumidity.Location = new System.Drawing.Point(623, 51);
+            this.dt_RelativeHumidity.Location = new System.Drawing.Point(611, 51);
             this.dt_RelativeHumidity.Name = "dt_RelativeHumidity";
-            this.dt_RelativeHumidity.Size = new System.Drawing.Size(75, 23);
+            this.dt_RelativeHumidity.Size = new System.Drawing.Size(87, 23);
             this.dt_RelativeHumidity.TabIndex = 35;
             this.dt_RelativeHumidity.Text = "20";
             this.dt_RelativeHumidity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2767,9 +2854,9 @@ namespace GravitonEcoV2
             this.dt_AtmosphericPressure.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_AtmosphericPressure.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_AtmosphericPressure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_AtmosphericPressure.Location = new System.Drawing.Point(623, 75);
+            this.dt_AtmosphericPressure.Location = new System.Drawing.Point(611, 75);
             this.dt_AtmosphericPressure.Name = "dt_AtmosphericPressure";
-            this.dt_AtmosphericPressure.Size = new System.Drawing.Size(75, 23);
+            this.dt_AtmosphericPressure.Size = new System.Drawing.Size(87, 23);
             this.dt_AtmosphericPressure.TabIndex = 36;
             this.dt_AtmosphericPressure.Text = "20";
             this.dt_AtmosphericPressure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2781,26 +2868,12 @@ namespace GravitonEcoV2
             this.dt_WindSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dt_WindSpeed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dt_WindSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_WindSpeed.Location = new System.Drawing.Point(623, 99);
+            this.dt_WindSpeed.Location = new System.Drawing.Point(611, 99);
             this.dt_WindSpeed.Name = "dt_WindSpeed";
-            this.dt_WindSpeed.Size = new System.Drawing.Size(75, 23);
+            this.dt_WindSpeed.Size = new System.Drawing.Size(87, 23);
             this.dt_WindSpeed.TabIndex = 37;
             this.dt_WindSpeed.Text = "20";
             this.dt_WindSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dt_WindDirection
-            // 
-            this.dt_WindDirection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.dt_WindDirection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dt_WindDirection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dt_WindDirection.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dt_WindDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dt_WindDirection.Location = new System.Drawing.Point(623, 123);
-            this.dt_WindDirection.Name = "dt_WindDirection";
-            this.dt_WindDirection.Size = new System.Drawing.Size(75, 23);
-            this.dt_WindDirection.TabIndex = 38;
-            this.dt_WindDirection.Text = "20";
-            this.dt_WindDirection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dx_WindDirection
             // 
@@ -2809,9 +2882,9 @@ namespace GravitonEcoV2
             this.dx_WindDirection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_WindDirection.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_WindDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_WindDirection.Location = new System.Drawing.Point(541, 123);
+            this.dx_WindDirection.Location = new System.Drawing.Point(537, 123);
             this.dx_WindDirection.Name = "dx_WindDirection";
-            this.dx_WindDirection.Size = new System.Drawing.Size(76, 23);
+            this.dx_WindDirection.Size = new System.Drawing.Size(68, 23);
             this.dx_WindDirection.TabIndex = 33;
             this.dx_WindDirection.Text = "20";
             this.dx_WindDirection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2823,9 +2896,9 @@ namespace GravitonEcoV2
             this.dx_WindSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_WindSpeed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_WindSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_WindSpeed.Location = new System.Drawing.Point(541, 99);
+            this.dx_WindSpeed.Location = new System.Drawing.Point(537, 99);
             this.dx_WindSpeed.Name = "dx_WindSpeed";
-            this.dx_WindSpeed.Size = new System.Drawing.Size(76, 23);
+            this.dx_WindSpeed.Size = new System.Drawing.Size(68, 23);
             this.dx_WindSpeed.TabIndex = 32;
             this.dx_WindSpeed.Text = "20";
             this.dx_WindSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2837,9 +2910,9 @@ namespace GravitonEcoV2
             this.dx_AtmosphericPressure.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_AtmosphericPressure.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_AtmosphericPressure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_AtmosphericPressure.Location = new System.Drawing.Point(541, 75);
+            this.dx_AtmosphericPressure.Location = new System.Drawing.Point(537, 75);
             this.dx_AtmosphericPressure.Name = "dx_AtmosphericPressure";
-            this.dx_AtmosphericPressure.Size = new System.Drawing.Size(76, 23);
+            this.dx_AtmosphericPressure.Size = new System.Drawing.Size(68, 23);
             this.dx_AtmosphericPressure.TabIndex = 31;
             this.dx_AtmosphericPressure.Text = "20";
             this.dx_AtmosphericPressure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2851,9 +2924,9 @@ namespace GravitonEcoV2
             this.dx_RelativeHumidity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_RelativeHumidity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_RelativeHumidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_RelativeHumidity.Location = new System.Drawing.Point(541, 51);
+            this.dx_RelativeHumidity.Location = new System.Drawing.Point(537, 51);
             this.dx_RelativeHumidity.Name = "dx_RelativeHumidity";
-            this.dx_RelativeHumidity.Size = new System.Drawing.Size(76, 23);
+            this.dx_RelativeHumidity.Size = new System.Drawing.Size(68, 23);
             this.dx_RelativeHumidity.TabIndex = 30;
             this.dx_RelativeHumidity.Text = "20";
             this.dx_RelativeHumidity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2865,9 +2938,9 @@ namespace GravitonEcoV2
             this.dx_AirTemperature.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dx_AirTemperature.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dx_AirTemperature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.dx_AirTemperature.Location = new System.Drawing.Point(541, 27);
+            this.dx_AirTemperature.Location = new System.Drawing.Point(537, 27);
             this.dx_AirTemperature.Name = "dx_AirTemperature";
-            this.dx_AirTemperature.Size = new System.Drawing.Size(76, 23);
+            this.dx_AirTemperature.Size = new System.Drawing.Size(68, 23);
             this.dx_AirTemperature.TabIndex = 29;
             this.dx_AirTemperature.Text = "20";
             this.dx_AirTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2881,7 +2954,7 @@ namespace GravitonEcoV2
             this.porog_2_AirTemperature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.porog_2_AirTemperature.Location = new System.Drawing.Point(474, 27);
             this.porog_2_AirTemperature.Name = "porog_2_AirTemperature";
-            this.porog_2_AirTemperature.Size = new System.Drawing.Size(61, 23);
+            this.porog_2_AirTemperature.Size = new System.Drawing.Size(57, 23);
             this.porog_2_AirTemperature.TabIndex = 24;
             this.porog_2_AirTemperature.Text = "20";
             this.porog_2_AirTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2895,7 +2968,7 @@ namespace GravitonEcoV2
             this.porog_2_RelativeHumidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.porog_2_RelativeHumidity.Location = new System.Drawing.Point(474, 51);
             this.porog_2_RelativeHumidity.Name = "porog_2_RelativeHumidity";
-            this.porog_2_RelativeHumidity.Size = new System.Drawing.Size(61, 23);
+            this.porog_2_RelativeHumidity.Size = new System.Drawing.Size(57, 23);
             this.porog_2_RelativeHumidity.TabIndex = 25;
             this.porog_2_RelativeHumidity.Text = "20";
             this.porog_2_RelativeHumidity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2909,7 +2982,7 @@ namespace GravitonEcoV2
             this.porog_2_AtmosphericPressure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.porog_2_AtmosphericPressure.Location = new System.Drawing.Point(474, 75);
             this.porog_2_AtmosphericPressure.Name = "porog_2_AtmosphericPressure";
-            this.porog_2_AtmosphericPressure.Size = new System.Drawing.Size(61, 23);
+            this.porog_2_AtmosphericPressure.Size = new System.Drawing.Size(57, 23);
             this.porog_2_AtmosphericPressure.TabIndex = 26;
             this.porog_2_AtmosphericPressure.Text = "20";
             this.porog_2_AtmosphericPressure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2923,7 +2996,7 @@ namespace GravitonEcoV2
             this.porog_2_WindSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.porog_2_WindSpeed.Location = new System.Drawing.Point(474, 99);
             this.porog_2_WindSpeed.Name = "porog_2_WindSpeed";
-            this.porog_2_WindSpeed.Size = new System.Drawing.Size(61, 23);
+            this.porog_2_WindSpeed.Size = new System.Drawing.Size(57, 23);
             this.porog_2_WindSpeed.TabIndex = 27;
             this.porog_2_WindSpeed.Text = "20";
             this.porog_2_WindSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2937,7 +3010,7 @@ namespace GravitonEcoV2
             this.porog_2_WindDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.porog_2_WindDirection.Location = new System.Drawing.Point(474, 123);
             this.porog_2_WindDirection.Name = "porog_2_WindDirection";
-            this.porog_2_WindDirection.Size = new System.Drawing.Size(61, 23);
+            this.porog_2_WindDirection.Size = new System.Drawing.Size(57, 23);
             this.porog_2_WindDirection.TabIndex = 28;
             this.porog_2_WindDirection.Text = "20";
             this.porog_2_WindDirection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2949,9 +3022,9 @@ namespace GravitonEcoV2
             this.porog_1_WindDirection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_WindDirection.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_WindDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_WindDirection.Location = new System.Drawing.Point(413, 123);
+            this.porog_1_WindDirection.Location = new System.Drawing.Point(412, 123);
             this.porog_1_WindDirection.Name = "porog_1_WindDirection";
-            this.porog_1_WindDirection.Size = new System.Drawing.Size(55, 23);
+            this.porog_1_WindDirection.Size = new System.Drawing.Size(56, 23);
             this.porog_1_WindDirection.TabIndex = 23;
             this.porog_1_WindDirection.Text = "20";
             this.porog_1_WindDirection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2963,9 +3036,9 @@ namespace GravitonEcoV2
             this.porog_1_WindSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_WindSpeed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_WindSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_WindSpeed.Location = new System.Drawing.Point(413, 99);
+            this.porog_1_WindSpeed.Location = new System.Drawing.Point(412, 99);
             this.porog_1_WindSpeed.Name = "porog_1_WindSpeed";
-            this.porog_1_WindSpeed.Size = new System.Drawing.Size(55, 23);
+            this.porog_1_WindSpeed.Size = new System.Drawing.Size(56, 23);
             this.porog_1_WindSpeed.TabIndex = 22;
             this.porog_1_WindSpeed.Text = "20";
             this.porog_1_WindSpeed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2977,9 +3050,9 @@ namespace GravitonEcoV2
             this.porog_1_AtmosphericPressure.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_AtmosphericPressure.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_AtmosphericPressure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_AtmosphericPressure.Location = new System.Drawing.Point(413, 75);
+            this.porog_1_AtmosphericPressure.Location = new System.Drawing.Point(412, 75);
             this.porog_1_AtmosphericPressure.Name = "porog_1_AtmosphericPressure";
-            this.porog_1_AtmosphericPressure.Size = new System.Drawing.Size(55, 23);
+            this.porog_1_AtmosphericPressure.Size = new System.Drawing.Size(56, 23);
             this.porog_1_AtmosphericPressure.TabIndex = 21;
             this.porog_1_AtmosphericPressure.Text = "20";
             this.porog_1_AtmosphericPressure.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2991,9 +3064,9 @@ namespace GravitonEcoV2
             this.porog_1_RelativeHumidity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_RelativeHumidity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_RelativeHumidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_RelativeHumidity.Location = new System.Drawing.Point(413, 51);
+            this.porog_1_RelativeHumidity.Location = new System.Drawing.Point(412, 51);
             this.porog_1_RelativeHumidity.Name = "porog_1_RelativeHumidity";
-            this.porog_1_RelativeHumidity.Size = new System.Drawing.Size(55, 23);
+            this.porog_1_RelativeHumidity.Size = new System.Drawing.Size(56, 23);
             this.porog_1_RelativeHumidity.TabIndex = 20;
             this.porog_1_RelativeHumidity.Text = "20";
             this.porog_1_RelativeHumidity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3005,9 +3078,9 @@ namespace GravitonEcoV2
             this.porog_1_AirTemperature.Dock = System.Windows.Forms.DockStyle.Fill;
             this.porog_1_AirTemperature.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.porog_1_AirTemperature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.porog_1_AirTemperature.Location = new System.Drawing.Point(413, 27);
+            this.porog_1_AirTemperature.Location = new System.Drawing.Point(412, 27);
             this.porog_1_AirTemperature.Name = "porog_1_AirTemperature";
-            this.porog_1_AirTemperature.Size = new System.Drawing.Size(55, 23);
+            this.porog_1_AirTemperature.Size = new System.Drawing.Size(56, 23);
             this.porog_1_AirTemperature.TabIndex = 19;
             this.porog_1_AirTemperature.Text = "20";
             this.porog_1_AirTemperature.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3020,7 +3093,7 @@ namespace GravitonEcoV2
             this.currentAirTemperature.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentAirTemperature.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentAirTemperature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentAirTemperature.Location = new System.Drawing.Point(345, 24);
+            this.currentAirTemperature.Location = new System.Drawing.Point(344, 24);
             this.currentAirTemperature.Name = "currentAirTemperature";
             this.currentAirTemperature.Size = new System.Drawing.Size(62, 24);
             this.currentAirTemperature.TabIndex = 17;
@@ -3035,7 +3108,7 @@ namespace GravitonEcoV2
             this.currentRelativeHumidity.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentRelativeHumidity.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentRelativeHumidity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentRelativeHumidity.Location = new System.Drawing.Point(345, 48);
+            this.currentRelativeHumidity.Location = new System.Drawing.Point(344, 48);
             this.currentRelativeHumidity.Name = "currentRelativeHumidity";
             this.currentRelativeHumidity.Size = new System.Drawing.Size(62, 24);
             this.currentRelativeHumidity.TabIndex = 16;
@@ -3049,7 +3122,7 @@ namespace GravitonEcoV2
             this.currentAtmosphericPressure.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentAtmosphericPressure.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentAtmosphericPressure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentAtmosphericPressure.Location = new System.Drawing.Point(345, 72);
+            this.currentAtmosphericPressure.Location = new System.Drawing.Point(344, 72);
             this.currentAtmosphericPressure.Name = "currentAtmosphericPressure";
             this.currentAtmosphericPressure.Size = new System.Drawing.Size(62, 24);
             this.currentAtmosphericPressure.TabIndex = 15;
@@ -3063,7 +3136,7 @@ namespace GravitonEcoV2
             this.currentWindSpeed.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentWindSpeed.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentWindSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentWindSpeed.Location = new System.Drawing.Point(345, 96);
+            this.currentWindSpeed.Location = new System.Drawing.Point(344, 96);
             this.currentWindSpeed.Name = "currentWindSpeed";
             this.currentWindSpeed.Size = new System.Drawing.Size(62, 24);
             this.currentWindSpeed.TabIndex = 14;
@@ -3077,7 +3150,7 @@ namespace GravitonEcoV2
             this.currentWindDirection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.currentWindDirection.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.currentWindDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
-            this.currentWindDirection.Location = new System.Drawing.Point(345, 120);
+            this.currentWindDirection.Location = new System.Drawing.Point(344, 120);
             this.currentWindDirection.Name = "currentWindDirection";
             this.currentWindDirection.Size = new System.Drawing.Size(62, 27);
             this.currentWindDirection.TabIndex = 18;
@@ -3096,7 +3169,7 @@ namespace GravitonEcoV2
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton1.Location = new System.Drawing.Point(3, 27);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(20, 18);
+            this.radioButton1.Size = new System.Drawing.Size(19, 18);
             this.radioButton1.TabIndex = 39;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = false;
@@ -3113,7 +3186,7 @@ namespace GravitonEcoV2
             this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton2.Location = new System.Drawing.Point(3, 51);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(20, 18);
+            this.radioButton2.Size = new System.Drawing.Size(19, 18);
             this.radioButton2.TabIndex = 40;
             this.radioButton2.TabStop = true;
             this.radioButton2.UseVisualStyleBackColor = false;
@@ -3130,7 +3203,7 @@ namespace GravitonEcoV2
             this.radioButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton3.Location = new System.Drawing.Point(3, 75);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(20, 18);
+            this.radioButton3.Size = new System.Drawing.Size(19, 18);
             this.radioButton3.TabIndex = 41;
             this.radioButton3.TabStop = true;
             this.radioButton3.UseVisualStyleBackColor = false;
@@ -3147,7 +3220,7 @@ namespace GravitonEcoV2
             this.radioButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton4.Location = new System.Drawing.Point(3, 99);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(20, 18);
+            this.radioButton4.Size = new System.Drawing.Size(19, 18);
             this.radioButton4.TabIndex = 42;
             this.radioButton4.TabStop = true;
             this.radioButton4.UseVisualStyleBackColor = false;
@@ -3164,10 +3237,178 @@ namespace GravitonEcoV2
             this.radioButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton5.Location = new System.Drawing.Point(3, 123);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(20, 21);
+            this.radioButton5.Size = new System.Drawing.Size(19, 21);
             this.radioButton5.TabIndex = 43;
             this.radioButton5.TabStop = true;
             this.radioButton5.UseVisualStyleBackColor = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label19.Location = new System.Drawing.Point(198, 24);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(44, 24);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "23";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label20.Location = new System.Drawing.Point(248, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(42, 24);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "23";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label21.Location = new System.Drawing.Point(296, 24);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(42, 24);
+            this.label21.TabIndex = 46;
+            this.label21.Text = "23";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label22.Location = new System.Drawing.Point(198, 72);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(44, 24);
+            this.label22.TabIndex = 47;
+            this.label22.Text = "23";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label23.Location = new System.Drawing.Point(248, 72);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(42, 24);
+            this.label23.TabIndex = 48;
+            this.label23.Text = "23";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label24.Location = new System.Drawing.Point(296, 72);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(42, 24);
+            this.label24.TabIndex = 49;
+            this.label24.Text = "23";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label29.Location = new System.Drawing.Point(296, 120);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(42, 27);
+            this.label29.TabIndex = 50;
+            this.label29.Text = "23";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label30.Location = new System.Drawing.Point(248, 120);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(42, 27);
+            this.label30.TabIndex = 51;
+            this.label30.Text = "23";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label31.Location = new System.Drawing.Point(198, 120);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(44, 27);
+            this.label31.TabIndex = 52;
+            this.label31.Text = "23";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label32.Location = new System.Drawing.Point(248, 48);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(42, 24);
+            this.label32.TabIndex = 53;
+            this.label32.Text = "23,9";
+            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dt_WindDirection
+            // 
+            this.dt_WindDirection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.dt_WindDirection.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dt_WindDirection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dt_WindDirection.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dt_WindDirection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.dt_WindDirection.Location = new System.Drawing.Point(611, 123);
+            this.dt_WindDirection.Name = "dt_WindDirection";
+            this.dt_WindDirection.Size = new System.Drawing.Size(87, 23);
+            this.dt_WindDirection.TabIndex = 38;
+            this.dt_WindDirection.Text = "20";
+            this.dt_WindDirection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(190)))), ((int)(((byte)(190)))));
+            this.label37.Location = new System.Drawing.Point(198, 48);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(44, 24);
+            this.label37.TabIndex = 62;
+            this.label37.Text = "23,9";
+            this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
             // 
@@ -4539,6 +4780,21 @@ namespace GravitonEcoV2
         private TableLayoutPanel tableLayoutPanel4;
         private PictureBox MessageImage;
         private Label MessagesLabel;
+        private Label label36;
+        private Label label35;
+        private Label label34;
+        private Label label33;
+        private Label label19;
+        private Label label20;
+        private Label label21;
+        private Label label22;
+        private Label label23;
+        private Label label24;
+        private Label label29;
+        private Label label30;
+        private Label label31;
+        private Label label32;
+        private Label label37;
     }
 }
 
