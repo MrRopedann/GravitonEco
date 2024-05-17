@@ -1,6 +1,8 @@
-﻿using GravitonEcoCoreService.Managers;
+﻿using GravitonEcoCoreService.Controller;
+using GravitonEcoCoreService.Managers;
 using GravitonEcoCoreService.Object;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NLog;
 using NModbus;
 using System;
@@ -8,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace GravitonEcoCoreService.Updaters
 {
@@ -42,31 +45,24 @@ namespace GravitonEcoCoreService.Updaters
                 INIManager manager = new INIManager(pathSensor);
                 taskDelay = Convert.ToInt32(manager.GetPrivateString("DeviceConnectSetting", "UpdateTimeValueSensorMc"));
 
-                List<SensorConfiguration> sensorConfigurations = ReadSensorConfigurationsFromFile("setting\\ModbusSensorSetting.json");
-
-                foreach (var config in sensorConfigurations)
+                switch (alias)
                 {
-                    //Console.WriteLine($"Value of sensor '{config.Alias}' changed: {value}");
-
-                            // Создаем экземпляр контекста данных
-                            using (var context = new ApplicationContext())
-                            {
-                                // Создаем объект SensorData и добавляем его в набор сущностей
-                                var sensorData = new SensorBase
-                                {
-                                    Alias = config.Alias,
-                                    Value = Convert.ToInt32(value),
-                                    Timestamp = DateTime.Now.ToUniversalTime(),
-                                    TimeSensor = DateTime.Now.ToUniversalTime()
-                                };
-
-                                context.SensorTemperature.Add(sensorData);
-
-                                // Сохраняем изменения в базе данных
-                                context.SaveChanges();
-                            }
+                    case "Темпиратура":
+                        createObject(alias, value.ToString());
+                        break;
+                    case "Влажность":
+                        createObject(alias, value.ToString());
+                        break;
+                    case "Давление":
+                        createObject(alias, value.ToString());
+                        break;
+                    case "Доп.Вход_1":
+                        createObject(alias, value.ToString());
+                        break;
+                    case "Доп.Вход_2":
+                        createObject(alias, value.ToString());
+                        break;
                 }
-
 
                 Console.WriteLine("[" + DateTime.Now.ToString("HH:mm:ss") + "] " + "Получено значение: " + alias + " = " + value.ToString());
 
@@ -74,6 +70,19 @@ namespace GravitonEcoCoreService.Updaters
             });
             await Task.Delay(taskDelay);
 
+        }
+
+        private void createObject(string alias, string value)
+        {
+            SensorBase sensorBase = new SensorBase
+            {
+                Alias = alias,
+                Value = Convert.ToInt32(value),
+                Timestamp = DateTime.Now.ToUniversalTime(),
+                TimeSensor = DateTime.Now.ToUniversalTime(),
+            };
+            SensorService sensorService = new SensorService();
+            sensorService.CreateEntity(sensorBase);
         }
 
         protected async Task UpdateRegistersAsync(Func<IModbusMaster, Task<ushort[]>> readRegistersFunc)

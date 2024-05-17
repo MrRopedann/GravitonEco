@@ -1,102 +1,46 @@
 ﻿using NLog;
-using NModbus.Device;
-using NModbus;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Net.Http;
-using System.Management.Instrumentation;
+using System.Threading.Tasks;
 
-namespace GravitonEcoV2.Managers
+public class ServerConnectionManager
 {
-    public class ServerConnectionManager
+    private static ServerConnectionManager instance;
+    private readonly HttpClient httpClient;
+    private readonly string serverUrl = "http://localhost:8001"; // URL вашего HTTP сервера
+    private readonly Logger logger = LogManager.GetCurrentClassLogger();
+    //private readonly object lockObject = new object();
+
+    private ServerConnectionManager()
     {
-        private static ServerConnectionManager instance;
-        private TcpClient tcpClient;
-        private readonly Logger logger = LogManager.GetCurrentClassLogger();
-        private readonly object lockObject = new object();
+        httpClient = new HttpClient();
+    }
 
-        private ServerConnectionManager()
+    public static ServerConnectionManager Instance
+    {
+        get
         {
-            InitializeServerConnection();
+            if (instance == null)
+            {
+                instance = new ServerConnectionManager();
+            }
+            return instance;
         }
+    }
 
-        private void InitializeServerConnection()
-        {
+    public async Task<bool> IsDeviceAvailable()
+    {
             try
             {
-                //INIManager manager = new INIManager(pathSensor);
-                //string ipAddressStr = manager.GetPrivateString("DeviceConnectSetting", "Host");
-                //int port = Int32.Parse(manager.GetPrivateString("DeviceConnectSetting", "Port"));
-
-                IPAddress ipAddress = IPAddress.Parse("127.0.0.1");
-
-                tcpClient = new TcpClient(ipAddress.ToString(), 8888);
+                HttpResponseMessage response = await httpClient.GetAsync(serverUrl);
+                response.EnsureSuccessStatusCode(); // Проверяем, что запрос был успешным
+                logger.Info("Устройство доступно по HTTP.");
+                return true;
             }
-            catch (Exception ex)
+            catch (HttpRequestException ex)
             {
-                logger.Error($"Ошибка при инициализации подключения: {ex.Message}");
-            }
-        }
-
-        public static ServerConnectionManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new ServerConnectionManager();
-                }
-                return instance;
-            }
-        }
-
-        public bool IsDeviceAvailable()
-        {
-            lock (lockObject)
-            {
-                try
-                {
-                    if (tcpClient == null || !tcpClient.Connected || tcpClient is null)
-                    {
-                        logger.Warn("Соединение отсутствует. Повторное подключение...");
-                        InitializeServerConnection();
-                        //tcpClient.Close();
-                        return false;
-                    }
-                    else
-                    {
-                        using (TcpClient testTcpClient = new TcpClient())
-                        {
-                            IPEndPoint remoteEndPoint = (IPEndPoint)tcpClient.Client.RemoteEndPoint;
-                            IAsyncResult result = testTcpClient.BeginConnect(remoteEndPoint.Address.ToString(), remoteEndPoint.Port, null, null);
-                            bool success = result.AsyncWaitHandle.WaitOne(TimeSpan.FromSeconds(20)); // Время ожидания подключения
-
-                            if (success)
-                            {
-                                testTcpClient.EndConnect(result);
-                                //logger.Info("Устройство доступно по TCP.");
-                                return true;
-                            }
-                            else
-                            {
-                                logger.Error("Не удалось подключиться к устройству по TCP.");
-                                tcpClient.Close();
-                                return false;
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    logger.Error($"Ошибка при проверке доступности устройства: {ex.Message}");
-                    return false;
-                }
+                logger.Error($"Ошибка при проверке доступности устройства: {ex.Message}");
+                return false;
             }
         }
     }
-}

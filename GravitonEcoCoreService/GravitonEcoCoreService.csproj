@@ -12,6 +12,7 @@
     <PackageReference Include="NLog" Version="5.3.2" />
     <PackageReference Include="NModbus" Version="3.0.81" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    <PackageReference Include="Simple-HTTP" Version="1.0.6" />
   </ItemGroup>
 
 </Project>

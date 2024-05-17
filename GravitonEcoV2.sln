@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravitonEcoClient", "GravitonEcoV2\GravitonEcoClient.csproj", "{303DC25F-27D7-4D88-8E6A-54D8E0EE4A8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravitonEcoCoreService", "GravitonEcoCoreService\GravitonEcoCoreService.csproj", "{C934CA2A-D3F5-4761-B35E-1C6AE9469344}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GravitonEcoCoreService", "GravitonEcoCoreService\GravitonEcoCoreService.csproj", "{C934CA2A-D3F5-4761-B35E-1C6AE9469344}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

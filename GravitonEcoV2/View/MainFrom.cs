@@ -53,11 +53,12 @@ namespace GravitonEcoV2
             // Этот метод будет вызываться при каждом срабатывании события ValueChanged
         }
 
-        private void UpdateServerAndSensorConnection(ServerConnectionManager serverConnection, ModbusConnectionManager modbusConnectionManager)
+        private async void UpdateServerAndSensorConnection(ServerConnectionManager serverConnection, ModbusConnectionManager modbusConnectionManager)
         {
             while (true)
             {
-                if (serverConnection.IsDeviceAvailable())
+                bool deviceAvailable = await serverConnection.IsDeviceAvailable();
+                if (deviceAvailable)
                 {
                     isConnectServer.Image = Properties.Resources.mesh_green;
                 }

@@ -368,6 +368,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Changelog.txt" />
+    <None Include="Resources\confirm.png" />
+    <None Include="Resources\alert.png" />
     <None Include="Resources\password_green.png" />
     <None Include="Resources\mesh_red.png" />
     <None Include="Resources\mesh_green.png" />
