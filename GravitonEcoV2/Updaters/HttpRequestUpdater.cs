@@ -52,7 +52,7 @@ namespace GravitonEcoV2.Updaters
 
                     controlMaxValue.Invoke(new Action(() => controlMaxValue.Text = data.MaxValue.ToString()));
                     controlMinValue.Invoke(new Action(() => controlMinValue.Text = data.MinValue.ToString()));
-                    controlAvgValue.Invoke(new Action(() => controlAvgValue.Text = data.AverageValue.ToString()));
+                    controlAvgValue.Invoke(new Action(() => controlAvgValue.Text = data.AverageValue.ToString("F2")));
                 }
                 else
                 {

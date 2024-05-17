@@ -46,8 +46,15 @@ namespace GravitonEcoV2
             _ = new SensorUpdater(currentWindDirection, modbusConnectionManager, 2, 2, 1);
             _ = new PorogUpdater(porog_1_AirTemperature, modbusConnectionManager, 2, 15, 1);
 
-
-            _ = new HttpUpdater(label22, label23, label24, "Давление");
+            foreach (var sensorUpdater in sensorUpdaters)
+            {
+                _ = new SensorUpdater(currentAirTemperature, modbusConnectionManager, 2, 5, 1);
+            }
+            _ = new HttpUpdater(label23, label22, label24, "Давление");
+            _ = new HttpUpdater(label20, label19, label21, "Темпиратура");
+            _ = new HttpUpdater(label32, label37, label33, "Влажность");
+            _ = new HttpUpdater(label35, label34, label36, "Доп.Вход_1");
+            _ = new HttpUpdater(label30, label31, label29, "Доп.Вход_2");
         }
 
         private void SensorUpdater_ValueChanged(object sender, EventArgs e)

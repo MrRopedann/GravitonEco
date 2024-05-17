@@ -2802,7 +2802,7 @@ namespace GravitonEcoV2
             this.windSpeed.Name = "windSpeed";
             this.windSpeed.Size = new System.Drawing.Size(164, 24);
             this.windSpeed.TabIndex = 13;
-            this.windSpeed.Text = "Напряжение 1";
+            this.windSpeed.Text = "Доп.Вход 1";
             this.windSpeed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // windDirection
@@ -2816,7 +2816,7 @@ namespace GravitonEcoV2
             this.windDirection.Name = "windDirection";
             this.windDirection.Size = new System.Drawing.Size(164, 27);
             this.windDirection.TabIndex = 12;
-            this.windDirection.Text = "Напряжение 2";
+            this.windDirection.Text = "Доп.Вход 2";
             this.windDirection.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dt_AirTemperature
