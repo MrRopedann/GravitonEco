@@ -1,0 +1,15 @@
+﻿<Window Background="#FF171515" x:Class="GravitonEco.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GravitonEco"
+        xmlns:Screens="clr-namespace:GravitonEco.Views.Screens" 
+        xmlns:viewmodel="clr-namespace:GravitonEco.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance viewmodel:MainWindowViewModel}"
+        Title="Graviton Eco" Height="450" Width="800" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Frame NavigationUIVisibility="Hidden" Grid.Row="1" Content="{Binding CurrentView}"></Frame>
+    </Grid>
+</Window>

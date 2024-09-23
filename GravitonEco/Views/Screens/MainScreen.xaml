@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="GravitonEco.Views.Screens.MainScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GravitonEco.Views.Screens"
+             xmlns:vm="clr-namespace:GravitonEco.ViewModels.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1050" d:DataContext="{d:DesignInstance vm:Router}">
+
+    <!-- Определение стиля для всех кнопок -->
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <!-- Установка стандартного фона и границы -->
+            <Setter Property="Background" Value="LightGray"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="Height" Value="35"/>
+
+            <!-- Установка шаблона управления (ControlTemplate) -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <!-- Цвет при наведении -->
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#501E1E1E"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button Height="35"  Width="35" BorderBrush="Transparent" Margin="5 0 5 0" Padding="5 0 5 0" Command="{Binding OpenSettingPageCommand}">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Views/Resources/settings.png"/>
+                    </Button.Background>
+                </Button>
+                <Button Height="35" Foreground="#32E650" Background="Transparent" BorderBrush="Transparent" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed" Content="GRAVITON-ECO" Margin="5 0 5 0" Padding="5 0 5 0" Command="{Binding OpenSensorPageCommand}"></Button>
+                <Label Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed">HV-0001</Label>
+                <Label Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed">HV-0001</Label>
+                <Label Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed">SN-12345678</Label>
+            </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <ComboBox Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Gray" SelectedIndex="0" MaxDropDownHeight="100" Foreground="#1996BE" Background="#1E1E1E" Height="25" Width="Auto" Padding="10 5 10 5">
+                <ComboBoxItem IsSelected="True">Период наблюдения</ComboBoxItem>
+                <ComboBoxItem>Text Item 1</ComboBoxItem>
+            </ComboBox>
+            <PasswordBox Margin="5,0,5,0" Height="25" Width="100" Background="#1E1E1E" BorderBrush="Gray"></PasswordBox>
+
+            <Button Width="35" Height="35" Margin="5,0,5,0" BorderBrush="Transparent">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Views/Resources/password_red.png"/>
+                </Button.Background>
+            </Button>
+
+            <Image x:Name="deviceImage" Width="30" Height="35" Margin="5,0,5,0" Source="{Binding ModbusConnection.ConnectionImage}"/>
+            <Image Width="30" Height="35" Margin="5,0,5,0" Source="/Views/Resources/mesh_red.png"/>
+            <Label Margin="5,0,5,0" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">18.07.2023 20:00</Label>
+        </StackPanel>
+        <Frame NavigationUIVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding CurrentView}"></Frame>
+    </Grid>
+</UserControl>
