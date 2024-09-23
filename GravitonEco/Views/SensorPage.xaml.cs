@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GravitonEco.ViewModels.Gauges;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,20 @@ namespace GravitonEco.Views
         public SensorPage()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                var textBox = sender as TextBox;
+                if (textBox != null && textBox.DataContext is TemperatureGaugesViewModel viewModel)
+                {
+                    var propertyName = textBox.Name;
+                    viewModel.WriteToModbusCommand.Execute(propertyName);
+                    MessageBox.Show("Значение записанно!");
+                }
+            }
         }
     }
 }
