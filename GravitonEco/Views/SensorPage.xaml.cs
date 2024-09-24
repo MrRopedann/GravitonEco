@@ -1,18 +1,7 @@
-﻿using GravitonEco.ViewModels.Gauges;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GravitonEco.ViewModels;
+using GravitonEco.ViewModels.Gauges;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GravitonEco.Views
 {
@@ -24,6 +13,18 @@ namespace GravitonEco.Views
         public SensorPage()
         {
             InitializeComponent();
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            var radioButton = sender as System.Windows.Controls.RadioButton;
+            if (radioButton != null && radioButton.Tag != null && DataContext is GaugesViewModel viewModel)
+            {
+                if (int.TryParse(radioButton.Tag.ToString(), out int chartNumber))
+                {
+                    viewModel.ChartGauges.SwitchChart(chartNumber); // Вызов метода для переключения графика
+                }
+            }
         }
     }
 }

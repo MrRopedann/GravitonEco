@@ -33,6 +33,8 @@ namespace GravitonEco.ViewModels.Gauges
         public FlowRateViewModel FlowRateGauges { get; set; }
         public InternalAtmosphericPressureViewModel InternalAtmosphericPressureGauges { get; set; }
 
+        public ChartViewModel ChartGauges { get; set; }
+
         public GaugesViewModel()
         {
             TemperatureGauges = new TemperatureGaugesViewModel();
@@ -56,6 +58,7 @@ namespace GravitonEco.ViewModels.Gauges
             VoltageGauges = new VoltageViewModel();
             FlowRateGauges = new FlowRateViewModel();
             InternalAtmosphericPressureGauges = new InternalAtmosphericPressureViewModel();
+            ChartGauges = new ChartViewModel();
         }
     }
 }
