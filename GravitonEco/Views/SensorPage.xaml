@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GravitonEco.Views"
       xmlns:vm="clr-namespace:GravitonEco.ViewModels.Gauges"
+      xmlns:behaviors="clr-namespace:GravitonEco.Services"
       mc:Ignorable="d" 
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="SensorPage">
@@ -103,7 +104,11 @@
                 <Label Content="Element 3" Grid.Row="1" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="1" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding TemperatureGauges.CurrentValue}" Grid.Row="1" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding TemperatureGauges.Porog1}" Foreground="{Binding TemperatureGauges.AlarmPorog1}" Grid.Row="1" Grid.Column="6"/>
+                
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                         Grid.Row="1" Grid.Column="6"/>
                 <TextBox Text="{Binding TemperatureGauges.Porog2}" Foreground="{Binding TemperatureGauges.AlarmPorog2}" Grid.Row="1" Grid.Column="7" />
                 <TextBox Text="{Binding TemperatureGauges.Increment}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" Grid.Row="1" Grid.Column="8" />
                 <TextBox Text="{Binding TemperatureGauges.Period}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" Grid.Row="1" Grid.Column="9"/>

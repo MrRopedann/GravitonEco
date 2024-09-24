@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GravitonEco.Managers;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 
@@ -40,6 +41,9 @@ namespace GravitonEco.ViewModels.Gauges
 
         [ObservableProperty]
         private Brush alarmPorog3;
+
+        public ICommand WritePorog1Command { get; }
+
         public InternalAtmosphericPressureViewModel()
         {
             _modbusTcpCommunication = ModbusTcpCommunication.Instance;
@@ -53,44 +57,46 @@ namespace GravitonEco.ViewModels.Gauges
             _pollingTimer.Start();
             Name = "Атм. дав-ние (650 - 1200 hPa)";
             AlarmPorog1 = DefaultColor;
+            WritePorog1Command = new RelayCommand(WritePorog1Value);
+
+            InitializeAsync();
+        }
+
+        private async Task InitializeAsync()
+        {
+            Porog1 = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 4))[0];
+            Porog2 = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 5))[0];
+            Increment = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 6))[0];
+            Period = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 7))[0];
+        }
+
+        private async void WritePorog1Value()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 20, Porog1);
         }
 
         private async Task PollRegistersAsync()
         {
             try
             {
-                var tasks = new[]
-                {
-            Task.Run(() => _modbusTcpCommunication.ReadInputRegisters(2, 1)), // CurrentValue
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 4)), // Porog1
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 5)), // Porog2
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 6)), // Increment
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 7)), // Period
-            Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegisters(2, 3)), // AlarmPorog1
-            Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegisters(2, 4)), // AlarmPorog2
-            Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegisters(2, 5)), // AlarmPorog3
-        };
 
-                await Task.WhenAll(tasks);
+                var currentValueTask = Task.Run(() => _modbusTcpCommunication.ReadInputRegistersAsync(2, 1)); // CurrentValue
+                var alarmPorog1Task = Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegistersAsync(2, 3)); // AlarmPorog1
+                var alarmPorog2Task = Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegistersAsync(2, 4)); // AlarmPorog2
+                var alarmPorog3Task = Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegistersAsync(2, 5)); // AlarmPorog3
 
-                CurrentValue = ((ushort[])tasks[0].Result)[0];
-                Porog1 = ((ushort[])tasks[1].Result)[0];
-                Porog2 = ((ushort[])tasks[2].Result)[0];
-                Increment = ((ushort[])tasks[3].Result)[0];
-                Period = ((ushort[])tasks[4].Result)[0];
+                await Task.WhenAll(currentValueTask, alarmPorog1Task, alarmPorog2Task, alarmPorog3Task);
 
-                // Обновление цветов
-                AlarmPorog1 = Convert.ToBoolean(((ushort[])tasks[5].Result)[0]) ? AlarmColor : DefaultColor;
-                AlarmPorog2 = Convert.ToBoolean(((ushort[])tasks[6].Result)[0]) ? AlarmColor : DefaultColor;
-                AlarmPorog3 = Convert.ToBoolean(((ushort[])tasks[7].Result)[0]) ? AlarmColor : DefaultColor;
+                CurrentValue = currentValueTask.Result[0];
+                AlarmPorog1 = alarmPorog1Task.Result[0] ? AlarmColor : DefaultColor;
+                AlarmPorog2 = alarmPorog2Task.Result[0] ? AlarmColor : DefaultColor;
+                AlarmPorog3 = alarmPorog3Task.Result[0] ? AlarmColor : DefaultColor;
             }
             catch (Exception ex)
             {
                 // Обработка ошибок
             }
         }
-
-
 
         // Остановка таймера при необходимости
         public void StopPolling()

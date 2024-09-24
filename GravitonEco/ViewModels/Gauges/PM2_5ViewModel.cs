@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GravitonEco.Managers;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 
@@ -40,6 +41,9 @@ namespace GravitonEco.ViewModels
 
         [ObservableProperty]
         private Brush alarmPorog3;
+
+        public ICommand WritePorog1Command { get; }
+
         public PM2_5ViewModel()
         {
             _modbusTcpCommunication = ModbusTcpCommunication.Instance;
@@ -53,36 +57,39 @@ namespace GravitonEco.ViewModels
             _pollingTimer.Start();
             Name = "PM 2.5 (0 - 1000 мкг / м³)";
             AlarmPorog1 = DefaultColor;
+            WritePorog1Command = new RelayCommand(WritePorog1Value);
+
+            InitializeAsync();
+        }
+
+        private async Task InitializeAsync()
+        {
+            Porog1 = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 68))[0];
+            Porog2 = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 69))[0];
+            Increment = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 70))[0];
+            Period = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 71))[0];
+        }
+
+        private async void WritePorog1Value()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 20, Porog1);
         }
 
         private async Task PollRegistersAsync()
         {
             try
             {
-                var tasks = new[]
-                {
-            Task.Run(() => _modbusTcpCommunication.ReadInputRegisters(2, 17)), // CurrentValue
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 68)), // Porog1
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 69)), // Porog2
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 70)), // Increment
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 71)), // Period
-            Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegisters(2, 51)), // AlarmPorog1
-            Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegisters(2, 52)), // AlarmPorog2
-            Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegisters(2, 53)), // AlarmPorog3
-        };
+                var currentValueTask = Task.Run(() => _modbusTcpCommunication.ReadInputRegistersAsync(2, 17)); // CurrentValue
+                var alarmPorog1Task = Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegistersAsync(2, 51)); // AlarmPorog1
+                var alarmPorog2Task = Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegistersAsync(2, 52)); // AlarmPorog2
+                var alarmPorog3Task = Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegistersAsync(2, 53)); // AlarmPorog3
 
-                await Task.WhenAll(tasks);
+                await Task.WhenAll(currentValueTask, alarmPorog1Task, alarmPorog2Task, alarmPorog3Task);
 
-                CurrentValue = ((ushort[])tasks[0].Result)[0];
-                Porog1 = ((ushort[])tasks[1].Result)[0];
-                Porog2 = ((ushort[])tasks[2].Result)[0];
-                Increment = ((ushort[])tasks[3].Result)[0];
-                Period = ((ushort[])tasks[4].Result)[0];
-
-                // Обновление цветов
-                AlarmPorog1 = Convert.ToBoolean(((ushort[])tasks[5].Result)[0]) ? AlarmColor : DefaultColor;
-                AlarmPorog2 = Convert.ToBoolean(((ushort[])tasks[6].Result)[0]) ? AlarmColor : DefaultColor;
-                AlarmPorog3 = Convert.ToBoolean(((ushort[])tasks[7].Result)[0]) ? AlarmColor : DefaultColor;
+                CurrentValue = currentValueTask.Result[0];
+                AlarmPorog1 = alarmPorog1Task.Result[0] ? AlarmColor : DefaultColor;
+                AlarmPorog2 = alarmPorog2Task.Result[0] ? AlarmColor : DefaultColor;
+                AlarmPorog3 = alarmPorog3Task.Result[0] ? AlarmColor : DefaultColor;
             }
             catch (Exception ex)
             {
@@ -90,9 +97,6 @@ namespace GravitonEco.ViewModels
             }
         }
 
-
-
-        // Остановка таймера при необходимости
         public void StopPolling()
         {
             _pollingTimer.Stop();

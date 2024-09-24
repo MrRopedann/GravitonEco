@@ -1,6 +1,8 @@
 ﻿using GravitonEco.Models;
 using NModbus;
+using System;
 using System.Net.Sockets;
+using System.Threading.Tasks;
 
 namespace GravitonEco.Managers
 {
@@ -9,19 +11,18 @@ namespace GravitonEco.Managers
         private static ModbusTcpCommunication _instance;
         private static readonly object _lock = new object();
 
-        private readonly IModbusMaster _modbusMaster;
-        private readonly TcpClient _tcpClient;
+        private IModbusMaster _modbusMaster;
+        private TcpClient _tcpClient;
 
         private readonly DeviceConfig _deviceConfig;
 
-        // Закрытый конструктор, чтобы предотвратить создание экземпляров извне
+        private bool _isConnected = false;
+
+        // Закрытый конструктор
         private ModbusTcpCommunication()
         {
             _deviceConfig = ConfigManager.LoadConfig();
-            _tcpClient = new TcpClient(_deviceConfig.IpAddress, _deviceConfig.Port);
-
-            var factory = new ModbusFactory();
-            _modbusMaster = factory.CreateMaster(_tcpClient);
+            ConnectToModbusServer();
         }
 
         // Статический метод для получения единственного экземпляра
@@ -43,48 +44,130 @@ namespace GravitonEco.Managers
             }
         }
 
-        // Метод чтения Input Registers
-        public ushort[] ReadInputRegisters(byte slaveId, ushort startAddress)
+        // Метод подключения к серверу Modbus с автоматической попыткой переподключения
+        private void ConnectToModbusServer()
         {
-            return _modbusMaster.ReadInputRegisters(slaveId, startAddress, 1);
+            while (!_isConnected)
+            {
+                try
+                {
+                    _tcpClient = new TcpClient(_deviceConfig.IpAddress, _deviceConfig.Port);
+                    var factory = new ModbusFactory();
+                    _modbusMaster = factory.CreateMaster(_tcpClient);
+                    _isConnected = true;
+                }
+                catch (SocketException ex)
+                {
+                    Console.WriteLine($"Ошибка подключения: {ex.Message}. Повторная попытка через 5 секунд...");
+                    Task.Delay(TimeSpan.FromSeconds(5)).Wait();  // Подождать 5 секунд перед повторной попыткой
+                }
+            }
         }
 
-        // Метод чтения Holding Registers
-        public ushort[] ReadHoldingRegisters(byte slaveId, ushort startAddress)
+        // Метод для проверки, подключён ли клиент
+        private void EnsureConnected()
         {
-            return _modbusMaster.ReadHoldingRegisters(slaveId, startAddress, 1);
+            if (!_tcpClient.Connected)
+            {
+                _isConnected = false;
+                ConnectToModbusServer();  // Повторное подключение при разрыве
+            }
         }
 
-        // Метод чтения Discrete Registers
-        public ushort[] ReadDiscreteRegisters(byte slaveId, ushort startAddress)
+        // Метод чтения Input Registers с обработкой ошибок
+        public async Task<ushort[]> ReadInputRegistersAsync(byte slaveId, ushort startAddress)
         {
-            bool[] discreteValues = _modbusMaster.ReadInputs(slaveId, startAddress, 1);
-            ushort discreteValue = (ushort)(discreteValues[0] ? 1 : 0);
-            return new ushort[] { discreteValue };
+            return await ExecuteWithReconnect(async () =>
+            {
+                return await Task.Run(() => _modbusMaster.ReadInputRegisters(slaveId, startAddress, 1));
+            });
         }
 
-        // Метод записи в Holding Register
-        public void WriteSingleHoldingRegister(byte slaveId, ushort address, ushort value)
+        // Метод чтения Holding Registers с обработкой ошибок
+        public async Task<ushort[]> ReadHoldingRegistersAsync(byte slaveId, ushort startAddress)
         {
-            _modbusMaster.WriteSingleRegister(slaveId, address, value);
+            return await ExecuteWithReconnect(async () =>
+            {
+                return await Task.Run(() => _modbusMaster.ReadHoldingRegisters(slaveId, startAddress, 1));
+            });
         }
 
-        // Метод записи в Coil Register
-        public void WriteSingleCoil(byte slaveId, ushort address, bool value)
+        // Метод чтения Discrete Registers с обработкой ошибок
+        public async Task<bool[]> ReadDiscreteRegistersAsync(byte slaveId, ushort startAddress)
         {
-            _modbusMaster.WriteSingleCoil(slaveId, address, value);
+            return await ExecuteWithReconnect(async () =>
+            {
+                return await Task.Run(() => _modbusMaster.ReadInputs(slaveId, startAddress, 1));
+            });
         }
 
-        // Метод для записи множества Holding регистров
-        public void WriteMultipleHoldingRegisters(byte slaveId, ushort startAddress, ushort[] values)
+        public async Task WriteSingleHoldingRegisterAsync(byte slaveId, ushort address, ushort value)
         {
-            _modbusMaster.WriteMultipleRegisters(slaveId, startAddress, values);
+            try
+            {
+                await Task.Run(() =>
+                {
+                    _modbusMaster.Transport.WriteTimeout = 1000; // Уменьшить время ожидания
+                    _modbusMaster.WriteSingleRegister(slaveId, address, value);
+                }).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Ошибка записи регистра Modbus: {ex.Message}");
+                throw;  // Логировать ошибку и пробрасывать дальше
+            }
         }
 
-        // Метод для записи множества Coil регистров
-        public void WriteMultipleCoils(byte slaveId, ushort startAddress, bool[] values)
+
+        // Универсальный метод для обработки повторных попыток подключения и выполнения операций Modbus
+        private async Task<T> ExecuteWithReconnect<T>(Func<Task<T>> modbusOperation)
         {
-            _modbusMaster.WriteMultipleCoils(slaveId, startAddress, values);
+            while (true)
+            {
+                try
+                {
+                    EnsureConnected();
+                    return await modbusOperation();
+                }
+                catch (SocketException ex)
+                {
+                    Console.WriteLine($"Потеряно соединение: {ex.Message}. Повторная попытка через 5 секунд...");
+                    _isConnected = false;
+                    Task.Delay(TimeSpan.FromSeconds(5)).Wait();  // Подождать 5 секунд перед повторной попыткой
+                    ConnectToModbusServer();  // Повторное подключение
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Ошибка при выполнении операции Modbus: {ex.Message}");
+                    throw;  // Логирование и проброс исключения для других потенциальных проблем
+                }
+            }
+        }
+
+        // Перегруженная версия для операций без возвращаемого значения (например, записи)
+        private async Task ExecuteWithReconnect(Func<Task> modbusOperation)
+        {
+            while (true)
+            {
+                try
+                {
+                    EnsureConnected();
+                    await modbusOperation();
+                    return;
+                }
+                catch (SocketException ex)
+                {
+                    Console.WriteLine($"Потеряно соединение: {ex.Message}. Повторная попытка через 5 секунд...");
+                    _isConnected = false;
+                    Task.Delay(TimeSpan.FromSeconds(5)).Wait();  // Подождать 5 секунд перед повторной попыткой
+                    ConnectToModbusServer();  // Повторное подключение
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Ошибка при выполнении операции Modbus: {ex.Message}");
+                    throw;
+                }
+            }
         }
 
         // Метод для завершения соединения
@@ -93,6 +176,7 @@ namespace GravitonEco.Managers
             if (_tcpClient.Connected)
             {
                 _tcpClient.Close();
+                _isConnected = false;
             }
         }
     }

@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GravitonEco.Managers;
+using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 
@@ -40,6 +42,12 @@ namespace GravitonEco.ViewModels.Gauges
 
         [ObservableProperty]
         private Brush alarmPorog3;
+
+        public ICommand WritePorog1Command { get; }
+        public ICommand WritePorog2Command { get; }
+        public ICommand WriteIncrementCommand { get; }
+        public ICommand WritePeriodCommand { get; }
+
         public TemperatureGaugesViewModel()
         {
             _modbusTcpCommunication = ModbusTcpCommunication.Instance;
@@ -53,63 +61,58 @@ namespace GravitonEco.ViewModels.Gauges
             _pollingTimer.Start();
             Name = "Температура внеш(-45 до +45°С)";
             AlarmPorog1 = DefaultColor;
+            WritePorog1Command = new RelayCommand(WritePorog1Value);
+            WritePorog2Command = new RelayCommand(WritePorog1Value);
+            WriteIncrementCommand = new RelayCommand(WriteIncrementValue);
+            WritePeriodCommand = new RelayCommand(WritePeriodValue);
+
+            InitializeAsync();
         }
 
-        [RelayCommand]
-        private void WriteToModbus(string propertyName)
+        private async Task InitializeAsync()
         {
-            try
-            {
-                switch (propertyName)
-                {
-                    case nameof(Porog1):
-                        _modbusTcpCommunication.WriteSingleHoldingRegister(2, 20, Porog1);
-                        break;
-                    case nameof(Porog2):
-                        _modbusTcpCommunication.WriteSingleHoldingRegister(2, 21, Porog2);
-                        break;
-                    case nameof(Increment):
-                        _modbusTcpCommunication.WriteSingleHoldingRegister(2, 22, Increment);
-                        break;
-                    case nameof(Period):
-                        _modbusTcpCommunication.WriteSingleHoldingRegister(2, 23, Period);
-                        break;
-                }
-            }
-            catch (Exception ex)
-            {
-                // Обработка ошибок
-            }
+            Porog1 = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 20))[0];
+            Porog2 = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 21))[0];
+            Increment = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 22))[0];
+            Period = (await _modbusTcpCommunication.ReadHoldingRegistersAsync(2, 23))[0];
+        }
+
+        private async void WritePorog1Value()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 20, Porog1);
+        }
+
+        private async void WritePorog2Value()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 21, Porog2);
+        }
+
+        private async void WriteIncrementValue()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 22, Increment);
+        }
+
+        private async void WritePeriodValue()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 23, Period);
         }
 
         private async Task PollRegistersAsync()
         {
             try
             {
-                var tasks = new[]
-                {
-            Task.Run(() => _modbusTcpCommunication.ReadInputRegisters(2, 5)), // CurrentValue
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 20)), // Porog1
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 21)), // Porog2
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 22)), // Increment
-            Task.Run(() => _modbusTcpCommunication.ReadHoldingRegisters(2, 23)), // Period
-            Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegisters(2, 15)), // AlarmPorog1
-            Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegisters(2, 16)), // AlarmPorog2
-            Task.Run(() => _modbusTcpCommunication.ReadDiscreteRegisters(2, 17)), // AlarmPorog3
-        };
+                var currentValueTask = _modbusTcpCommunication.ReadInputRegistersAsync(2, 5); // CurrentValue
+                var alarmPorog1Task = _modbusTcpCommunication.ReadDiscreteRegistersAsync(2, 15); // AlarmPorog1
+                var alarmPorog2Task = _modbusTcpCommunication.ReadDiscreteRegistersAsync(2, 16); // AlarmPorog2
+                var alarmPorog3Task = _modbusTcpCommunication.ReadDiscreteRegistersAsync(2, 17); // AlarmPorog3
 
-                await Task.WhenAll(tasks);
+                await Task.WhenAll(currentValueTask, alarmPorog1Task, alarmPorog2Task, alarmPorog3Task);
 
-                CurrentValue = ((ushort[])tasks[0].Result)[0];
-                Porog1 = ((ushort[])tasks[1].Result)[0];
-                Porog2 = ((ushort[])tasks[2].Result)[0];
-                Increment = ((ushort[])tasks[3].Result)[0];
-                Period = ((ushort[])tasks[4].Result)[0];
-
+                CurrentValue = currentValueTask.Result[0];
                 // Обновление цветов
-                AlarmPorog1 = Convert.ToBoolean(((ushort[])tasks[5].Result)[0]) ? AlarmColor : DefaultColor;
-                AlarmPorog2 = Convert.ToBoolean(((ushort[])tasks[6].Result)[0]) ? AlarmColor : DefaultColor;
-                AlarmPorog3 = Convert.ToBoolean(((ushort[])tasks[7].Result)[0]) ? AlarmColor : DefaultColor;
+                AlarmPorog1 = alarmPorog1Task.Result[0] ? AlarmColor : DefaultColor;
+                AlarmPorog2 = alarmPorog2Task.Result[0] ? AlarmColor : DefaultColor;
+                AlarmPorog3 = alarmPorog3Task.Result[0] ? AlarmColor : DefaultColor;
             }
             catch (Exception ex)
             {
