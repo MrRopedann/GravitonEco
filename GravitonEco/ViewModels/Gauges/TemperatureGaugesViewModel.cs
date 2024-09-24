@@ -62,7 +62,7 @@ namespace GravitonEco.ViewModels.Gauges
             Name = "Температура внеш(-45 до +45°С)";
             AlarmPorog1 = DefaultColor;
             WritePorog1Command = new RelayCommand(WritePorog1Value);
-            WritePorog2Command = new RelayCommand(WritePorog1Value);
+            WritePorog2Command = new RelayCommand(WritePorog2Value);
             WriteIncrementCommand = new RelayCommand(WriteIncrementValue);
             WritePeriodCommand = new RelayCommand(WritePeriodValue);
 

@@ -109,9 +109,15 @@
                          Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
                          behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
                          Grid.Row="1" Grid.Column="6"/>
-                <TextBox Text="{Binding TemperatureGauges.Porog2}" Foreground="{Binding TemperatureGauges.AlarmPorog2}" Grid.Row="1" Grid.Column="7" />
-                <TextBox Text="{Binding TemperatureGauges.Increment}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" Grid.Row="1" Grid.Column="8" />
-                <TextBox Text="{Binding TemperatureGauges.Period}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" Grid.Row="1" Grid.Column="9"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                         Grid.Row="1" Grid.Column="7" />
+                <TextBox Text="{Binding TemperatureGauges.Increment}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                         Grid.Row="1" Grid.Column="8" />
+                <TextBox Text="{Binding TemperatureGauges.Period}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                         Grid.Row="1" Grid.Column="9"/>
 
                 <RadioButton Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding RelativeHumidityOutsideGauge.Name}" Grid.Row="2" Grid.Column="1" Background="#FF323232"/>
@@ -119,10 +125,19 @@
                 <Label Content="Element 3" Grid.Row="2" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="2" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding RelativeHumidityOutsideGauge.CurrentValue}" Grid.Row="2" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding RelativeHumidityOutsideGauge.Porog1}" Foreground="{Binding RelativeHumidityOutsideGauge.AlarmPorog1}" Grid.Row="2" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding RelativeHumidityOutsideGauge.Porog2}" Foreground="{Binding RelativeHumidityOutsideGauge.AlarmPorog2}" Grid.Row="2" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding RelativeHumidityOutsideGauge.Increment}" Foreground="{Binding RelativeHumidityOutsideGauge.AlarmPorog3}" Grid.Row="2" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding RelativeHumidityOutsideGauge.Period}" Foreground="{Binding RelativeHumidityOutsideGauge.AlarmPorog3}" Grid.Row="2" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding RelativeHumidityOutsideGauge.Porog1}" Foreground="{Binding RelativeHumidityOutsideGauge.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding RelativeHumidityOutsideGauge.WritePorog1Command}"
+                         Grid.Row="2" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding RelativeHumidityOutsideGauge.Porog2}" Foreground="{Binding RelativeHumidityOutsideGauge.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding RelativeHumidityOutsideGauge.WritePorog2Command}"
+                         Grid.Row="2" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding RelativeHumidityOutsideGauge.Increment}" Foreground="{Binding RelativeHumidityOutsideGauge.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding RelativeHumidityOutsideGauge.WriteIncrementCommand}"
+                         Grid.Row="2" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding RelativeHumidityOutsideGauge.Period}" Foreground="{Binding RelativeHumidityOutsideGauge.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding RelativeHumidityOutsideGauge.WritePeriodCommand}"
+                         Grid.Row="2" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="3" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="Атм. дав-ние (650 - 1200 hPa)" Grid.Row="3" Grid.Column="1" Background="#FF505050"/>
@@ -141,10 +156,19 @@
                 <Label Content="Element 3" Grid.Row="4" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="4" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding AdditionalnputOneGauge.CurrentValue}" Grid.Row="4" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding AdditionalnputOneGauge.Porog1}" Foreground="{Binding AdditionalnputOneGauge.AlarmPorog1}" Grid.Row="4" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding AdditionalnputOneGauge.Porog2}" Foreground="{Binding AdditionalnputOneGauge.AlarmPorog2}" Grid.Row="4" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding AdditionalnputOneGauge.Increment}" Foreground="{Binding AdditionalnputOneGauge.AlarmPorog3}" Grid.Row="4" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding AdditionalnputOneGauge.Period}" Foreground="{Binding AdditionalnputOneGauge.AlarmPorog3}" Grid.Row="4" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding AdditionalnputOneGauge.Porog1}" Foreground="{Binding AdditionalnputOneGauge.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding AdditionalnputOneGauge.WritePorog1Command}"
+                         Grid.Row="4" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding AdditionalnputOneGauge.Porog2}" Foreground="{Binding AdditionalnputOneGauge.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding AdditionalnputOneGauge.WritePorog2Command}"
+                         Grid.Row="4" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding AdditionalnputOneGauge.Increment}" Foreground="{Binding AdditionalnputOneGauge.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding AdditionalnputOneGauge.WriteIncrementCommand}"
+                         Grid.Row="4" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding AdditionalnputOneGauge.Period}" Foreground="{Binding AdditionalnputOneGauge.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding AdditionalnputOneGauge.WritePeriodCommand}"
+                         Grid.Row="4" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="5" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding AdditionalnputTwoGauge.Name}" Grid.Row="5" Grid.Column="1" Background="#FF505050"/>
@@ -152,10 +176,19 @@
                 <Label Content="Element 3" Grid.Row="5" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="5" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding AdditionalnputTwoGauge.CurrentValue}" Grid.Row="5" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding AdditionalnputTwoGauge.Porog1}" Foreground="{Binding AdditionalnputTwoGauge.AlarmPorog1}" Grid.Row="5" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding AdditionalnputTwoGauge.Porog2}" Foreground="{Binding AdditionalnputTwoGauge.AlarmPorog2}" Grid.Row="5" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding AdditionalnputTwoGauge.Increment}" Foreground="{Binding AdditionalnputTwoGauge.AlarmPorog3}" Grid.Row="5" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding AdditionalnputTwoGauge.Period}" Foreground="{Binding AdditionalnputTwoGauge.AlarmPorog3}" Grid.Row="5" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding AdditionalnputTwoGauge.Porog1}" Foreground="{Binding AdditionalnputTwoGauge.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding AdditionalnputTwoGauge.WritePorog1Command}"
+                         Grid.Row="5" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding AdditionalnputTwoGauge.Porog2}" Foreground="{Binding AdditionalnputTwoGauge.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding AdditionalnputTwoGauge.WritePorog2Command}"
+                         Grid.Row="5" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding AdditionalnputTwoGauge.Increment}" Foreground="{Binding AdditionalnputTwoGauge.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding AdditionalnputTwoGauge.WriteIncrementCommand}"
+                         Grid.Row="5" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding AdditionalnputTwoGauge.Period}" Foreground="{Binding AdditionalnputTwoGauge.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding AdditionalnputTwoGauge.WritePeriodCommand}"
+                         Grid.Row="5" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="6" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding COGauges.Name}" Grid.Row="6" Grid.Column="1" Background="#FF323232"/>
@@ -163,10 +196,19 @@
                 <Label Content="Element 3" Grid.Row="6" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="6" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding COGauges.CurrentValue}" Grid.Row="6" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding COGauges.Porog1}" Foreground="{Binding COGauges.AlarmPorog1}" Grid.Row="6" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding COGauges.Porog2}" Foreground="{Binding COGauges.AlarmPorog2}" Grid.Row="6" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding COGauges.Increment}" Foreground="{Binding COGauges.AlarmPorog3}" Grid.Row="6" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding COGauges.Increment}" Foreground="{Binding COGauges.AlarmPorog3}" Grid.Row="6" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding COGauges.Porog1}" Foreground="{Binding COGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding COGauges.WritePorog1Command}"
+                         Grid.Row="6" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding COGauges.Porog2}" Foreground="{Binding COGauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding COGauges.WritePorog2Command}"
+                         Grid.Row="6" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding COGauges.Increment}" Foreground="{Binding COGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding COGauges.WriteIncrementCommand}"
+                         Grid.Row="6" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding COGauges.Increment}" Foreground="{Binding COGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding COGauges.WritePeriodCommand}"
+                         Grid.Row="6" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="7" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding NOGauges.Name}" Grid.Row="7" Grid.Column="1" Background="#FF505050"/>
@@ -174,10 +216,19 @@
                 <Label Content="Element 3" Grid.Row="7" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="7" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding NOGauges.CurrentValue}" Grid.Row="7" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding NOGauges.Porog1}" Foreground="{Binding NOGauges.AlarmPorog1}" Grid.Row="7" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding NOGauges.Porog2}" Foreground="{Binding NOGauges.AlarmPorog2}" Grid.Row="7" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding NOGauges.Increment}" Foreground="{Binding NOGauges.AlarmPorog3}" Grid.Row="7" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding NOGauges.Period}" Foreground="{Binding NOGauges.AlarmPorog3}" Grid.Row="7" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding NOGauges.Porog1}" Foreground="{Binding NOGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding NOGauges.WritePorog1Command}"
+                         Grid.Row="7" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding NOGauges.Porog2}" Foreground="{Binding NOGauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding NOGauges.WritePorog2Command}"
+                         Grid.Row="7" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding NOGauges.Increment}" Foreground="{Binding NOGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding NOGauges.WriteIncrementCommand}"
+                         Grid.Row="7" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding NOGauges.Period}" Foreground="{Binding NOGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding NOGauges.WritePeriodCommand}"
+                         Grid.Row="7" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="8" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding NO2Gauges.Name}" Grid.Row="8" Grid.Column="1" Background="#FF323232"/>
@@ -185,10 +236,19 @@
                 <Label Content="Element 3" Grid.Row="8" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="8" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding NO2Gauges.CurrentValue}" Grid.Row="8" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding NO2Gauges.Porog1}" Foreground="{Binding NO2Gauges.AlarmPorog1}" Grid.Row="8" Grid.Column="6" Background="#FF1E1E1E" />
-                <TextBox Text="{Binding NO2Gauges.Porog2}" Foreground="{Binding NO2Gauges.AlarmPorog2}" Grid.Row="8" Grid.Column="7" Background="#FF1E1E1E" />
-                <TextBox Text="{Binding NO2Gauges.Increment}" Foreground="{Binding NO2Gauges.AlarmPorog3}" Grid.Row="8" Grid.Column="8" Background="#FF1E1E1E" />
-                <TextBox Text="{Binding NO2Gauges.Period}" Foreground="{Binding NO2Gauges.AlarmPorog3}" Grid.Row="8" Grid.Column="9" Background="#FF1E1E1E" />
+                
+                <TextBox Text="{Binding NO2Gauges.Porog1}" Foreground="{Binding NO2Gauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding NO2Gauges.WritePorog1Command}"
+                         Grid.Row="8" Grid.Column="6" Background="#FF1E1E1E" />
+                <TextBox Text="{Binding NO2Gauges.Porog2}" Foreground="{Binding NO2Gauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding NO2Gauges.WritePorog2Command}"
+                         Grid.Row="8" Grid.Column="7" Background="#FF1E1E1E" />
+                <TextBox Text="{Binding NO2Gauges.Increment}" Foreground="{Binding NO2Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding NO2Gauges.WriteIncrementCommand}"
+                         Grid.Row="8" Grid.Column="8" Background="#FF1E1E1E" />
+                <TextBox Text="{Binding NO2Gauges.Period}" Foreground="{Binding NO2Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding NO2Gauges.WritePeriodCommand}"
+                         Grid.Row="8" Grid.Column="9" Background="#FF1E1E1E" />
 
                 <RadioButton Grid.Row="9" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding SO2Gauges.Name}" Grid.Row="9" Grid.Column="1" Background="#FF505050"/>
@@ -196,10 +256,19 @@
                 <Label Content="Element 3" Grid.Row="9" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="9" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding SO2Gauges.CurrentValue}" Grid.Row="9" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding SO2Gauges.Porog1}" Foreground="{Binding SO2Gauges.AlarmPorog1}" Grid.Row="9" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding SO2Gauges.Porog2}" Foreground="{Binding SO2Gauges.AlarmPorog2}" Grid.Row="9" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding SO2Gauges.Increment}" Foreground="{Binding SO2Gauges.AlarmPorog3}" Grid.Row="9" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding SO2Gauges.Period}" Foreground="{Binding SO2Gauges.AlarmPorog3}" Grid.Row="9" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding SO2Gauges.Porog1}" Foreground="{Binding SO2Gauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding SO2Gauges.WritePorog1Command}"
+                         Grid.Row="9" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding SO2Gauges.Porog2}" Foreground="{Binding SO2Gauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding SO2Gauges.WritePorog2Command}"
+                         Grid.Row="9" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding SO2Gauges.Increment}" Foreground="{Binding SO2Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding SO2Gauges.WriteIncrementCommand}"
+                         Grid.Row="9" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding SO2Gauges.Period}" Foreground="{Binding SO2Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding SO2Gauges.WritePeriodCommand}"
+                         Grid.Row="9" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="10" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding CO2Gauges.Name}" Grid.Row="10" Grid.Column="1" Background="#FF323232"/>
@@ -207,10 +276,19 @@
                 <Label Content="Element 3" Grid.Row="10" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="10" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding CO2Gauges.CurrentValue}" Grid.Row="10" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding CO2Gauges.Porog1}" Foreground="{Binding CO2Gauges.AlarmPorog1}" Grid.Row="10" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding CO2Gauges.Porog2}" Foreground="{Binding CO2Gauges.AlarmPorog2}" Grid.Row="10" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding CO2Gauges.Increment}" Foreground="{Binding CO2Gauges.AlarmPorog3}" Grid.Row="10" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding CO2Gauges.Period}" Foreground="{Binding CO2Gauges.AlarmPorog3}" Grid.Row="10" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding CO2Gauges.Porog1}" Foreground="{Binding CO2Gauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding CO2Gauges.WritePorog1Command}"
+                         Grid.Row="10" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding CO2Gauges.Porog2}" Foreground="{Binding CO2Gauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding CO2Gauges.WritePorog2Command}"
+                         Grid.Row="10" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding CO2Gauges.Increment}" Foreground="{Binding CO2Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding CO2Gauges.WriteIncrementCommand}"
+                         Grid.Row="10" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding CO2Gauges.Period}" Foreground="{Binding CO2Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding CO2Gauges.WritePeriodCommand}"
+                         Grid.Row="10" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="11" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding LOCGauges.Name}" Grid.Row="11" Grid.Column="1" Background="#FF505050"/>
@@ -218,10 +296,19 @@
                 <Label Content="Element 3" Grid.Row="11" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="11" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding LOCGauges.CurrentValue}" Grid.Row="11" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding LOCGauges.Porog1}" Foreground="{Binding LOCGauges.AlarmPorog1}" Grid.Row="11" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding LOCGauges.Porog2}" Foreground="{Binding LOCGauges.AlarmPorog2}" Grid.Row="11" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding LOCGauges.Increment}" Foreground="{Binding LOCGauges.AlarmPorog3}" Grid.Row="11" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding LOCGauges.Period}" Foreground="{Binding LOCGauges.AlarmPorog3}" Grid.Row="11" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding LOCGauges.Porog1}" Foreground="{Binding LOCGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding LOCGauges.WritePorog1Command}"
+                         Grid.Row="11" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding LOCGauges.Porog2}" Foreground="{Binding LOCGauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding LOCGauges.WritePorog2Command}"
+                         Grid.Row="11" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding LOCGauges.Increment}" Foreground="{Binding LOCGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding LOCGauges.WriteIncrementCommand}"
+                         Grid.Row="11" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding LOCGauges.Period}" Foreground="{Binding LOCGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding LOCGauges.WritePeriodCommand}"
+                         Grid.Row="11" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="12" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding PM1_0Gauges.Name}" Grid.Row="12" Grid.Column="1" Background="#FF323232"/>
@@ -229,10 +316,19 @@
                 <Label Content="Element 3" Grid.Row="12" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="12" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding PM1_0Gauges.CurrentValue}" Grid.Row="12" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding PM1_0Gauges.Porog1}" Foreground="{Binding PM1_0Gauges.AlarmPorog1}" Grid.Row="12" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding PM1_0Gauges.Porog2}" Foreground="{Binding PM1_0Gauges.AlarmPorog2}" Grid.Row="12" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding PM1_0Gauges.Increment}" Foreground="{Binding PM1_0Gauges.AlarmPorog3}" Grid.Row="12" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding PM1_0Gauges.Period}" Foreground="{Binding PM1_0Gauges.AlarmPorog3}" Grid.Row="12" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding PM1_0Gauges.Porog1}" Foreground="{Binding PM1_0Gauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM1_0Gauges.WritePorog1Command}"
+                         Grid.Row="12" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding PM1_0Gauges.Porog2}" Foreground="{Binding PM1_0Gauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM1_0Gauges.WritePorog2Command}"
+                         Grid.Row="12" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding PM1_0Gauges.Increment}" Foreground="{Binding PM1_0Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM1_0Gauges.WriteIncrementCommand}"
+                         Grid.Row="12" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding PM1_0Gauges.Period}" Foreground="{Binding PM1_0Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM1_0Gauges.WritePeriodCommand}"
+                         Grid.Row="12" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="13" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding PM2_5Gauges.Name}" Grid.Row="13" Grid.Column="1" Background="#FF505050"/>
@@ -240,10 +336,19 @@
                 <Label Content="Element 3" Grid.Row="13" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="13" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding PM2_5Gauges.CurrentValue}" Grid.Row="13" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding PM2_5Gauges.Porog1}" Foreground="{Binding PM2_5Gauges.AlarmPorog1}" Grid.Row="13" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding PM2_5Gauges.Porog2}" Foreground="{Binding PM2_5Gauges.AlarmPorog2}" Grid.Row="13" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding PM2_5Gauges.Increment}" Foreground="{Binding PM2_5Gauges.AlarmPorog3}" Grid.Row="13" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding PM2_5Gauges.Period}" Foreground="{Binding PM2_5Gauges.AlarmPorog3}" Grid.Row="13" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding PM2_5Gauges.Porog1}" Foreground="{Binding PM2_5Gauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM2_5Gauges.WritePorog1Command}"
+                         Grid.Row="13" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding PM2_5Gauges.Porog2}" Foreground="{Binding PM2_5Gauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM2_5Gauges.WritePorog2Command}"
+                         Grid.Row="13" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding PM2_5Gauges.Increment}" Foreground="{Binding PM2_5Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM2_5Gauges.WriteIncrementCommand}"
+                         Grid.Row="13" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding PM2_5Gauges.Period}" Foreground="{Binding PM2_5Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM2_5Gauges.WritePeriodCommand}"
+                         Grid.Row="13" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="14" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding PM10Gauges.Name}" Grid.Row="14" Grid.Column="1" Background="#FF323232"/>
@@ -251,10 +356,19 @@
                 <Label Content="Element 3" Grid.Row="14" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="14" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding PM10Gauges.CurrentValue}" Grid.Row="14" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding PM10Gauges.Porog1}" Foreground="{Binding PM10Gauges.AlarmPorog1}" Grid.Row="14" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding PM10Gauges.Porog2}" Foreground="{Binding PM10Gauges.AlarmPorog2}" Grid.Row="14" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding PM10Gauges.Increment}" Foreground="{Binding PM10Gauges.AlarmPorog3}" Grid.Row="14" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding PM10Gauges.Period}" Foreground="{Binding PM10Gauges.AlarmPorog3}" Grid.Row="14" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding PM10Gauges.Porog1}" Foreground="{Binding PM10Gauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM10Gauges.WritePorog1Command}"
+                         Grid.Row="14" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding PM10Gauges.Porog2}" Foreground="{Binding PM10Gauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM10Gauges.WritePorog2Command}"
+                         Grid.Row="14" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding PM10Gauges.Increment}" Foreground="{Binding PM10Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM10Gauges.WriteIncrementCommand}"
+                         Grid.Row="14" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding PM10Gauges.Period}" Foreground="{Binding PM10Gauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding PM10Gauges.WritePeriodCommand}"
+                         Grid.Row="14" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="15" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding MicroAccelerationsGauges.Name}" Grid.Row="15" Grid.Column="1" Background="#FF505050"/>
@@ -262,10 +376,19 @@
                 <Label Content="Element 3" Grid.Row="15" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="15" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding MicroAccelerationsGauges.CurrentValue}" Grid.Row="15" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding MicroAccelerationsGauges.Porog1}" Foreground="{Binding MicroAccelerationsGauges.AlarmPorog1}" Grid.Row="15" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding MicroAccelerationsGauges.Porog2}" Foreground="{Binding MicroAccelerationsGauges.AlarmPorog2}" Grid.Row="15" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding MicroAccelerationsGauges.Increment}" Foreground="{Binding MicroAccelerationsGauges.AlarmPorog3}" Grid.Row="15" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding MicroAccelerationsGauges.Period}" Foreground="{Binding MicroAccelerationsGauges.AlarmPorog3}" Grid.Row="15" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding MicroAccelerationsGauges.Porog1}" Foreground="{Binding MicroAccelerationsGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding MicroAccelerationsGauges.WritePorog1Command}"
+                         Grid.Row="15" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding MicroAccelerationsGauges.Porog2}" Foreground="{Binding MicroAccelerationsGauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding MicroAccelerationsGauges.WritePorog2Command}"
+                         Grid.Row="15" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding MicroAccelerationsGauges.Increment}" Foreground="{Binding MicroAccelerationsGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding MicroAccelerationsGauges.WriteIncrementCommand}"
+                         Grid.Row="15" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding MicroAccelerationsGauges.Period}" Foreground="{Binding MicroAccelerationsGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding MicroAccelerationsGauges.WritePeriodCommand}"
+                         Grid.Row="15" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="16" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding InclineGauges.Name}" Grid.Row="16" Grid.Column="1" Background="#FF323232"/>
@@ -273,10 +396,19 @@
                 <Label Content="Element 3" Grid.Row="16" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="16" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding InclineGauges.CurrentValue}" Grid.Row="16" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding InclineGauges.Porog1}" Foreground="{Binding InclineGauges.AlarmPorog1}" Grid.Row="16" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InclineGauges.Porog2}" Foreground="{Binding InclineGauges.AlarmPorog2}" Grid.Row="16" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InclineGauges.Increment}" Foreground="{Binding InclineGauges.AlarmPorog3}" Grid.Row="16" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InclineGauges.Period}" Foreground="{Binding InclineGauges.AlarmPorog3}" Grid.Row="16" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding InclineGauges.Porog1}" Foreground="{Binding InclineGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InclineGauges.WritePorog1Command}"
+                         Grid.Row="16" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InclineGauges.Porog2}" Foreground="{Binding InclineGauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InclineGauges.WritePorog2Command}"
+                         Grid.Row="16" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InclineGauges.Increment}" Foreground="{Binding InclineGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InclineGauges.WriteIncrementCommand}"
+                         Grid.Row="16" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InclineGauges.Period}" Foreground="{Binding InclineGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InclineGauges.WritePeriodCommand}"
+                         Grid.Row="16" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="17" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding HackingGauges.Name}" Grid.Row="17" Grid.Column="1" Background="#FF505050"/>
@@ -284,10 +416,19 @@
                 <Label Content="Element 3" Grid.Row="17" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="17" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding HackingGauges.CurrentValue}" Grid.Row="17" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding HackingGauges.Porog1}" Foreground="{Binding HackingGauges.AlarmPorog1}" Grid.Row="17" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding HackingGauges.Porog2}" Foreground="{Binding HackingGauges.AlarmPorog2}" Grid.Row="17" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding HackingGauges.Increment}" Foreground="{Binding HackingGauges.AlarmPorog3}" Grid.Row="17" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding HackingGauges.Period}" Foreground="{Binding HackingGauges.AlarmPorog3}" Grid.Row="17" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding HackingGauges.Porog1}" Foreground="{Binding HackingGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding HackingGauges.WritePorog1Command}"
+                         Grid.Row="17" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding HackingGauges.Porog2}" Foreground="{Binding HackingGauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding HackingGauges.WritePorog2Command}"
+                         Grid.Row="17" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding HackingGauges.Increment}" Foreground="{Binding HackingGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding HackingGauges.WriteIncrementCommand}"
+                         Grid.Row="17" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding HackingGauges.Period}" Foreground="{Binding HackingGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding HackingGauges.WritePeriodCommand}"
+                         Grid.Row="17" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="18" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding InternalTemperatureGauges.Name}" Grid.Row="18" Grid.Column="1" Background="#FF323232"/>
@@ -295,10 +436,19 @@
                 <Label Content="Element 3" Grid.Row="18" Grid.Column="3" Background="#FF323232" />
                 <Label Content="Element 4" Grid.Row="18" Grid.Column="4" Background="#FF323232" />
                 <Label Content="{Binding InternalTemperatureGauges.CurrentValue}" Grid.Row="18" Grid.Column="5" Background="#FF323232" />
-                <TextBox Text="{Binding InternalTemperatureGauges.Porog1}" Foreground="{Binding InternalTemperatureGauges.AlarmPorog1}" Grid.Row="18" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InternalTemperatureGauges.Porog2}" Foreground="{Binding InternalTemperatureGauges.AlarmPorog2}" Grid.Row="18" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InternalTemperatureGauges.Increment}" Foreground="{Binding InternalTemperatureGauges.AlarmPorog3}" Grid.Row="18" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InternalTemperatureGauges.Period}" Foreground="{Binding InternalTemperatureGauges.AlarmPorog3}" Grid.Row="18" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding InternalTemperatureGauges.Porog1}" Foreground="{Binding InternalTemperatureGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalTemperatureGauges.WritePorog1Command}"
+                         Grid.Row="18" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InternalTemperatureGauges.Porog2}" Foreground="{Binding InternalTemperatureGauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalTemperatureGauges.WritePorog2Command}"
+                         Grid.Row="18" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InternalTemperatureGauges.Increment}" Foreground="{Binding InternalTemperatureGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalTemperatureGauges.WriteIncrementCommand}"
+                         Grid.Row="18" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InternalTemperatureGauges.Period}" Foreground="{Binding InternalTemperatureGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalTemperatureGauges.WritePeriodCommand}"
+                         Grid.Row="18" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="19" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding InternalRelativeHumidityGauges.Name}" Grid.Row="19" Grid.Column="1" Background="#FF505050"/>
@@ -306,10 +456,19 @@
                 <Label Content="Element 3" Grid.Row="19" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="19" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding InternalRelativeHumidityGauges.CurrentValue}" Grid.Row="19" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding InternalRelativeHumidityGauges.Porog1}" Foreground="{Binding InternalRelativeHumidityGauges.AlarmPorog1}" Grid.Row="19" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InternalRelativeHumidityGauges.Porog2}" Foreground="{Binding InternalRelativeHumidityGauges.AlarmPorog2}" Grid.Row="19" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InternalRelativeHumidityGauges.Increment}" Foreground="{Binding InternalRelativeHumidityGauges.AlarmPorog3}" Grid.Row="19" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InternalRelativeHumidityGauges.Period}" Foreground="{Binding InternalRelativeHumidityGauges.AlarmPorog3}" Grid.Row="19" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding InternalRelativeHumidityGauges.Porog1}" Foreground="{Binding InternalRelativeHumidityGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalRelativeHumidityGauges.WritePorog1Command}"
+                         Grid.Row="19" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InternalRelativeHumidityGauges.Porog2}" Foreground="{Binding InternalRelativeHumidityGauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalRelativeHumidityGauges.WritePorog2Command}"
+                         Grid.Row="19" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InternalRelativeHumidityGauges.Increment}" Foreground="{Binding InternalRelativeHumidityGauges.AlarmPorog3}"
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalRelativeHumidityGauges.WriteIncrementCommand}"
+                         Grid.Row="19" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InternalRelativeHumidityGauges.Period}" Foreground="{Binding InternalRelativeHumidityGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalRelativeHumidityGauges.WritePeriodCommand}"
+                         Grid.Row="19" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="20" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding VoltageGauges.Name}" Grid.Row="20" Grid.Column="1" Background="#FF323232"/>
@@ -317,10 +476,19 @@
                 <Label Content="Element 3" Grid.Row="20" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="20" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding VoltageGauges.CurrentValue}" Grid.Row="20" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding VoltageGauges.Porog1}" Foreground="{Binding VoltageGauges.AlarmPorog1}" Grid.Row="20" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding VoltageGauges.Porog2}" Foreground="{Binding VoltageGauges.AlarmPorog2}" Grid.Row="20" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding VoltageGauges.Increment}" Foreground="{Binding VoltageGauges.AlarmPorog3}" Grid.Row="20" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding VoltageGauges.Period}" Foreground="{Binding VoltageGauges.AlarmPorog3}" Grid.Row="20" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding VoltageGauges.Porog1}" Foreground="{Binding VoltageGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding VoltageGauges.WritePorog1Command}"
+                         Grid.Row="20" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding VoltageGauges.Porog2}" Foreground="{Binding VoltageGauges.AlarmPorog2}"
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding VoltageGauges.WritePorog2Command}"
+                         Grid.Row="20" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding VoltageGauges.Increment}" Foreground="{Binding VoltageGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding VoltageGauges.WriteIncrementCommand}"
+                         Grid.Row="20" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding VoltageGauges.Period}" Foreground="{Binding VoltageGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding VoltageGauges.WritePeriodCommand}"
+                         Grid.Row="20" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="21" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding FlowRateGauges.Name}" Grid.Row="21" Grid.Column="1" Background="#FF505050"/>
@@ -328,10 +496,19 @@
                 <Label Content="Element 3" Grid.Row="21" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="21" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding FlowRateGauges.CurrentValue}" Grid.Row="21" Grid.Column="5" Background="#FF505050"/>
-                <TextBox Text="{Binding FlowRateGauges.Porog1}" Foreground="{Binding FlowRateGauges.AlarmPorog1}" Grid.Row="21" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding FlowRateGauges.Porog2}" Foreground="{Binding FlowRateGauges.AlarmPorog2}" Grid.Row="21" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding FlowRateGauges.Increment}" Foreground="{Binding FlowRateGauges.AlarmPorog3}" Grid.Row="21" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding FlowRateGauges.Period}" Foreground="{Binding FlowRateGauges.AlarmPorog3}" Grid.Row="21" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding FlowRateGauges.Porog1}" Foreground="{Binding FlowRateGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding FlowRateGauges.WritePorog1Command}"
+                         Grid.Row="21" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding FlowRateGauges.Porog2}" Foreground="{Binding FlowRateGauges.AlarmPorog2}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding FlowRateGauges.WritePorog2Command}"
+                         Grid.Row="21" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding FlowRateGauges.Increment}" Foreground="{Binding FlowRateGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding FlowRateGauges.WriteIncrementCommand}"
+                         Grid.Row="21" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding FlowRateGauges.Period}" Foreground="{Binding FlowRateGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding FlowRateGauges.WritePeriodCommand}"
+                         Grid.Row="21" Grid.Column="9" Background="#FF1E1E1E"/>
 
                 <RadioButton Grid.Row="22" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding InternalAtmosphericPressureGauges.Name}" Grid.Row="22" Grid.Column="1" Background="#FF323232"/>
@@ -339,10 +516,19 @@
                 <Label Content="Element 3" Grid.Row="22" Grid.Column="3" Background="#FF323232"/>
                 <Label Content="Element 4" Grid.Row="22" Grid.Column="4" Background="#FF323232"/>
                 <Label Content="{Binding InternalAtmosphericPressureGauges.CurrentValue}" Grid.Row="22" Grid.Column="5" Background="#FF323232"/>
-                <TextBox Text="{Binding InternalAtmosphericPressureGauges.Porog1}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog1}" Grid.Row="22" Grid.Column="6" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InternalAtmosphericPressureGauges.Porog2}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog2}" Grid.Row="22" Grid.Column="7" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InternalAtmosphericPressureGauges.Increment}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog3}" Grid.Row="22" Grid.Column="8" Background="#FF1E1E1E"/>
-                <TextBox Text="{Binding InternalAtmosphericPressureGauges.Period}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog3}" Grid.Row="22" Grid.Column="9" Background="#FF1E1E1E"/>
+                
+                <TextBox Text="{Binding InternalAtmosphericPressureGauges.Porog1}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalAtmosphericPressureGauges.WritePorog1Command}"
+                         Grid.Row="22" Grid.Column="6" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InternalAtmosphericPressureGauges.Porog2}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog2}"
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalAtmosphericPressureGauges.WritePorog2Command}"
+                         Grid.Row="22" Grid.Column="7" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InternalAtmosphericPressureGauges.Increment}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog3}"
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalAtmosphericPressureGauges.WriteIncrementCommand}"
+                         Grid.Row="22" Grid.Column="8" Background="#FF1E1E1E"/>
+                <TextBox Text="{Binding InternalAtmosphericPressureGauges.Period}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalAtmosphericPressureGauges.WritePeriodCommand}"
+                         Grid.Row="22" Grid.Column="9" Background="#FF1E1E1E"/>
 
             </Grid>
         </StackPanel>

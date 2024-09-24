@@ -43,6 +43,10 @@ namespace GravitonEco.ViewModels
         private Brush alarmPorog3;
 
         public ICommand WritePorog1Command { get; }
+        public ICommand WritePorog2Command { get; }
+        public ICommand WriteIncrementCommand { get; }
+        public ICommand WritePeriodCommand { get; }
+
         public LOCViewModel()
         {
             _modbusTcpCommunication = ModbusTcpCommunication.Instance;
@@ -57,6 +61,9 @@ namespace GravitonEco.ViewModels
             Name = "ЛОС (0 - 10 000 ppb)";
             AlarmPorog1 = DefaultColor;
             WritePorog1Command = new RelayCommand(WritePorog1Value);
+            WritePorog2Command = new RelayCommand(WritePorog2Value);
+            WriteIncrementCommand = new RelayCommand(WriteIncrementValue);
+            WritePeriodCommand = new RelayCommand(WritePeriodValue);
 
             InitializeAsync();
         }
@@ -71,7 +78,22 @@ namespace GravitonEco.ViewModels
 
         private async void WritePorog1Value()
         {
-            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 20, Porog1);
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(1, 32, Porog1);
+        }
+
+        private async void WritePorog2Value()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(1, 33, Porog2);
+        }
+
+        private async void WriteIncrementValue()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(1, 34, Increment);
+        }
+
+        private async void WritePeriodValue()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(1, 35, Period);
         }
 
         private async Task PollRegistersAsync()

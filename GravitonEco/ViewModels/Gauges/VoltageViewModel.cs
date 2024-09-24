@@ -43,6 +43,9 @@ namespace GravitonEco.ViewModels
         private Brush alarmPorog3;
 
         public ICommand WritePorog1Command { get; }
+        public ICommand WritePorog2Command { get; }
+        public ICommand WriteIncrementCommand { get; }
+        public ICommand WritePeriodCommand { get; }
 
         public VoltageViewModel()
         {
@@ -57,7 +60,11 @@ namespace GravitonEco.ViewModels
             _pollingTimer.Start();
             Name = "Напряжение (8 - 16 В)";
             AlarmPorog1 = DefaultColor;
+
             WritePorog1Command = new RelayCommand(WritePorog1Value);
+            WritePorog2Command = new RelayCommand(WritePorog2Value);
+            WriteIncrementCommand = new RelayCommand(WriteIncrementValue);
+            WritePeriodCommand = new RelayCommand(WritePeriodValue);
 
             InitializeAsync();
         }
@@ -72,7 +79,22 @@ namespace GravitonEco.ViewModels
 
         private async void WritePorog1Value()
         {
-            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 20, Porog1);
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(1, 8, Porog1);
+        }
+
+        private async void WritePorog2Value()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(1, 9, Porog2);
+        }
+
+        private async void WriteIncrementValue()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(1, 10, Increment);
+        }
+
+        private async void WritePeriodValue()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(1, 11, Period);
         }
 
         private async Task PollRegistersAsync()

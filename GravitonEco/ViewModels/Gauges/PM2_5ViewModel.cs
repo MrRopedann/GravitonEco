@@ -43,6 +43,9 @@ namespace GravitonEco.ViewModels
         private Brush alarmPorog3;
 
         public ICommand WritePorog1Command { get; }
+        public ICommand WritePorog2Command { get; }
+        public ICommand WriteIncrementCommand { get; }
+        public ICommand WritePeriodCommand { get; }
 
         public PM2_5ViewModel()
         {
@@ -58,6 +61,9 @@ namespace GravitonEco.ViewModels
             Name = "PM 2.5 (0 - 1000 мкг / м³)";
             AlarmPorog1 = DefaultColor;
             WritePorog1Command = new RelayCommand(WritePorog1Value);
+            WritePorog2Command = new RelayCommand(WritePorog2Value);
+            WriteIncrementCommand = new RelayCommand(WriteIncrementValue);
+            WritePeriodCommand = new RelayCommand(WritePeriodValue);
 
             InitializeAsync();
         }
@@ -72,7 +78,22 @@ namespace GravitonEco.ViewModels
 
         private async void WritePorog1Value()
         {
-            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 20, Porog1);
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 68, Porog1);
+        }
+
+        private async void WritePorog2Value()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 69, Porog2);
+        }
+
+        private async void WriteIncrementValue()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 70, Increment);
+        }
+
+        private async void WritePeriodValue()
+        {
+            await _modbusTcpCommunication.WriteSingleHoldingRegisterAsync(2, 71, Period);
         }
 
         private async Task PollRegistersAsync()
