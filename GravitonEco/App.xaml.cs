@@ -1,6 +1,7 @@
 ﻿using GravitonEco.Services;
 using System.Configuration;
 using System.Data;
+using System.IO;
 using System.Windows;
 
 namespace GravitonEco
@@ -17,7 +18,11 @@ namespace GravitonEco
 
             // start background data collector
             //driver.Start();
-
+            string logDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "GravitonEco", "Log");
+            if (!Directory.Exists(logDirectory))
+            {
+                Directory.CreateDirectory(logDirectory);
+            }
             MainWindow.Show();
         }
     }

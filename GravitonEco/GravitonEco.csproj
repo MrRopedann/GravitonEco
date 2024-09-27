@@ -33,6 +33,7 @@
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
     <PackageReference Include="System.Management" Version="8.0.0" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
+    <PackageReference Include="System.Reactive" Version="6.0.1" />
     <PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.0" />
     <PackageReference Include="System.Text.Json" Version="8.0.4" />
@@ -50,6 +51,7 @@
 
   <ItemGroup>
     <Folder Include="Controls\" />
+    <Folder Include="ViewModels\Chart\" />
   </ItemGroup>
 
 </Project>

@@ -99,7 +99,7 @@
                 <Label Content="Нарастание" Grid.Row="0" Grid.Column="8" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
                 <Label Content="Период" Grid.Row="0" Grid.Column="9" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
 
-                <RadioButton IsChecked="True" GroupName="Charts" Checked="RadioButton_Checked" Tag="1" Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <!--<RadioButton Grid.Row="1" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding TemperatureGauges.Name}" Grid.Row="1" Grid.Column="1" Background="#FF505050"/>
                 <Label Content="Element 2" Grid.Row="1" Grid.Column="2" Background="#FF505050"/>
                 <Label Content="Element 3" Grid.Row="1" Grid.Column="3" Background="#FF505050"/>
@@ -120,7 +120,7 @@
                          behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
                          Grid.Row="1" Grid.Column="9"/>
 
-                <RadioButton GroupName="Charts" Checked="RadioButton_Checked" Tag="2" Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <RadioButton Grid.Row="2" Grid.Column="0" Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Label Content="{Binding RelativeHumidityOutsideGauge.Name}" Grid.Row="2" Grid.Column="1" Background="#FF323232"/>
                 <Label Content="Element 2" Grid.Row="2" Grid.Column="2" Background="#FF323232"/>
                 <Label Content="Element 3" Grid.Row="2" Grid.Column="3" Background="#FF323232"/>
@@ -529,15 +529,11 @@
                          Grid.Row="22" Grid.Column="8" Background="#FF1E1E1E"/>
                 <TextBox Text="{Binding InternalAtmosphericPressureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog3}" 
                          behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalAtmosphericPressureGauges.WritePeriodCommand}"
-                         Grid.Row="22" Grid.Column="9" Background="#FF1E1E1E"/>
+                         Grid.Row="22" Grid.Column="9" Background="#FF1E1E1E"/>-->
 
             </Grid>
         </StackPanel>
 
         <!-- Right Panel -->
-        <StackPanel  Grid.Column="4" Background="#FF151517" Margin="10,10,10,10" Grid.ColumnSpan="2">
-            <lvc:CartesianChart Series="{Binding ChartGauges.CurrentSeries}" MinWidth="500" MinHeight="400"
-                    XAxes="{Binding ChartGauges.XAxes}" YAxes="{Binding ChartGauges.YAxes}" />
-        </StackPanel>
     </Grid>
 </Page>

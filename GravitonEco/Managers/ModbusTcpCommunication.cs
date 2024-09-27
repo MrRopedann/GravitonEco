@@ -1,6 +1,8 @@
 ﻿using GravitonEco.Models;
+using NLog;
 using NModbus;
 using System;
+using System.IO;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 
@@ -8,6 +10,8 @@ namespace GravitonEco.Managers
 {
     public class ModbusTcpCommunication
     {
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+
         private static ModbusTcpCommunication _instance;
         private static readonly object _lock = new object();
 
@@ -16,7 +20,7 @@ namespace GravitonEco.Managers
 
         private readonly DeviceConfig _deviceConfig;
 
-        private bool _isConnected = false;
+        public bool _isConnected = false;
 
         // Закрытый конструктор
         private ModbusTcpCommunication()
@@ -58,7 +62,7 @@ namespace GravitonEco.Managers
                 }
                 catch (SocketException ex)
                 {
-                    Console.WriteLine($"Ошибка подключения: {ex.Message}. Повторная попытка через 5 секунд...");
+                    logger.Error($"Ошибка подключения: {ex.Message}. Повторная попытка через 5 секунд...");
                     Task.Delay(TimeSpan.FromSeconds(5)).Wait();  // Подождать 5 секунд перед повторной попыткой
                 }
             }
@@ -79,7 +83,7 @@ namespace GravitonEco.Managers
         {
             return await ExecuteWithReconnect(async () =>
             {
-                return await Task.Run(() => _modbusMaster.ReadInputRegisters(slaveId, startAddress, 1));
+                return await Task.Run(() => _modbusMaster.ReadInputRegistersAsync(slaveId, startAddress, 1));
             });
         }
 
@@ -88,7 +92,7 @@ namespace GravitonEco.Managers
         {
             return await ExecuteWithReconnect(async () =>
             {
-                return await Task.Run(() => _modbusMaster.ReadHoldingRegisters(slaveId, startAddress, 1));
+                return await Task.Run(() => _modbusMaster.ReadHoldingRegistersAsync(slaveId, startAddress, 1));
             });
         }
 
@@ -97,29 +101,22 @@ namespace GravitonEco.Managers
         {
             return await ExecuteWithReconnect(async () =>
             {
-                return await Task.Run(() => _modbusMaster.ReadInputs(slaveId, startAddress, 1));
+                return await Task.Run(() => _modbusMaster.ReadInputsAsync(slaveId, startAddress, 1));
             });
+
         }
 
         public async Task WriteSingleHoldingRegisterAsync(byte slaveId, ushort address, ushort value)
         {
-            try
+            await ExecuteWithReconnect(async () =>
             {
-                await Task.Run(() =>
-                {
-                    _modbusMaster.Transport.WriteTimeout = 1000; // Уменьшить время ожидания
-                    _modbusMaster.WriteSingleRegister(slaveId, address, value);
-                }).ConfigureAwait(false);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Ошибка записи регистра Modbus: {ex.Message}");
-                throw;  // Логировать ошибку и пробрасывать дальше
-            }
+                _modbusMaster.Transport.WriteTimeout = 1000; // Уменьшить время ожидания
+                await _modbusMaster.WriteSingleRegisterAsync(slaveId, address, value);
+            });
         }
 
 
-        // Универсальный метод для обработки повторных попыток подключения и выполнения операций Modbus
+
         private async Task<T> ExecuteWithReconnect<T>(Func<Task<T>> modbusOperation)
         {
             while (true)
@@ -131,20 +128,28 @@ namespace GravitonEco.Managers
                 }
                 catch (SocketException ex)
                 {
-                    Console.WriteLine($"Потеряно соединение: {ex.Message}. Повторная попытка через 5 секунд...");
+                    logger.Error($"Потеряно соединение: {ex.Message}. Повторная попытка через 5 секунд...");
                     _isConnected = false;
-                    Task.Delay(TimeSpan.FromSeconds(5)).Wait();  // Подождать 5 секунд перед повторной попыткой
+                    await Task.Delay(TimeSpan.FromSeconds(5));  // Подождать 5 секунд перед повторной попыткой
+                    ConnectToModbusServer();  // Повторное подключение
+                }
+                catch (IOException ex)
+                {
+                    logger.Error($"Ошибка ввода-вывода: {ex.Message}. Повторная попытка через 5 секунд...");
+                    _isConnected = false;
+                    await Task.Delay(TimeSpan.FromSeconds(5));  // Подождать 5 секунд перед повторной попыткой
                     ConnectToModbusServer();  // Повторное подключение
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Ошибка при выполнении операции Modbus: {ex.Message}");
+                    logger.Error($"Ошибка при выполнении операции Modbus: {ex.Message}");
                     throw;  // Логирование и проброс исключения для других потенциальных проблем
                 }
             }
         }
 
-        // Перегруженная версия для операций без возвращаемого значения (например, записи)
+
+
         private async Task ExecuteWithReconnect(Func<Task> modbusOperation)
         {
             while (true)
@@ -157,15 +162,34 @@ namespace GravitonEco.Managers
                 }
                 catch (SocketException ex)
                 {
-                    Console.WriteLine($"Потеряно соединение: {ex.Message}. Повторная попытка через 5 секунд...");
+                    logger.Error($"Потеряно соединение: {ex.Message}. Повторная попытка через 5 секунд...");
                     _isConnected = false;
-                    Task.Delay(TimeSpan.FromSeconds(5)).Wait();  // Подождать 5 секунд перед повторной попыткой
-                    ConnectToModbusServer();  // Повторное подключение
+                    await Task.Delay(TimeSpan.FromSeconds(5));  // Подождать 5 секунд перед повторной попыткой
+                    await ConnectToModbusServerAsync();  // Повторное подключение
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Ошибка при выполнении операции Modbus: {ex.Message}");
+                    logger.Error($"Ошибка при выполнении операции Modbus: {ex.Message}");
                     throw;
+                }
+            }
+        }
+
+        private async Task ConnectToModbusServerAsync()
+        {
+            while (!_isConnected)
+            {
+                try
+                {
+                    _tcpClient = new TcpClient(_deviceConfig.IpAddress, _deviceConfig.Port);
+                    var factory = new ModbusFactory();
+                    _modbusMaster = factory.CreateMaster(_tcpClient);
+                    _isConnected = true;
+                }
+                catch (SocketException ex)
+                {
+                    logger.Error($"Ошибка подключения: {ex.Message}. Повторная попытка через 5 секунд...");
+                    await Task.Delay(TimeSpan.FromSeconds(5));  // Подождать 5 секунд перед повторной попыткой
                 }
             }
         }

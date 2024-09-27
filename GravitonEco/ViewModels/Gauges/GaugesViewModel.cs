@@ -33,32 +33,30 @@ namespace GravitonEco.ViewModels.Gauges
         public FlowRateViewModel FlowRateGauges { get; set; }
         public InternalAtmosphericPressureViewModel InternalAtmosphericPressureGauges { get; set; }
 
-        public ChartViewModel ChartGauges { get; set; }
 
         public GaugesViewModel()
         {
-            TemperatureGauges = new TemperatureGaugesViewModel();
-            RelativeHumidityOutsideGauge = new RelativeHumidityOutsideViewModel();
-            AdditionalnputOneGauge = new AdditionalnputOneViewModel();
-            AdditionalnputTwoGauge = new AdditionalnputTwoViewModel();
-            COGauges = new COViewModel();
-            NOGauges = new NOViewModel();
-            NO2Gauges = new NO2ViewModel();
-            SO2Gauges = new SO2ViewModel();
-            CO2Gauges = new CO2ViewModel();
-            LOCGauges = new LOCViewModel();
-            PM1_0Gauges = new PM1_0ViewModel();
-            PM2_5Gauges = new PM2_5ViewModel();
-            PM10Gauges = new PM10ViewModel();
-            MicroAccelerationsGauges = new MicroAccelerationsViewModel();
-            InclineGauges = new InclineViewModel();
-            HackingGauges = new HackingViewModel();
-            InternalTemperatureGauges = new InternalTemperatureViewModel();
-            InternalRelativeHumidityGauges = new InternalRelativeHumidityViewModel();
-            VoltageGauges = new VoltageViewModel();
-            FlowRateGauges = new FlowRateViewModel();
-            InternalAtmosphericPressureGauges = new InternalAtmosphericPressureViewModel();
-            ChartGauges = new ChartViewModel();
+            //TemperatureGauges = new TemperatureGaugesViewModel();
+            //RelativeHumidityOutsideGauge = new RelativeHumidityOutsideViewModel();
+            //AdditionalnputOneGauge = new AdditionalnputOneViewModel();
+            //AdditionalnputTwoGauge = new AdditionalnputTwoViewModel();
+            //COGauges = new COViewModel();
+            //NOGauges = new NOViewModel();
+            //NO2Gauges = new NO2ViewModel();
+            //SO2Gauges = new SO2ViewModel();
+            //CO2Gauges = new CO2ViewModel();
+            //LOCGauges = new LOCViewModel();
+            //PM1_0Gauges = new PM1_0ViewModel();
+            //PM2_5Gauges = new PM2_5ViewModel();
+            //PM10Gauges = new PM10ViewModel();
+            //MicroAccelerationsGauges = new MicroAccelerationsViewModel();
+            //InclineGauges = new InclineViewModel();
+            //HackingGauges = new HackingViewModel();
+            //InternalTemperatureGauges = new InternalTemperatureViewModel();
+            //InternalRelativeHumidityGauges = new InternalRelativeHumidityViewModel();
+            //VoltageGauges = new VoltageViewModel();
+            //FlowRateGauges = new FlowRateViewModel();
+            //InternalAtmosphericPressureGauges = new InternalAtmosphericPressureViewModel();
         }
     }
 }
