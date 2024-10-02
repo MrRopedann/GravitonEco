@@ -1,5 +1,6 @@
 ﻿using GravitonEco.ViewModels;
 using GravitonEco.ViewModels.Gauges;
+using GravitonEco.ViewModels.Pages;
 using System.Windows;
 using System.Windows.Controls;
 

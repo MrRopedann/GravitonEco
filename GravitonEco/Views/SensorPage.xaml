@@ -11,10 +11,6 @@
       d:DesignHeight="1080" d:DesignWidth="1920"
       Title="SensorPage">
 
-    <Page.DataContext>
-        <vm:GaugesViewModel/>
-    </Page.DataContext>
-
     <Page.Resources>
         <Style TargetType="Label">
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -34,14 +30,10 @@
     </Page.Resources>
 
     <!-- Main Content Grid -->
-    <Grid  Grid.Row="1" Background="#FF171515" Grid.ColumnSpan="2">
+    <Grid  Grid.Row="1" Background="#FF171515">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="825*"/>
-            <ColumnDefinition Width="0*"/>
-            <ColumnDefinition Width="0*"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="833*"/>
-            <ColumnDefinition Width="263*"/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
         <!-- Left Panel -->
@@ -105,7 +97,7 @@
                 <Label Content="Element 3" Grid.Row="1" Grid.Column="3" Background="#FF505050"/>
                 <Label Content="Element 4" Grid.Row="1" Grid.Column="4" Background="#FF505050"/>
                 <Label Content="{Binding TemperatureGauges.CurrentValue}" Grid.Row="1" Grid.Column="5" Background="#FF505050"/>
-                
+
                 <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                          Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
                          behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
@@ -530,10 +522,227 @@
                 <TextBox Text="{Binding InternalAtmosphericPressureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding InternalAtmosphericPressureGauges.AlarmPorog3}" 
                          behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding InternalAtmosphericPressureGauges.WritePeriodCommand}"
                          Grid.Row="22" Grid.Column="9" Background="#FF1E1E1E"/>
-
             </Grid>
         </StackPanel>
 
         <!-- Right Panel -->
+        <StackPanel Grid.Column="1" Background="#FF151517" Margin="10,10,5,10" IsEnabled="{Binding PinCodeModbus.PasswordCorrect}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Content="Параметр" Grid.Row="0" Grid.Column="0" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Текущее" Grid.Row="0" Grid.Column="1" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Уст.Нуля" Grid.Row="0" Grid.Column="2" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Конц-я ПГС" Grid.Row="0" Grid.Column="3" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Знач-е АЦП" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Расчетный «0»" Grid.Row="0" Grid.Column="5" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+
+                <Label Content="{Binding COGauges.Name}" Grid.Row="1" Grid.Column="0" Background="#FF505050"/>
+                <Label Content="{Binding COGauges.CurrentValue}" Grid.Row="1" Grid.Column="1" Background="#FF505050"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                         Grid.Row="1" Grid.Column="2"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                         Grid.Row="1" Grid.Column="3" />
+                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                         Grid.Row="1" Grid.Column="4" />
+                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                         Grid.Row="1" Grid.Column="5"/>
+
+                <Label Content="{Binding NOGauges.Name}" Grid.Row="2" Grid.Column="0" Background="#FF323232"/>
+                <Label Content="{Binding NOGauges.CurrentValue}" Grid.Row="2" Grid.Column="1" Background="#FF323232"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                        Grid.Row="2" Grid.Column="2"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                        Grid.Row="2" Grid.Column="3" />
+                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                        Grid.Row="2" Grid.Column="4" />
+                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                        Grid.Row="2" Grid.Column="5"/>
+
+                <Label Content="{Binding NO2Gauges.Name}" Grid.Row="3" Grid.Column="0" Background="#FF505050"/>
+                <Label Content="{Binding NO2Gauges.CurrentValue}" Grid.Row="3" Grid.Column="1" Background="#FF505050"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                        Grid.Row="3" Grid.Column="2"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                        Grid.Row="3" Grid.Column="3" />
+                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                        Grid.Row="3" Grid.Column="4" />
+                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                        Grid.Row="3" Grid.Column="5"/>
+
+                <Label Content="{Binding SO2Gauges.Name}" Grid.Row="4" Grid.Column="0" Background="#FF323232"/>
+                <Label Content="{Binding SO2Gauges.CurrentValue}" Grid.Row="4" Grid.Column="1" Background="#FF323232"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                        Grid.Row="4" Grid.Column="2"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                        Grid.Row="4" Grid.Column="3" />
+                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                        Grid.Row="4" Grid.Column="4" />
+                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                        Grid.Row="4" Grid.Column="5"/>
+
+                <Label Content="{Binding CO2Gauges.Name}" Grid.Row="5" Grid.Column="0" Background="#FF505050"/>
+                <Label Content="{Binding CO2Gauges.CurrentValue}" Grid.Row="5" Grid.Column="1" Background="#FF505050"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                        Grid.Row="5" Grid.Column="2"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                        Grid.Row="5" Grid.Column="3" />
+                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                        Grid.Row="5" Grid.Column="4" />
+                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                        Grid.Row="5" Grid.Column="5"/>
+
+                <Label Content="{Binding LOCGauges.Name}" Grid.Row="7" Grid.Column="0" Background="#FF323232"/>
+                <Label Content="{Binding LOCGauges.CurrentValue}" Grid.Row="7" Grid.Column="1" Background="#FF323232"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                        Grid.Row="7" Grid.Column="2"/>
+                <Label Content="Входное знач-е" Grid.Row="7" Grid.Column="3" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Знач-е АЦП" Grid.Row="7" Grid.Column="4" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                         Grid.Row="7" Grid.Column="5"/>
+
+                <Label Content="{Binding AdditionalnputOneGauge.Name}" Grid.Row="8" Grid.Column="0" Background="#FF505050"/>
+                <Label Content="{Binding AdditionalnputOneGauge.CurrentValue}" Grid.Row="8" Grid.Column="1" Background="#FF505050"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                        Grid.Row="8" Grid.Column="2"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                        Grid.Row="8" Grid.Column="3" />
+                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                        Grid.Row="8" Grid.Column="4" />
+                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                        Grid.Row="8" Grid.Column="5"/>
+
+                <Label Content="{Binding AdditionalnputTwoGauge.Name}" Grid.Row="9" Grid.Column="0" Background="#FF323232"/>
+                <Label Content="{Binding AdditionalnputTwoGauge.CurrentValue}" Grid.Row="9" Grid.Column="1" Background="#FF323232"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                        Grid.Row="9" Grid.Column="2"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                        Grid.Row="9" Grid.Column="3" />
+                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                        Grid.Row="9" Grid.Column="4" />
+                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                        Grid.Row="9" Grid.Column="5"/>
+
+                <Label Content="Настройка параметров темпиратуры в измерительной камере. Калибровка датчиков и входа 0-10В" Grid.Row="10" Grid.ColumnSpan="6" Background="Transparent"/>
+                
+                <Label Content="Параметр" Grid.Row="11" Grid.Column="0" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Текущее" Grid.Row="11" Grid.Column="1" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Мощьность %" Grid.Row="11" Grid.Column="2" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Константа" Grid.Row="11" Grid.Column="3" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Шаг Измен." Grid.Row="11" Grid.Column="4" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+                <Label Content="Время измен." Grid.Row="11" Grid.Column="5" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
+
+                <Label Content="{Binding TemperatureGauges.Name}" Grid.Row="12" Grid.Column="0" Background="#FF505050"/>
+                <Label Content="{Binding TemperatureGauges.CurrentValue}" Grid.Row="12" Grid.Column="1" Background="#FF505050"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                    Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                    behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                    Grid.Row="12" Grid.Column="2"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                    behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                    Grid.Row="12" Grid.Column="3" />
+                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                    behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                    Grid.Row="12" Grid.Column="4" />
+                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                    behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                    Grid.Row="12" Grid.Column="5"/>
+
+                <Label Content="{Binding InternalRelativeHumidityGauges.Name}" Grid.Row="13" Grid.Column="0" Background="#FF323232"/>
+                <Label Content="{Binding InternalRelativeHumidityGauges.CurrentValue}" Grid.Row="13" Grid.Column="1" Background="#FF323232"/>
+
+                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                        Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                        Grid.Row="13" Grid.Column="2"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                        Grid.Row="13" Grid.Column="3" />
+                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                        Grid.Row="13" Grid.Column="4" />
+                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                        Grid.Row="13" Grid.Column="5"/>
+
+                <Label Content="{Binding InternalAtmosphericPressureGauges.Name}" Grid.Row="14" Grid.Column="0" Background="#FF505050"/>
+                <Label Content="{Binding InternalAtmosphericPressureGauges.CurrentValue}" Grid.Row="14" Grid.Column="1" Background="#FF505050"/>
+                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
+                        behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                        Grid.Row="14" Grid.Column="3" />
+            </Grid>
+        </StackPanel>
     </Grid>
 </Page>

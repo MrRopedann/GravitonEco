@@ -1,4 +1,5 @@
 ﻿using GravitonEco.Services;
+using GravitonEco.ViewModels.Pages;
 
 namespace GravitonEco.ViewModels.Gauges
 {
@@ -30,6 +31,8 @@ namespace GravitonEco.ViewModels.Gauges
         public InternalAtmosphericPressureViewModel InternalAtmosphericPressureGauges { get; set; }
         public AtmosphericPressureViewModel AtmosphericPressureGauges { get; set; }
 
+        public PinCodeModbusViewModel PinCodeModbusGauge { get; set; }
+
 
         public GaugesViewModel()
         {
@@ -54,6 +57,7 @@ namespace GravitonEco.ViewModels.Gauges
             VoltageGauges = new VoltageViewModel(ModbusTcpClient.GetInstance(), "Напряжение (8 - 16 В)");
             FlowRateGauges = new FlowRateViewModel(ModbusTcpClient.GetInstance(), "Скор. потока (0 - 1 л/мин)");
             InternalAtmosphericPressureGauges = new InternalAtmosphericPressureViewModel(ModbusTcpClient.GetInstance(), "Атм. дав-ние (650 - 1200 hPa)");
+            PinCodeModbusGauge = new PinCodeModbusViewModel();
         }
     }
 }

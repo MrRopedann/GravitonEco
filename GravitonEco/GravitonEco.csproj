@@ -12,6 +12,7 @@
     <None Remove="Views\Resources\mesh_red.png" />
     <None Remove="Views\Resources\mobile_connection_green.png" />
     <None Remove="Views\Resources\mobile_connection_red.png" />
+    <None Remove="Views\Resources\password_green.png" />
     <None Remove="Views\Resources\password_red.png" />
     <None Remove="Views\Resources\settings.png" />
   </ItemGroup>
@@ -45,6 +46,7 @@
     <Resource Include="Views\Resources\mesh_red.png" />
     <Resource Include="Views\Resources\mobile_connection_green.png" />
     <Resource Include="Views\Resources\mobile_connection_red.png" />
+    <Resource Include="Views\Resources\password_green.png" />
     <Resource Include="Views\Resources\password_red.png" />
     <Resource Include="Views\Resources\settings.png" />
   </ItemGroup>

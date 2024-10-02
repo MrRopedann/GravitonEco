@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GravitonEco.Views.Screens"
              xmlns:vm="clr-namespace:GravitonEco.ViewModels.Pages"
+             xmlns:behaviors="clr-namespace:GravitonEco.Services"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1050" d:DataContext="{d:DesignInstance vm:Router}">
 
@@ -56,18 +57,20 @@
                 <Button Height="35" Foreground="#32E650" Background="Transparent" BorderBrush="Transparent" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed" Content="GRAVITON-ECO" Margin="5 0 5 0" Padding="5 0 5 0" Command="{Binding OpenSensorPageCommand}"></Button>
                 <Label Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed">HV-0001</Label>
                 <Label Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed">HV-0001</Label>
-                <Label Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed">SN-12345678</Label>
+            <Label Margin="5,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed" Content="SN-123456789"></Label>
             </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
             <ComboBox Margin="5,0,5,0" VerticalAlignment="Center" HorizontalAlignment="Center" BorderBrush="Gray" SelectedIndex="0" MaxDropDownHeight="100" Foreground="#1996BE" Background="#1E1E1E" Height="25" Width="Auto" Padding="10 5 10 5">
                 <ComboBoxItem IsSelected="True">Период наблюдения</ComboBoxItem>
                 <ComboBoxItem>Text Item 1</ComboBoxItem>
             </ComboBox>
-            <PasswordBox Margin="5,0,5,0" Height="25" Width="100" Background="#1E1E1E" BorderBrush="Gray"></PasswordBox>
+            <PasswordBox Foreground="#FF1996BE" Margin="5,0,5,0" Height="25" Width="100" Background="#1E1E1E" BorderBrush="Gray" x:Name="PasswordInput"
+                          behaviors:PasswordBoxBindingBehavior.BindPassword="True"
+                          behaviors:PasswordBoxBindingBehavior.BoundPassword="{Binding PinCodeModbus.Password, Mode=TwoWay}"/>
 
-            <Button Width="35" Height="35" Margin="5,0,5,0" BorderBrush="Transparent">
+            <Button Width="35" Height="35" Margin="5,0,5,0" BorderBrush="Transparent" Command="{Binding PinCodeModbus.CheckPinCodeCommand}" CommandParameter="{Binding ElementName=PasswordInput, Path=Password}">
                 <Button.Background>
-                    <ImageBrush ImageSource="/Views/Resources/password_red.png"/>
+                    <ImageBrush ImageSource="{Binding PinCodeModbus.PasswordImageSource}"/>
                 </Button.Background>
             </Button>
 

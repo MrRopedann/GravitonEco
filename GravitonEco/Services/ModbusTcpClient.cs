@@ -1,7 +1,5 @@
 ﻿using NModbus;
-using System;
 using System.Net.Sockets;
-using System.Threading.Tasks;
 
 namespace GravitonEco.Services
 {
