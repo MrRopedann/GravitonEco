@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 using System;
 using GravitonEco.Services;
 using GravitonEco.Views;
+using GravitonEco.ViewModels.Gauges;
 
 
 namespace GravitonEco.ViewModels.Pages
@@ -17,9 +18,12 @@ namespace GravitonEco.ViewModels.Pages
 
         public ModbusViewModel ModbusConnection { get; set; }
 
+        public DateTimeViewModel DateTimeModbus { get; set; }
+
         public Router(IServiceProvider serviceProvider)
         {
             ModbusConnection = new ModbusViewModel();
+            DateTimeModbus = new DateTimeViewModel(ModbusTcpClient.GetInstance());
             _componentProvider = (ServiceProvider)serviceProvider;
             OpenSensorPage();
         }

@@ -73,8 +73,8 @@
 
             <Image x:Name="deviceImage" Width="30" Height="35" Margin="5,0,5,0" Source="{Binding ModbusConnection.ConnectionImage}"/>
             <Image Width="30" Height="35" Margin="5,0,5,0" Source="/Views/Resources/mesh_red.png"/>
-            <Label Margin="5,0,5,0" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed"
-                    HorizontalAlignment="Center" VerticalAlignment="Center">18.07.2023 20:00</Label>
+            <Label Content="{Binding DateTimeModbus.CurrentDateTime}" Margin="5,0,5,0" Foreground="#BEBEBE" FontSize="17" FontFamily="Segoe UI" FontStretch="SemiCondensed"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </StackPanel>
         <Frame NavigationUIVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="2" Content="{Binding CurrentView}"></Frame>
     </Grid>
