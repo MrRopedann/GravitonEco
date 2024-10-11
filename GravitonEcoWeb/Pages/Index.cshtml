@@ -1,5 +1,5 @@
 ﻿@page
-@model ModbusModel
+@model IndexModel
 @{
     ViewData["Title"] = "Мониторинг данных";
 }
@@ -113,12 +113,14 @@
                 border: 2px solid #007bff; /* Синяя рамка при фокусе */
                 outline: none; /* Убираем стандартное выделение */
             }
+
+        .warning {
+            color: #E64A19; /* Красный цвет для текста */
+        }
     </style>
 </head>
 <body>
-    <!-- Основное содержимое -->
     <div class="main-content">
-        <!-- Левая таблица с параметрами -->
         <div class="table-container">
             <table>
                 <thead>
@@ -135,33 +137,49 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Пример строки таблицы -->
-                    <tr>
-                        <td>Температура</td>
-                        <td>-40</td>
-                        <td>50</td>
-                        <td>20</td>
-                        <td>25</td>
-                        <td><input type="text" value="10" class="numeric-input" pattern="\d*" /></td>
-                        <td><input type="text" value="40" class="numeric-input" pattern="\d*" /></td>
-                        <td><input type="text" value="1" class="numeric-input" pattern="\d*" /></td>
-                        <td><input type="text" value="5" class="numeric-input" pattern="\d*" /></td>
-                    </tr>
-                    <tr>
-                        <td>Влажность</td>
-                        <td>0</td>
-                        <td>100</td>
-                        <td>50</td>
-                        <td>60</td>
-                        <td><input type="text" value="30" class="numeric-input" pattern="\d*" /></td>
-                        <td><input type="text" value="70" class="numeric-input" pattern="\d*" /></td>
-                        <td><input type="text" value="2" class="numeric-input" pattern="\d*" /></td>
-                        <td><input type="text" value="10" class="numeric-input" pattern="\d*" /></td>
-                    </tr>
-                    <!-- Повторите для других параметров -->
+                    @foreach (var param in Model.Parameters.Select((value, index) => new { value, index }))
+                    {
+                        <tr>
+                            <td>@param.value.Name</td>
+                            <td>@param.value.Min</td>
+                            <td>@param.value.Max</td>
+                            <td>@param.value.Average</td>
+                            <td id="current-data-@param.index">@param.value.Current</td>
+
+                            <!-- Поле ввода порога 1 -->
+                            <td>
+                                <input id="threshold1-data-@param.index" type="text" value="@param.value.Threshold1" class="numeric-input @(param.value.AlarmPorog1 ? "warning" : "")" pattern="\d*"
+                                       onfocus="startEditing()" onblur="stopEditing()" onkeydown="submitValue(event, '@param.value.Name', 'Threshold1', this.value)" />
+                            </td>
+
+                            <!-- Поле ввода порога 2 -->
+                            <td>
+                                <input id="threshold2-data-@param.index" type="text" value="@param.value.Threshold2" class="numeric-input @(param.value.AlarmPorog2 ? "warning" : "")" pattern="\d*"
+                                       onfocus="startEditing()" onblur="stopEditing()" onkeydown="submitValue(event, '@param.value.Name', 'Threshold2', this.value)" />
+                            </td>
+
+                            <!-- Поле ввода роста -->
+                            <td>
+                                <input id="growth-data-@param.index" type="text" value="@param.value.Growth" class="numeric-input @(param.value.AlarmPorog3 ? "warning" : "")" pattern="\d*"
+                                       onfocus="startEditing()" onblur="stopEditing()" onkeydown="submitValue(event, '@param.value.Name', 'Growth', this.value)" />
+                            </td>
+
+                            <!-- Поле ввода периода -->
+                            <td>
+                                <input id="period-data-@param.index" type="text" value="@param.value.Period" class="numeric-input @(param.value.AlarmPorog3 ? "warning" : "")" pattern="\d*"
+                                       onfocus="startEditing()" onblur="stopEditing()" onkeydown="submitValue(event, '@param.value.Name', 'Period', this.value)" />
+                            </td>
+                        </tr>
+                    }
                 </tbody>
+
+
+
+
             </table>
         </div>
     </div>
+
+    <script src="~/js/site.js"></script>
 </body>
 </html>

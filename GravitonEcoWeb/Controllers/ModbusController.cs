@@ -8,10 +8,12 @@ namespace GravitonEcoWeb.Controllers
     public class ModbusController : ControllerBase
     {
         private readonly ModbusService _modbusService;
+        private readonly ModbusDataFactory _modbusDataFactory;
 
-        public ModbusController(ModbusService modbusService)
+        public ModbusController(ModbusService modbusService, ModbusDataFactory modbusDataFactory )
         {
             _modbusService = modbusService;
+            _modbusDataFactory = modbusDataFactory;
         }
 
         [HttpGet("check-connection")]
@@ -35,5 +37,36 @@ namespace GravitonEcoWeb.Controllers
             var serialNumber = await _modbusService.GetDeviceSerialNumberAsync();
             return Ok(serialNumber);
         }
+
+        [HttpGet("get-parameters")]
+        public IActionResult GetParameters()
+        {
+            var parameters = _modbusDataFactory.GetParameters();
+            return Ok(parameters);
+        }
+
+        [HttpPost("write")]
+        public IActionResult WriteModbusValue([FromBody] ModbusWriteRequest request)
+        {
+            try
+            {
+                // Используем фабрику для записи значения в Modbus устройство
+                ushort value = ushort.Parse(request.Value);
+                _modbusDataFactory.WriteToDevice(request.ParamName, request.FieldName, value);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ошибка записи: {ex.Message}");
+            }
+        }
+
+    }
+    // Модель для запроса записи
+    public class ModbusWriteRequest
+    {
+        public string ParamName { get; set; }
+        public string FieldName { get; set; }
+        public string Value { get; set; }
     }
 }

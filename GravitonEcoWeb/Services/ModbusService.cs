@@ -95,18 +95,32 @@ namespace GravitonEcoWeb.Services
             return (bcd >> 4) * 10 + (bcd & 0x0F);
         }
 
-        public ushort[] ReadRegisters(byte startAddress, ushort numberOfPoints)
+        public ushort[] ReadInputRegisters(byte startAddress, ushort numberOfPoints)
+        {
+            // Если соединение было потеряно, пытаемся подключиться снова
+            EnsureConnection();
+            return _modbusMaster.ReadInputRegisters(startAddress, numberOfPoints, 1); // Чтение данных по ModbusTCP
+        }
+
+        public ushort[] ReadHoldingRegisters(byte startAddress, ushort numberOfPoints)
         {
             // Если соединение было потеряно, пытаемся подключиться снова
             EnsureConnection();
             return _modbusMaster.ReadHoldingRegisters(startAddress, numberOfPoints, 1); // Чтение данных по ModbusTCP
         }
 
-        public void WriteSingleRegister(ushort address, ushort value)
+        public bool[] ReadDiscretRegisters(byte startAddress, ushort numberOfPoints)
         {
             // Если соединение было потеряно, пытаемся подключиться снова
             EnsureConnection();
-            _modbusMaster.WriteSingleRegister(1, address, value); // Запись данных
+            return _modbusMaster.ReadInputs(startAddress, numberOfPoints, 1); // Чтение данных по ModbusTCP
+        }
+
+        public void WriteSingleRegister(byte slaveAddress, ushort registerAddress, ushort value)
+        {
+            // Если соединение было потеряно, пытаемся подключиться снова
+            EnsureConnection();
+            _modbusMaster.WriteSingleRegister(slaveAddress, registerAddress, value); // Запись данных
         }
 
         // Метод для проверки подключения и попытки восстановления соединения

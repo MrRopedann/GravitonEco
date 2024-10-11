@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "Температура",
+    "SlaveAddress": 2,
+    "CurrentValueAddress": 5,
+    "Porog1Address": 20,
+    "Porog2Address": 21,
+    "IncrementAddress": 22,
+    "PeriodAddress": 23,
+    "AlarmPorog1Address": 15,
+    "AlarmPorog2Address": 16,
+    "AlarmPorog3Address": 17
+  },
+  {
+    "Name": "Влажность",
+    "SlaveAddress": 2,
+    "CurrentValueAddress": 5,
+    "Porog1Address": 20,
+    "Porog2Address": 21,
+    "IncrementAddress": 22,
+    "PeriodAddress": 23,
+    "AlarmPorog1Address": 15,
+    "AlarmPorog2Address": 16,
+    "AlarmPorog3Address": 17
+  }
+]
