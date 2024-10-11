@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GravitonEcoWeb</title>
+
+    <!-- Подключаем основной файл стилей -->
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <!-- Подключаем файл стилей для шапки -->
+    <link rel="stylesheet" href="~/css/header.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="left-section">
+            <a asp-page="/Settings">
+                <img src="~/images/settings.png" alt="SETTINGS" class="setting" />
+            </a>
+            <a asp-page="/Index">
+            <span class="system-info">GRAVITON-ECO</span>
+            </a>
+            <span class="device-info">HV-0001</span>
+            <span class="device-info">HV-0001</span>
+            <span class="serial-number">SN-123456789</span>
+        </div>
+        <div class="right-section">
+            <select class="period-dropdown">
+                <option>Период наблюдения</option>
+                <option>1 час</option>
+                <option>24 часа</option>
+            </select>
+            <img src="~/images/password_red.png" alt="Lock Icon" class="status-icon" />
+            <img id="connection-icon" src="~/images/mobile_connection_red.png" alt="Connection Status Icon" class="status-icon" />
+            <img src="~/images/mesh_red.png" alt="Wi-Fi Icon" class="status-icon" />
+            <span class="date-time">25.09.2005 17:23:27</span>
+        </div>
+    </header>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <script src="~/js/site.js"></script>
+</body>
+</html>

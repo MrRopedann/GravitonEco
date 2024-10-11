@@ -1,0 +1,68 @@
+﻿.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px;
+    border-bottom: 1px solid #505050;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.setting {
+    height: 25px;
+    margin-right: 10px;
+}
+
+.logo {
+    height: 25px;
+    margin-right: 10px;
+}
+
+.system-info {
+    font-size: 18px;
+    color: #32E650;
+    margin-right: 15px;
+}
+
+.device-info, .serial-number {
+    font-size: 16px;
+    color: #BEBEBE;
+    margin-right: 10px;
+}
+
+.period-dropdown {
+    background-color: #1E1E1E;
+    color: #1996BE;
+    border: 1px solid gray;
+    padding: 5px;
+    margin-right: 15px;
+}
+
+.status-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.date-time {
+    font-size: 16px;
+    color: #BEBEBE;
+}
+
+a {
+    text-decoration: none; /* Убираем подчеркивание у всех ссылок */
+    color: inherit; /* Сохраняем текущий цвет текста */
+}
+
+a:hover {
+    text-decoration: none; /* Убираем подчеркивание при наведении */
+}

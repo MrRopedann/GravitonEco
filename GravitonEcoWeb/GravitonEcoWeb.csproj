@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\mesh_red.png" />
+    <Content Remove="wwwroot\images\mobile_connection_green.png" />
+    <Content Remove="wwwroot\images\mobile_connection_red.png" />
+    <Content Remove="wwwroot\images\password_green.png" />
+    <Content Remove="wwwroot\images\password_red.png" />
+    <Content Remove="wwwroot\images\settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.10" />
+    <PackageReference Include="NModbus" Version="3.0.81" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="wwwroot\images\mesh_red.png" />
+    <Resource Include="wwwroot\images\mobile_connection_green.png" />
+    <Resource Include="wwwroot\images\mobile_connection_red.png" />
+    <Resource Include="wwwroot\images\password_green.png" />
+    <Resource Include="wwwroot\images\password_red.png" />
+    <Resource Include="wwwroot\images\settings.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Hubs\" />
+  </ItemGroup>
+
+</Project>
