@@ -1,5 +1,7 @@
-﻿using NModbus;
+﻿using GravitonEcoWeb.Model;
+using NModbus;
 using System.Net.Sockets;
+using System.Text.Json;
 
 namespace GravitonEcoWeb.Services
 {
@@ -7,12 +9,29 @@ namespace GravitonEcoWeb.Services
     {
         private TcpClient _tcpClient;
         private IModbusMaster _modbusMaster;
-        private readonly string _ipAddress = "10.10.10.2"; // IP устройства
-        private readonly int _port = 502; // Порт устройства
+        private readonly IWebHostEnvironment _env;
+        private List<ModbusDeviseConfig> _deviseConfigs;
+        private string _ipAddress;
+        private int _port;
 
-        public ModbusService()
+        public ModbusService(IWebHostEnvironment env)
         {
+            _env = env;
+            LoadConfig();
             Connect();
+        }
+
+        private void LoadConfig()
+        {
+            var configPath = Path.Combine(_env.WebRootPath, "config", "DeviseConnection.json");
+            var configJson = File.ReadAllText(configPath);
+            _deviseConfigs = JsonSerializer.Deserialize<List<ModbusDeviseConfig>>(configJson);
+            foreach(var config in _deviseConfigs)
+            {
+                _ipAddress = config.IpAddress;
+                _port = config.Port;
+            }
+            
         }
 
         // Метод для подключения к устройству
