@@ -10,118 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graviton-ECO</title>
-    <style>
-        body {
-            background-color: #1E1E1E;
-            color: #BEBEBE;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px;
-            background-color: #171515;
-            color: #32E650;
-            align-items: center;
-        }
-
-            .header .info {
-                display: flex;
-                gap: 15px;
-            }
-
-                .header .info span {
-                    color: #BEBEBE;
-                    font-size: 17px;
-                }
-
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            padding: 20px;
-        }
-
-        .table-container {
-            background-color: #171515;
-            padding: 15px;
-            border-radius: 8px;
-            width: 100%;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: center;
-        }
-
-        th, td {
-            padding: 8px;
-            border: 1px solid #505050;
-        }
-
-        th {
-            background-color: #171515;
-            color: #00E7FFBF;
-        }
-
-        tbody tr:nth-child(odd) {
-            background-color: #323232; /* Цвет для нечетных строк */
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #1E1E1E; /* Цвет для четных строк */
-        }
-
-        td.warning {
-            color: #E64A19;
-        }
-
-        .right-panel {
-            display: grid;
-            gap: 15px;
-            background-color: #171515;
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .numeric-input {
-            border: 2px solid #888; /* Стандартная серая рамка */
-            border-radius: 4px; /* Скругленные углы */
-            padding: 5px;
-            width: 60px; /* Ширина поля */
-            text-align: center; /* Центрируем текст внутри */
-            background-color: transparent; /* Прозрачный фон */
-            color: white; /* Цвет текста (если используется темная тема) */
-            font-size: 16px;
-        }
-
-            /* Убираем стрелки для всех браузеров */
-            .numeric-input::-webkit-inner-spin-button,
-            .numeric-input::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-                margin: 0;
-            }
-
-            .numeric-input::-moz-appearance {
-                -moz-appearance: textfield;
-            }
-
-            /* Изменяем цвет рамки при фокусе */
-            .numeric-input:focus {
-                border: 2px solid #007bff; /* Синяя рамка при фокусе */
-                outline: none; /* Убираем стандартное выделение */
-            }
-
-        .warning {
-            color: #E64A19; /* Красный цвет для текста */
-        }
-    </style>
+    <link rel="stylesheet" href="~/css/index.css" />
 </head>
 <body>
     <div class="main-content">
-        <div class="table-container">
+        <div class="left-panel">
             <table>
                 <thead>
                     <tr>
@@ -172,10 +65,31 @@
                         </tr>
                     }
                 </tbody>
+            </table>
+        </div>
 
-
-
-
+        <div class="right-panel">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+                        <th>Текущее</th>
+                        <th>Уст.Нуля</th>
+                        <th>Конц-я ПГС</th>
+                        <th>Знач-е ПГС</th>
+                        <th>Расчетный «0»</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Темпиратура</td>
+                        <td>12</td>
+                        <td><input type="text" value="" class="numeric-input" /></td>
+                        <td><input type="text" value="" class="numeric-input" /></td>
+                        <td><input type="text" value="" class="numeric-input" /></td>
+                        <td><input type="text" value="" class="numeric-input" /></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>

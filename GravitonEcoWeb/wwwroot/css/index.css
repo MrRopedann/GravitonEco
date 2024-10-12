@@ -1,0 +1,81 @@
+﻿body {
+    background-color: #1E1E1E;
+    color: #BEBEBE;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #171515;
+    color: #32E650;
+    align-items: center;
+}
+
+    .header .info {
+        display: flex;
+        gap: 15px;
+    }
+
+        .header .info span {
+            color: #BEBEBE;
+            font-size: 17px;
+        }
+
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Две колонки: левая панель шире, правая уже */
+    gap: 20px; /* Разрыв между колонками */
+    padding: 20px;
+}
+
+.left-panel, .right-panel {
+    background-color: #171515;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #505050;
+}
+
+th {
+    background-color: #171515;
+    color: #00E7FFBF;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #323232; /* Цвет для нечетных строк */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #1E1E1E; /* Цвет для четных строк */
+}
+
+.numeric-input {
+    border: 2px solid #888;
+    border-radius: 4px;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+    .numeric-input:focus {
+        border: 2px solid #007bff;
+        outline: none;
+    }
+
+td.warning {
+    color: #E64A19;
+}
