@@ -76,6 +76,12 @@ tbody tr:nth-child(even) {
         outline: none;
     }
 
-td.warning {
+.warning {
     color: #E64A19;
 }
+
+    .warning input {
+        color: #E64A19; /* Цвет текста внутри input */
+        border: 2px solid #E64A19; /* Цвет рамки */
+        background-color: #2C2C2C; /* Цвет фона */
+    }

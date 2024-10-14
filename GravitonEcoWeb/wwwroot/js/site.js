@@ -140,6 +140,7 @@ function stopEditing() {
     isEditing = false;
 }
 
+
 // Запуск функции для обновления данных каждые 5 секунд
 setInterval(updateCurrentData, 1000);
 

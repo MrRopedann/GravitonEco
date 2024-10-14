@@ -12,5 +12,6 @@
         public ushort AlarmPorog1Address { get; set; }
         public ushort AlarmPorog2Address { get; set; }
         public ushort AlarmPorog3Address { get; set; }
+        public string Group { get; set; }
     }
 }

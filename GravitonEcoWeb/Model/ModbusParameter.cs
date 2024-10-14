@@ -11,10 +11,10 @@
         public int Threshold2 { get; set; }
         public int Growth { get; set; }
         public int Period { get; set; }
-
-        // Логические свойства для тревожных порогов
         public bool AlarmPorog1 { get; set; }
         public bool AlarmPorog2 { get; set; }
         public bool AlarmPorog3 { get; set; }
+        public string Group { get; set; }  // Новое свойство для хранения группы
     }
+
 }

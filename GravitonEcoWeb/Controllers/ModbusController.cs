@@ -9,6 +9,7 @@ namespace GravitonEcoWeb.Controllers
     {
         private readonly ModbusService _modbusService;
         private readonly ModbusDataFactory _modbusDataFactory;
+        private readonly ILogger<ModbusController> _logger;
 
         public ModbusController(ModbusService modbusService, ModbusDataFactory modbusDataFactory )
         {
@@ -41,7 +42,7 @@ namespace GravitonEcoWeb.Controllers
         [HttpGet("get-parameters")]
         public IActionResult GetParameters()
         {
-            var parameters = _modbusDataFactory.GetParameters();
+            var parameters = _modbusDataFactory.GetParametersForExpandedGroups();
             return Ok(parameters);
         }
 
@@ -60,6 +61,22 @@ namespace GravitonEcoWeb.Controllers
                 return BadRequest($"Ошибка записи: {ex.Message}");
             }
         }
+        [HttpPost("toggle-group")]
+        public IActionResult ToggleGroup([FromBody] ToggleGroupRequest request)
+        {
+            try
+            {
+                _modbusDataFactory.SetGroupState(request.GroupName, request.IsExpanded);
+
+                // Возвращаем корректный ответ в формате JSON
+                return Ok(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка при изменении состояния группы {GroupName}", request.GroupName);
+                return StatusCode(500, new { success = false, message = ex.Message });
+            }
+        }
 
     }
     // Модель для запроса записи
@@ -68,5 +85,11 @@ namespace GravitonEcoWeb.Controllers
         public string ParamName { get; set; }
         public string FieldName { get; set; }
         public string Value { get; set; }
+    }
+
+    public class ToggleGroupRequest
+    {
+        public string GroupName { get; set; }  // Название группы
+        public bool IsExpanded { get; set; }   // Состояние группы (развернута или свернута)
     }
 }

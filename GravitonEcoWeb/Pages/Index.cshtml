@@ -11,89 +11,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graviton-ECO</title>
     <link rel="stylesheet" href="~/css/index.css" />
+    <script src="~/js/site.js"></script>
 </head>
 <body>
     <div class="main-content">
         <div class="left-panel">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Параметр</th>
-                        <th>Мин.</th>
-                        <th>Макс.</th>
-                        <th>Сред.</th>
-                        <th>Текущ.</th>
-                        <th>Порог 1</th>
-                        <th>Порог 2</th>
-                        <th>Нарастание</th>
-                        <th>Период</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var param in Model.Parameters.Select((value, index) => new { value, index }))
+            @if (Model.Groups != null && Model.Groups.Any())
+            {
+                @foreach (var group in Model.Groups)
+                {
+                    <h3 class="group-header" group-name="@group.Key" onclick="toggleGroup('@group.Key')">
+                        @group.Key @(group.Value ? "(Развернуто)" : "(Свернуто)")
+                    </h3>
+                    @if (group.Value && Model.GroupedParameters.ContainsKey(group.Key))
                     {
-                        <tr>
-                            <td>@param.value.Name</td>
-                            <td>@param.value.Min</td>
-                            <td>@param.value.Max</td>
-                            <td>@param.value.Average</td>
-                            <td id="current-data-@param.index">@param.value.Current</td>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Параметр</th>
+                                    <th>Мин.</th>
+                                    <th>Макс.</th>
+                                    <th>Сред.</th>
+                                    <th>Текущ.</th>
+                                    <th>Порог 1</th>
+                                    <th>Порог 2</th>
+                                    <th>Нарастание</th>
+                                    <th>Период</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var param in Model.GroupedParameters[group.Key].Select((value, index) => new { Value = value, Index = index }))
+                                {
+                                    <tr>
+                                        <td>@param.Value.Name</td>
+                                        <td>@param.Value.Min</td>
+                                        <td>@param.Value.Max</td>
+                                        <td>@param.Value.Average</td>
+                                        <td id="current-data-@param.Index">@param.Value.Current</td>
 
-                            <!-- Поле ввода порога 1 -->
-                            <td>
-                                <input id="threshold1-data-@param.index" type="text" value="@param.value.Threshold1" class="numeric-input @(param.value.AlarmPorog1 ? "warning" : "")" pattern="\d*"
-                                       onfocus="startEditing()" onblur="stopEditing()" onkeydown="submitValue(event, '@param.value.Name', 'Threshold1', this.value)" />
-                            </td>
+                                        <td>
+                                            <input id="threshold1-data-@param.Index" type="text" value="@param.Value.Threshold1"
+                                                   class="numeric-input @(param.Value.AlarmPorog1 ? "warning" : "")"
+                                                   onfocus="startEditing()" onblur="stopEditing()"
+                                                   onkeydown="submitValue(event, '@param.Value.Name', 'Threshold1', this.value)" />
+                                        </td>
 
-                            <!-- Поле ввода порога 2 -->
-                            <td>
-                                <input id="threshold2-data-@param.index" type="text" value="@param.value.Threshold2" class="numeric-input @(param.value.AlarmPorog2 ? "warning" : "")" pattern="\d*"
-                                       onfocus="startEditing()" onblur="stopEditing()" onkeydown="submitValue(event, '@param.value.Name', 'Threshold2', this.value)" />
-                            </td>
+                                        <td>
+                                            <input id="threshold2-data-@param.Index" type="text" value="@param.Value.Threshold2"
+                                                   class="numeric-input @(param.Value.AlarmPorog2 ? "warning" : "")"
+                                                   onfocus="startEditing()" onblur="stopEditing()"
+                                                   onkeydown="submitValue(event, '@param.Value.Name', 'Threshold2', this.value)" />
+                                        </td>
 
-                            <!-- Поле ввода роста -->
-                            <td>
-                                <input id="growth-data-@param.index" type="text" value="@param.value.Growth" class="numeric-input @(param.value.AlarmPorog3 ? "warning" : "")" pattern="\d*"
-                                       onfocus="startEditing()" onblur="stopEditing()" onkeydown="submitValue(event, '@param.value.Name', 'Growth', this.value)" />
-                            </td>
+                                        <td>
+                                            <input id="growth-data-@param.Index" type="text" value="@param.Value.Growth"
+                                                   class="numeric-input @(param.Value.AlarmPorog3 ? "warning" : "")"
+                                                   onfocus="startEditing()" onblur="stopEditing()"
+                                                   onkeydown="submitValue(event, '@param.Value.Name', 'Growth', this.value)" />
+                                        </td>
 
-                            <!-- Поле ввода периода -->
-                            <td>
-                                <input id="period-data-@param.index" type="text" value="@param.value.Period" class="numeric-input @(param.value.AlarmPorog3 ? "warning" : "")" pattern="\d*"
-                                       onfocus="startEditing()" onblur="stopEditing()" onkeydown="submitValue(event, '@param.value.Name', 'Period', this.value)" />
-                            </td>
-                        </tr>
+                                        <td>
+                                            <input id="period-data-@param.Index" type="text" value="@param.Value.Period"
+                                                   class="numeric-input @(param.Value.AlarmPorog3 ? "warning" : "")"
+                                                   onfocus="startEditing()" onblur="stopEditing()"
+                                                   onkeydown="submitValue(event, '@param.Value.Name', 'Period', this.value)" />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     }
-                </tbody>
-            </table>
-        </div>
-
-        <div class="right-panel">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Параметр</th>
-                        <th>Текущее</th>
-                        <th>Уст.Нуля</th>
-                        <th>Конц-я ПГС</th>
-                        <th>Знач-е ПГС</th>
-                        <th>Расчетный «0»</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Темпиратура</td>
-                        <td>12</td>
-                        <td><input type="text" value="" class="numeric-input" /></td>
-                        <td><input type="text" value="" class="numeric-input" /></td>
-                        <td><input type="text" value="" class="numeric-input" /></td>
-                        <td><input type="text" value="" class="numeric-input" /></td>
-                    </tr>
-                </tbody>
-            </table>
+                }
+            }
         </div>
     </div>
 
-    <script src="~/js/site.js"></script>
+    <script>
+
+        function toggleGroup(groupName) {
+            const isExpanded = document.querySelector(`h3[group-name="${groupName}"]`).textContent.includes("Развернуто");
+
+            // Отправляем запрос на сервер с измененным состоянием группы
+            fetch('/api/modbus/toggle-group', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ groupName, isExpanded: !isExpanded }) // Переключаем состояние
+            })
+                .then(response => {
+                    // Логируем статус ответа и его содержимое
+                    console.log("Ответ от сервера:", response);
+
+                    if (!response.ok) {
+                        throw new Error("Ошибка при изменении состояния группы");
+                    }
+
+                    return response.text(); // Используем text(), чтобы избежать ошибки парсинга JSON
+                })
+                .then(data => {
+                    console.log("Полученные данные:", data); // Логируем полученные данные
+                    if (data.trim() === "") {
+                        console.warn("Пустой ответ от сервера");
+                        return; // Игнорируем пустые ответы
+                    }
+
+                    const parsedData = JSON.parse(data); // Разбираем ответ
+                    console.log("Разобранные данные:", parsedData);
+                    location.reload(); // Перезагрузка страницы для обновления данных
+                })
+                .catch(error => {
+                    console.error('Ошибка при изменении состояния группы:', error);
+                });
+        }
+
+        function updateGroupUI(groupName, data) {
+            // Логика обновления DOM для группы на основе данных
+            const groupElement = document.querySelector(`[group-name="${groupName}"]`);
+            // Добавляем код для обновления элементов UI
+        }
+    </script>
 </body>
 </html>
