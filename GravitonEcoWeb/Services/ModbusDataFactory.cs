@@ -14,21 +14,31 @@ namespace GravitonEcoWeb.Services
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public ModbusDataFactory(
-                 ModbusService modbusService,
-                 IWebHostEnvironment env,
-                 ILogger<ModbusDataFactory> logger,
-                 IHttpContextAccessor httpContextAccessor)  // Добавляем IHttpContextAccessor
+         ModbusService modbusService,
+         IWebHostEnvironment env,
+         ILogger<ModbusDataFactory> logger,
+         IHttpContextAccessor httpContextAccessor)
         {
             _modbusService = modbusService;
             _env = env;
             _logger = logger;
-            _httpContextAccessor = httpContextAccessor;  // Инициализируем httpContextAccessor
+            _httpContextAccessor = httpContextAccessor;
             _groupStates = new Dictionary<string, bool>();
+
+            // Загрузка конфигурации должна быть первой
             LoadConfig();
-            LoadGroupStates();
+
+            // Только после загрузки конфигурации загружаем состояния групп
+            if (_configParameters != null && _configParameters.Any())
+            {
+                LoadGroupStates();
+            }
+            else
+            {
+                _logger.LogWarning("Конфигурация параметров не была загружена, состояния групп не могут быть инициализированы.");
+            }
         }
 
-        // Метод для загрузки состояния групп из сессии
         private void LoadGroupStates()
         {
             var session = _httpContextAccessor.HttpContext.Session;
@@ -40,18 +50,27 @@ namespace GravitonEcoWeb.Services
             }
             else
             {
-                _groupStates = new Dictionary<string, bool>();
-                foreach (var config in _configParameters)
+                // Проверяем, что конфигурация успешно загружена перед доступом
+                if (_configParameters != null && _configParameters.Any())
                 {
-                    if (!_groupStates.ContainsKey(config.Group))
+                    _groupStates = new Dictionary<string, bool>();
+                    foreach (var config in _configParameters)
                     {
-                        _groupStates[config.Group] = false; // Все группы по умолчанию свернуты
+                        if (!_groupStates.ContainsKey(config.Group))
+                        {
+                            _groupStates[config.Group] = false; // Все группы по умолчанию свернуты
+                        }
                     }
+                }
+                else
+                {
+                    _logger.LogWarning("Конфигурация параметров пуста, состояния групп не могут быть инициализированы.");
                 }
             }
         }
 
-        // Загрузка файла конфигурации
+
+        // Загрузка файла конфигурации с проверкой типов данных
         private void LoadConfig()
         {
             var configPath = Path.Combine(_env.WebRootPath, "config", "modbusConfig.json");
@@ -60,22 +79,52 @@ namespace GravitonEcoWeb.Services
             {
                 _logger.LogInformation("Загрузка конфигурации из {ConfigPath}", configPath);
                 var configJson = File.ReadAllText(configPath);
-                _configParameters = JsonSerializer.Deserialize<List<ModbusConfigParameter>>(configJson);
 
-                // По умолчанию все группы свернуты
-                foreach (var config in _configParameters)
+                if (!string.IsNullOrEmpty(configJson))
                 {
-                    if (!_groupStates.ContainsKey(config.Group))
-                    {
-                        _groupStates[config.Group] = false; // Все группы по умолчанию свернуты
-                    }
+                    _configParameters = JsonSerializer.Deserialize<List<ModbusConfigParameter>>(configJson);
                 }
 
-                _logger.LogInformation("Конфигурация успешно загружена.");
+                if (_configParameters == null || !_configParameters.Any())
+                {
+                    _logger.LogWarning("Конфигурация пуста или не была загружена. Проверьте файл конфигурации.");
+                }
+                else
+                {
+                    // Преобразуем строковые значения в числа, если это нужно
+                    foreach (var config in _configParameters)
+                    {
+                        config.SlaveAddress = (byte)ConvertToNumber(config.SlaveAddress.ToString());
+                        config.CurrentValueAddress = ConvertToNumber(config.CurrentValueAddress.ToString());
+                        config.Porog1Address = ConvertToNumber(config.Porog1Address.ToString());
+                        config.Porog2Address = ConvertToNumber(config.Porog2Address.ToString());
+                        config.IncrementAddress = ConvertToNumber(config.IncrementAddress.ToString());
+                        config.PeriodAddress = ConvertToNumber(config.PeriodAddress.ToString());
+                        config.AlarmPorog1Address = ConvertToNumber(config.AlarmPorog1Address.ToString());
+                        config.AlarmPorog2Address = ConvertToNumber(config.AlarmPorog2Address.ToString());
+                        config.AlarmPorog3Address = ConvertToNumber(config.AlarmPorog3Address.ToString());
+                    }
+
+                    _logger.LogInformation("Конфигурация успешно загружена.");
+                }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Ошибка при загрузке конфигурации из {ConfigPath}", configPath);
+            }
+        }
+
+        // Преобразование строкового значения в число (ushort)
+        private ushort ConvertToNumber(string input)
+        {
+            if (ushort.TryParse(input, out var result))
+            {
+                return result;
+            }
+            else
+            {
+                _logger.LogWarning($"Ошибка преобразования строки '{input}' в число. Устанавливается значение по умолчанию 0.");
+                return 0; // Значение по умолчанию
             }
         }
 
@@ -87,20 +136,17 @@ namespace GravitonEcoWeb.Services
 
             try
             {
-                // Загрузка конфигурации из файла
                 var configJson = File.ReadAllText(configPath);
                 var configParameters = JsonSerializer.Deserialize<List<CalibrationConfig>>(configJson);
 
                 foreach (var config in configParameters)
                 {
-                    // Чтение значений с Modbus
                     var currentValue = _modbusService.ReadInputRegisters(config.SlaveAddress, config.CurrentValueAddress);
                     var settingZero = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.SettingZero);
                     var pgsConcentration = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.PGSConcentration);
                     var adcValue = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.ADCValue);
                     var calculatedZero = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.CalculatedZero);
 
-                    // Добавление данных в список параметров
                     parameters.Add(new CalibrationParameter
                     {
                         Name = config.Name,
@@ -120,31 +166,17 @@ namespace GravitonEcoWeb.Services
             return parameters;
         }
 
-        // Получение параметров для развернутых групп
+        // Метод для получения параметров для развернутых групп
         public List<ModbusParameter> GetParametersForExpandedGroups()
         {
             var parameters = new List<ModbusParameter>();
 
             foreach (var config in _configParameters)
             {
-                _logger.LogInformation("Проверка состояния группы {GroupName}", config.Group);
-
-                if (_groupStates.TryGetValue(config.Group, out var isExpanded))
-                {
-                    _logger.LogInformation("Группа {GroupName} имеет состояние: {IsExpanded}", config.Group, isExpanded);
-                }
-                else
-                {
-                    _logger.LogWarning("Группа {GroupName} не найдена в _groupStates", config.Group);
-                }
-
-                if (_groupStates.TryGetValue(config.Group, out isExpanded) && isExpanded)
+                if (_groupStates.TryGetValue(config.Group, out var isExpanded) && isExpanded)
                 {
                     try
                     {
-                        _logger.LogInformation("Чтение данных для группы {GroupName}", config.Group);
-
-                        // Считывание данных с Modbus
                         var currentValue = _modbusService.ReadInputRegisters(config.SlaveAddress, config.CurrentValueAddress);
                         var porog1 = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.Porog1Address);
                         var porog2 = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.Porog2Address);
@@ -154,15 +186,12 @@ namespace GravitonEcoWeb.Services
                         var alarmPorog2 = _modbusService.ReadDiscretRegisters(config.SlaveAddress, config.AlarmPorog2Address);
                         var alarmPorog3 = _modbusService.ReadDiscretRegisters(config.SlaveAddress, config.AlarmPorog3Address);
 
-                        _logger.LogInformation("Успешное чтение данных для группы {GroupName}", config.Group);
-
-                        // Добавляем данные в список
                         parameters.Add(new ModbusParameter
                         {
                             Name = config.Name,
-                            Min = 0,  // Возможно, нужны реальные данные
-                            Max = 0,  // Возможно, нужны реальные данные
-                            Average = 0,  // Возможно, нужны реальные данные
+                            Min = 0,
+                            Max = 0,
+                            Average = 0,
                             Current = currentValue[0],
                             Threshold1 = porog1[0],
                             Threshold2 = porog2[0],
@@ -173,52 +202,41 @@ namespace GravitonEcoWeb.Services
                             AlarmPorog3 = alarmPorog3[0],
                             Group = config.Group
                         });
-
-                        _logger.LogInformation("Данные для группы {GroupName} успешно добавлены.", config.Group);
                     }
                     catch (Exception ex)
                     {
-                        _logger.LogError(ex, "Ошибка при чтении данных для группы {GroupName}", config.Group);
+                        _logger.LogError(ex, $"Ошибка при чтении данных для группы {config.Group}");
                     }
                 }
-            }
-
-            if (parameters.Count == 0)
-            {
-                _logger.LogWarning("Параметры не были добавлены для развернутых групп.");
             }
 
             return parameters;
         }
 
-
-        // Метод для сохранения состояния групп в сессии
+        // Метод для сохранения состояния групп
         private void SaveGroupStates()
         {
             var session = _httpContextAccessor.HttpContext.Session;
             session.SetString("GroupStates", JsonSerializer.Serialize(_groupStates));
         }
 
-
-        // Метод для переключения состояния группы (свернута/развернута)
+        // Метод для изменения состояния группы
         public void SetGroupState(string groupName, bool isExpanded)
         {
             if (_groupStates.ContainsKey(groupName))
             {
-                _logger.LogInformation("Изменение состояния группы {GroupName} на {IsExpanded}", groupName, isExpanded);
                 _groupStates[groupName] = isExpanded;
-                SaveGroupStates();  // Сохраняем состояние в сессию
+                SaveGroupStates();
             }
             else
             {
-                _logger.LogWarning("Группа {GroupName} не найдена для изменения состояния.", groupName);
+                _logger.LogWarning($"Группа {groupName} не найдена");
             }
         }
 
         // Получение состояния всех групп
         public Dictionary<string, bool> GetGroupStates()
         {
-            _logger.LogInformation("Получение состояния всех групп.");
             return _groupStates;
         }
 
@@ -228,11 +246,9 @@ namespace GravitonEcoWeb.Services
             var parameter = _configParameters.FirstOrDefault(p => p.Name == paramName);
             if (parameter == null)
             {
-                _logger.LogError("Параметр с именем {ParamName} не найден.", paramName);
                 throw new ArgumentException($"Параметр с именем {paramName} не найден.");
             }
 
-            // Получаем нужный адрес по имени поля и записываем значение
             ushort address = fieldName switch
             {
                 "Threshold1" => parameter.Porog1Address,
@@ -245,11 +261,11 @@ namespace GravitonEcoWeb.Services
             try
             {
                 _modbusService.WriteSingleRegister(parameter.SlaveAddress, address, value);
-                _logger.LogInformation("Значение {Value} записано в поле {FieldName} для параметра {ParamName}.", value, fieldName, paramName);
+                _logger.LogInformation($"Значение {value} записано в поле {fieldName} для параметра {paramName}.");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Ошибка при записи значения {Value} в поле {FieldName} для параметра {ParamName}.", value, fieldName, paramName);
+                _logger.LogError(ex, $"Ошибка при записи значения {value} в поле {fieldName} для параметра {paramName}.");
                 throw;
             }
         }

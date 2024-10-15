@@ -1,0 +1,160 @@
+﻿/* Основные стили для страницы */
+body {
+    background-color: #1E1E1E;
+    color: #BEBEBE;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Контейнер для всех настроек */
+.settings-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Стили для групп */
+.group {
+    margin-bottom: 20px;
+}
+
+    .group h3 {
+        color: #BEBEBE; /* Светло-серый текст по умолчанию */
+        background-color: #171515; /* Темный фон заголовков групп */
+        cursor: pointer;
+        padding: 10px;
+        margin: 0;
+        border-radius: 4px;
+        transition: color 0.3s ease; /* Плавный переход цвета текста */
+    }
+
+        /* Изменение цвета текста при наведении */
+        .group h3:hover {
+            color: #00E7FF !important; /* Изменение цвета текста при наведении */
+        }
+
+.config-table {
+    display: none;
+    padding: 10px;
+    background-color: #1E1E1E;
+    border: 1px solid #505050;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+    /* Стили для таблиц */
+    .config-table table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: auto;
+    }
+
+    .config-table th, .config-table td {
+        border: 1px solid #505050;
+        padding: 8px;
+        text-align: center;
+        color: #BEBEBE;
+    }
+
+    /* Фон и цвет шапки таблицы (заголовков) */
+    .config-table th {
+        background-color: #171515; /* Фон шапки таблицы */
+        color: #1996BE; /* Цвет текста в заголовках таблицы */
+    }
+
+        /* Широкие колонки для названий и группы */
+        .config-table th:first-child,
+        .config-table td:first-child,
+        .config-table th:nth-last-child(2),
+        .config-table td:nth-last-child(2) {
+            min-width: 180px; /* Ширина для первой и предпоследней колонки */
+            white-space: nowrap;
+        }
+
+            /* Поля ввода внутри первой и последней колонок */
+            .config-table td:first-child input,
+            .config-table td:nth-last-child(2) input {
+                width: calc(100% - 10px); /* Растягиваем поле ввода на всю ширину ячейки */
+                padding: 5px;
+                margin: 0 5px;
+                background-color: #171515;
+                color: #FFFFFF;
+                border: 2px solid #505050;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+
+    /* Узкие колонки для остальных данных */
+    .config-table td input {
+        width: calc(100% - 10px); /* Растягиваем поле ввода на всю ширину ячейки */
+        padding: 5px;
+        margin: 0 5px;
+        background-color: #171515;
+        color: #FFFFFF;
+        border: 2px solid #505050;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    /* Узкая колонка для кнопки "Удалить" */
+    .config-table th:last-child,
+    .config-table td:last-child {
+        width: 80px; /* Узкая ширина для кнопки "Удалить" */
+    }
+
+    /* Чередование цветов строк таблицы */
+    .config-table tr:nth-child(odd) {
+        background-color: #323232;
+    }
+
+    .config-table tr:nth-child(even) {
+        background-color: #1E1E1E;
+    }
+
+/* Кнопки */
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+.btn-danger {
+    background-color: #E64A19;
+    padding: 8px 12px;
+}
+
+    .btn-danger:hover {
+        background-color: #D84315;
+    }
+
+/* Стили для адаптации */
+@media (max-width: 768px) {
+    .settings-container {
+        padding: 10px;
+    }
+
+    .config-table table th, .config-table table td {
+        padding: 4px;
+    }
+
+    .config-table td input {
+        width: calc(100% - 8px); /* Меняем ширину для мобильных устройств */
+        margin: 0 4px;
+    }
+}

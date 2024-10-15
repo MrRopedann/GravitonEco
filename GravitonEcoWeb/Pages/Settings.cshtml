@@ -1,5 +1,97 @@
 ﻿@page
 @model GravitonEcoWeb.Pages.SettingsModel
+@{
+    ViewData["Title"] = "Настройки";
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graviton-ECO</title>
+    <link rel="stylesheet" href="~/css/Setting.css" />
+    <script src="~/js/setting.js"></script>
+</head>
+<body>
+    <div class="settings-container">
+        <!-- DeviseConnection.json -->
+        <div class="group">
+            <h3 onclick="toggleGroup('device-config')">Настройки подключения устройства</h3>
+            <div id="device-config" class="config-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>IpAddress</th>
+                            <th>Port</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" id="ipAddress" class="form-control" /></td>
+                            <td><input type="text" id="port" class="form-control" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="btn btn-success" onclick="saveConfig('DeviseConnection.json')">Сохранить</button>
+            </div>
+        </div>
 
-<h2>Настройки</h2>
-<p>Здесь вы можете изменить настройки системы.</p>
+        <!-- modbusConfig.json -->
+        <div class="group">
+            <h3 onclick="toggleGroup('modbus-config')">Modbus Конфигурация</h3>
+            <div id="modbus-config" class="config-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Имя</th>
+                            <th>Адрес Slave</th>
+                            <th>Адрес Текущего значения</th>
+                            <th>Адрес Порога 1</th>
+                            <th>Адрес Порога 2</th>
+                            <th>Нарастание</th>
+                            <th>Период</th>
+                            <th>Адрес Сигнала Порог 1</th>
+                            <th>Адрес Сигнала Порог 2</th>
+                            <th>Адрес Сигнала Порог 3</th>
+                            <th>Группа</th>
+                            <th>Удалить</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Заполняется через JavaScript -->
+                    </tbody>
+                </table>
+                <button class="btn btn-primary" onclick="addModbusConfig()">Добавить запись</button>
+                <button class="btn btn-success" onclick="saveConfig('modbusConfig.json')">Сохранить</button>
+            </div>
+        </div>
+
+        <!-- modbusColibrationGasConfig.json -->
+        <div class="group">
+            <h3 onclick="toggleGroup('gas-config')">Калибровка Газоанализатора</h3>
+            <div id="gas-config" class="config-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Имя</th>
+                            <th>Адрес Slave</th>
+                            <th>Адрес Текущего значения</th>
+                            <th>Установка нуля</th>
+                            <th>Концентрация ПГС</th>
+                            <th>Значение АЦП</th>
+                            <th>Расчетный "0"</th>
+                            <th>Удалить</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Заполняется через JavaScript -->
+                    </tbody>
+                </table>
+                <button class="btn btn-primary" onclick="addGasConfig()">Добавить запись</button>
+                <button class="btn btn-success" onclick="saveConfig('modbusColibrationGasConfig.json')">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

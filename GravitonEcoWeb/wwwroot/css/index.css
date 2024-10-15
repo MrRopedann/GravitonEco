@@ -1,4 +1,14 @@
-﻿/* Общие стили для страницы */
+﻿/* Стили для заголовков групп */
+.group-header {
+    color: #BEBEBE !important; /* Светло-серый цвет текста */
+    cursor: pointer !important; /* Указатель курсора */
+}
+
+.group-header:hover {
+    color: #00E7FF !important; /* Цвет при наведении */
+}
+
+/* Общие стили для страницы */
 body {
     background-color: #1E1E1E;
     color: #BEBEBE;
@@ -50,7 +60,7 @@ th, td {
 
 th {
     background-color: #171515;
-    color: #00E7FFBF;
+    color: #1996BE; /* Цвет заголовков таблиц */
 }
 
 /* Чередование цветов строк в таблице */
@@ -79,14 +89,6 @@ tbody tr:nth-child(even) {
     border: 2px solid #007bff;
     outline: none;
 }
-
-.group-header {
-    cursor: pointer !important; /* Принудительное изменение курсора */
-}
-
-    .group-header:hover {
-        color: #00E7FF !important; /* Принудительное изменение цвета при наведении */
-    }
 
 /* Стили для состояния warning */
 .warning {
