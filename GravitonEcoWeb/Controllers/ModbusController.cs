@@ -78,6 +78,42 @@ namespace GravitonEcoWeb.Controllers
             }
         }
 
+        // Метод для получения текущего интервала опроса
+        [HttpGet("get-polling-interval")]
+        public IActionResult GetPollingInterval()
+        {
+            var interval = _modbusService.GetPollingInterval();
+            return Ok(interval); // Возвращаем интервал в секундах
+        }
+
+        // Метод для установки нового интервала опроса
+        [HttpPost("set-polling-interval")]
+        public IActionResult SetPollingInterval([FromBody] PollingIntervalRequest request)
+        {
+            try
+            {
+                _modbusService.SetPollingInterval(request.IntervalInSeconds);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка установки интервала опроса");
+                return BadRequest("Ошибка при изменении интервала опроса");
+            }
+        }
+
+        [HttpGet("get-calibration-parameters")]
+        public IActionResult GetGasCalibrationParameters()
+        {
+            var calibrationParameters = _modbusDataFactory.GetGasCalibrationParameters();
+            return Ok(calibrationParameters);
+        }
+    }
+
+    // Модель для приема данных из POST-запроса
+    public class PollingIntervalRequest
+    {
+        public int IntervalInSeconds { get; set; } // Интервал опроса в секундах
     }
     // Модель для запроса записи
     public class ModbusWriteRequest
@@ -92,4 +128,6 @@ namespace GravitonEcoWeb.Controllers
         public string GroupName { get; set; }  // Название группы
         public bool IsExpanded { get; set; }   // Состояние группы (развернута или свернута)
     }
+
+
 }

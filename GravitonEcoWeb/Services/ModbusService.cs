@@ -13,12 +13,31 @@ namespace GravitonEcoWeb.Services
         private List<ModbusDeviseConfig> _deviseConfigs;
         private string _ipAddress;
         private int _port;
+        private int _pollingIntervalInSeconds = 1;
 
         public ModbusService(IWebHostEnvironment env)
         {
             _env = env;
             LoadConfig();
             Connect();
+        }
+
+        /// Метод для получения текущего интервала опроса
+        public int GetPollingInterval()
+        {
+            return _pollingIntervalInSeconds;
+        }
+
+        // Метод для установки нового интервала опроса
+        public void SetPollingInterval(int intervalInSeconds)
+        {
+            if (intervalInSeconds <= 0)
+            {
+                throw new ArgumentException("Интервал должен быть больше 0");
+            }
+
+            _pollingIntervalInSeconds = intervalInSeconds;
+            // Можно добавить сохранение этого значения в файл или базу данных, если нужно
         }
 
         private void LoadConfig()

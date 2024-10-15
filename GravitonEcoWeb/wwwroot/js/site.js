@@ -1,19 +1,22 @@
-﻿function checkConnection() {
+﻿let isEditing = false; // Флаг для блокировки обновления во время редактирования
+let currentIntervalId = null; // Переменная для хранения ID текущего интервала
+
+// Функция для проверки соединения
+function checkConnection() {
     fetch('/api/modbus/check-connection')
         .then(response => response.json())
         .then(isConnected => {
             const connectionIcon = document.getElementById('connection-icon');
-            if (isConnected) {
-                connectionIcon.src = '/images/mobile_connection_green.png';
-            } else {
-                connectionIcon.src = '/images/mobile_connection_red.png';
-            }
+            connectionIcon.src = isConnected
+                ? '/images/mobile_connection_green.png'
+                : '/images/mobile_connection_red.png';
         })
         .catch(error => {
             console.error('Error checking connection:', error);
         });
 }
 
+// Функция для обновления времени устройства
 function updateDeviceTime() {
     fetch('/api/modbus/get-device-time')
         .then(response => response.text())
@@ -26,19 +29,20 @@ function updateDeviceTime() {
         });
 }
 
+// Функция для обновления серийного номера устройства
 function updateDeviceSerialNumber() {
-    fetch('/api/modbus/get-device-serialnumber') // Исправлено
+    fetch('/api/modbus/get-device-serialnumber')
         .then(response => response.text())
         .then(deviceSerialNumber => {
             const serialNumberElement = document.querySelector('.serial-number');
             serialNumberElement.textContent = deviceSerialNumber;
         })
         .catch(error => {
-            console.error('Error fetching device serial number:', error); // Исправлено сообщение об ошибке
+            console.error('Error fetching device serial number:', error);
         });
 }
 
-// Функция обновления данных с сервера
+// Функция для обновления данных с сервера
 function updateCurrentData() {
     if (!isEditing) { // Обновляем данные только если не редактируем поля
         fetch('/api/modbus/get-parameters')
@@ -50,7 +54,7 @@ function updateCurrentData() {
                         currentCell.textContent = param.current; // Обновляем текущее значение
                     }
 
-                    // Обновление порогов и сработок
+                    // Обновление порогов и сигнализаций
                     const threshold1Cell = document.querySelector(`#threshold1-data-${index}`);
                     const threshold2Cell = document.querySelector(`#threshold2-data-${index}`);
                     const growthCell = document.querySelector(`#growth-data-${index}`);
@@ -58,38 +62,22 @@ function updateCurrentData() {
 
                     if (threshold1Cell) {
                         threshold1Cell.value = param.threshold1;
-                        if (param.alarmPorog1) {
-                            threshold1Cell.classList.add('warning');
-                        } else {
-                            threshold1Cell.classList.remove('warning');
-                        }
+                        toggleWarning(threshold1Cell, param.alarmPorog1);
                     }
 
                     if (threshold2Cell) {
                         threshold2Cell.value = param.threshold2;
-                        if (param.alarmPorog2) {
-                            threshold2Cell.classList.add('warning');
-                        } else {
-                            threshold2Cell.classList.remove('warning');
-                        }
+                        toggleWarning(threshold2Cell, param.alarmPorog2);
                     }
 
                     if (growthCell) {
                         growthCell.value = param.growth;
-                        if (param.alarmPorog3) {
-                            growthCell.classList.add('warning');
-                        } else {
-                            growthCell.classList.remove('warning');
-                        }
+                        toggleWarning(growthCell, param.alarmPorog3);
                     }
 
                     if (periodCell) {
                         periodCell.value = param.period;
-                        if (param.alarmPorog3) {
-                            periodCell.classList.add('warning');
-                        } else {
-                            periodCell.classList.remove('warning');
-                        }
+                        toggleWarning(periodCell, param.alarmPorog3);
                     }
                 });
             })
@@ -99,12 +87,20 @@ function updateCurrentData() {
     }
 }
 
+// Функция для добавления или удаления класса "warning"
+function toggleWarning(element, isWarning) {
+    if (isWarning) {
+        element.classList.add('warning');
+    } else {
+        element.classList.remove('warning');
+    }
+}
 
-let isEditing = false;
-
+// Функция для отправки данных на устройство
 function submitValue(event, paramName, fieldName, value) {
     if (event.keyCode === 13) { // Enter
-        isEditing = false; // Сбрасываем флаг после отправки данных
+        event.target.disabled = true;
+
         fetch('/api/modbus/write', {
             method: 'POST',
             headers: {
@@ -117,47 +113,106 @@ function submitValue(event, paramName, fieldName, value) {
             })
         })
             .then(response => {
+                event.target.disabled = false;
                 if (response.ok) {
-                    alert('Значение успешно записано на устройство');
+                    alert('Значение успешно записано');
                 } else {
-                    alert('Ошибка записи на устройство');
+                    alert('Ошибка записи');
                 }
             })
             .catch(error => {
-                console.error('Ошибка при отправке данных:', error);
-                alert('Ошибка при отправке данных');
+                console.error('Ошибка при записи:', error);
+                alert('Ошибка при записи');
             });
     }
 }
 
-// Остановка обновления данных при взаимодействии с полем ввода
+// Остановка обновления данных при редактировании
 function startEditing() {
     isEditing = true;
 }
 
-// Возобновление обновления данных при потере фокуса
+// Возобновление обновления данных после завершения редактирования
 function stopEditing() {
     isEditing = false;
 }
 
+// Функция для изменения интервала опроса данных в зависимости от выбора
+function updatePollingInterval() {
+    const dropdown = document.getElementById('update-interval-dropdown');
+    const interval = parseInt(dropdown.value, 10); // Получаем выбранное значение
 
-// Запуск функции для обновления данных каждые 5 секунд
-setInterval(updateCurrentData, 1000);
+    // Если есть активный интервал, сбрасываем его
+    if (currentIntervalId) {
+        clearInterval(currentIntervalId);
+    }
 
-// Периодическое обновление времени каждые 1 секунд
-setInterval(updateDeviceTime, 1000);
+    // Устанавливаем новый интервал опроса
+    currentIntervalId = setInterval(updateCurrentData, interval * 1000);
+}
 
-// Обновление времени при загрузке страницы
-document.addEventListener('DOMContentLoaded', updateDeviceTime);
+function syncTableColumns() {
+    // Получаем все таблицы
+    const tables = document.querySelectorAll('table');
+    const columnWidths = [];
 
-// Периодическое обновление времени каждые 1 секунд
-setInterval(updateDeviceSerialNumber, 100000);
+    // Перебираем все строки первой таблицы, чтобы получить максимальные ширины колонок
+    tables.forEach(table => {
+        const headers = table.querySelectorAll('th');
+        headers.forEach((th, index) => {
+            const thWidth = th.offsetWidth;
+            columnWidths[index] = Math.max(columnWidths[index] || 0, thWidth);
+        });
+    });
 
-// Обновление времени при загрузке страницы
-document.addEventListener('DOMContentLoaded', updateDeviceSerialNumber);
+    // Применяем максимальную ширину ко всем колонкам всех таблиц
+    tables.forEach(table => {
+        const headers = table.querySelectorAll('th');
+        const cells = table.querySelectorAll('td');
 
-// Периодическая проверка каждые 5 секунд
-setInterval(checkConnection, 5000);
+        headers.forEach((th, index) => {
+            th.style.width = `${columnWidths[index]}px`;
+        });
 
-// Вызов функции сразу при загрузке страницы
-document.addEventListener('DOMContentLoaded', checkConnection);
+        cells.forEach((td, index) => {
+            td.style.width = `${columnWidths[index % headers.length]}px`;
+        });
+    });
+}
+
+// Вызываем функцию после рендеринга таблиц
+document.addEventListener('DOMContentLoaded', syncTableColumns);
+
+// Функция для отображения ошибок
+function showError(message) {
+    const errorMessage = document.getElementById('error-message');
+    errorMessage.textContent = message;
+    errorMessage.style.display = 'block';
+}
+
+// Скрытие ошибок
+function hideError() {
+    const errorMessage = document.getElementById('error-message');
+    errorMessage.style.display = 'none';
+}
+
+
+// Запуск всех функций при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    // Запуск начального интервала опроса
+    updatePollingInterval();
+
+    // Добавляем обработчик на изменение выпадающего списка для смены интервала
+    const dropdown = document.getElementById('update-interval-dropdown');
+    dropdown.addEventListener('change', updatePollingInterval); // Смена интервала при изменении значения
+
+    setInterval(updateDeviceTime, 1000); // Обновляем время каждую секунду
+    setInterval(updateDeviceSerialNumber, 100000); // Обновляем серийный номер каждые 100 секунд
+    setInterval(checkConnection, 5000); // Проверка соединения каждые 5 секунд
+
+    updateDeviceTime(); // Обновляем время сразу при загрузке
+    updateDeviceSerialNumber(); // Обновляем серийный номер сразу при загрузке
+    checkConnection(); // Проверка соединения сразу при загрузке
+});
+
+

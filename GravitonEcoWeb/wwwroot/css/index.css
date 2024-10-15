@@ -1,50 +1,51 @@
-﻿body {
+﻿/* Общие стили для страницы */
+body {
     background-color: #1E1E1E;
     color: #BEBEBE;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #171515;
-    color: #32E650;
-    align-items: center;
-}
-
-    .header .info {
-        display: flex;
-        gap: 15px;
-    }
-
-        .header .info span {
-            color: #BEBEBE;
-            font-size: 17px;
-        }
-
+/* Основной контент страницы */
 .main-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* Две колонки: левая панель шире, правая уже */
+    display: flex;
+    flex-wrap: wrap; /* Добавляем wrap для переноса блоков при уменьшении экрана */
     gap: 20px; /* Разрыв между колонками */
     padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* Стили для панелей */
 .left-panel, .right-panel {
     background-color: #171515;
     padding: 15px;
     border-radius: 8px;
+    flex: 1; /* Панели занимают равное пространство */
+    min-width: 450px; /* Минимальная ширина для каждой панели */
+    max-width: 100%; /* Максимальная ширина панели */
 }
 
+/* Стили таблиц */
 table {
-    width: 100%;
+    width: 100%; /* Занимаем всю ширину блока */
     border-collapse: collapse;
     text-align: center;
+    table-layout: auto; /* Автоматическое выравнивание колонок */
 }
 
 th, td {
     padding: 8px;
     border: 1px solid #505050;
+    word-wrap: break-word;
+}
+
+/* Устанавливаем минимальные и максимальные размеры для колонок */
+th, td {
+    min-width: 80px; /* Минимальная ширина для ячеек */
+    max-width: 200px; /* Максимальная ширина для ячеек */
 }
 
 th {
@@ -52,30 +53,42 @@ th {
     color: #00E7FFBF;
 }
 
+/* Чередование цветов строк в таблице */
 tbody tr:nth-child(odd) {
-    background-color: #323232; /* Цвет для нечетных строк */
+    background-color: #323232;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #1E1E1E; /* Цвет для четных строк */
+    background-color: #1E1E1E;
 }
 
+/* Стили для полей ввода */
 .numeric-input {
     border: 2px solid #888;
     border-radius: 4px;
     padding: 5px;
-    width: 60px;
+    width: 100%;
+    box-sizing: border-box;
     text-align: center;
     background-color: transparent;
     color: white;
     font-size: 16px;
 }
 
-    .numeric-input:focus {
-        border: 2px solid #007bff;
-        outline: none;
+.numeric-input:focus {
+    border: 2px solid #007bff;
+    outline: none;
+}
+
+.group-header {
+    cursor: pointer !important; /* Принудительное изменение курсора */
+}
+
+    .group-header:hover {
+        color: #00E7FF !important; /* Принудительное изменение цвета при наведении */
     }
 
+/* Стили для состояния warning */
 .warning {
     color: #E64A19;
 }
@@ -85,3 +98,18 @@ tbody tr:nth-child(even) {
         border: 2px solid #E64A19; /* Цвет рамки */
         background-color: #2C2C2C; /* Цвет фона */
     }
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 1200px) {
+    .left-panel, .right-panel {
+        flex: 1 1 100%; /* Панели будут занимать всю ширину экрана при уменьшении */
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .numeric-input {
+        font-size: 14px;
+    }
+}

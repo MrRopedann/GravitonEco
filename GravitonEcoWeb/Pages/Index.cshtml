@@ -28,49 +28,49 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Параметр</th>
-                                    <th>Мин.</th>
-                                    <th>Макс.</th>
-                                    <th>Сред.</th>
-                                    <th>Текущ.</th>
-                                    <th>Порог 1</th>
-                                    <th>Порог 2</th>
-                                    <th>Нарастание</th>
-                                    <th>Период</th>
+                                    <th class="param">Параметр</th>
+                                    <th class="min">Мин.</th>
+                                    <th class="max">Макс.</th>
+                                    <th class="avg">Сред.</th>
+                                    <th class="current">Текущ.</th>
+                                    <th class="threshold1">Порог 1</th>
+                                    <th class="threshold2">Порог 2</th>
+                                    <th class="growth">Нарастание</th>
+                                    <th class="period">Период</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var param in Model.GroupedParameters[group.Key].Select((value, index) => new { Value = value, Index = index }))
                                 {
                                     <tr>
-                                        <td>@param.Value.Name</td>
-                                        <td>@param.Value.Min</td>
-                                        <td>@param.Value.Max</td>
-                                        <td>@param.Value.Average</td>
-                                        <td id="current-data-@param.Index">@param.Value.Current</td>
+                                        <td class="param">@param.Value.Name</td>
+                                        <td class="min">@param.Value.Min</td>
+                                        <td class="max">@param.Value.Max</td>
+                                        <td class="avg">@param.Value.Average</td>
+                                        <td class="current" id="current-data-@param.Index">@param.Value.Current</td>
 
-                                        <td>
+                                        <td class="threshold1">
                                             <input id="threshold1-data-@param.Index" type="text" value="@param.Value.Threshold1"
                                                    class="numeric-input @(param.Value.AlarmPorog1 ? "warning" : "")"
                                                    onfocus="startEditing()" onblur="stopEditing()"
                                                    onkeydown="submitValue(event, '@param.Value.Name', 'Threshold1', this.value)" />
                                         </td>
 
-                                        <td>
+                                        <td class="threshold2">
                                             <input id="threshold2-data-@param.Index" type="text" value="@param.Value.Threshold2"
                                                    class="numeric-input @(param.Value.AlarmPorog2 ? "warning" : "")"
                                                    onfocus="startEditing()" onblur="stopEditing()"
                                                    onkeydown="submitValue(event, '@param.Value.Name', 'Threshold2', this.value)" />
                                         </td>
 
-                                        <td>
+                                        <td class="growth">
                                             <input id="growth-data-@param.Index" type="text" value="@param.Value.Growth"
                                                    class="numeric-input @(param.Value.AlarmPorog3 ? "warning" : "")"
                                                    onfocus="startEditing()" onblur="stopEditing()"
                                                    onkeydown="submitValue(event, '@param.Value.Name', 'Growth', this.value)" />
                                         </td>
 
-                                        <td>
+                                        <td class="period">
                                             <input id="period-data-@param.Index" type="text" value="@param.Value.Period"
                                                    class="numeric-input @(param.Value.AlarmPorog3 ? "warning" : "")"
                                                    onfocus="startEditing()" onblur="stopEditing()"
@@ -84,49 +84,52 @@
                 }
             }
         </div>
+        <div class="right-panel">
+            <h3>Калибровка Газоанализатора</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="param">Параметр</th>
+                        <th class="current">Текущее</th>
+                        <th class="setting-zero">Уст. Нуля</th>
+                        <th class="pgs-concentration">Конц-я ПГС</th>
+                        <th class="adc-value">Знач-е АЦП</th>
+                        <th class="calculated-zero">Расчетный "0"</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var param in Model.GasCalibrationParameters)
+                    {
+                        <tr>
+                            <td class="param">@param.Name</td>
+                            <td class="current">@param.CurrentValue</td>
+                            <td class="setting-zero"><input type="text" value="@param.SettingZero" class="numeric-input" onkeydown="submitValue(event, '@param.Name', 'SettingZero', this.value)" /></td>
+                            <td class="pgs-concentration"><input type="text" value="@param.PGSConcentration" class="numeric-input" onkeydown="submitValue(event, '@param.Name', 'PGSConcentration', this.value)" /></td>
+                            <td class="adc-value"><input type="text" value="@param.ADCValue" class="numeric-input" onkeydown="submitValue(event, '@param.Name', 'ADCValue', this.value)" /></td>
+                            <td class="calculated-zero"><input type="text" value="@param.CalculatedZero" class="numeric-input" onkeydown="submitValue(event, '@param.Name', 'CalculatedZero', this.value)" /></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>
-
         function toggleGroup(groupName) {
             const isExpanded = document.querySelector(`h3[group-name="${groupName}"]`).textContent.includes("Развернуто");
 
-            // Отправляем запрос на сервер с измененным состоянием группы
             fetch('/api/modbus/toggle-group', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ groupName, isExpanded: !isExpanded }) // Переключаем состояние
             })
-                .then(response => {
-                    // Логируем статус ответа и его содержимое
-                    console.log("Ответ от сервера:", response);
-
-                    if (!response.ok) {
-                        throw new Error("Ошибка при изменении состояния группы");
-                    }
-
-                    return response.text(); // Используем text(), чтобы избежать ошибки парсинга JSON
-                })
+                .then(response => response.text())
                 .then(data => {
-                    console.log("Полученные данные:", data); // Логируем полученные данные
-                    if (data.trim() === "") {
-                        console.warn("Пустой ответ от сервера");
-                        return; // Игнорируем пустые ответы
-                    }
-
-                    const parsedData = JSON.parse(data); // Разбираем ответ
-                    console.log("Разобранные данные:", parsedData);
                     location.reload(); // Перезагрузка страницы для обновления данных
                 })
                 .catch(error => {
                     console.error('Ошибка при изменении состояния группы:', error);
                 });
-        }
-
-        function updateGroupUI(groupName, data) {
-            // Логика обновления DOM для группы на основе данных
-            const groupElement = document.querySelector(`[group-name="${groupName}"]`);
-            // Добавляем код для обновления элементов UI
         }
     </script>
 </body>

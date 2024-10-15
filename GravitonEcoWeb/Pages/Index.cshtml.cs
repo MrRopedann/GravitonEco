@@ -6,6 +6,7 @@ public class IndexModel : PageModel
 {
     private readonly ModbusDataFactory _modbusDataFactory;
     private readonly ILogger<ModbusDataFactory> _logger;
+    public List<CalibrationParameter> GasCalibrationParameters { get; set; }
 
     public IndexModel(ModbusDataFactory modbusDataFactory)
     {
@@ -22,6 +23,8 @@ public class IndexModel : PageModel
 
         // Получаем параметры только для развернутых групп
         var parameters = _modbusDataFactory.GetParametersForExpandedGroups();
+        // Получаем параметры калибровки газоанализатора
+        GasCalibrationParameters = _modbusDataFactory.GetGasCalibrationParameters();
 
         // Логируем количество параметров для проверки
         //_logger.LogInformation("Получено {ParameterCount} параметров для развернутых групп", parameters.Count);

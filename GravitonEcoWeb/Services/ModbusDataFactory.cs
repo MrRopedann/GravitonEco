@@ -79,6 +79,47 @@ namespace GravitonEcoWeb.Services
             }
         }
 
+        // Метод для загрузки конфигурации калибровки газоанализатора
+        public List<CalibrationParameter> GetGasCalibrationParameters()
+        {
+            var parameters = new List<CalibrationParameter>();
+            var configPath = Path.Combine(_env.WebRootPath, "config", "modbusColibrationGasConfig.json");
+
+            try
+            {
+                // Загрузка конфигурации из файла
+                var configJson = File.ReadAllText(configPath);
+                var configParameters = JsonSerializer.Deserialize<List<CalibrationConfig>>(configJson);
+
+                foreach (var config in configParameters)
+                {
+                    // Чтение значений с Modbus
+                    var currentValue = _modbusService.ReadInputRegisters(config.SlaveAddress, config.CurrentValueAddress);
+                    var settingZero = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.SettingZero);
+                    var pgsConcentration = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.PGSConcentration);
+                    var adcValue = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.ADCValue);
+                    var calculatedZero = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.CalculatedZero);
+
+                    // Добавление данных в список параметров
+                    parameters.Add(new CalibrationParameter
+                    {
+                        Name = config.Name,
+                        CurrentValue = currentValue[0],
+                        SettingZero = settingZero[0],
+                        PGSConcentration = pgsConcentration[0],
+                        ADCValue = adcValue[0],
+                        CalculatedZero = calculatedZero[0]
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка при загрузке конфигурации калибровки газоанализатора");
+            }
+
+            return parameters;
+        }
+
         // Получение параметров для развернутых групп
         public List<ModbusParameter> GetParametersForExpandedGroups()
         {
