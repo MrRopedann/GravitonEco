@@ -31,6 +31,7 @@ builder.Services.AddRazorPages();
 // Добавляем Modbus сервис
 builder.Services.AddSingleton<ModbusService>();
 builder.Services.AddTransient<ModbusDataFactory>();
+builder.Services.AddTransient<CalibrationCalculator>();
 
 // Добавляем поддержку сессий
 builder.Services.AddSession(options =>

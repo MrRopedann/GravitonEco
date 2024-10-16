@@ -9,27 +9,27 @@ namespace GravitonEcoWeb.Services
         private readonly ModbusService _modbusService;
         private readonly IWebHostEnvironment _env;
         private readonly ILogger<ModbusDataFactory> _logger;
+        private readonly CalibrationCalculator _calibrationCalculator; // Используем обобщенный калькулятор
         private List<ModbusConfigParameter> _configParameters;
         private List<CalibrationConfig> _configCalibrationGasParameters;
         private Dictionary<string, bool> _groupStates;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public ModbusDataFactory(
-    ModbusService modbusService,
-    IWebHostEnvironment env,
-    ILogger<ModbusDataFactory> logger,
-    IHttpContextAccessor httpContextAccessor)
+            ModbusService modbusService,
+            IWebHostEnvironment env,
+            ILogger<ModbusDataFactory> logger,
+            IHttpContextAccessor httpContextAccessor,
+            CalibrationCalculator calibrationCalculator) // Внедрение класса для расчетов
         {
             _modbusService = modbusService;
             _env = env;
             _logger = logger;
             _httpContextAccessor = httpContextAccessor;
+            _calibrationCalculator = calibrationCalculator; // Инициализация обобщенного калькулятора
             _groupStates = new Dictionary<string, bool>();
 
-            // Загрузка конфигурации должна быть первой
             LoadConfig();
-
-            // Только после загрузки конфигурации загружаем состояния групп
             if (_configParameters != null && _configParameters.Any())
             {
                 LoadGroupStates();
@@ -39,6 +39,25 @@ namespace GravitonEcoWeb.Services
                 _logger.LogWarning("Конфигурация параметров не была загружена, состояния групп не могут быть инициализированы.");
             }
         }
+
+        // Метод для получения пересчитанного значения для CO2
+        public double GetRecalculatedValue(string paramName)
+        {
+            var calibrationParam = _configCalibrationGasParameters.FirstOrDefault(p => p.Name == paramName);
+            if (calibrationParam == null)
+            {
+                throw new ArgumentException($"Параметр с именем {paramName} не найден.");
+            }
+
+            var measuredValue = _modbusService.ReadHoldingRegisters(calibrationParam.SlaveAddress, calibrationParam.CurrentValueAddress)[0];
+            var zeroValue = _modbusService.ReadHoldingRegisters(calibrationParam.SlaveAddress, calibrationParam.SettingZero)[0];
+            var referenceValue = _modbusService.ReadHoldingRegisters(calibrationParam.SlaveAddress, calibrationParam.PGSConcentration)[0];
+            var acpValue = _modbusService.ReadHoldingRegisters(calibrationParam.SlaveAddress, calibrationParam.ADCValue)[0];
+
+            // Используем универсальный калькулятор для расчета
+            return _calibrationCalculator.CalculateCalibrationValue(measuredValue, zeroValue, referenceValue, acpValue);
+        }
+
 
         private void LoadGroupStates()
         {
@@ -189,7 +208,6 @@ namespace GravitonEcoWeb.Services
 
 
 
-        // Метод для получения параметров для развернутых групп
         public List<ModbusParameter> GetParametersForExpandedGroups()
         {
             var parameters = new List<ModbusParameter>();
@@ -200,7 +218,37 @@ namespace GravitonEcoWeb.Services
                 {
                     try
                     {
-                        var currentValue = _modbusService.ReadInputRegisters(config.SlaveAddress, config.CurrentValueAddress);
+                        double currentValue;
+
+                        // Проверка, если параметр CO2 (0 - 5 000 ppm)
+                        if (config.Name == "CO2 (0 - 5 000 ppm)")
+                        {
+                            // Найдем соответствующий элемент в _configCalibrationGasParameters
+                            var calibrationConfig = _configCalibrationGasParameters.FirstOrDefault(c => c.Name == config.Name);
+                            if (calibrationConfig != null)
+                            {
+                                // Получаем данные для пересчета
+                                currentValue = _modbusService.ReadInputRegisters(config.SlaveAddress, config.CurrentValueAddress)[0];
+                                var settingZero = _modbusService.ReadHoldingRegisters(calibrationConfig.SlaveAddress, calibrationConfig.SettingZero)[0];
+                                var pgsConcentration = _modbusService.ReadHoldingRegisters(calibrationConfig.SlaveAddress, calibrationConfig.PGSConcentration)[0];
+                                var acpConcentration = _modbusService.ReadHoldingRegisters(calibrationConfig.SlaveAddress, calibrationConfig.ADCValue)[0];
+
+                                // Пересчитываем значение с использованием новой формулы CalibrationCalculator
+                                currentValue = Math.Round(_calibrationCalculator.CalculateCalibrationValue(currentValue, settingZero, pgsConcentration, acpConcentration), 2);
+                            }
+                            else
+                            {
+                                _logger.LogWarning($"Конфигурация калибровки для {config.Name} не найдена");
+                                currentValue = 0; // По умолчанию
+                            }
+                        }
+                        else
+                        {
+                            // Для остальных параметров получаем значение напрямую с устройства
+                            currentValue = _modbusService.ReadInputRegisters(config.SlaveAddress, config.CurrentValueAddress)[0];
+                        }
+
+                        // Получаем остальные параметры напрямую с устройства
                         var porog1 = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.Porog1Address);
                         var porog2 = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.Porog2Address);
                         var increment = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.IncrementAddress);
@@ -209,13 +257,14 @@ namespace GravitonEcoWeb.Services
                         var alarmPorog2 = _modbusService.ReadDiscretRegisters(config.SlaveAddress, config.AlarmPorog2Address);
                         var alarmPorog3 = _modbusService.ReadDiscretRegisters(config.SlaveAddress, config.AlarmPorog3Address);
 
+                        // Добавляем параметры в список
                         parameters.Add(new ModbusParameter
                         {
                             Name = config.Name,
                             Min = 0,
                             Max = 0,
                             Average = 0,
-                            Current = currentValue[0],
+                            Current = currentValue, // Используем пересчитанное или прямое значение
                             Threshold1 = porog1[0],
                             Threshold2 = porog2[0],
                             Growth = increment[0],
@@ -235,6 +284,9 @@ namespace GravitonEcoWeb.Services
 
             return parameters;
         }
+
+
+
 
         // Метод для сохранения состояния групп
         private void SaveGroupStates()

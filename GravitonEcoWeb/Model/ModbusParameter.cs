@@ -5,8 +5,8 @@
         public string Name { get; set; }
         public int Min { get; set; }
         public int Max { get; set; }
-        public int Average { get; set; }
-        public int Current { get; set; }
+        public double Average { get; set; }
+        public double Current { get; set; }
         public int Threshold1 { get; set; }
         public int Threshold2 { get; set; }
         public int Growth { get; set; }
