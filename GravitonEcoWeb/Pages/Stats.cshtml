@@ -1,0 +1,222 @@
+﻿@page
+@model GravitonEcoWeb.Pages.SettingsModel
+@{
+    ViewData["Title"] = "Статистика";
+}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graviton-ECO</title>
+    <link rel="stylesheet" href="~/css/stats.css?v=15" />
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active" data-target="#log-changes">Журнал изменений</button>
+            <button class="tab-button" data-target="#log-events">Журнал событий</button>
+            <button class="tab-button" data-target="#log-service">Сервисный журнал</button>
+        </div>
+
+        <div id="log-changes" class="collapse-content open pt-1">
+            <table class="w-100 text-center table-bordered">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Время</th>
+                        <th>Параметр</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:00</td>
+                        <td>Температура</td>
+                        <td>25°C</td>
+                    </tr>
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+            <button class="import-btn mt-1">Импорт в файл PDF</button>
+        </div>
+
+        <div id="log-events" class="collapse-content pt-1">
+            <table class="w-100 text-center table-bordered">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Время</th>
+                        <th>Событие</th>
+                        <th>Описание</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:05</td>
+                        <td>Калибровка</td>
+                        <td>Калибровка датчиков</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:05</td>
+                        <td>Калибровка</td>
+                        <td>Калибровка датчиков</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:05</td>
+                        <td>Калибровка</td>
+                        <td>Калибровка датчиков</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:05</td>
+                        <td>Калибровка</td>
+                        <td>Калибровка датчиков</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:05</td>
+                        <td>Калибровка</td>
+                        <td>Калибровка датчиков</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:05</td>
+                        <td>Калибровка</td>
+                        <td>Калибровка датчиков</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>10:05</td>
+                        <td>Калибровка</td>
+                        <td>Калибровка датчиков</td>
+                    </tr>
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+            <button class="import-btn mt-1">Импорт в файл PDF</button>
+        </div>
+
+        <div id="log-service" class="collapse-content pt-1">
+            <table class="w-100 text-center table-bordered">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Сервисное действие</th>
+                        <th>Ответственный</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>Обслуживание</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>Обслуживание</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>Обслуживание</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>Обслуживание</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>Обслуживание</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>Обслуживание</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>Обслуживание</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>Обслуживание</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <tr>
+                        <td>01.01.2024</td>
+                        <td>Обслуживание</td>
+                        <td>Иванов И.И.</td>
+                    </tr>
+                    <!-- More rows can be added here -->
+                </tbody>
+            </table>
+            <button class="import-btn mt-1">Импорт в файл PDF</button>
+        </div>
+    </div>
+
+    <script src="~/js/stats.js?v=1"></script>
+</body>
+</html>

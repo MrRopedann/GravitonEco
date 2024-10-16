@@ -1,0 +1,110 @@
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    background-color: #2a2a2a; 
+}
+
+.tab-button {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    border: none;
+    background: none;
+    color: #ddd;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.tab-button:hover {
+    color: #fff; 
+}
+
+.tab-button::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: background-color 0.3s;
+}
+
+.tab-button.active::after {
+    background-color: #fff; 
+}
+
+.collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background-color: #333; 
+    color: #ddd;
+    padding: 0 20px; 
+}
+
+.collapse-content.open {
+    max-height: none; /* Открытая вкладка будет полностью развернута */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; 
+    color: #ddd;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #323232;
+}
+
+th {
+    background-color: #171515;
+    color: #1996BE; 
+}
+
+tbody tr:nth-child(even) {
+    background-color: #1E1E1E;
+}
+
+.table-bordered {
+    width: 100%;
+    border-collapse: collapse;
+    border-color: #555;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #555;
+    padding: 8px;
+}
+
+.pt-1 {
+    padding-top: 0.25rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+    border-color: gray;
+}

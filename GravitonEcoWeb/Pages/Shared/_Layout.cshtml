@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
     <!-- Подключаем файл стилей для шапки -->
-    <link rel="stylesheet" href="~/css/header.css" />
+    <link rel="stylesheet" href="~/css/header.css?v=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
 </head>
@@ -19,8 +19,11 @@
             <a asp-page="/Settings">
                 <img src="~/images/settings.png" alt="SETTINGS" class="setting" />
             </a>
+            <a asp-page="/Stats">
+                <li class="fa fa-book setting"></li>
+            </a>
             <a asp-page="/Index">
-            <span class="system-info">GRAVITON-ECO</span>
+                <span class="system-info">GRAVITON-ECO</span>
             </a>
             <span class="device-info">HV-0001</span>
             <span class="device-info">HV-0001</span>
