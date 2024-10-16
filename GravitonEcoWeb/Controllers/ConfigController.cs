@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
+using GravitonEcoWeb.Model;  // Убедитесь, что пространство имен правильное для ваших моделей
 
 namespace GravitonEcoWeb.Controllers
 {
@@ -29,15 +30,33 @@ namespace GravitonEcoWeb.Controllers
             return Ok(json);
         }
 
-        // Метод для сохранения конфигурации
-        [HttpPost("save-config/{configName}")]
-        public async Task<IActionResult> SaveConfig(string configName, [FromBody] JsonDocument jsonDocument)
+        // Метод для сохранения конфигурации для Modbus
+        [HttpPost("save-config/modbusConfig.json")]
+        public async Task<IActionResult> SaveModbusConfig([FromBody] List<ModbusConfigParameter> config)
         {
-            var filePath = Path.Combine(_env.WebRootPath, "config", configName);
+            var filePath = Path.Combine(_env.WebRootPath, "config", "modbusConfig.json");
 
             try
             {
-                var formattedJson = JsonSerializer.Serialize(jsonDocument, new JsonSerializerOptions { WriteIndented = true });
+                var formattedJson = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
+                await System.IO.File.WriteAllTextAsync(filePath, formattedJson);
+                return Ok("Конфигурация успешно сохранена.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Ошибка при сохранении файла: {ex.Message}");
+            }
+        }
+
+        // Метод для сохранения конфигурации для Газовой Калибровки
+        [HttpPost("save-config/modbusColibrationGasConfig.json")]
+        public async Task<IActionResult> SaveGasConfig([FromBody] List<CalibrationConfig> config)
+        {
+            var filePath = Path.Combine(_env.WebRootPath, "config", "modbusColibrationGasConfig.json");
+
+            try
+            {
+                var formattedJson = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
                 await System.IO.File.WriteAllTextAsync(filePath, formattedJson);
                 return Ok("Конфигурация успешно сохранена.");
             }

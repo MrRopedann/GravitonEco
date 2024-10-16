@@ -1,11 +1,7 @@
 ﻿// Функция для сворачивания/разворачивания группы
 function toggleGroup(groupId) {
     const group = document.getElementById(groupId);
-    if (group.style.display === 'none' || group.style.display === '') {
-        group.style.display = 'block';
-    } else {
-        group.style.display = 'none';
-    }
+    group.style.display = (group.style.display === 'none' || group.style.display === '') ? 'block' : 'none';
 }
 
 // Загрузка конфигурации
@@ -69,27 +65,34 @@ function addGasConfig() {
         SlaveAddress: '',
         CurrentValueAddress: '',
         SettingZero: '',
+        PGSConcentration: '',
+        ADCValue: '',
+        CalculatedZero: '',
         Group: ''
     }, newIndex, 'modbusColibrationGasConfig.json');
 }
 
-// Сохранение конфигурации с правильной типизацией данных
-function saveConfig(configName) {
-    const container = document.getElementById(configName === 'DeviseConnection.json' ? 'device-config' :
-        configName === 'modbusConfig.json' ? 'modbus-config' : 'gas-config');
+// Функция для преобразования строк в числа, если это возможно
+function parseIfNumeric(value) {
+    const parsedValue = parseInt(value, 10);
+    return isNaN(parsedValue) ? value : parsedValue;  // Возвращаем число или оригинальную строку
+}
+
+// Сохранение конфигурации для Modbus
+function saveModbusConfig() {
+    const container = document.getElementById('modbus-config');
 
     const config = [];
     container.querySelectorAll('tbody tr').forEach(row => {
         const item = {};
         row.querySelectorAll('input').forEach(input => {
-            let value = input.value;
+            let value = input.value.trim();
 
             // Преобразование значений в нужные типы данных
-            if (input.name === 'SlaveAddress') value = parseInt(value, 10);    // byte
-            else if (['CurrentValueAddress', 'Porog1Address', 'Porog2Address',
+            if (['SlaveAddress', 'CurrentValueAddress', 'Porog1Address', 'Porog2Address',
                 'IncrementAddress', 'PeriodAddress', 'AlarmPorog1Address',
                 'AlarmPorog2Address', 'AlarmPorog3Address'].includes(input.name)) {
-                value = parseInt(value, 10);  // ushort
+                value = parseIfNumeric(value);
             }
 
             item[input.name] = value;
@@ -97,12 +100,48 @@ function saveConfig(configName) {
         config.push(item);
     });
 
-    // Кастомное JSON.stringify для избежания Unicode кодирования
-    const jsonConfig = JSON.stringify(config, (key, value) =>
-        typeof value === 'string' ? value : value
-    );
+    // Преобразуем конфигурацию в JSON
+    const jsonConfig = JSON.stringify(config);
 
-    fetch(`/api/config/save-config/${configName}`, {
+    fetch(`/api/config/save-config/modbusConfig.json`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: jsonConfig
+    })
+        .then(response => response.text())
+        .then(result => {
+            alert(result);
+        })
+        .catch(error => console.error('Ошибка сохранения конфигурации:', error));
+}
+
+
+function saveGasConfig() {
+    const container = document.getElementById('gas-config');
+
+    const config = [];
+    container.querySelectorAll('tbody tr').forEach(row => {
+        const item = {};
+        row.querySelectorAll('input').forEach(input => {
+            let value = input.value.trim();
+
+            // Преобразование значений в нужные типы данных
+            if (['SlaveAddress', 'CurrentValueAddress', 'SettingZero',
+                'PGSConcentration', 'ADCValue', 'CalculatedZero'].includes(input.name)) {
+                value = parseIfNumeric(value);
+            }
+
+            item[input.name] = value;
+        });
+        config.push(item);
+    });
+
+    // Преобразуем конфигурацию в JSON
+    const jsonConfig = JSON.stringify(config);
+
+    fetch(`/api/config/save-config/modbusColibrationGasConfig.json`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
