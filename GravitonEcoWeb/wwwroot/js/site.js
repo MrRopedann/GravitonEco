@@ -1,5 +1,6 @@
 ﻿let isEditing = false; // Флаг для блокировки обновления во время редактирования
 let currentIntervalId = null; // Переменная для хранения ID текущего интервала
+let currentCalibrationIntervalId = null; // Переменная для хранения ID текущего интервала
 
 // Функция для проверки соединения
 function checkConnection() {
@@ -87,6 +88,40 @@ function updateCurrentData() {
     }
 }
 
+function updateCalibrationData() {
+    fetch('/api/modbus/get-calibration-parameters')
+        .then(response => response.json())
+        .then(parameters => {
+            parameters.forEach((param, index) => {
+                // Обновляем всегда значение #current-calibration-data, независимо от isEditing
+                document.querySelector(`#current-calibration-data-${index}`).textContent = param.currentValue;
+
+                // Обновляем остальные поля только если не происходит редактирование
+                if (!isEditing) {
+                    const settingZeroCell = document.querySelector(`#setting-zero-data-${index}`);
+                    const pgsConcentrationCell = document.querySelector(`#pgs-concentration-data-${index}`);
+                    const adcValueCell = document.querySelector(`#adc-value-data-${index}`);
+                    const calculatedZeroCell = document.querySelector(`#calculated-zero-data-${index}`);
+
+                    if (settingZeroCell) {
+                        settingZeroCell.value = param.settingZero;
+                    }
+                    if (pgsConcentrationCell) {
+                        pgsConcentrationCell.value = param.pgsConcentration;
+                    }
+                    if (adcValueCell) {
+                        adcValueCell.value = param.adcValue;
+                    }
+                    if (calculatedZeroCell) {
+                        calculatedZeroCell.value = param.calculatedZero;
+                    }
+                }
+            });
+        })
+        .catch(error => console.error('Ошибка при обновлении данных калибровки:', error));
+}
+
+
 // Функция для добавления или удаления класса "warning"
 function toggleWarning(element, isWarning) {
     if (isWarning) {
@@ -102,6 +137,36 @@ function submitValue(event, paramName, fieldName, value) {
         event.target.disabled = true;
 
         fetch('/api/modbus/write', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                paramName: paramName,
+                fieldName: fieldName,
+                value: value
+            })
+        })
+            .then(response => {
+                event.target.disabled = false;
+                if (response.ok) {
+                    alert('Значение успешно записано');
+                } else {
+                    alert('Ошибка записи');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка при записи:', error);
+                alert('Ошибка при записи');
+            });
+    }
+}
+
+function submitCalibrationGasValue(event, paramName, fieldName, value) {
+    if (event.keyCode === 13) { // Enter
+        event.target.disabled = true;
+
+        fetch('/api/modbus/write-calibration-gas', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -149,6 +214,7 @@ function updatePollingInterval() {
 
     // Устанавливаем новый интервал опроса
     currentIntervalId = setInterval(updateCurrentData, interval * 1000);
+    currentCalibrationIntervalId = setInterval(updateCalibrationData, interval * 1000);
 }
 
 function syncTableColumns() {

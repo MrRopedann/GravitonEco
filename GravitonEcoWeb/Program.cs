@@ -14,14 +14,16 @@ if (!Directory.Exists(logDirectory))
     Directory.CreateDirectory(logDirectory);
 }
 
-// Настройка Serilog
+// Настройка Serilog с RollingInterval
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.File(
-        Path.Combine(logDirectory, "app-log.txt"))  // Здесь RollingInterval будет доступен
+        Path.Combine(logDirectory, "app-log.txt"),
+        fileSizeLimitBytes: 10_000_000)
     .CreateLogger();
 
-builder.Host.UseSerilog();  // Используем Serilog
+// Используем Serilog для логирования в приложении
+builder.Host.UseSerilog();  // Используем Serilog для хостинга
 
 // Добавляем поддержку Razor Pages
 builder.Services.AddRazorPages();
@@ -33,23 +35,17 @@ builder.Services.AddTransient<ModbusDataFactory>();
 // Добавляем поддержку сессий
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30);  // Настраиваем тайм-аут сессии
+    options.IdleTimeout = TimeSpan.FromMinutes(30);  // Тайм-аут сессии
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
 });
 
-builder.Services.AddHttpContextAccessor();
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromMinutes(30);  // Настраиваем тайм-аут сессии
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
-
+builder.Services.AddHttpContextAccessor();  // Доступ к HttpContext
 
 // Добавляем поддержку контроллеров
 builder.Services.AddControllers();
 
+// Настройка Kestrel для прослушивания на порту 5000 (HTTP)
 builder.WebHost.UseKestrel(options =>
 {
     options.Listen(System.Net.IPAddress.Any, 5000); // HTTP
@@ -57,6 +53,7 @@ builder.WebHost.UseKestrel(options =>
 
 var app = builder.Build();
 
+// Настройки ошибок и безопасности
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");

@@ -561,21 +561,21 @@
                 <Label Content="Знач-е АЦП" Grid.Row="0" Grid.Column="4" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
                 <Label Content="Расчетный «0»" Grid.Row="0" Grid.Column="5" Margin="5,5,5,5" Background="#FF171515" Foreground="#FF1996BE" HorizontalAlignment="Center"/>
 
-                <Label Content="{Binding COGauges.Name}" Grid.Row="1" Grid.Column="0" Background="#FF505050"/>
-                <Label Content="{Binding COGauges.CurrentValue}" Grid.Row="1" Grid.Column="1" Background="#FF505050"/>
+                <Label Content="{Binding CalibrationCOGauge.Name}" Grid.Row="1" Grid.Column="0" Background="#FF505050"/>
+                <Label Content="{Binding CalibrationCOGauge.CurrentValue}" Grid.Row="1" Grid.Column="1" Background="#FF505050"/>
 
-                <TextBox Text="{Binding TemperatureGauges.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
-                         Foreground="{Binding TemperatureGauges.AlarmPorog1}" 
-                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog1Command}" 
+                <TextBox Text="{Binding CalibrationCOGauge.Porog1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                         Foreground="{Binding CalibrationCOGauge.AlarmPorog1}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding CalibrationCOGauge.WritePorog1Command}" 
                          Grid.Row="1" Grid.Column="2"/>
-                <TextBox Text="{Binding TemperatureGauges.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog2}"
-                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePorog2Command}"
+                <TextBox Text="{Binding CalibrationCOGauge.Porog2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding CalibrationCOGauge.AlarmPorog2}"
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding CalibrationCOGauge.WritePorog2Command}"
                          Grid.Row="1" Grid.Column="3" />
-                <TextBox Text="{Binding TemperatureGauges.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
-                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WriteIncrementCommand}"
+                <TextBox Text="{Binding CalibrationCOGauge.Increment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding CalibrationCOGauge.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding CalibrationCOGauge.WriteIncrementCommand}"
                          Grid.Row="1" Grid.Column="4" />
-                <TextBox Text="{Binding TemperatureGauges.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding TemperatureGauges.AlarmPorog3}" 
-                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding TemperatureGauges.WritePeriodCommand}"
+                <TextBox Text="{Binding CalibrationCOGauge.Period, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="{Binding CalibrationCOGauge.AlarmPorog3}" 
+                         behaviors:TextBoxEnterKeyBehavior.EnterCommand="{Binding CalibrationCOGauge.WritePeriodCommand}"
                          Grid.Row="1" Grid.Column="5"/>
 
                 <Label Content="{Binding NOGauges.Name}" Grid.Row="2" Grid.Column="0" Background="#FF323232"/>

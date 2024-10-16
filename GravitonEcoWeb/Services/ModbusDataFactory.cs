@@ -10,14 +10,15 @@ namespace GravitonEcoWeb.Services
         private readonly IWebHostEnvironment _env;
         private readonly ILogger<ModbusDataFactory> _logger;
         private List<ModbusConfigParameter> _configParameters;
+        private List<CalibrationConfig> _configCalibrationGasParameters;
         private Dictionary<string, bool> _groupStates;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public ModbusDataFactory(
-         ModbusService modbusService,
-         IWebHostEnvironment env,
-         ILogger<ModbusDataFactory> logger,
-         IHttpContextAccessor httpContextAccessor)
+    ModbusService modbusService,
+    IWebHostEnvironment env,
+    ILogger<ModbusDataFactory> logger,
+    IHttpContextAccessor httpContextAccessor)
         {
             _modbusService = modbusService;
             _env = env;
@@ -74,45 +75,68 @@ namespace GravitonEcoWeb.Services
         private void LoadConfig()
         {
             var configPath = Path.Combine(_env.WebRootPath, "config", "modbusConfig.json");
+            var configCalibrationPath = Path.Combine(_env.WebRootPath, "config", "modbusColibrationGasConfig.json");
 
             try
             {
-                _logger.LogInformation("Загрузка конфигурации из {ConfigPath}", configPath);
+                _logger.LogInformation("Загрузка конфигурации Modbus из {ConfigPath}", configPath);
+                _logger.LogInformation("Загрузка конфигурации калибровки газа из {ConfigPath}", configCalibrationPath);
+
                 var configJson = File.ReadAllText(configPath);
+                var configCalibrationJson = File.ReadAllText(configCalibrationPath);
 
                 if (!string.IsNullOrEmpty(configJson))
                 {
                     _configParameters = JsonSerializer.Deserialize<List<ModbusConfigParameter>>(configJson);
                 }
 
+                if (!string.IsNullOrEmpty(configCalibrationJson))
+                {
+                    _configCalibrationGasParameters = JsonSerializer.Deserialize<List<CalibrationConfig>>(configCalibrationJson);
+                }
+
                 if (_configParameters == null || !_configParameters.Any())
                 {
-                    _logger.LogWarning("Конфигурация пуста или не была загружена. Проверьте файл конфигурации.");
+                    _logger.LogWarning("Конфигурация Modbus пуста или не была загружена.");
                 }
-                else
-                {
-                    // Преобразуем строковые значения в числа, если это нужно
-                    foreach (var config in _configParameters)
-                    {
-                        config.SlaveAddress = (byte)ConvertToNumber(config.SlaveAddress.ToString());
-                        config.CurrentValueAddress = ConvertToNumber(config.CurrentValueAddress.ToString());
-                        config.Porog1Address = ConvertToNumber(config.Porog1Address.ToString());
-                        config.Porog2Address = ConvertToNumber(config.Porog2Address.ToString());
-                        config.IncrementAddress = ConvertToNumber(config.IncrementAddress.ToString());
-                        config.PeriodAddress = ConvertToNumber(config.PeriodAddress.ToString());
-                        config.AlarmPorog1Address = ConvertToNumber(config.AlarmPorog1Address.ToString());
-                        config.AlarmPorog2Address = ConvertToNumber(config.AlarmPorog2Address.ToString());
-                        config.AlarmPorog3Address = ConvertToNumber(config.AlarmPorog3Address.ToString());
-                    }
 
-                    _logger.LogInformation("Конфигурация успешно загружена.");
+                if (_configCalibrationGasParameters == null || !_configCalibrationGasParameters.Any())
+                {
+                    _logger.LogWarning("Конфигурация калибровки газа пуста или не была загружена.");
                 }
+
+                // Преобразуем строковые значения в числа
+                foreach (var config in _configParameters)
+                {
+                    config.SlaveAddress = (byte)ConvertToNumber(config.SlaveAddress.ToString());
+                    config.CurrentValueAddress = ConvertToNumber(config.CurrentValueAddress.ToString());
+                    config.Porog1Address = ConvertToNumber(config.Porog1Address.ToString());
+                    config.Porog2Address = ConvertToNumber(config.Porog2Address.ToString());
+                    config.IncrementAddress = ConvertToNumber(config.IncrementAddress.ToString());
+                    config.PeriodAddress = ConvertToNumber(config.PeriodAddress.ToString());
+                    config.AlarmPorog1Address = ConvertToNumber(config.AlarmPorog1Address.ToString());
+                    config.AlarmPorog2Address = ConvertToNumber(config.AlarmPorog2Address.ToString());
+                    config.AlarmPorog3Address = ConvertToNumber(config.AlarmPorog3Address.ToString());
+                }
+
+                foreach (var config in _configCalibrationGasParameters)
+                {
+                    config.SlaveAddress = (byte)ConvertToNumber(config.SlaveAddress.ToString());
+                    config.CurrentValueAddress = ConvertToNumber(config.CurrentValueAddress.ToString());
+                    config.SettingZero = ConvertToNumber(config.SettingZero.ToString());
+                    config.PGSConcentration = ConvertToNumber(config.PGSConcentration.ToString());
+                    config.ADCValue = ConvertToNumber(config.ADCValue.ToString());
+                    config.CalculatedZero = ConvertToNumber(config.CalculatedZero.ToString());
+                }
+
+                _logger.LogInformation("Конфигурация успешно загружена.");
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Ошибка при загрузке конфигурации из {ConfigPath}", configPath);
+                _logger.LogError(ex, "Ошибка при загрузке конфигурации.");
             }
         }
+
 
         // Преобразование строкового значения в число (ushort)
         private ushort ConvertToNumber(string input)
@@ -132,15 +156,12 @@ namespace GravitonEcoWeb.Services
         public List<CalibrationParameter> GetGasCalibrationParameters()
         {
             var parameters = new List<CalibrationParameter>();
-            var configPath = Path.Combine(_env.WebRootPath, "config", "modbusColibrationGasConfig.json");
 
             try
             {
-                var configJson = File.ReadAllText(configPath);
-                var configParameters = JsonSerializer.Deserialize<List<CalibrationConfig>>(configJson);
-
-                foreach (var config in configParameters)
+                foreach (var config in _configCalibrationGasParameters)
                 {
+                    // Считывание регистров с реальными данными
                     var currentValue = _modbusService.ReadInputRegisters(config.SlaveAddress, config.CurrentValueAddress);
                     var settingZero = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.SettingZero);
                     var pgsConcentration = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.PGSConcentration);
@@ -160,11 +181,13 @@ namespace GravitonEcoWeb.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Ошибка при загрузке конфигурации калибровки газоанализатора");
+                _logger.LogError(ex, "Ошибка при загрузке параметров калибровки газа.");
             }
 
             return parameters;
         }
+
+
 
         // Метод для получения параметров для развернутых групп
         public List<ModbusParameter> GetParametersForExpandedGroups()
@@ -269,5 +292,37 @@ namespace GravitonEcoWeb.Services
                 throw;
             }
         }
+
+        public void WriteToCalibrationGasDevice(string paramName, string fieldName, ushort value)
+        {
+            var parameter = _configCalibrationGasParameters.FirstOrDefault(p => p.Name == paramName);
+            if (parameter == null)
+            {
+                throw new ArgumentException($"Параметр с именем {paramName} не найден.");
+            }
+
+            ushort address = fieldName switch
+            {
+                "SettingZero" => parameter.SettingZero,
+                "PGSConcentration" => parameter.PGSConcentration,
+                "ADCValue" => parameter.ADCValue,
+                "CalculatedZero" => parameter.CalculatedZero,
+                _ => throw new ArgumentException($"Поле {fieldName} не найдено.")
+            };
+
+            try
+            {
+                _modbusService.WriteSingleRegister(parameter.SlaveAddress, address, value);
+                _logger.LogInformation($"Значение {value} записано в поле {fieldName} для параметра {paramName}.");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Ошибка при записи значения {value} в поле {fieldName} для параметра {paramName}.");
+                throw;
+            }
+        }
+
+
+
     }
 }

@@ -47,6 +47,7 @@ namespace GravitonEco.ViewModels.Pages
         public FlowRateViewModel FlowRateGauges { get; set; }
         public InternalAtmosphericPressureViewModel InternalAtmosphericPressureGauges { get; set; }
         public AtmosphericPressureViewModel AtmosphericPressureGauges { get; set; }
+        public CalibrationCOViewModel CalibrationCOGauge { get; set; }
 
         public Router(IServiceProvider serviceProvider)
         {
@@ -75,6 +76,7 @@ namespace GravitonEco.ViewModels.Pages
             VoltageGauges = new VoltageViewModel(ModbusTcpClient.GetInstance(), "Напряжение (8 - 16 В)");
             FlowRateGauges = new FlowRateViewModel(ModbusTcpClient.GetInstance(), "Скор. потока (0 - 1 л/мин)");
             InternalAtmosphericPressureGauges = new InternalAtmosphericPressureViewModel(ModbusTcpClient.GetInstance(), "Атм. дав-ние (650 - 1200 hPa)");
+            CalibrationCOGauge = new CalibrationCOViewModel(ModbusTcpClient.GetInstance(), "CO (0 - 40 000 ppb)");
             OpenSensorPage();
         }
 

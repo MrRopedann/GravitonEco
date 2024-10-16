@@ -85,33 +85,74 @@
             }
         </div>
         <div class="right-panel">
-            <h3>Калибровка Газоанализатора</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th class="param">Параметр</th>
-                        <th class="current">Текущее</th>
-                        <th class="setting-zero">Уст. Нуля</th>
-                        <th class="pgs-concentration">Конц-я ПГС</th>
-                        <th class="adc-value">Знач-е АЦП</th>
-                        <th class="calculated-zero">Расчетный "0"</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var param in Model.GasCalibrationParameters)
+    <h3>Калибровка Газоанализатора</h3>
+    <table>
+        <thead>
+            <tr>
+                <th class="param">Параметр</th>
+                <th class="current">Текущее</th>
+                <th class="setting-zero">Уст. Нуля</th>
+                <th class="pgs-concentration">Конц-я ПГС</th>
+                <th class="adc-value">Знач-е АЦП</th>
+                <th class="calculated-zero">Расчетный "0"</th>
+            </tr>
+        </thead>
+        <tbody>
+                    @foreach (var param in Model.GasCalibrationParameters.Select((value, index) => new { Value = value, Index = index }))
                     {
-                        <tr>
-                            <td class="param">@param.Name</td>
-                            <td class="current">@param.CurrentValue</td>
-                            <td class="setting-zero"><input type="text" value="@param.SettingZero" class="numeric-input" onkeydown="submitValue(event, '@param.Name', 'SettingZero', this.value)" /></td>
-                            <td class="pgs-concentration"><input type="text" value="@param.PGSConcentration" class="numeric-input" onkeydown="submitValue(event, '@param.Name', 'PGSConcentration', this.value)" /></td>
-                            <td class="adc-value"><input type="text" value="@param.ADCValue" class="numeric-input" onkeydown="submitValue(event, '@param.Name', 'ADCValue', this.value)" /></td>
-                            <td class="calculated-zero"><input type="text" value="@param.CalculatedZero" class="numeric-input" onkeydown="submitValue(event, '@param.Name', 'CalculatedZero', this.value)" /></td>
-                        </tr>
+                    <tr>
+                        <td class="param">@param.Value.Name</td>
+                        <td class="current" id="current-calibration-data-@param.Index">@param.Value.CurrentValue</td> <!-- Отображение значения -->
+
+                        <!-- Поле Уст. Нуля -->
+                        <td class="setting-zero">
+                            <input id="setting-zero-data-@param.Index"
+                                   type="text"
+                                   value="@param.Value.SettingZero"
+                                   class="numeric-input"
+                                   onfocus="startEditing()"
+                                   onblur="stopEditing()"
+                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'SettingZero', this.value)" />
+                        </td>
+
+                        <!-- Поле Конц-я ПГС -->
+                        <td class="pgs-concentration">
+                            <input id="pgs-concentration-data-@param.Index"
+                                   type="text"
+                                   value="@param.Value.PGSConcentration"
+                                   class="numeric-input"
+                                   onfocus="startEditing()"
+                                   onblur="stopEditing()"
+                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'PGSConcentration', this.value)" />
+                        </td>
+
+                        <!-- Поле Знач-е АЦП -->
+                        <td class="adc-value">
+                            <input id="adc-value-data-@param.Index"
+                                   type="text"
+                                   value="@param.Value.ADCValue"
+                                   class="numeric-input"
+                                   onfocus="startEditing()"
+                                   onblur="stopEditing()"
+                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'ADCValue', this.value)" />
+                        </td>
+
+                        <!-- Поле Расчетный "0" -->
+                        <td class="calculated-zero">
+                            <input id="calculated-zero-data-@param.Index"
+                                   type="text"
+                                   value="@param.Value.CalculatedZero"
+                                   class="numeric-input"
+                                   onfocus="startEditing()"
+                                   onblur="stopEditing()"
+                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'CalculatedZero', this.value)" />
+                        </td>
+                    </tr>
                     }
-                </tbody>
-            </table>
-        </div>
+        </tbody>
+    </table>
+</div>
+
     </div>
 
     <script>

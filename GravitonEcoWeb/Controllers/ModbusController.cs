@@ -11,10 +11,12 @@ namespace GravitonEcoWeb.Controllers
         private readonly ModbusDataFactory _modbusDataFactory;
         private readonly ILogger<ModbusController> _logger;
 
-        public ModbusController(ModbusService modbusService, ModbusDataFactory modbusDataFactory)
+        // Единственный конструктор, принимающий все зависимости
+        public ModbusController(ModbusService modbusService, ModbusDataFactory modbusDataFactory, ILogger<ModbusController> logger)
         {
             _modbusService = modbusService;
             _modbusDataFactory = modbusDataFactory;
+            _logger = logger;
         }
 
         [HttpGet("check-connection")]
@@ -52,6 +54,21 @@ namespace GravitonEcoWeb.Controllers
             {
                 ushort value = ushort.Parse(request.Value);
                 _modbusDataFactory.WriteToDevice(request.ParamName, request.FieldName, value);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Ошибка записи: {ex.Message}");
+            }
+        }
+
+        [HttpPost("write-calibration-gas")]
+        public IActionResult WriteModbusCalibrationGasValue([FromBody] ModbusWriteRequest request)
+        {
+            try
+            {
+                ushort value = ushort.Parse(request.Value);
+                _modbusDataFactory.WriteToCalibrationGasDevice(request.ParamName, request.FieldName, value);
                 return Ok();
             }
             catch (Exception ex)
@@ -100,8 +117,16 @@ namespace GravitonEcoWeb.Controllers
         [HttpGet("get-calibration-parameters")]
         public IActionResult GetGasCalibrationParameters()
         {
-            var calibrationParameters = _modbusDataFactory.GetGasCalibrationParameters();
-            return Ok(calibrationParameters);
+            try
+            {
+                var calibrationParameters = _modbusDataFactory.GetGasCalibrationParameters();
+                return Ok(calibrationParameters);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка получения параметров калибровки");
+                return StatusCode(500, "Ошибка при получении параметров калибровки");
+            }
         }
     }
 
