@@ -10,13 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graviton-ECO</title>
-    <link rel="stylesheet" href="~/css/index.css?v=10" />
+    <link rel="stylesheet" href="~/css/index.css" />
     <script src="~/js/site.js"></script>
 </head>
 <body>
-    <div class="p-3">
-    <div class="row">
-        <div class="col-6">
+    <div class="main-content">
+        <div class="left-panel">
             @if (Model.Groups != null && Model.Groups.Any())
             {
                 @foreach (var group in Model.Groups)
@@ -85,7 +84,7 @@
                 }
             }
         </div>
-        <div class="col-6">
+        <div class="right-panel">
     <h3>Калибровка Газоанализатора</h3>
     <table>
         <thead>
@@ -154,7 +153,6 @@
     </table>
 </div>
 
-    </div>
     </div>
 
     <script>
