@@ -20,104 +20,6 @@ body {
     overflow-y: auto;
 }
 
-/* Стили для групп */
-.group {
-    margin-bottom: 20px;
-}
-
-    .group h3 {
-        color: #BEBEBE; /* Светло-серый текст по умолчанию */
-        background-color: #171515; /* Темный фон заголовков групп */
-        cursor: pointer;
-        padding: 10px;
-        margin: 0;
-        border-radius: 4px;
-        transition: color 0.3s ease; /* Плавный переход цвета текста */
-    }
-
-        /* Изменение цвета текста при наведении */
-        .group h3:hover {
-            color: #00E7FF !important; /* Изменение цвета текста при наведении */
-        }
-
-.config-table {
-    display: none;
-    padding: 10px;
-    background-color: #1E1E1E;
-    border: 1px solid #505050;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-    /* Стили для таблиц */
-    .config-table table {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: auto;
-    }
-
-    .config-table th, .config-table td {
-        border: 1px solid #505050;
-        padding: 8px;
-        text-align: center;
-        color: #BEBEBE;
-    }
-
-    /* Фон и цвет шапки таблицы (заголовков) */
-    .config-table th {
-        background-color: #171515; /* Фон шапки таблицы */
-        color: #1996BE; /* Цвет текста в заголовках таблицы */
-    }
-
-        /* Широкие колонки для названий и группы */
-        .config-table th:first-child,
-        .config-table td:first-child,
-        .config-table th:nth-last-child(2),
-        .config-table td:nth-last-child(2) {
-            min-width: 180px; /* Ширина для первой и предпоследней колонки */
-            white-space: nowrap;
-        }
-
-            /* Поля ввода внутри первой и последней колонок */
-            .config-table td:first-child input,
-            .config-table td:nth-last-child(2) input {
-                width: calc(100% - 10px); /* Растягиваем поле ввода на всю ширину ячейки */
-                padding: 5px;
-                margin: 0 5px;
-                background-color: #171515;
-                color: #FFFFFF;
-                border: 2px solid #505050;
-                border-radius: 4px;
-                box-sizing: border-box;
-            }
-
-    /* Узкие колонки для остальных данных */
-    .config-table td input {
-        width: calc(100% - 10px); /* Растягиваем поле ввода на всю ширину ячейки */
-        padding: 5px;
-        margin: 0 5px;
-        background-color: #171515;
-        color: #FFFFFF;
-        border: 2px solid #505050;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    /* Узкая колонка для кнопки "Удалить" */
-    .config-table th:last-child,
-    .config-table td:last-child {
-        width: 80px; /* Узкая ширина для кнопки "Удалить" */
-    }
-
-    /* Чередование цветов строк таблицы */
-    .config-table tr:nth-child(odd) {
-        background-color: #323232;
-    }
-
-    .config-table tr:nth-child(even) {
-        background-color: #1E1E1E;
-    }
-
 /* Кнопки */
 .btn {
     background-color: #007bff;
@@ -143,18 +45,141 @@ body {
         background-color: #D84315;
     }
 
-/* Стили для адаптации */
-@media (max-width: 768px) {
-    .settings-container {
-        padding: 10px;
-    }
-
-    .config-table table th, .config-table table td {
-        padding: 4px;
-    }
-
-    .config-table td input {
-        width: calc(100% - 8px); /* Меняем ширину для мобильных устройств */
-        margin: 0 4px;
-    }
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    background-color: #2a2a2a;
 }
+
+.tab-button {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    border: none;
+    background: none;
+    color: #ddd;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+    .tab-button:hover {
+        color: #fff;
+    }
+
+    .tab-button::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: transparent;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: background-color 0.3s;
+    }
+
+    .tab-button.active::after {
+        background-color: #fff;
+    }
+
+.collapse-content {
+    display: none;
+}
+
+    .collapse-content.open {
+        display: block;
+    }
+
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #323232;
+}
+
+th {
+    background-color: #171515;
+    color: #1996BE;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #1E1E1E;
+}
+
+.table-bordered {
+    width: 100%;
+    border-collapse: collapse;
+    border-color: #555;
+}
+
+    .table-bordered th,
+    .table-bordered td {
+        border: 1px solid #555;
+        padding: 5px;
+        width: calc(100% - 10px);
+    }
+
+.pt-1 {
+    padding-top: 0.25rem;
+}
+
+.mt-1 {
+    margin-top: 0.25rem;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+    /* Широкие колонки для названий и группы */
+    table th:first-child,
+    table td:first-child,
+    table th:nth-last-child(2),
+    table td:nth-last-child(2) {
+        min-width: 180px; /* Ширина для первой и предпоследней колонки */
+        white-space: nowrap;
+    }
+
+        /* Поля ввода внутри первой и последней колонок */
+        table td:first-child input,
+        table td:nth-last-child(2) input {
+            width: calc(100% - 10px); /* Растягиваем поле ввода на всю ширину ячейки */
+            padding: 5px;
+            margin: 0 5px;
+            background-color: #171515;
+            color: #FFFFFF;
+            border: 2px solid #505050;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+    /* Узкая колонка для кнопки "Удалить" */
+    table th:last-child, table td:last-child {
+        width: 80px; /* Узкая ширина для кнопки "Удалить" */
+    }
+
+    /* Узкие колонки для остальных данных */
+    table td input {
+        width: calc(100% - 10px); /* Растягиваем поле ввода на всю ширину ячейки */
+        padding: 5px;
+        margin: 0 5px;
+        background-color: #171515;
+        color: #FFFFFF;
+        border: 2px solid #505050;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }

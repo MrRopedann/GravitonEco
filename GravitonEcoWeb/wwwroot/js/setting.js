@@ -161,3 +161,36 @@ document.addEventListener('DOMContentLoaded', () => {
     loadConfig('modbusConfig.json', 'modbus-config');
     loadConfig('modbusColibrationGasConfig.json', 'gas-config');
 });
+
+// Функция, которая открывает выбранную секцию, закрывает остальные и обновляет активную кнопку
+function toggleGroup(targetId) {
+    // Найти все элементы с классом collapse-content
+    const allContent = document.querySelectorAll('.collapse-content');
+    const allButtons = document.querySelectorAll('.tab-button');
+
+    // Закрыть все блоки и убрать активные кнопки
+    allContent.forEach(content => {
+        content.classList.remove('open');
+    });
+
+    allButtons.forEach(button => {
+        button.classList.remove('active');
+    });
+
+    // Открыть выбранный блок
+    const target = document.getElementById(targetId);
+    if (target) {
+        target.classList.add('open');
+    }
+
+    // Найти кнопку, которая была нажата, и добавить ей класс active
+    const clickedButton = document.querySelector(`.tab-button[onclick="toggleGroup('${targetId}')"]`);
+    if (clickedButton) {
+        clickedButton.classList.add('active');
+    }
+}
+
+// Изначально показываем только первый блок и делаем первую кнопку активной
+document.addEventListener('DOMContentLoaded', function () {
+    toggleGroup('log-changes'); // Открываем первый блок по умолчанию
+});
