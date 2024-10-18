@@ -37,51 +37,42 @@ function deleteConfigRow(index, configName) {
     row.remove();
 }
 
-// Функция для добавления новой строки в Modbus конфигурацию
-function addModbusConfig() {
-    const container = document.getElementById('modbus-config').querySelector('tbody');
-    const newIndex = container.querySelectorAll('tr').length;
-    container.innerHTML += generateConfigRow({
-        Name: '',
-        SlaveAddress: '',
-        CurrentValueAddress: '',
-        Porog1Address: '',
-        Porog2Address: '',
-        IncrementAddress: '',
-        PeriodAddress: '',
-        AlarmPorog1Address: '',
-        AlarmPorog2Address: '',
-        AlarmPorog3Address: '',
-        Group: ''
-    }, newIndex, 'modbusConfig.json');
-}
-
-// Функция для добавления новой строки в Газовую калибровку
-function addGasConfig() {
-    const container = document.getElementById('gas-config').querySelector('tbody');
-    const newIndex = container.querySelectorAll('tr').length;
-    container.innerHTML += generateConfigRow({
-        Name: '',
-        SlaveAddress: '',
-        CurrentValueAddress: '',
-        SettingZero: '',
-        PGSConcentration: '',
-        ADCValue: '',
-        CalculatedZero: '',
-        Group: ''
-    }, newIndex, 'modbusColibrationGasConfig.json');
-}
-
-// Функция для преобразования строк в числа, если это возможно
+// Функция для преобразования строк в числа
 function parseIfNumeric(value) {
     const parsedValue = parseInt(value, 10);
     return isNaN(parsedValue) ? value : parsedValue;  // Возвращаем число или оригинальную строку
 }
 
-// Сохранение конфигурации для Modbus
-function saveModbusConfig() {
-    const container = document.getElementById('modbus-config');
+// Функция для преобразования строк в логическое значение
+function parseIfBool(value) {
+    const normalizedInput = value.trim().toLowerCase();
+    if (normalizedInput === 'true') {
+        return true;
+    } else if (normalizedInput === 'false') {
+        return false;
+    } else {
+        console.warn(`Ошибка преобразования строки '${value}' в логическое значение. Устанавливается значение по умолчанию.`);
+        return false;  // По умолчанию false
+    }
+}
 
+// Универсальная функция для сохранения конфигурации
+function saveConfig(configName) {
+    let container;
+
+    // Определяем, какое имя конфигурации сохраняется
+    if (configName === 'DeviseConnection.json') {
+        container = document.getElementById('device-config');
+    } else if (configName === 'modbusConfig.json') {
+        container = document.getElementById('modbus-config');
+    } else if (configName === 'modbusColibrationGasConfig.json') {
+        container = document.getElementById('gas-config');
+    } else {
+        console.error('Неизвестное имя конфигурации:', configName);
+        return;
+    }
+
+    // Формируем массив данных конфигурации
     const config = [];
     container.querySelectorAll('tbody tr').forEach(row => {
         const item = {};
@@ -90,9 +81,10 @@ function saveModbusConfig() {
 
             // Преобразование значений в нужные типы данных
             if (['SlaveAddress', 'CurrentValueAddress', 'Porog1Address', 'Porog2Address',
-                'IncrementAddress', 'PeriodAddress', 'AlarmPorog1Address',
-                'AlarmPorog2Address', 'AlarmPorog3Address'].includes(input.name)) {
+                'IncrementAddress', 'PeriodAddress', 'AlarmPorog1Address', 'AlarmPorog2Address', 'AlarmPorog3Address', 'ModbusDeviseID'].includes(input.name)) {
                 value = parseIfNumeric(value);
+            } else if (input.name === 'IsCalibration') {
+                value = parseIfBool(value);
             }
 
             item[input.name] = value;
@@ -103,7 +95,8 @@ function saveModbusConfig() {
     // Преобразуем конфигурацию в JSON
     const jsonConfig = JSON.stringify(config);
 
-    fetch(`/api/config/save-config/modbusConfig.json`, {
+    // Отправляем POST-запрос для сохранения конфигурации
+    fetch(`/api/config/save-config/${configName}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -112,47 +105,12 @@ function saveModbusConfig() {
     })
         .then(response => response.text())
         .then(result => {
-            alert(result);
+            alert(`Конфигурация ${configName} сохранена.`);
         })
-        .catch(error => console.error('Ошибка сохранения конфигурации:', error));
-}
-
-
-function saveGasConfig() {
-    const container = document.getElementById('gas-config');
-
-    const config = [];
-    container.querySelectorAll('tbody tr').forEach(row => {
-        const item = {};
-        row.querySelectorAll('input').forEach(input => {
-            let value = input.value.trim();
-
-            // Преобразование значений в нужные типы данных
-            if (['SlaveAddress', 'CurrentValueAddress', 'SettingZero',
-                'PGSConcentration', 'ADCValue', 'CalculatedZero'].includes(input.name)) {
-                value = parseIfNumeric(value);
-            }
-
-            item[input.name] = value;
+        .catch(error => {
+            console.error(`Ошибка сохранения конфигурации ${configName}:`, error);
+            alert(`Ошибка сохранения конфигурации ${configName}.`);
         });
-        config.push(item);
-    });
-
-    // Преобразуем конфигурацию в JSON
-    const jsonConfig = JSON.stringify(config);
-
-    fetch(`/api/config/save-config/modbusColibrationGasConfig.json`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: jsonConfig
-    })
-        .then(response => response.text())
-        .then(result => {
-            alert(result);
-        })
-        .catch(error => console.error('Ошибка сохранения конфигурации:', error));
 }
 
 // Загрузка всех конфигураций при загрузке страницы
@@ -164,11 +122,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Функция, которая открывает выбранную секцию, закрывает остальные и обновляет активную кнопку
 function toggleGroup(targetId) {
-    // Найти все элементы с классом collapse-content
     const allContent = document.querySelectorAll('.collapse-content');
     const allButtons = document.querySelectorAll('.tab-button');
 
-    // Закрыть все блоки и убрать активные кнопки
     allContent.forEach(content => {
         content.classList.remove('open');
     });
@@ -177,13 +133,11 @@ function toggleGroup(targetId) {
         button.classList.remove('active');
     });
 
-    // Открыть выбранный блок
     const target = document.getElementById(targetId);
     if (target) {
         target.classList.add('open');
     }
 
-    // Найти кнопку, которая была нажата, и добавить ей класс active
     const clickedButton = document.querySelector(`.tab-button[onclick="toggleGroup('${targetId}')"]`);
     if (clickedButton) {
         clickedButton.classList.add('active');
