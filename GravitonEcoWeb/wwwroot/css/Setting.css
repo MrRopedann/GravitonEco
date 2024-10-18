@@ -145,31 +145,9 @@ table {
     border-color: gray;
 }
 
-    /* Широкие колонки для названий и группы */
-    table th:first-child,
-    table td:first-child,
-    table th:nth-last-child(2),
-    table td:nth-last-child(2) {
-        min-width: 180px; /* Ширина для первой и предпоследней колонки */
-        white-space: nowrap;
-    }
-
-        /* Поля ввода внутри первой и последней колонок */
-        table td:first-child input,
-        table td:nth-last-child(2) input {
-            width: calc(100% - 10px); /* Растягиваем поле ввода на всю ширину ячейки */
-            padding: 5px;
-            margin: 0 5px;
-            background-color: #171515;
-            color: #FFFFFF;
-            border: 2px solid #505050;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
     /* Узкая колонка для кнопки "Удалить" */
     table th:last-child, table td:last-child {
-        width: 80px; /* Узкая ширина для кнопки "Удалить" */
+        width: 60px; /* Узкая ширина для кнопки "Удалить" */
     }
 
     /* Узкие колонки для остальных данных */
@@ -182,4 +160,31 @@ table {
         border: 2px solid #505050;
         border-radius: 4px;
         box-sizing: border-box;
+    }
+
+    /* Самый маленький столбец для ID */
+    table th:nth-child(1), table td:nth-child(1) {
+        width: 25px; /* Узкая ширина для ID */
+        max-width: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    /* Средние столбцы для Имени */
+    table th:nth-child(2), table td:nth-child(2) {
+        width: 100px; /* Средняя ширина для Имени */
+        max-width: 200px;
+    }
+
+    /* Широкий столбец для Группы */
+    table th:nth-child(12), table td:nth-child(12) {
+        width: 200px; /* Увеличенная ширина для Группы */
+        max-width: 200px;
+    }
+
+    /* Остальные столбцы чуть меньше */
+    table th:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(12)),
+    table td:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(12)) {
+        width: 70px; /* Ширина для остальных колонок */
     }
