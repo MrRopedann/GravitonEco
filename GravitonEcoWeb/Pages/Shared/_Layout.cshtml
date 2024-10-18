@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 
     <!-- Подключаем файл стилей для шапки -->
-    <link rel="stylesheet" href="~/css/header.css?v=1" />
+    <link rel="stylesheet" href="~/css/header.css?v=2" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
 </head>
@@ -47,7 +47,15 @@
                 <option>1 час</option>
                 <option>24 часа</option>
             </select>
-            <img src="~/images/password_red.png" alt="Lock Icon" class="status-icon" />
+            <!-- Замок -->
+            <img src="~/images/password_red.png" alt="Lock Icon" class="status-icon" id="lockIcon" style="cursor: pointer;" />
+
+            <!-- Поле ввода и кнопка (скрыты по умолчанию) -->
+            <div id="passwordDiv" class="hidden">
+                <input type="password" id="passwordInput" placeholder="Введите пароль" />
+                <button id="submitPassword">Подтвердить</button>
+            </div>
+            <!--<img src="~/images/password_red.png" alt="Lock Icon" class="status-icon" />-->
             <img id="connection-icon" src="~/images/mobile_connection_red.png" alt="Connection Status Icon" class="status-icon" />
             <img src="~/images/mesh_red.png" alt="Wi-Fi Icon" class="status-icon" />
             <span class="date-time">25.09.2005 17:23:27</span>
@@ -58,6 +66,6 @@
         @RenderBody()
     </div>
 
-    <script src="~/js/site.js"></script>
+    <script src="~/js/site.js?v=6"></script>
 </body>
 </html>

@@ -148,3 +148,39 @@ function toggleGroup(targetId) {
 document.addEventListener('DOMContentLoaded', function () {
     toggleGroup('log-changes'); // Открываем первый блок по умолчанию
 });
+
+
+// Функция для обработки клика по замку
+function lockClickHandler() {
+    // Показать поле для ввода пароля и кнопку
+    document.getElementById("passwordDiv").classList.remove("hidden");
+}
+
+// Добавление события клика по замку
+document.getElementById("lockIcon").addEventListener("click", lockClickHandler);
+
+// Событие клика по кнопке подтверждения
+document.getElementById("submitPassword").addEventListener("click", function () {
+    var enteredPassword = document.getElementById("passwordInput").value;
+
+    // Проверка пароля
+    if (enteredPassword === "UlalaKrasotka") {
+        // Если пароль верный, сменить изображение на зелёный замок
+        document.getElementById("lockIcon").src = "/images/password_green.png";
+
+        // Скрыть поле ввода и кнопку после успешного ввода пароля
+        document.getElementById("passwordDiv").classList.add("hidden");
+
+        // Очистить поле ввода
+        document.getElementById("passwordInput").value = "";
+
+        // Удалить обработчик клика по замку
+        document.getElementById("lockIcon").removeEventListener("click", lockClickHandler);
+
+        // Опционально можно убрать указатель курсора
+        document.getElementById("lockIcon").style.cursor = "default";
+    } else {
+        // Если пароль неверный, показать ошибку
+        alert("Неверный пароль. Попробуйте еще раз.");
+    }
+});
