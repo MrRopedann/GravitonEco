@@ -2,6 +2,7 @@
 {
     public class ModbusConfigParameter
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public byte SlaveAddress { get; set; }
         public ushort CurrentValueAddress { get; set; }
@@ -13,5 +14,6 @@
         public ushort AlarmPorog2Address { get; set; }
         public ushort AlarmPorog3Address { get; set; }
         public string Group { get; set; }
+        public bool IsCalibration { get; set; }
     }
 }

@@ -84,94 +84,108 @@
                 }
             }
         </div>
+
         <div class="right-panel">
-    <h3>Калибровка Газоанализатора</h3>
-    <table>
-        <thead>
-            <tr>
-                <th class="param">Параметр</th>
-                <th class="current">Текущее</th>
-                <th class="setting-zero">Уст. Нуля</th>
-                <th class="pgs-concentration">Конц-я ПГС</th>
-                <th class="adc-value">Знач-е АЦП</th>
-                <th class="calculated-zero">Расчетный "0"</th>
-            </tr>
-        </thead>
-        <tbody>
-                    @foreach (var param in Model.GasCalibrationParameters.Select((value, index) => new { Value = value, Index = index }))
+
+            @if (Model.GroupsCalibration != null && Model.GroupsCalibration.Any())
+            {
+                @foreach (var group in Model.GroupsCalibration)
+                {
+                    <h3 class="group-header" group-name="@group.Key" onclick="toggleCalibrationGroup('@group.Key')">
+                        @group.Key @(Model.GroupsCalibration[group.Key] ? "(Развернуто)" : "(Свернуто)")
+                    </h3>
+
+                    @if (group.Value && Model.GasCalibrationParametersGrouped.ContainsKey(group.Key)) // Если группа развернута, показываем ее параметры
                     {
-                    <tr>
-                        <td class="param">@param.Value.Name</td>
-                        <td class="current" id="current-calibration-data-@param.Index">@param.Value.CurrentValue</td> <!-- Отображение значения -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="param">Параметр</th>
+                                    <th class="current">Текущее</th>
+                                    <th class="setting-zero">Уст. Нуля</th>
+                                    <th class="pgs-concentration">Конц-я ПГС</th>
+                                    <th class="adc-value">Знач-е АЦП</th>
+                                    <th class="calculated-zero">Расчетный "0"</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var param in Model.GasCalibrationParametersGrouped[group.Key].Select((value, index) => new { Value = value, Index = index }))
+                                {
+                                    <tr>
+                                        <td class="param">@param.Value.Name</td>
+                                        <td class="current" id="current-calibration-data-@param.Value.Name">@param.Value.CurrentValue</td>
 
-                        <!-- Поле Уст. Нуля -->
-                        <td class="setting-zero">
-                            <input id="setting-zero-data-@param.Index"
-                                   type="text"
-                                   value="@param.Value.SettingZero"
-                                   class="numeric-input"
-                                   onfocus="startEditing()"
-                                   onblur="stopEditing()"
-                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'SettingZero', this.value)" />
-                        </td>
+                                        <td class="setting-zero">
+                                            <input id="setting-zero-data-@param.Value.Name" type="text" value="@param.Value.SettingZero"
+                                                   class="numeric-input" onfocus="startEditing()" onblur="stopEditing()"
+                                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'SettingZero', this.value)" />
+                                        </td>
 
-                        <!-- Поле Конц-я ПГС -->
-                        <td class="pgs-concentration">
-                            <input id="pgs-concentration-data-@param.Index"
-                                   type="text"
-                                   value="@param.Value.PGSConcentration"
-                                   class="numeric-input"
-                                   onfocus="startEditing()"
-                                   onblur="stopEditing()"
-                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'PGSConcentration', this.value)" />
-                        </td>
+                                        <td class="pgs-concentration">
+                                            <input id="pgs-concentration-data-@param.Value.Name" type="text" value="@param.Value.PGSConcentration"
+                                                   class="numeric-input" onfocus="startEditing()" onblur="stopEditing()"
+                                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'PGSConcentration', this.value)" />
+                                        </td>
 
-                        <!-- Поле Знач-е АЦП -->
-                        <td class="adc-value">
-                            <input id="adc-value-data-@param.Index"
-                                   type="text"
-                                   value="@param.Value.ADCValue"
-                                   class="numeric-input"
-                                   onfocus="startEditing()"
-                                   onblur="stopEditing()"
-                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'ADCValue', this.value)" />
-                        </td>
+                                        <td class="adc-value">
+                                            <input id="adc-value-data-@param.Value.Name" type="text" value="@param.Value.ADCValue"
+                                                   class="numeric-input" onfocus="startEditing()" onblur="stopEditing()"
+                                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'ADCValue', this.value)" />
+                                        </td>
 
-                        <!-- Поле Расчетный "0" -->
-                        <td class="calculated-zero">
-                            <input id="calculated-zero-data-@param.Index"
-                                   type="text"
-                                   value="@param.Value.CalculatedZero"
-                                   class="numeric-input"
-                                   onfocus="startEditing()"
-                                   onblur="stopEditing()"
-                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'CalculatedZero', this.value)" />
-                        </td>
-                    </tr>
+                                        <td class="calculated-zero">
+                                            <input id="calculated-zero-data-@param.Value.Name" type="text" value="@param.Value.CalculatedZero"
+                                                   class="numeric-input" onfocus="startEditing()" onblur="stopEditing()"
+                                                   onkeydown="submitCalibrationGasValue(event, '@param.Value.Name', 'CalculatedZero', this.value)" />
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
                     }
-        </tbody>
-    </table>
-</div>
+                }
+            }
+        </div>
 
-    </div>
+        <script>
+            function toggleGroup(groupName) {
+                const isExpanded = document.querySelector(`h3[group-name="${groupName}"]`).textContent.includes("Развернуто");
 
-    <script>
-        function toggleGroup(groupName) {
-            const isExpanded = document.querySelector(`h3[group-name="${groupName}"]`).textContent.includes("Развернуто");
-
-            fetch('/api/modbus/toggle-group', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ groupName, isExpanded: !isExpanded }) // Переключаем состояние
-            })
-                .then(response => response.text())
-                .then(data => {
-                    location.reload(); // Перезагрузка страницы для обновления данных
+                fetch('/api/modbus/toggle-group', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ groupName, isExpanded: !isExpanded })
                 })
-                .catch(error => {
-                    console.error('Ошибка при изменении состояния группы:', error);
-                });
-        }
-    </script>
+                    .then(response => response.text())
+                    .then(data => location.reload())
+                    .catch(error => console.error('Ошибка при изменении состояния группы:', error));
+            }
+
+            function toggleCalibrationGroup(groupName) {
+                const groupHeader = document.querySelector(`h3[group-name="${groupName}"]`);
+                const isExpanded = groupHeader.textContent.includes("(Развернуто)");
+
+                fetch('/api/modbus/toggle-calibration-group', {  // Убедитесь, что этот API маршрут верен
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ groupName: groupName, isExpanded: !isExpanded })
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Ошибка при изменении состояния группы.');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        location.reload(); // Перезагрузка страницы для обновления отображения групп
+                    })
+                    .catch(error => {
+                        console.error('Ошибка при изменении состояния группы:', error);
+                    });
+            }
+
+        </script>
 </body>
 </html>

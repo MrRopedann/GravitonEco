@@ -1,5 +1,6 @@
 ﻿using GravitonEcoWeb.Model;
 using Microsoft.Extensions.Logging;
+using System.Reflection.Metadata;
 using System.Text.Json;
 
 namespace GravitonEcoWeb.Services
@@ -13,6 +14,7 @@ namespace GravitonEcoWeb.Services
         private List<ModbusConfigParameter> _configParameters;
         private List<CalibrationConfig> _configCalibrationGasParameters;
         private Dictionary<string, bool> _groupStates;
+        private Dictionary<string, bool> _groupCalibrationStates;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
         public ModbusDataFactory(
@@ -28,6 +30,7 @@ namespace GravitonEcoWeb.Services
             _httpContextAccessor = httpContextAccessor;
             _calibrationCalculator = calibrationCalculator; // Инициализация обобщенного калькулятора
             _groupStates = new Dictionary<string, bool>();
+            _groupCalibrationStates = new Dictionary<string, bool>();
 
             LoadConfig();
             if (_configParameters != null && _configParameters.Any())
@@ -37,6 +40,15 @@ namespace GravitonEcoWeb.Services
             else
             {
                 _logger.LogWarning("Конфигурация параметров не была загружена, состояния групп не могут быть инициализированы.");
+            }
+
+            if (_configCalibrationGasParameters != null && _configCalibrationGasParameters.Any())
+            {
+                LoadCalibrationGroupStates();
+            }
+            else
+            {
+                _logger.LogWarning("Конфигурация калибровки газов не была загружена, состояния групп не могут быть инициализированы.");
             }
         }
 
@@ -85,6 +97,32 @@ namespace GravitonEcoWeb.Services
                 else
                 {
                     _logger.LogWarning("Конфигурация параметров пуста, состояния групп не могут быть инициализированы.");
+                }
+            }
+        }
+
+        // Загрузка состояний групп калибровки
+        private void LoadCalibrationGroupStates()
+        {
+            var session = _httpContextAccessor.HttpContext.Session;
+            var storedCalibrationGroupStates = session.GetString("CalibrationGroupStates");
+
+            if (!string.IsNullOrEmpty(storedCalibrationGroupStates))
+            {
+                _groupCalibrationStates = JsonSerializer.Deserialize<Dictionary<string, bool>>(storedCalibrationGroupStates);
+            }
+            else
+            {
+                if (_configCalibrationGasParameters != null && _configCalibrationGasParameters.Any())
+                {
+                    _groupCalibrationStates = new Dictionary<string, bool>();
+                    foreach (var config in _configCalibrationGasParameters)
+                    {
+                        if (!_groupCalibrationStates.ContainsKey(config.Group))
+                        {
+                            _groupCalibrationStates[config.Group] = false; // Все группы по умолчанию свернуты
+                        }
+                    }
                 }
             }
         }
@@ -171,41 +209,43 @@ namespace GravitonEcoWeb.Services
             }
         }
 
-        // Метод для загрузки конфигурации калибровки газоанализатора
-        public List<CalibrationParameter> GetGasCalibrationParameters()
+        // Метод для получения параметров калибровки, сгруппированных
+        public List<CalibrationParameter> GetGasCalibrationParametersGrouped()
         {
             var parameters = new List<CalibrationParameter>();
 
-            try
+            foreach (var config in _configCalibrationGasParameters)
             {
-                foreach (var config in _configCalibrationGasParameters)
+                if (_groupCalibrationStates.TryGetValue(config.Group, out var isExpanded) && isExpanded)
                 {
-                    // Считывание регистров с реальными данными
-                    var currentValue = _modbusService.ReadInputRegisters(config.SlaveAddress, config.CurrentValueAddress);
-                    var settingZero = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.SettingZero);
-                    var pgsConcentration = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.PGSConcentration);
-                    var adcValue = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.ADCValue);
-                    var calculatedZero = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.CalculatedZero);
-
-                    parameters.Add(new CalibrationParameter
+                    try
                     {
-                        Name = config.Name,
-                        CurrentValue = currentValue[0],
-                        SettingZero = settingZero[0],
-                        PGSConcentration = pgsConcentration[0],
-                        ADCValue = adcValue[0],
-                        CalculatedZero = calculatedZero[0]
-                    });
+                        var currentValue = _modbusService.ReadInputRegisters(config.SlaveAddress, config.CurrentValueAddress)[0];
+                        var settingZero = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.SettingZero)[0];
+                        var pgsConcentration = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.PGSConcentration)[0];
+                        var adcValue = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.ADCValue)[0];
+                        var calculatedZero = _modbusService.ReadHoldingRegisters(config.SlaveAddress, config.CalculatedZero)[0];
+
+                        parameters.Add(new CalibrationParameter
+                        {
+                            Name = config.Name,
+                            CurrentValue = currentValue,
+                            SettingZero = settingZero,
+                            PGSConcentration = pgsConcentration,
+                            ADCValue = adcValue,
+                            CalculatedZero = calculatedZero,
+                            Group = config.Group
+                        });
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, $"Ошибка при чтении данных для группы {config.Group}");
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Ошибка при загрузке параметров калибровки газа.");
             }
 
             return parameters;
         }
-
 
 
         public List<ModbusParameter> GetParametersForExpandedGroups()
@@ -220,11 +260,12 @@ namespace GravitonEcoWeb.Services
                     {
                         double currentValue;
 
-                        // Проверка, если параметр CO2 (0 - 5 000 ppm)
-                        if (config.Name == "CO2 (0 - 5 000 ppm)")
+                        // Проверяем, нужно ли калибровать параметр
+                        if (config.IsCalibration)
                         {
-                            // Найдем соответствующий элемент в _configCalibrationGasParameters
-                            var calibrationConfig = _configCalibrationGasParameters.FirstOrDefault(c => c.Name == config.Name);
+                            // Найдем соответствующую конфигурацию калибровки по ModbusDeviceID
+                            var calibrationConfig = _configCalibrationGasParameters.FirstOrDefault(c => c.ModbusDeviseID == config.Id);
+
                             if (calibrationConfig != null)
                             {
                                 // Получаем данные для пересчета
@@ -238,8 +279,8 @@ namespace GravitonEcoWeb.Services
                             }
                             else
                             {
-                                _logger.LogWarning($"Конфигурация калибровки для {config.Name} не найдена");
-                                currentValue = 0; // По умолчанию
+                                _logger.LogWarning($"Конфигурация калибровки для устройства с ID {config.Id} не найдена");
+                                currentValue = 0; // По умолчанию, если конфигурация не найдена
                             }
                         }
                         else
@@ -288,11 +329,19 @@ namespace GravitonEcoWeb.Services
 
 
 
+
         // Метод для сохранения состояния групп
         private void SaveGroupStates()
         {
             var session = _httpContextAccessor.HttpContext.Session;
             session.SetString("GroupStates", JsonSerializer.Serialize(_groupStates));
+        }
+
+        // Сохранение состояния групп калибровки
+        private void SaveCalibrationGroupStates()
+        {
+            var session = _httpContextAccessor.HttpContext.Session;
+            session.SetString("CalibrationGroupStates", JsonSerializer.Serialize(_groupCalibrationStates));
         }
 
         // Метод для изменения состояния группы
@@ -309,11 +358,32 @@ namespace GravitonEcoWeb.Services
             }
         }
 
+        // Переключение состояния групп калибровки
+        public void SetCalibrationGroupState(string groupName, bool isExpanded)
+        {
+            if (_groupCalibrationStates.ContainsKey(groupName))
+            {
+                _groupCalibrationStates[groupName] = isExpanded;
+                SaveCalibrationGroupStates();
+            }
+            else
+            {
+                _logger.LogWarning($"Группа калибровки {groupName} не найдена");
+            }
+        }
+
         // Получение состояния всех групп
         public Dictionary<string, bool> GetGroupStates()
         {
             return _groupStates;
         }
+
+        // Получение состояния всех групп калибровки
+        public Dictionary<string, bool> GetCalibrationGroupStates()
+        {
+            return _groupCalibrationStates;
+        }
+
 
         // Метод для записи значения в Modbus устройство
         public void WriteToDevice(string paramName, string fieldName, ushort value)

@@ -11,7 +11,7 @@ namespace GravitonEcoWeb.Controllers
         private readonly ModbusDataFactory _modbusDataFactory;
         private readonly ILogger<ModbusController> _logger;
 
-        // Единственный конструктор, принимающий все зависимости
+        // Конструктор с внедрением всех зависимостей
         public ModbusController(ModbusService modbusService, ModbusDataFactory modbusDataFactory, ILogger<ModbusController> logger)
         {
             _modbusService = modbusService;
@@ -47,6 +47,21 @@ namespace GravitonEcoWeb.Controllers
             return Ok(parameters);
         }
 
+        [HttpGet("get-calibration-parameters")]
+        public IActionResult GetGasCalibrationParameters()
+        {
+            try
+            {
+                var calibrationParametersGrouped = _modbusDataFactory.GetGasCalibrationParametersGrouped();
+                return Ok(calibrationParametersGrouped);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка получения параметров калибровки");
+                return StatusCode(500, "Ошибка при получении параметров калибровки");
+            }
+        }
+
         [HttpPost("write")]
         public IActionResult WriteModbusValue([FromBody] ModbusWriteRequest request)
         {
@@ -58,6 +73,7 @@ namespace GravitonEcoWeb.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Ошибка записи Modbus");
                 return BadRequest($"Ошибка записи: {ex.Message}");
             }
         }
@@ -73,6 +89,7 @@ namespace GravitonEcoWeb.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "Ошибка записи параметров калибровки");
                 return BadRequest($"Ошибка записи: {ex.Message}");
             }
         }
@@ -114,20 +131,21 @@ namespace GravitonEcoWeb.Controllers
             }
         }
 
-        [HttpGet("get-calibration-parameters")]
-        public IActionResult GetGasCalibrationParameters()
+        [HttpPost("toggle-calibration-group")]
+        public IActionResult ToggleCalibrationGroup([FromBody] ToggleGroupRequest request)
         {
             try
             {
-                var calibrationParameters = _modbusDataFactory.GetGasCalibrationParameters();
-                return Ok(calibrationParameters);
+                _modbusDataFactory.SetCalibrationGroupState(request.GroupName, request.IsExpanded); // Добавьте отдельный метод для работы с состояниями калибровки
+                return Ok(new { success = true });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Ошибка получения параметров калибровки");
-                return StatusCode(500, "Ошибка при получении параметров калибровки");
+                _logger.LogError(ex, $"Ошибка при изменении состояния группы калибровки {request.GroupName}");
+                return StatusCode(500, new { success = false, message = ex.Message });
             }
         }
+
     }
 
     public class PollingIntervalRequest
