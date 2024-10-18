@@ -109,6 +109,21 @@ namespace GravitonEcoWeb.Controllers
             }
         }
 
+        [HttpPost("toggle-calibration-group")]
+        public IActionResult ToggleCalibrationGroup([FromBody] ToggleGroupRequest request)
+        {
+            try
+            {
+                _modbusDataFactory.SetCalibrationGroupState(request.GroupName, request.IsExpanded);
+                return Ok(new { success = true });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Ошибка при изменении состояния группы {request.GroupName}");
+                return StatusCode(500, new { success = false, message = ex.Message });
+            }
+        }
+
         [HttpGet("get-polling-interval")]
         public IActionResult GetPollingInterval()
         {
