@@ -131,20 +131,6 @@ namespace GravitonEcoWeb.Controllers
             }
         }
 
-        [HttpPost("toggle-calibration-group")]
-        public IActionResult ToggleCalibrationGroup([FromBody] ToggleGroupRequest request)
-        {
-            try
-            {
-                _modbusDataFactory.SetCalibrationGroupState(request.GroupName, request.IsExpanded); // Добавьте отдельный метод для работы с состояниями калибровки
-                return Ok(new { success = true });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Ошибка при изменении состояния группы калибровки {request.GroupName}");
-                return StatusCode(500, new { success = false, message = ex.Message });
-            }
-        }
 
     }
 
