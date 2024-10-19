@@ -1,3 +1,4 @@
+using GravitonEcoWeb.Middleware;
 using GravitonEcoWeb.Services;
 using Serilog;
 using Serilog.Events;
@@ -53,6 +54,9 @@ builder.WebHost.UseKestrel(options =>
 });
 
 var app = builder.Build();
+
+// Добавляем кастомное middleware для обработки исключений
+app.UseMiddleware<CustomExceptionMiddleware>();
 
 // Настройки ошибок и безопасности
 if (!app.Environment.IsDevelopment())

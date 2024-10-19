@@ -1,5 +1,6 @@
 ﻿using GravitonEcoWeb.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Sockets;
 
 namespace GravitonEcoWeb.Controllers
 {
@@ -26,6 +27,8 @@ namespace GravitonEcoWeb.Controllers
             return Ok(isConnected);
         }
 
+
+
         [HttpGet("get-device-time")]
         public async Task<IActionResult> GetDeviceTime()
         {
@@ -43,8 +46,22 @@ namespace GravitonEcoWeb.Controllers
         [HttpGet("get-parameters")]
         public IActionResult GetParameters()
         {
-            var parameters = _modbusDataFactory.GetParametersForExpandedGroups();
-            return Ok(parameters);
+            try
+            {
+                var parameters = _modbusDataFactory.GetParametersForExpandedGroups();
+                return Ok(parameters);
+            }
+            catch (SocketException ex)
+            {
+                _logger.LogError(ex, "Ошибка соединения: {Message}", ex.Message);
+                // Перенаправляем на страницу настроек при возникновении SocketException
+                return RedirectToAction("Settings", "Home");  // Или другая страница настроек
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Необработанная ошибка: {Message}", ex.Message);
+                return StatusCode(500, "Ошибка сервера");
+            }
         }
 
         [HttpGet("get-calibration-parameters")]
