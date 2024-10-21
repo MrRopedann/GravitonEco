@@ -6,7 +6,8 @@
     "SettingZero": 520,
     "PGSConcentration": 521,
     "ADCValue": 522,
-    "CalculatedZero": 523
+    "CalculatedZero": 523,
+    "Group": "Калибровка Газоанализатора"
   },
   {
     "Name": "NO (0 - 1 000 ppb)",
@@ -15,7 +16,8 @@
     "SettingZero": 512,
     "PGSConcentration": 513,
     "ADCValue": 514,
-    "CalculatedZero": 515
+    "CalculatedZero": 515,
+    "Group": "Калибровка Газоанализатора"
   },
   {
     "Name": "NO2 (0 - 1 000 ppb)",
@@ -24,7 +26,8 @@
     "SettingZero": 516,
     "PGSConcentration": 517,
     "ADCValue": 518,
-    "CalculatedZero": 519
+    "CalculatedZero": 519,
+    "Group": "Калибровка Газоанализатора"
   },
   {
     "Name": "SO2 (0 - 1 000 ppb)",
@@ -33,7 +36,8 @@
     "SettingZero": 524,
     "PGSConcentration": 525,
     "ADCValue": 526,
-    "CalculatedZero": 527
+    "CalculatedZero": 527,
+    "Group": "Калибровка Газоанализатора"
   },
   {
     "Name": "CO2 (0 - 5 000 ppm)",
@@ -42,6 +46,97 @@
     "SettingZero": 532,
     "PGSConcentration": 533,
     "ADCValue": 534,
-    "CalculatedZero": 535
+    "CalculatedZero": 535,
+    "Group": "Калибровка Газоанализатора"
+  },
+  {
+    "Name": "ЛОС (0 - 10 000 ppb)",
+    "SlaveAddress": 1,
+    "CurrentValueAddress": 11,
+    "SettingZero": 532,
+    "PGSConcentration": 533,
+    "ADCValue": 534,
+    "CalculatedZero": 535,
+    "Group": "Калибровка дополнительных входов"
+  },
+  {
+    "Name": "Доп. вход 1",
+    "SlaveAddress": 1,
+    "CurrentValueAddress": 11,
+    "SettingZero": 532,
+    "PGSConcentration": 533,
+    "ADCValue": 534,
+    "CalculatedZero": 535,
+    "Group": "Калибровка дополнительных входов"
+  },
+  {
+    "Name": "Доп. вход 2",
+    "SlaveAddress": 1,
+    "CurrentValueAddress": 11,
+    "SettingZero": 532,
+    "PGSConcentration": 533,
+    "ADCValue": 534,
+    "CalculatedZero": 535,
+    "Group": "Калибровка дополнительных входов"
+  },
+  {
+    "Name": "PM 1.0 (0 - 1000 мкг / м³)",
+    "SlaveAddress": 1,
+    "CurrentValueAddress": 11,
+    "SettingZero": 532,
+    "PGSConcentration": 533,
+    "ADCValue": 534,
+    "CalculatedZero": 535,
+    "Group": "Калибровка дополнительных входов"
+  },
+  {
+    "Name": "PM 2.5 (0 - 1000 мкг / м³)",
+    "SlaveAddress": 1,
+    "CurrentValueAddress": 11,
+    "SettingZero": 532,
+    "PGSConcentration": 533,
+    "ADCValue": 534,
+    "CalculatedZero": 535,
+    "Group": "Калибровка дополнительных входов"
+  },
+  {
+    "Name": "PM 10 (0 - 1000 мкг / м³)",
+    "SlaveAddress": 1,
+    "CurrentValueAddress": 11,
+    "SettingZero": 532,
+    "PGSConcentration": 533,
+    "ADCValue": 534,
+    "CalculatedZero": 535,
+    "Group": "Калибровка дополнительных входов",
+  },
+  {
+    "Name": "Температура (- 45 до +45°С)",
+    "SlaveAddress": 1,
+    "CurrentValueAddress": 11,
+    "SettingZero": 532,
+    "PGSConcentration": 533,
+    "ADCValue": 534,
+    "CalculatedZero": 535,
+    "Group": "Калибровка метеорологических параметров",
+  },
+  {
+    "Name": "Отн. влажность (0 - 98 %)",
+    "SlaveAddress": 1,
+    "CurrentValueAddress": 11,
+    "SettingZero": 532,
+    "PGSConcentration": 533,
+    "ADCValue": 534,
+    "CalculatedZero": 535,
+    "Group": "Калибровка метеорологических параметров",
+  },
+  {
+    "Name": "Атм.Дав-ние (650 - 1200 hPa)",
+    "SlaveAddress": 1,
+    "CurrentValueAddress": 11,
+    "SettingZero": 532,
+    "PGSConcentration": 533,
+    "ADCValue": 534,
+    "CalculatedZero": 535,
+    "Group": "Калибровка метеорологических параметров"
   }
 ]

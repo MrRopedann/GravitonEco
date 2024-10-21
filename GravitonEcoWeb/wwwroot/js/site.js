@@ -17,6 +17,40 @@ function checkConnection() {
         });
 }
 
+function toggleGroup(groupName) {
+    const isExpanded = document.querySelector(`h3[group-name="${groupName}"]`).textContent.includes("Развернуто");
+
+    fetch('/api/modbus/toggle-group', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ groupName, isExpanded: !isExpanded }) // Переключаем состояние
+    })
+        .then(response => response.text())
+        .then(data => {
+            location.reload(); // Перезагрузка страницы для обновления данных
+        })
+        .catch(error => {
+            console.error('Ошибка при изменении состояния группы:', error);
+        });
+}
+
+function toggleCalibrationGroup(groupName) {
+    const isExpanded = document.querySelector(`h3[group-name="${groupName}"]`).textContent.includes("Развернуто");
+
+    fetch('/api/modbus/toggle-calibration-group', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ groupName, isExpanded: !isExpanded }) // Переключаем состояние
+    })
+        .then(response => response.text())
+        .then(data => {
+            location.reload(); // Перезагрузка страницы для обновления данных
+        })
+        .catch(error => {
+            console.error('Ошибка при изменении состояния группы:', error);
+        });
+}
+
 // Функция для обновления времени устройства
 function updateDeviceTime() {
     fetch('/api/modbus/get-device-time')
