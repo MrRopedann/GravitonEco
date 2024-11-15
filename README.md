@@ -281,12 +281,11 @@
 Все остальные функции программы открыты для использования без ввода паролей и какой-либо авторизации.
 
 
-Graviton ECO WEB
+Graviton ECO WEB - Аналог десктопной версии. Более удобное использование С возможность развернуть в локальной сети и быстрым доступом с разных устройств.
 
-![изображение](https://github.com/user-attachments/assets/4d144636-f933-4050-8a02-e9f1529f2795)
+![Видео-15-11-2024-124322](https://github.com/user-attachments/assets/b7dc830d-d592-4ec5-8c9b-f3dc23c687b0)
 
-![изображение](https://github.com/user-attachments/assets/e1266484-cceb-4889-923d-3c4da0aa1eae)
 
-![Видео-15-10-2024 152616](https://github.com/user-attachments/assets/19d7a50c-a31b-49fc-a93b-a151beb21675)
+
 
 
