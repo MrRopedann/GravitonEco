@@ -173,7 +173,7 @@ table {
 
     /* Средние столбцы для Имени */
     table th:nth-child(2), table td:nth-child(2) {
-        width: 100px; /* Средняя ширина для Имени */
+        min-width: 50px; /* Средняя ширина для Имени */
         max-width: 200px;
     }
 

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GRAVITON-ECO</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css?v=5" />
+    <link rel="stylesheet" href="~/css/site.css?v=17" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GravitonEcoWEBmvc.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Логотип -->
+                <a class="navbar-brand text-light" asp-area="" asp-controller="Home" asp-action="Index">GRAVITON-ECO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="/images/icons/auth.svg" class="icons_header" alt="auth" title="Авторизация">
+                                </a>
+                            <ul class="dropdown-menu bg-dark">
+                                <li><a class="dropdown-item text-light" href="#">@User.Identity.Name</a></li>
+                                <li><a class="dropdown-item text-light" href="#">Абрамович И.П.</a></li>
+                                <li><a class="dropdown-item text-light" href="#">8(800)-555-35-35</a></li>
+                                <li><a class="dropdown-item text-light" href="#">ip.abramovich@gmail.com</a></li>
+                                <li><a class="dropdown-item text-light" href="#">Выход</a></li>
+                              </ul>
+                            </li>
+                        }
+                        
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item d-flex align-items-center">
+                                <a asp-area="" asp-controller="Admin" asp-action="AdminPanel">
+                                    <img src="/images/icons/settings.svg" class="icons_header" title="Админ Панель">
+                                </a>
+                            </li>
+                        }
+                        <li class="nav-item d-flex align-items-center">
+                            <a>
+                                <img src="/images/icons/journal.svg" class="icons_header" alt="auth" title="Авторизация">
+                            </a>
+                        </li>
+
+                        <!-- Отвечает за интервал обновлении информации с датчиков -->
+                        <li class="nav-item dropdown d-flex align-items-center icon_select_header">
+                            <img src="/images/icons/time_update.svg" class="icons_header" alt="auth" title="Период обновления">
+                            <select class="form-select form-select-sm ms-2 bg-dark text-light" aria-label="Выбор периода обновления">
+                                <option value="1m">1 минута</option>
+                                <option value="5m">5 минут</option>
+                                <option value="10m">10 минут</option>
+                                <option value="20m">20 минут</option>
+                                <option value="30m">30 минут</option>
+                                <option value="1h">1 час</option>
+                                <option value="3h">3 часа</option>
+                                <option value="6h">6 часов</option>
+                                <option value="12h">12 часов</option>
+                                <option value="1d">сутки</option>
+                                <option value="2d">2 суток</option>
+                                <option value="1w">неделя</option>
+                                <option value="1mo">месяц</option>
+                                <option value="3mo">3 месяца</option>
+                                <option value="6mo">6 месяцев</option>
+                                <option value="1y">1 год</option>
+                                <option value="3y">3 года</option>
+                            </select>
+                        </li>
+                        <!-- Отвечает за интервал просмотра информации с датчиков -->
+                        <li class="nav-item dropdown d-flex align-items-center icon_select_header">
+                            <img src="/images/icons/time_see.svg" class="icons_header" alt="auth" title="Период обновления">
+                            <select class="form-select form-select-sm ms-2 bg-dark text-light" aria-label="Выбор периода просмотра">
+                                <option value="1">1 секунда</option>
+                                <option selected>5 секунд</option>
+                                <option value="1">10 секунд</option>
+                                <option value="2">30 секунд</option>
+                                <option value="3">60 секунд</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        <!-- Картинка с иконкой замка -->
+                        <li class="nav-item d-flex align-items-center">
+                            <img src="/images/icons/locked.svg" id="lockIcon" alt="Lock Icon" class="icons_header" title="Разблокировка калибровки и настроек">
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <img id="connection-icon" src="/images/icons/db_on.svg" alt="Connection Status Icon" class="icons_header" title="Отображение статуса соединения с устройством">
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <img id="connection-inernet-icon" src="/images/icons/connect_on.svg" alt="Wi-Fi Icon" class="icons_header" title="Отображение интернет-соединения">
+                        </li>
+                        <li class="nav-item">
+                            <span class="serial-number nav-link text-light" title="Серийный номер">SN-000000</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="device-info nav-link text-light">HW-0001</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="device-info nav-link text-light">FW-0001</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="date-time nav-link text-light" title="Дата/Время с устройства">10.08.2000 00:00:42</span>
+                        </li>
+                        
+                    </ul>
+                        
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="fixed-bottom border-1 border-top d-flex align-items-center">
+        <div class="container">
+            &copy; 2024 - GRAVITON-ECO
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/3.1.8/signalr.min.js"></script>
+    <script src="~/js/deviceTableToggle.js"></script>
+    <script src="~/js/alarmPolling.js"></script>
+    <script src="~/js/signalRConnection.js"></script>
+    <script src="~/js/parameterUpdates.js"></script>
+    <script src="~/js/loadPorogParameters.js"></script>
+    <script src="~/js/loadCalibrationParametrs.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

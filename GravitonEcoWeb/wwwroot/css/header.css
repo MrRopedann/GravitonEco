@@ -1,4 +1,69 @@
-﻿.header {
+﻿/* Стили для затемненного фона */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Скрыто по умолчанию */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Стили для модального окна */
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 300px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0,  0.2);
+}
+
+/* Кнопка для закрытия модального окна (крестик) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Стили для группы ввода пароля и кнопки, как в Bootstrap */
+.input-group {
+    display: flex;
+    margin-top: 20px;
+}
+
+    .input-group input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-right: none;
+        border-radius: 4px 0 0 4px;
+        outline: none;
+    }
+
+    .input-group button {
+        padding: 10px 20px;
+        border: 1px solid #ced4da;
+        border-radius: 0 4px 4px 0;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+        .input-group button:hover {
+            background-color: #0056b3;
+        }
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -6,9 +71,7 @@
     padding: 10px;
     border-bottom: 1px solid #505050;
 }
-.hidden {
-    display: none;
-}
+
 .left-section {
     display: flex;
     align-items: center;
@@ -19,9 +82,16 @@
     align-items: center;
 }
 
-.setting {
-    height: 25px;
+.menu-icons {
     margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.update-icon {
+    margin-left: 30px;
+    width: 20px;
+    height: 20px;
 }
 
 .logo {
@@ -30,8 +100,8 @@
 }
 
 .system-info {
-    font-size: 18px;
-    color: #32E650;
+    font-size: 22px;
+    color: #FFFFFF;
     margin-right: 15px;
 }
 
@@ -50,8 +120,8 @@
 }
 
 .status-icon {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     margin-right: 10px;
 }
 
@@ -65,29 +135,51 @@ a {
     color: inherit; /* Сохраняем текущий цвет текста */
 }
 
+#auth {
+    cursor: pointer;
+}
+
 a:hover {
     text-decoration: none; /* Убираем подчеркивание при наведении */
 }
 
 .select-with-icon {
-            display: flex;
-            align-items: center;
-            gap: 10px; /* Расстояние между иконкой и текстом */
-        }
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между иконкой и текстом */
+}
 
-        .select-with-icon i {
-            font-size: 20px;
-            color: #1996BE;
-        }
+.select-with-icon i {
+    font-size: 20px;
+    color: #1996BE;
+}
 
-        .period-dropdown {
-            background-color: #1E1E1E;
-            color: #1996BE;
-            border: 1px solid gray;
-            padding: 5px;
-            margin-right: 15px;
-        }
+.period-dropdown {
+    background-color: #1E1E1E;
+    color: #1996BE;
+    border: 1px solid gray;
+    padding: 5px;
+    margin-right: 15px;
+}
 
 span {
     color: #1996BE
 }
+
+/* Стили для полей ввода */
+.pass-input {
+    border: 2px solid #888;
+    border-radius: 4px;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+}
+
+    .pass-input:focus {
+        border: 2px solid #007bff;
+        outline: none;
+    }

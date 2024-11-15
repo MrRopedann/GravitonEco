@@ -5,7 +5,9 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GravitonEco", "GravitonEco\GravitonEco.csproj", "{B8E60CE1-1704-4B64-98C3-06679709DAC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GravitonEcoWeb", "GravitonEcoWeb\GravitonEcoWeb.csproj", "{4C91CC20-2EC2-44A5-9D68-3FAB046B05D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GravitonEcoWeb", "GravitonEcoWeb\GravitonEcoWeb.csproj", "{4C91CC20-2EC2-44A5-9D68-3FAB046B05D0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GravitonEcoWEBmvc", "GravitonEcoWEBmvc\GravitonEcoWEBmvc.csproj", "{A1C69080-C875-4602-AA99-9B63A01DE49C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{4C91CC20-2EC2-44A5-9D68-3FAB046B05D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C91CC20-2EC2-44A5-9D68-3FAB046B05D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C91CC20-2EC2-44A5-9D68-3FAB046B05D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C69080-C875-4602-AA99-9B63A01DE49C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C69080-C875-4602-AA99-9B63A01DE49C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C69080-C875-4602-AA99-9B63A01DE49C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C69080-C875-4602-AA99-9B63A01DE49C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

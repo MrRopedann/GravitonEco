@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "CO",
+    "MolarMasses": 28.01,
+    "ModbusDeviseID": 6
+  },
+  {
+    "Name": "NO",
+    "MolarMasses": 30.01,
+    "ModbusDeviseID": 7
+  },
+  {
+    "Name": "NO2",
+    "MolarMasses": 46.01,
+    "ModbusDeviseID": 8
+  },
+  {
+    "Name": "SO2",
+    "MolarMasses": 64.06,
+    "ModbusDeviseID": 9
+  }
+]

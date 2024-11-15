@@ -6,32 +6,31 @@
     <title>@ViewData["Title"] - GravitonEcoWeb</title>
 
     <!-- Подключаем основной файл стилей -->
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css?v=9" />
 
     <!-- Подключаем файл стилей для шапки -->
-    <link rel="stylesheet" href="~/css/header.css?v=2" />
+    <link rel="stylesheet" href="~/css/header.css?v=16" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
 </head>
 <body>
     <header class="header">
         <div class="left-section">
-            <a asp-page="/Settings">
-                <img src="~/images/settings.png" alt="SETTINGS" class="setting" />
-            </a>
-            <a asp-page="/Stats">
-                <li class="fa fa-book setting"></li>
-            </a>
             <a asp-page="/Index">
                 <span class="system-info">GRAVITON-ECO</span>
             </a>
-            <span class="device-info">HV-0001</span>
-            <span class="device-info">HV-0001</span>
-            <span class="serial-number">SN-123456789</span>
+            <a title="Авторизация">
+                <img src="~/images/icons/auth.svg" class="menu-icons" id="auth" alt="auth" onclick="showPasswordModal()"  title="Авторизация" />
+            </a>
+            <a href="javascript:void(0);" onclick="checkSettingsAccess()">
+                <img src="~/images/icons/settings.svg" alt="SETTINGS" class="menu-icons" title="Конфигуратор: настройка подключений, настройка адресов датчиков, настройка калибровок" />
+            </a>
+            <a asp-page="/Stats" title="Журнал изменений">
+                <img src="~/images/icons/journal.svg" class="menu-icons" alt="auth" title="Журнал" />
+            </a>
             <!-- Блок с иконкой часов, текстом и выпадающим списком -->
-            <div class="select-with-icon">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <span>Период обновлений:</span>
+            <div class="select-with-icon" title="Отвечает за интервал обновлении информации с датчиков">
+                <img src="~/images/icons/time_update.svg" class="update-icon" alt="auth" title="Период обновления" />
                 <select id="update-interval-dropdown" class="period-dropdown" onchange="updatePeriod()">
                     <option value="1">1 секунда</option>
                     <option value="5" selected>5 секунд</option>
@@ -40,25 +39,55 @@
                     <option value="60">60 секунд</option>
                 </select>
             </div>
+            <div class="select-with-icon" title="Отвечает за интервал просмотра информации с датчиков">
+                <img src="~/images/icons/time_see.svg" class="update-icon" alt="auth" title="Период просмотра" />
+                <select class="period-dropdown" id="periodDataBaseSelect" onchange="updatePeriodDataBase()">
+                    <option value="1m">1 минута</option>
+                    <option value="5m">5 минут</option>
+                    <option value="10m">10 минут</option>
+                    <option value="20m">20 минут</option>
+                    <option value="30m">30 минут</option>
+                    <option value="1h">1 час</option>
+                    <option value="3h">3 часа</option>
+                    <option value="6h">6 часов</option>
+                    <option value="12h">12 часов</option>
+                    <option value="1d">сутки</option>
+                    <option value="2d">2 суток</option>
+                    <option value="1w">неделя</option>
+                    <option value="1mo">месяц</option>
+                    <option value="3mo">3 месяца</option>
+                    <option value="6mo">6 месяцев</option>
+                    <option value="1y">1 год</option>
+                    <option value="3y">3 года</option>
+                </select>
+            </div>
         </div>
         <div class="right-section">
-            <select class="period-dropdown">
-                <option>Период наблюдения</option>
-                <option>1 час</option>
-                <option>24 часа</option>
-            </select>
-            <!-- Замок -->
-            <img src="~/images/password_red.png" alt="Lock Icon" class="status-icon" id="lockIcon" style="cursor: pointer;" />
-
-            <!-- Поле ввода и кнопка (скрыты по умолчанию) -->
-            <div id="passwordDiv" class="hidden">
-                <input type="password" id="passwordInput" placeholder="Введите пароль" />
-                <button id="submitPassword">Подтвердить</button>
-            </div>
             <!--<img src="~/images/password_red.png" alt="Lock Icon" class="status-icon" />-->
-            <img id="connection-icon" src="~/images/mobile_connection_red.png" alt="Connection Status Icon" class="status-icon" />
-            <img src="~/images/mesh_red.png" alt="Wi-Fi Icon" class="status-icon" />
-            <span class="date-time">25.09.2005 17:23:27</span>
+            <!-- Картинка с иконкой замка -->
+            <img src="/images/icons/locked.svg" id="lockIcon" alt="Lock Icon" class="status-icon" title="Разблокировка калибровки и настроек" />
+            <!-- Модальное окно с затемненным фоном -->
+            <div id="passwordModal" class="modal-overlay">
+                <div class="modal">
+                    <!-- Кнопка для закрытия (крестик) -->
+                    <button class="close-btn" onclick="closeModal()">×</button>
+            
+                    <!-- Заголовок модального окна -->
+                    <h3>Введите пароль</h3>
+            
+                    <!-- Группа ввода и кнопки, как в Bootstrap -->
+                    <div class="input-group">
+                        <input type="password" id="passwordInput" placeholder="Пароль" />
+                        <button onclick="checkPassword()">OK</button>
+                    </div>
+                </div>
+            </div>
+            <img id="connection-icon" src="~/images/icons/db_off.svg" alt="Connection Status Icon" class="status-icon" title="Отображение статуса соединения с устройством" />
+            <img id="connection-inernet-icon" src="~/images/icons/connect_off.svg" alt="Wi-Fi Icon" class="status-icon" title="Отображение интернет-соединения" />
+            <span class="serial-number" title="Серийный номер">SN-123456789</span>
+            <span class="device-info">HW-0001</span>
+            <span class="device-info">FW-0001</span>
+            <span class="date-time" title="Дата/Время с устройства">25.09.2005 17:23:27</span>
         </div>
     </header>
 
@@ -66,6 +95,12 @@
         @RenderBody()
     </div>
 
-    <script src="~/js/site.js?v=6"></script>
+    <footer>
+        <span class="version-programm-info">Версия программы: </span>
+        <span class="check-sum-program">Чек-сумма: </span>
+    </footer>
+
+     <script src="~/js/site.js"></script>
+     <script src="~/js/Header.js?v=16"></script>
 </body>
 </html>

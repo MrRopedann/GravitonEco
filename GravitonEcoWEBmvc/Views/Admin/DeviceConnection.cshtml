@@ -1,0 +1,22 @@
+﻿@model GravitonEcoWEBmvc.Models.DataBaseModel.DeviceConnectionModel
+
+@{
+    ViewData["Title"] = "Настройки подключения";
+    Layout = "_AdminPanelLayout";
+}
+
+<h2>Редактирование подключения к устройству</h2>
+
+<form asp-action="SaveDeviceConnection" method="post">
+    <div>
+        <label>IP-адрес:</label>
+        <input asp-for="IpAddres" required />
+    </div>
+
+    <div>
+        <label>Порт:</label>
+        <input asp-for="Port" type="number" required />
+    </div>
+
+    <button type="submit">Сохранить</button>
+</form>

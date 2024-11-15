@@ -1,0 +1,127 @@
+﻿@model GravitonEcoWEBmvc.Models.DataBaseModel.ViewModels.ModbusParameterListViewModel
+@{
+    ViewData["Title"] = "Полный список параметров Modbus";
+    Layout = "_AdminPanelLayout";
+}
+
+<h2>Полный список параметров Modbus</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID параметра</th>
+            <th>Название</th>
+            <th>Основная группа</th>
+            <th>Калибровочная группа</th>
+            <th>Требуется калибровка</th>
+            <th>Адрес устройства</th>
+            <th>Текущая величина</th>
+            <th>Порог 1</th>
+            <th>Порог 2</th>
+            <th>Инкремент</th>
+            <th>Период</th>
+            <th>Тревога 1</th>
+            <th>Тревога 2</th>
+            <th>Тревога 3</th>
+            <th>Установка нуля</th>
+            <th>Концентрация ПГС</th>
+            <th>Значение ACP</th>
+            <th>Рассчитанный ноль</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Parameters.Count; i++)
+        {
+            var parameter = Model.Parameters[i];
+            <tr>
+
+                <td>@parameter.Id</td>
+                <td><input type="text" id="parametrName_@parameter.Id" value="@parameter.ParametrName" class="form-control" /></td>
+                <td>
+                    <select id="GroupId_@parameter.Id" class="form-control">
+                        @foreach (var group in Model.AvailableGroups)
+                        {
+                            <option value="@group.Id" selected="@(parameter.GroupId == group.Id ? "selected" : null)">@group.GroupName</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <select id="CalibrationGroupId_@parameter.Id" class="form-control">
+                        <option value="">-- Выберите --</option>
+                        @foreach (var group in Model.AvailableCalibrationGroups)
+                        {
+                            <option value="@group.Id" selected="@(parameter.CalibrationGroupId == group.Id ? "selected" : null)">@group.GroupName</option>
+                        }
+                    </select>
+                </td>
+                <td><input type="checkbox" id="isCalibration_@parameter.Id" @(parameter.IsCalibration ? "checked" : "") /></td>
+                <td><input type="number" id="addresDevise_@parameter.Id" value="@parameter.DeviceAddress" class="form-control" /></td>
+                <td><input type="number" id="register_currentValue_@parameter.Id" value="@parameter.RegisterCurrentValue" class="form-control" /></td>
+                <td><input type="number" id="register_setPorog1Value_@parameter.Id" value="@parameter.RegisterPorog1" class="form-control" /></td>
+                <td><input type="number" id="register_setPorog2Value_@parameter.Id" value="@parameter.RegisterPorog2" class="form-control" /></td>
+                <td><input type="number" id="register_setIncrementValue_@parameter.Id" value="@parameter.RegisterIncrement" class="form-control" /></td>
+                <td><input type="number" id="register_setPeriodValue_@parameter.Id" value="@parameter.RegisterPeriod" class="form-control" /></td>
+                <td><input type="number" id="register_setAlarmPorog1Value_@parameter.Id" value="@parameter.RegisterAlarm1" class="form-control" /></td>
+                <td><input type="number" id="register_setAlarmPorog2Value_@parameter.Id" value="@parameter.RegisterAlarm2" class="form-control" /></td>
+                <td><input type="number" id="register_setAlarmPorog3Value_@parameter.Id" value="@parameter.RegisterAlarm3" class="form-control" /></td>
+                <td><input type="number" id="register_setSettingZero_@parameter.Id" value="@parameter.CalibrationOffset" class="form-control" /></td>
+                <td><input type="number" id="register_setPGSConcentration_@parameter.Id" value="@parameter.CalibrationConstant" class="form-control" /></td>
+                <td><input type="number" id="register_setACPValue_@parameter.Id" value="@parameter.CalibrationValue" class="form-control" /></td>
+                <td><input type="number" id="register_setCalculatedZero_@parameter.Id" value="@parameter.CalibrationPeriod" class="form-control" /></td>
+                <td>
+                    <button type="button" onclick="saveParameter(@parameter.Id)">Сохранить</button>
+                    <a asp-action="DeleteParameter" asp-route-id="@parameter.Id" class="btn btn-danger" onclick="return confirm('Удалить этот параметр?');">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        function saveParameter(parameterId) {
+            const parameterData = {
+                Id: parameterId,
+                ParametrName: $("#parametrName_" + parameterId).val(),
+                GroupId: $("#GroupId_" + parameterId).val(),
+                CalibrationGroupId: $("#CalibrationGroupId_" + parameterId).val(),
+                IsCalibration: $("#isCalibration_" + parameterId).is(":checked"),
+
+                // Поля, которые раньше были в AddressRegisters
+                DeviceAddress: $("#addresDevise_" + parameterId).val(),
+                RegisterCurrentValue: $("#register_currentValue_" + parameterId).val(),
+                RegisterPorog1: $("#register_setPorog1Value_" + parameterId).val(),
+                RegisterPorog2: $("#register_setPorog2Value_" + parameterId).val(),
+                RegisterIncrement: $("#register_setIncrementValue_" + parameterId).val(),
+                RegisterPeriod: $("#register_setPeriodValue_" + parameterId).val(),
+                RegisterAlarm1: $("#register_setAlarmPorog1Value_" + parameterId).val(),
+                RegisterAlarm2: $("#register_setAlarmPorog2Value_" + parameterId).val(),
+                RegisterAlarm3: $("#register_setAlarmPorog3Value_" + parameterId).val(),
+
+                // Поля, которые раньше были в CalibrationParameter
+                CalibrationOffset: $("#register_setSettingZero_" + parameterId).val(),
+                CalibrationConstant: $("#register_setPGSConcentration_" + parameterId).val(),
+                CalibrationValue: $("#register_setACPValue_" + parameterId).val(),
+                CalibrationPeriod: $("#register_setCalculatedZero_" + parameterId).val()
+            };
+
+            console.log("Data being sent:", parameterData);  // Для отладки
+
+            $.ajax({
+                url: '@Url.Action("SaveParameter", "ModbusParameter")',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(parameterData),
+                success: function () {
+                    alert("Параметр успешно сохранен.");
+                },
+                error: function () {
+                    alert("Произошла ошибка при сохранении параметра.");
+                }
+            });
+        }
+
+
+    </script>
+}

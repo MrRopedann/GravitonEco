@@ -6,6 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Hubs\**" />
+    <Content Remove="Hubs\**" />
+    <EmbeddedResource Remove="Hubs\**" />
+    <None Remove="Hubs\**" />
+  </ItemGroup>
+
   <ItemGroup>
     <Content Remove="wwwroot\images\mesh_red.png" />
     <Content Remove="wwwroot\images\mobile_connection_green.png" />
@@ -17,9 +28,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.10" />
     <PackageReference Include="NModbus" Version="3.0.81" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
     <PackageReference Include="Serilog.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Include="Serilog.Extensions.Logging.File" Version="3.0.0" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.1" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,10 +44,6 @@
     <Resource Include="wwwroot\images\password_green.png" />
     <Resource Include="wwwroot\images\password_red.png" />
     <Resource Include="wwwroot\images\settings.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Hubs\" />
   </ItemGroup>
 
 </Project>

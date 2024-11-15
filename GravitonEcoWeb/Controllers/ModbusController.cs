@@ -1,6 +1,6 @@
 ﻿using GravitonEcoWeb.Services;
+using GravitonEcoWeb.Services.Factorys;
 using Microsoft.AspNetCore.Mvc;
-using System.Net.Sockets;
 
 namespace GravitonEcoWeb.Controllers
 {
@@ -11,72 +11,23 @@ namespace GravitonEcoWeb.Controllers
         private readonly ModbusService _modbusService;
         private readonly ModbusDataFactory _modbusDataFactory;
         private readonly ILogger<ModbusController> _logger;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        // Конструктор с внедрением всех зависимостей
-        public ModbusController(ModbusService modbusService, ModbusDataFactory modbusDataFactory, ILogger<ModbusController> logger)
+        // Единственный конструктор, принимающий все зависимости
+        public ModbusController(ModbusService modbusService, ModbusDataFactory modbusDataFactory, ILogger<ModbusController> logger, IHttpContextAccessor httpContextAccessor)
         {
             _modbusService = modbusService;
             _modbusDataFactory = modbusDataFactory;
             _logger = logger;
+            _httpContextAccessor = httpContextAccessor;
         }
 
-        [HttpGet("check-connection")]
-        public IActionResult CheckConnection()
-        {
-            bool isConnected = _modbusService.CheckConnection();
-            return Ok(isConnected);
-        }
-
-
-
-        [HttpGet("get-device-time")]
-        public async Task<IActionResult> GetDeviceTime()
-        {
-            var dateTime = await _modbusService.GetDeviceDateTimeAsync();
-            return Ok(dateTime);
-        }
-
-        [HttpGet("get-device-serialnumber")]
-        public async Task<IActionResult> GetDeviceSerialNumber()
-        {
-            var serialNumber = await _modbusService.GetDeviceSerialNumberAsync();
-            return Ok(serialNumber);
-        }
 
         [HttpGet("get-parameters")]
         public IActionResult GetParameters()
         {
-            try
-            {
-                var parameters = _modbusDataFactory.GetParametersForExpandedGroups();
-                return Ok(parameters);
-            }
-            catch (SocketException ex)
-            {
-                _logger.LogError(ex, "Ошибка соединения: {Message}", ex.Message);
-                // Перенаправляем на страницу настроек при возникновении SocketException
-                return RedirectToAction("Settings", "Home");  // Или другая страница настроек
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Необработанная ошибка: {Message}", ex.Message);
-                return StatusCode(500, "Ошибка сервера");
-            }
-        }
-
-        [HttpGet("get-calibration-parameters")]
-        public IActionResult GetGasCalibrationParameters()
-        {
-            try
-            {
-                var calibrationParametersGrouped = _modbusDataFactory.GetGasCalibrationParametersGrouped();
-                return Ok(calibrationParametersGrouped);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Ошибка получения параметров калибровки");
-                return StatusCode(500, "Ошибка при получении параметров калибровки");
-            }
+            var parameters = _modbusDataFactory.GetParametersForExpandedGroups();
+            return Ok(parameters);
         }
 
         [HttpPost("write")]
@@ -90,23 +41,6 @@ namespace GravitonEcoWeb.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Ошибка записи Modbus");
-                return BadRequest($"Ошибка записи: {ex.Message}");
-            }
-        }
-
-        [HttpPost("write-calibration-gas")]
-        public IActionResult WriteModbusCalibrationGasValue([FromBody] ModbusWriteRequest request)
-        {
-            try
-            {
-                ushort value = ushort.Parse(request.Value);
-                _modbusDataFactory.WriteToCalibrationGasDevice(request.ParamName, request.FieldName, value);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Ошибка записи параметров калибровки");
                 return BadRequest($"Ошибка записи: {ex.Message}");
             }
         }
@@ -126,49 +60,20 @@ namespace GravitonEcoWeb.Controllers
             }
         }
 
-        [HttpPost("toggle-calibration-group")]
-        public IActionResult ToggleCalibrationGroup([FromBody] ToggleGroupRequest request)
+        [HttpPost("set-molar-mass-conversion")]
+        public IActionResult SetMolarMassConversion([FromBody] MolarMassConversionRequest request)
         {
             try
             {
-                _modbusDataFactory.SetCalibrationGroupState(request.GroupName, request.IsExpanded);
+                _httpContextAccessor.HttpContext.Session.SetString("convertToMolarMass", request.ShouldConvert.ToString());
                 return Ok(new { success = true });
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Ошибка при изменении состояния группы {request.GroupName}");
+                _logger.LogError(ex, "Ошибка при установке флага конвертации молярной массы");
                 return StatusCode(500, new { success = false, message = ex.Message });
             }
         }
-
-        [HttpGet("get-polling-interval")]
-        public IActionResult GetPollingInterval()
-        {
-            var interval = _modbusService.GetPollingInterval();
-            return Ok(interval);
-        }
-
-        [HttpPost("set-polling-interval")]
-        public IActionResult SetPollingInterval([FromBody] PollingIntervalRequest request)
-        {
-            try
-            {
-                _modbusService.SetPollingInterval(request.IntervalInSeconds);
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Ошибка установки интервала опроса");
-                return BadRequest("Ошибка при изменении интервала опроса");
-            }
-        }
-
-
-    }
-
-    public class PollingIntervalRequest
-    {
-        public int IntervalInSeconds { get; set; }
     }
 
     public class ModbusWriteRequest
@@ -182,5 +87,10 @@ namespace GravitonEcoWeb.Controllers
     {
         public string GroupName { get; set; }
         public bool IsExpanded { get; set; }
+    }
+
+    public class MolarMassConversionRequest
+    {
+        public bool ShouldConvert { get; set; }
     }
 }

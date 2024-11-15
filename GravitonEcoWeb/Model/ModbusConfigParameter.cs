@@ -1,4 +1,6 @@
-﻿namespace GravitonEcoWeb.Model
+﻿using GravitonEcoWeb.Enums;
+
+namespace GravitonEcoWeb.Model
 {
     public class ModbusConfigParameter
     {
@@ -15,5 +17,6 @@
         public ushort AlarmPorog3Address { get; set; }
         public string Group { get; set; }
         public bool IsCalibration { get; set; }
+        public GasType ConverGasType { get; set; }
     }
 }

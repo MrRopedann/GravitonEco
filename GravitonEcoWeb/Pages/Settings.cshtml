@@ -9,14 +9,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graviton-ECO</title>
-    <link rel="stylesheet" href="~/css/Setting.css?v=25" />
+    <link rel="stylesheet" href="~/css/Setting.css?v=27" />
 </head>
 <body>
     <div class="settings-container">
         <div class="tabs">
             <button class="tab-button active" onclick="toggleGroup('log-changes')">Настройки подключения устройства</button>
-            <button class="tab-button" onclick="toggleGroup('log-events')">Modbus Конфигурация</button>
-            <button class="tab-button" onclick="toggleGroup('log-service')">Калибровка Газоанализатора</button>
+            <button class="tab-button" onclick="toggleGroup('log-events')">Modbus конфигурация «значения и пороги»</button>
+            <button class="tab-button" onclick="toggleGroup('log-service')">Modbus конфигурация «калибровка»</button>
         </div>
 
         <!-- DeviseConnection.json -->
@@ -43,20 +43,20 @@
             <table id="modbus-config" class="w-100 text-center table-bordered">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Имя</th>
-                        <th>Адрес Slave</th>
-                        <th>Адрес Текущего значения</th>
-                        <th>Адрес Порога 1</th>
-                        <th>Адрес Порога 2</th>
-                        <th>Нарастание</th>
-                        <th>Период</th>
-                        <th>Адрес Сигнала Порог 1</th>
-                        <th>Адрес Сигнала Порог 2</th>
-                        <th>Адрес Сигнала Порог 3</th>
-                        <th>Группа</th>
-                        <th>IsCalibration</th>
-                        <th>Удалить</th>
+                        <th>№ Конф.</th>
+                        <th>Описание</th>
+                        <th>Адрес устройства</th>
+                        <th>Регистр «Отображение данных»</th>
+                        <th>Регистр «Установка порога 1»</th>
+                        <th>Регистр «Установка порога 2»</th>
+                        <th>Регистр «Установка прироста»</th>
+                        <th>Регистр «Установка периода»</th>
+                        <th>Регистр «Отображение порога 1»</th>
+                        <th>Регистр «Отображение порога 2»</th>
+                        <th>Регистр «Отображение порога 3»</th>
+                        <th>Принадлежность к группе</th>
+                        <th>Применить калибровку</th>
+                        <th>Удаление конфигурации</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,16 +72,17 @@
             <table id="gas-config" class="w-100 text-center table-bordered">
                 <thead>
                     <tr>
-                        <th>Имя</th>
-                        <th>Адрес Slave</th>
-                        <th>Адрес Текущего значения</th>
-                        <th>Установка нуля</th>
-                        <th>Концентрация ПГС</th>
-                        <th>Значение АЦП</th>
-                        <th>Расчетный "0"</th>
-                        <th>Группа</th>
-                        <th>ModbusDeviseID</th>
-                        <th>Удалить</th>
+                        <th style="max-width:110px;">Описание</th>
+                        <th style="max-width:50px;">Адрес устройства</th>
+                        <th>Регистр «Отображение данных»</th>
+                        <th>Регистр «Установка нуля»</th>
+                        <th>Регистр «Концентрация ПГС»</th>
+                        <th>Регистр «Значение АЦП»</th>
+                        <th>Регистр «Расчётный «0»</th>
+                        <th style="min-width:180px;">Принадлежность к группе</th>
+                        <th style="min-width:180px;">№ в «Modbus Конфигурация»</th>
+                        <th style="max-width:75px;">Выбор подписей колонок</th>
+                        <th>Удаление конфигурации</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -92,6 +93,6 @@
             <button class="btn btn-success" onclick="saveConfig('modbusColibrationGasConfig.json')">Сохранить</button>
         </div>
     </div>
-    <script src="~/js/setting.js?v=2"></script>
+    <script src="~/js/setting.js?v=4"></script>
 </body>
 </html>

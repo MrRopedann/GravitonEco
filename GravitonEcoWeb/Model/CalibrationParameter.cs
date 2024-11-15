@@ -8,7 +8,8 @@
         public ushort PGSConcentration { get; set; }
         public ushort ADCValue { get; set; }
         public ushort CalculatedZero { get; set; }
-        public string Group { get; set; }  // Новое свойство для хранения группы
+        public string Group { get; set; }
         public int ModbusDeviseID { get; set; }
+        public List<string> ColumnNames { get; set; }
     }
 }

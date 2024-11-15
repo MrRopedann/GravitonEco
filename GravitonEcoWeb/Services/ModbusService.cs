@@ -1,5 +1,6 @@
 ﻿using GravitonEcoWeb.Model;
 using NModbus;
+using NModbus.Extensions.Enron;
 using System.Net.Sockets;
 using System.Text.Json;
 
@@ -14,10 +15,31 @@ namespace GravitonEcoWeb.Services
         private string _ipAddress;
         private int _port;
         private int _pollingIntervalInSeconds = 1;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ILogger<ModbusService> _logger;
+        private int _reconnectAttempts = 0;
+        private const int MaxReconnectAttempts = 5;
+        private const int ReconnectDelay = 5000; // 5 секунд на задержку между попытками
 
-        public ModbusService(IWebHostEnvironment env)
+        private int? _lastSeconds;
+        private int? _lastMinutes;
+        private int? _lastHours;
+        private int? _lastDay;
+        private int? _lastMonth;
+        private int? _lastYear;
+
+        private DateTime _lastMinuteUpdate = DateTime.MinValue;
+        private DateTime _lastHourUpdate = DateTime.MinValue;
+        private DateTime _lastDayUpdate = DateTime.MinValue;
+        private DateTime _lastMonthUpdate = DateTime.MinValue;
+        private DateTime _lastYearUpdate = DateTime.MinValue;
+
+
+        public ModbusService(IWebHostEnvironment env, IHttpContextAccessor httpContextAccessor, ILogger<ModbusService> logger)
         {
             _env = env;
+            _httpContextAccessor = httpContextAccessor;
+            _logger = logger;
             LoadConfig();
             Connect();
         }
@@ -54,16 +76,39 @@ namespace GravitonEcoWeb.Services
         }
 
         // Метод для подключения к устройству
-        private void Connect()
+        public void Connect()
         {
             if (_tcpClient != null && _tcpClient.Connected)
                 return;
 
-            _tcpClient = new TcpClient();
-            _tcpClient.Connect(_ipAddress, _port); // Подключаемся к устройству
+            try
+            {
+                _tcpClient = new TcpClient
+                {
+                    ReceiveTimeout = 3000,
+                    SendTimeout = 3000,
+                    NoDelay = true,
+                    ReceiveBufferSize = 8192,
+                    SendBufferSize = 8192,
+                    LingerState = new LingerOption(true, 10)
+                };
 
-            var factory = new ModbusFactory();
-            _modbusMaster = factory.CreateMaster(_tcpClient);
+                _tcpClient.Connect(_ipAddress, _port); // Подключаемся к устройству
+
+                var factory = new ModbusFactory();
+                _modbusMaster = factory.CreateMaster(_tcpClient);
+            }
+            catch (SocketException ex)
+            {
+                _logger.LogError(ex, "Не удалось подключиться к устройству по адресу {IpAddress}:{Port}.", _ipAddress, _port);
+
+                // Перенаправление на страницу настроек
+                var context = _httpContextAccessor.HttpContext;
+                if (context != null)
+                {
+                    context.Response.Redirect("/Settings");
+                }
+            }
         }
 
         // Метод для получения времени с устройства
@@ -128,11 +173,34 @@ namespace GravitonEcoWeb.Services
             return "Ошибка";
         }
 
+        // Метод для получения серийного номера устройства
+        public async Task<string> GetDevicePincodeAsync()
+        {
+            try
+            {
+                var firstPart = await _modbusMaster.ReadHoldingRegistersAsync(1, 530, 1);
+                var secondPart = await _modbusMaster.ReadHoldingRegistersAsync(1, 531, 1);
+                if (firstPart != null && secondPart != null)
+                {
+                    // Объединяем оба блока пинкода в одну строку
+                    return firstPart[0].ToString("D4") + secondPart[0].ToString("D4");
+                }
+            }
+            catch
+            {
+                // Возвращаем сообщение об ошибке
+                return "Ошибка чтения серийного номера";
+            }
+
+            return "Ошибка";
+        }
+
         private int BcdToDecimal(ushort bcd)
         {
             return (bcd >> 4) * 10 + (bcd & 0x0F);
         }
 
+        // TODO: Обработать исключение [ Exception: System.NullReferenceException: "Object reference not set to an instance of an object." ]
         public ushort[] ReadInputRegisters(byte startAddress, ushort numberOfPoints)
         {
             // Если соединение было потеряно, пытаемся подключиться снова
@@ -173,6 +241,22 @@ namespace GravitonEcoWeb.Services
             catch
             {
                 return false; // Если произошла ошибка, считаем, что устройство не подключено
+            }
+        }
+
+        public bool CheckInternetConnection()
+        {
+            try
+            {
+                using (var client = new TcpClient())
+                {
+                    client.Connect("8.8.8.8", 53); // Порт 53 для DNS
+                    return true; // Соединение установлено
+                }
+            }
+            catch
+            {
+                return false; // Соединение не удалось
             }
         }
 

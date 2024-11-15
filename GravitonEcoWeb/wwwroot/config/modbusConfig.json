@@ -12,7 +12,8 @@
     "AlarmPorog2Address": 16,
     "AlarmPorog3Address": 17,
     "Group": "\u041C\u0435\u0442\u0435\u043E\u0440\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B",
-    "IsCalibration": false
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 2,
@@ -27,7 +28,8 @@
     "AlarmPorog2Address": 19,
     "AlarmPorog3Address": 20,
     "Group": "\u041C\u0435\u0442\u0435\u043E\u0440\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B",
-    "IsCalibration": true
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 3,
@@ -42,7 +44,8 @@
     "AlarmPorog2Address": 16,
     "AlarmPorog3Address": 17,
     "Group": "\u041C\u0435\u0442\u0435\u043E\u0440\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B",
-    "IsCalibration": true
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 4,
@@ -57,7 +60,8 @@
     "AlarmPorog2Address": 22,
     "AlarmPorog3Address": 23,
     "Group": "\u041C\u0435\u0442\u0435\u043E\u0440\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B",
-    "IsCalibration": false
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 5,
@@ -72,7 +76,8 @@
     "AlarmPorog2Address": 7,
     "AlarmPorog3Address": 8,
     "Group": "\u041C\u0435\u0442\u0435\u043E\u0440\u043E\u043B\u043E\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B",
-    "IsCalibration": false
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 6,
@@ -87,7 +92,8 @@
     "AlarmPorog2Address": 31,
     "AlarmPorog3Address": 32,
     "Group": "\u0413\u0430\u0437\u043E\u0430\u043D\u0430\u043B\u0438\u0437\u0430\u0442\u043E\u0440",
-    "IsCalibration": true
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 7,
@@ -102,7 +108,8 @@
     "AlarmPorog2Address": 37,
     "AlarmPorog3Address": 38,
     "Group": "\u0413\u0430\u0437\u043E\u0430\u043D\u0430\u043B\u0438\u0437\u0430\u0442\u043E\u0440",
-    "IsCalibration": true
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 8,
@@ -117,7 +124,8 @@
     "AlarmPorog2Address": 40,
     "AlarmPorog3Address": 41,
     "Group": "\u0413\u0430\u0437\u043E\u0430\u043D\u0430\u043B\u0438\u0437\u0430\u0442\u043E\u0440",
-    "IsCalibration": true
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 9,
@@ -132,7 +140,8 @@
     "AlarmPorog2Address": 58,
     "AlarmPorog3Address": 59,
     "Group": "\u0413\u0430\u0437\u043E\u0430\u043D\u0430\u043B\u0438\u0437\u0430\u0442\u043E\u0440",
-    "IsCalibration": true
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 10,
@@ -147,7 +156,8 @@
     "AlarmPorog2Address": 34,
     "AlarmPorog3Address": 35,
     "Group": "\u0413\u0430\u0437\u043E\u0430\u043D\u0430\u043B\u0438\u0437\u0430\u0442\u043E\u0440",
-    "IsCalibration": true
+    "IsCalibration": true,
+    "ConverGasType": 0
   },
   {
     "Id": 11,
@@ -162,7 +172,8 @@
     "AlarmPorog2Address": 25,
     "AlarmPorog3Address": 26,
     "Group": "\u0413\u0430\u0437\u043E\u0430\u043D\u0430\u043B\u0438\u0437\u0430\u0442\u043E\u0440",
-    "IsCalibration": true
+    "IsCalibration": true,
+    "ConverGasType": 0
   },
   {
     "Id": 12,
@@ -177,7 +188,8 @@
     "AlarmPorog2Address": 49,
     "AlarmPorog3Address": 50,
     "Group": "\u0418\u0437\u043C\u0435\u0440\u0438\u0442\u0435\u043B\u044C \u0447\u0430\u0441\u0442\u0438\u0446 \u043F\u044B\u043B\u0438",
-    "IsCalibration": true
+    "IsCalibration": true,
+    "ConverGasType": 0
   },
   {
     "Id": 13,
@@ -192,7 +204,8 @@
     "AlarmPorog2Address": 52,
     "AlarmPorog3Address": 53,
     "Group": "\u0418\u0437\u043C\u0435\u0440\u0438\u0442\u0435\u043B\u044C \u0447\u0430\u0441\u0442\u0438\u0446 \u043F\u044B\u043B\u0438",
-    "IsCalibration": true
+    "IsCalibration": true,
+    "ConverGasType": 0
   },
   {
     "Id": 14,
@@ -207,7 +220,8 @@
     "AlarmPorog2Address": 55,
     "AlarmPorog3Address": 56,
     "Group": "\u0418\u0437\u043C\u0435\u0440\u0438\u0442\u0435\u043B\u044C \u0447\u0430\u0441\u0442\u0438\u0446 \u043F\u044B\u043B\u0438",
-    "IsCalibration": true
+    "IsCalibration": true,
+    "ConverGasType": 0
   },
   {
     "Id": 15,
@@ -222,7 +236,8 @@
     "AlarmPorog2Address": 64,
     "AlarmPorog3Address": 65,
     "Group": "\u041C\u043E\u043D\u0438\u0442\u043E\u0440 \u0432\u043E\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0439",
-    "IsCalibration": false
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 16,
@@ -237,7 +252,8 @@
     "AlarmPorog2Address": 61,
     "AlarmPorog3Address": 62,
     "Group": "\u041C\u043E\u043D\u0438\u0442\u043E\u0440 \u0432\u043E\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0439",
-    "IsCalibration": false
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 18,
@@ -252,7 +268,8 @@
     "AlarmPorog2Address": 7,
     "AlarmPorog3Address": 8,
     "Group": "\u041C\u043E\u043D\u0438\u0442\u043E\u0440 \u0432\u043E\u0437\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0439",
-    "IsCalibration": false
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 19,
@@ -266,8 +283,9 @@
     "AlarmPorog1Address": 15,
     "AlarmPorog2Address": 16,
     "AlarmPorog3Address": 17,
-    "Group": "\u0421\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435",
-    "IsCalibration": false
+    "Group": "\u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u0438\u0437\u043C\u0435\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u043A\u0430\u043C\u0435\u0440\u044B",
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 20,
@@ -281,8 +299,9 @@
     "AlarmPorog1Address": 18,
     "AlarmPorog2Address": 19,
     "AlarmPorog3Address": 20,
-    "Group": "\u0421\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435",
-    "IsCalibration": false
+    "Group": "\u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u0438\u0437\u043C\u0435\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u043A\u0430\u043C\u0435\u0440\u044B",
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 21,
@@ -296,8 +315,9 @@
     "AlarmPorog1Address": 6,
     "AlarmPorog2Address": 7,
     "AlarmPorog3Address": 8,
-    "Group": "\u0421\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435",
-    "IsCalibration": false
+    "Group": "\u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u0438\u0437\u043C\u0435\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u043A\u0430\u043C\u0435\u0440\u044B",
+    "IsCalibration": false,
+    "ConverGasType": 0
   },
   {
     "Id": 22,
@@ -311,7 +331,8 @@
     "AlarmPorog1Address": 75,
     "AlarmPorog2Address": 76,
     "AlarmPorog3Address": 77,
-    "Group": "\u0421\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0435 \u0434\u0430\u043D\u043D\u044B\u0435",
-    "IsCalibration": false
+    "Group": "\u041F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u044B \u0438\u0437\u043C\u0435\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0439 \u043A\u0430\u043C\u0435\u0440\u044B",
+    "IsCalibration": false,
+    "ConverGasType": 0
   }
 ]

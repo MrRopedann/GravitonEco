@@ -1,0 +1,78 @@
+﻿@model IEnumerable<GravitonEcoWEBmvc.Models.DataBaseModel.GroupModel>
+
+@{
+    ViewData["Title"] = "Управление группами";
+    Layout = "_AdminPanelLayout";
+}
+
+
+
+<h2>Управление группами</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <h3>Список групп</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Название группы</th>
+                    <th>Формат отображения</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var group in Model)
+                {
+                    <tr>
+                        <td>@group.Id</td>
+                        <td>@group.GroupName</td>
+                        <td>@group.DisplayFormat</td>
+                        <td>
+                            <button class="btn btn-primary" onclick="editGroup(@group.Id, '@group.GroupName', @group.DisplayFormat)">Редактировать</button>
+                            <form asp-action="DeleteGroup" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="@group.Id" />
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Удалить эту группу?');">Удалить</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-6">
+        <h3 id="form-title">Добавить новую группу</h3>
+        <form asp-action="SaveGroup" method="post" id="group-form">
+            <input type="hidden" name="Id" id="group-id" value="0" />
+            <div class="form-group">
+                <label for="GroupName">Название группы</label>
+                <input type="text" class="form-control" name="GroupName" id="group-name" required />
+            </div>
+            <div class="form-group">
+                <label for="DisplayFormat">Формат отображения</label>
+                <input type="number" class="form-control" name="DisplayFormat" id="display-format" required />
+            </div>
+            <button type="submit" class="btn btn-success">Сохранить</button>
+            <button type="button" class="btn btn-secondary" onclick="clearForm()">Отмена</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function editGroup(id, name, format) {
+            document.getElementById('form-title').innerText = 'Редактировать группу';
+            document.getElementById('group-id').value = id;
+            document.getElementById('group-name').value = name;
+            document.getElementById('display-format').value = format;
+        }
+
+        function clearForm() {
+            document.getElementById('form-title').innerText = 'Добавить новую группу';
+            document.getElementById('group-id').value = 0;
+            document.getElementById('group-name').value = '';
+            document.getElementById('display-format').value = '';
+        }
+    </script>
+}

@@ -1,0 +1,162 @@
+﻿@using GravitonEcoWEBmvc.Models.ModbusModels
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<DeviceModel>
+
+<h2>Устройства по группам</h2>
+<div>
+    <label>
+        <input type="checkbox" id="alarm-toggle" onchange="toggleAlarmPolling()"> Включить опрос Alarm
+    </label>
+</div>
+
+<div id="device-container" class="row">
+    <div class="col-md-6">
+        <h3>Основные группы</h3>
+        @if (Model.Any(d => d.DisplayFormat == 1))
+
+        {
+            @foreach (var group in Model.Where(d => d.DisplayFormat == 1).GroupBy(d => d.GroupId))
+
+            {
+                <div>
+                    <h4>
+                        <button class="toggle-button btn btn-secondary" onclick="toggleTable('@group.Key')">@group.First().GroupName</button>
+                    </h4>
+                            <table id="table-@group.Key" class="table table-stripped table-hover table-dark table-bordered" style="display: none; table-layout: fixed;">
+                        <thead>
+                            <tr>
+                                <th>Выбор</th>
+                                <th>Название параметра</th>
+                                <th>Текущее значение</th>
+                                <th>Порог 1</th>
+                                <th>Порог 2</th>
+                                <th>Инкремент</th>
+                                <th>Период</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var device in group)
+
+                            {
+                                <tr data-id="@device.Id" data-group-id="@device.GroupId">
+                                    <td>
+                                        <input type="radio" name="selectedDevice" value="@device.Id" onchange="selectDevice(@device.Id, '@device.NameParametr')">
+                                    </td>
+                                    <td>@device.NameParametr</td>
+                                    <td class="current-value">@device.CurrentValue</td>
+                                    <td>
+                                        <input type="text" class="porog1-value form-control" value="@device.Porog1Value"
+                                               onchange="updatePorogParam(this, @device.Id, 'Porog1Value')"
+                                               onkeypress="handleEnterKey(event, @device.Id, 'Porog1Value')"
+                                        @(User.IsInRole("User") ? "readonly" : "")>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="porog2-value form-control" value="@device.Porog2Value"
+                                               onchange="updatePorogParam(this, @device.Id, 'Porog2Value')"
+                                               onkeypress="handleEnterKey(event, @device.Id, 'Porog2Value')"
+                                        @(User.IsInRole("User") ? "readonly" : "")>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="increment-value form-control" value="@device.IncrementValue"
+                                               onchange="updatePorogParam(this, @device.Id, 'IncrementValue')"
+                                               onkeypress="handleEnterKey(event, @device.Id, 'IncrementValue')"
+                                        @(User.IsInRole("User") ? "readonly" : "")>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="period-value form-control" value="@device.PeriodValue"
+                                               onchange="updatePorogParam(this, @device.Id, 'PeriodValue')"
+                                               onkeypress="handleEnterKey(event, @device.Id, 'PeriodValue')"
+                                        @(User.IsInRole("User") ? "readonly" : "")>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        }
+
+        else
+
+        {
+            <p>Нет данных для основных групп.</p>
+        }
+    </div>
+    <div class="col-md-6">
+        <h3>Калибровочные группы</h3>
+        @if (Model.Any(d => d.CalibrationGroupId > 0 && !string.IsNullOrEmpty(d.CalibrationGroupName)))
+
+        {
+            @foreach (var calibrationGroup in Model
+           .Where(d => d.CalibrationGroupId > 0 && !string.IsNullOrEmpty(d.CalibrationGroupName))
+           .GroupBy(d => d.CalibrationGroupId))
+
+            {
+                <div>
+                    <h4>
+                        <button class="toggle-button btn btn-secondary" onclick="toggleTable('calibration-@calibrationGroup.Key')">
+                            @calibrationGroup.First().CalibrationGroupName
+                        </button>
+                    </h4>
+                    <table id="table-calibration-@calibrationGroup.Key" class="table table-stripped table-hover table-dark table-bordered" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>Название параметра</th>
+                                <th>Calibration Current Value</th>
+                                <th>Setting Zero</th>
+                                <th>PGS Concentration</th>
+                                <th>ADC Value</th>
+                                <th>Calculated Zero</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var device in calibrationGroup)
+
+                            {
+                                <tr data-id="@device.Id" data-group-id="@device.CalibrationGroupId">
+                                    <td>@device.NameParametr</td>
+                                    <td class="current-calibration-value">@device.CurrentValue.ToString("F1")</td>
+                                    <td>
+                                        <input type="text" class="setting-zero-value form-control" value="@device.CalibrationOffset"
+                                               onchange="updateCalibrationParam(this, @device.Id, 'CalibrationSettingZero')"
+                                               onkeypress="handleEnterKey(event, @device.Id, 'CalibrationSettingZero')"
+                                        @(User.IsInRole("User") ? "readonly" : "")>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="pgs-concentration-value form-control" value="@device.CalibrationConstant"
+                                               onchange="updateCalibrationParam(this, @device.Id, 'CalibrationPGSConcentration')"
+                                               onkeypress="handleEnterKey(event, @device.Id, 'CalibrationPGSConcentration')"
+                                        @(User.IsInRole("User") ? "readonly" : "")>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="adc-value form-control" value="@device.CalibrationValue"
+                                               onchange="updateCalibrationParam(this, @device.Id, 'CalibrationADCValue')"
+                                               onkeypress="handleEnterKey(event, @device.Id, 'CalibrationADCValue')"
+                                        @(User.IsInRole("User") ? "readonly" : "")>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="calculated-zero-value form-control" value="@device.CalibrationPeriod"
+                                               onchange="updateCalibrationParam(this, @device.Id, 'CalibrationCalculatedZero')"
+                                               onkeypress="handleEnterKey(event, @device.Id, 'CalibrationCalculatedZero')"
+                                        @(User.IsInRole("User") ? "readonly" : "")>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+        }
+        else
+
+        {
+            <p>Нет данных для калибровочных групп.</p>
+        }
+    </div>
+</div>
+
+
+

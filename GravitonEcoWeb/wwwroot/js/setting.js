@@ -19,10 +19,60 @@ function loadConfig(configName, targetElementId) {
 }
 
 // Генерация HTML для строки конфигурации с кнопкой удаления
+//function generateConfigRow(item, index, configName) {
+//    let html = '<tr>';
+//    Object.keys(item).forEach(key => {
+//        html += `<td><input type="text" value="${item[key]}" name="${key}" class="form-control"/></td>`;
+//    });
+//    html += `<td><button class="btn btn-danger" onclick="deleteConfigRow(${index}, '${configName}')">Удалить</button></td>`;
+//    html += '</tr>';
+//    return html;
+//}
+
+function addModbusConfig() {
+    const container = document.getElementById('modbus-config').querySelector('tbody');
+    const newIndex = container.querySelectorAll('tr').length;
+    container.innerHTML += generateConfigRow({
+        Name: '',
+        SlaveAddress: '',
+        CurrentValueAddress: '',
+        Porog1Address: '',
+        Porog2Address: '',
+        IncrementAddress: '',
+        PeriodAddress: '',
+        AlarmPorog1Address: '',
+        AlarmPorog2Address: '',
+        AlarmPorog3Address: '',
+        Group: ''
+    }, newIndex, 'modbusConfig.json');
+}
+// Функция для добавления новой строки в Газовую калибровку
+function addGasConfig() {
+    const container = document.getElementById('gas-config').querySelector('tbody');
+    const newIndex = container.querySelectorAll('tr').length;
+    container.innerHTML += generateConfigRow({
+        Name: '',
+        SlaveAddress: '',
+        CurrentValueAddress: '',
+        SettingZero: '',
+        PGSConcentration: '',
+        ADCValue: '',
+        CalculatedZero: '',
+        Group: '',
+        ModbusDeviseID: ''
+    }, newIndex, 'modbusColibrationGasConfig.json');
+}
+
 function generateConfigRow(item, index, configName) {
     let html = '<tr>';
     Object.keys(item).forEach(key => {
-        html += `<td><input type="text" value="${item[key]}" name="${key}" class="form-control"/></td>`;
+        if (key === "ConverGasType") return;
+        if (key === "IsCalibration") {
+            const checked = item[key] ? 'checked' : '';
+            html += `<td><input type="checkbox" ${checked} name="${key}" class="form-check-input"/></td>`;
+        } else {
+            html += `<td><input type="text" value="${item[key]}" name="${key}" class="form-control"/></td>`;
+        }
     });
     html += `<td><button class="btn btn-danger" onclick="deleteConfigRow(${index}, '${configName}')">Удалить</button></td>`;
     html += '</tr>';
@@ -84,7 +134,8 @@ function saveConfig(configName) {
                 'IncrementAddress', 'PeriodAddress', 'AlarmPorog1Address', 'AlarmPorog2Address', 'AlarmPorog3Address', 'ModbusDeviseID'].includes(input.name)) {
                 value = parseIfNumeric(value);
             } else if (input.name === 'IsCalibration') {
-                value = parseIfBool(value);
+                //value = parseIfBool(value);
+                value = input.checked;
             }
 
             item[input.name] = value;
@@ -147,4 +198,11 @@ function toggleGroup(targetId) {
 // Изначально показываем только первый блок и делаем первую кнопку активной
 document.addEventListener('DOMContentLoaded', function () {
     toggleGroup('log-changes'); // Открываем первый блок по умолчанию
+});
+
+document.querySelector('.setting').addEventListener('click', function (event) {
+    if (sessionStorage.getItem('isPincodeCorrect') !== 'true') {
+        event.preventDefault(); // Блокируем переход на страницу
+        alert("Требуется ввести корректный пинкод для доступа к настройкам.");
+    }
 });
